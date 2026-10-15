@@ -1,0 +1,19 @@
+---
+const { entry, sidebar } = Astro.locals.starlightRoute;
+type Entry = { type: 'link'; isCurrent: boolean } | { type: 'group'; label: string; entries: Entry[] };
+const holds = (e: Entry): boolean => (e.type === 'link' ? e.isCurrent : e.entries.some(holds));
+const group = (sidebar as Entry[]).find((e) => e.type === 'group' && holds(e)) as { label: string } | undefined;
+---
+<div class="r1-title">
+  {group && <div class="eyebrow">{group.label}</div>}
+  <h1 id="_top" class="cond">{entry.data.title}</h1>
+  {entry.data.description && <p class="lede">{entry.data.description}</p>}
+  <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+</div>
+
+<style>
+  .r1-title { margin-top: 1rem; }
+  h1 { font-size: var(--sl-text-h1); margin: .4rem 0 .9rem; color: var(--r1-ink); }
+  .lede { font-size: 1.2rem; color: #d6d6d6; margin: 0 0 1.4rem; max-width: 42ch; }
+  .strip { max-width: 14rem; }
+</style>

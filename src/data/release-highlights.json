@@ -1,0 +1,12 @@
+{
+  "0.16.0": {
+    "title": "Folders only when you want them.",
+    "summary": "Empty book folders are now opt-in, and a run of fixes stops ABM losing track of files after imports, upgrades and moves.",
+    "upgrade": "If you ever saved Settings > Media Management, empty folders keep being created. Fresh installs start with it off."
+  },
+  "0.15.5": {
+    "title": "Moving books actually moves them.",
+    "summary": "Moving books between root folders said it worked while moving nothing. Now it moves them, and says how many moved and why any didn't.",
+    "upgrade": "Adding a book now needs at least one root folder set up. ABM says so instead of adding a book with nowhere to go."
+  }
+}

@@ -1,0 +1,42 @@
+---
+import locales from '../../locales.json';
+import names from '../../locale-names.json';
+import { flags } from './flags';
+
+interface Props { locale?: string }
+// The landing page is not a Starlight route, so it passes its own locale (none means English).
+let route: { locale?: string } = {};
+try { route = Astro.locals.starlightRoute; } catch { /* landing page: no Starlight route */ }
+const loc = route.locale ?? Astro.props.locale;
+const here = loc ?? 'root';
+const all: Record<string, { lang: string }> = { root: { lang: 'en' }, ...locales };
+// Pages share their path across locales, so the same page is the root path under another prefix.
+const path = loc ? Astro.url.pathname.replace(new RegExp(`^/${loc}(?=/|$)`), '') || '/' : Astro.url.pathname;
+const href = (code: string) => (code === 'root' ? path : `/${code}${path}`);
+// Each name is written in the language currently shown.
+const shown = all[here].lang;
+const table = (names as Record<string, Record<string, string>>)[shown] ?? {};
+// Curated names win; any language not in the table gets the platform's own name for it.
+const intl = new Intl.DisplayNames([shown], { type: 'language', languageDisplay: 'standard' });
+const nameOf = (lang: string) => table[lang] ?? ((n) => n.charAt(0).toLocaleUpperCase(shown) + n.slice(1))(intl.of(lang) ?? lang);
+const entries = Object.entries(all).map(([code, l]) => ({ code, lang: l.lang, name: nameOf(l.lang), flag: flags[l.lang] ?? '' }));
+const cur = entries.find((e) => e.code === here)!;
+---
+<details class="lang">
+  <summary aria-label="Language"><span class="flag" set:html={cur.flag} />{cur.name}</summary>
+  <ul>{entries.map((e) => (
+    <li><a href={href(e.code)} lang={e.lang} hreflang={e.lang} aria-current={e.code === here ? 'true' : undefined}><span class="flag" set:html={e.flag} />{e.name}</a></li>
+  ))}</ul>
+</details>
+
+<style>
+  .flag { display: inline-flex; vertical-align: -0.1em; margin-inline-end: 0.5em; }
+  .flag :global(svg) { border-radius: 2px; box-shadow: 0 0 0 1px rgb(255 255 255 / 0.15); }
+  .lang { position: relative; font-size: 0.8125rem; color: var(--sl-color-gray-2); white-space: nowrap; }
+  summary { cursor: pointer; display: flex; align-items: center; list-style: none; }
+  summary::-webkit-details-marker { display: none; }
+  ul { position: absolute; inset-inline-end: 0; max-height: 70vh; overflow-y: auto; margin: 0.4rem 0 0; padding: 0.25rem; list-style: none; background: var(--sl-color-bg-nav, #1a1a1a); border: 1px solid var(--sl-color-hairline, #333); z-index: 10; }
+  a { display: flex; align-items: center; padding: 0.25rem 0.75rem; color: inherit; text-decoration: none; }
+  summary:focus-visible, a:focus-visible { outline: 2px solid var(--sl-color-white); outline-offset: 2px; }
+  a:hover, a[aria-current] { color: var(--sl-color-white); }
+</style>

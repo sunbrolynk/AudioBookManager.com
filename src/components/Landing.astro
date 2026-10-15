@@ -1,0 +1,204 @@
+---
+import { Image } from 'astro:assets';
+import { Icon } from '@astrojs/starlight/components';
+import '../styles/tokens.css';
+import '../styles/landing.css';
+import SiteHeader from './SiteHeader.astro';
+import LanguageSelect from './overrides/LanguageSelect.astro';
+import SiteFooter from './SiteFooter.astro';
+import strings from '../landing-strings.json';
+import locales from '../locales.json';
+import dashboard from '../assets/screens/dashboard.jpg';
+import library from '../assets/screens/library.jpg';
+import book from '../assets/screens/book.jpg';
+import bookPhone from '../assets/screens/book-m.jpg';
+import series from '../assets/screens/series.jpg';
+import calendar from '../assets/screens/calendar.jpg';
+import missing from '../assets/screens/missing.jpg';
+import profiles from '../assets/screens/profiles.jpg';
+import conversions from '../assets/screens/conversions.jpg';
+
+interface Props { locale?: string }
+const loc = Astro.props.locale;
+const prefix = loc ? '/' + loc : '';
+const t = (strings as Record<string, any>)[loc ?? 'root'];
+const noteParts = t.translatorNote?.split('{mail}');
+const { sub, messy, clean, steps, why, works, installSteps, faq, strip } = t;
+const features = [library, book, calendar, missing, profiles, conversions].map((img, i) => [img, ...t.features[i]] as const);
+const shots = [dashboard, library, book, series, calendar, missing, profiles, conversions].map((img, i) => [img, t.shots[i]] as const);
+const imgW = 1440, imgH = 900;
+
+const compose = `services:
+  audiobook-manager:
+    image: ghcr.io/sunbrolynk/audiobook-manager:latest
+    container_name: audiobook-manager
+    restart: unless-stopped
+    ports:
+      - "\${PORT:-5173}:5173"
+    environment:
+      TIMEZONE: \${TIMEZONE:-UTC}
+      LOCAL_NETWORKS: \${LOCAL_NETWORKS:-}
+      TRUSTED_PROXIES: \${TRUSTED_PROXIES:-}
+    volumes:
+      - /path/to/library:/audiobooks
+      - /path/to/downloads:/downloads
+      - /path/to/config:/config`;
+const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="k">$2</span>:');
+---
+<!doctype html>
+<html lang={t.htmlLang} dir={(locales as Record<string, { dir?: string }>)[loc ?? '']?.dir ?? 'ltr'}>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{t.title}</title>
+  <meta name="description" content={sub} />
+  <link rel="icon" href="/favicon.png" type="image/png" />
+</head>
+<body>
+  <a class="skip" href="#main">{t.skip}</a>
+  <SiteHeader locale={loc}><LanguageSelect locale={loc} /></SiteHeader>
+  {noteParts && <p class="xl-note" lang={t.htmlLang}><span class="w">{noteParts[0]}<a href="mailto:translate@audiobookmanager.com">translate@audiobookmanager.com</a>{noteParts[1]}</span></p>}
+  <main id="main">
+    <section class="hero">
+      <div class="w grid">
+        <div>
+          <div class="eyebrow">{t.heroEyebrow}</div>
+          <h1 class="cond" set:html={t.h1} />
+          <p class="sub">{sub}</p>
+          <div class="ctas"><a class="btn pri" href="#install">{t.ctaDocker}</a><a class="btn" href="#screens">{t.ctaSee}</a></div>
+          <div class="runs">{t.runs}</div>
+          <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i>{strip.map((s) => <span>{s}</span>)}</div>
+        </div>
+        <div class="stage">
+          <div class="win"><div class="bar" aria-hidden="true"><b></b><span>abm.home:5173/library</span></div>
+            <Image src={library} alt={t.heroAlt} width={imgW} height={imgH} loading="eager" /></div>
+          <div class="phone"><Image src={bookPhone} alt={t.phoneAlt} width={390} height={844} /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="w problem">
+        <div>
+          <div class="eyebrow">{t.existsEyebrow}</div>
+          <h2 class="big cond">{t.existsH2}</h2>
+          <div class="lead">
+            <p>{t.p1}</p>
+            <p>{t.p2}</p>
+            <p>{t.p3}</p>
+          </div>
+        </div>
+        <div class="trees">
+          <div class="tree before"><h3><span>{t.beforeA}</span><span>{t.beforeB}</span></h3><pre>{messy}</pre></div>
+          <div class="tree after"><h3><span>{t.afterA}</span><span>{t.afterB}</span></h3><pre>{clean}</pre></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="features">
+      <div class="w">
+        <div class="eyebrow">{t.howEyebrow}</div>
+        <h2 class="big cond">{t.howH2}</h2>
+        <ol class="flow">
+          {steps.map(([h, p], i) => <li><span class="bar" aria-hidden="true"></span><span class="n">0{i + 1}</span><h3 class="cond">{h}</h3><p>{p}</p></li>)}
+        </ol>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="w">
+        <h2 class="eyebrow">{t.getEyebrow}</h2>
+        {features.map(([img, name, h, p], i) => (
+          <div class="feat">
+            <div class="copy"><span class={`tick t${i + 1}`}></span><span class="eyebrow">{name}</span><h3>{h}</h3><p>{p}</p></div>
+            <div class="crop"><Image src={img} alt={t.altPage.replace("{name}", name)} width={imgW} height={imgH} /></div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="w">
+        <div class="eyebrow">{t.whyEyebrow}</div>
+        <h2 class="big cond">{t.whyH2}</h2>
+        <div class="why">
+          {why.map(([h, p], i) => <div><span class="n cond">0{i + 1}</span><div><h3>{h}</h3><p set:html={p} /></div></div>)}
+        </div>
+        <div class="works">{works.map(([a, b]) => <div><span>{a}</span><b>{b}</b></div>)}</div>
+      </div>
+    </section>
+
+    <section class="band alt" id="screens">
+      <div class="w">
+        <div class="eyebrow">{t.shotsEyebrow}</div>
+        <h2 class="big cond">{t.shotsH2}</h2>
+        <div class="shots" tabindex="0" aria-label={t.shotsAria}>
+          {shots.map(([img, name]) => <figure><div class="crop"><Image src={img} alt={t.altPage.replace("{name}", name)} width={imgW} height={imgH} /></div><figcaption>{name}</figcaption></figure>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="install">
+      <div class="w">
+        <div class="eyebrow">{t.getItEyebrow}</div>
+        <h2 class="big cond">{t.installH2}</h2>
+        <div class="install">
+          <pre class="code" set:html={composeHtml}></pre>
+          <div>
+            <ol class="isteps">{installSteps.map(([h, p]) => <li><div><b>{h}</b><span set:html={p} /></div></li>)}</ol>
+            <div class="other">
+              <p set:html={t.buildP} />
+              <p set:html={t.otherP} />
+            </div>
+            <div class="note" set:html={t.note} />
+            <p class="more"><a class="btn" href={`${prefix}/installation/`}>{t.fullGuide}</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="w faqgrid">
+        <div><div class="eyebrow">{t.faqEyebrow}</div><h2 class="big cond">{t.faqH2}</h2></div>
+        <div class="faq">{faq.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p set:html={a} /></details>)}</div>
+      </div>
+    </section>
+
+    <section class="band" id="community" aria-labelledby="community-h">
+      <div class="w faqgrid">
+        <div>
+          <div class="eyebrow">{t.communityEyebrow}</div>
+          <h2 class="big cond" id="community-h">{t.communityH2}</h2>
+        </div>
+        <div class="lead">
+          <p>{t.communityP}</p>
+          <div class="ctas">
+            <a class="btn pri" href="https://discord.gg/9TS4gzYCQZ">
+              <Icon name="discord" size="1.5rem" />
+              <span>{t.communityBtn}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band" id="support" aria-labelledby="support-h">
+      <h2 id="support-h" class="sr-only">{t.supportSr}</h2>
+      <div class="w support">
+        <div><h3>{t.brokenH}</h3><p>{t.brokenP}</p><a class="btn" href="https://github.com/sunbrolynk/AudioBook-Manager/issues">{t.brokenBtn}</a></div>
+        <div><h3>{t.helpH}</h3><p>{t.helpP}</p><div class="ctas"><a class="btn pri" href="https://ko-fi.com/sunbrolynk">{t.kofiBtn}</a><a class="btn" href="https://buymeacoffee.com/sunbrolynk">{t.monsterBtn}</a></div></div>
+      </div>
+    </section>
+
+    <section class="final">
+      <div class="w">
+        <h2 class="cond" set:html={t.finalH2} />
+        <div class="ctas"><a class="btn pri" href="#install">{t.ctaInstall}</a><a class="btn" href={`${prefix}/installation/`}>{t.ctaDocs}</a></div>
+        <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i>{strip.map((s) => <span>{s}</span>)}</div>
+      </div>
+    </section>
+  </main>
+  <SiteFooter locale={loc} />
+</body>
+</html>

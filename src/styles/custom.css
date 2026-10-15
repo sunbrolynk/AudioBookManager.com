@@ -1,0 +1,66 @@
+/* Starlight themed to R1 "Status line". The site is dark-only, so both themes get the same tokens. */
+@import './tokens.css';
+
+:root, :root[data-theme='light'], :root[data-theme='dark'] {
+  color-scheme: dark;
+  --sl-font: var(--r1-sans);
+  --sl-font-mono: var(--r1-mono);
+  --sl-color-white: var(--r1-ink);
+  --sl-color-gray-1: #e6e6e6; --sl-color-gray-2: #cfcfcf; --sl-color-gray-3: var(--r1-mut); --sl-color-gray-4: var(--r1-dim);
+  --sl-color-gray-5: #3a3a3a; --sl-color-gray-6: #222; --sl-color-gray-7: #1a1a1a;
+  --sl-color-black: var(--r1-bg);
+  --sl-color-bg: var(--r1-bg); --sl-color-bg-nav: rgba(22,22,22,.97); --sl-color-bg-sidebar: var(--r1-bg); --sl-color-bg-inline-code: var(--r1-s3);
+  --sl-color-hairline: var(--r1-line); --sl-color-hairline-light: var(--r1-line); --sl-color-hairline-shade: #111;
+  --sl-color-accent-low: #2a1a38; --sl-color-accent: var(--r1-acc); --sl-color-accent-high: var(--r1-acc-hi);
+  --sl-color-text: #d6d6d6; --sl-color-text-accent: var(--r1-acc-hi);
+  --sl-color-blue-low: #142235; --sl-color-blue: var(--r1-find); --sl-color-blue-high: #a9c6ee;
+  --sl-color-orange-low: #33230a; --sl-color-orange: var(--r1-want); --sl-color-orange-high: #fbd38d;
+  --sl-color-green-low: #0f2a19; --sl-color-green: var(--r1-done); --sl-color-green-high: #9be3b4;
+  --sl-color-red-low: #3a1414; --sl-color-red: #dc2626; --sl-color-red-high: #fca5a5;
+  --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 46rem;
+  --sl-text-h1: 4.75rem; --sl-text-h2: 1.85rem; --sl-text-h3: 1.3rem;
+  --sl-line-height: 1.7;
+}
+body { background: var(--r1-bg); }
+
+/* Header: the landing page's bar, with Starlight's search inside it. Starlight keeps its own padding so the phone menu button has room. */
+.page > .header { border-bottom: 1px solid var(--r1-line); }
+.page > .header .r1-top { position: static; background: none; border: 0; height: 100%; }
+.page > .header .r1-top .w { max-width: none; padding: 0; height: 100%; }
+@media (max-width: 50rem) { .page > .header .r1-top .btn { display: none; } }
+
+/* Sidebar groups, in the landing page's mono eyebrow style. */
+.sidebar-pane { border-inline-end: 1px solid var(--r1-line); }
+nav.sidebar .group-label .large, nav.sidebar summary .large { font: 600 11.5px var(--r1-mono) !important; letter-spacing: .08em; text-transform: uppercase; color: var(--r1-dim) !important; }
+nav.sidebar a { color: var(--r1-mut); border-radius: 0; padding-block: .3rem; border-inline-start: 2px solid transparent; }
+nav.sidebar a:hover { color: var(--r1-ink); }
+nav.sidebar a[aria-current='page'], nav.sidebar a[aria-current='page']:hover { background: transparent; color: var(--r1-ink); font-weight: 600; border-inline-start-color: var(--r1-done); }
+nav.sidebar .top-level > li + li { margin-top: .6rem; }
+
+/* Content */
+.sl-markdown-content h2 { letter-spacing: -.01em; margin-top: 2.6rem; }
+.sl-markdown-content h2::before { content: ""; display: block; width: 26px; height: 6px; background: var(--r1-done); margin-bottom: .9rem; }
+.sl-markdown-content :is(h2, h3) { color: var(--r1-ink); }
+.sl-markdown-content a { color: var(--r1-acc-hi); }
+.sl-markdown-content table { display: table; width: 100%; border-collapse: collapse; font-size: .94rem; }
+.sl-markdown-content th { font: 600 11.5px var(--r1-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--r1-dim); background: transparent; border: 0; border-bottom: 1px solid var(--r1-line); text-align: left; }
+.sl-markdown-content td { border: 0; border-bottom: 1px solid var(--r1-line); vertical-align: top; }
+.sl-markdown-content td:first-child code { white-space: nowrap; }
+.sl-markdown-content ol > li::marker { font: 800 1.2em var(--r1-cond); font-variation-settings: "wdth" 62; color: var(--r1-done); }
+.expressive-code .frame { --ec-frm-edBg: #0f0f0f; }
+.starlight-aside { border-inline-start-width: 4px; border-radius: 0 4px 4px 0; }
+.starlight-aside--tip { --sl-color-asides-text-accent: var(--r1-find); --sl-color-asides-border: var(--r1-find); background: #142235; }
+
+/* Prev/next */
+.pagination-links a { border-radius: 3px; border-color: var(--r1-line); box-shadow: none; }
+.pagination-links a:hover { border-color: var(--r1-mut); }
+
+/* Right-hand table of contents */
+starlight-toc h2, mobile-starlight-toc .toggle { font: 600 11.5px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--r1-dim); }
+starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
+
+@media (max-width: 50rem) {
+  :root { --sl-text-h1: 3.25rem; }
+  .sl-markdown-content { line-height: 1.75; }
+  .sl-markdown-content table { display: block; overflow-x: auto; }
+}
