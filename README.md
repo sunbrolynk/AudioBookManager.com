@@ -55,11 +55,17 @@ the Content-Security-Policy hashes in `dist/_headers`. Deploy the complete
 ## Translations
 
 The new repository currently contains the English foundation.
-Language-specific review branches and pull requests are being prepared.
 
-The planned contribution process lets community members propose corrections
-through PR comments, suggested edits, or corrected-file attachments.
-Maintainers review and apply contributions before merging.
+A language is published once every documentation page and UI string has been
+translated. Complete AI translations qualify; human review is not required
+before publication. Incomplete languages remain in private preparation.
+
+After publication, a separate language-specific correction PR provides a place
+for community comments, suggested edits on changed lines, and corrected-file
+attachments. Maintainers review and merge corrections in batches.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and
+[the translation workflow](translations/README.md) for details.
 
 ## API reference
 
