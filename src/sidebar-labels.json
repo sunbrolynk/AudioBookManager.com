@@ -1,23 +1,30 @@
 {
   "Getting started": {
-    "en-GB": "Getting started"
+    "en-GB": "Getting started",
+    "uk": "Початок роботи"
   },
   "Using ABM": {
-    "en-GB": "Using ABM"
+    "en-GB": "Using ABM",
+    "uk": "Користування ABM"
   },
   "Metadata & Libex": {
-    "en-GB": "Metadata & Libex"
+    "en-GB": "Metadata & Libex",
+    "uk": "Метадані та Libex"
   },
   "Settings": {
-    "en-GB": "Settings"
+    "en-GB": "Settings",
+    "uk": "Налаштування"
   },
   "System": {
-    "en-GB": "System"
+    "en-GB": "System",
+    "uk": "Система"
   },
   "Guides": {
-    "en-GB": "Guides"
+    "en-GB": "Guides",
+    "uk": "Посібники"
   },
   "Help": {
-    "en-GB": "Help"
+    "en-GB": "Help",
+    "uk": "Довідка"
   }
 }

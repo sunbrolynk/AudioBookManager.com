@@ -2,5 +2,9 @@
   "en-gb": {
     "label": "English (UK)",
     "lang": "en-GB"
+  },
+  "uk": {
+    "label": "Українська",
+    "lang": "uk"
   }
 }
