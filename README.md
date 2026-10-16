@@ -84,3 +84,36 @@ README. Updates require review before merging.
 ## License
 
 GNU General Public License v3.0. See [LICENSE](LICENSE).
+
+## Checks before pushing
+
+Requirements: Node.js 24, npm 11, Bash, and a running Docker daemon.
+
+After reviewing the hook scripts, install the local pre-push hook:
+
+```sh
+bash scripts/install-hooks.sh
+```
+
+Repeat this installation for each new clone. Hooks are not automatically
+installed by Git. The installer refuses to overwrite a different existing
+hook or change a custom hooks-directory configuration.
+
+Before a normal push, the hook requires a clean working tree and checks
+that the outgoing commit matches the checked-out commit. It then runs:
+
+- Full Git-history secret scanning with a digest-pinned Gitleaks container.
+- Dependency installation from the lockfile with installation scripts disabled.
+- An npm vulnerability audit, failing on moderate or higher findings.
+- The production build, including locale validation and security headers.
+- Internal page-link and anchor validation.
+
+The push stops if a check fails. GitHub Actions repeats these checks for PRs.
+Local hooks are a convenience gate, not a security boundary: they can be
+bypassed and do not run for changes made through GitHub's website.
+
+A clean audit or secret scan does not establish that a dependency is free
+of malicious behavior. Dependency updates also require review of package
+changes, installation scripts, new dependencies, and unexpected file or
+network access before executing their code. Build commands execute dependency
+code even when installation scripts were disabled.
