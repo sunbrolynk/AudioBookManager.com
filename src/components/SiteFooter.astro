@@ -1,0 +1,141 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import strings from '../ui-strings.json';
+
+interface Props { locale?: string }
+const { locale } = Astro.props;
+const translations = strings as Record<string, Record<string, string>>;
+const t = { ...translations.en, ...translations[locale ?? 'en'] };
+const p = locale ? `/${locale}` : '';
+
+const groups = [
+  {
+    title: t.footerGetStarted,
+    links: [
+      { label: t.install, href: `${p}/installation/`, icon: 'download' },
+      { label: t.footerQuickStart, href: `${p}/getting-started/quick-start/`, icon: 'rocket' },
+      { label: t.footerMigrating, href: `${p}/guides/coming-from-readarr-sonarr/`, icon: 'right-arrow' },
+      { label: t.footerImport, href: `${p}/guides/moving-a-library-in/`, icon: 'open-book' },
+    ],
+  },
+  {
+    title: t.footerDocumentation,
+    links: [
+      { label: t.footerConfiguration, href: `${p}/configuration/`, icon: 'setting' },
+      { label: t.footerMetadata, href: `${p}/metadata/libex/`, icon: 'database' },
+      { label: t.footerApiReference, href: `${p}/api-reference/`, icon: 'document' },
+      { label: t.footerTroubleshooting, href: `${p}/troubleshooting/`, icon: 'information' },
+      { label: t.footerFaq, href: `${p}/faq/`, icon: 'question-circle' },
+    ],
+  },
+  {
+    title: t.footerProject,
+    links: [
+      { label: t.footerSource, href: 'https://github.com/sunbrolynk/AudioBook-Manager', icon: 'github' },
+      { label: t.footerWebsiteSource, href: 'https://github.com/sunbrolynk/audiobookmanager.com', icon: 'github' },
+      { label: 'Discord', href: 'https://discord.gg/9TS4gzYCQZ', icon: 'discord' },
+      { label: t.footerReleases, href: `${p}/updates/`, icon: 'notes' },
+      { label: t.footerReportIssue, href: 'https://github.com/sunbrolynk/AudioBook-Manager/issues', icon: 'github' },
+      { label: t.footerBuyMonster, href: 'https://ko-fi.com/sunbrolynk', icon: 'heart' },
+      { label: t.footerSupport, href: 'https://buymeacoffee.com/sunbrolynk', icon: 'heart' },
+    ],
+  },
+  {
+    title: t.footerExternal,
+    links: [
+      { label: 'Sonarr', href: 'https://sonarr.tv/', icon: 'external' },
+      { label: 'Radarr', href: 'https://radarr.video/', icon: 'external' },
+      { label: 'Lidarr', href: 'https://lidarr.audio/', icon: 'external' },
+      { label: 'Prowlarr', href: 'https://prowlarr.com/', icon: 'external' },
+      { label: 'Servarr Wiki', href: 'https://wiki.servarr.com/', icon: 'open-book' },
+    ],
+  },
+] as const;
+---
+<footer class="site-footer">
+  <div class="footer-inner">
+    <nav class="footer-grid" aria-label={t.footerNav}>
+      {groups.map((group) => (
+        <section>
+          <h2>{group.title}</h2>
+          <ul>
+            {group.links.map((link) => (
+              <li>
+                <a href={link.href}>
+                  <Icon name={link.icon} size="1.1rem" />
+                  <span>{link.label}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))}
+    </nav>
+    <p class="footer-credit">{t.foot}</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--r1-line);
+    background: var(--r1-bg);
+    color: var(--r1-mut);
+    padding: 2.5rem 0 1rem;
+  }
+  .footer-inner {
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 40px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2rem;
+  }
+  .footer-grid h2 {
+    margin: 0 0 1rem;
+    color: var(--r1-ink);
+    font: 600 0.8rem var(--r1-mono);
+    letter-spacing: 0.04em;
+  }
+  .footer-grid ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .footer-grid li + li { margin-top: 0.65rem; }
+  .footer-grid a {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    color: var(--r1-mut);
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-decoration: none;
+  }
+  .footer-grid a :global(svg) {
+    flex: 0 0 auto;
+    align-self: flex-start;
+    margin-top: 0.1rem;
+  }
+  .footer-grid a:hover { color: var(--r1-ink); text-decoration: underline; }
+  .footer-grid a:focus-visible {
+    outline: 2px solid var(--r1-acc-hi);
+    outline-offset: 4px;
+  }
+  .footer-credit {
+    margin: 2rem 0 0;
+    padding-top: 1rem;
+    border-top: 1px solid var(--r1-line);
+    color: var(--r1-dim);
+    font-size: 0.8rem;
+    line-height: 1.6;
+  }
+  @media (max-width: 860px) {
+    .footer-inner { padding-inline: 20px; }
+    .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 480px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  }
+</style>

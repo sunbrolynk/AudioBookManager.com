@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from 'astro:content';
+import highlights from '../data/release-highlights.json';
+
+type Highlight = { title: string; summary: string; upgrade?: string };
+const notes = highlights as Record<string, Highlight>;
+
+// One strip segment per top-level bullet, colored by the "### Kind" heading it sits under.
+const tally = (markdown: string) => {
+  const kinds: string[] = [];
+  let kind = 'Other';
+  for (const line of markdown.split('\n')) {
+    const h = line.match(/^###\s+(.+)/);
+    if (h) kind = h[1].trim();
+    else if (/^- /.test(line)) kinds.push(kind);
+  }
+  return kinds;
+};
+const kindClass = (k: string) => (/fix/i.test(k) ? 'fixed' : /secur/i.test(k) ? 'security' : 'changed');
+const newestFirst = (a: string, b: string) => b.localeCompare(a, undefined, { numeric: true });
+
+const entries = (await getCollection('releases')).sort((a, b) => newestFirst(a.data.version, b.data.version));
+const rendered = await Promise.all(
+  entries.map(async (e) => {
+    const kinds = tally(e.body ?? '');
+    const counts = Object.entries(kinds.reduce<Record<string, number>>((a, k) => ((a[k] = (a[k] ?? 0) + 1), a), {}));
+    const { Content } = await render(e);
+    return { ...e.data, kinds, counts, note: notes[e.data.version], Content };
+  }),
+);
+---
+
+{rendered.length === 0 && <p>No releases yet.</p>}
+<div class="releases not-content">
+  {
+    rendered.map((r) => (
+      <section class="rel" aria-labelledby={`v${r.version}`}>
+        <div class="meta">
+          <h2 id={`v${r.version}`} class="cond"><a href={r.url}>{r.version}</a></h2>
+          {r.date && <div class="d">{r.date}</div>}
+          <div class="st" aria-hidden="true">{r.kinds.map((k) => <i class={kindClass(k)} />)}</div>
+          <small>{r.counts.map(([k, n]) => `${n} ${k.toLowerCase()}`).join(' · ')}</small>
+        </div>
+        <div class="body">
+          {r.note && <h3 class="title">{r.note.title}</h3>}
+          {r.note && <p class="sum">{r.note.summary}</p>}
+          {r.note?.upgrade && <p class="upgrade"><b>Before you upgrade</b>{r.note.upgrade}</p>}
+          <div class="notes sl-markdown-content"><r.Content /></div>
+        </div>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .rel { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2rem; padding: 2.25rem 0; border-top: 1px solid var(--r1-line); }
+  .meta h2 { font-size: 3.4rem; margin: 0; }
+  .meta h2 a { color: var(--r1-ink); text-decoration: none; }
+  .meta .d { font: 13px var(--r1-mono); color: var(--r1-mut); margin-top: .4rem; }
+  .st { display: flex; flex-wrap: wrap; gap: 2px; margin-top: .9rem; }
+  .st i { width: 10px; height: 24px; display: block; }
+  .st .changed { background: var(--r1-find); } .st .fixed { background: var(--r1-done); } .st .security { background: var(--r1-want); }
+  .meta small { display: block; color: var(--r1-dim); font-size: 13px; margin-top: .5rem; }
+  .title { font-size: 1.75rem; letter-spacing: -.02em; line-height: 1.15; margin: 0 0 .5rem; color: var(--r1-ink); }
+  .sum { font-size: 1.1rem; color: #d6d6d6; margin: 0 0 1rem; }
+  .upgrade { border-left: 4px solid var(--r1-want); background: rgba(245, 158, 11, .07); padding: .75rem 1rem; font-size: .95rem; margin: 0 0 1.25rem; }
+  .upgrade b { display: block; font: 600 11.5px var(--r1-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--r1-want); }
+  .notes :global(h3) { font: 700 11.5px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; margin: 1.25rem 0 .25rem; border: 0; padding: 0; }
+  .notes :global(h3)::before { display: none; }
+  .notes :global(li) { margin: .5rem 0; }
+  @media (max-width: 50rem) {
+    .rel { grid-template-columns: minmax(0, 1fr); gap: 1.25rem; padding: 2.5rem 0; }
+    .meta h2 { font-size: 2.6rem; }
+  }
+</style>

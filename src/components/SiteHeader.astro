@@ -1,0 +1,30 @@
+---
+import { Image } from 'astro:assets';
+import icon from '../assets/icon.png';
+import strings from '../ui-strings.json';
+
+interface Props { current?: 'docs' | 'updates'; locale?: string }
+const { current, locale } = Astro.props;
+const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
+const p = locale ? `/${locale}` : '';
+const links = [
+  { href: `${p}/#features`, label: t.features },
+  { href: `${p}/#screens`, label: t.screenshots },
+  { href: `${p}/installation/`, label: t.docs, key: 'docs' },
+  { href: `${p}/updates/`, label: t.updates, key: 'updates' },
+  { href: `${p}/#support`, label: t.support },
+];
+---
+<header class="r1-top">
+  <div class="w">
+    <a class="r1-brand" href={`${p}/`}><Image src={icon} alt="" width={32} height={32} />AudioBook <span>Manager</span></a>
+    <nav aria-label={t.nav}>
+      {links.map((l) => <a href={l.href} aria-current={l.key && l.key === current ? 'page' : undefined}>{l.label}</a>)}
+    </nav>
+    <div class="r">
+      <slot />
+      <a class="gh" href="https://github.com/sunbrolynk/AudioBook-Manager">GitHub</a>
+      <a class="btn pri" href={`${p}/installation/`}>{t.install}</a>
+    </div>
+  </div>
+</header>

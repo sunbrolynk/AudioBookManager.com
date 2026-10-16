@@ -1,0 +1,14 @@
+---
+import Search from '@astrojs/starlight/components/Search.astro';
+import LanguageSelect from './LanguageSelect.astro';
+import SiteHeader from '../SiteHeader.astro';
+
+const locale = Astro.locals.starlightRoute.locale;
+const current = Astro.locals.starlightRoute.id.replace(/^[^/]+\//, '') === 'updates' ? 'updates' : 'docs';
+---
+<SiteHeader current={current} locale={locale}><div class="search"><Search /></div><LanguageSelect /></SiteHeader>
+
+<style>
+  .search { min-width: 0; }
+  @media (max-width: 50rem) { .search { margin-inline-start: auto; } }
+</style>

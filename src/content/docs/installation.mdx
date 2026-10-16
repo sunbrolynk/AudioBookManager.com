@@ -1,0 +1,87 @@
+---
+title: Install ABM
+description: One container, three folders, one command. This page is the whole install.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+The database is a SQLite file in `/config`, so there is no database service to set up.
+
+**You'll need:**
+
+- Docker with Compose
+- A folder for your audiobook library
+- The folder your download client puts finished downloads in
+- A folder for ABM's own data
+
+## Install
+
+<Steps>
+
+1. **Make a compose file.** Save this as `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Point it at your folders.** Change the left side of each volume to a real folder on your machine. Leave the right side alone.
+
+   | Host path | Container path | What goes there |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Your audiobook library. Required. |
+   | `/path/to/downloads` | `/downloads` | Where your download client puts finished downloads. Required. |
+   | `/path/to/config` | `/config` | The SQLite database, backups, logs, recycle bins and the generated app secret. Keep it. |
+
+3. **Start it.** Run this from the folder with the compose file:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Open it.** Go to `http://your-server:5173`. The first visit walks you through setting up a login.
+
+</Steps>
+
+<Aside type="tip" title="Downloads in another container?">
+If your download client runs in its own container, its downloads folder has to be the same folder ABM sees as `/downloads`. If the paths differ, add a remote path mapping under **Settings > Download Clients**.
+</Aside>
+
+## First run
+
+Set your timezone with `TIMEZONE` in the compose file. Then, in **Settings**, add a root folder under **Media Management**, an indexer under **Indexers** and a download client under **Download Clients**. Environment variables and reverse proxies are covered in [Configuration](/configuration/).
+
+## Build from source
+
+To build the image yourself, clone the repo, swap the `image:` line for `build: .` and run:
+
+```bash
+docker compose up -d --build
+```
+
+## Updating
+
+Pull the new image and recreate the container. The [Updates](/updates/) page lists what changed in each release.
+
+<Aside type="caution" title="ABM is alpha">
+Back up `/config` before you upgrade, and skim the update notes first.
+</Aside>
+
+## Something not right?
+
+- **The page won't load.** Check the port mapping in your compose file, then run `docker logs audiobook-manager`.
+- **Changes are refused from my domain.** ABM refuses changes from an address it isn't reached at. Make your proxy pass the original `Host` header first. If that isn't enough, add your domain to **CORS Allowed Domains** in **Settings > General** (an advanced setting, so turn on **Show Advanced**) and restart ABM. See [Troubleshooting](/troubleshooting/).
+- **Downloads finish but never import.** Check the folder mapping in the tip above.
