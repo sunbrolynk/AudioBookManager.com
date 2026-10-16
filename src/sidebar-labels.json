@@ -1,9 +1,23 @@
 {
-  "Getting started": {},
-  "Using ABM": {},
-  "Metadata & Libex": {},
-  "Settings": {},
-  "System": {},
-  "Guides": {},
-  "Help": {}
+  "Getting started": {
+    "en-GB": "Getting started"
+  },
+  "Using ABM": {
+    "en-GB": "Using ABM"
+  },
+  "Metadata & Libex": {
+    "en-GB": "Metadata & Libex"
+  },
+  "Settings": {
+    "en-GB": "Settings"
+  },
+  "System": {
+    "en-GB": "System"
+  },
+  "Guides": {
+    "en-GB": "Guides"
+  },
+  "Help": {
+    "en-GB": "Help"
+  }
 }
