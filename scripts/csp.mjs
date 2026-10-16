@@ -4,6 +4,7 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { inspectHtml } from './lib-html.mjs';
 
 const dist = new URL('../dist/', import.meta.url).pathname;
 const html = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
@@ -12,15 +13,23 @@ const hash = (s) => `'sha256-${createHash('sha256').update(s, 'utf8').digest('ba
 
 const scripts = new Set();
 const styles = new Set();
-for (const file of html(dist)) {
-  const page = readFileSync(file, 'utf8');
-  for (const m of page.matchAll(/<script(?![^>]*\bsrc=)[^>]*>([\s\S]*?)<\/script>/g)) scripts.add(hash(m[1]));
-  for (const m of page.matchAll(/<style[^>]*>([\s\S]*?)<\/style>/g)) styles.add(hash(m[1]));
-  for (const m of page.matchAll(/\sstyle="([^"]*)"/g)) styles.add(hash(m[1].replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&')));
+const pages = html(dist);
+if (!pages.length) throw new Error('No HTML files found for CSP generation');
+for (const file of pages) {
+  const parsed = inspectHtml(readFileSync(file, 'utf8'));
+  for (const script of parsed.scripts) scripts.add(hash(script));
+  for (const style of parsed.styles) styles.add(hash(style));
+  for (const attribute of parsed.styleAttributes) styles.add(hash(attribute));
 }
 
 const path = join(dist, '_headers');
-const out = readFileSync(path, 'utf8')
+const template = readFileSync(path, 'utf8');
+for (const placeholder of ['__SCRIPT_HASHES__', '__STYLE_HASHES__']) {
+  if (template.split(placeholder).length - 1 !== 1) {
+    throw new Error(`Expected exactly one ${placeholder} placeholder`);
+  }
+}
+const out = template
   .replace('__SCRIPT_HASHES__', [...scripts].sort().join(' '))
   .replace('__STYLE_HASHES__', [...styles].sort().join(' '));
 if (out.includes('__')) throw new Error('a CSP placeholder was left in _headers');
