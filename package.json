@@ -7,7 +7,8 @@
     "dev": "astro dev",
     "build": "node scripts/check-locales.mjs && astro build && node scripts/csp.mjs",
     "preview": "astro preview",
-    "capture-screens": "node scripts/capture-screens.mjs"
+    "capture-screens": "node scripts/capture-screens.mjs",
+    "test": "node --test"
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "0.4.2",

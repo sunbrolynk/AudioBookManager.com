@@ -1,3 +1,4 @@
+import { markdownSafeUrls } from './src/lib/markdown-safe-urls.mjs';
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import { satteri } from '@astrojs/markdown-satteri';
@@ -9,7 +10,7 @@ export default defineConfig({
   site: 'https://audiobookmanager.com',
   // Stylesheets as files, so the Content-Security-Policy needs no inline-style allowance for them.
   build: { inlineStylesheets: 'never' },
-  markdown: { processor: satteri({ mdastPlugins: [htmlAsText] }) },
+  markdown: { processor: satteri({ mdastPlugins: [htmlAsText, markdownSafeUrls] }) },
   integrations: [
     starlight({
       title: 'AudioBook Manager',

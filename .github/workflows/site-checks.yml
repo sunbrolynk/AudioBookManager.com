@@ -42,6 +42,9 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=moderate
 
+      - name: Run regression tests
+        run: npm test
+
       - name: Build website and security headers
         run: npm run build
 

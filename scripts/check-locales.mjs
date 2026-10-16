@@ -4,6 +4,7 @@
 // when a configured locale is missing pages, or when a locale folder exists but is not configured.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { validateStrings } from './lib-string-validation.mjs';
 
 const docs = new URL('../src/content/docs/', import.meta.url).pathname;
 const locales = JSON.parse(readFileSync(new URL('../src/locales.json', import.meta.url), 'utf8'));
@@ -32,17 +33,18 @@ for (const code of codes) {
 }
 // Landing copy lives in src/landing-strings.json: every configured locale needs every key (and array length) of the root.
 const landing = JSON.parse(readFileSync(new URL('../src/landing-strings.json', import.meta.url), 'utf8'));
-const shape = (a, b, path, code) => {
-  if (Array.isArray(a)) {
-    if (!Array.isArray(b) || b.length !== a.length) return problems.push(`landing strings for ${code}: "${path}" must be a list of ${a.length}`);
-    a.forEach((x, i) => shape(x, b[i], `${path}.${i}`, code));
-  } else if (a && typeof a === 'object') {
-    for (const k of Object.keys(a)) shape(a[k], b?.[k], `${path}.${k}`, code);
-  } else if (typeof b !== 'string' || !b.trim()) problems.push(`landing strings for ${code} are missing "${path}"`);
-};
+const ui = JSON.parse(readFileSync(new URL('../src/ui-strings.json', import.meta.url), 'utf8'));
+if (!landing.root || typeof landing.root !== 'object' || Array.isArray(landing.root)) {
+  throw new Error('Landing strings require a root reference object');
+}
+if (!ui.en || typeof ui.en !== 'object' || Array.isArray(ui.en)) {
+  throw new Error('UI strings require an en reference object');
+}
+problems.push(...validateStrings(landing.root, landing.root, 'landing.root'));
+problems.push(...validateStrings(ui.en, ui.en, 'ui.en'));
 for (const code of codes) {
-  if (!landing[code]) problems.push(`src/landing-strings.json has no entry for "${code}"`);
-  else for (const k of Object.keys(landing.root)) shape(landing.root[k], landing[code][k], k, code);
+  problems.push(...validateStrings(landing.root, landing[code], `landing.${code}`));
+  problems.push(...validateStrings(ui.en, ui[code], `ui.${code}`));
 }
 // Non-English locales need the translator call-out (with a {mail} slot); English ones must not have it.
 const english = (c) => /^en(-|$)/i.test(locales[c].lang);
