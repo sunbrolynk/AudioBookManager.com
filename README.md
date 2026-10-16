@@ -77,9 +77,16 @@ A scoped override pins `postcss-selector-parser` to `7.1.6` beneath
 site output to the original dependency during migration validation.
 Reassess it when the upstream dependency chain adopts a patched parser.
 
-Dependency updates must go through pull requests. Dependabot and required
-security checks are being configured; they are not yet established by this
-README. Updates require review before merging.
+Dependency updates must go through separate pull requests. Dependabot is
+configured for weekly npm and GitHub Actions updates once this configuration
+reaches the default branch.
+
+Local pre-push checks and GitHub Actions validate secrets, known dependency
+vulnerabilities, the production build, and internal links. Dependency changes
+also require manual security review as described in [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Branch-rule enforcement must be verified in GitHub settings; a passing check
+alone does not prevent merging.
 
 ## License
 
