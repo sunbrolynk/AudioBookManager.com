@@ -6,5 +6,9 @@
   "uk": {
     "label": "Українська",
     "lang": "uk"
+  },
+  "en-ca": {
+    "label": "English (Canada)",
+    "lang": "en-CA"
   }
 }
