@@ -72,7 +72,36 @@ def main():
     if code not in locales:
         raise RuntimeError("Locale is not published in the trusted base commit")
 
-    label = locales[code]["label"]
+    display_names = {
+        "en-gb": "English (UK)",
+        "uk": "Ukrainian",
+        "en-ca": "English (Canada)",
+        "fr": "French",
+        "de": "German",
+        "es": "Spanish",
+        "it": "Italian",
+        "pt-br": "Portuguese (Brazil)",
+        "ja": "Japanese",
+        "nl": "Dutch",
+        "pl": "Polish",
+        "en-au": "English (Australia)",
+        "en-in": "English (India)",
+        "fr-ca": "French (Canada)",
+        "es-mx": "Spanish (Mexico)",
+        "zh-cn": "Simplified Chinese",
+        "zh-tw": "Traditional Chinese",
+        "sv": "Swedish",
+        "cs": "Czech",
+        "da": "Danish",
+        "nb": "Norwegian Bokmål",
+        "ro": "Romanian",
+        "tr": "Turkish",
+        "ko": "Korean",
+    }
+    if code not in display_names:
+        raise RuntimeError("Locale needs an English Discord display name")
+    label = display_names[code]
+    display_code = "UA" if code == "uk" else code.upper()
     number = int(pr["number"])
     pr_url = f"https://github.com/{repo}/pull/{number}"
     marker = f"<!-- abm-translation-discord:pr-{number} -->"
@@ -119,11 +148,11 @@ def main():
         raise RuntimeError("Webhook response has no valid server ID")
 
     payload = {
-        "thread_name": f"{label} ({code}) — translation review #{number}"[:100],
+        "thread_name": f"{label} ({display_code}) — translation review #{number}"[:100],
         "applied_tags": tags,
         "allowed_mentions": {"parse": []},
         "content": (
-            f"**{label} ({code}) — community translation review**\n\n"
+            f"**{label} ({display_code}) — community translation review**\n\n"
             "This locale's complete translation has been merged into the website's "
             "main branch. Community corrections are welcome.\n\n"
             f"**Review PR:** {pr_url}\n\n"
