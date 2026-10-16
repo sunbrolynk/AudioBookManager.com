@@ -1,0 +1,32 @@
+---
+title: Choosing a metadata source
+description: Built-in, hosted, or your own Libex server.
+---
+
+:::caution[Coming in the next release]
+The source choice is not in a released version yet. Released versions use the public Libex instance at libexdb.com and have no setting for this.
+:::
+
+In the next release, **Settings > Metadata > Source** has a **Metadata Source** setting with three choices.
+
+| Choice | What it means |
+|---|---|
+| Built-in (default) | Libex runs inside ABM. It needs an outbound connection chosen first. |
+| Hosted (libexdb.com) | ABM asks the public Libex instance. |
+| Self-hosted | ABM asks a Libex server you point it at. Enter its **Server URL**, for example `http://192.168.1.20:8000`. |
+
+**Test** checks the selected source without saving. **Status** says whether it is ready. A choice you haven't saved shows "Not in use yet - save to switch" until you save.
+
+## Built-in and the outbound connection
+
+Built-in talks to Audible from your machine, so it uses **Settings > General > Proxy & VPN**. That page decides the route: a proxy, the built-in WireGuard tunnel, your own VPN container, or a direct connection you acknowledge. With none chosen, automated lookups are blocked and say so. A chosen route that is down blocks lookups too. It never falls back to your own address. Direct shows a warning that Audible sees your IP address and the books ABM looks up.
+
+## Hosted and self-hosted
+
+With these two, ABM asks a Libex server and the server talks to Audible. A self-hosted URL is checked before it is saved, and an empty or unsafe one is refused. A server that is down is reported as the metadata source being unavailable, with its name.
+
+## Which to pick
+
+- Want it to just work and do not mind Audible seeing your address: Built-in with a direct connection, or Hosted.
+- Care about not exposing your IP to Audible: Built-in through a VPN or proxy, or Hosted.
+- Already run a Libex server: Self-hosted.
