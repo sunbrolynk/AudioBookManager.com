@@ -19,7 +19,32 @@ const table = (names as Record<string, Record<string, string>>)[shown] ?? {};
 // Curated names win; any language not in the table gets the platform's own name for it.
 const intl = new Intl.DisplayNames([shown], { type: 'language', languageDisplay: 'standard' });
 const nameOf = (lang: string) => table[lang] ?? ((n) => n.charAt(0).toLocaleUpperCase(shown) + n.slice(1))(intl.of(lang) ?? lang);
-const entries = Object.entries(all).map(([code, l]) => ({ code, lang: l.lang, name: nameOf(l.lang), flag: flags[l.lang] ?? '' }));
+// Keep a consistent order across pages, with regional variants together.
+const sortLanguages = new Intl.DisplayNames(['en'], { type: 'language' });
+const sortRegions = new Intl.DisplayNames(['en'], { type: 'region' });
+const collator = new Intl.Collator('en');
+const sortKey = (code: string, lang: string) => {
+  const locale = new Intl.Locale(lang);
+  return {
+    group: sortLanguages.of(locale.language) ?? locale.language,
+    base: code === 'root' || (!locale.region && !locale.script) ? 0 : 1,
+    region: locale.region ? sortRegions.of(locale.region) ?? locale.region : '',
+  };
+};
+const entries = Object.entries(all)
+  .map(([code, l]) => ({
+    code,
+    lang: l.lang,
+    name: nameOf(l.lang),
+    flag: flags[l.lang] ?? '',
+    sort: sortKey(code, l.lang),
+  }))
+  .sort((a, b) =>
+    collator.compare(a.sort.group, b.sort.group) ||
+    a.sort.base - b.sort.base ||
+    collator.compare(a.sort.region, b.sort.region) ||
+    collator.compare(a.lang, b.lang)
+  );
 const cur = entries.find((e) => e.code === here)!;
 ---
 <details class="lang">
