@@ -1,0 +1,38 @@
+name: Translation review Discord post
+
+on:
+  pull_request_target:
+    types: [opened]
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: translation-review-discord-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  announce:
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      startsWith(github.event.pull_request.head.ref, 'translation/') &&
+      !startsWith(github.event.pull_request.head.ref, 'translation/publish-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out trusted base commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          persist-credentials: false
+
+      - name: Create translation review forum post
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DISCORD_TRANSLATION_WEBHOOK_URL: ${{ secrets.DISCORD_TRANSLATION_WEBHOOK_URL }}
+          DISCORD_FORUM_CHANNEL_ID: '1560311505923211365'
+          DISCORD_REVIEW_TAG_IDS: '1560313318034505803,1560313375169183865'
+        run: python3 scripts/announce-translation-review.py
