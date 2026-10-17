@@ -5,6 +5,7 @@
 Languages are published once every page and UI string has been translated.
 Complete AI translations qualify; human review is not required for publication.
 Incomplete languages remain in private preparation.
+Release notes intentionally remain in English across all locales.
 
 After publication, language-specific correction PRs collect community feedback.
 Follow the current PR link for your language from Discord. See
@@ -37,7 +38,40 @@ Use a branch and submit a pull request. Explain the problem, the change,
 and how you verified it.
 
 Read the README for local setup and pre-push hook installation.
-Run the build and link checker before requesting review.
+Run the regression tests, production build, and link checker before
+requesting review:
+
+```sh
+npm test
+npm run build
+node scripts/check-links.mjs
+```
+
+Add regression tests for bug fixes and changes to validation or security
+behavior. Cover both expected inputs and rejected inputs. Reuse shared
+components and validation helpers rather than copying their implementation.
+
+## Reviewing contributed content safely
+
+MDX files are executable source: imports and expressions can run during the
+build. Treat changes to `.mdx`, `.astro`, scripts, dependencies, and workflows
+as code changes, even when the PR is described as a translation correction.
+
+Review unfamiliar changes before building them locally. Use an isolated
+environment without personal credentials or sensitive mounts when running
+untrusted contributions. Disabling npm installation scripts does not prevent
+code execution during tests or builds.
+
+Translated landing-page formatting is restricted, and Markdown URL checks
+reject unsupported schemes. These controls do not sandbox MDX or make
+arbitrary repository changes safe to execute.
+
+The CSP generator hashes inline content emitted by the build. Those hashes
+allow that content in the browser; they do not establish that it is safe.
+Review changes that introduce scripts or alter security headers.
+
+Inspect submitted attachments before applying them. Never execute a script
+provided as part of a translation submission.
 
 ## Dependency updates
 
