@@ -1,5 +1,5 @@
 ---
-title: Import Lists
+title: Списки імпорту
 description: Підтягуй шукані книги з MyAnonamouse або стрічки RSS.
 ---
 
@@ -38,4 +38,4 @@ description: Підтягуй шукані книги з MyAnonamouse або с�
 ## Підводні камені
 
 - Збережене RSS-посилання чи ідентифікатор сесії більше ніколи не показується. Зміна адреси вимагає ввести секрет знову.
-- Списки запускають сповіщення On Import List Synced та On Import List New Items. Див. [Connect](/uk/settings/connect/).
+- Списки запускають сповіщення On Import List Synced та On Import List New Items. Див. [Підключення](/uk/settings/connect/).

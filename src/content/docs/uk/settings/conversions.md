@@ -3,9 +3,9 @@ title: Налаштування конвертації
 description: Типові значення, параметри кодеків, розділи, метадані, кошик і ffmpeg.
 ---
 
-**Settings > Conversions** задає типові значення для [Conversions](/uk/using/conversions/). Будь-яке завдання може їх перевизначити.
+**Settings > Conversions** задає типові значення для [Конвертації](/uk/using/conversions/). Будь-яке завдання може їх перевизначити.
 
-## General
+## Загальні налаштування
 
 | Налаштування | Типово | Дія |
 |---|---|---|
@@ -14,7 +14,7 @@ description: Типові значення, параметри кодеків, �
 | Concurrent Conversions | 2 | Від 1 до 4 в UI. Тримай добуток паралельності на потоки менше за кількість ядер |
 | Process Priority | Normal | Low не дає решті системи гальмувати. High завершує швидше |
 
-## Audio quality defaults
+## Типові параметри якості аудіо
 
 | Налаштування | Типово |
 |---|---|
@@ -23,11 +23,11 @@ description: Типові значення, параметри кодеків, �
 | Default Sample Rate | Auto, відповідає джерелу |
 | Default Channels | Auto, відповідає джерелу |
 
-## Codec options
+## Параметри кодеків
 
 AAC Profile (типово AAC-LC, HE-AAC, HE-AACv2) і AAC VBR; якість MP3 VBR і joint stereo; рівень стиснення FLAC (типово 5); змінний бітрейт Opus (увімкнено) і тип застосунку (типово Audio; є VoIP і Low Delay).
 
-## Chapter handling
+## Обробка розділів
 
 | Налаштування | Типово | Дія |
 |---|---|---|
@@ -37,7 +37,7 @@ AAC Profile (типово AAC-LC, HE-AAC, HE-AACv2) і AAC VBR; якість MP3
 | Minimum Chapter Length | 60 s | Для виявлених розділів |
 | Chapter Image Handling | Keep in file | Або видалити, або витягти в теку |
 
-## Metadata handling
+## Обробка метаданих
 
 | Налаштування | Типово |
 |---|---|
@@ -45,7 +45,7 @@ AAC Profile (типово AAC-LC, HE-AAC, HE-AACv2) і AAC VBR; якість MP3
 | Embed Cover Art | on (лише JPEG, для Audiobookshelf) |
 | Cover Art Max Size | 1000x1000 |
 
-## File management
+## Керування файлами
 
 | Налаштування | Типово | Дія |
 |---|---|---|
@@ -59,6 +59,6 @@ AAC Profile (типово AAC-LC, HE-AAC, HE-AACv2) і AAC VBR; якість MP3
 | Auto-Reformat on Import | off | Конвертує щойно імпортовані книги, що надійшли в іншому форматі, за типовими значеннями вище |
 | Backup Original Metadata | off | Спершу зберігає оригінальні теги в супровідний файл `.json` |
 
-## Advanced FFmpeg
+## Розширені параметри FFmpeg
 
 FFmpeg Path (порожньо означає пошук у PATH), Threads Per Job (0 обирає автоматично як кількість ядер мінус 2), Custom FFmpeg Arguments (додаються до кожної команди; хибні призводять до збою конвертацій), Logging Level (типово error) і Keep FFmpeg Logs (off).

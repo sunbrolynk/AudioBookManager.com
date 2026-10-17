@@ -1,5 +1,5 @@
 ---
-title: Calibration
+title: Калібрування
 description: Як ABM вчиться оцінювати час конвертації.
 ---
 

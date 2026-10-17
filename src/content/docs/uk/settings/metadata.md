@@ -1,11 +1,11 @@
 ---
-title: Metadata
+title: Метадані
 description: Які супровідні файли й аудіотеги записує ABM і коли.
 ---
 
 **Settings > Metadata** визначає, що ABM записує в теку книги та її файли. Як використовуються ці файли, описано в [Супровідних файлах](/uk/using/sidecars/).
 
-## Metadata file creation
+## Створення файлів метаданих
 
 | Налаштування | Типово | Дія |
 |---|---|---|
@@ -16,7 +16,7 @@ description: Які супровідні файли й аудіотеги зап
 
 Файли для створення: `cover.jpg` (on), `title.opf` (on, сумісний з Audiobookshelf), `desc.txt` (on) і `reader.txt` (on).
 
-## Audio file tag writing
+## Запис тегів в аудіофайли
 
 Використовує ffmpeg для запису тегів у саме аудіо.
 

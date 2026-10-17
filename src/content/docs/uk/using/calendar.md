@@ -1,5 +1,5 @@
 ---
-title: Calendar
+title: Календар
 description: Майбутні релізи та стрічка iCal.
 ---
 

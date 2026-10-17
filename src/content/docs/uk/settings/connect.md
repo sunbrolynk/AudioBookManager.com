@@ -1,15 +1,15 @@
 ---
-title: Connect
+title: Підключення
 description: Сповіщення, медіасервери та власні скрипти.
 ---
 
 **Settings > Connect** надсилає події в інші місця. Назва Connect така сама, як у Sonarr.
 
-## Agents
+## Агенти
 
 **Агенти сповіщень**: Discord, Slack, Telegram, Pushover, Pushbullet, Simplepush, ntfy, Gotify, Notifiarr, Email, SendGrid, Webhook та Apprise. **Медіасервери**: Jellyfin і Emby. **Інше**: Custom Script. Audiobookshelf не є агентом Connect.
 
-## Events
+## Події
 
 Кожне підключення обирає, які події його запускають.
 

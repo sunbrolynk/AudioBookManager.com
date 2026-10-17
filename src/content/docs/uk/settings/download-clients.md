@@ -1,5 +1,5 @@
 ---
-title: Download Clients
+title: Клієнти завантаження
 description: Підтримувані клієнти, обробка завершених завантажень і віддалені зіставлення шляхів.
 ---
 
@@ -27,7 +27,7 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet і Blackhole (те�
 
 **Test** перевіряє підключення. Вимкнений клієнт не є несправним. Клієнт, що збоїть, перевіряється повторно з наростаючою затримкою.
 
-## Completed download handling
+## Обробка завершених завантажень
 
 | Налаштування | Типово | Дія |
 |---|---|---|
@@ -35,7 +35,7 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet і Blackhole (те�
 | Redownload Failed | on | Занести невдалий реліз у blocklist і шукати знову |
 | Redownload Failed from Interactive Search | on | Те саме для релізів, обраних вручну |
 
-Чи імпорт робить жорсткі посилання, чи копіює, визначає **Use Hardlinks instead of Copy** у [Media Management](/uk/settings/media-management/). Якщо тека клієнта має інший шлях, ніж бачить ABM, додай віддалене зіставлення шляхів.
+Чи імпорт робить жорсткі посилання, чи копіює, визначає **Use Hardlinks instead of Copy** у [Керування медіафайлами](/uk/settings/media-management/). Якщо тека клієнта має інший шлях, ніж бачить ABM, додай віддалене зіставлення шляхів.
 
 ## Віддалені зіставлення шляхів
 

@@ -1,5 +1,5 @@
 ---
-title: Indexers
+title: Індексатори
 description: Newznab, Torznab, MyAnonamouse і Prowlarr.
 ---
 
@@ -40,6 +40,6 @@ Newznab (usenet), Torznab (торенти), MyAnonamouse і підключенн
 | Maximum Size | 0 (МБ) | 0 означає без обмеження |
 | RSS Sync Interval | 15 (хвилин) | Як часто опитується RSS |
 
-Список MAM також може наповнювати [Import Lists](/uk/settings/import-lists/).
+Список MAM також може наповнювати [Списки імпорту](/uk/settings/import-lists/).
 
 Якщо ти знаєш Sonarr: це той самий поділ на RSS, автоматичний та інтерактивний пошук для кожного індексатора. Окремого «test all» для категорій немає.

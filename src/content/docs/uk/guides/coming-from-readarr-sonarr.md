@@ -28,4 +28,4 @@ Flood не є клієнтом. Custom formats відсутні. Підтрим�
 
 ## Перехід
 
-Імпортера з Readarr немає. Вкажи ABM свою наявну теку аудіокниг через [Library Import](/uk/library-import/) і дивись [Перенесення бібліотеки](/uk/guides/moving-a-library-in/).
+Імпортера з Readarr немає. Вкажи ABM свою наявну теку аудіокниг через [Імпорт бібліотеки](/uk/library-import/) і дивись [Перенесення бібліотеки](/uk/guides/moving-a-library-in/).

@@ -1,15 +1,15 @@
 ---
-title: Налаштування Discover
+title: Налаштування пошуку нових книг
 description: Розклад оновлення та ліміти скрейпінгу для каталогів Discover.
 ---
 
-**Settings > Discover** керує тим, як наповнюються каталоги [Discover](/uk/using/discover/).
+**Settings > Discover** керує тим, як наповнюються каталоги [Пошук нових книг](/uk/using/discover/).
 
-## Refresh and catalog status
+## Оновлення та стан каталогу
 
 Кожен каталог (New Releases, Coming Soon, Audible Best, Recommended) має власні кнопки **Refresh** і **Clear**, а сторінка показує, наскільки заповнений кожен.
 
-## Schedule
+## Розклад
 
 | Налаштування | Дія |
 |---|---|
@@ -18,7 +18,7 @@ description: Розклад оновлення та ліміти скрейпі�
 | Refresh on Startup | Заповнювати будь-який порожній каталог під час запуску ABM |
 | Use CRON Expression | Замінює прості опції |
 
-## Scraping
+## Збирання даних
 
 | Налаштування | Діапазон | Дія |
 |---|---|---|
