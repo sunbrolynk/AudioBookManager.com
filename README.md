@@ -41,6 +41,11 @@ the Content-Security-Policy hashes in `dist/_headers`, then fails if any page
 or stylesheet loads something that policy blocks. Deploy the complete
 `dist/` output.
 
+Cloudflare Pages only needs to build: `npm run build && node scripts/check-links.mjs`,
+with output directory `dist`. The tests run in the `Site validation` check and the
+local hooks, which have Docker for the secret scan. Pages has no Docker, so its
+secret-scan test skips there with that reason rather than failing.
+
 ## Project structure
 
 - `src/content/docs/`: English documentation and translated documentation.

@@ -5,13 +5,17 @@ import { chmodSync, copyFileSync, mkdirSync, mkdtempSync, writeFileSync } from '
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 
+// The scan runs gitleaks in Docker. A build host without Docker (Cloudflare Pages) can't run this
+// test; GitHub Actions and the local hooks always have it, so there a missing Docker still fails.
+const docker = spawnSync('docker', ['version'], { stdio: 'ignore' }).status === 0;
+const skip = !docker && process.env.GITHUB_ACTIONS !== 'true' && 'Docker is not available to run gitleaks on this host';
 const script = new URL('../scripts/check-secrets.sh', import.meta.url).pathname;
 // Built at runtime so this file never holds a token-shaped string itself.
 // Hooks export GIT_DIR and friends; left in, every git call below would act on this repo instead.
 const cleanEnv = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('GIT_')));
 const token = () => 'ghp_' + 'Ab1Cd2Ef3Gh4Ij5Kl6Mn7Op8Qr9St0Uv1Wx2';
 
-test('a staged scan reads the index git hands the hook, as git commit -a does', () => {
+test('a staged scan reads the index git hands the hook, as git commit -a does', { skip }, () => {
   const repo = mkdtempSync(join(tmpdir(), 'check-secrets-'));
   // The scanner runs as another user in its container, so it needs to be able to read the repo.
   chmodSync(repo, 0o755);
