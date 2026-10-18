@@ -10,5 +10,9 @@
   "en-ca": {
     "label": "English (Canada)",
     "lang": "en-CA"
+  },
+  "en-au": {
+    "label": "English (Australia)",
+    "lang": "en-AU"
   }
 }
