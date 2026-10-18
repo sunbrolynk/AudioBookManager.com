@@ -7,7 +7,8 @@ import { join } from 'node:path';
 
 const script = new URL('../scripts/check-secrets.sh', import.meta.url).pathname;
 // Built at runtime so this file never holds a token-shaped string itself.
-const { GIT_INDEX_FILE: _ignored, ...cleanEnv } = process.env;
+// Hooks export GIT_DIR and friends; left in, every git call below would act on this repo instead.
+const cleanEnv = Object.fromEntries(Object.entries(process.env).filter(([k]) => !k.startsWith('GIT_')));
 const token = () => 'ghp_' + 'Ab1Cd2Ef3Gh4Ij5Kl6Mn7Op8Qr9St0Uv1Wx2';
 
 test('a staged scan reads the index git hands the hook, as git commit -a does', () => {
