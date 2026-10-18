@@ -7,7 +7,7 @@ The **Library** menu has three lists: **Books**, **Series** and **Authors**. **A
 
 ## Books
 
-Each book is a row, a poster or a table line (the view switch is in the toolbar). A book has a status:
+Each book is an overview row, a poster or a table line (the view switch is in the toolbar). A book has a status:
 
 - **Wanted**: monitored, no files yet. ABM searches for it.
 - **Downloaded**: files are on disk.
@@ -18,9 +18,13 @@ Open a book for its detail page: files, metadata, history, the quality ABM measu
 
 If you know Sonarr: a book is an episode, a series is a season-and-show in one, and an author is a way to group both. The difference is that one book can belong to several series, and ABM uses the primary one (the lowest position) when it needs to pick.
 
-## Series and authors
+## Series
 
-The Series and Authors lists show owned, wanted and missing-file counts. Open one to see the catalogue, which includes books you do not own. From there you can add the missing books. See [Series tracking](/en-ca/using/series-tracking/).
+**Library > Series** lists every series with owned, wanted and missing-file counts, as Overview or Posters. A series page shows the whole catalogue, including books you don't own. Filter it to All, In Library or Not in Library. **Add Remaining** or **Select to Add** brings the missing books in as wanted, and **Refresh Series** pulls the catalogue again. **Monitor New Books** (All or None) decides whether books that come out later are added as wanted. See [Series tracking](/en-ca/using/series-tracking/).
+
+## Authors
+
+**Library > Authors** lists authors, as Overview or Posters. An author page shows their catalogue grouped by series, with downloaded and total counts for each series, plus their quality profile, genres and rating. **Refresh Catalog** pulls it again and **Search Author** searches for their wanted books. **Monitor New Books** works the same as for a series, and an author starts at None.
 
 Deleting a series or author is refused while it still has books in the library. Remove the books first.
 
