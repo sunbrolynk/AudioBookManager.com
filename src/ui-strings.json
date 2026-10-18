@@ -28,7 +28,12 @@
     "footerReportIssue": "Report an app issue",
     "footerSupport": "Support Development",
     "footerApiReference": "API Reference",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "Buy Me a Monster",
+    "footerContact": "Contact",
+    "footerMailSupport": "Help with ABM",
+    "footerMailTranslate": "Translations",
+    "footerMailPrivacy": "Privacy",
+    "footerMailAdmin": "Anything else"
   },
   "en-gb": {
     "features": "Features",
@@ -59,7 +64,12 @@
     "footerReportIssue": "Report an app issue",
     "footerSupport": "Support Development",
     "footerApiReference": "API Reference",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "Buy Me a Monster",
+    "footerContact": "Contact",
+    "footerMailSupport": "Help with ABM",
+    "footerMailTranslate": "Translations",
+    "footerMailPrivacy": "Privacy",
+    "footerMailAdmin": "Anything else"
   },
   "uk": {
     "features": "Можливості",
@@ -90,7 +100,12 @@
     "footerReportIssue": "Повідомити про проблему із застосунком",
     "footerSupport": "Підтримати розробку",
     "footerApiReference": "Довідник API",
-    "footerBuyMonster": "Пригости мене Monster"
+    "footerBuyMonster": "Пригости мене Monster",
+    "footerContact": "Контакти",
+    "footerMailSupport": "Допомога з ABM",
+    "footerMailTranslate": "Переклади",
+    "footerMailPrivacy": "Конфіденційність",
+    "footerMailAdmin": "Усе інше"
   },
   "en-ca": {
     "features": "Features",
@@ -121,7 +136,12 @@
     "footerReportIssue": "Report an app issue",
     "footerSupport": "Support Development",
     "footerApiReference": "API Reference",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "Buy Me a Monster",
+    "footerContact": "Contact",
+    "footerMailSupport": "Help with ABM",
+    "footerMailTranslate": "Translations",
+    "footerMailPrivacy": "Privacy",
+    "footerMailAdmin": "Anything else"
   },
   "en-au": {
     "features": "Features",
@@ -152,6 +172,11 @@
     "footerReportIssue": "Report an app issue",
     "footerSupport": "Support Development",
     "footerApiReference": "API Reference",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "Buy Me a Monster",
+    "footerContact": "Contact",
+    "footerMailSupport": "Help with ABM",
+    "footerMailTranslate": "Translations",
+    "footerMailPrivacy": "Privacy",
+    "footerMailAdmin": "Anything else"
   }
 }

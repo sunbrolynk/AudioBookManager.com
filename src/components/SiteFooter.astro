@@ -33,11 +33,20 @@ const groups = [
     links: [
       { label: t.footerSource, href: 'https://github.com/sunbrolynk/AudioBook-Manager', icon: 'github' },
       { label: t.footerWebsiteSource, href: 'https://github.com/sunbrolynk/audiobookmanager.com', icon: 'github' },
-      { label: 'Discord', href: 'https://discord.gg/9TS4gzYCQZ', icon: 'discord' },
+      { label: 'Discord', href: 'https://discord.gg/qeJRrM6AZ', icon: 'discord' },
       { label: t.footerReleases, href: `${p}/updates/`, icon: 'notes' },
       { label: t.footerReportIssue, href: 'https://github.com/sunbrolynk/AudioBook-Manager/issues', icon: 'github' },
-      { label: t.footerBuyMonster, href: 'https://ko-fi.com/sunbrolynk', icon: 'heart' },
-      { label: t.footerSupport, href: 'https://buymeacoffee.com/sunbrolynk', icon: 'heart' },
+      { label: t.footerSupport, href: 'https://ko-fi.com/sunbrolynk', icon: 'heart' },
+      { label: t.footerBuyMonster, href: 'https://buymeacoffee.com/sunbrolynk', icon: 'heart' },
+    ],
+  },
+  {
+    title: t.footerContact,
+    links: [
+      { label: t.footerMailSupport, href: 'mailto:support@audiobookmanager.com', icon: 'email' },
+      { label: t.footerMailTranslate, href: 'mailto:translate@audiobookmanager.com', icon: 'email' },
+      { label: t.footerMailPrivacy, href: 'mailto:privacy@audiobookmanager.com', icon: 'email' },
+      { label: t.footerMailAdmin, href: 'mailto:admin@audiobookmanager.com', icon: 'email' },
     ],
   },
   {
@@ -89,7 +98,7 @@ const groups = [
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 2rem;
   }
   .footer-grid h2 {

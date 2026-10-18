@@ -3,7 +3,7 @@
 Website, documentation, and community translations for [AudioBook Manager](https://github.com/sunbrolynk/AudioBook-Manager).
 
 - Website: https://audiobookmanager.com
-- Community: https://discord.gg/9TS4gzYCQZ
+- Community: https://discord.gg/qeJRrM6AZ
 - Application issues: https://github.com/sunbrolynk/AudioBook-Manager/issues
 
 ## Local development
