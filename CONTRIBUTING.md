@@ -58,3 +58,20 @@ for GitHub Actions, and digest pins for container images.
 Record review findings and validation results in the PR. Passing tests,
 vulnerability audits, and secret scans do not prove a dependency is harmless.
 Updates require a manual merge.
+
+## Repository settings
+
+Checks only protect `main` when GitHub enforces them. Branch protection and
+rulesets need a public repository or GitHub Pro, so set these as soon as the
+repository goes public:
+
+- A ruleset on `main`: require a pull request, require the `Site validation`
+  check to pass and the branch to be up to date, block force pushes and
+  deletion, and require linear history.
+- The same ruleset on `translation/**`, without the linear history rule, since
+  `main` is merged into those branches.
+- Actions: allow only GitHub-owned actions and actions pinned to a full commit
+  SHA, keep the default workflow token read-only, and require approval before
+  running workflows from first-time outside contributors.
+- Security: turn on secret scanning with push protection, private
+  vulnerability reporting, and Dependabot alerts.
