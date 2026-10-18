@@ -4,7 +4,7 @@
 // Needs Playwright's Chromium: `npx playwright install chromium` once per machine.
 import { createServer } from 'node:http';
 import { readFile, readdir } from 'node:fs/promises';
-import { extname, join, relative } from 'node:path';
+import { extname, join, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 
@@ -75,11 +75,19 @@ async function pages(dist) {
   return all.sort();
 }
 
-function serve(dist) {
+// The built file a request path names, or null for anything that would leave dist/.
+export function fileFor(dist, url) {
+  let path;
+  try { path = decodeURIComponent(new URL(url, 'http://x').pathname); } catch { return null; }
+  const file = resolve(dist, `.${path.endsWith('/') ? `${path}index.html` : path}`);
+  return file.startsWith(resolve(dist) + sep) ? file : null;
+}
+
+export function serve(dist) {
   const server = createServer(async (req, res) => {
-    const path = decodeURIComponent(new URL(req.url, 'http://x').pathname);
-    const file = join(dist, path.endsWith('/') ? `${path}index.html` : path);
+    const file = fileFor(dist, req.url);
     try {
+      if (!file) throw new Error('outside dist');
       res.writeHead(200, { 'content-type': TYPES[extname(file)] ?? 'application/octet-stream' });
       res.end(await readFile(file));
     } catch {
@@ -94,7 +102,13 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const server = await serve(dist);
   const base = `http://127.0.0.1:${server.address().port}`;
   const list = await pages(dist);
-  const browser = await chromium.launch();
+  let browser;
+  try {
+    browser = await chromium.launch();
+  } catch (error) {
+    console.error(`check-overflow: Chromium would not start. Run \`npx playwright install chromium\` once.\n${error.message.split('\n')[0]}`);
+    process.exit(1);
+  }
   const failures = [];
   const queue = [...list];
   await Promise.all(Array.from({ length: 4 }, async () => {

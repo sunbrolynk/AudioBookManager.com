@@ -2,7 +2,7 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { existsSync } from 'node:fs';
 import { chromium } from 'playwright';
-import { findOverflow } from '../scripts/check-overflow.mjs';
+import { fileFor, findOverflow } from '../scripts/check-overflow.mjs';
 
 // Build hosts without Playwright's Chromium (Cloudflare Pages) skip this; GitHub Actions installs it, so there it always runs.
 const skip = !existsSync(chromium.executablePath()) && process.env.GITHUB_ACTIONS !== 'true' && "Playwright's Chromium is not installed on this host";
@@ -20,4 +20,12 @@ test('findOverflow flags what widens the page and ignores what scrolls inside it
   } finally {
     await browser.close();
   }
+});
+
+test('the check server only hands out files inside dist', () => {
+  assert.equal(fileFor('/site/dist', '/settings/'), '/site/dist/settings/index.html');
+  assert.equal(fileFor('/site/dist', '/_astro/a.css'), '/site/dist/_astro/a.css');
+  // The URL parser folds plain dot segments; an encoded slash only becomes one after decoding.
+  assert.equal(fileFor('/site/dist', '/../package.json'), '/site/dist/package.json');
+  for (const url of ['/%2e%2e%2fpackage.json', '/x/..%2f..%2f..%2fsecret', '/%E0%A4%A']) assert.equal(fileFor('/site/dist', url), null, url);
 });
