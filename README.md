@@ -22,9 +22,10 @@ Start the development server:
 npm run dev
 ```
 
-Build and check internal links:
+Run the tests, build, and check internal links:
 
 ```sh
+npm test
 npm run build
 node scripts/check-links.mjs
 ```
@@ -36,8 +37,14 @@ npm run preview
 ```
 
 The build validates configured locales, generates the static site, and fills
-the Content-Security-Policy hashes in `dist/_headers`. Deploy the complete
+the Content-Security-Policy hashes in `dist/_headers`, then fails if any page
+or stylesheet loads something that policy blocks. Deploy the complete
 `dist/` output.
+
+Cloudflare Pages only needs to build: `npm run build && node scripts/check-links.mjs`,
+with output directory `dist`. The tests run in the `Site validation` check and the
+local hooks, which have Docker for the secret scan. Pages has no Docker, so its
+secret-scan test skips there with that reason rather than failing.
 
 ## Project structure
 
@@ -92,17 +99,18 @@ vulnerabilities, the production build, and internal links. Dependency changes
 also require manual security review as described in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 Branch-rule enforcement must be verified in GitHub settings; a passing check
-alone does not prevent merging.
+alone does not prevent merging. See the repository settings in
+[CONTRIBUTING.md](CONTRIBUTING.md#repository-settings).
 
 ## License
 
 GNU General Public License v3.0. See [LICENSE](LICENSE).
 
-## Checks before pushing
+## Checks before committing and pushing
 
 Requirements: Node.js 24, npm 11, Bash, and a running Docker daemon.
 
-After reviewing the hook scripts, install the local pre-push hook:
+After reviewing the hook scripts, install the local hooks:
 
 ```sh
 bash scripts/install-hooks.sh
@@ -110,15 +118,23 @@ bash scripts/install-hooks.sh
 
 Repeat this installation for each new clone. Hooks are not automatically
 installed by Git. The installer refuses to overwrite a different existing
-hook or change a custom hooks-directory configuration.
+hook or change a custom hooks-directory configuration, so after a hook script
+changes, delete the old hook from `.git/hooks/` and run the installer again.
 
-Before a normal push, the hook requires a clean working tree and checks
+Before a commit, the pre-commit hook scans the staged changes for secrets and
+checks that every configured language is complete.
+
+Before a normal push, the pre-push hook requires a clean working tree and checks
 that the outgoing commit matches the checked-out commit. It then runs:
 
 - Full Git-history secret scanning with a digest-pinned Gitleaks container.
+  The scan fails if Gitleaks can't read the repository, including from a worktree.
 - Dependency installation from the lockfile with installation scripts disabled.
 - An npm vulnerability audit, failing on moderate or higher findings.
-- The production build, including locale validation and security headers.
+- The regression tests.
+- The production build, including locale validation, security headers, and a
+  check that every built page and stylesheet only loads what the
+  Content-Security-Policy allows.
 - Internal page-link and anchor validation.
 
 The push stops if a check fails. GitHub Actions repeats these checks for PRs.

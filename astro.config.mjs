@@ -9,6 +9,8 @@ export default defineConfig({
   site: 'https://audiobookmanager.com',
   // Stylesheets as files, so the Content-Security-Policy needs no inline-style allowance for them.
   build: { inlineStylesheets: 'never' },
+  // Small fonts as files too, since the Content-Security-Policy allows no data: fonts.
+  vite: { build: { assetsInlineLimit: 0 } },
   markdown: { processor: satteri({ mdastPlugins: [htmlAsText] }) },
   integrations: [
     starlight({
