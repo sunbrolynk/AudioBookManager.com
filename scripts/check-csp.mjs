@@ -25,8 +25,12 @@ export function allowed(policy, directive, url, origin) {
 
 const cssUrls = (css) => {
   const found = [];
-  // Strip font-face blocks first so their urls are checked against font-src and the rest against img-src.
-  const rest = css.replace(/@font-face\s*{[^}]*}/g, (block) => {
+  // Imports load stylesheets (style-src), font-face sources load fonts, and every other url() an image.
+  let rest = css.replace(/@import\s+(?:url\(\s*["']?([^"')\s]+)["']?\s*\)|["']([^"']+)["'])[^;]*;?/g, (_, u, q) => {
+    found.push(['style-src', u ?? q]);
+    return '';
+  });
+  rest = rest.replace(/@font-face\s*{[^}]*}/g, (block) => {
     for (const m of block.matchAll(/url\(\s*["']?([^"')]+)/g)) found.push(['font-src', m[1]]);
     return '';
   });
@@ -34,25 +38,51 @@ const cssUrls = (css) => {
   return found;
 };
 
+// One attribute of a tag, however it is quoted.
+const attr = (tag, name) => {
+  const m = tag.match(new RegExp(`\\s${name}\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s"'>]+))`, 'i'));
+  return m ? (m[1] ?? m[2] ?? m[3]).replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&amp;/g, '&') : undefined;
+};
+
+// The URLs in a srcset, parsed the way browsers do: a candidate's URL runs to the next whitespace,
+// a trailing comma ends it, and descriptors run to the next comma.
+export function srcsetUrls(value) {
+  const urls = [];
+  let i = 0;
+  while (i < value.length) {
+    while (i < value.length && /[\s,]/.test(value[i])) i++;
+    const start = i;
+    while (i < value.length && !/\s/.test(value[i])) i++;
+    let url = value.slice(start, i);
+    if (url.endsWith(',')) url = url.replace(/,+$/, '');
+    else while (i < value.length && value[i] !== ',') i++;
+    if (url) urls.push(url);
+  }
+  return urls;
+}
+
 const htmlUrls = (html) => {
   const found = [];
-  for (const m of html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)) found.push(['script-src', m[1]]);
-  for (const m of html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)) found.push(['img-src', m[1]]);
-  // A browser may pick any srcset candidate, so each one has to be allowed.
-  for (const m of html.matchAll(/<(?:img|source)\b[^>]*\bsrcset="([^"]+)"/g)) {
-    for (const candidate of m[1].split(/,\s+/)) if (candidate.trim()) found.push(['img-src', candidate.trim().split(/\s+/)[0]]);
+  for (const [tag, name] of html.matchAll(/<(script|img|source|link)\b[^>]*>/gi)) {
+    const kind = name.toLowerCase();
+    const src = attr(tag, 'src');
+    if (kind === 'script' && src) found.push(['script-src', src]);
+    if (kind === 'img' && src) found.push(['img-src', src]);
+    // A browser may pick any srcset candidate, so each one has to be allowed.
+    const srcset = attr(tag, 'srcset');
+    if ((kind === 'img' || kind === 'source') && srcset) for (const url of srcsetUrls(srcset)) found.push(['img-src', url]);
+    if (kind === 'link') {
+      const href = attr(tag, 'href');
+      const rel = (attr(tag, 'rel') ?? '').toLowerCase();
+      if (!href) continue;
+      if (rel === 'stylesheet') found.push(['style-src', href]);
+      else if (rel.includes('icon')) found.push(['img-src', href]);
+      else if (rel === 'manifest') found.push(['manifest-src', href]);
+      else if (rel === 'preload' && attr(tag, 'as') === 'font') found.push(['font-src', href]);
+    }
   }
-  for (const m of html.matchAll(/<link\b([^>]*)>/g)) {
-    const href = m[1].match(/\bhref="([^"]+)"/)?.[1];
-    const rel = m[1].match(/\brel="([^"]+)"/)?.[1] ?? '';
-    if (!href) continue;
-    if (rel === 'stylesheet') found.push(['style-src', href]);
-    else if (rel.includes('icon')) found.push(['img-src', href]);
-    else if (rel === 'manifest') found.push(['manifest-src', href]);
-    else if (rel === 'preload' && /\bas="font"/.test(m[1])) found.push(['font-src', href]);
-  }
-  for (const m of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g)) found.push(...cssUrls(m[1]));
-  for (const m of html.matchAll(/\sstyle="([^"]*)"/g)) found.push(...cssUrls(m[1].replace(/&quot;/g, '"')));
+  for (const m of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/gi)) found.push(...cssUrls(m[1]));
+  for (const m of html.matchAll(/\sstyle\s*=\s*(?:"([^"]*)"|'([^']*)')/gi)) found.push(...cssUrls((m[1] ?? m[2]).replace(/&quot;/g, '"')));
   return found;
 };
 
