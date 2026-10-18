@@ -17,7 +17,7 @@
   --sl-color-orange-low: #33230a; --sl-color-orange: var(--r1-want); --sl-color-orange-high: #fbd38d;
   --sl-color-green-low: #0f2a19; --sl-color-green: var(--r1-done); --sl-color-green-high: #9be3b4;
   --sl-color-red-low: #3a1414; --sl-color-red: #dc2626; --sl-color-red-high: #fca5a5;
-  --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 46rem;
+  --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 52rem;
   --sl-text-h1: 4.75rem; --sl-text-h2: 1.85rem; --sl-text-h3: 1.3rem;
   --sl-line-height: 1.7;
 }
