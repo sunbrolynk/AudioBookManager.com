@@ -1,18 +1,22 @@
 /* R1 "Status line" tokens and shared pieces, used by the landing page and the docs. */
-@import '@fontsource-variable/archivo/wdth.css';
-@import '@fontsource-variable/inter';
+@import '@fontsource-variable/cinzel/wght.css';
+@import '@fontsource/cinzel-decorative/700.css';
+@import '@fontsource/spectral/400.css';
+@import '@fontsource/spectral/400-italic.css';
+@import '@fontsource/spectral/600.css';
+@import '@fontsource/spectral/700.css';
 @import '@fontsource-variable/jetbrains-mono';
 
 :root {
   --r1-bg: #161616; --r1-s1: #1a1a1a; --r1-s2: #1e1e1e; --r1-s3: #2a2a2a; --r1-line: #333; --r1-ink: #f2f2f2; --r1-mut: #a1a1a1; --r1-dim: #8a8a8a;
   --r1-acc: #8b45c6; --r1-acc-hi: #b07ce0; --r1-want: #f59e0b; --r1-find: #5a90d8; --r1-busy: #8b45c6; --r1-done: #22a052;
-  --r1-sans: "Inter Variable", system-ui, sans-serif; --r1-mono: "JetBrains Mono Variable", ui-monospace, monospace;
-  --r1-cond: "Archivo Variable", "Arial Narrow", sans-serif;
+  --r1-sans: Spectral, Georgia, serif; --r1-mono: "JetBrains Mono Variable", ui-monospace, monospace;
+  --r1-cond: "Cinzel Variable", Spectral, serif; --r1-mark: "Cinzel Decorative", "Cinzel Variable", Spectral, serif;
   --r1-max: 1400px;
 }
-.cond { font-family: var(--r1-cond); font-stretch: 62%; font-variation-settings: "wdth" 62; font-weight: 800; text-transform: uppercase; line-height: .92; }
+.cond { font-family: var(--r1-cond); font-weight: 700; text-transform: uppercase; line-height: 1.02; letter-spacing: .01em; }
 .eyebrow { font: 500 12.5px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--r1-mut); }
-.btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 3px; font-weight: 700; font-size: 15px; text-decoration: none; border: 1px solid var(--r1-line); color: var(--r1-ink); background: transparent; }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 13px 20px; border-radius: 3px; font-weight: 700; font-size: 16px; text-decoration: none; border: 1px solid var(--r1-line); color: var(--r1-ink); background: transparent; }
 .btn.pri { background: var(--r1-acc); border-color: var(--r1-acc); color: #fff; }
 .btn:hover { border-color: var(--r1-mut); } .btn.pri:hover { background: #7a3ab5; }
 .btn:focus-visible, .r1-top a:focus-visible { outline: 2px solid var(--r1-acc-hi); outline-offset: 2px; }
@@ -26,10 +30,10 @@
 
 .r1-top { position: sticky; top: 0; z-index: 10; background: rgba(22,22,22,.97); border-bottom: 1px solid var(--r1-line); }
 .r1-top .w { max-width: var(--r1-max); margin: 0 auto; padding: 0 40px; display: flex; align-items: center; gap: 30px; height: 62px; }
-.r1-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 17px var(--r1-sans); letter-spacing: -.01em; color: var(--r1-ink); white-space: nowrap; }
+.r1-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 700 17px var(--r1-mark); letter-spacing: .02em; color: var(--r1-ink); white-space: nowrap; }
 .r1-brand img { width: 32px; height: 32px; }
 .r1-brand span { color: var(--r1-acc-hi); }
-.r1-top nav { display: flex; min-width: 0; gap: clamp(10px, 1.6vw, 24px); font: clamp(13px, 1.3vw, 14.5px) var(--r1-sans); white-space: nowrap; }
+.r1-top nav { display: flex; min-width: 0; gap: clamp(10px, 1.6vw, 24px); font: clamp(14px, 1.2vw, 15px) var(--r1-sans); white-space: nowrap; }
 .r1-top nav a { text-decoration: none; color: var(--r1-mut); }
 .r1-top nav a:hover, .r1-top nav a[aria-current] { color: var(--r1-ink); }
 .r1-top .r { margin-inline-start: auto; display: flex; gap: 14px; align-items: center; }
@@ -57,12 +61,21 @@ h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
   html { scroll-behavior: auto !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-snap-type: none !important; }
 }
-html:lang(ja) { --r1-sans: "Inter Variable", "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif; }
+html:lang(ja) { --r1-sans: Spectral, "Hiragino Sans", "Noto Sans JP", "Yu Gothic", system-ui, sans-serif; }
 .xl-note { margin: 0; background: var(--r1-s2); border-bottom: 1px solid var(--r1-line); font: 13.5px/1.5 var(--r1-sans); color: var(--r1-mut); }
 .xl-note .w { display: block; max-width: var(--r1-max); margin: 0 auto; padding: 9px 40px; }
 .xl-note a { color: var(--r1-acc-hi); text-underline-offset: 3px; }
 .xl-note a:focus-visible { outline: 2px solid var(--r1-acc-hi); outline-offset: 2px; }
 @media (max-width: 860px) { .xl-note .w { padding: 9px 20px; } }
-html:lang(zh-CN) { --r1-sans: "Inter Variable", "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
-html:lang(zh-TW) { --r1-sans: "Inter Variable", "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif; }
-html:lang(ko) { --r1-sans: "Inter Variable", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+html:lang(zh-CN) { --r1-sans: Spectral, "PingFang SC", "Noto Sans SC", "Microsoft YaHei", system-ui, sans-serif; }
+html:lang(zh-TW) { --r1-sans: Spectral, "PingFang TC", "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif; }
+html:lang(ko) { --r1-sans: Spectral, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", system-ui, sans-serif; }
+
+/* Cinzel on the remaining headings. It has no Cyrillic, so those letters fall back to Spectral. */
+.sl-markdown-content :is(h2, h3), .feat h3, .why h3, .support h3 { font-family: var(--r1-cond); font-weight: 700; letter-spacing: .01em; }
+@media (max-width: 860px) { .r1-brand { font-size: 13px; } }
+
+/* Spectral for body copy, nav, buttons and docs text; code stays in the mono. */
+html body { font-size: 18px; font-weight: 400; }
+:root, :root[data-theme='light'], :root[data-theme='dark'] { --sl-text-body: 1.07rem; }
+@media (max-width: 860px) { html body { font-size: 17px; } }

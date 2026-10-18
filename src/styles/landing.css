@@ -9,7 +9,7 @@ p code, li code, td code, summary code { font-size: .84em; background: var(--r1-
 
 .hero { padding: 70px 0 0; overflow: hidden; }
 .hero .grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
-.hero h1 { font-size: clamp(64px, 7.5vw, 120px); margin: 14px 0 22px; }
+.hero h1 { font-size: clamp(44px, 5.2vw, 76px); margin: 14px 0 22px; }
 .hero h1 em { font-style: normal; color: var(--r1-done); }
 .hero p.sub { font-size: 20px; color: #d0d0d0; margin: 0 0 30px; max-width: 34ch; }
 .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
@@ -26,7 +26,7 @@ p code, li code, td code, summary code { font-size: .84em; background: var(--r1-
 
 section.band { padding: 100px 0; border-top: 1px solid var(--r1-line); }
 section.alt { background: var(--r1-s1); }
-h2.big { font-size: 76px; margin: 10px 0 26px; }
+h2.big { font-size: 54px; margin: 10px 0 26px; }
 .lead { font-size: 20px; color: #d6d6d6; max-width: 48ch; }
 .lead p { margin: 0 0 16px; }
 
@@ -44,13 +44,13 @@ h2.big { font-size: 76px; margin: 10px 0 26px; }
 .flow li:nth-child(1) .bar { background: var(--r1-want); } .flow li:nth-child(2) .bar { background: var(--r1-find); } .flow li:nth-child(3) .bar { background: #6f6fd1; }
 .flow li:nth-child(4) .bar { background: var(--r1-busy); } .flow li:nth-child(5) .bar { background: var(--r1-done); }
 .flow .n { font: 12px var(--r1-mono); color: var(--r1-dim); }
-.flow h3 { font-size: clamp(24px, 2.6vw, 40px); margin: 4px 0 10px; }
+.flow h3 { font-size: clamp(22px, 2.2vw, 30px); margin: 4px 0 10px; }
 .flow p { margin: 0; color: var(--r1-mut); font-size: 15.5px; }
 
 .feat { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; padding: 56px 0; border-bottom: 1px solid var(--r1-line); }
 .feat:nth-child(even) { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
 .feat:nth-child(even) .copy { order: 2; }
-.feat h3 { font-size: 34px; letter-spacing: -.02em; margin: 6px 0 12px; line-height: 1.1; }
+.feat h3 { font-size: 28px; letter-spacing: .01em; margin: 6px 0 12px; line-height: 1.1; }
 .feat p { color: var(--r1-mut); margin: 0; max-width: 40ch; }
 .crop { border: 1px solid #3a3a3a; border-radius: 8px; overflow: hidden; aspect-ratio: 16 / 9.5; background: var(--r1-s1); }
 .crop img { width: 100%; height: 100%; object-fit: cover; object-position: 18% 0; display: block; }
@@ -79,7 +79,7 @@ pre.code { background: #0f0f0f; border: 1px solid var(--r1-line); border-radius:
 pre.code .k { color: var(--r1-acc-hi); }
 .isteps { counter-reset: s; list-style: none; padding: 0; margin: 0 0 26px; }
 .isteps li { counter-increment: s; display: grid; grid-template-columns: 44px minmax(0, 1fr); padding: 14px 0; border-bottom: 1px solid var(--r1-line); }
-.isteps li::before { content: counter(s); font: 800 30px var(--r1-cond); font-variation-settings: "wdth" 62; color: var(--r1-done); line-height: 1; }
+.isteps li::before { content: counter(s); font: 700 30px var(--r1-cond); color: var(--r1-done); line-height: 1; }
 .isteps b { display: block; } .isteps span { color: var(--r1-mut); font-size: 15.5px; }
 .other { font-size: 15px; color: var(--r1-mut); } .other b { color: var(--r1-ink); }
 .note { border-inline-start: 4px solid var(--r1-want); background: rgba(245,158,11,.07); padding: 12px 16px; font-size: 15px; margin-top: 18px; }
@@ -96,7 +96,7 @@ pre.code .k { color: var(--r1-acc-hi); }
 .support > div { padding: 32px; } .support > div + div { border-inline-start: 1px solid var(--r1-line); }
 .support h3 { margin: 0 0 8px; font-size: 24px; } .support p { color: var(--r1-mut); margin: 0 0 18px; }
 .final { padding: 110px 0 90px; }
-.final h2 { font-size: 110px; margin: 0 0 28px; }
+.final h2 { font-size: 76px; margin: 0 0 28px; }
 .final .strip { margin-top: 40px; }
 
 @media (max-width: 860px) {
@@ -104,22 +104,22 @@ pre.code .k { color: var(--r1-acc-hi); }
   .w { padding: 0 20px; }
   .hero { padding-top: 44px; }
   .hero .grid, .problem, .install, .faqgrid, .support, .why { grid-template-columns: minmax(0, 1fr); gap: 40px; }
-  .hero h1 { font-size: 64px; margin-bottom: 26px; }
+  .hero h1 { font-size: 44px; margin-bottom: 26px; }
   .hero p.sub { font-size: 18px; margin-bottom: 32px; }
   .runs { margin-bottom: 44px; line-height: 1.8; }
   .strip span { font-size: 9.5px; letter-spacing: .02em; }
   .stage { margin-inline-end: -20px; padding-bottom: 36px; }
   .phone { inset-inline-start: auto; inset-inline-end: 22px; width: 116px; border-width: 5px; border-radius: 16px; }
   section.band { padding: 84px 0; }
-  h2.big { font-size: 52px; margin-bottom: 30px; }
+  h2.big { font-size: 36px; margin-bottom: 30px; }
   .lead { font-size: 18px; } .lead p { margin-bottom: 20px; }
   .flow { grid-template-columns: minmax(0, 1fr); gap: 30px; }
   .flow li { padding: 0; display: grid; grid-template-columns: 6px minmax(0, 1fr); gap: 0 18px; }
   .flow .bar { grid-row: span 3; height: auto; margin: 0; }
-  .flow h3 { font-size: 32px; margin: 6px 0 8px; }
+  .flow h3 { font-size: 26px; margin: 6px 0 8px; }
   .feat, .feat:nth-child(even) { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 48px 0; }
   .feat:nth-child(even) .copy { order: 0; }
-  .feat h3 { font-size: 30px; }
+  .feat h3 { font-size: 24px; }
   .why > div, .why > div:nth-child(even) { padding: 30px 0; border-inline-end: 0; grid-template-columns: 52px minmax(0, 1fr); }
   .why .n { font-size: 40px; }
   .works { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; }
@@ -129,7 +129,7 @@ pre.code .k { color: var(--r1-acc-hi); }
   .support > div + div { border-inline-start: 0; border-top: 1px solid var(--r1-line); }
   .support > div { padding: 28px 24px; }
   .final { padding: 90px 0 70px; }
-  .final h2 { font-size: 60px; }
+  .final h2 { font-size: 40px; }
   pre.code { font-size: 12.5px; }
 }
 /* File trees and compose snippets read left to right even on right-to-left pages. */

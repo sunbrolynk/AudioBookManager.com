@@ -18,7 +18,7 @@
   --sl-color-green-low: #0f2a19; --sl-color-green: var(--r1-done); --sl-color-green-high: #9be3b4;
   --sl-color-red-low: #3a1414; --sl-color-red: #dc2626; --sl-color-red-high: #fca5a5;
   --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 52rem;
-  --sl-text-h1: 4.75rem; --sl-text-h2: 1.85rem; --sl-text-h3: 1.3rem;
+  --sl-text-h1: 3.6rem; --sl-text-h2: 1.85rem; --sl-text-h3: 1.3rem;
   --sl-line-height: 1.7;
 }
 body { background: var(--r1-bg); }
@@ -48,7 +48,7 @@ nav.sidebar .top-level > li + li { margin-top: .6rem; }
 .sl-markdown-content th { font: 600 11.5px var(--r1-mono); letter-spacing: .06em; text-transform: uppercase; color: var(--r1-dim); background: transparent; border: 0; border-bottom: 1px solid var(--r1-line); text-align: left; }
 .sl-markdown-content td { border: 0; border-bottom: 1px solid var(--r1-line); vertical-align: top; }
 .sl-markdown-content td:first-child code { white-space: nowrap; }
-.sl-markdown-content ol > li::marker { font: 800 1.2em var(--r1-cond); font-variation-settings: "wdth" 62; color: var(--r1-done); }
+.sl-markdown-content ol > li::marker { font: 700 1.1em var(--r1-cond); color: var(--r1-done); }
 .expressive-code .frame { --ec-frm-edBg: #0f0f0f; }
 /* A small clipboard icon in the corner, like GitHub's, instead of a big square button. */
 .expressive-code .frame .copy button { width: 1.75rem; height: 1.75rem; }
@@ -66,7 +66,7 @@ starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
 
 @media (max-width: 50rem) {
   /* Same selector as the tokens above, or the phone size never applies. */
-  :root, :root[data-theme='light'], :root[data-theme='dark'] { --sl-text-h1: clamp(2.25rem, 10vw, 3.25rem); }
+  :root, :root[data-theme='light'], :root[data-theme='dark'] { --sl-text-h1: clamp(1.5rem, 7.6vw, 2.6rem); }
   .sl-markdown-content { line-height: 1.75; }
   .sl-markdown-content table { display: block; overflow-x: auto; }
 }
