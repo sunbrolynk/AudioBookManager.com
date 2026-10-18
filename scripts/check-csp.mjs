@@ -5,10 +5,27 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export function parsePolicy(headers) {
-  const line = headers.match(/Content-Security-Policy:\s*(.+)/);
-  if (!line) throw new Error('dist/_headers has no Content-Security-Policy');
-  return new Map(line[1].split(';').map((d) => d.trim().split(/\s+/)).filter((d) => d[0]).map(([name, ...sources]) => [name, sources]));
+const directives = (value) =>
+  new Map(value.split(';').map((d) => d.trim().split(/\s+/)).filter((d) => d[0]).map(([name, ...sources]) => [name, sources]));
+
+// Each path rule in _headers with the policy it sets, in file order; the last matching rule wins.
+export function parseRules(headers) {
+  const rules = [];
+  for (const line of headers.split('\n')) {
+    if (/^\//.test(line)) rules.push({ pattern: line.trim(), policy: null });
+    const csp = line.match(/^\s+Content-Security-Policy:\s*(.+)/);
+    if (csp && rules.length) rules.at(-1).policy = directives(csp[1]);
+  }
+  const withPolicy = rules.filter((r) => r.policy);
+  if (!withPolicy.length) throw new Error('dist/_headers has no Content-Security-Policy');
+  return withPolicy;
+}
+
+export const parsePolicy = (headers) => parseRules(headers)[0].policy;
+
+export function policyFor(rules, path) {
+  const matches = (pattern) => new RegExp(`^${pattern.split('*').map((s) => s.replace(/[.+?^${}()|[\]\\]/g, '\\$&')).join('.*')}$`).test(path);
+  return rules.filter((r) => matches(r.pattern)).at(-1)?.policy;
 }
 
 export function allowed(policy, directive, url, origin) {
@@ -87,15 +104,18 @@ const htmlUrls = (html) => {
 };
 
 export function checkSite(dist, origin) {
-  const policy = parsePolicy(readFileSync(join(dist, '_headers'), 'utf8'));
+  const rules = parseRules(readFileSync(join(dist, '_headers'), 'utf8'));
   const files = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? files(join(dir, e.name)) : [join(dir, e.name)]);
   const problems = new Set();
   for (const file of files(dist)) {
     const urls = file.endsWith('.html') ? htmlUrls(readFileSync(file, 'utf8'))
       : file.endsWith('.css') ? cssUrls(readFileSync(file, 'utf8')) : [];
+    const rel = file.slice(dist.length).replace(/^\/?/, '/');
+    const policy = policyFor(rules, file.endsWith('.html') ? rel.replace(/index\.html$/, '') : rel);
+    if (urls.length && !policy) problems.add(`no Content-Security-Policy applies to ${rel}`);
     for (const [directive, url] of urls) {
-      if (!allowed(policy, directive, url, origin)) problems.add(`${directive} blocks ${url.slice(0, 60)} (${file.slice(dist.length)})`);
+      if (policy && !allowed(policy, directive, url, origin)) problems.add(`${directive} blocks ${url.slice(0, 60)} (${file.slice(dist.length)})`);
     }
   }
   return [...problems];
