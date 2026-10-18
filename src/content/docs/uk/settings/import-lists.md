@@ -1,41 +1,41 @@
 ---
-title: Import Lists
-description: Підтягуй шукані книги з MyAnonamouse або стрічки RSS.
+title: Списки імпорту
+description: Бажані книжки з MyAnonamouse або RSS-стрічки.
 ---
 
-**Settings > Import Lists** автоматично додає книги із зовнішніх джерел.
+**Settings > Import Lists** автоматично додає книжки із зовнішніх джерел.
 
 ## Джерела
 
-- **MAM**: список бажаного з MyAnonamouse, через **MAM Session ID**.
-- **RSS**: **RSS Link**, який ти надаєш, з необов'язковим **Website URL**. Сайт має бути http або https.
+- **MAM**: список бажаного на MyAnonamouse, через **MAM Session ID**.
+- **RSS**: **RSS Link**, який ти вказуєш, і за бажанням **Website URL**. Адреса сайту має бути http або https.
 
 ## Для кожного списку
 
-| Поле | Дія |
+| Поле | Що робить |
 |---|---|
 | Name | Назва |
-| Monitor | Чи будуть книги, які він додає, Monitored чи Unmonitored |
+| Monitor | Чи будуть додані книжки Monitored або Unmonitored |
 | Root Folder | Куди вони потрапляють |
-| Quality Profile | Профіль або Inherit (use default) |
-| Tags | Застосовуються до всього, що додає список |
+| Quality Profile | Профіль або Inherit (використати типовий) |
+| Tags | Ставляться на все, що додає список |
 
-**Sync Now** запускає списки негайно.
+**Sync Now** запускає списки одразу.
 
 ## Параметри
 
-| Налаштування | Типово | Дія |
+| Параметр | За замовчуванням | Що робить |
 |---|---|---|
 | RSS Sync Interval | 12 (годин) | Як часто синхронізуються списки. 0 вимикає синхронізацію |
-| Clean Library Level | Disabled | Що відбувається з книгою, коли вона зникає зі списку |
+| Clean Library Level | Disabled | Що відбувається з книжкою, коли вона зникає зі списку |
 
-Варіанти Clean Library Level: Disabled, Log Only, Keep and Unmonitor Audiobook, Remove Audiobook and Keep Files, Remove Audiobook and Delete Files. Останній видаляє файли. Обирай його, лише якщо справді цього хочеш.
+Варіанти Clean Library Level: Disabled, Log Only, Keep and Unmonitor Audiobook, Remove Audiobook and Keep Files, Remove Audiobook and Delete Files. Останній видаляє файли. Вибирай його, лише якщо справді цього хочеш.
 
 ## Винятки
 
-**Import List Exclusions** блокує книгу за **ASIN**, **Title** і **Year**, щоб список більше ніколи її не додавав. Скористайся **Lookup ASIN**, щоб заповнити їх.
+**Import List Exclusions** блокує книжку за **ASIN**, **Title** та **Year**, щоб список більше ніколи її не додав. Скористайся **Lookup ASIN**, щоб заповнити ці поля.
 
 ## Підводні камені
 
-- Збережене RSS-посилання чи ідентифікатор сесії більше ніколи не показується. Зміна адреси вимагає ввести секрет знову.
-- Списки запускають сповіщення On Import List Synced та On Import List New Items. Див. [Connect](/uk/settings/connect/).
+- Збережене RSS-посилання чи ID сесії більше ніколи не показується. Щоб змінити адресу, секрет доведеться ввести знову.
+- Списки надсилають сповіщення On Import List Synced та On Import List New Items. Дивись [Connect](/uk/settings/connect/).

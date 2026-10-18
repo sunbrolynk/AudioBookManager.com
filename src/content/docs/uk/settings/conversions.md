@@ -1,64 +1,64 @@
 ---
-title: Налаштування конвертації
+title: Налаштування конвертацій
 description: Типові значення, параметри кодеків, розділи, метадані, кошик і ffmpeg.
 ---
 
-**Settings > Conversions** задає типові значення для [Conversions](/uk/using/conversions/). Будь-яке завдання може їх перевизначити.
+**Settings > Conversions** задає типові значення для [Конвертацій](/uk/using/conversions/). Будь-яке завдання може їх перевизначити.
 
-## General
+## Загальне
 
-| Налаштування | Типово | Дія |
+| Параметр | За замовчуванням | Що робить |
 |---|---|---|
-| Enable Conversions | on | Головний перемикач |
-| Conversion Folder | порожньо | Робочий простір. Порожнє значення використовує системну тимчасову теку |
-| Concurrent Conversions | 2 | Від 1 до 4 в UI. Тримай добуток паралельності на потоки менше за кількість ядер |
-| Process Priority | Normal | Low не дає решті системи гальмувати. High завершує швидше |
+| Enable Conversions | увімкнено | Головний перемикач |
+| Conversion Folder | порожньо | Робоча тека. Якщо порожньо, використовується системна тимчасова тека |
+| Concurrent Conversions | 2 | В інтерфейсі від 1 до 4. Добуток паралельних завдань на потоки має бути меншим за кількість ядер |
+| Process Priority | Normal | Low залишає решту системи чутливою. High закінчує швидше |
 
-## Audio quality defaults
+## Типова якість аудіо
 
-| Налаштування | Типово |
+| Параметр | За замовчуванням |
 |---|---|
 | Default Output Format | M4B (також MP3, M4A, FLAC, Opus) |
-| Default Bitrate | 128 kbps (64, 96, 128, 192, 256 або Copy без перекодування) |
-| Default Sample Rate | Auto, відповідає джерелу |
-| Default Channels | Auto, відповідає джерелу |
+| Default Bitrate | 128 kbps (64, 96, 128, 192, 256 або Copy, щоб не перекодовувати) |
+| Default Sample Rate | Auto, тобто як у джерела |
+| Default Channels | Auto, тобто як у джерела |
 
-## Codec options
+## Параметри кодеків
 
-AAC Profile (типово AAC-LC, HE-AAC, HE-AACv2) і AAC VBR; якість MP3 VBR і joint stereo; рівень стиснення FLAC (типово 5); змінний бітрейт Opus (увімкнено) і тип застосунку (типово Audio; є VoIP і Low Delay).
+AAC Profile (за замовчуванням AAC-LC, також HE-AAC, HE-AACv2) і AAC VBR; якість VBR для MP3 і joint stereo; рівень стиснення FLAC (за замовчуванням 5); змінний бітрейт Opus (увімкнено) і тип застосування (за замовчуванням Audio, також є VoIP і Low Delay).
 
-## Chapter handling
+## Робота з розділами
 
-| Налаштування | Типово | Дія |
+| Параметр | За замовчуванням | Що робить |
 |---|---|---|
-| Default Chapter Behavior | Auto | Зберігати, якщо є, створювати, якщо немає. Інші: лише зберігати, завжди створювати, нічого |
-| Chapter Naming Format | `Chapter {n}` | Шаблон для створених назв |
-| Silence Detection | off | Експериментально. Намагається знайти розділи за тишею |
-| Minimum Chapter Length | 60 s | Для виявлених розділів |
-| Chapter Image Handling | Keep in file | Або видалити, або витягти в теку |
+| Default Chapter Behavior | Auto | Зберегти, якщо розділи є, створити, якщо немає. Інші варіанти: лише зберігати, завжди створювати, без розділів |
+| Chapter Naming Format | `Chapter {n}` | Шаблон для назв створених розділів |
+| Silence Detection | вимкнено | Експериментально. Пробує знайти розділи за тишею |
+| Minimum Chapter Length | 60 с | Для знайдених розділів |
+| Chapter Image Handling | Keep in file | Або прибрати, або витягти в теку |
 
-## Metadata handling
+## Робота з метаданими
 
-| Налаштування | Типово |
+| Параметр | За замовчуванням |
 |---|---|
 | Preserve Metadata | All metadata |
-| Embed Cover Art | on (лише JPEG, для Audiobookshelf) |
+| Embed Cover Art | увімкнено (лише JPEG, для Audiobookshelf) |
 | Cover Art Max Size | 1000x1000 |
 
-## File management
+## Керування файлами
 
-| Налаштування | Типово | Дія |
+| Параметр | За замовчуванням | Що робить |
 |---|---|---|
-| Enable Recycle Bin | on | Оригінали потрапляють у кошик замість видалення |
-| Recycle Bin Path | порожньо | Порожнє значення використовує `/config/recycle/conversions` |
-| Retention Period | 7 days | 0 вимикає автоматичне очищення |
-| Auto-Empty on Low Disk Space | off | Спорожнює кошик, коли місця менше за поріг |
+| Enable Recycle Bin | увімкнено | Оригінали потрапляють у кошик, а не видаляються |
+| Recycle Bin Path | порожньо | Якщо порожньо, використовується `/config/recycle/conversions` |
+| Retention Period | 7 днів | 0 вимикає автоочищення |
+| Auto-Empty on Low Disk Space | вимкнено | Очищає кошик, коли вільного місця менше за поріг |
 | Auto-Empty Threshold | 10 (%) | Рівень вільного місця |
-| Delete Original | off | Типове значення для кожного завдання, його можна перевизначити |
-| Update Library Paths | on | Записи книг слідують за конвертованими файлами |
-| Auto-Reformat on Import | off | Конвертує щойно імпортовані книги, що надійшли в іншому форматі, за типовими значеннями вище |
-| Backup Original Metadata | off | Спершу зберігає оригінальні теги в супровідний файл `.json` |
+| Delete Original | вимкнено | Типове значення для кожного завдання, можна перевизначити |
+| Update Library Paths | увімкнено | Записи книжок слідують за конвертованими файлами |
+| Auto-Reformat on Import | вимкнено | Конвертує щойно імпортовані книжки в іншому форматі за типовими значеннями вище |
+| Backup Original Metadata | вимкнено | Спершу зберігає оригінальні теги в супровідний файл `.json` |
 
-## Advanced FFmpeg
+## Розширені параметри FFmpeg
 
-FFmpeg Path (порожньо означає пошук у PATH), Threads Per Job (0 обирає автоматично як кількість ядер мінус 2), Custom FFmpeg Arguments (додаються до кожної команди; хибні призводять до збою конвертацій), Logging Level (типово error) і Keep FFmpeg Logs (off).
+FFmpeg Path (якщо порожньо, шукається в PATH), Threads Per Job (0 вибирає автоматично: кількість ядер мінус 2), Custom FFmpeg Arguments (додаються до кожної команди; неправильні аргументи ламають конвертації), Logging Level (за замовчуванням error) і Keep FFmpeg Logs (вимкнено).
