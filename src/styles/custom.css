@@ -28,6 +28,8 @@ body { background: var(--r1-bg); }
 .page > .header .r1-top { position: static; background: none; border: 0; height: 100%; }
 .page > .header .r1-top .w { max-width: none; padding: 0; height: 100%; }
 @media (max-width: 50rem) { .page > .header .r1-top .btn { display: none; } }
+/* The docs bar also holds search, so its landing-page links go sooner; the sidebar covers navigation. */
+@media (max-width: 1240px) { .page > .header .r1-top nav { display: none; } }
 
 /* Sidebar groups, in the landing page's mono eyebrow style. */
 .sidebar-pane { border-inline-end: 1px solid var(--r1-line); }

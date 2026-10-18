@@ -18,7 +18,7 @@
 .btn:focus-visible, .r1-top a:focus-visible { outline: 2px solid var(--r1-acc-hi); outline-offset: 2px; }
 
 /* The status strip: the colours of ABM's poster status bar, used as the site's signature. */
-.strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px; }
+.strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 3px; }
 .strip i { height: 6px; display: block; }
 .strip i:nth-child(1) { background: var(--r1-want); } .strip i:nth-child(2) { background: var(--r1-busy); }
 .strip i:nth-child(3) { background: var(--r1-done); } .strip i:nth-child(4) { background: #dc2626; }
@@ -29,12 +29,15 @@
 .r1-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font: 800 17px var(--r1-sans); letter-spacing: -.01em; color: var(--r1-ink); white-space: nowrap; }
 .r1-brand img { width: 32px; height: 32px; }
 .r1-brand span { color: var(--r1-acc-hi); }
-.r1-top nav { display: flex; gap: 24px; font: 14.5px var(--r1-sans); }
+.r1-top nav { display: flex; min-width: 0; gap: clamp(10px, 1.6vw, 24px); font: clamp(13px, 1.3vw, 14.5px) var(--r1-sans); white-space: nowrap; }
 .r1-top nav a { text-decoration: none; color: var(--r1-mut); }
 .r1-top nav a:hover, .r1-top nav a[aria-current] { color: var(--r1-ink); }
 .r1-top .r { margin-inline-start: auto; display: flex; gap: 14px; align-items: center; }
 .r1-top .gh { font: 12.5px var(--r1-mono); color: var(--r1-mut); text-decoration: none; }
 .r1-top .btn { padding: 8px 14px; font-size: 14px; }
+@media (max-width: 1100px) { .r1-top .gh { display: none; } }
+/* Below this the links run into the language menu, so the bar keeps only the brand and controls. */
+@media (max-width: 1000px) { .r1-top nav { display: none; } }
 @media (max-width: 860px) { .r1-top nav, .r1-top .gh { display: none; } .r1-top .w { padding: 0 20px; gap: 16px; } }
 /* On a phone the hero has its own install button, so the header keeps only the language menu. */
 @media (max-width: 560px) { .r1-top .btn { display: none; } }
@@ -43,6 +46,11 @@
 .r1-foot .w { max-width: var(--r1-max); margin: 0 auto; padding: 0 40px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .r1-foot a { color: var(--r1-mut); text-decoration: none; margin-inline-start: 18px; }
 @media (max-width: 860px) { .r1-foot .w { padding: 0 20px; } .r1-foot a { margin: 0 16px 0 0; } }
+
+/* Nothing may widen the page: media and code stay inside their box, and a long word in a heading hyphenates before it overflows. */
+img, video { max-width: 100%; height: auto; }
+pre { max-width: 100%; overflow-x: auto; }
+h1, h2, h3 { overflow-wrap: break-word; hyphens: auto; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 @media (prefers-reduced-motion: reduce) {
