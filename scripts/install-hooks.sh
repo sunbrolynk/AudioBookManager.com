@@ -9,14 +9,14 @@ if git config --get core.hooksPath >/dev/null; then
     exit 1
 fi
 
-hook="$(git rev-parse --path-format=absolute --git-path hooks/pre-push)"
-
-if [[ -e "$hook" || -L "$hook" ]]; then
-    if [[ -L "$hook" ]] || ! cmp -s scripts/pre-push "$hook"; then
-        echo "An existing, different pre-push hook needs manual review: $hook" >&2
-        exit 1
+for name in pre-commit pre-push; do
+    hook="$(git rev-parse --path-format=absolute --git-path "hooks/$name")"
+    if [[ -e "$hook" || -L "$hook" ]]; then
+        if [[ -L "$hook" ]] || ! cmp -s "scripts/$name" "$hook"; then
+            echo "An existing, different $name hook needs manual review: $hook" >&2
+            exit 1
+        fi
     fi
-fi
-
-install -m 0755 scripts/pre-push "$hook"
-echo "Installed the website pre-push checks."
+    install -m 0755 "scripts/$name" "$hook"
+done
+echo "Installed the website pre-commit and pre-push checks."
