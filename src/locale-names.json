@@ -19,7 +19,8 @@
     "cs": "Czech",
     "da": "Danish",
     "nb": "Norwegian Bokmål",
-    "ko": "Korean"
+    "ko": "Korean",
+    "fi": "Finnish"
   },
   "uk": {
     "en": "Англійська (США)",
@@ -41,7 +42,8 @@
     "cs": "Чеська",
     "da": "Данська",
     "nb": "Норвезька (букмол)",
-    "ko": "Корейська"
+    "ko": "Корейська",
+    "fi": "Фінська"
   },
   "en-GB": {
     "en": "English (US)",
@@ -63,7 +65,8 @@
     "cs": "Czech",
     "da": "Danish",
     "nb": "Norwegian Bokmål",
-    "ko": "Korean"
+    "ko": "Korean",
+    "fi": "Finnish"
   },
   "en-CA": {
     "en": "English (US)",
@@ -85,7 +88,8 @@
     "cs": "Czech",
     "da": "Danish",
     "nb": "Norwegian Bokmål",
-    "ko": "Korean"
+    "ko": "Korean",
+    "fi": "Finnish"
   },
   "fr": {
     "en": "Anglais (États-Unis)",
@@ -107,7 +111,8 @@
     "cs": "Tchèque",
     "da": "Danois",
     "nb": "Norvégien bokmål",
-    "ko": "Coréen"
+    "ko": "Coréen",
+    "fi": "Finnois"
   },
   "de": {
     "en": "Englisch (USA)",
@@ -129,7 +134,8 @@
     "cs": "Tschechisch",
     "da": "Dänisch",
     "nb": "Norwegisch (Bokmål)",
-    "ko": "Koreanisch"
+    "ko": "Koreanisch",
+    "fi": "Finnisch"
   },
   "es": {
     "en": "Inglés (EE. UU.)",
@@ -151,7 +157,8 @@
     "cs": "Checo",
     "da": "Danés",
     "nb": "Noruego bokmål",
-    "ko": "Coreano"
+    "ko": "Coreano",
+    "fi": "Finés"
   },
   "it": {
     "en": "Inglese (USA)",
@@ -173,7 +180,8 @@
     "cs": "Ceco",
     "da": "Danese",
     "nb": "Norvegese bokmål",
-    "ko": "Coreano"
+    "ko": "Coreano",
+    "fi": "Finlandese"
   },
   "pt-BR": {
     "en": "Inglês (EUA)",
@@ -195,7 +203,8 @@
     "cs": "Tcheco",
     "da": "Dinamarquês",
     "nb": "Norueguês bokmål",
-    "ko": "Coreano"
+    "ko": "Coreano",
+    "fi": "Finlandês"
   },
   "ja": {
     "en": "英語（米国）",
@@ -217,7 +226,8 @@
     "cs": "チェコ語",
     "da": "デンマーク語",
     "nb": "ノルウェー語（ブークモール）",
-    "ko": "韓国語"
+    "ko": "韓国語",
+    "fi": "フィンランド語"
   },
   "nl": {
     "en": "Engels (VS)",
@@ -239,7 +249,8 @@
     "cs": "Tsjechisch",
     "da": "Deens",
     "nb": "Noors (Bokmål)",
-    "ko": "Koreaans"
+    "ko": "Koreaans",
+    "fi": "Fins"
   },
   "pl": {
     "en": "angielski (USA)",
@@ -261,7 +272,8 @@
     "cs": "czeski",
     "da": "duński",
     "nb": "norweski (bokmål)",
-    "ko": "koreański"
+    "ko": "koreański",
+    "fi": "fiński"
   },
   "en-AU": {
     "en": "English (US)",
@@ -276,7 +288,15 @@
     "ja": "Japanese",
     "nl": "Dutch",
     "pl": "Polish",
-    "en-AU": "English (Australia)"
+    "en-AU": "English (Australia)",
+    "zh-CN": "Chinese (Simplified)",
+    "zh-TW": "Chinese (Traditional, Taiwan)",
+    "ko": "Korean",
+    "sv": "Swedish",
+    "cs": "Czech",
+    "da": "Danish",
+    "nb": "Norwegian Bokmål",
+    "fi": "Finnish"
   },
   "en-IN": {
     "en-IN": "English (India)"
@@ -311,7 +331,27 @@
     "fi": "芬兰语"
   },
   "zh-TW": {
-    "zh-TW": "中文（台灣）"
+    "zh-TW": "繁體中文（台灣）",
+    "en": "英文（美國）",
+    "en-GB": "英文（英國）",
+    "en-CA": "英文（加拿大）",
+    "en-AU": "英文（澳洲）",
+    "uk": "烏克蘭文",
+    "fr": "法文",
+    "de": "德文",
+    "es": "西班牙文",
+    "it": "義大利文",
+    "pt-BR": "葡萄牙文（巴西）",
+    "ja": "日文",
+    "nl": "荷蘭文",
+    "pl": "波蘭文",
+    "zh-CN": "簡體中文",
+    "ko": "韓文",
+    "sv": "瑞典文",
+    "cs": "捷克文",
+    "da": "丹麥文",
+    "nb": "挪威文（巴克摩）",
+    "fi": "芬蘭文"
   },
   "sv": {
     "en": "Engelska (USA)",
@@ -360,10 +400,50 @@
     "fi": "Finština"
   },
   "da": {
-    "da": "Dansk"
+    "da": "Dansk",
+    "en": "Engelsk (USA)",
+    "en-GB": "Engelsk (Storbritannien)",
+    "en-CA": "Engelsk (Canada)",
+    "en-AU": "Engelsk (Australien)",
+    "uk": "Ukrainsk",
+    "fr": "Fransk",
+    "de": "Tysk",
+    "es": "Spansk",
+    "it": "Italiensk",
+    "pt-BR": "Portugisisk (Brasilien)",
+    "ja": "Japansk",
+    "nl": "Nederlandsk",
+    "pl": "Polsk",
+    "zh-CN": "Kinesisk (forenklet)",
+    "zh-TW": "Kinesisk (traditionelt, Taiwan)",
+    "ko": "Koreansk",
+    "sv": "Svensk",
+    "cs": "Tjekkisk",
+    "nb": "Norsk (bokmål)",
+    "fi": "Finsk"
   },
   "nb": {
-    "nb": "Norsk bokmål"
+    "nb": "Norsk bokmål",
+    "en": "Engelsk (USA)",
+    "en-GB": "Engelsk (Storbritannia)",
+    "en-CA": "Engelsk (Canada)",
+    "en-AU": "Engelsk (Australia)",
+    "uk": "Ukrainsk",
+    "fr": "Fransk",
+    "de": "Tysk",
+    "es": "Spansk",
+    "it": "Italiensk",
+    "pt-BR": "Portugisisk (Brasil)",
+    "ja": "Japansk",
+    "nl": "Nederlandsk",
+    "pl": "Polsk",
+    "zh-CN": "Kinesisk (forenklet)",
+    "zh-TW": "Kinesisk (tradisjonell, Taiwan)",
+    "ko": "Koreansk",
+    "sv": "Svensk",
+    "cs": "Tsjekkisk",
+    "da": "Dansk",
+    "fi": "Finsk"
   },
   "ro": {
     "ro": "Română"
@@ -393,5 +473,28 @@
     "da": "덴마크어",
     "nb": "노르웨이어 (보크몰)",
     "fi": "핀란드어"
+  },
+  "fi": {
+    "en": "Englanti (Yhdysvallat)",
+    "en-GB": "Englanti (Iso-Britannia)",
+    "en-CA": "Englanti (Kanada)",
+    "en-AU": "Englanti (Australia)",
+    "uk": "Ukraina",
+    "fr": "Ranska",
+    "de": "Saksa",
+    "es": "Espanja",
+    "it": "Italia",
+    "pt-BR": "Portugali (Brasilia)",
+    "ja": "Japani",
+    "nl": "Hollanti",
+    "pl": "Puola",
+    "zh-CN": "Kiina (yksinkertaistettu)",
+    "zh-TW": "Kiina (perinteinen, Taiwan)",
+    "ko": "Korea",
+    "sv": "Ruotsi",
+    "cs": "Tšekki",
+    "da": "Tanska",
+    "nb": "Norja (bokmål)",
+    "fi": "Suomi"
   }
 }
