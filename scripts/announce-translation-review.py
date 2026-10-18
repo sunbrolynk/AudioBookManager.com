@@ -45,6 +45,40 @@ def request_json(url, *, token=None, data=None):
         raise RuntimeError("API request failed or timed out") from None
 
 
+# English names for the Discord post. The branch name is the only thing taken from the PR, and only
+# a code listed here is posted, so nothing the PR contains is ever read or run.
+LANGUAGES = {
+    "cs": "Czech",
+    "da": "Danish",
+    "de": "German",
+    "en-au": "English (Australia)",
+    "en-ca": "English (Canada)",
+    "en-gb": "English (UK)",
+    "es": "Spanish",
+    "fi": "Finnish",
+    "fr": "French",
+    "it": "Italian",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "nb": "Norwegian Bokmål",
+    "nl": "Dutch",
+    "pl": "Polish",
+    "pt-br": "Portuguese (Brazil)",
+    "sv": "Swedish",
+    "uk": "Ukrainian",
+    "zh-cn": "Chinese (Simplified)",
+    "zh-tw": "Chinese (Traditional, Taiwan)",
+}
+
+
+def language_for(branch):
+    """The (code, English name) a review branch is for, or None for any other branch."""
+    match = re.fullmatch(r"translation/([a-z]{2}(?:-[a-z]{2})?)", branch)
+    if not match or match.group(1) not in LANGUAGES:
+        return None
+    return match.group(1), LANGUAGES[match.group(1)]
+
+
 def main():
     event = json.loads(
         Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8")
@@ -62,21 +96,12 @@ def main():
         print("Not an eligible correction PR; nothing posted.")
         return
 
-    match = re.fullmatch(r"translation/([a-z]{2,3}(?:-[a-z0-9]+)*)", branch)
-    if not match or branch.startswith("translation/publish-"):
-        print("Not a language correction branch; nothing posted.")
+    language = language_for(branch)
+    if not language:
+        print("Not a language review branch; nothing posted.")
         return
 
-    code = match.group(1)
-    locales = json.loads(Path("src/locales.json").read_text(encoding="utf-8"))
-    if code not in locales:
-        raise RuntimeError("Locale is not published in the trusted base commit")
-
-    # The language menu's English names, so a new language needs no second list here.
-    names = json.loads(Path("src/locale-names.json").read_text(encoding="utf-8"))["en"]
-    label = names.get(locales[code]["lang"])
-    if not label:
-        raise RuntimeError("Locale needs an English name in src/locale-names.json")
+    code, label = language
     display_code = "UA" if code == "uk" else code.upper()
     number = int(pr["number"])
     pr_url = f"https://github.com/{repo}/pull/{number}"

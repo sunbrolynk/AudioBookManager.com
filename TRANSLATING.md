@@ -100,8 +100,9 @@ language. A new language needs:
   Non-English languages also need a `translatorNote` containing `{mail}`.
 - `src/sidebar-labels.json`: labels under the language's BCP-47 tag.
 - `src/locales.json`: the registration, last, once everything else is done.
-- `src/locale-names.json`: its English name under `en`, which the Discord post
-  uses.
+- `src/locale-names.json`: its name in each published language.
+- `scripts/announce-translation-review.py`: its English name in `LANGUAGES`, or
+  its review PR won't be posted to Discord.
 
 `npm run build` tells you what's missing.
 
