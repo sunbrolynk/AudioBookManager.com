@@ -1,5 +1,5 @@
 ---
-title: Connect
+title: Сповіщення (Connect)
 description: Сповіщення, медіасервери та власні скрипти.
 ---
 
