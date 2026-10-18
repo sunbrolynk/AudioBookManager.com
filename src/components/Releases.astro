@@ -1,9 +1,11 @@
 ---
 import { getCollection, render } from 'astro:content';
 import highlights from '../data/release-highlights.json';
+import strings from '../ui-strings.json';
 
 type Highlight = { title: string; summary: string; upgrade?: string };
 const notes = highlights as Record<string, Highlight>;
+const t = (strings as Record<string, Record<string, string>>)[Astro.locals.starlightRoute.locale ?? 'en'];
 
 // One strip segment per top-level bullet, colored by the "### Kind" heading it sits under.
 const tally = (markdown: string) => {
@@ -30,7 +32,7 @@ const rendered = await Promise.all(
 );
 ---
 
-{rendered.length === 0 && <p>No releases yet.</p>}
+{rendered.length === 0 && <p>{t.releasesNone}</p>}
 <div class="releases not-content">
   {
     rendered.map((r) => (
@@ -44,7 +46,7 @@ const rendered = await Promise.all(
         <div class="body">
           {r.note && <h3 class="title">{r.note.title}</h3>}
           {r.note && <p class="sum">{r.note.summary}</p>}
-          {r.note?.upgrade && <p class="upgrade"><b>Before you upgrade</b>{r.note.upgrade}</p>}
+          {r.note?.upgrade && <p class="upgrade"><b>{t.releasesBeforeUpgrade}</b>{r.note.upgrade}</p>}
           <div class="notes sl-markdown-content"><r.Content /></div>
         </div>
       </section>

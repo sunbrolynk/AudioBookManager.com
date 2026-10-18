@@ -44,6 +44,12 @@ for (const code of codes) {
   if (!landing[code]) problems.push(`src/landing-strings.json has no entry for "${code}"`);
   else for (const k of Object.keys(landing.root)) shape(landing.root[k], landing[code][k], k, code);
 }
+// Header, footer and release-page labels live in src/ui-strings.json: every configured locale needs every English key.
+const ui = JSON.parse(readFileSync(new URL('../src/ui-strings.json', import.meta.url), 'utf8'));
+for (const code of codes) {
+  const missing = Object.keys(ui.en).filter((k) => typeof ui[code]?.[k] !== 'string' || !ui[code][k].trim());
+  if (missing.length) problems.push(`src/ui-strings.json for ${code} is missing ${missing.join(', ')}`);
+}
 // Non-English locales need the translator call-out (with a {mail} slot); English ones must not have it.
 const english = (c) => /^en(-|$)/i.test(locales[c].lang);
 for (const code of codes) {
