@@ -1,21 +1,27 @@
 ---
 title: Sidecar files
-description: The cover, OPF, description, narrator and cue files ABM writes beside a book.
+description: The metadata.json, cover, OPF, description and narrator files ABM writes beside a book.
 ---
 
-A sidecar is a small file beside the audio. Audiobookshelf and other players read them. ABM can write these:
+A sidecar is a small file beside the audio. Audiobookshelf and other players read them. ABM writes these:
 
-| File | Contents |
-|---|---|
-| `cover.jpg` | The book's cover |
-| `.opf` | Metadata in OPF form, readable by Audiobookshelf. Named after the book's first audio file (for example `Dune.opf`), or `title.opf` when the book has no audio |
-| `desc.txt` | The description |
-| `reader.txt` | The narrator |
-| `.cue` | Chapters from Libex (coming in the next release) |
+| File | Contents | Switch |
+|---|---|---|
+| `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else | None, always written |
+| `cover.jpg` | The book's cover. Not written when the folder already has a `cover.*` | cover.jpg |
+| `.opf` | Metadata in OPF form. Named after the book's first audio file (for example `Dune.opf`), or `title.opf` when the book has no audio | title.opf |
+| `desc.txt` | The description, without HTML. Skipped when there is none | desc.txt |
+| `reader.txt` | The narrators. Skipped when there are none | reader.txt |
+
+Together with the folder layout, these are the files Audiobookshelf reads for a book's details, so it sees the same book ABM does.
 
 ## When they are written
 
-Under **Settings > Metadata**, **Create on Book Add**, **Create on Import** and **Create on Refresh** choose when. By default only import writes them. **Overwrite Existing** is off, so a file that is already there stays. You can also write them from the edit dialog, for one book or a selection of series and authors. See [Metadata settings](/en-au/settings/metadata/).
+`metadata.json` is written every time a book is added, imported or refreshed.
+
+The other four each have a switch under **Settings > Metadata > Files to Create**, all on by default. They are written only when the matching trigger is on as well: **Create on Book Add** (off), **Create on Import** (on, which covers downloads, Library Import and Audible downloads) and **Create on Refresh** (off). **Overwrite Existing** is off, so a file that is already there stays. Nothing is written until the book's folder exists.
+
+The edit dialog's **Write to Directories** writes the four as well, for one book or a selection of series and authors. See [Metadata settings](/en-au/settings/metadata/).
 
 ## The cover is special
 
