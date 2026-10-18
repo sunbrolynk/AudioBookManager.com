@@ -7,5 +7,10 @@ cd "$(git rev-parse --show-toplevel)"
 echo "Scanning staged changes for secrets..."
 bash scripts/check-secrets.sh --staged
 
+# Check the languages in exactly what is being committed (the index git hands the hook, which
+# for git commit -a or a path-limited commit is not the usual one), not the working files.
 echo "Checking languages..."
-node scripts/check-locales.mjs
+snapshot="$(mktemp -d)"
+trap 'rm -rf "$snapshot"' EXIT
+git checkout-index --all --prefix="$snapshot/"
+node "$snapshot/scripts/check-locales.mjs"
