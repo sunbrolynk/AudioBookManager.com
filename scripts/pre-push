@@ -36,7 +36,10 @@ npm ci --ignore-scripts
 echo "Auditing dependencies..."
 npm audit --audit-level=moderate
 
-echo "Building the website..."
+echo "Running regression tests..."
+npm test
+
+echo "Building the website and checking it against its CSP..."
 npm run build
 
 echo "Checking internal links..."

@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/check-locales.mjs && astro build && node scripts/csp.mjs",
+    "build": "node scripts/check-locales.mjs && astro build && node scripts/csp.mjs && node scripts/check-csp.mjs",
+    "test": "node --test",
     "preview": "astro preview",
     "capture-screens": "node scripts/capture-screens.mjs"
   },
