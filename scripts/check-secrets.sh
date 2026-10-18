@@ -2,6 +2,9 @@
 # Scans every commit on every ref for secrets, or only the staged changes with --staged.
 set -euo pipefail
 
+# Hooks export GIT_DIR, which makes the paths below resolve from the hook instead of the checkout.
+unset GIT_DIR GIT_WORK_TREE GIT_INDEX_FILE
+
 repo_root="$(git -C "$(dirname "${BASH_SOURCE[0]}")" rev-parse --show-toplevel)"
 # A worktree's .git points into the main clone, so mount that too, both at their real paths.
 git_dir="$(git -C "$repo_root" rev-parse --path-format=absolute --git-common-dir)"
