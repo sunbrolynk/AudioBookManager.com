@@ -1,9 +1,13 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
+import { existsSync } from 'node:fs';
 import { chromium } from 'playwright';
 import { findOverflow } from '../scripts/check-overflow.mjs';
 
-test('findOverflow flags what widens the page and ignores what scrolls inside its own box', async () => {
+// Build hosts without Playwright's Chromium (Cloudflare Pages) skip this; GitHub Actions installs it, so there it always runs.
+const skip = !existsSync(chromium.executablePath()) && process.env.GITHUB_ACTIONS !== 'true' && "Playwright's Chromium is not installed on this host";
+
+test('findOverflow flags what widens the page and ignores what scrolls inside its own box', { skip }, async () => {
   const browser = await chromium.launch();
   const page = await browser.newPage({ viewport: { width: 360, height: 800 } });
   const check = async (html) => { await page.setContent(html); return page.evaluate(findOverflow); };
