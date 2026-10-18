@@ -45,6 +45,9 @@ npm run build
 echo "Checking internal links..."
 node scripts/check-links.mjs
 
+echo "Checking every page for sideways overflow from 320px to 1920px..."
+node scripts/check-overflow.mjs
+
 if [[ "$(git rev-parse HEAD)" != "$head_sha" || -n "$(git status --porcelain)" ]]; then
     echo "Push blocked: repository changed during validation. Review and retry." >&2
     exit 1

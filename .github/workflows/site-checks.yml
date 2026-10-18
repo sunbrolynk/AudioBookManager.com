@@ -39,6 +39,9 @@ jobs:
       - name: Install locked dependencies
         run: npm ci --ignore-scripts
 
+      - name: Install Playwright's Chromium
+        run: npx playwright install --with-deps chromium
+
       - name: Audit dependencies
         run: npm audit --audit-level=moderate
 
@@ -50,3 +53,6 @@ jobs:
 
       - name: Check internal links
         run: node scripts/check-links.mjs
+
+      - name: Check every page for sideways overflow
+        run: node scripts/check-overflow.mjs
