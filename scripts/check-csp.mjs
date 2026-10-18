@@ -11,14 +11,16 @@ export function parsePolicy(headers) {
   return new Map(line[1].split(';').map((d) => d.trim().split(/\s+/)).filter((d) => d[0]).map(([name, ...sources]) => [name, sources]));
 }
 
-export function allowed(policy, directive, url) {
+export function allowed(policy, directive, url, origin) {
   const sources = policy.get(directive) ?? policy.get('default-src') ?? [];
   if (sources.includes("'none'")) return false;
   if (url.startsWith('data:')) return sources.includes('data:');
   if (url.startsWith('blob:')) return sources.includes('blob:');
-  const abs = url.match(/^(?:https?:)?\/\/([^/?#]+)/i);
-  if (!abs) return sources.includes("'self'");
-  return sources.includes('*') || sources.includes('https:') || sources.some((s) => s.replace(/^https?:\/\//, '') === abs[1]);
+  const abs = url.match(/^(?:(https?):)?\/\/([^/?#]+)/i);
+  // An absolute URL on the site's own origin is the same as a relative one.
+  const own = abs && origin && abs[2].toLowerCase() === new URL(origin).host && (!abs[1] || `${abs[1].toLowerCase()}:` === new URL(origin).protocol);
+  if (!abs || own) return sources.includes("'self'");
+  return sources.includes('*') || sources.includes('https:') || sources.some((s) => s.replace(/^https?:\/\//, '') === abs[2]);
 }
 
 const cssUrls = (css) => {
@@ -36,6 +38,10 @@ const htmlUrls = (html) => {
   const found = [];
   for (const m of html.matchAll(/<script\b[^>]*\bsrc="([^"]+)"/g)) found.push(['script-src', m[1]]);
   for (const m of html.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)) found.push(['img-src', m[1]]);
+  // A browser may pick any srcset candidate, so each one has to be allowed.
+  for (const m of html.matchAll(/<(?:img|source)\b[^>]*\bsrcset="([^"]+)"/g)) {
+    for (const candidate of m[1].split(/,\s+/)) if (candidate.trim()) found.push(['img-src', candidate.trim().split(/\s+/)[0]]);
+  }
   for (const m of html.matchAll(/<link\b([^>]*)>/g)) {
     const href = m[1].match(/\bhref="([^"]+)"/)?.[1];
     const rel = m[1].match(/\brel="([^"]+)"/)?.[1] ?? '';
@@ -50,7 +56,7 @@ const htmlUrls = (html) => {
   return found;
 };
 
-export function checkSite(dist) {
+export function checkSite(dist, origin) {
   const policy = parsePolicy(readFileSync(join(dist, '_headers'), 'utf8'));
   const files = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? files(join(dir, e.name)) : [join(dir, e.name)]);
@@ -59,14 +65,15 @@ export function checkSite(dist) {
     const urls = file.endsWith('.html') ? htmlUrls(readFileSync(file, 'utf8'))
       : file.endsWith('.css') ? cssUrls(readFileSync(file, 'utf8')) : [];
     for (const [directive, url] of urls) {
-      if (!allowed(policy, directive, url)) problems.add(`${directive} blocks ${url.slice(0, 60)} (${file.slice(dist.length)})`);
+      if (!allowed(policy, directive, url, origin)) problems.add(`${directive} blocks ${url.slice(0, 60)} (${file.slice(dist.length)})`);
     }
   }
   return [...problems];
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
-  const problems = checkSite(fileURLToPath(new URL('../dist/', import.meta.url)));
+  const site = readFileSync(new URL('../astro.config.mjs', import.meta.url), 'utf8').match(/site: '([^']+)'/)?.[1];
+  const problems = checkSite(fileURLToPath(new URL('../dist/', import.meta.url)), site);
   if (problems.length) {
     console.error(`check-csp: ${problems.length} resource(s) the Content-Security-Policy blocks:\n  ${problems.join('\n  ')}`);
     process.exit(1);

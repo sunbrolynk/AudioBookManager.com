@@ -27,3 +27,20 @@ test('a built site with a data: font or an off-site script fails', () => {
   assert.match(problems.join('\n'), /font-src blocks data:font/);
   assert.match(problems.join('\n'), /script-src blocks https:\/\/cdn\.example\.com/);
 });
+
+test("an absolute URL on the site's own origin counts as 'self'", () => {
+  const policy = parsePolicy(headers);
+  assert.equal(allowed(policy, 'img-src', 'https://audiobookmanager.com/favicon.png', 'https://audiobookmanager.com'), true);
+  assert.equal(allowed(policy, 'img-src', '//audiobookmanager.com/favicon.png', 'https://audiobookmanager.com'), true);
+  assert.equal(allowed(policy, 'img-src', 'https://audiobookmanager.com.evil.example/x.png', 'https://audiobookmanager.com'), false);
+});
+
+test('srcset candidates on img and source are checked like src', () => {
+  const dist = mkdtempSync(join(tmpdir(), 'check-csp-'));
+  writeFileSync(join(dist, '_headers'), "/*\n  Content-Security-Policy: default-src 'self'; img-src 'self' data:\n");
+  writeFileSync(join(dist, 'index.html'), '<picture><source srcset="https://cdn.example.com/a.webp 1x, /b.webp 2x"><img src="/fallback.png" srcset="data:image/png;base64,AA 1x, https://img.example.org/c.png 2x"></picture>');
+  const problems = checkSite(dist).join('\n');
+  assert.match(problems, /img-src blocks https:\/\/cdn\.example\.com\/a\.webp/);
+  assert.match(problems, /img-src blocks https:\/\/img\.example\.org\/c\.png/);
+  assert.doesNotMatch(problems, /b\.webp|fallback|data:/);
+});
