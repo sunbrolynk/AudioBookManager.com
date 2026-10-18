@@ -42,8 +42,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -203,7 +203,7 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord"
   },
   "en-gb": {
     "htmlLang": "en-GB",
@@ -248,8 +248,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -409,7 +409,7 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord"
   },
   "uk": {
     "htmlLang": "uk",
@@ -454,8 +454,8 @@
     "brokenBtn": "Створити звернення",
     "helpH": "Хочеш допомогти?",
     "helpP": "ABM це проєкт однієї людини. Ko-fi або Monster допомагають йому рухатись.",
-    "kofiBtn": "Пригости мене Monster",
-    "monsterBtn": "Підтримати розробку",
+    "kofiBtn": "Підтримати розробку",
+    "monsterBtn": "Пригости мене Monster",
     "finalH2": "Годі виправляти<br />теки.",
     "ctaInstall": "Встановити ABM",
     "ctaDocs": "Читати документацію",
@@ -616,7 +616,7 @@
     "communityEyebrow": "Спільнота",
     "communityH2": "Знайди свою спільноту.",
     "communityP": "Маєш запитання, потрібна допомога з налаштуванням чи хочеш поговорити про аудіокниги? Приєднуйся до спільноти AudioBook Manager у Discord, щоб отримати допомогу та поспілкуватися.",
-    "communityBtn": "Приєднуйся до нас у Discord"
+    "communityBtn": "Приєднатися до Discord"
   },
   "en-ca": {
     "htmlLang": "en-CA",
@@ -661,8 +661,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -822,7 +822,7 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord"
   },
   "en-au": {
     "htmlLang": "en-AU",
@@ -867,8 +867,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -1028,6 +1028,6 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord"
   }
 }
