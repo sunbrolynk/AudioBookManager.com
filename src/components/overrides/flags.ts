@@ -25,5 +25,6 @@ export const flags: Record<string, string> = {
   nb: svg('<rect width="22" height="16" fill="#BA0C2F"/><rect x="6" width="4" height="16" fill="#fff"/><rect y="6" width="22" height="4" fill="#fff"/><rect x="7" width="2" height="16" fill="#00205B"/><rect y="7" width="22" height="2" fill="#00205B"/>', '0 0 22 16'),
   ro: svg('<rect width="1" height="2" fill="#002B7F"/><rect x="1" width="1" height="2" fill="#FCD116"/><rect x="2" width="1" height="2" fill="#CE1126"/>'),
   tr: svg('<rect width="3" height="2" fill="#E30A17"/><circle cx="1.1" cy="1" r=".5" fill="#fff"/><circle cx="1.22" cy="1" r=".4" fill="#E30A17"/><path d="M1.55 1 2.05.84 1.74 1.26V.74L2.05 1.16Z" fill="#fff"/>'),
+  fi: svg('<rect width="18" height="11" fill="#fff" stroke="#bbb" stroke-width=".1"/><rect x="5" width="3" height="11" fill="#002F6C"/><rect y="4" width="18" height="3" fill="#002F6C"/>', '0 0 18 11'),
   ko: svg('<rect width="3" height="2" fill="#fff" stroke="#bbb" stroke-width=".05"/><circle cx="1.5" cy="1" r=".45" fill="#CD2E3A"/><path d="M1.05 1a.45.45 0 0 0 .9 0 .225.225 0 0 0-.45 0 .225.225 0 0 1-.45 0Z" fill="#0047A0"/>'),
 };
