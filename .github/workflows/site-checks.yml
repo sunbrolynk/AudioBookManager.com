@@ -2,7 +2,7 @@ name: Site checks
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, 'translation/**']
   push:
     branches: [main]
   workflow_dispatch:
@@ -17,12 +17,12 @@ concurrency:
 jobs:
   validate:
     name: Site validation
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
         with:
           persist-credentials: false
           fetch-depth: 0
@@ -31,7 +31,7 @@ jobs:
         run: bash scripts/check-secrets.sh
 
       - name: Set up Node.js
-        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6.5.0
         with:
           node-version: '24.14.1'
           package-manager-cache: false
@@ -42,7 +42,10 @@ jobs:
       - name: Audit dependencies
         run: npm audit --audit-level=moderate
 
-      - name: Build website and security headers
+      - name: Run regression tests
+        run: npm test
+
+      - name: Build website, security headers and CSP check
         run: npm run build
 
       - name: Check internal links
