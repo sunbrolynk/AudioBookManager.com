@@ -48,6 +48,9 @@ nav.sidebar .top-level > li + li { margin-top: .6rem; }
 .sl-markdown-content td:first-child code { white-space: nowrap; }
 .sl-markdown-content ol > li::marker { font: 800 1.2em var(--r1-cond); font-variation-settings: "wdth" 62; color: var(--r1-done); }
 .expressive-code .frame { --ec-frm-edBg: #0f0f0f; }
+/* A small clipboard icon in the corner, like GitHub's, instead of a big square button. */
+.expressive-code .frame .copy button { width: 1.75rem; height: 1.75rem; }
+.expressive-code .frame .copy button::after { margin: 0.3rem; mask-size: contain; -webkit-mask-size: contain; mask-position: center; -webkit-mask-position: center; }
 .starlight-aside { border-inline-start-width: 4px; border-radius: 0 4px 4px 0; }
 .starlight-aside--tip { --sl-color-asides-text-accent: var(--r1-find); --sl-color-asides-border: var(--r1-find); background: #142235; }
 

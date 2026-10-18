@@ -20,6 +20,11 @@ export default defineConfig({
       defaultLocale: 'root',
       locales: { root: { label: 'English (US)', lang: 'en' }, ...locales },
       favicon: '/favicon.png',
+      // The site is dark only, so one dark theme; a light theme's colours vanish on the dark code background.
+      expressiveCode: {
+        themes: ['night-owl'],
+        styleOverrides: { frames: { copyIcon: 'url(/copy.svg)', inlineButtonBorderOpacity: '0' } },
+      },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/sunbrolynk/AudioBook-Manager' },
       ],
