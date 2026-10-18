@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { allowed, checkSite, parsePolicy } from '../scripts/check-csp.mjs';
+import { allowed, checkSite, parsePolicy, srcsetUrls } from '../scripts/check-csp.mjs';
 
 const headers = "/*\n  Content-Security-Policy: default-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'\n";
 
@@ -43,4 +43,24 @@ test('srcset candidates on img and source are checked like src', () => {
   assert.match(problems, /img-src blocks https:\/\/cdn\.example\.com\/a\.webp/);
   assert.match(problems, /img-src blocks https:\/\/img\.example\.org\/c\.png/);
   assert.doesNotMatch(problems, /b\.webp|fallback|data:/);
+});
+
+test('srcset is parsed like a browser does, including candidates with no space after the comma', () => {
+  assert.deepEqual(srcsetUrls('/a.png 1x,https://cdn.example.com/b.png 2x'), ['/a.png', 'https://cdn.example.com/b.png']);
+  assert.deepEqual(srcsetUrls('data:image/png;base64,AA 1x, /c.png 2x'), ['data:image/png;base64,AA', '/c.png']);
+  // With no descriptor, a comma inside a URL belongs to it, as the HTML spec and browsers have it.
+  assert.deepEqual(srcsetUrls('/d.png,/e.png'), ['/d.png,/e.png']);
+  assert.deepEqual(srcsetUrls('/f.png, https://cdn.example.com/g.png'), ['/f.png', 'https://cdn.example.com/g.png']);
+});
+
+test('single-quoted and unquoted attributes and string-form CSS imports are checked too', () => {
+  const dist = mkdtempSync(join(tmpdir(), 'check-csp-'));
+  writeFileSync(join(dist, '_headers'), "/*\n  Content-Security-Policy: default-src 'self'; img-src 'self' data:; style-src 'self'\n");
+  writeFileSync(join(dist, 'index.html'), "<img src='https://img.example.org/a.png'><script src=https://js.example.org/x.js></script><style>@import \"https://css.example.org/t.css\"; @import url('/local.css');</style>");
+  writeFileSync(join(dist, 'a.css'), "@import 'https://css.example.net/u.css';");
+  const problems = checkSite(dist).join('\n');
+  for (const blocked of ['img-src blocks https://img.example.org/a.png', 'script-src blocks https://js.example.org/x.js', 'style-src blocks https://css.example.org/t.css', 'style-src blocks https://css.example.net/u.css']) {
+    assert.ok(problems.includes(blocked), `missing: ${blocked}\n${problems}`);
+  }
+  assert.doesNotMatch(problems, /local\.css/);
 });
