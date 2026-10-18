@@ -51,14 +51,14 @@ for (const code of codes) {
   if (english(code) && note) problems.push(`landing strings for ${code}: translatorNote belongs only on non-English locales`);
   if (!english(code) && !(typeof note === 'string' && note.includes('{mail}'))) problems.push(`landing strings for ${code} need a translatorNote containing {mail}`);
 }
-// Every sidebar group label needs a translation for each configured locale.
+// Every sidebar group and link label needs a translation for each configured locale.
 const sidebar = JSON.parse(readFileSync(new URL('../src/sidebar-labels.json', import.meta.url), 'utf8'));
 const config = readFileSync(new URL('../astro.config.mjs', import.meta.url), 'utf8');
 for (const [, label] of config.matchAll(/label: '([^']+)', translations:/g)) {
   for (const c of codes) if (!sidebar[label]?.[locales[c].lang]) problems.push(`sidebar group "${label}" has no translation for ${locales[c].lang}`);
 }
-const groups = (config.match(/\{ label: '[^']+', (?:translations: [^,]+, )?items:/g) || []).length;
-if (groups !== (config.match(/translations: sidebarLabels/g) || []).length) problems.push('a sidebar group in astro.config.mjs has no translations field');
+const groups = (config.match(/\{ label: '[^']+', (?:translations: [^,]+, )?(?:items|link):/g) || []).length;
+if (groups !== (config.match(/translations: sidebarLabels/g) || []).length) problems.push('a sidebar group or link in astro.config.mjs has no translations field');
 // Language names need no check: LanguageSelect falls back to Intl.DisplayNames for any name not in src/locale-names.json.
 if (problems.length) {
   console.error(`check-locales: ${problems.join('\n')}\nA language is listed only when every page is translated.`);

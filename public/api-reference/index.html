@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>API reference - AudioBook Manager</title>
+    <meta name="description" content="Every endpoint in AudioBook Manager's API, generated from its OpenAPI schema." />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/api-reference/redoc-abm.css" />
+  </head>
+  <body>
+    <noscript>The API reference needs JavaScript. The raw schema is at <a href="/api-reference/openapi.json">openapi.json</a>.</noscript>
+    <div id="redoc"></div>
+    <script src="/api-reference/redoc.standalone.js"></script>
+    <script>
+      (function () {
+        var root = document.getElementById('redoc');
+        fetch('/api-reference/openapi.json')
+          .then(function (response) {
+            if (!response.ok) throw new Error(String(response.status));
+            return response.json();
+          })
+          .then(function (spec) {
+            spec.info['x-logo'] = { url: '/favicon.png', altText: 'AudioBook Manager', href: '/' };
+            Redoc.init(spec, {
+              theme: {
+                colors: { primary: { main: '#8b45c6' } },
+                sidebar: { width: '300px', backgroundColor: '#1a1a1a', textColor: '#d0d0d0', activeTextColor: '#b07ce0' },
+                rightPanel: { width: '46%', backgroundColor: '#1e1e1e', textColor: '#f2f2f2' }
+              }
+            }, root, function () {
+              var img = document.querySelector('.menu-content img[alt="AudioBook Manager"]');
+              if (!img) return;
+              var block = img.closest('a') || img;
+              var line = document.createElement('div');
+              line.className = 'abm-version';
+              line.textContent = 'v' + spec.info.version;
+              block.parentNode.parentNode.insertBefore(line, block.parentNode.nextSibling);
+            });
+          })
+          .catch(function () {
+            root.className = 'abm-failed';
+            root.textContent = 'The API reference could not be loaded. The raw schema is at /api-reference/openapi.json.';
+          });
+      })();
+    </script>
+  </body>
+</html>

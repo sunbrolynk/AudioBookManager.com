@@ -40,5 +40,11 @@
     "uk": "Довідка",
     "en-CA": "Help",
     "en-AU": "Help"
+  },
+  "API reference": {
+    "en-GB": "API reference",
+    "uk": "Довідник API",
+    "en-CA": "API reference",
+    "en-AU": "API reference"
   }
 }
