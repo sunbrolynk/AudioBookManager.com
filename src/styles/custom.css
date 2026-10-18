@@ -62,7 +62,8 @@ starlight-toc h2, mobile-starlight-toc .toggle { font: 600 11.5px var(--r1-mono)
 starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
 
 @media (max-width: 50rem) {
-  :root { --sl-text-h1: 3.25rem; }
+  /* Same selector as the tokens above, or the phone size never applies. */
+  :root, :root[data-theme='light'], :root[data-theme='dark'] { --sl-text-h1: clamp(2.25rem, 10vw, 3.25rem); }
   .sl-markdown-content { line-height: 1.75; }
   .sl-markdown-content table { display: block; overflow-x: auto; }
 }
