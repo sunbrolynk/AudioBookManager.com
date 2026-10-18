@@ -9,6 +9,7 @@ if git config --get core.hooksPath >/dev/null; then
     exit 1
 fi
 
+# Check both hooks before writing either, so a refusal leaves the existing hooks as they were.
 for name in pre-commit pre-push; do
     hook="$(git rev-parse --path-format=absolute --git-path "hooks/$name")"
     if [[ -e "$hook" || -L "$hook" ]]; then
@@ -17,6 +18,8 @@ for name in pre-commit pre-push; do
             exit 1
         fi
     fi
-    install -m 0755 "scripts/$name" "$hook"
+done
+for name in pre-commit pre-push; do
+    install -m 0755 "scripts/$name" "$(git rev-parse --path-format=absolute --git-path "hooks/$name")"
 done
 echo "Installed the website pre-commit and pre-push checks."
