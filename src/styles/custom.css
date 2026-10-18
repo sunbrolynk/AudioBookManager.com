@@ -70,3 +70,6 @@ starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
   .sl-markdown-content { line-height: 1.75; }
   .sl-markdown-content table { display: block; overflow-x: auto; }
 }
+/* An icon inside running text, such as a GitHub link beside a name. */
+.sl-markdown-content .inline-icon { display: inline; vertical-align: -0.125em; }
+.sl-markdown-content .nowrap { white-space: nowrap; }
