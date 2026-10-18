@@ -48,7 +48,7 @@ const entries = Object.entries(all)
 const cur = entries.find((e) => e.code === here)!;
 ---
 <details class="lang">
-  <summary aria-label="Language"><span class="flag" set:html={cur.flag} />{cur.name}</summary>
+  <summary aria-label="Language"><span class="flag" set:html={cur.flag} /><span class="name">{cur.name}</span></summary>
   <ul>{entries.map((e) => (
     <li><a href={href(e.code)} lang={e.lang} hreflang={e.lang} aria-current={e.code === here ? 'true' : undefined}><span class="flag" set:html={e.flag} />{e.name}</a></li>
   ))}</ul>
@@ -64,4 +64,6 @@ const cur = entries.find((e) => e.code === here)!;
   a { display: flex; align-items: center; padding: 0.25rem 0.75rem; color: inherit; text-decoration: none; }
   summary:focus-visible, a:focus-visible { outline: 2px solid var(--sl-color-white); outline-offset: 2px; }
   a:hover, a[aria-current] { color: var(--sl-color-white); }
+  /* A phone header has room for the flag only; the menu still lists every name. */
+  @media (max-width: 50rem) { summary .name { display: none; } summary .flag { margin: 0; } }
 </style>

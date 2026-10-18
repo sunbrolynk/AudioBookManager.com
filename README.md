@@ -136,6 +136,11 @@ that the outgoing commit matches the checked-out commit. It then runs:
   check that every built page and stylesheet only loads what the
   Content-Security-Policy allows.
 - Internal page-link and anchor validation.
+- Every built page, in every language, loaded in Chromium at 320, 360, 375, 390,
+  414, 768, 1024, 1280, 1440 and 1920px wide. It fails if the page scrolls
+  sideways, if anything sticks out past the viewport outside a box that scrolls
+  or clips it, or if the header's links run under the language menu. Run
+  `npx playwright install chromium` once per machine first.
 
 The push stops if a check fails. GitHub Actions repeats these checks for PRs.
 Local hooks are a convenience gate, not a security boundary: they can be

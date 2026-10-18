@@ -17,7 +17,7 @@
   --sl-color-orange-low: #33230a; --sl-color-orange: var(--r1-want); --sl-color-orange-high: #fbd38d;
   --sl-color-green-low: #0f2a19; --sl-color-green: var(--r1-done); --sl-color-green-high: #9be3b4;
   --sl-color-red-low: #3a1414; --sl-color-red: #dc2626; --sl-color-red-high: #fca5a5;
-  --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 46rem;
+  --sl-nav-height: 62px; --sl-sidebar-width: 17rem; --sl-content-width: 52rem;
   --sl-text-h1: 4.75rem; --sl-text-h2: 1.85rem; --sl-text-h3: 1.3rem;
   --sl-line-height: 1.7;
 }
@@ -28,6 +28,8 @@ body { background: var(--r1-bg); }
 .page > .header .r1-top { position: static; background: none; border: 0; height: 100%; }
 .page > .header .r1-top .w { max-width: none; padding: 0; height: 100%; }
 @media (max-width: 50rem) { .page > .header .r1-top .btn { display: none; } }
+/* The docs bar also holds search, so its landing-page links go sooner; the sidebar covers navigation. */
+@media (max-width: 1240px) { .page > .header .r1-top nav { display: none; } }
 
 /* Sidebar groups, in the landing page's mono eyebrow style. */
 .sidebar-pane { border-inline-end: 1px solid var(--r1-line); }
@@ -60,7 +62,8 @@ starlight-toc h2, mobile-starlight-toc .toggle { font: 600 11.5px var(--r1-mono)
 starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
 
 @media (max-width: 50rem) {
-  :root { --sl-text-h1: 3.25rem; }
+  /* Same selector as the tokens above, or the phone size never applies. */
+  :root, :root[data-theme='light'], :root[data-theme='dark'] { --sl-text-h1: clamp(2.25rem, 10vw, 3.25rem); }
   .sl-markdown-content { line-height: 1.75; }
   .sl-markdown-content table { display: block; overflow-x: auto; }
 }
