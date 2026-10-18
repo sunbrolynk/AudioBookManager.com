@@ -13,7 +13,8 @@ test('findOverflow flags what widens the page and ignores what scrolls inside it
   const check = async (html) => { await page.setContent(html); return page.evaluate(findOverflow); };
   try {
     assert.equal((await check('<body style="margin:0"><div style="width:500px">wide</div></body>')).length, 2);
-    assert.deepEqual(await check('<body style="margin:0"><div style="overflow-x:auto"><pre style="width:900px">code</pre></div><a style="position:absolute;left:-999px">skip</a></body>'), []);
+    assert.match((await check('<body style="margin:0"><h1 style="font-size:60px">Troubleshootingtroubleshooting</h1></body>')).join(), /text "Troubleshootingtroubleshooting" in h1 runs past/);
+    assert.deepEqual(await check('<body style="margin:0"><span style="position:absolute;width:1px;overflow:hidden;white-space:nowrap">screen reader only text that is long</span><div style="overflow-x:auto"><pre style="width:900px">code</pre></div><a style="position:absolute;left:-999px">skip</a></body>'), []);
     const header = '<header class="r1-top"><div style="display:flex;width:360px"><nav style="display:flex;min-width:0;white-space:nowrap;width:100px"><a>Features</a><a>Screenshots</a></nav><div class="r">EN</div></div></header>';
     assert.deepEqual(await check(`<body style="margin:0">${header}</body>`), ['header links run under the language menu']);
   } finally {

@@ -33,6 +33,17 @@ export function findOverflow() {
     }
     return false;
   };
+  const clipped = (el) => { const s = getComputedStyle(el); return s.overflowX !== 'visible' || s.display === 'none' || s.visibility === 'hidden'; };
+  // Text can run out of a box that itself fits, such as one long word in a heading.
+  const text = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  for (let node = text.nextNode(); node && problems.length < 5; node = text.nextNode()) {
+    const el = node.parentElement;
+    if (!node.textContent.trim() || !el || clipped(el) || contained(el)) continue;
+    const range = document.createRange();
+    range.selectNodeContents(node);
+    const rects = [...range.getClientRects()];
+    if (rects.some((r) => (rtl ? r.left < -1 : r.right > width + 1))) problems.push(`text "${node.textContent.trim().slice(0, 40)}" in ${el.tagName.toLowerCase()} runs past the viewport`);
+  }
   for (const el of document.body.querySelectorAll('*')) {
     const s = getComputedStyle(el);
     if (s.display === 'none' || s.visibility === 'hidden' || s.position === 'fixed') continue;
