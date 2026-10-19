@@ -1,0 +1,102 @@
+---
+title: Instalar o ABM
+description: Um contêiner, três pastas, um comando. Esta página é a instalação inteira.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+O banco de dados é um arquivo SQLite em `/config`, então não tem nenhum serviço de banco de dados para configurar.
+
+**Você vai precisar de:**
+
+- Docker com Compose
+- Uma pasta para a sua biblioteca de audiolivros
+- A pasta onde o seu cliente de download coloca os downloads concluídos
+- Uma pasta para os dados do próprio ABM
+
+## Instalação
+
+<Steps>
+
+1. **Crie um arquivo compose.** Salve isto como `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Aponte para as suas pastas.** Troque o lado esquerdo de cada volume por uma pasta de verdade na sua máquina. Não mexa no lado direito.
+
+   | Caminho no host | Caminho no contêiner | O que vai ali |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Sua biblioteca de audiolivros. Obrigatório. |
+   | `/path/to/downloads` | `/downloads` | Onde o seu cliente de download coloca os downloads concluídos. Obrigatório. |
+   | `/path/to/config` | `/config` | O banco de dados SQLite, backups, logs, lixeiras e o segredo do app gerado. Guarde bem. |
+
+3. **Inicie.** Rode isto na pasta onde está o arquivo compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Abra.** Acesse `http://your-server:5173`. Na primeira visita, o ABM te guia na criação de um login.
+
+</Steps>
+
+<Aside type="tip" title="Downloads em outro contêiner?">
+Se o seu cliente de download roda no próprio contêiner, a pasta de downloads dele tem que ser a mesma pasta que o ABM enxerga como `/downloads`. Se os caminhos forem diferentes, adicione um mapeamento de caminho remoto em **Settings > Download Clients**.
+</Aside>
+
+## Primeira execução
+
+Defina o seu fuso horário com `TIMEZONE` no arquivo compose. Depois, em **Settings**, adicione uma pasta raiz em **Media Management**, um indexador em **Indexers** e um cliente de download em **Download Clients**. Variáveis de ambiente e proxies reversos estão em [Configuração](/pt-br/configuration/).
+
+## Compilar a partir do código-fonte
+
+Para gerar a imagem você mesmo, clone o repositório, troque a linha `image:` por `build: .` e rode:
+
+```bash
+docker compose up -d --build
+```
+
+## Outras formas de instalar
+
+Por enquanto, o Docker é o único caminho. Instalações nativas estão nos planos, para o ABM rodar onde você já faz self-hosting:
+
+| Plataforma | Planejado como |
+|---|---|
+| Linux | Um pacote nativo e serviço |
+| Windows | Um instalador `.exe` |
+| macOS | Um app nativo |
+| Kubernetes | Uma implantação em cluster |
+| Unraid | Um template do Community Apps |
+| Proxmox | Um script de instalação LXC |
+
+Nada disso existe ainda. Cada um vai aparecer na página [Atualizações](/pt-br/updates/) quando sair.
+
+## Atualização
+
+Baixe a imagem nova e recrie o contêiner. A página [Atualizações](/pt-br/updates/) lista o que mudou em cada versão.
+
+<Aside type="caution" title="O ABM está em alfa">
+Faça backup de `/config` antes de atualizar e dê uma olhada nas notas da atualização antes.
+</Aside>
+
+## Algo deu errado?
+
+- **A página não carrega.** Confira o mapeamento de porta no arquivo compose e depois rode `docker logs audiobook-manager`.
+- **As alterações são recusadas pelo meu domínio.** O ABM recusa alterações vindas de um endereço pelo qual ele não é acessado. Primeiro, faça o seu proxy repassar o cabeçalho `Host` original. Se não bastar, adicione o seu domínio em **CORS Allowed Domains** em **Settings > General** (é uma configuração avançada, então ligue **Show Advanced**) e reinicie o ABM. Veja [Solução de problemas](/pt-br/troubleshooting/).
+- **Os downloads terminam, mas nunca são importados.** Confira o mapeamento de pastas na dica acima.
