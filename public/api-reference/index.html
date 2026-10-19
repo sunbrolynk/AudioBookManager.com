@@ -40,7 +40,12 @@
           })
           .catch(function () {
             root.className = 'abm-failed';
-            root.textContent = 'The API reference could not be loaded. The raw schema is at /api-reference/openapi.json.';
+            root.textContent = 'The API reference could not be loaded. The raw schema is at ';
+            var link = document.createElement('a');
+            link.href = '/api-reference/openapi.json';
+            link.textContent = 'openapi.json';
+            root.appendChild(link);
+            root.appendChild(document.createTextNode('.'));
           });
       })();
     </script>
