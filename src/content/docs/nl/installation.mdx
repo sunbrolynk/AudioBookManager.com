@@ -1,0 +1,87 @@
+---
+title: ABM installeren
+description: Eén container, drie mappen, één commando. Dit is de hele installatie.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+De database is een SQLite-bestand in `/config`, dus je hoeft geen databaseservice op te zetten.
+
+**Wat je nodig hebt:**
+
+- Docker met Compose
+- Een map voor je luisterboekenbibliotheek
+- De map waar je downloadclient afgeronde downloads neerzet
+- Een map voor de eigen data van ABM
+
+## Installeren
+
+<Steps>
+
+1. **Maak een compose-bestand.** Sla dit op als `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Wijs je mappen aan.** Verander de linkerkant van elk volume in een echte map op je machine. Laat de rechterkant zoals hij is.
+
+   | Pad op de host | Pad in de container | Wat erin komt |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Je luisterboekenbibliotheek. Verplicht. |
+   | `/path/to/downloads` | `/downloads` | Waar je downloadclient afgeronde downloads neerzet. Verplicht. |
+   | `/path/to/config` | `/config` | De SQLite-database, back-ups, logs, prullenbakken en het gegenereerde app-secret. Bewaar deze goed. |
+
+3. **Start hem.** Draai dit vanuit de map met het compose-bestand:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Open hem.** Ga naar `http://your-server:5173`. Bij het eerste bezoek word je door het aanmaken van een login geleid.
+
+</Steps>
+
+<Aside type="tip" title="Downloads in een andere container?">
+Draait je downloadclient in een eigen container, dan moet zijn downloadmap dezelfde map zijn die ABM als `/downloads` ziet. Verschillen de paden, voeg dan een remote path mapping toe onder **Settings > Download Clients**.
+</Aside>
+
+## De eerste keer
+
+Stel je tijdzone in met `TIMEZONE` in het compose-bestand. Voeg daarna in **Settings** een rootmap toe onder **Media Management**, een indexer onder **Indexers** en een downloadclient onder **Download Clients**. Omgevingsvariabelen en reverse proxy's staan bij [Configuratie](/nl/configuration/).
+
+## Zelf bouwen vanaf de broncode
+
+Wil je de image zelf bouwen, clone dan de repo, vervang de regel `image:` door `build: .` en draai:
+
+```bash
+docker compose up -d --build
+```
+
+## Updaten
+
+Pull de nieuwe image en maak de container opnieuw aan. Op de pagina [Updates](/nl/updates/) staat wat er in elke release veranderd is.
+
+<Aside type="caution" title="ABM is nog alfa">
+Maak een back-up van `/config` voordat je upgradet, en lees eerst even de updatenotities.
+</Aside>
+
+## Klopt er iets niet?
+
+- **De pagina laadt niet.** Controleer de poortmapping in je compose-bestand en draai daarna `docker logs audiobook-manager`.
+- **Wijzigingen vanaf mijn domein worden geweigerd.** ABM weigert wijzigingen vanaf een adres waarop het niet bereikt wordt. Laat je proxy eerst de originele `Host`-header doorgeven. Is dat niet genoeg, zet je domein dan in **CORS Allowed Domains** onder **Settings > General** (een geavanceerde instelling, dus zet **Show Advanced** aan) en herstart ABM. Zie [Problemen oplossen](/nl/troubleshooting/).
+- **Downloads worden afgerond maar nooit geïmporteerd.** Controleer de mapkoppeling in de tip hierboven.
