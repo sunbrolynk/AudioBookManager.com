@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Pobierz",
     "installH2": "Działa z jednego pliku.",
     "buildP": "<b>Zbuduj ze źródeł.</b> W sklonowanym repo zamień <code>image:</code> na <code>build: .</code> i odpal <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, zwykła usługa na Linuksie.</b> Jeszcze nie. Na razie jedyna droga to Docker.",
+    "otherP": "<b>Na razie jedyna droga to Docker.</b> Natywne instalacje na popularne systemy są w planach, żeby ABM dało się uruchomić tam, gdzie już hostujesz swoje rzeczy:",
     "note": "ABM jest w wersji alfa. Przed aktualizacją zrób kopię <code>/config</code> i przejrzyj najpierw informacje o wydaniu.",
     "fullGuide": "Pełna instrukcja instalacji →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Zgłoś problem",
     "helpH": "Chcesz pomóc?",
     "helpP": "ABM to projekt jednej osoby. Ko-fi albo Monster pomagają mu iść do przodu.",
-    "kofiBtn": "Postaw mi Monstera",
-    "monsterBtn": "Wesprzyj rozwój",
+    "kofiBtn": "Wesprzyj rozwój",
+    "monsterBtn": "Postaw mi Monstera",
     "finalH2": "Przestań poprawiać<br />foldery.",
     "ctaInstall": "Zainstaluj ABM",
     "ctaDocs": "Przeczytaj dokumentację",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Społeczność",
     "communityH2": "Znajdź swoich ludzi.",
     "communityP": "Masz pytanie, potrzebujesz pomocy z konfiguracją albo chcesz pogadać o audiobookach? Dołącz do społeczności AudioBook Manager na Discordzie, gdzie znajdziesz wsparcie i dyskusje.",
-    "communityBtn": "Dołącz na Discordzie",
+    "communityBtn": "Dołącz do Discorda",
+    "planned": [
+      [
+        "Linux",
+        "natywny pakiet i usługa"
+      ],
+      [
+        "Windows",
+        "instalator .exe"
+      ],
+      [
+        "macOS",
+        "natywna aplikacja"
+      ],
+      [
+        "Kubernetes",
+        "wdrożenie na klastrze"
+      ],
+      [
+        "Unraid",
+        "szablon w Community Apps"
+      ],
+      [
+        "Proxmox",
+        "skrypt instalacyjny LXC"
+      ]
+    ],
+    "coming": "Wkrótce",
     "translatorNote": "Ta strona została przetłumaczona maszynowo. Jeśli polski to twój język ojczysty i chcesz pomóc go poprawić, napisz do mnie: {mail}."
   }
 }

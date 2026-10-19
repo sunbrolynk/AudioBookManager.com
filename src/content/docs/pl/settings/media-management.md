@@ -7,7 +7,7 @@ description: Foldery główne, importowanie, dodatkowe pliki, kosz, skanowanie, 
 
 ## Foldery główne (Root Folders)
 
-Folder główny to katalog, w którym ABM zarządza książkami. Dodasz go przez **Add Root Folder**, które otwiera przeglądarkę folderów z polem, w które możesz wpisać ścieżkę. ABM potrafi też wypisać niezmapowane foldery w folderze głównym i je zaimportować. Wolne miejsce i obsługa hardlinków są sprawdzane przy dodawaniu folderu. Usunięcie folderu głównego nie kasuje plików.
+Folder główny to katalog, w którym ABM zarządza książkami. Dodasz go przez **Add Root Folder**, które otwiera przeglądarkę folderów z polem, w które możesz wpisać ścieżkę. ABM potrafi też wypisać niezmapowane foldery w folderze głównym i je zaimportować. Wolne miejsce i obsługa hardlinków są sprawdzane przy dodawaniu folderu. Usunięcie folderu głównego pyta, co zrobić: **Remove from ABM only** (domyślnie) zapomina książki w tym folderze i zostawia pliki, a **Delete the books and their files** trwale usuwa wszystko pod tą ścieżką, z pominięciem kosza. Przy folderze głównym, w którym są książki, musisz wpisać potwierdzenie.
 
 Domyślny folder główny to ten, do którego trafiają nowe książki, i ten, który decyduje, czy import biblioteki oferuje hardlink.
 
@@ -27,10 +27,10 @@ Domyślny folder główny to ten, do którego trafiają nowe książki, i ten, k
 | Use Hardlinks instead of Copy | wł. | Dla ukończonych pobrań: hardlink zamiast kopii, żeby seedowanie nie zajmowało podwójnego miejsca. Wymaga tego samego wolumenu. |
 | Library Import | Copy | Domyślny tryb [importu biblioteki](/pl/library-import/): kopiowanie, hardlink albo przenoszenie. Hardlink jest wyszarzony, dopóki domyślny folder główny nie zostanie sprawdzony i nie okaże się, że go obsługuje. |
 | Import Extra Files | wł. | Główny przełącznik zabierania plików niebędących audio. Dotyczy importu biblioteki, Manual Import i ukończonych pobrań |
-| Extra File Extensions (zaawansowane) | puste | Dodatkowe rozszerzenia do importu, np. `srt, lrc`. Zablokowane typy są odrzucane. |
+| Extra File Extensions (zaawansowane) | puste | Kolejne typy plików, które idą razem z książką pod własnymi nazwami, na przykład `srt, lrc`. Z kropką albo bez, rozdzielone przecinkami lub spacjami. Zablokowanych typów, takich jak pliki wykonywalne i niedokończone pobrania, nie da się zapisać. Wyłączone, gdy **Import Extra Files** jest wyłączone |
 | Preferred Cover (zaawansowane) | Matched | Okładka dopasowanego wydania albo najlepszy obrazek z folderu, gdy są oba |
 
-Dodatkowe pliki mają pięć przełączników:
+**Import Extra Files** zabiera razem z audio pozostałe pliki książki. Pięć przełączników wybiera, jakie rodzaje idą razem z nią, a plik pasujący do **Extra File Extensions** idzie nawet wtedy, gdy jego rodzaj jest wyłączony:
 
 | Przełącznik | Domyślnie | Obejmuje |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink to nie to samo co **Use Hardlinks instead of Copy**. Tamto dotyczy pobr
 | Recycling Bin Cleanup | 7 (dni) | 0 wyłącza automatyczne czyszczenie |
 | Library Scan Interval | 0 (wył.) | Liczba godzin między automatycznymi skanowaniami |
 | Watch for Changes | wył. | Skanuje, gdy pliki są dodawane, usuwane albo zmieniane |
-| Cover Cache Workers | 4 | Ile okładek pobierać naraz przy buforowaniu grafik, od 1 do 16. Zmniejsz, jeśli buforowanie zgłasza błędy |
+| Cover Cache Workers | 4 | Ile okładek pobierać naraz przy buforowaniu grafik, od 1 do 16 |
 
 ## Ulepszenia jakości (Quality Upgrades)
 

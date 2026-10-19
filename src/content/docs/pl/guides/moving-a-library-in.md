@@ -17,9 +17,11 @@ description: Bezpiecznie wprowadź istniejącą kolekcję do ABM.
 4. Zaznacz wiersze i je dodaj. Jeśli zostajesz przy domyślnych, to nadal dwa kliknięcia.
 5. Obserwuj zadanie. Podsumowanie mówi, ile plików skopiowano zamiast podlinkować hardlinkiem i co się nie udało.
 
-## Jeśli chcesz, żeby ABM zarządzał folderem źródłowym
+## Jeśli kolekcja już leży tam, gdzie chcesz
 
-Dodaj go zamiast tego jako folder główny i pozwól ABM go zeskanować. Pliki zostają na miejscu, a książki dostają status na podstawie tego, co jest na dysku.
+Samo dodanie folderu jako folderu głównego nie dodaje żadnych książek. Skany ABM sprawdzają tylko książki, które ABM już zna, więc nie wyłapią tego, co tam leży. Książki i tak muszą wejść przez import biblioteki: licznik **Unmapped Folders** przy folderze głównym w **Settings > Media Management** otwiera Library Import dla tego folderu.
+
+Import układa każdą książkę we własnym układzie ABM (Author/Series/Book) w domyślnym folderze głównym. Wybierz hardlink, żeby oryginały zostały nietknięte, a miejsca nie ubyło.
 
 ## Pułapki
 

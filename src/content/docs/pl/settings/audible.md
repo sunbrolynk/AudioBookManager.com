@@ -23,7 +23,7 @@ Podłączenie konta wymaga **Marketplace**, **Display Name** i **Redirect URL**,
 
 | Ustawienie | Domyślnie | Działanie |
 |---|---|---|
-| Auto Add to Library | wł. | Pobrane książki są dodawane do biblioteki ABM |
+| Auto Add to Library | wł. | Gdy pobierasz tytuł z Audible, którego jeszcze nie ma w ABM, ABM najpierw dodaje go do biblioteki. Przy wyłączonym takie pobieranie jest odrzucane. W następnym wydaniu zastąpi to [odzwierciedlanie biblioteki Audible w ABM](/pl/audible/#odzwierciedlanie-biblioteki-audible-w-abm-mirror) |
 | Concurrent Downloads | 2 | Od 1 do 5. Więcej to szybciej, ale można wpaść na limity zapytań Audible. |
 | Preferred Quality | High Quality | High, Normal albo Low |
 | Delete Encrypted Files | wł. | Usuwa zaszyfrowany plik AAXC po odszyfrowaniu do M4B |

@@ -3,7 +3,7 @@ title: Import biblioteki
 description: Wprowadź istniejącą kolekcję do ABM przez Import Workbench.
 ---
 
-Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do metadanych i dodaje książki do twojej biblioteki. Strona nazywa się **Match Audiobooks**.
+Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do metadanych i dodaje książki do twojej biblioteki. **Library > Library Import** otwiera "Import audiobooks you already have", gdzie wybierasz folder do zeskanowania. Kiedy skan ruszy, ABM przechodzi na stronę dopasowań z nagłówkiem **Match Audiobooks**, gdzie sprawdzasz dopasowania i dodajesz książki.
 
 ## Jak to przebiega
 
@@ -41,7 +41,7 @@ Książka podlinkowana hardlinkiem nie zajmuje dodatkowego miejsca na dysku, a o
 
 ## Długie wartości
 
-Lektor, tytuł albo ścieżka ucięte wielokropkiem otwierają się w całości, gdy je stukniesz albo naciśniesz Enter lub Spację. Stuknij jeszcze raz, żeby zamknąć.
+Lektor, tytuł albo ścieżka ucięte wielokropkiem otwierają się w całości, gdy je stukniesz albo klikniesz. Stuknij albo kliknij jeszcze raz, żeby zamknąć. Myszą wystarczy też najechać, żeby zobaczyć całą wartość. Z klawiatury ustaw na nich fokus i naciśnij Enter albo Spację.
 
 ## Odpowiedzi inne niż import
 

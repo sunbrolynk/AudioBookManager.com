@@ -3,6 +3,8 @@ title: Wybór źródła metadanych
 description: Wbudowane, hostowane albo twój własny serwer Libex.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[W następnym wydaniu]
 Wyboru źródła nie ma jeszcze w żadnej wydanej wersji. Wydane wersje używają publicznej instancji Libex pod adresem libexdb.com i nie mają do tego ustawienia.
 :::
@@ -12,10 +14,10 @@ W następnym wydaniu **Settings > Metadata > Source** ma ustawienie **Metadata S
 | Opcja | Co oznacza |
 |---|---|
 | Built-in (domyślnie) | Libex działa wewnątrz ABM. Najpierw trzeba wybrać połączenie wychodzące. |
-| Hosted (libexdb.com) | ABM pyta publiczną instancję Libex. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex na GitHubie"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM pyta publiczną instancję Libex. |
 | Self-hosted | ABM pyta serwer Libex, który mu wskażesz. Wpisz jego **Server URL**, na przykład `http://192.168.1.20:8000`. |
 
-**Test** sprawdza wybrane źródło bez zapisywania. **Status** mówi, czy jest gotowe. Wybór, którego nie zapisałeś, pokazuje "Not in use yet - save to switch", dopóki go nie zapiszesz.
+**Test** sprawdza wybrane źródło bez zapisywania. **Status** mówi, czy jest gotowe. Kiedy wybierzesz inne źródło, **Status** pokazuje "Not in use yet - save to switch", dopóki nie zapiszesz.
 
 ## Built-in i połączenie wychodzące
 
@@ -28,5 +30,5 @@ Przy tych dwóch ABM pyta serwer Libex, a to serwer rozmawia z Audible. Adres se
 ## Co wybrać
 
 - Chcesz, żeby po prostu działało, i nie przeszkadza ci, że Audible widzi twój adres: Built-in z połączeniem bezpośrednim albo Hosted.
-- Zależy ci, żeby nie pokazywać Audible swojego IP: Built-in przez VPN albo proxy, albo Hosted.
+- Zależy ci, żeby nie pokazywać Audible swojego IP: Built-in przez proxy, wbudowany tunel WireGuard albo osobny kontener lub usługę VPN. Albo Hosted, gdzie z Audible rozmawia serwer Libex, a nie ty.
 - Masz już własny serwer Libex: Self-hosted.

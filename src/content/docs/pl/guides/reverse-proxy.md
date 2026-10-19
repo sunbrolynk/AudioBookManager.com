@@ -3,6 +3,10 @@ title: Reverse proxy
 description: ABM za nginx, Traefikiem albo Caddym bez psucia logowania.
 ---
 
+:::caution[Nie polecam]
+Wystawianie ABM do internetu, przez reverse proxy albo przekierowany port, nie jest polecane. Aplikacje Servarr radzą to samo. Jeśli chcesz mieć dostęp z zewnątrz, użyj zamiast tego VPN-a, na przykład WireGuarda albo Tailscale. ABM jest zbudowany tak, żeby był bezpieczny za proxy, ale kiedy jest publiczny, nie ma gwarancji bezpieczeństwa i ryzyko jest po twojej stronie. Jeśli mimo to to robisz, ustaw **Authentication Required** na **Enabled** i aktualizuj ABM na bieżąco.
+:::
+
 Liczą się trzy ustawienia. Ustaw je dobrze, a logowanie, websocket i zapisywanie będą działać.
 
 ## 1. Powiedz ABM, kto jest proxy

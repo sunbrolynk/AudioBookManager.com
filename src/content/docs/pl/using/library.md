@@ -7,7 +7,7 @@ Menu **Library** ma trzy listy: **Books**, **Series** i **Authors**. Trafiają d
 
 ## Książki
 
-Każda książka to wiersz, plakat albo linia tabeli (przełącznik widoku jest na pasku narzędzi). Książka ma status:
+Każda książka to wiersz przeglądu (Overview), plakat albo linia tabeli (przełącznik widoku jest na pasku narzędzi). Książka ma status:
 
 - **Wanted**: monitorowana, jeszcze bez plików. ABM jej szuka.
 - **Downloaded**: pliki są na dysku.
@@ -18,9 +18,13 @@ Otwórz książkę, żeby zobaczyć jej stronę ze szczegółami: pliki, metadan
 
 Jeśli znasz Sonarra: książka to odcinek, seria to sezon i serial w jednym, a autor to sposób na pogrupowanie obu. Różnica jest taka, że jedna książka może należeć do kilku serii, a ABM, gdy musi wybrać, używa głównej (tej z najniższą pozycją).
 
-## Serie i autorzy
+## Serie
 
-Listy Series i Authors pokazują liczbę książek posiadanych, poszukiwanych i z brakującymi plikami. Otwórz którąś, żeby zobaczyć katalog, który zawiera też książki, których nie masz. Stamtąd możesz dodać brakujące. Zobacz [Śledzenie serii](/pl/using/series-tracking/).
+**Library > Series** pokazuje wszystkie serie z liczbą książek posiadanych, poszukiwanych i z brakującymi plikami, jako Overview albo Posters. Strona serii pokazuje cały katalog, łącznie z książkami, których nie masz. Możesz go przefiltrować: All, In Library albo Not in Library. **Add Remaining** albo **Select to Add** dodaje brakujące książki jako poszukiwane, a **Refresh Series** pobiera katalog jeszcze raz. **Monitor New Books** (All albo None) decyduje, czy książki, które wyjdą później, są dodawane jako poszukiwane. Zobacz [Śledzenie serii](/pl/using/series-tracking/).
+
+## Autorzy
+
+**Library > Authors** pokazuje autorów, jako Overview albo Posters. Strona autora pokazuje jego katalog pogrupowany według serii, z liczbą pobranych i wszystkich książek w każdej serii, a do tego jego profil jakości, gatunki i ocenę. **Refresh Catalog** pobiera go jeszcze raz, a **Search Author** szuka jego poszukiwanych książek. **Monitor New Books** działa tak samo jak przy serii, a autor zaczyna od None.
 
 Usunięcie serii albo autora jest blokowane, dopóki mają jeszcze książki w bibliotece. Najpierw usuń książki.
 

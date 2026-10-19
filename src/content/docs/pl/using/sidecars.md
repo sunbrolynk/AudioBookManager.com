@@ -1,21 +1,27 @@
 ---
 title: Pliki sidecar
-description: Okładka, OPF, opis, lektor i plik cue, które ABM zapisuje obok książki.
+description: Pliki metadata.json, okładka, OPF, opis i lektor, które ABM zapisuje obok książki.
 ---
 
-Sidecar to mały plik obok audio. Czytają je Audiobookshelf i inne odtwarzacze. ABM potrafi zapisać takie:
+Sidecar to mały plik obok audio. Czytają je Audiobookshelf i inne odtwarzacze. ABM zapisuje takie:
 
-| Plik | Zawartość |
-|---|---|
-| `cover.jpg` | Okładka książki |
-| `.opf` | Metadane w formacie OPF, czytelne dla Audiobookshelf. Nazwa pochodzi od pierwszego pliku audio książki (na przykład `Dune.opf`), albo `title.opf`, gdy książka nie ma audio |
-| `desc.txt` | Opis |
-| `reader.txt` | Lektor |
-| `.cue` | Rozdziały z Libex (w następnym wydaniu) |
+| Plik | Zawartość | Przełącznik |
+|---|---|---|
+| `metadata.json` | Własny plik metadanych Audiobookshelf, do tego blok `abm`, który oznacza go jako plik ABM. Audiobookshelf czyta go przed wszystkim innym | Brak, zapisywany zawsze |
+| `cover.jpg` | Okładka książki. Nie jest zapisywana, gdy folder ma już jakiś `cover.*` | cover.jpg |
+| `.opf` | Metadane w formacie OPF. Nazwa pochodzi od pierwszego pliku audio książki (na przykład `Dune.opf`), albo `title.opf`, gdy książka nie ma audio | title.opf |
+| `desc.txt` | Opis, bez HTML. Pomijany, gdy go nie ma | desc.txt |
+| `reader.txt` | Lektorzy. Pomijany, gdy ich nie ma | reader.txt |
+
+Razem z układem folderów to są pliki, z których Audiobookshelf czyta szczegóły książki, więc widzi tę samą książkę co ABM.
 
 ## Kiedy są zapisywane
 
-W **Settings > Metadata** opcje **Create on Book Add**, **Create on Import** i **Create on Refresh** decydują, kiedy. Domyślnie zapisuje je tylko import. **Overwrite Existing** jest wyłączone, więc plik, który już istnieje, zostaje. Możesz je też zapisać z okna edycji, dla jednej książki albo dla zaznaczenia serii i autorów. Zobacz [Ustawienia metadanych](/pl/settings/metadata/).
+`metadata.json` jest zapisywany za każdym razem, gdy książka zostaje dodana, zaimportowana albo odświeżona.
+
+Pozostałe cztery mają każdy swój przełącznik w **Settings > Metadata > Files to Create**, domyślnie wszystkie włączone. Są zapisywane tylko wtedy, gdy włączony jest też odpowiedni wyzwalacz: **Create on Book Add** (wył.), **Create on Import** (wł., obejmuje pobrania, import biblioteki i pobrania z Audible) oraz **Create on Refresh** (wył.). **Overwrite Existing** jest wyłączone, więc plik, który już istnieje, zostaje. Nic nie jest zapisywane, dopóki folder książki nie istnieje.
+
+Przycisk **Write to Directories** w oknie edycji też zapisuje te cztery, dla jednej książki albo dla zaznaczenia serii i autorów. Zobacz [Ustawienia metadanych](/pl/settings/metadata/).
 
 ## Okładka to osobna sprawa
 

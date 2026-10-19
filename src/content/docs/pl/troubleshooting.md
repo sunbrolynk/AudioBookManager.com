@@ -73,3 +73,7 @@ Dodaj mapowanie zdalnej ścieżki albo ustaw ABM i klienta tak, żeby widzieli f
 ## Docker nie może dosięgnąć źródła metadanych ani indekserów
 
 Zanim cokolwiek innego, sprawdź DNS i ustawienie połączenia wychodzącego. W Dockerze połączenie bezpośrednie działa tylko wtedy, gdy kontener ma dostęp do internetu.
+
+## Dalej nie działa
+
+Zapytaj na [Discordzie ABM](https://discord.gg/qeJRrM6AZ), [zgłoś problem](https://github.com/sunbrolynk/AudioBook-Manager/issues) albo napisz na [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

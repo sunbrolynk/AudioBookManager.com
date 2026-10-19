@@ -22,6 +22,8 @@ Nowa kopia zastępuje to, co masz, tylko wtedy, gdy profil pozwala na ulepszenia
 
 Jeśli znasz Sonarra: to profil jakości, w którym jakościami są formaty audio i układ plików, a nie rozdzielczość. Custom formats nie istnieją. Podobny zakres obejmują [profile wydań](#profile-wydań).
 
+Nie ma progów bitrate'u ani rozmiaru: jakość oznacza wyłącznie format i układ plików. Dla wydania ABM bierze format z indeksera albo z tytułu, a układ zgaduje z tytułu (M4B bez numerów części czy ścieżek liczy się jako jeden plik), a potem sprawdza go jeszcze raz, kiedy pliki zostaną zaimportowane. **Preferred Quality** w [ustawieniach Audible](/pl/settings/audible/) to coś innego: jakość, w jakiej przychodzą pobrania z Audible.
+
 ## Profile opóźnień
 
 Profil opóźnienia wstrzymuje wydanie przed pobraniem, żeby dać czas na pojawienie się lepszego.

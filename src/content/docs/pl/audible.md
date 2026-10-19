@@ -3,7 +3,7 @@ title: Audible
 description: Podłącz konta Audible, synchronizuj je i odzwierciedlaj swoją bibliotekę.
 ---
 
-ABM może połączyć się z twoimi kontami Audible, trzymać kopię biblioteki każdego konta i pobierać to, co masz kupione.
+ABM łączy się z jednym albo kilkoma kontami Audible i trzyma kopię biblioteki każdego konta na stronie **Audible Library**. Wszystko, co masz kupione, możesz pobrać, odszyfrować do M4B i zaimportować jak każdą inną książkę. Przy włączonym odzwierciedlaniu każda synchronizacja dodatkowo dodaje do ABM książki, których ci brakuje, i je pobiera.
 
 ## Konta
 
@@ -28,7 +28,9 @@ Mirror sprawia, że twoja biblioteka ABM podąża za twoją biblioteką Audible.
 - Domyślnie jest włączony.
 - Dodaje twoje zakupy i darmowe tytuły. Podcasty są pomijane.
 - Każda synchronizacja obsługuje maksymalnie 25 tytułów.
-- Zanim ruszy, prosi o potwierdzenie i pokazuje, ile tytułów doda.
+- Przy włączaniu prosi o potwierdzenie i pokazuje, ile tytułów następna synchronizacja doda i pobierze.
+- Tytuły z Plus Catalog i wypożyczenia są pomijane, a gdy na dysku biblioteki kończy się miejsce, nic nie trafia do kolejki.
+- Tytuł, którego pobieranie ciągle się nie udaje, czeka coraz dłużej między próbami: 1 godzinę, potem 6, potem 24.
 - Pobiera też tytuły, których chcesz, a które nie mają jeszcze plików.
 - Tytuły usunięte z Audible zostają w ABM.
 
