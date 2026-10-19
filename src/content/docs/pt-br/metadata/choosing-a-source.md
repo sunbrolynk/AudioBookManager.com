@@ -1,0 +1,32 @@
+---
+title: Escolhendo uma fonte de metadados
+description: Embutida, hospedada ou o seu próprio servidor Libex.
+---
+
+:::caution[Chega na próxima versão]
+A escolha da fonte ainda não está em nenhuma versão lançada. As versões lançadas usam a instância pública do Libex em libexdb.com e não têm configuração para isso.
+:::
+
+Na próxima versão, **Settings > Metadata > Source** tem uma configuração **Metadata Source** com três opções.
+
+| Opção | O que significa |
+|---|---|
+| Built-in (padrão) | O Libex roda dentro do ABM. Precisa que uma conexão de saída seja escolhida antes. |
+| Hosted (libexdb.com) | O ABM consulta a instância pública do Libex. |
+| Self-hosted | O ABM consulta um servidor Libex que você indicar. Preencha o **Server URL** dele, por exemplo `http://192.168.1.20:8000`. |
+
+**Test** verifica a fonte selecionada sem salvar. **Status** diz se ela está pronta. Uma escolha que você ainda não salvou mostra "Not in use yet - save to switch" até você salvar.
+
+## Built-in e a conexão de saída
+
+O Built-in conversa com a Audible a partir da sua máquina, então usa **Settings > General > Proxy & VPN**. Essa página decide a rota: um proxy, o túnel WireGuard embutido, o seu próprio contêiner de VPN ou uma conexão direta que você confirma estar ciente. Sem nenhuma escolhida, as consultas automáticas ficam bloqueadas e avisam disso. Uma rota escolhida que está fora do ar também bloqueia as consultas. Ela nunca volta para o seu próprio endereço. A conexão direta mostra um aviso de que a Audible vê o seu endereço IP e os livros que o ABM consulta.
+
+## Hosted e Self-hosted
+
+Com essas duas, o ABM consulta um servidor Libex e é o servidor que conversa com a Audible. Uma URL self-hosted é verificada antes de ser salva, e uma vazia ou insegura é recusada. Um servidor fora do ar aparece como fonte de metadados indisponível, com o nome dele.
+
+## Qual escolher
+
+- Quer que simplesmente funcione e não liga de a Audible ver o seu endereço: Built-in com conexão direta, ou Hosted.
+- Não quer expor o seu IP para a Audible: Built-in por uma VPN ou proxy, ou Hosted.
+- Já roda um servidor Libex: Self-hosted.
