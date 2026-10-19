@@ -26,15 +26,19 @@ If the client runs in another container, check that it and ABM see the downloads
 
 ## 5. Set a quality profile
 
-**Settings > Profiles** holds the quality ladder ABM uses to decide what to grab and what counts as an upgrade. One profile is the default. Start with that one and refine later. See [Profiles](/en-gb/settings/profiles/).
+**Settings > Profiles** holds the quality ladder ABM uses to decide what to grab and what counts as an upgrade. A fresh install has none, so create one. The first profile you make becomes the default, and you can refine it later. See [Profiles](/en-gb/settings/profiles/).
 
-## 6. Bring in or add books
+## 6. Connect Audible (optional)
+
+If you have Audible books, connect your account under **Settings > Audible**. Pick your **Marketplace**, press **Connect Audible Account**, then **I Understand, Open Amazon Login**. Sign in to Amazon in the new tab. The blank or "Page not found" page you land on afterwards is expected. Copy the whole address from the address bar into **Redirect URL**, add a **Display Name** if you like and press **Complete Login**. Your password is never stored, and the first library sync starts straight away. See [Audible](/en-gb/audible/).
+
+## 7. Bring in or add books
 
 - Already have a collection? Use [Library Import](/en-gb/library-import/).
 - Starting fresh? Use **Library > Add New** and search by title, author or series. See [Add New](/en-gb/using/add-new/).
 
 A book you add is wanted until a file for it is imported. Wanted books appear under **Wanted > Missing** and are searched automatically.
 
-## 7. Watch it work
+## 8. Watch it work
 
 **Activity > Queue** shows what is downloading. **Activity > History** shows what was grabbed and imported. When something goes wrong, [Troubleshooting](/en-gb/troubleshooting/) and the [Tasks](/en-gb/system/tasks/) page are the places to look.

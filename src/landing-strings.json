@@ -31,7 +31,7 @@
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, a plain Linux service.</b> Not yet. Docker is the only way in for now.",
+    "otherP": "<b>Docker is the only way in for now.</b> Native installs for the common setups are planned, so ABM can run wherever you already self-host:",
     "note": "ABM is alpha. Back up <code>/config</code> before you upgrade, and skim the update notes first.",
     "fullGuide": "Full install guide →",
     "faqEyebrow": "FAQ",
@@ -42,8 +42,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -203,7 +203,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord",
+    "planned": [
+      [
+        "Linux",
+        "a native package and service"
+      ],
+      [
+        "Windows",
+        "an .exe installer"
+      ],
+      [
+        "macOS",
+        "a native app"
+      ],
+      [
+        "Kubernetes",
+        "a cluster deployment"
+      ],
+      [
+        "Unraid",
+        "a Community Apps template"
+      ],
+      [
+        "Proxmox",
+        "an LXC install script"
+      ]
+    ],
+    "coming": "Coming"
   },
   "en-gb": {
     "htmlLang": "en-GB",
@@ -237,7 +264,7 @@
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, a plain Linux service.</b> Not yet. Docker is the only way in for now.",
+    "otherP": "<b>Docker is the only way in for now.</b> Native installs for the common setups are planned, so ABM can run wherever you already self-host:",
     "note": "ABM is alpha. Back up <code>/config</code> before you upgrade, and skim the update notes first.",
     "fullGuide": "Full install guide →",
     "faqEyebrow": "FAQ",
@@ -248,8 +275,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -409,7 +436,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord",
+    "planned": [
+      [
+        "Linux",
+        "a native package and service"
+      ],
+      [
+        "Windows",
+        "an .exe installer"
+      ],
+      [
+        "macOS",
+        "a native app"
+      ],
+      [
+        "Kubernetes",
+        "a cluster deployment"
+      ],
+      [
+        "Unraid",
+        "a Community Apps template"
+      ],
+      [
+        "Proxmox",
+        "an LXC install script"
+      ]
+    ],
+    "coming": "Coming"
   },
   "uk": {
     "htmlLang": "uk",
@@ -616,7 +670,34 @@
     "communityEyebrow": "Спільнота",
     "communityH2": "Знайди своїх.",
     "communityP": "Маєш питання, потрібна допомога з налаштуванням чи хочеш поговорити про аудіокнижки? Приєднуйся до спільноти AudioBook Manager у Discord, там є підтримка й обговорення.",
-    "communityBtn": "Приєднатися в Discord"
+    "communityBtn": "Приєднатися в Discord",
+    "planned": [
+      [
+        "Linux",
+        "нативний пакет і служба"
+      ],
+      [
+        "Windows",
+        "інсталятор .exe"
+      ],
+      [
+        "macOS",
+        "нативний застосунок"
+      ],
+      [
+        "Kubernetes",
+        "розгортання в кластері"
+      ],
+      [
+        "Unraid",
+        "шаблон Community Apps"
+      ],
+      [
+        "Proxmox",
+        "скрипт встановлення LXC"
+      ]
+    ],
+    "coming": "Скоро"
   },
   "en-ca": {
     "htmlLang": "en-CA",
@@ -650,7 +731,7 @@
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, a plain Linux service.</b> Not yet. Docker is the only way in for now.",
+    "otherP": "<b>Docker is the only way in for now.</b> Native installs for the common setups are planned, so ABM can run wherever you already self-host:",
     "note": "ABM is alpha. Back up <code>/config</code> before you upgrade, and skim the update notes first.",
     "fullGuide": "Full install guide →",
     "faqEyebrow": "FAQ",
@@ -661,8 +742,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -822,7 +903,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord",
+    "planned": [
+      [
+        "Linux",
+        "a native package and service"
+      ],
+      [
+        "Windows",
+        "an .exe installer"
+      ],
+      [
+        "macOS",
+        "a native app"
+      ],
+      [
+        "Kubernetes",
+        "a cluster deployment"
+      ],
+      [
+        "Unraid",
+        "a Community Apps template"
+      ],
+      [
+        "Proxmox",
+        "an LXC install script"
+      ]
+    ],
+    "coming": "Coming"
   },
   "en-au": {
     "htmlLang": "en-AU",
@@ -856,7 +964,7 @@
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, a plain Linux service.</b> Not yet. Docker is the only way in for now.",
+    "otherP": "<b>Docker is the only way in for now.</b> Native installs for the common setups are planned, so ABM can run wherever you already self-host:",
     "note": "ABM is alpha. Back up <code>/config</code> before you upgrade, and skim the update notes first.",
     "fullGuide": "Full install guide →",
     "faqEyebrow": "FAQ",
@@ -867,8 +975,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Support Development",
+    "kofiBtn": "Support Development",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -1028,6 +1136,33 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join us on Discord"
+    "communityBtn": "Join the Discord",
+    "planned": [
+      [
+        "Linux",
+        "a native package and service"
+      ],
+      [
+        "Windows",
+        "an .exe installer"
+      ],
+      [
+        "macOS",
+        "a native app"
+      ],
+      [
+        "Kubernetes",
+        "a cluster deployment"
+      ],
+      [
+        "Unraid",
+        "a Community Apps template"
+      ],
+      [
+        "Proxmox",
+        "an LXC install script"
+      ]
+    ],
+    "coming": "Coming"
   }
 }

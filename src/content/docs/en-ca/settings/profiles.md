@@ -22,6 +22,8 @@ A new copy replaces what you have only if the profile allows upgrades, the new r
 
 If you know Sonarr: this is a quality profile where qualities are audio formats and file layout rather than resolution. Custom formats do not exist. [Release profiles](#release-profiles) cover similar ground.
 
+There are no bitrate or size tiers: quality means format and file layout only. For a release, ABM takes the format from the indexer or the title and guesses the layout from the title (an M4B with no part or track numbers counts as single-file), then checks it again once the files are imported. The **Preferred Quality** on [Audible settings](/en-ca/settings/audible/) is something else: the quality Audible downloads come in.
+
 ## Delay profiles
 
 A delay profile holds a release back before grabbing, to give a better release time to appear.

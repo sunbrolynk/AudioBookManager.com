@@ -4,6 +4,7 @@
 // when a configured locale is missing pages, or when a locale folder exists but is not configured.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { translationHtml } from '../src/lib/translation-html.mjs';
 
 const docs = new URL('../src/content/docs/', import.meta.url).pathname;
 const locales = JSON.parse(readFileSync(new URL('../src/locales.json', import.meta.url), 'utf8'));
@@ -44,6 +45,22 @@ for (const code of codes) {
   if (!landing[code]) problems.push(`src/landing-strings.json has no entry for "${code}"`);
   else for (const k of Object.keys(landing.root)) shape(landing.root[k], landing[code][k], k, code);
 }
+// Header, footer and release-page labels live in src/ui-strings.json: every configured locale needs every English key.
+const ui = JSON.parse(readFileSync(new URL('../src/ui-strings.json', import.meta.url), 'utf8'));
+for (const code of codes) {
+  const missing = Object.keys(ui.en).filter((k) => typeof ui[code]?.[k] !== 'string' || !ui[code][k].trim());
+  if (missing.length) problems.push(`src/ui-strings.json for ${code} is missing ${missing.join(', ')}`);
+}
+// Translated strings may carry only <b>, <em>, <code> and <br>: some are rendered as HTML, so anything else would run on the page.
+const markup = (file, value, path) => {
+  if (typeof value === 'string') {
+    try { translationHtml(value); } catch (error) { problems.push(`${file} "${path}": ${error.message}`); }
+  } else if (value && typeof value === 'object') {
+    for (const [k, v] of Object.entries(value)) markup(file, v, path ? `${path}.${k}` : k);
+  }
+};
+markup('src/landing-strings.json', landing, '');
+markup('src/ui-strings.json', ui, '');
 // Non-English locales need the translator call-out (with a {mail} slot); English ones must not have it.
 const english = (c) => /^en(-|$)/i.test(locales[c].lang);
 for (const code of codes) {
@@ -51,14 +68,14 @@ for (const code of codes) {
   if (english(code) && note) problems.push(`landing strings for ${code}: translatorNote belongs only on non-English locales`);
   if (!english(code) && !(typeof note === 'string' && note.includes('{mail}'))) problems.push(`landing strings for ${code} need a translatorNote containing {mail}`);
 }
-// Every sidebar group label needs a translation for each configured locale.
+// Every sidebar group and link label needs a translation for each configured locale.
 const sidebar = JSON.parse(readFileSync(new URL('../src/sidebar-labels.json', import.meta.url), 'utf8'));
 const config = readFileSync(new URL('../astro.config.mjs', import.meta.url), 'utf8');
 for (const [, label] of config.matchAll(/label: '([^']+)', translations:/g)) {
   for (const c of codes) if (!sidebar[label]?.[locales[c].lang]) problems.push(`sidebar group "${label}" has no translation for ${locales[c].lang}`);
 }
-const groups = (config.match(/\{ label: '[^']+', (?:translations: [^,]+, )?items:/g) || []).length;
-if (groups !== (config.match(/translations: sidebarLabels/g) || []).length) problems.push('a sidebar group in astro.config.mjs has no translations field');
+const groups = (config.match(/\{ label: '[^']+', (?:translations: [^,]+, )?(?:items|link):/g) || []).length;
+if (groups !== (config.match(/translations: sidebarLabels/g) || []).length) problems.push('a sidebar group or link in astro.config.mjs has no translations field');
 // Language names need no check: LanguageSelect falls back to Intl.DisplayNames for any name not in src/locale-names.json.
 if (problems.length) {
   console.error(`check-locales: ${problems.join('\n')}\nA language is listed only when every page is translated.`);

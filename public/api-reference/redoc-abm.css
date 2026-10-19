@@ -1,0 +1,16 @@
+/* ReDoc takes its colours and widths from the theme in index.html; this only covers what the theme can't. */
+body { margin: 0; padding: 0; }
+
+/* The logo already says AudioBook Manager and the version sits under it, so the title heading goes. */
+.api-info h1 { display: none; }
+
+/* #8a8a8a on the #1a1a1a sidebar is about 5:1: findable, but read after the operation list. */
+.abm-version {
+  margin: -0.35rem 0 0.6rem;
+  padding: 0 1.25rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: #8a8a8a;
+}
+
+.abm-failed { padding: 2rem; font-family: system-ui, sans-serif; }

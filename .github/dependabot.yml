@@ -1,5 +1,7 @@
 version: 2
 
+# No groups: every outdated package gets its own PR, reviewed and merged on its own.
+
 updates:
   - package-ecosystem: npm
     directory: /
@@ -8,7 +10,7 @@ updates:
       day: monday
       time: "09:00"
       timezone: America/Denver
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 20
     versioning-strategy: increase
     commit-message:
       prefix: "deps"
@@ -20,6 +22,6 @@ updates:
       day: monday
       time: "09:00"
       timezone: America/Denver
-    open-pull-requests-limit: 5
+    open-pull-requests-limit: 20
     commit-message:
       prefix: "ci"

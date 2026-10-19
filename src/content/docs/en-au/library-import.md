@@ -3,7 +3,7 @@ title: Library Import
 description: Bring an existing collection into ABM with the Import Workbench.
 ---
 
-Library Import scans a folder of audiobooks, matches each folder to metadata, and adds the books to your library. The page is called **Match Audiobooks**.
+Library Import scans a folder of audiobooks, matches each folder to metadata, and adds the books to your library. **Library > Library Import** opens "Import audiobooks you already have", where you pick a folder to scan. Once the scan starts, ABM moves to the matching page, headed **Match Audiobooks**, where you check the matches and add the books.
 
 ## The flow
 
@@ -41,7 +41,7 @@ A hardlinked book takes no extra disk space and the original stays where it is. 
 
 ## Long values
 
-A narrator, title or path cut off with an ellipsis opens in full when you tap it, press Enter or Space. Tap again to close it.
+A narrator, title or path cut off with an ellipsis opens in full when you tap or click it. Tap or click it again to close it. With a mouse, hovering shows the whole value too. From the keyboard, focus it and press Enter or Space.
 
 ## Answers other than import
 

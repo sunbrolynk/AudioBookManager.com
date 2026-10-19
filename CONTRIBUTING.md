@@ -1,35 +1,9 @@
 # Contributing
 
-## Translation corrections
+## Translations
 
-Languages are published once every page and UI string has been translated.
-Complete AI translations qualify; human review is not required for publication.
-Incomplete languages remain in private preparation.
-
-After publication, language-specific correction PRs collect community feedback.
-Follow the current PR link for your language from Discord. See
-[the translation workflow](translations/README.md) for details.
-
-You can contribute without cloning or forking the repository:
-
-- Comment on the language PR with the page, original text, and correction.
-- Use the PR's Files changed tab to suggest replacements for lines in its diff.
-  For unchanged files, use comments or attachments.
-- Attach corrected files, or a ZIP containing only the files you changed,
-  to a PR comment. Keep the original filenames and folder structure.
-
-Attachments do not automatically change the repository. A maintainer reviews
-and applies accepted corrections to the language branch.
-
-Preserve placeholders such as `{mail}`, links, frontmatter keys, code examples,
-and formatting syntax unless your correction specifically concerns them.
-Do not include credentials, personal configuration, or unrelated files.
-
-For larger contributions, you may fork the repository and open a PR targeting
-the relevant language branch. Include only changes for that language.
-
-After a language PR is merged, further corrections need a new PR.
-Discord links will be updated for subsequent review rounds.
+Everything about translating the site, from how a language goes live to how to
+send a fix, is in [TRANSLATING.md](TRANSLATING.md).
 
 ## Website changes
 
@@ -58,3 +32,27 @@ for GitHub Actions, and digest pins for container images.
 Record review findings and validation results in the PR. Passing tests,
 vulnerability audits, and secret scans do not prove a dependency is harmless.
 Updates require a manual merge.
+
+## Repository settings
+
+`main` has the **protect main** ruleset. Changes reach `main` only through a
+pull request, and the `Site validation` check (the `Site checks` workflow) has
+to pass first. GitHub only enforces rulesets on a public repository or GitHub
+Pro, so it starts working when the repository goes public.
+
+- Every PR into `main` runs `Site validation`, including Dependabot's and the
+  translation review PRs, so the required check is never missing.
+- The `translation/<code>` branches are deliberately left out of the ruleset.
+  Translators' fork PRs target them, and corrections get pushed to them
+  directly. Their PRs still run the same checks, and nothing on them reaches
+  `main` except through a review PR, which runs them again.
+- Merge PRs into `main` with **Squash and merge**. Review branches have `main`
+  merged into them, and a squash keeps those merge commits off `main`.
+
+Still to set once the repository is public:
+
+- Actions: allow only GitHub-owned actions and actions pinned to a full commit
+  SHA, keep the default workflow token read-only, and require approval before
+  running workflows from first-time outside contributors.
+- Security: turn on secret scanning with push protection, private
+  vulnerability reporting, and Dependabot alerts.

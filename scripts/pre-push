@@ -36,11 +36,17 @@ npm ci --ignore-scripts
 echo "Auditing dependencies..."
 npm audit --audit-level=moderate
 
-echo "Building the website..."
+echo "Running regression tests..."
+npm test
+
+echo "Building the website and checking it against its CSP..."
 npm run build
 
 echo "Checking internal links..."
 node scripts/check-links.mjs
+
+echo "Checking every page for sideways overflow from 320px to 1920px..."
+node scripts/check-overflow.mjs
 
 if [[ "$(git rev-parse HEAD)" != "$head_sha" || -n "$(git status --porcelain)" ]]; then
     echo "Push blocked: repository changed during validation. Review and retry." >&2
