@@ -4440,5 +4440,239 @@
     ],
     "coming": "Snart",
     "translatorNote": "Denne side er maskinoversat. Er dansk dit modersmål, og har du lyst til at hjælpe med at gøre den bedre, så skriv til mig på {mail}."
+  },
+  "nb": {
+    "htmlLang": "nb",
+    "title": "AudioBook Manager: *arr-en for lydbøker",
+    "skip": "Hopp til innholdet",
+    "heroEyebrow": "Gratis · åpen kildekode · selvhostet",
+    "h1": "Lydbøker,<br /><em>ordnet.</em>",
+    "ctaDocker": "Installer med Docker",
+    "ctaSee": "Se den i bruk",
+    "runs": "én container · SQLite · port 5173 · GPL-3.0",
+    "heroAlt": "Biblioteket i ABM: et rutenett med lydbokcover, hvert med en grønn Downloaded- eller gul Wanted-stripe",
+    "phoneAlt": "Siden til en bok i ABM på en telefon",
+    "existsEyebrow": "Hvorfor den finnes",
+    "existsH2": "Lydbøker fortjente sin egen *arr.",
+    "p1": "TV har Sonarr. Filmer har Radarr. Readarr, bygget på det samme Servarr-grunnlaget, håndterte bøker og lydbøker sammen, og er nå lagt ned.",
+    "p2": "ABM tar opp den tråden, bare for lydbøker. Den er bygget på designet Servarr-appene var først ute med, og formet rundt opplesere, plassering i serier, utgivelser på flere disker og M4B.",
+    "p3": "Audiobookshelf spiller av biblioteket ditt helt nydelig. Den leter bare ikke etter neste bok i en serie, eller rydder opp i det som kommer inn. Det er den delen ABM tar seg av.",
+    "beforeA": "Før",
+    "beforeB": "for hånd",
+    "afterA": "Etter",
+    "afterB": "med ABM",
+    "howEyebrow": "Slik virker det",
+    "howH2": "Fem steg. Du tar det første.",
+    "getEyebrow": "Hva du får",
+    "altPage": "{name}-siden i ABM",
+    "whyEyebrow": "Hvorfor ABM",
+    "whyH2": "Laget for bokhylla, ikke skrudd på i etterkant.",
+    "shotsEyebrow": "Skjermbilder",
+    "shotsH2": "Dette er den ekte varen.",
+    "shotsAria": "Skjermbilder, bla sidelengs",
+    "getItEyebrow": "Skaff den",
+    "installH2": "I gang med én fil.",
+    "buildP": "<b>Bygg fra kildekoden.</b> Fra en klone av repoet bytter du <code>image:</code> med <code>build: .</code> og kjører <code>docker compose up -d --build</code>.",
+    "otherP": "<b>Docker er eneste vei inn foreløpig.</b> Native installasjoner for de vanlige oppsettene er planlagt, så ABM kan kjøre der du allerede selvhoster:",
+    "note": "ABM er i alfa. Ta sikkerhetskopi av <code>/config</code> før du oppgraderer, og skum gjennom oppdateringsnotatene først.",
+    "fullGuide": "Hele installasjonsguiden →",
+    "faqEyebrow": "Vanlige spørsmål",
+    "faqH2": "Gode spørsmål.",
+    "supportSr": "Støtte",
+    "brokenH": "Er noe ødelagt?",
+    "brokenP": "Opprett en issue på GitHub og legg ved loggen fra System › Log Files. Jo mer av loggen, jo raskere fiks.",
+    "brokenBtn": "Opprett en issue",
+    "helpH": "Vil du hjelpe til?",
+    "helpP": "ABM er ett menneskes prosjekt. Ko-fi eller en Monster holder det i gang.",
+    "kofiBtn": "Støtt utviklingen",
+    "monsterBtn": "Spander en Monster på meg",
+    "finalH2": "Slutt å fikse<br />mapper.",
+    "ctaInstall": "Installer ABM",
+    "ctaDocs": "Les dokumentasjonen",
+    "sub": "ABM finner lydbøkene du vil ha, henter dem med nedlastingsklienten du allerede kjører, og sorterer dem så Audiobookshelf finner et ryddig bibliotek.",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "Ønsk deg",
+        "Legg til en bok, en serie eller en hel forfatter. ABM setter den på Wanted-lista og holder øye med den."
+      ],
+      [
+        "Finn",
+        "Usenet- og torrent-indeksererne dine blir sjekket etter en tidsplan, eller med en gang hvis du trykker på søk."
+      ],
+      [
+        "Hent",
+        "Den beste utgivelsen kvalitetsprofilen din tillater, går til nedlastingsklienten du allerede kjører."
+      ],
+      [
+        "Sorter",
+        "Den blir importert, gitt nytt navn og sortert under forfatter og serie. Utgivelser på flere disker beholder undermappene sine når bøker flyttes."
+      ],
+      [
+        "Behold",
+        "Dine metadata, ditt valg: du bestemmer hva ABM beholder og skriver, og hvor spilleren din leser det. Tillat oppgraderinger i en kvalitetsprofil, så bytter ABM inn en bedre utgivelse når en dukker opp."
+      ]
+    ],
+    "features": [
+      [
+        "Bibliotek",
+        "Hver bok, med ett blikk.",
+        "Cover, status og serie i ett rutenett. Grønt ligger på disken. Gult betyr at ABM fortsatt er på jakt."
+      ],
+      [
+        "Bok",
+        "Detaljene stemmer.",
+        "Forfatter, oppleser, serie, spilletid, forlag og hver eneste fil, med kvalitet og hvor den ligger."
+      ],
+      [
+        "Kalender",
+        "Vit hva som kommer.",
+        "Utgivelsesdatoer for bøkene du overvåker, lagt ut i en kalender."
+      ],
+      [
+        "Ønsket",
+        "En liste over det som mangler.",
+        "Bøker som mangler, og bøker under kvalitetsgrensen din, ett klikk unna et søk."
+      ],
+      [
+        "Profiler",
+        "Du bestemmer hva bedre betyr.",
+        "M4B i én fil framfor en mappe med MP3-er? Si det én gang i en kvalitetsprofil, så venter ABM på det."
+      ],
+      [
+        "Konverteringer",
+        "Fiks formatet også.",
+        "Slå sammen deler, del opp eller legg til kapitler, eller gjør MP3-er om til én M4B. ABM lærer hvor rask maskinen din er og anslår hvor lang tid en jobb tar."
+      ]
+    ],
+    "why": [
+      [
+        "Lydbøker først.",
+        "Opplesere, plassering i serier, utgivelser med flere filer, kapitler og M4B er hele poenget her, ikke en ettertanke."
+      ],
+      [
+        "Du kjenner deg allerede igjen.",
+        "Wanted, Queue, History, Calendar, kvalitetsprofiler. Har du kjørt Sonarr eller Radarr, ligger alt der du ville lett etter det."
+      ],
+      [
+        "Den forteller deg sannheten.",
+        "Hvis en flytting får med 3 av 5 bøker, sier ABM hvor mange som ble flyttet, og hvorfor resten ikke ble det."
+      ],
+      [
+        "Én container. Ingen databaseserver.",
+        "Alt bor i én SQLite-fil under <code>/config</code>. Ta sikkerhetskopi av den mappen, så har du tatt sikkerhetskopi av ABM."
+      ]
+    ],
+    "works": [
+      [
+        "Spilles i",
+        "Audiobookshelf"
+      ],
+      [
+        "Metadata fra",
+        "Libex"
+      ],
+      [
+        "Indekserere",
+        "Newznab · Torznab"
+      ],
+      [
+        "Eide bøker fra",
+        "Audible"
+      ],
+      [
+        "Nedlastingsklienter",
+        "7 støttet"
+      ]
+    ],
+    "shots": [
+      "Dashbord",
+      "Bibliotek",
+      "Bok",
+      "Serie",
+      "Kalender",
+      "Ønsket",
+      "Profiler",
+      "Konverteringer"
+    ],
+    "installSteps": [
+      [
+        "Lagre den",
+        "Lim det inn i <code>docker-compose.yml</code> og bytt ut de tre stiene til venstre med dine egne mapper."
+      ],
+      [
+        "Start den",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "Åpne den",
+        "Gå til <code>http://your-server:5173</code>. Første gang blir du guidet gjennom å sette opp en innlogging."
+      ]
+    ],
+    "faq": [
+      [
+        "Erstatter ABM Audiobookshelf?",
+        "Nei. Audiobookshelf er spilleren, og ABM er bibliotekaren. Pek begge mot den samme bibliotekmappen og la hver av dem gjøre jobben sin."
+      ],
+      [
+        "Hvor kommer metadataene fra?",
+        "Libex, en åpen metadatatjeneste for Audible-data. ABM oppdaterer dem etter en tidsplan, og et cover du har valgt selv kan låses, så en oppdatering lar det være i fred."
+      ],
+      [
+        "Trenger jeg en egen database?",
+        "Nei. ABM holder alt i én SQLite-fil i <code>/config</code>. Det er ikke noe annet som må kjøre."
+      ],
+      [
+        "Kan jeg nå den utenfra nettverket mitt?",
+        "Ja, fra 0.17.0 og nyere. Som standard må alt som kommer utenfra det lokale nettverket ditt logge inn, og setter du Authentication Required til Enabled, må alle logge inn, også på ditt eget LAN. Bak nginx, Traefik eller Caddy setter du <code>TRUSTED_PROXIES</code> til adressen til proxyen. Lagret påloggingsinfo er kryptert."
+      ],
+      [
+        "Hva skjedde med Readarr?",
+        "Readarr håndterte bøker og lydbøker sammen, og er nå lagt ned. ABM er bare for lydbøker, bygget på designet som Servarr-appene var først ute med."
+      ],
+      [
+        "Hva koster det?",
+        "Ingenting. Det er gratis og åpen kildekode under GPL-3.0. Hvis det sparer deg for en kveld, ligger Ko-fi-lenken rett under."
+      ]
+    ],
+    "strip": [
+      "Ønsket",
+      "Laster ned",
+      "Lastet ned",
+      "Mangler filer"
+    ],
+    "communityEyebrow": "Fellesskap",
+    "communityH2": "Finn folka dine.",
+    "communityP": "Har du et spørsmål, trenger du hjelp med oppsettet, eller vil du bare prate lydbøker? Bli med i AudioBook Manager-fellesskapet på Discord for hjelp og diskusjoner.",
+    "communityBtn": "Bli med på Discord",
+    "planned": [
+      [
+        "Linux",
+        "en native pakke og tjeneste"
+      ],
+      [
+        "Windows",
+        "et .exe-installasjonsprogram"
+      ],
+      [
+        "macOS",
+        "en native app"
+      ],
+      [
+        "Kubernetes",
+        "en klyngeutrulling"
+      ],
+      [
+        "Unraid",
+        "en mal i Community Apps"
+      ],
+      [
+        "Proxmox",
+        "et installasjonsskript for LXC"
+      ]
+    ],
+    "coming": "Kommer",
+    "translatorNote": "Denne siden er maskinoversatt. Er norsk morsmålet ditt og du har lyst til å hjelpe med å gjøre den bedre, send meg en e-post på {mail}."
   }
 }

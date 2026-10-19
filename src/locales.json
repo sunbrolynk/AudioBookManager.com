@@ -70,5 +70,9 @@
   "da": {
     "label": "Dansk",
     "lang": "da"
+  },
+  "nb": {
+    "label": "Norsk bokmål",
+    "lang": "nb"
   }
 }
