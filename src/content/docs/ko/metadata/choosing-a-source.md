@@ -1,0 +1,32 @@
+---
+title: 메타데이터 소스 고르기
+description: 내장, 호스팅, 또는 내 Libex 서버예요.
+---
+
+:::caution[다음 릴리스에서 추가돼요]
+소스 선택은 아직 정식 버전에 없어요. 정식 버전은 libexdb.com의 공개 Libex 인스턴스를 쓰고, 이걸 바꾸는 설정이 없어요.
+:::
+
+다음 릴리스부터 **Settings > Metadata > Source**에 선택지가 세 개인 **Metadata Source** 설정이 생겨요.
+
+| 선택지 | 의미 |
+|---|---|
+| Built-in(기본값) | Libex가 ABM 안에서 돌아가요. 먼저 외부 연결을 골라 둬야 해요. |
+| Hosted (libexdb.com) | ABM이 공개 Libex 인스턴스에 물어봐요. |
+| Self-hosted | ABM이 내가 지정한 Libex 서버에 물어봐요. **Server URL**을 넣으세요. 예: `http://192.168.1.20:8000`. |
+
+**Test**는 저장하지 않고 선택한 소스를 확인해요. **Status**는 준비됐는지 알려 줘요. 저장하지 않은 선택지에는 저장할 때까지 "Not in use yet - save to switch"가 나와요.
+
+## Built-in과 외부 연결
+
+Built-in은 내 서버에서 Audible과 직접 통신하기 때문에 **Settings > General > Proxy & VPN**을 써요. 이 페이지에서 경로를 정해요: 프록시, 내장 WireGuard 터널, 내 VPN 컨테이너, 또는 내가 확인하고 고른 직접 연결. 아무것도 고르지 않으면 자동 조회가 막히고 그렇다고 알려 줘요. 고른 경로가 끊겨도 조회가 막혀요. 내 주소로 몰래 돌아가는 일은 절대 없어요. 직접 연결을 고르면 Audible이 내 IP 주소와 ABM이 조회하는 책을 본다는 경고가 나와요.
+
+## Hosted와 Self-hosted
+
+이 둘은 ABM이 Libex 서버에 물어보고, 그 서버가 Audible과 통신해요. Self-hosted URL은 저장하기 전에 확인하고, 비어 있거나 안전하지 않은 URL은 거부해요. 서버가 내려가 있으면 그 이름과 함께 메타데이터 소스를 사용할 수 없다고 알려 줘요.
+
+## 뭘 고를까요
+
+- 그냥 잘 돌아가면 되고 Audible이 내 주소를 봐도 상관없다면: 직접 연결로 Built-in, 또는 Hosted.
+- Audible에 내 IP를 드러내고 싶지 않다면: VPN이나 프록시를 거친 Built-in, 또는 Hosted.
+- 이미 Libex 서버를 돌리고 있다면: Self-hosted.

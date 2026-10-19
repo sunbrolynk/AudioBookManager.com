@@ -1,0 +1,87 @@
+---
+title: ABM 설치하기
+description: 컨테이너 하나, 폴더 세 개, 명령 하나. 설치는 이 페이지가 전부예요.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+데이터베이스는 `/config` 안의 SQLite 파일이라서 따로 설정할 데이터베이스 서비스가 없어요.
+
+**필요한 것:**
+
+- Compose가 있는 Docker
+- 오디오북 라이브러리용 폴더
+- 다운로드 클라이언트가 다 받은 파일을 넣는 폴더
+- ABM 자체 데이터용 폴더
+
+## 설치
+
+<Steps>
+
+1. **compose 파일 만들기.** 아래 내용을 `docker-compose.yml`로 저장하세요:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **내 폴더로 바꾸기.** 볼륨마다 왼쪽을 내 서버의 실제 폴더로 바꾸세요. 오른쪽은 그대로 두세요.
+
+   | 호스트 경로 | 컨테이너 경로 | 들어가는 것 |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | 오디오북 라이브러리. 필수예요. |
+   | `/path/to/downloads` | `/downloads` | 다운로드 클라이언트가 다 받은 파일을 넣는 곳. 필수예요. |
+   | `/path/to/config` | `/config` | SQLite 데이터베이스, 백업, 로그, 휴지통, 자동 생성된 앱 비밀 파일. 잘 보관하세요. |
+
+3. **실행하기.** compose 파일이 있는 폴더에서 이걸 실행하세요:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **열기.** `http://your-server:5173`로 들어가세요. 처음 접속하면 로그인 설정을 차근차근 안내해 줘요.
+
+</Steps>
+
+<Aside type="tip" title="다운로드 클라이언트가 다른 컨테이너에 있나요?">
+다운로드 클라이언트가 자체 컨테이너에서 돈다면, 그 다운로드 폴더가 ABM이 `/downloads`로 보는 폴더와 같은 폴더여야 해요. 경로가 다르면 **Settings > Download Clients**에서 원격 경로 매핑을 추가하세요.
+</Aside>
+
+## 처음 실행
+
+compose 파일의 `TIMEZONE`으로 시간대를 정하세요. 그다음 **Settings**에서 **Media Management**에 루트 폴더를, **Indexers**에 인덱서를, **Download Clients**에 다운로드 클라이언트를 추가하세요. 환경 변수와 리버스 프록시는 [환경 변수](/ko/configuration/)에서 다뤄요.
+
+## 소스에서 빌드하기
+
+이미지를 직접 빌드하려면 저장소를 클론하고, `image:` 줄을 `build: .`로 바꾼 다음 이걸 실행하세요:
+
+```bash
+docker compose up -d --build
+```
+
+## 업데이트하기
+
+새 이미지를 pull하고 컨테이너를 다시 만드세요. 릴리스마다 바뀐 점은 [업데이트](/ko/updates/) 페이지에 있어요.
+
+<Aside type="caution" title="ABM은 알파 버전이에요">
+업그레이드 전에 `/config`를 백업하고, 업데이트 노트도 먼저 훑어보세요.
+</Aside>
+
+## 뭔가 이상한가요?
+
+- **페이지가 안 열려요.** compose 파일의 포트 매핑을 확인하고, `docker logs audiobook-manager`를 실행해 보세요.
+- **내 도메인에서 변경이 거부돼요.** ABM은 접속한 주소가 아닌 곳에서 오는 변경을 거부해요. 먼저 프록시가 원래 `Host` 헤더를 넘기게 하세요. 그걸로 안 되면 **Settings > General**의 **CORS Allowed Domains**에 내 도메인을 넣고(고급 설정이라 **Show Advanced**를 켜야 보여요) ABM을 재시작하세요. [문제 해결](/ko/troubleshooting/)을 보세요.
+- **다운로드는 끝나는데 가져오기가 안 돼요.** 위 팁에 있는 폴더 매핑을 확인하세요.

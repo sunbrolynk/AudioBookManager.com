@@ -14,5 +14,9 @@
   "en-au": {
     "label": "English (Australia)",
     "lang": "en-AU"
+  },
+  "ko": {
+    "label": "한국어",
+    "lang": "ko"
   }
 }
