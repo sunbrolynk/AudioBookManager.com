@@ -73,3 +73,7 @@ Aggiungi una mappatura dei percorsi remoti, oppure fai in modo che ABM e il clie
 ## Docker non raggiunge la fonte dei metadati o gli indexer
 
 Prima di tutto controlla il DNS e l'impostazione della connessione in uscita. In Docker, una connessione diretta funziona solo se il container riesce a uscire su internet.
+
+## Ancora bloccato?
+
+Chiedi nel [Discord di ABM](https://discord.gg/qeJRrM6AZ), [apri una issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) oppure scrivi a [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

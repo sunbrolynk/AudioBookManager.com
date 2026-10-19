@@ -3,6 +3,10 @@ title: Reverse proxy
 description: Mettere ABM dietro nginx, Traefik o Caddy senza rompere l'accesso.
 ---
 
+:::caution[Sconsigliato]
+Mettere ABM su internet, tramite un reverse proxy o una porta inoltrata, è sconsigliato, lo stesso consiglio che danno le app Servarr. Per raggiungerlo da fuori, usa invece una VPN come WireGuard o Tailscale. ABM è fatto per essere sicuro dietro un proxy, ma una volta pubblico non c'è nessuna garanzia di sicurezza, e il rischio è tuo. Se lo fai comunque, imposta **Authentication Required** su **Enabled** e tieni ABM aggiornato.
+:::
+
 Contano tre impostazioni. Se le imposti bene, accesso, websocket e salvataggi funzionano tutti.
 
 ## 1. Di' ad ABM chi è il proxy

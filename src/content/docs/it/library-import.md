@@ -3,7 +3,7 @@ title: Importare una libreria (Library Import)
 description: Porta in ABM una collezione esistente con l'Import Workbench.
 ---
 
-Library Import scansiona una cartella di audiolibri, abbina ogni cartella ai metadati e aggiunge i libri alla tua libreria. La pagina si chiama **Match Audiobooks**.
+Library Import scansiona una cartella di audiolibri, abbina ogni cartella ai metadati e aggiunge i libri alla tua libreria. **Library > Library Import** apre "Import audiobooks you already have", dove scegli una cartella da scansionare. Quando la scansione parte, ABM passa alla pagina degli abbinamenti, intitolata **Match Audiobooks**, dove controlli le corrispondenze e aggiungi i libri.
 
 ## Il flusso
 
@@ -41,7 +41,7 @@ Un libro collegato con hardlink non occupa spazio in più su disco e l'originale
 
 ## Valori lunghi
 
-Un narratore, un titolo o un percorso tagliato con i puntini di sospensione si apre per intero quando lo tocchi o premi Invio o Spazio. Toccalo di nuovo per chiuderlo.
+Un narratore, un titolo o un percorso tagliato con i puntini di sospensione si apre per intero quando lo tocchi o ci clicchi sopra. Toccalo o cliccalo di nuovo per chiuderlo. Con il mouse, anche passarci sopra mostra il valore intero. Da tastiera, dagli il focus e premi Invio o Spazio.
 
 ## Risposte diverse dall'importazione
 

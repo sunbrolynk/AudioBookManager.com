@@ -17,9 +17,11 @@ description: Porta in ABM una collezione esistente senza rischi.
 4. Seleziona le righe e aggiungile. Se accetti i valori predefiniti restano due clic.
 5. Tieni d'occhio il task. Il riepilogo dice quanti file sono stati copiati invece che collegati con hardlink e cosa è fallito.
 
-## Se vuoi che ABM gestisca la cartella sorgente
+## Se la tua collezione è già dove la vuoi
 
-Aggiungila invece come cartella radice e lascia che ABM la scansioni. Così i file restano dove sono e i libri prendono il loro stato da quello che c'è su disco.
+Aggiungere la cartella come cartella radice non aggiunge nessun libro da solo. Le scansioni di ABM controllano solo i libri che conosce già, quindi non raccolgono quello che c'è lì dentro. I libri devono comunque entrare tramite Library Import: il conteggio **Unmapped Folders** della cartella radice in **Settings > Media Management** apre Library Import per quella radice.
+
+L'importazione mette ogni libro nella struttura Autore/Serie/Libro di ABM, sotto la cartella radice predefinita. Scegli l'hardlink per lasciare intatti gli originali senza occupare altro spazio.
 
 ## Da tenere presente
 

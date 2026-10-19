@@ -3,7 +3,7 @@ title: Audible
 description: Collega gli account Audible, sincronizzali e rispecchia la tua libreria.
 ---
 
-ABM può collegarsi ai tuoi account Audible, tenere una copia della libreria di ogni account e scaricare quello che possiedi.
+ABM si collega a uno o più account Audible e tiene una copia della libreria di ogni account nella pagina **Audible Library**. Tutto quello che possiedi si può scaricare, decifrare in M4B e importare come qualsiasi altro libro. Con il mirroring attivo, ogni sincronizzazione aggiunge anche ad ABM i libri che ti mancano e li scarica.
 
 ## Account
 
@@ -28,7 +28,9 @@ Il mirroring fa sì che la tua libreria ABM segua la tua libreria Audible.
 - È attivo di default.
 - Aggiunge i tuoi acquisti e i titoli gratuiti. I podcast restano fuori.
 - Ogni sincronizzazione gestisce al massimo 25 titoli.
-- Prima di partire ti chiede conferma e ti mostra quanti titoli aggiungerà.
+- Quando lo attivi ti chiede conferma e ti mostra quanti titoli la prossima sincronizzazione aggiungerà e scaricherà.
+- I titoli del Plus Catalog e i prestiti restano fuori, e non viene messo in coda niente mentre il disco della libreria è a corto di spazio.
+- Un titolo il cui download continua a fallire aspetta sempre di più tra un tentativo e l'altro: 1 ora, poi 6, poi 24.
 - Scarica anche i titoli che vuoi e che non hanno ancora file.
 - I titoli rimossi da Audible restano in ABM.
 

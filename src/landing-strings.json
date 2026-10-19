@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Scaricalo",
     "installH2": "Gira con un solo file.",
     "buildP": "<b>Compilalo dai sorgenti.</b> Da un clone del repo, sostituisci <code>image:</code> con <code>build: .</code> e lancia <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, un semplice servizio Linux.</b> Non ancora. Per ora l'unica strada è Docker.",
+    "otherP": "<b>Per ora l'unica strada è Docker.</b> Sono previste installazioni native per le configurazioni più comuni, così ABM può girare ovunque tu faccia già self-hosting:",
     "note": "ABM è in alpha. Fai un backup di <code>/config</code> prima di aggiornare, e dai prima un'occhiata alle note di aggiornamento.",
     "fullGuide": "Guida completa all'installazione →",
     "faqEyebrow": "Domande frequenti",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Apri una issue",
     "helpH": "Vuoi dare una mano?",
     "helpP": "ABM è il progetto di una sola persona. Un Ko-fi o una Monster lo tengono in movimento.",
-    "kofiBtn": "Offrimi una Monster",
-    "monsterBtn": "Sostieni lo sviluppo",
+    "kofiBtn": "Sostieni lo sviluppo",
+    "monsterBtn": "Offrimi una Monster",
     "finalH2": "Smetti di sistemare<br />cartelle.",
     "ctaInstall": "Installa ABM",
     "ctaDocs": "Leggi la documentazione",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Trova la tua gente.",
     "communityP": "Hai una domanda, ti serve una mano con la configurazione o vuoi parlare di audiolibri? Entra nella community di AudioBook Manager su Discord per supporto e chiacchiere.",
-    "communityBtn": "Unisciti su Discord",
+    "communityBtn": "Entra nel Discord",
+    "planned": [
+      [
+        "Linux",
+        "un pacchetto e un servizio nativi"
+      ],
+      [
+        "Windows",
+        "un installer .exe"
+      ],
+      [
+        "macOS",
+        "un'app nativa"
+      ],
+      [
+        "Kubernetes",
+        "un deployment su cluster"
+      ],
+      [
+        "Unraid",
+        "un template per Community Apps"
+      ],
+      [
+        "Proxmox",
+        "uno script di installazione LXC"
+      ]
+    ],
+    "coming": "In arrivo",
     "translatorNote": "Questa pagina è stata tradotta automaticamente. Se l'italiano è la tua lingua madre e ti va di aiutarmi a migliorarla, scrivimi a {mail}."
   }
 }

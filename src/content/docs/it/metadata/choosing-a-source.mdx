@@ -3,6 +3,8 @@ title: Scegliere una fonte di metadati
 description: Integrata, ospitata o il tuo server Libex.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[In arrivo nella prossima release]
 La scelta della fonte non è ancora in una versione rilasciata. Le versioni rilasciate usano l'istanza pubblica di Libex su libexdb.com e non hanno un'impostazione per questo.
 :::
@@ -12,10 +14,10 @@ Nella prossima release, **Settings > Metadata > Source** ha un'impostazione **Me
 | Scelta | Cosa significa |
 |---|---|
 | Built-in (predefinito) | Libex gira dentro ABM. Prima serve scegliere una connessione in uscita. |
-| Hosted (libexdb.com) | ABM interroga l'istanza pubblica di Libex. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex su GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM interroga l'istanza pubblica di Libex. |
 | Self-hosted | ABM interroga un server Libex che indichi tu. Inserisci il suo **Server URL**, per esempio `http://192.168.1.20:8000`. |
 
-**Test** verifica la fonte selezionata senza salvare. **Status** dice se è pronta. Una scelta che non hai ancora salvato mostra "Not in use yet - save to switch" finché non salvi.
+**Test** verifica la fonte selezionata senza salvare. **Status** dice se è pronta. Quando scegli una fonte diversa, **Status** mostra "Not in use yet - save to switch" finché non salvi.
 
 ## Built-in e la connessione in uscita
 
@@ -28,5 +30,5 @@ Con queste due, ABM interroga un server Libex ed è il server a parlare con Audi
 ## Quale scegliere
 
 - Vuoi che funzioni e basta e non ti importa che Audible veda il tuo indirizzo: Built-in con connessione diretta, oppure Hosted.
-- Non vuoi esporre il tuo IP ad Audible: Built-in tramite una VPN o un proxy, oppure Hosted.
+- Non vuoi esporre il tuo IP ad Audible: Built-in tramite un proxy, il tunnel WireGuard integrato o un container o servizio VPN separato. Oppure Hosted, dove è il server Libex a parlare con Audible al posto tuo.
 - Hai già un server Libex: Self-hosted.

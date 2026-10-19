@@ -7,7 +7,7 @@ Il menu **Library** ha tre elenchi: **Books**, **Series** e **Authors**. **Add N
 
 ## Libri
 
-Ogni libro è una riga, un poster o una riga di tabella (il selettore della vista è nella barra degli strumenti). Un libro ha uno stato:
+Ogni libro è una riga in vista Overview, un poster o una riga di tabella (il selettore della vista è nella barra degli strumenti). Un libro ha uno stato:
 
 - **Wanted**: monitorato, ancora senza file. ABM lo cerca.
 - **Downloaded**: i file sono su disco.
@@ -18,9 +18,13 @@ Apri un libro per la sua pagina di dettaglio: file, metadati, cronologia, la qua
 
 Se conosci Sonarr: un libro è un episodio, una serie è stagione e show insieme, e un autore è un modo per raggrupparli entrambi. La differenza è che un libro può appartenere a più serie, e ABM usa quella principale (la posizione più bassa) quando deve sceglierne una.
 
-## Serie e autori
+## Serie
 
-Gli elenchi Series e Authors mostrano quanti libri hai, quanti sono cercati e quanti hanno file mancanti. Aprine uno per vedere il catalogo, che comprende anche i libri che non hai. Da lì puoi aggiungere quelli che mancano. Vedi [Tracciamento delle serie](/it/using/series-tracking/).
+**Library > Series** elenca tutte le serie con quanti libri hai, quanti sono cercati e quanti hanno file mancanti, in vista Overview o Posters. La pagina di una serie mostra tutto il catalogo, compresi i libri che non hai. Puoi filtrarla su All, In Library o Not in Library. **Add Remaining** o **Select to Add** portano dentro i libri mancanti come cercati (wanted), e **Refresh Series** riscarica il catalogo. **Monitor New Books** (All o None) decide se i libri che usciranno più avanti vengono aggiunti come cercati. Vedi [Tracciamento delle serie](/it/using/series-tracking/).
+
+## Autori
+
+**Library > Authors** elenca gli autori, in vista Overview o Posters. La pagina di un autore mostra il suo catalogo raggruppato per serie, con i conteggi dei libri scaricati e totali per ogni serie, più il suo profilo di qualità, i generi e la valutazione. **Refresh Catalog** riscarica il catalogo e **Search Author** cerca i suoi libri cercati. **Monitor New Books** funziona come per una serie, e un autore parte da None.
 
 Eliminare una serie o un autore viene rifiutato finché ha ancora libri in libreria. Rimuovi prima i libri.
 

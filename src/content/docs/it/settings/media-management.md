@@ -7,7 +7,7 @@ description: Cartelle radice, importazione, file extra, cestino, scansioni, upgr
 
 ## Cartelle radice (Root Folders)
 
-Una cartella radice è una cartella in cui ABM gestisce i libri. Aggiungine una con **Add Root Folder**, che apre un selettore di cartelle in cui puoi anche scrivere il percorso. ABM può anche elencare le cartelle non mappate sotto una radice e importarle. Lo spazio libero e il supporto agli hardlink di una radice vengono verificati quando la aggiungi. Rimuovere una radice non elimina i file.
+Una cartella radice è una cartella in cui ABM gestisce i libri. Aggiungine una con **Add Root Folder**, che apre un selettore di cartelle in cui puoi anche scrivere il percorso. ABM può anche elencare le cartelle non mappate sotto una radice e importarle. Lo spazio libero e il supporto agli hardlink di una radice vengono verificati quando la aggiungi. Quando rimuovi una radice, ABM ti chiede cosa fare: **Remove from ABM only** (il predefinito) dimentica i libri che contiene e lascia i file, mentre **Delete the books and their files** elimina per sempre tutto quello che c'è sotto il percorso, senza passare dal cestino. Per una radice che contiene libri devi scrivere qualcosa per confermare.
 
 La cartella radice predefinita è quella in cui vanno i nuovi libri, e quella che decide se l'hardlink viene proposto per Library Import.
 
@@ -27,10 +27,10 @@ La cartella radice predefinita è quella in cui vanno i nuovi libri, e quella ch
 | Use Hardlinks instead of Copy | attivo | Per i download completati: hardlink invece di copia, così il seeding non raddoppia lo spazio. Serve lo stesso volume. |
 | Library Import | Copy | Il predefinito per [Library Import](/it/library-import/): copia, hardlink o spostamento. Hardlink resta disattivato finché la radice predefinita non è stata verificata e lo supporta. |
 | Import Extra Files | attivo | Interruttore generale per portare con sé i file non audio. Vale per Library Import, Manual Import e i download completati |
-| Extra File Extensions (avanzata) | vuoto | Estensioni aggiuntive da importare, come `srt, lrc`. I tipi bloccati vengono rifiutati. |
+| Extra File Extensions (avanzata) | vuoto | Altri tipi di file da portare con sé, che tengono il loro nome, per esempio `srt, lrc`. Con o senza punto, separati da virgole o spazi. I tipi bloccati, come eseguibili e download parziali, non si possono salvare. Disattivata quando **Import Extra Files** è spento |
 | Preferred Cover (avanzata) | Matched | La copertina dell'edizione abbinata, oppure l'immagine migliore della cartella, quando ci sono entrambe |
 
-I file extra hanno cinque interruttori:
+**Import Extra Files** porta con sé gli altri file di un libro insieme all'audio. Cinque interruttori scelgono quali tipi vengono portati, e un file che corrisponde a **Extra File Extensions** viene portato anche quando il suo tipo è spento:
 
 | Interruttore | Predefinito | Comprende |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink non è la stessa cosa di **Use Hardlinks instead of Copy**. Quella vale
 | Recycling Bin Cleanup | 7 (giorni) | 0 disattiva la pulizia automatica |
 | Library Scan Interval | 0 (disattivo) | Ore tra una scansione automatica e l'altra |
 | Watch for Changes | disattivo | Scansiona quando dei file vengono aggiunti, rimossi o modificati |
-| Cover Cache Workers | 4 | Quante copertine vengono scaricate insieme quando si mettono in cache le immagini, da 1 a 16. Abbassalo se un'esecuzione della cache segnala errori |
+| Cover Cache Workers | 4 | Quante copertine vengono scaricate insieme quando si mettono in cache le immagini, da 1 a 16 |
 
 ## Upgrade di qualità (Quality Upgrades)
 
