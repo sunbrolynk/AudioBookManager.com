@@ -23,6 +23,8 @@ In the next release, **Settings > Metadata > Source** has a **Metadata Source** 
 
 Built-in talks to Audible from your machine, so it uses **Settings > General > Proxy & VPN**. That page decides the route: a proxy, the built-in WireGuard tunnel, your own VPN container, or a direct connection you acknowledge. With none chosen, automated lookups are blocked and say so. A chosen route that is down blocks lookups too. It never falls back to your own address. Direct shows a warning that Audible sees your IP address and the books ABM looks up.
 
+That route is only for metadata lookups. Your Audible account's sign-in, library sync, licenses and downloads always connect from your own address, the same as when you use Audible yourself.
+
 ## Hosted and self-hosted
 
 With these two, ABM asks a Libex server and the server talks to Audible. A self-hosted URL is checked before it is saved, and an empty or unsafe one is refused. A server that is down is reported as the metadata source being unavailable, with its name.

@@ -23,6 +23,8 @@ I neste versjon har **Settings > Metadata > Source** en **Metadata Source**-inns
 
 Built-in snakker med Audible fra maskinen din, så den bruker **Settings > General > Proxy & VPN**. Den siden bestemmer ruta: en proxy, den innebygde WireGuard-tunnelen, din egen VPN-container eller en direkte tilkobling du bekrefter. Er ingen valgt, blir automatiske oppslag blokkert, og det står hvorfor. En valgt rute som er nede, blokkerer også oppslag. Den faller aldri tilbake til din egen adresse. Direct viser en advarsel om at Audible ser IP-adressen din og bøkene ABM slår opp.
 
+Den ruten gjelder bare metadataoppslag. Innlogging på Audible-kontoen din, synkronisering av biblioteket, lisenser og nedlastinger går alltid fra din egen adresse, akkurat som når du bruker Audible selv.
+
 ## Hostet og selvhostet
 
 Med disse to spør ABM en Libex-server, og serveren snakker med Audible. En selvhostet URL blir sjekket før den lagres, og en tom eller usikker en blir avvist. En server som er nede, meldes som at metadatakilden er utilgjengelig, med navnet sitt.

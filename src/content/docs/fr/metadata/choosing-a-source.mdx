@@ -23,6 +23,8 @@ Dans la prochaine version, **Settings > Metadata > Source** a un réglage **Meta
 
 Built-in parle à Audible depuis ta machine, donc il utilise **Settings > General > Proxy & VPN**. Cette page décide du chemin : un proxy, le tunnel WireGuard intégré, ton propre conteneur VPN, ou une connexion directe que tu acceptes en connaissance de cause. Si rien n'est choisi, les recherches automatiques sont bloquées et le disent. Un chemin choisi qui est en panne bloque aussi les recherches. Il ne se rabat jamais sur ta propre adresse. Direct affiche un avertissement : Audible voit ton adresse IP et les livres qu'ABM recherche.
 
+Ce chemin ne sert qu'aux recherches de métadonnées. La connexion à ton compte Audible, la synchronisation de ta bibliothèque, les licences et les téléchargements passent toujours par ta propre adresse, comme quand tu utilises Audible toi-même.
+
 ## Hosted et Self-hosted
 
 Avec ces deux-là, ABM interroge un serveur Libex et c'est le serveur qui parle à Audible. Une URL auto-hébergée est vérifiée avant d'être enregistrée, et une URL vide ou dangereuse est refusée. Un serveur en panne est signalé comme une source de métadonnées indisponible, avec son nom.

@@ -23,6 +23,8 @@ Na próxima versão, **Settings > Metadata > Source** tem uma configuração **M
 
 O Built-in conversa com a Audible a partir da sua máquina, então usa **Settings > General > Proxy & VPN**. Essa página decide a rota: um proxy, o túnel WireGuard embutido, o seu próprio contêiner de VPN ou uma conexão direta que você confirma estar ciente. Sem nenhuma escolhida, as consultas automáticas ficam bloqueadas e avisam disso. Uma rota escolhida que está fora do ar também bloqueia as consultas. Ela nunca volta para o seu próprio endereço. A conexão direta mostra um aviso de que a Audible vê o seu endereço IP e os livros que o ABM consulta.
 
+Essa rota serve só para buscas de metadados. O login da sua conta Audible, a sincronização da biblioteca, as licenças e os downloads sempre saem do seu próprio endereço, como quando você usa a Audible por conta própria.
+
 ## Hosted e Self-hosted
 
 Com essas duas, o ABM consulta um servidor Libex e é o servidor que conversa com a Audible. Uma URL self-hosted é verificada antes de ser salva, e uma vazia ou insegura é recusada. Um servidor fora do ar aparece como fonte de metadados indisponível, com o nome dele.
