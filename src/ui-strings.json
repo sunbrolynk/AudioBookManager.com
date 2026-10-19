@@ -130,10 +130,10 @@
     "releasesBeforeUpgrade": "Перед оновленням",
     "prereleaseTag": "Ще не випущено",
     "prereleaseTitle": "ABM ще не вийшов",
-    "prereleaseBody": "Я ще готую AudioBook Manager до першого публічного релізу, тож кроки встановлення на цьому сайті поки не спрацюють. Роздивляйся, а щоб дізнатися, коли він вийде, стеж за новинами в Discord або на GitHub.",
-    "prereleaseBadge": "Ці кроки встановлення запрацюють із першим релізом.",
-    "prereleaseDiscord": "Приєднатися до Discord",
-    "prereleaseGithub": "Стежити на GitHub",
+    "prereleaseBody": "Я ще готую AudioBook Manager до першого публічного випуску, тож інструкції зі встановлення на цьому сайті поки не спрацюють. Роздивляйся, а щоб дізнатися про вихід, стеж за новинами в Discord або на GitHub.",
+    "prereleaseBadge": "Ці кроки встановлення запрацюють з першим випуском.",
+    "prereleaseDiscord": "Заходь у Discord",
+    "prereleaseGithub": "Стеж на GitHub",
     "prereleaseClose": "Зрозуміло",
     "prereleaseDismiss": "Закрити"
   },
@@ -265,7 +265,15 @@
     "footerMailPrivacy": "Confidentialité",
     "footerMailAdmin": "Tout le reste",
     "releasesNone": "Pas encore de version publiée.",
-    "releasesBeforeUpgrade": "Avant de mettre à jour"
+    "releasesBeforeUpgrade": "Avant de mettre à jour",
+    "prereleaseTag": "Pas encore sorti",
+    "prereleaseTitle": "ABM n'est pas encore sorti",
+    "prereleaseBody": "Je prépare encore AudioBook Manager pour sa première version publique, donc les étapes d'installation de ce site ne marchent pas encore. Jette un œil, et suis le projet sur Discord ou GitHub pour savoir quand il sort.",
+    "prereleaseBadge": "Ces étapes d'installation fonctionneront dès la première version.",
+    "prereleaseDiscord": "Rejoindre le Discord",
+    "prereleaseGithub": "Suivre sur GitHub",
+    "prereleaseClose": "Compris",
+    "prereleaseDismiss": "Fermer"
   },
   "de": {
     "features": "Funktionen",
@@ -303,7 +311,15 @@
     "footerMailPrivacy": "Datenschutz",
     "footerMailAdmin": "Alles andere",
     "releasesNone": "Noch keine Releases.",
-    "releasesBeforeUpgrade": "Vor dem Upgrade"
+    "releasesBeforeUpgrade": "Vor dem Upgrade",
+    "prereleaseTag": "Noch nicht veröffentlicht",
+    "prereleaseTitle": "ABM ist noch nicht draußen",
+    "prereleaseBody": "Ich mache AudioBook Manager gerade noch fertig für das erste öffentliche Release, deshalb funktionieren die Installationsschritte auf dieser Seite noch nicht. Schau dich ruhig um und folge dem Projekt auf Discord oder GitHub, dann erfährst du, wann es so weit ist.",
+    "prereleaseBadge": "Diese Installationsschritte funktionieren ab dem ersten Release.",
+    "prereleaseDiscord": "Komm in den Discord",
+    "prereleaseGithub": "Auf GitHub folgen",
+    "prereleaseClose": "Alles klar",
+    "prereleaseDismiss": "Schließen"
   },
   "es": {
     "features": "Funciones",
@@ -341,7 +357,15 @@
     "footerMailPrivacy": "Privacidad",
     "footerMailAdmin": "Cualquier otra cosa",
     "releasesNone": "Todavía no hay versiones.",
-    "releasesBeforeUpgrade": "Antes de actualizar"
+    "releasesBeforeUpgrade": "Antes de actualizar",
+    "prereleaseTag": "Aún no publicado",
+    "prereleaseTitle": "ABM todavía no ha salido",
+    "prereleaseBody": "Todavía estoy preparando AudioBook Manager para su primera versión pública, así que los pasos de instalación de este sitio aún no funcionan. Echa un vistazo y sigue el proyecto en Discord o GitHub para enterarte de cuándo sale.",
+    "prereleaseBadge": "Estos pasos de instalación funcionarán a partir de la primera versión.",
+    "prereleaseDiscord": "Únete al Discord",
+    "prereleaseGithub": "Síguelo en GitHub",
+    "prereleaseClose": "Entendido",
+    "prereleaseDismiss": "Cerrar"
   },
   "it": {
     "features": "Funzionalità",
@@ -379,7 +403,15 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Tutto il resto",
     "releasesNone": "Ancora nessuna release.",
-    "releasesBeforeUpgrade": "Prima di aggiornare"
+    "releasesBeforeUpgrade": "Prima di aggiornare",
+    "prereleaseTag": "Non ancora uscito",
+    "prereleaseTitle": "ABM non è ancora uscito",
+    "prereleaseBody": "Sto ancora preparando AudioBook Manager per la sua prima release pubblica, quindi i passaggi di installazione di questo sito per ora non funzionano. Dai un'occhiata in giro e segui il progetto su Discord o GitHub per sapere quando esce.",
+    "prereleaseBadge": "Questi passaggi di installazione funzioneranno dalla prima release.",
+    "prereleaseDiscord": "Entra nel Discord",
+    "prereleaseGithub": "Seguilo su GitHub",
+    "prereleaseClose": "Ok, capito",
+    "prereleaseDismiss": "Chiudi"
   },
   "pt-br": {
     "features": "Recursos",
@@ -417,7 +449,15 @@
     "footerMailPrivacy": "Privacidade",
     "footerMailAdmin": "Qualquer outra coisa",
     "releasesNone": "Nenhuma versão ainda.",
-    "releasesBeforeUpgrade": "Antes de atualizar"
+    "releasesBeforeUpgrade": "Antes de atualizar",
+    "prereleaseTag": "Ainda não lançado",
+    "prereleaseTitle": "O ABM ainda não saiu",
+    "prereleaseBody": "Ainda estou preparando o AudioBook Manager para o primeiro lançamento público, então os passos de instalação deste site ainda não funcionam. Dê uma olhada e acompanhe pelo Discord ou pelo GitHub para saber quando ele sair.",
+    "prereleaseBadge": "Estes passos de instalação passam a funcionar no primeiro lançamento.",
+    "prereleaseDiscord": "Entre no Discord",
+    "prereleaseGithub": "Acompanhe no GitHub",
+    "prereleaseClose": "Entendi",
+    "prereleaseDismiss": "Fechar"
   },
   "ja": {
     "features": "機能",
@@ -455,7 +495,15 @@
     "footerMailPrivacy": "プライバシー",
     "footerMailAdmin": "そのほか",
     "releasesNone": "まだリリースはありません。",
-    "releasesBeforeUpgrade": "アップグレードの前に"
+    "releasesBeforeUpgrade": "アップグレードの前に",
+    "prereleaseTag": "未リリース",
+    "prereleaseTitle": "ABM はまだリリースされていません",
+    "prereleaseBody": "AudioBook Manager は最初の公開リリースに向けて準備中なので、このサイトのインストール手順はまだ使えません。ゆっくり見ていってください。リリースのお知らせは Discord か GitHub でチェックできます。",
+    "prereleaseBadge": "このインストール手順は最初のリリースから使えるようになります。",
+    "prereleaseDiscord": "Discord に参加する",
+    "prereleaseGithub": "GitHub でフォローする",
+    "prereleaseClose": "わかりました",
+    "prereleaseDismiss": "閉じる"
   },
   "nl": {
     "features": "Functies",
@@ -493,7 +541,15 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Al het andere",
     "releasesNone": "Nog geen releases.",
-    "releasesBeforeUpgrade": "Voordat je upgradet"
+    "releasesBeforeUpgrade": "Voordat je upgradet",
+    "prereleaseTag": "Nog niet uitgebracht",
+    "prereleaseTitle": "ABM is nog niet uit",
+    "prereleaseBody": "Ik ben AudioBook Manager nog aan het klaarmaken voor de eerste publieke release, dus de installatiestappen op deze site werken nog niet. Kijk gerust rond en volg het op Discord of GitHub, dan hoor je wanneer het uitkomt.",
+    "prereleaseBadge": "Deze installatiestappen werken vanaf de eerste release.",
+    "prereleaseDiscord": "Kom naar de Discord",
+    "prereleaseGithub": "Volg op GitHub",
+    "prereleaseClose": "Begrepen",
+    "prereleaseDismiss": "Sluiten"
   },
   "pl": {
     "features": "Funkcje",
@@ -531,7 +587,15 @@
     "footerMailPrivacy": "Prywatność",
     "footerMailAdmin": "Wszystko inne",
     "releasesNone": "Nie ma jeszcze żadnych wydań.",
-    "releasesBeforeUpgrade": "Zanim zaktualizujesz"
+    "releasesBeforeUpgrade": "Zanim zaktualizujesz",
+    "prereleaseTag": "Jeszcze niewydany",
+    "prereleaseTitle": "ABM jeszcze nie wyszedł",
+    "prereleaseBody": "Wciąż szykuję AudioBook Managera do pierwszego publicznego wydania, więc kroki instalacji na tej stronie jeszcze nie działają. Rozejrzyj się i obserwuj projekt na Discordzie albo GitHubie, żeby wiedzieć, kiedy wyjdzie.",
+    "prereleaseBadge": "Te kroki instalacji zadziałają od pierwszego wydania.",
+    "prereleaseDiscord": "Dołącz do Discorda",
+    "prereleaseGithub": "Obserwuj na GitHubie",
+    "prereleaseClose": "Jasne",
+    "prereleaseDismiss": "Zamknij"
   },
   "zh-cn": {
     "features": "功能",
@@ -569,7 +633,15 @@
     "footerMailPrivacy": "隐私",
     "footerMailAdmin": "其他事情",
     "releasesNone": "还没有发布任何版本。",
-    "releasesBeforeUpgrade": "升级之前"
+    "releasesBeforeUpgrade": "升级之前",
+    "prereleaseTag": "尚未发布",
+    "prereleaseTitle": "ABM 还没有发布",
+    "prereleaseBody": "我还在为 AudioBook Manager 的第一个公开版本做准备，所以这个网站上的安装步骤暂时还用不了。你可以先随便看看，想知道什么时候发布，就在 Discord 或 GitHub 上关注一下吧。",
+    "prereleaseBadge": "这些安装步骤从第一个版本发布起才能用。",
+    "prereleaseDiscord": "加入 Discord",
+    "prereleaseGithub": "在 GitHub 上关注",
+    "prereleaseClose": "知道了",
+    "prereleaseDismiss": "关闭"
   },
   "zh-tw": {
     "features": "功能",
@@ -607,7 +679,15 @@
     "footerMailPrivacy": "隱私",
     "footerMailAdmin": "其他事情",
     "releasesNone": "還沒有任何版本。",
-    "releasesBeforeUpgrade": "升級前須知"
+    "releasesBeforeUpgrade": "升級前須知",
+    "prereleaseTag": "尚未發行",
+    "prereleaseTitle": "ABM 還沒有發行",
+    "prereleaseBody": "我還在為 AudioBook Manager 的第一個公開版本做準備，所以這個網站上的安裝步驟暫時還不能用。你可以先到處看看，想知道什麼時候推出，就到 Discord 或 GitHub 追蹤一下吧。",
+    "prereleaseBadge": "這些安裝步驟要等第一個版本推出後才能用。",
+    "prereleaseDiscord": "加入 Discord",
+    "prereleaseGithub": "在 GitHub 上追蹤",
+    "prereleaseClose": "知道了",
+    "prereleaseDismiss": "關閉"
   },
   "ko": {
     "features": "기능",
@@ -645,7 +725,15 @@
     "footerMailPrivacy": "개인정보",
     "footerMailAdmin": "그 밖의 문의",
     "releasesNone": "아직 릴리스가 없어요.",
-    "releasesBeforeUpgrade": "업그레이드하기 전에"
+    "releasesBeforeUpgrade": "업그레이드하기 전에",
+    "prereleaseTag": "아직 출시 전",
+    "prereleaseTitle": "ABM은 아직 나오지 않았어요",
+    "prereleaseBody": "AudioBook Manager의 첫 공개 릴리스를 아직 준비하고 있어서, 이 사이트의 설치 방법은 아직 쓸 수 없어요. 편하게 둘러보고, 언제 나오는지 알고 싶다면 Discord나 GitHub에서 소식을 받아 보세요.",
+    "prereleaseBadge": "이 설치 방법은 첫 릴리스부터 쓸 수 있어요.",
+    "prereleaseDiscord": "Discord 참여하기",
+    "prereleaseGithub": "GitHub에서 팔로우하기",
+    "prereleaseClose": "알겠어요",
+    "prereleaseDismiss": "닫기"
   },
   "sv": {
     "features": "Funktioner",
@@ -683,7 +771,15 @@
     "footerMailPrivacy": "Integritet",
     "footerMailAdmin": "Allt annat",
     "releasesNone": "Inga versioner än.",
-    "releasesBeforeUpgrade": "Innan du uppgraderar"
+    "releasesBeforeUpgrade": "Innan du uppgraderar",
+    "prereleaseTag": "Inte släppt än",
+    "prereleaseTitle": "ABM är inte ute än",
+    "prereleaseBody": "Jag håller fortfarande på att göra AudioBook Manager redo för den första offentliga versionen, så installationsstegen på den här sidan fungerar inte än. Titta gärna runt, och följ med på Discord eller GitHub så får du veta när den släpps.",
+    "prereleaseBadge": "De här installationsstegen fungerar från och med den första versionen.",
+    "prereleaseDiscord": "Gå med i Discord",
+    "prereleaseGithub": "Följ på GitHub",
+    "prereleaseClose": "Uppfattat",
+    "prereleaseDismiss": "Stäng"
   },
   "cs": {
     "features": "Funkce",
@@ -721,7 +817,15 @@
     "footerMailPrivacy": "Soukromí",
     "footerMailAdmin": "Cokoli jiného",
     "releasesNone": "Zatím žádná vydání.",
-    "releasesBeforeUpgrade": "Než aktualizuješ"
+    "releasesBeforeUpgrade": "Než aktualizuješ",
+    "prereleaseTag": "Zatím nevydáno",
+    "prereleaseTitle": "ABM ještě nevyšel",
+    "prereleaseBody": "AudioBook Manager pořád chystám na první veřejné vydání, takže instalační kroky na tomhle webu zatím nefungují. Klidně se porozhlédni a sleduj projekt na Discordu nebo GitHubu, ať víš, kdy vyjde.",
+    "prereleaseBadge": "Tyhle instalační kroky začnou fungovat s prvním vydáním.",
+    "prereleaseDiscord": "Přidej se na Discord",
+    "prereleaseGithub": "Sleduj na GitHubu",
+    "prereleaseClose": "Rozumím",
+    "prereleaseDismiss": "Zavřít"
   },
   "da": {
     "features": "Funktioner",
@@ -759,7 +863,15 @@
     "footerMailPrivacy": "Privatliv",
     "footerMailAdmin": "Alt andet",
     "releasesNone": "Ingen udgivelser endnu.",
-    "releasesBeforeUpgrade": "Før du opgraderer"
+    "releasesBeforeUpgrade": "Før du opgraderer",
+    "prereleaseTag": "Ikke udgivet endnu",
+    "prereleaseTitle": "ABM er ikke ude endnu",
+    "prereleaseBody": "Jeg er stadig ved at gøre AudioBook Manager klar til den første offentlige udgivelse, så installationstrinene på siden virker ikke endnu. Kig dig gerne omkring, og følg med på Discord eller GitHub, så hører du, når den kommer.",
+    "prereleaseBadge": "Installationstrinene her virker fra den første udgivelse.",
+    "prereleaseDiscord": "Kom med på Discord",
+    "prereleaseGithub": "Følg med på GitHub",
+    "prereleaseClose": "Forstået",
+    "prereleaseDismiss": "Luk"
   },
   "nb": {
     "features": "Funksjoner",
@@ -797,7 +909,15 @@
     "footerMailPrivacy": "Personvern",
     "footerMailAdmin": "Alt annet",
     "releasesNone": "Ingen utgivelser ennå.",
-    "releasesBeforeUpgrade": "Før du oppgraderer"
+    "releasesBeforeUpgrade": "Før du oppgraderer",
+    "prereleaseTag": "Ikke utgitt ennå",
+    "prereleaseTitle": "ABM er ikke ute ennå",
+    "prereleaseBody": "Jeg holder fortsatt på å gjøre AudioBook Manager klar for den første offentlige utgivelsen, så installasjonsstegene på denne siden fungerer ikke ennå. Ta gjerne en titt rundt, og følg med på Discord eller GitHub, så får du vite når den kommer.",
+    "prereleaseBadge": "Disse installasjonsstegene fungerer fra den første utgivelsen.",
+    "prereleaseDiscord": "Bli med på Discord",
+    "prereleaseGithub": "Følg på GitHub",
+    "prereleaseClose": "Skjønner",
+    "prereleaseDismiss": "Lukk"
   },
   "fi": {
     "features": "Ominaisuudet",
@@ -835,6 +955,14 @@
     "footerMailPrivacy": "Tietosuoja",
     "footerMailAdmin": "Kaikki muu",
     "releasesNone": "Julkaisuja ei ole vielä.",
-    "releasesBeforeUpgrade": "Ennen kuin päivität"
+    "releasesBeforeUpgrade": "Ennen kuin päivität",
+    "prereleaseTag": "Ei vielä julkaistu",
+    "prereleaseTitle": "ABM ei ole vielä ilmestynyt",
+    "prereleaseBody": "Valmistelen AudioBook Manageria vielä ensimmäistä julkista versiota varten, joten tämän sivuston asennusohjeet eivät toimi vielä. Katsele rauhassa ympärillesi ja seuraa projektia Discordissa tai GitHubissa, niin kuulet, kun se julkaistaan.",
+    "prereleaseBadge": "Nämä asennusohjeet toimivat ensimmäisestä versiosta alkaen.",
+    "prereleaseDiscord": "Liity Discordiin",
+    "prereleaseGithub": "Seuraa GitHubissa",
+    "prereleaseClose": "Selvä",
+    "prereleaseDismiss": "Sulje"
   }
 }
