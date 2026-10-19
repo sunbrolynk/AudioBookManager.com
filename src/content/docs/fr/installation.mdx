@@ -1,0 +1,87 @@
+---
+title: Installer ABM
+description: Un conteneur, trois dossiers, une commande. Cette page, c'est toute l'installation.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+La base de données est un fichier SQLite dans `/config`, donc il n'y a aucun service de base de données à mettre en place.
+
+**Il te faut :**
+
+- Docker avec Compose
+- Un dossier pour ta bibliothèque de livres audio
+- Le dossier où ton client de téléchargement met les téléchargements terminés
+- Un dossier pour les données d'ABM
+
+## Installation
+
+<Steps>
+
+1. **Crée un fichier compose.** Enregistre ceci sous le nom `docker-compose.yml` :
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Fais-le pointer vers tes dossiers.** Remplace la partie gauche de chaque volume par un vrai dossier sur ta machine. Ne touche pas à la partie droite.
+
+   | Chemin sur l'hôte | Chemin dans le conteneur | Ce qu'on y met |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Ta bibliothèque de livres audio. Obligatoire. |
+   | `/path/to/downloads` | `/downloads` | Là où ton client de téléchargement met les téléchargements terminés. Obligatoire. |
+   | `/path/to/config` | `/config` | La base de données SQLite, les sauvegardes, les journaux, les corbeilles et le secret généré de l'app. Garde-le précieusement. |
+
+3. **Démarre-le.** Lance ceci depuis le dossier qui contient le fichier compose :
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Ouvre-le.** Va sur `http://your-server:5173`. À la première visite, l'app te guide pour créer un identifiant.
+
+</Steps>
+
+<Aside type="tip" title="Les téléchargements sont dans un autre conteneur ?">
+Si ton client de téléchargement tourne dans son propre conteneur, son dossier de téléchargements doit être le même dossier que celui qu'ABM voit comme `/downloads`. Si les chemins diffèrent, ajoute une correspondance de chemin distant dans **Settings > Download Clients**.
+</Aside>
+
+## Premier lancement
+
+Règle ton fuseau horaire avec `TIMEZONE` dans le fichier compose. Ensuite, dans **Settings**, ajoute un dossier racine dans **Media Management**, un indexeur dans **Indexers** et un client de téléchargement dans **Download Clients**. Les variables d'environnement et les reverse proxies sont expliqués dans [Configuration](/fr/configuration/).
+
+## Compiler depuis les sources
+
+Pour construire l'image toi-même, clone le dépôt, remplace la ligne `image:` par `build: .` et lance :
+
+```bash
+docker compose up -d --build
+```
+
+## Mettre à jour
+
+Récupère la nouvelle image et recrée le conteneur. La page [Mises à jour](/fr/updates/) liste ce qui a changé dans chaque version.
+
+<Aside type="caution" title="ABM est en alpha">
+Sauvegarde `/config` avant de mettre à jour, et jette d'abord un œil aux notes de mise à jour.
+</Aside>
+
+## Quelque chose ne va pas ?
+
+- **La page ne se charge pas.** Vérifie la redirection de port dans ton fichier compose, puis lance `docker logs audiobook-manager`.
+- **Les modifications sont refusées depuis mon domaine.** ABM refuse les modifications venant d'une adresse par laquelle on ne le joint pas. Fais d'abord en sorte que ton proxy transmette l'en-tête `Host` d'origine. Si ça ne suffit pas, ajoute ton domaine dans **CORS Allowed Domains** dans **Settings > General** (c'est un réglage avancé, donc active **Show Advanced**) et redémarre ABM. Voir [Dépannage](/fr/troubleshooting/).
+- **Les téléchargements se terminent mais ne sont jamais importés.** Vérifie la correspondance des dossiers dans l'astuce ci-dessus.

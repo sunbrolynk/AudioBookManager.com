@@ -1164,5 +1164,212 @@
       ]
     ],
     "coming": "Coming"
+  },
+  "fr": {
+    "htmlLang": "fr",
+    "title": "AudioBook Manager : le *arr des livres audio",
+    "skip": "Aller au contenu",
+    "heroEyebrow": "Gratuit · open source · auto-hébergé",
+    "h1": "Les livres audio,<br /><em>c'est réglé.</em>",
+    "ctaDocker": "Installer avec Docker",
+    "ctaSee": "Le voir tourner",
+    "runs": "un conteneur · SQLite · port 5173 · GPL-3.0",
+    "heroAlt": "La bibliothèque d'ABM : une grille de couvertures de livres audio, chacune avec une barre verte Downloaded ou orange Wanted",
+    "phoneAlt": "La page d'un livre dans ABM sur un téléphone",
+    "existsEyebrow": "Pourquoi il existe",
+    "existsH2": "Les livres audio méritaient leur propre *arr.",
+    "p1": "Les séries ont Sonarr. Les films ont Radarr. Readarr, construit sur les mêmes bases Servarr, gérait les livres et les livres audio ensemble, et il a depuis été abandonné.",
+    "p2": "ABM reprend ce chemin, mais uniquement pour les livres audio. Il s'appuie sur le design inventé par les apps Servarr, et il est pensé autour des narrateurs, de la position dans une série, des sorties multi-disques et du M4B.",
+    "p3": "Audiobookshelf lit ta bibliothèque à merveille. Mais il ne va pas chercher le prochain tome d'une série, et il ne range pas ce qui arrive. C'est ça que fait ABM.",
+    "beforeA": "Avant",
+    "beforeB": "à la main",
+    "afterA": "Après",
+    "afterB": "par ABM",
+    "howEyebrow": "Comment ça marche",
+    "howH2": "Cinq étapes. Tu fais la première.",
+    "getEyebrow": "Ce que tu obtiens",
+    "altPage": "La page {name} d'ABM",
+    "whyEyebrow": "Pourquoi ABM",
+    "whyH2": "Fait pour l'étagère, pas greffé dessus.",
+    "shotsEyebrow": "Captures d'écran",
+    "shotsH2": "C'est le vrai logiciel.",
+    "shotsAria": "Captures d'écran, fais défiler sur le côté",
+    "getItEyebrow": "L'installer",
+    "installH2": "Ça tourne avec un seul fichier.",
+    "buildP": "<b>Compiler depuis les sources.</b> Dans un clone du dépôt, remplace <code>image:</code> par <code>build: .</code> et lance <code>docker compose up -d --build</code>.",
+    "otherP": "<b>Unraid, Windows, macOS, un simple service Linux.</b> Pas encore. Pour l'instant, Docker est la seule façon de l'installer.",
+    "note": "ABM est en alpha. Sauvegarde <code>/config</code> avant de mettre à jour, et jette d'abord un œil aux notes de mise à jour.",
+    "fullGuide": "Guide d'installation complet →",
+    "faqEyebrow": "FAQ",
+    "faqH2": "Bonnes questions.",
+    "supportSr": "Soutenir",
+    "brokenH": "Quelque chose ne marche pas ?",
+    "brokenP": "Ouvre une issue sur GitHub et joins le journal de System › Log Files. Plus il y a de journal, plus la correction est rapide.",
+    "brokenBtn": "Ouvrir une issue",
+    "helpH": "Envie de donner un coup de main ?",
+    "helpP": "ABM est le projet d'une seule personne. Ko-fi ou une Monster le font avancer.",
+    "kofiBtn": "Buy Me a Monster",
+    "monsterBtn": "Soutenir le développement",
+    "finalH2": "Arrête de réparer<br />des dossiers.",
+    "ctaInstall": "Installer ABM",
+    "ctaDocs": "Lire la doc",
+    "sub": "ABM trouve les livres audio que tu veux, les récupère avec le client de téléchargement que tu utilises déjà, et les range pour qu'Audiobookshelf trouve une bibliothèque bien propre.",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "Vouloir",
+        "Ajoute un livre, une série ou un auteur entier. ABM le met dans la liste Wanted et continue de surveiller."
+      ],
+      [
+        "Trouver",
+        "Tes indexeurs Usenet et torrent sont interrogés selon un planning, ou tout de suite si tu lances une recherche."
+      ],
+      [
+        "Récupérer",
+        "La meilleure sortie que ton profil de qualité autorise part vers le client de téléchargement que tu utilises déjà."
+      ],
+      [
+        "Ranger",
+        "Le livre est importé, renommé et rangé par auteur et par série. Les sorties multi-disques gardent leurs sous-dossiers quand les livres sont déplacés."
+      ],
+      [
+        "Garder",
+        "Tes métadonnées, ta décision : tu choisis ce qu'ABM garde et écrit, et où ton lecteur va le lire. Autorise les mises à niveau dans un profil de qualité et ABM remplace le fichier par une meilleure sortie dès qu'il en trouve une."
+      ]
+    ],
+    "features": [
+      [
+        "Bibliothèque",
+        "Tous tes livres, d'un coup d'œil.",
+        "Couvertures, statut et séries dans une seule grille. Vert, c'est sur le disque. Orange, ABM est encore en chasse."
+      ],
+      [
+        "Livre",
+        "Les détails sont justes.",
+        "Auteur, narrateur, série, durée, éditeur et chaque fichier, avec sa qualité et son emplacement."
+      ],
+      [
+        "Calendrier",
+        "Sache ce qui arrive.",
+        "Les dates de sortie des livres que tu surveilles, affichées sur un calendrier."
+      ],
+      [
+        "Recherchés",
+        "La liste de ce qui manque.",
+        "Les livres manquants et ceux sous ton seuil de qualité, à un clic d'une recherche."
+      ],
+      [
+        "Profils",
+        "C'est toi qui décides ce qui est mieux.",
+        "Un seul fichier M4B plutôt qu'un dossier de MP3 ? Dis-le une fois dans un profil de qualité et ABM attend de le trouver."
+      ],
+      [
+        "Conversions",
+        "Corrige aussi le format.",
+        "Fusionne des parties, découpe ou ajoute des chapitres, ou transforme des MP3 en un seul M4B. ABM apprend la vitesse de ta machine et estime la durée d'une tâche."
+      ]
+    ],
+    "why": [
+      [
+        "Les livres audio d'abord.",
+        "Les narrateurs, la position dans une série, les sorties en plusieurs fichiers, les chapitres et le M4B sont au cœur du projet, pas un ajout de dernière minute."
+      ],
+      [
+        "Tu es déjà en terrain connu.",
+        "Wanted, Queue, History, Calendar, profils de qualité. Si tu as déjà utilisé Sonarr ou Radarr, tout est là où tu irais le chercher."
+      ],
+      [
+        "Il te dit la vérité.",
+        "Si un déplacement ne fait passer que 3 livres sur 5, ABM te dit combien ont été déplacés et pourquoi les autres non."
+      ],
+      [
+        "Un conteneur. Pas de serveur de base de données.",
+        "Tout tient dans un seul fichier SQLite sous <code>/config</code>. Sauvegarde ce dossier et tu as sauvegardé ABM."
+      ]
+    ],
+    "works": [
+      [
+        "Lecture dans",
+        "Audiobookshelf"
+      ],
+      [
+        "Métadonnées de",
+        "Libex"
+      ],
+      [
+        "Indexeurs",
+        "Newznab · Torznab"
+      ],
+      [
+        "Tes livres achetés sur",
+        "Audible"
+      ],
+      [
+        "Clients de téléchargement",
+        "7 pris en charge"
+      ]
+    ],
+    "shots": [
+      "Tableau de bord",
+      "Bibliothèque",
+      "Livre",
+      "Série",
+      "Calendrier",
+      "Recherchés",
+      "Profils",
+      "Conversions"
+    ],
+    "installSteps": [
+      [
+        "Enregistre-le",
+        "Colle ça dans <code>docker-compose.yml</code> et remplace les trois chemins de gauche par tes propres dossiers."
+      ],
+      [
+        "Démarre-le",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "Ouvre-le",
+        "Va sur <code>http://your-server:5173</code>. À la première visite, l'app te guide pour créer un identifiant."
+      ]
+    ],
+    "faq": [
+      [
+        "Est-ce qu'ABM remplace Audiobookshelf ?",
+        "Non. Audiobookshelf est le lecteur et ABM est le bibliothécaire. Fais pointer les deux vers le même dossier de bibliothèque et laisse chacun faire son boulot."
+      ],
+      [
+        "D'où viennent les métadonnées ?",
+        "De Libex, un service de métadonnées ouvert pour les données Audible. ABM les rafraîchit selon un planning, et une couverture que tu as choisie toi-même peut être verrouillée pour qu'un rafraîchissement n'y touche pas."
+      ],
+      [
+        "J'ai besoin d'une base de données à part ?",
+        "Non. ABM garde tout dans un seul fichier SQLite dans <code>/config</code>. Il n'y a rien d'autre à faire tourner."
+      ],
+      [
+        "Je peux y accéder depuis l'extérieur de mon réseau ?",
+        "Oui, à partir de la 0.17.0. Par défaut, tout ce qui vient de l'extérieur de ton réseau local doit se connecter, et régler Authentication Required sur Enabled oblige tout le monde à se connecter, ton propre LAN compris. Derrière nginx, Traefik ou Caddy, mets l'adresse du proxy dans <code>TRUSTED_PROXIES</code>. Les identifiants enregistrés sont chiffrés."
+      ],
+      [
+        "Qu'est-il arrivé à Readarr ?",
+        "Readarr gérait les livres et les livres audio ensemble, et il a depuis été abandonné. ABM est fait uniquement pour les livres audio, sur le design inventé par les apps Servarr."
+      ],
+      [
+        "Combien ça coûte ?",
+        "Rien. C'est gratuit et open source sous GPL-3.0. S'il te fait gagner une soirée, le lien Ko-fi est juste en dessous."
+      ]
+    ],
+    "strip": [
+      "Recherché",
+      "En téléchargement",
+      "Téléchargé",
+      "Fichiers manquants"
+    ],
+    "translatorNote": "Cette page a été traduite automatiquement. Si le français est ta langue maternelle et que tu veux m'aider à l'améliorer, écris-moi à {mail}.",
+    "communityEyebrow": "Communauté",
+    "communityH2": "Retrouve ta communauté.",
+    "communityP": "Une question, besoin d'un coup de main pour ton installation, ou envie de parler livres audio ? Rejoins la communauté AudioBook Manager sur Discord pour l'entraide et les discussions.",
+    "communityBtn": "Rejoindre le Discord"
   }
 }
