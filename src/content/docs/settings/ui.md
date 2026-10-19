@@ -5,6 +5,8 @@ description: Calendar, date formats, theme and color options.
 
 **Settings > UI** is display only.
 
+![Settings, UI: calendar, date and time formats, and the theme](../../../assets/docs/settings-ui.jpg)
+
 | Setting | Choices |
 |---|---|
 | First Day of Week | Sunday or Monday |

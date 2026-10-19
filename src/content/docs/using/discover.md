@@ -5,6 +5,10 @@ description: "Browse Audible catalogs ABM collects: coming soon, new releases, b
 
 **Discover** has four pages: **Coming Soon**, **New Releases**, **Audible Best** and **Recommended**. ABM fills them by scraping Audible pages and fetching each book's details from Libex, and keeps the result so browsing is fast.
 
+![Discover, New Releases: books not in the library with cover, narrator, rating and description](../../../assets/docs/discover.jpg)
+
+![Discover, Coming Soon](../../../assets/docs/discover-coming.jpg)
+
 From any page you can add a book to the library. Recommended uses different genres each time it refreshes.
 
 ## Keeping it fresh

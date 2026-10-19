@@ -5,6 +5,10 @@ description: Bring an existing collection into ABM with the Import Workbench.
 
 Library Import scans a folder of audiobooks, matches each folder to metadata, and adds the books to your library. **Library > Library Import** opens "Import audiobooks you already have", where you pick a folder to scan. Once the scan starts, ABM moves to the matching page, headed **Match Audiobooks**, where you check the matches and add the books.
 
+![Library Import: the root folders and recent import sessions](../../assets/docs/library-import.jpg)
+
+![The Import Workbench: every scanned folder with its match, and the selected folder compared with the matched book](../../assets/docs/workbench.jpg)
+
 ## The flow
 
 1. Scan a folder. Each folder with audio becomes a row.

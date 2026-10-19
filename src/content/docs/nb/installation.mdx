@@ -1,0 +1,102 @@
+---
+title: Installer ABM
+description: Én container, tre mapper, én kommando. Denne siden er hele installasjonen.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Databasen er en SQLite-fil i `/config`, så det finnes ingen databasetjeneste å sette opp.
+
+**Du trenger:**
+
+- Docker med Compose
+- En mappe til lydbokbiblioteket ditt
+- Mappen nedlastingsklienten din legger ferdige nedlastinger i
+- En mappe til ABMs egne data
+
+## Installasjon
+
+<Steps>
+
+1. **Lag en compose-fil.** Lagre dette som `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Pek den mot mappene dine.** Bytt ut venstre side av hvert volum med en ekte mappe på maskinen din. La høyre side være.
+
+   | Sti på verten | Sti i containeren | Hva som ligger der |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Lydbokbiblioteket ditt. Påkrevd. |
+   | `/path/to/downloads` | `/downloads` | Der nedlastingsklienten din legger ferdige nedlastinger. Påkrevd. |
+   | `/path/to/config` | `/config` | SQLite-databasen, sikkerhetskopier, logger, papirkurver og den genererte app-hemmeligheten. Ta vare på den. |
+
+3. **Start den.** Kjør dette fra mappen der compose-fila ligger:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Åpne den.** Gå til `http://your-server:5173`. Første gang blir du guidet gjennom å sette opp en innlogging.
+
+</Steps>
+
+<Aside type="tip" title="Nedlastinger i en annen container?">
+Hvis nedlastingsklienten din kjører i sin egen container, må nedlastingsmappen dens være den samme mappen som ABM ser som `/downloads`. Hvis stiene er forskjellige, legger du til en remote path mapping under **Settings > Download Clients**.
+</Aside>
+
+## Første oppstart
+
+Sett tidssonen din med `TIMEZONE` i compose-fila. Så, under **Settings**, legger du til en rotmappe under **Media Management**, en indekserer under **Indexers** og en nedlastingsklient under **Download Clients**. Miljøvariabler og omvendte proxyer står i [Konfigurasjon](/nb/configuration/).
+
+## Bygg fra kildekoden
+
+Vil du bygge imaget selv, kloner du repoet, bytter ut `image:`-linja med `build: .` og kjører:
+
+```bash
+docker compose up -d --build
+```
+
+## Andre måter å installere på
+
+Docker er eneste vei inn foreløpig. Native installasjoner er planlagt, så ABM kan kjøre der du allerede selvhoster:
+
+| Plattform | Planlagt som |
+|---|---|
+| Linux | En native pakke og tjeneste |
+| Windows | Et `.exe`-installasjonsprogram |
+| macOS | En native app |
+| Kubernetes | En klyngeutrulling |
+| Unraid | En mal i Community Apps |
+| Proxmox | Et installasjonsskript for LXC |
+
+Ingen av disse finnes ennå. Hver av dem dukker opp på siden [Oppdateringer](/nb/updates/) når den kommer.
+
+## Oppdatering
+
+Hent det nye imaget og opprett containeren på nytt. Siden [Oppdateringer](/nb/updates/) viser hva som er endret i hver versjon.
+
+<Aside type="caution" title="ABM er i alfa">
+Ta sikkerhetskopi av `/config` før du oppgraderer, og skum gjennom oppdateringsnotatene først.
+</Aside>
+
+## Noe som ikke stemmer?
+
+- **Siden vil ikke laste.** Sjekk portmappingen i compose-fila, og kjør så `docker logs audiobook-manager`.
+- **Endringer blir avvist fra domenet mitt.** ABM avviser endringer fra en adresse den ikke nås på. Få proxyen din til å sende den opprinnelige `Host`-headeren videre først. Hvis det ikke holder, legger du domenet ditt til i **CORS Allowed Domains** under **Settings > General** (en avansert innstilling, så slå på **Show Advanced**) og starter ABM på nytt. Se [Feilsøking](/nb/troubleshooting/).
+- **Nedlastinger blir ferdige, men blir aldri importert.** Sjekk mappetilordningen i tipset over.

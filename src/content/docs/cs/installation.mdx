@@ -1,0 +1,102 @@
+---
+title: Instalace ABM
+description: Jeden kontejner, tři složky, jeden příkaz. Na téhle stránce je celá instalace.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Databáze je soubor SQLite v `/config`, takže žádnou databázovou službu nastavovat nemusíš.
+
+**Budeš potřebovat:**
+
+- Docker s Compose
+- Složku pro svou knihovnu audioknih
+- Složku, do které tvůj klient pro stahování dává dokončená stahování
+- Složku pro vlastní data ABM
+
+## Instalace
+
+<Steps>
+
+1. **Vytvoř soubor compose.** Ulož tohle jako `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Nasměruj ho na své složky.** Levou stranu každého svazku změň na skutečnou složku na svém stroji. Pravou stranu nech být.
+
+   | Cesta na hostiteli | Cesta v kontejneru | Co tam patří |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Tvoje knihovna audioknih. Povinné. |
+   | `/path/to/downloads` | `/downloads` | Kam tvůj klient pro stahování dává dokončená stahování. Povinné. |
+   | `/path/to/config` | `/config` | Databáze SQLite, zálohy, logy, koše a vygenerovaný tajný klíč aplikace. Nemaž to. |
+
+3. **Spusť ho.** Spusť tohle ve složce se souborem compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Otevři ho.** Jdi na `http://your-server:5173`. Při první návštěvě tě ABM provede nastavením přihlášení.
+
+</Steps>
+
+<Aside type="tip" title="Stahuješ v jiném kontejneru?">
+Pokud tvůj klient pro stahování běží ve vlastním kontejneru, jeho složka se staženými soubory musí být stejná složka, kterou ABM vidí jako `/downloads`. Pokud se cesty liší, přidej mapování vzdálené cesty v **Settings > Download Clients**.
+</Aside>
+
+## První spuštění
+
+Nastav své časové pásmo přes `TIMEZONE` v souboru compose. Pak v **Settings** přidej kořenovou složku v **Media Management**, indexer v **Indexers** a klienta pro stahování v **Download Clients**. Proměnné prostředí a reverzní proxy popisuje [Konfigurace](/cs/configuration/).
+
+## Sestavení ze zdrojáků
+
+Pokud si chceš image sestavit sám, naklonuj repo, nahraď řádek `image:` za `build: .` a spusť:
+
+```bash
+docker compose up -d --build
+```
+
+## Další způsoby instalace
+
+Prozatím je jedinou cestou Docker. Nativní instalace jsou v plánu, aby ABM běžel všude, kde už něco hostuješ sám:
+
+| Platforma | V plánu jako |
+|---|---|
+| Linux | Nativní balíček a služba |
+| Windows | Instalátor `.exe` |
+| macOS | Nativní aplikace |
+| Kubernetes | Nasazení do clusteru |
+| Unraid | Šablona pro Community Apps |
+| Proxmox | Instalační skript pro LXC |
+
+Zatím neexistuje ani jedna z nich. Každá se objeví na stránce [Aktualizace](/cs/updates/), až vyjde.
+
+## Aktualizace
+
+Stáhni nový image a vytvoř kontejner znovu. Stránka [Aktualizace](/cs/updates/) vypisuje, co se v každé verzi změnilo.
+
+<Aside type="caution" title="ABM je v alfě">
+Před upgradem si zazálohuj `/config` a projdi si poznámky k aktualizaci.
+</Aside>
+
+## Něco nesedí?
+
+- **Stránka se nenačte.** Zkontroluj mapování portu v souboru compose a pak spusť `docker logs audiobook-manager`.
+- **Změny z mé domény se odmítají.** ABM odmítá změny z adresy, na které neběží. Nejdřív zařiď, aby proxy předávala původní hlavičku `Host`. Pokud to nestačí, přidej svou doménu do **CORS Allowed Domains** v **Settings > General** (je to pokročilé nastavení, takže zapni **Show Advanced**) a restartuj ABM. Viz [Řešení problémů](/cs/troubleshooting/).
+- **Stahování se dokončí, ale nikdy se nenaimportuje.** Zkontroluj mapování složek v tipu výše.

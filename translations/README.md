@@ -1,14 +1,11 @@
 # Translation review records
 
-This folder holds the review record for each language's review PR
+This folder holds review records from earlier review rounds
 (`translations/<code>.md`). The live translations are in `src/`.
 
+Each live language has an open "<Language>: community translation review" PR
+from its `translation/<code>` branch. Fixes collect there, and merging it marks
+the language reviewed in `src/locales.json`. Its "<Language>: translation
+review" issue and Discord thread link to the PR.
+
 The workflow is in [TRANSLATING.md](../TRANSLATING.md).
-
-## Before the earlier languages come back
-
-The languages from the first version of the site need these translated before they go back up:
-- Four new community strings in the landing page.
-- Two changed donation-button labels.
-- Nineteen new footer labels.
-- The new API Reference placeholder page.

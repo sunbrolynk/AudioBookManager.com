@@ -1,0 +1,102 @@
+---
+title: 安裝 ABM
+description: 一個容器、三個資料夾、一行指令。整個安裝就在這一頁。
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+資料庫是 `/config` 裡的一個 SQLite 檔案，所以不用另外架資料庫服務。
+
+**你需要：**
+
+- 有 Compose 的 Docker
+- 一個放有聲書書庫的資料夾
+- 下載用戶端放完成下載的資料夾
+- 一個給 ABM 存放自己資料的資料夾
+
+## 安裝
+
+<Steps>
+
+1. **建立 compose 檔。** 把這段存成 `docker-compose.yml`：
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **指向你的資料夾。** 把每個 volume 左邊改成你電腦上真正的資料夾，右邊不要動。
+
+   | 主機路徑 | 容器路徑 | 放什麼 |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | 你的有聲書書庫。必填。 |
+   | `/path/to/downloads` | `/downloads` | 下載用戶端放完成下載的地方。必填。 |
+   | `/path/to/config` | `/config` | SQLite 資料庫、備份、記錄檔、資源回收筒和自動產生的應用程式金鑰。要保留好。 |
+
+3. **啟動它。** 在 compose 檔所在的資料夾執行：
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **打開它。** 前往 `http://your-server:5173`。第一次開啟時會帶你設定登入帳號。
+
+</Steps>
+
+<Aside type="tip" title="下載用戶端在另一個容器裡？">
+如果你的下載用戶端跑在自己的容器裡，它的下載資料夾必須跟 ABM 看到的 `/downloads` 是同一個資料夾。如果路徑不一樣，到 **Settings > Download Clients** 新增遠端路徑對應。
+</Aside>
+
+## 第一次執行
+
+在 compose 檔裡用 `TIMEZONE` 設定你的時區。接著在 **Settings** 裡，到 **Media Management** 新增根資料夾、到 **Indexers** 新增索引器、到 **Download Clients** 新增下載用戶端。環境變數和反向代理的說明在〈[設定](/zh-tw/configuration/)〉。
+
+## 從原始碼建置
+
+想自己建置映像檔的話，clone 這個 repo，把 `image:` 那一行換成 `build: .`，然後執行：
+
+```bash
+docker compose up -d --build
+```
+
+## 其他安裝方式
+
+目前只能用 Docker。原生安裝方式已經在計畫中，讓 ABM 可以跑在你本來就在自架的地方：
+
+| 平台 | 計畫的形式 |
+|---|---|
+| Linux | 原生套件和系統服務 |
+| Windows | `.exe` 安裝程式 |
+| macOS | 原生 App |
+| Kubernetes | 叢集部署 |
+| Unraid | Community Apps 範本 |
+| Proxmox | LXC 安裝腳本 |
+
+這些目前都還沒有。每一個推出時都會出現在〈[更新](/zh-tw/updates/)〉頁面上。
+
+## 更新
+
+拉取新的映像檔，然後重新建立容器。〈[更新](/zh-tw/updates/)〉頁面列出每個版本改了什麼。
+
+<Aside type="caution" title="ABM 還在 alpha 階段">
+升級前先備份 `/config`，並先大致看過更新說明。
+</Aside>
+
+## 有東西不對勁？
+
+- **頁面打不開。** 檢查 compose 檔裡的連接埠對應，然後執行 `docker logs audiobook-manager`。
+- **從我的網域做的變更被拒絕。** ABM 會拒絕來自不是你連到它的那個位址的變更。先讓你的代理轉送原本的 `Host` 標頭。如果還是不夠，就到 **Settings > General** 把你的網域加進 **CORS Allowed Domains**（這是進階設定，所以要先打開 **Show Advanced**），然後重新啟動 ABM。請看〈[疑難排解](/zh-tw/troubleshooting/)〉。
+- **下載完成了卻一直沒有匯入。** 檢查上面提示裡說的資料夾對應。

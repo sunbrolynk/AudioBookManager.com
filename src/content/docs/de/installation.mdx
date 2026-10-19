@@ -1,0 +1,102 @@
+---
+title: ABM installieren
+description: Ein Container, drei Ordner, ein Befehl. Diese Seite ist die ganze Installation.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Die Datenbank ist eine SQLite-Datei in `/config`, du musst also keinen Datenbankdienst einrichten.
+
+**Du brauchst:**
+
+- Docker mit Compose
+- Einen Ordner für deine Hörbuch-Bibliothek
+- Den Ordner, in dem dein Download-Client fertige Downloads ablegt
+- Einen Ordner für ABMs eigene Daten
+
+## Installation
+
+<Steps>
+
+1. **Leg eine Compose-Datei an.** Speicher das hier als `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Trag deine Ordner ein.** Ändere bei jedem Volume die linke Seite auf einen echten Ordner auf deinem Rechner. Die rechte Seite lässt du, wie sie ist.
+
+   | Host-Pfad | Container-Pfad | Was dort liegt |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Deine Hörbuch-Bibliothek. Pflicht. |
+   | `/path/to/downloads` | `/downloads` | Wo dein Download-Client fertige Downloads ablegt. Pflicht. |
+   | `/path/to/config` | `/config` | Die SQLite-Datenbank, Backups, Logs, Papierkörbe und das generierte App-Secret. Behalt diesen Ordner. |
+
+3. **Starte es.** Führ das im Ordner mit der Compose-Datei aus:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Öffne es.** Ruf `http://your-server:5173` auf. Beim ersten Besuch richtest du Schritt für Schritt einen Login ein.
+
+</Steps>
+
+<Aside type="tip" title="Downloads in einem anderen Container?">
+Wenn dein Download-Client in einem eigenen Container läuft, muss sein Download-Ordner derselbe Ordner sein, den ABM als `/downloads` sieht. Wenn die Pfade unterschiedlich sind, leg unter **Settings > Download Clients** ein Remote Path Mapping an.
+</Aside>
+
+## Erster Start
+
+Stell deine Zeitzone in der Compose-Datei über `TIMEZONE` ein. Danach legst du in **Settings** einen Root-Ordner unter **Media Management** an, einen Indexer unter **Indexers** und einen Download-Client unter **Download Clients**. Umgebungsvariablen und Reverse Proxys sind unter [Konfiguration](/de/configuration/) erklärt.
+
+## Aus dem Quellcode bauen
+
+Wenn du das Image selbst bauen willst, klon das Repo, ersetz die Zeile `image:` durch `build: .` und führ Folgendes aus:
+
+```bash
+docker compose up -d --build
+```
+
+## Andere Installationswege
+
+Docker ist vorerst der einzige Weg. Native Installationen sind geplant, damit ABM überall laufen kann, wo du sowieso schon selbst hostest:
+
+| Plattform | Geplant als |
+|---|---|
+| Linux | Natives Paket mit Dienst |
+| Windows | `.exe`-Installer |
+| macOS | Native App |
+| Kubernetes | Cluster-Deployment |
+| Unraid | Vorlage für Community Apps |
+| Proxmox | LXC-Installationsskript |
+
+Davon gibt es noch nichts. Jedes taucht auf der Seite [Updates](/de/updates/) auf, sobald es erscheint.
+
+## Aktualisieren
+
+Zieh das neue Image und erstell den Container neu. Auf der Seite [Updates](/de/updates/) steht, was sich in jeder Version geändert hat.
+
+<Aside type="caution" title="ABM ist Alpha">
+Sichere `/config`, bevor du upgradest, und überflieg vorher die Update-Hinweise.
+</Aside>
+
+## Irgendwas stimmt nicht?
+
+- **Die Seite lädt nicht.** Prüf das Port-Mapping in deiner Compose-Datei und führ dann `docker logs audiobook-manager` aus.
+- **Änderungen von meiner Domain werden abgelehnt.** ABM lehnt Änderungen von einer Adresse ab, unter der es nicht erreicht wird. Sorg zuerst dafür, dass dein Proxy den ursprünglichen `Host`-Header weitergibt. Reicht das nicht, trag deine Domain unter **Settings > General** bei **CORS Allowed Domains** ein (eine erweiterte Einstellung, schalte also **Show Advanced** ein) und starte ABM neu. Siehe [Fehlerbehebung](/de/troubleshooting/).
+- **Downloads werden fertig, aber nie importiert.** Prüf die Ordnerzuordnung aus dem Tipp oben.

@@ -1,18 +1,122 @@
 {
   "en-gb": {
     "label": "English (UK)",
-    "lang": "en-GB"
+    "lang": "en-GB",
+    "reviewed": false,
+    "issue": 26
   },
   "uk": {
     "label": "Українська",
-    "lang": "uk"
+    "lang": "uk",
+    "reviewed": false,
+    "issue": 25
   },
   "en-ca": {
     "label": "English (Canada)",
-    "lang": "en-CA"
+    "lang": "en-CA",
+    "reviewed": false,
+    "issue": 27
   },
   "en-au": {
     "label": "English (Australia)",
-    "lang": "en-AU"
+    "lang": "en-AU",
+    "reviewed": false,
+    "issue": 28
+  },
+  "fr": {
+    "label": "Français",
+    "lang": "fr",
+    "reviewed": false,
+    "issue": 52
+  },
+  "de": {
+    "label": "Deutsch",
+    "lang": "de",
+    "reviewed": false,
+    "issue": 48
+  },
+  "es": {
+    "label": "Español",
+    "lang": "es",
+    "reviewed": false,
+    "issue": 54
+  },
+  "it": {
+    "label": "Italiano",
+    "lang": "it",
+    "reviewed": false,
+    "issue": 58
+  },
+  "pt-br": {
+    "label": "Português (Brasil)",
+    "lang": "pt-BR",
+    "reviewed": false,
+    "issue": 56
+  },
+  "ja": {
+    "label": "日本語",
+    "lang": "ja",
+    "reviewed": false,
+    "issue": 60
+  },
+  "nl": {
+    "label": "Nederlands",
+    "lang": "nl",
+    "reviewed": false,
+    "issue": 44
+  },
+  "pl": {
+    "label": "Polski",
+    "lang": "pl",
+    "reviewed": false,
+    "issue": 46
+  },
+  "zh-cn": {
+    "label": "简体中文",
+    "lang": "zh-CN",
+    "reviewed": false,
+    "issue": 62
+  },
+  "zh-tw": {
+    "label": "繁體中文（台灣）",
+    "lang": "zh-TW",
+    "reviewed": false,
+    "issue": 64
+  },
+  "ko": {
+    "label": "한국어",
+    "lang": "ko",
+    "reviewed": false,
+    "issue": 66
+  },
+  "sv": {
+    "label": "Svenska",
+    "lang": "sv",
+    "reviewed": false,
+    "issue": 69
+  },
+  "cs": {
+    "label": "Čeština",
+    "lang": "cs",
+    "reviewed": false,
+    "issue": 71
+  },
+  "da": {
+    "label": "Dansk",
+    "lang": "da",
+    "reviewed": false,
+    "issue": 74
+  },
+  "nb": {
+    "label": "Norsk bokmål",
+    "lang": "nb",
+    "reviewed": false,
+    "issue": 77
+  },
+  "fi": {
+    "label": "Suomi",
+    "lang": "fi",
+    "reviewed": false,
+    "issue": 50
   }
 }

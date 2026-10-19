@@ -7,18 +7,19 @@ import SiteHeader from './SiteHeader.astro';
 import LanguageSelect from './overrides/LanguageSelect.astro';
 import SiteFooter from './SiteFooter.astro';
 import PrereleaseBadge from './PrereleaseBadge.astro';
+import ReviewBadge from './ReviewBadge.astro';
 import strings from '../landing-strings.json';
 import { translationHtml } from '../lib/translation-html.mjs';
 import locales from '../locales.json';
-import dashboard from '../assets/screens/dashboard.jpg';
-import library from '../assets/screens/library.jpg';
-import book from '../assets/screens/book.jpg';
-import bookPhone from '../assets/screens/book-m.jpg';
-import series from '../assets/screens/series.jpg';
-import calendar from '../assets/screens/calendar.jpg';
-import missing from '../assets/screens/missing.jpg';
-import profiles from '../assets/screens/profiles.jpg';
-import conversions from '../assets/screens/conversions.jpg';
+import dashboard from '../assets/screens/demo-dashboard.jpg';
+import library from '../assets/screens/demo-library.jpg';
+import book from '../assets/screens/demo-book.jpg';
+import bookPhone from '../assets/screens/demo-book-phone.jpg';
+import series from '../assets/screens/demo-series.jpg';
+import calendar from '../assets/screens/demo-calendar.jpg';
+import missing from '../assets/screens/demo-missing.jpg';
+import profiles from '../assets/screens/demo-profiles.jpg';
+import conversions from '../assets/screens/demo-conversions.jpg';
 
 interface Props { locale?: string }
 const loc = Astro.props.locale;
@@ -61,6 +62,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
   <a class="skip" href="#main">{t.skip}</a>
   <SiteHeader locale={loc}><LanguageSelect locale={loc} /></SiteHeader>
   {noteParts && <p class="xl-note" lang={t.htmlLang}><span class="w">{noteParts[0]}<a href="mailto:translate@audiobookmanager.com">translate@audiobookmanager.com</a>{noteParts[1]}</span></p>}
+  <ReviewBadge locale={loc} bar />
   <main id="main">
     <section class="hero">
       <div class="w grid">
