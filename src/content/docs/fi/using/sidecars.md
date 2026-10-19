@@ -1,21 +1,27 @@
 ---
 title: Sivutiedostot
-description: Kansikuva-, OPF-, kuvaus-, lukija- ja cue-tiedostot, jotka ABM kirjoittaa kirjan viereen.
+description: Tiedostot, jotka ABM kirjoittaa kirjan viereen, metadata.json, kansikuva, OPF, kuvaus ja lukijat.
 ---
 
-Sivutiedosto (sidecar) on pieni tiedosto äänen vieressä. Audiobookshelf ja muut soittimet lukevat niitä. ABM voi kirjoittaa nämä:
+Sivutiedosto (sidecar) on pieni tiedosto äänen vieressä. Audiobookshelf ja muut soittimet lukevat niitä. ABM kirjoittaa nämä:
 
-| Tiedosto | Sisältö |
-|---|---|
-| `cover.jpg` | Kirjan kansikuva |
-| `.opf` | Metatiedot OPF-muodossa, Audiobookshelfin luettavissa. Nimetään kirjan ensimmäisen äänitiedoston mukaan (esimerkiksi `Dune.opf`), tai `title.opf`, kun kirjalla ei ole ääntä |
-| `desc.txt` | Kuvaus |
-| `reader.txt` | Lukija |
-| `.cue` | Kappaleet Libexistä (tulossa seuraavassa julkaisussa) |
+| Tiedosto | Sisältö | Kytkin |
+|---|---|---|
+| `metadata.json` | Audiobookshelfin oma metatietotiedosto sekä `abm`-lohko, joka merkitsee sen ABM:n tiedostoksi. Audiobookshelf lukee sen ennen mitään muuta | Ei kytkintä, kirjoitetaan aina |
+| `cover.jpg` | Kirjan kansikuva. Ei kirjoiteta, jos kansiossa on jo `cover.*` | cover.jpg |
+| `.opf` | Metatiedot OPF-muodossa. Nimetään kirjan ensimmäisen äänitiedoston mukaan (esimerkiksi `Dune.opf`), tai `title.opf`, kun kirjalla ei ole ääntä | title.opf |
+| `desc.txt` | Kuvaus ilman HTML:ää. Ohitetaan, jos kuvausta ei ole | desc.txt |
+| `reader.txt` | Lukijat. Ohitetaan, jos lukijoita ei ole | reader.txt |
+
+Kansiorakenteen kanssa nämä ovat ne tiedostot, joista Audiobookshelf lukee kirjan tiedot, joten se näkee saman kirjan kuin ABM.
 
 ## Milloin ne kirjoitetaan
 
-Kohdassa **Settings > Metadata** valinnat **Create on Book Add**, **Create on Import** ja **Create on Refresh** määräävät ajankohdan. Oletuksena vain tuonti kirjoittaa ne. **Overwrite Existing** on pois päältä, joten jo olemassa oleva tiedosto pysyy. Voit kirjoittaa ne myös muokkausikkunasta yhdelle kirjalle tai sarja- ja tekijävalinnalle. Katso [Metatietoasetukset](/fi/settings/metadata/).
+`metadata.json` kirjoitetaan joka kerta, kun kirja lisätään, tuodaan tai päivitetään.
+
+Muilla neljällä on kullakin oma kytkimensä kohdassa **Settings > Metadata > Files to Create**, ja kaikki ovat oletuksena päällä. Ne kirjoitetaan vain, kun myös vastaava käynnistin on päällä: **Create on Book Add** (pois), **Create on Import** (päällä, kattaa lataukset, kirjaston tuonnin ja Audible-lataukset) ja **Create on Refresh** (pois). **Overwrite Existing** on pois päältä, joten jo olemassa oleva tiedosto pysyy. Mitään ei kirjoiteta ennen kuin kirjan kansio on olemassa.
+
+Muokkausikkunan **Write to Directories** kirjoittaa myös nämä neljä, yhdelle kirjalle tai sarja- ja tekijävalinnalle. Katso [Metatietoasetukset](/fi/settings/metadata/).
 
 ## Kansikuva on erikoistapaus
 

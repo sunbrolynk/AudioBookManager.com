@@ -17,9 +17,11 @@ description: Tuo olemassa oleva kokoelma ABM:ään turvallisesti.
 4. Valitse rivit ja lisää ne. Jos hyväksyt oletukset, tähän menee edelleen kaksi klikkausta.
 5. Seuraa tehtävää. Yhteenveto kertoo, montako tiedostoa kopioitiin kovalinkityksen sijaan ja mikä epäonnistui.
 
-## Jos haluat ABM:n hallitsevan lähdekansiota
+## Jos kokoelmasi on jo siellä, missä haluat sen olevan
 
-Lisää se sen sijaan juurikansioksi ja anna ABM:n skannata se. Tiedostot jäävät paikoilleen, ja kirjat saavat tilansa sen mukaan, mitä levyllä on.
+Kansion lisääminen juurikansioksi ei itsessään lisää yhtään kirjaa. ABM:n skannaukset tarkistavat vain kirjat, jotka se jo tuntee, joten se ei poimi sitä, mitä kansiossa on. Kirjat on silti tuotava kirjaston tuonnin kautta: juurikansion **Unmapped Folders** -määrä kohdassa **Settings > Media Management** avaa Library Importin sille juurelle.
+
+Tuonti sijoittaa jokaisen kirjan ABM:n omaan Author/Series/Book-rakenteeseen oletusjuurikansion alle. Valitse kovalinkki, niin alkuperäiset jäävät koskematta eikä tilaa kulu lisää.
 
 ## Sudenkuopat
 

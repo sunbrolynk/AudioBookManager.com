@@ -7,7 +7,7 @@ description: Kirjat, tekijät ja sarjat sekä se, miten ABM seuraa niiden tilaa.
 
 ## Kirjat
 
-Jokainen kirja on rivi, juliste tai taulukon rivi (näkymän vaihto on työkalupalkissa). Kirjalla on tila:
+Jokainen kirja on yleiskatsausrivi, juliste tai taulukon rivi (näkymän vaihto on työkalupalkissa). Kirjalla on tila:
 
 - **Wanted**: seurattu, ei vielä tiedostoja. ABM hakee sitä.
 - **Downloaded**: tiedostot ovat levyllä.
@@ -18,9 +18,13 @@ Avaa kirja nähdäksesi sen tietosivun: tiedostot, metatiedot, historia, ABM:n m
 
 Jos tunnet Sonarrin: kirja on jakso, sarja on kausi ja ohjelma yhdessä, ja tekijä on tapa ryhmitellä molempia. Erona on se, että yksi kirja voi kuulua useaan sarjaan, ja ABM käyttää ensisijaista (pienin sijainti), kun sen täytyy valita.
 
-## Sarjat ja tekijät
+## Sarjat
 
-Series- ja Authors-listat näyttävät omistettujen, haluttujen ja puuttuvien tiedostojen määrät. Avaa yksi nähdäksesi katalogin, jossa on myös kirjat, joita et omista. Sieltä voit lisätä puuttuvat kirjat. Katso [Sarjojen seuranta](/fi/using/series-tracking/).
+**Library > Series** listaa jokaisen sarjan omistettujen, haluttujen ja puuttuvien tiedostojen määrineen, näkymänä Overview tai Posters. Sarjan sivu näyttää koko katalogin, myös kirjat, joita et omista. Suodata se valinnalla All, In Library tai Not in Library. **Add Remaining** tai **Select to Add** tuo puuttuvat kirjat haluttuina, ja **Refresh Series** hakee katalogin uudelleen. **Monitor New Books** (All tai None) päättää, lisätäänkö myöhemmin ilmestyvät kirjat haluttuina. Katso [Sarjojen seuranta](/fi/using/series-tracking/).
+
+## Tekijät
+
+**Library > Authors** listaa tekijät, näkymänä Overview tai Posters. Tekijän sivu näyttää hänen kataloginsa sarjoittain ryhmiteltynä, jokaiselle sarjalle ladattujen ja kaikkien kirjojen määrän, sekä hänen laatuprofiilinsa, lajityyppinsä ja arvosanansa. **Refresh Catalog** hakee sen uudelleen ja **Search Author** hakee hänen haluttuja kirjojaan. **Monitor New Books** toimii samoin kuin sarjalla, ja tekijällä se on aluksi None.
 
 Sarjan tai tekijän poistaminen hylätään niin kauan kuin sillä on kirjoja kirjastossa. Poista kirjat ensin.
 

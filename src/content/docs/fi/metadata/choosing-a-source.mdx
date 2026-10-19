@@ -3,6 +3,8 @@ title: Metatietolähteen valinta
 description: Sisäänrakennettu, palveluna tarjottu tai oma Libex-palvelin.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Tulossa seuraavaan julkaisuun]
 Lähteen valinta ei ole vielä missään julkaistussa versiossa. Julkaistut versiot käyttävät julkista Libex-instanssia osoitteessa libexdb.com, eikä niissä ole tälle asetusta.
 :::
@@ -12,10 +14,10 @@ Seuraavassa julkaisussa kohdassa **Settings > Metadata > Source** on **Metadata 
 | Vaihtoehto | Mitä se tarkoittaa |
 |---|---|
 | Built-in (oletus) | Libex pyörii ABM:n sisällä. Se tarvitsee ensin valitun ulospäin lähtevän yhteyden. |
-| Hosted (libexdb.com) | ABM kysyy julkiselta Libex-instanssilta. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex GitHubissa"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM kysyy julkiselta Libex-instanssilta. |
 | Self-hosted | ABM kysyy Libex-palvelimelta, johon osoitat sen. Syötä sen **Server URL**, esimerkiksi `http://192.168.1.20:8000`. |
 
-**Test** tarkistaa valitun lähteen tallentamatta. **Status** kertoo, onko se valmis. Valinta, jota et ole tallentanut, näyttää tekstiä "Not in use yet - save to switch", kunnes tallennat.
+**Test** tarkistaa valitun lähteen tallentamatta. **Status** kertoo, onko se valmis. Kun valitset toisen lähteen, **Status** näyttää tekstiä "Not in use yet - save to switch", kunnes tallennat.
 
 ## Sisäänrakennettu lähde ja ulospäin lähtevä yhteys
 
@@ -28,5 +30,5 @@ Näissä kahdessa ABM kysyy Libex-palvelimelta, ja palvelin keskustelee Audiblen
 ## Kumman valitsisin
 
 - Haluat sen vain toimivan etkä välitä siitä, että Audible näkee osoitteesi: Built-in suoralla yhteydellä tai Hosted.
-- Et halua paljastaa IP-osoitettasi Audiblelle: Built-in VPN:n tai välityspalvelimen kautta, tai Hosted.
+- Et halua paljastaa IP-osoitettasi Audiblelle: Built-in välityspalvelimen, sisäänrakennetun WireGuard-tunnelin tai erillisen VPN-kontin tai -palvelun kautta. Tai Hosted, jolloin Libex-palvelin keskustelee Audiblen kanssa sinun sijastasi.
 - Pyörität jo Libex-palvelinta: Self-hosted.

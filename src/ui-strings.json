@@ -218,6 +218,13 @@
     "footerReportIssue": "Ilmoita sovelluksen ongelmasta",
     "footerSupport": "Tue kehitystä",
     "footerApiReference": "API-viite",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "Buy Me a Monster",
+    "footerContact": "Yhteystiedot",
+    "footerMailSupport": "Apua ABM:n kanssa",
+    "footerMailTranslate": "Käännökset",
+    "footerMailPrivacy": "Tietosuoja",
+    "footerMailAdmin": "Kaikki muu",
+    "releasesNone": "Julkaisuja ei ole vielä.",
+    "releasesBeforeUpgrade": "Ennen kuin päivität"
   }
 }

@@ -73,3 +73,7 @@ Lisää etäpolun vastaavuus tai järjestä niin, että ABM ja asiakas näkevät
 ## Docker ei saa yhteyttä metatietolähteeseen tai indeksoijiin
 
 Tarkista DNS ja ulospäin lähtevän yhteyden asetus ennen mitään muuta. Dockerissa suora yhteys toimii vain, jos kontti pääsee internetiin.
+
+## Yhä jumissa
+
+Kysy [ABM:n Discordissa](https://discord.gg/qeJRrM6AZ), [avaa issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) tai lähetä sähköpostia osoitteeseen [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

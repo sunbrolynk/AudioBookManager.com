@@ -3,6 +3,10 @@ title: Käänteinen välityspalvelin
 description: ABM nginxin, Traefikin tai Caddyn taakse niin, ettei kirjautuminen hajoa.
 ---
 
+:::caution[Ei suositeltavaa]
+ABM:n laittamista internetiin, käänteisen välityspalvelimen tai avatun portin kautta, ei suositella, ja samaa neuvovat Servarr-sovellukset. Jos haluat päästä siihen ulkoa, käytä sen sijaan VPN:ää, kuten WireGuardia tai Tailscalea. ABM on tehty turvalliseksi välityspalvelimen takana, mutta kun se on julkinen, turvallisuudesta ei ole takeita, ja riski on sinun. Jos teet sen silti, aseta **Authentication Required** arvoon **Enabled** ja pidä ABM ajan tasalla.
+:::
+
 Kolmella asetuksella on väliä. Kun ne ovat kunnossa, kirjautuminen, websocket ja tallennukset toimivat.
 
 ## 1. Kerro ABM:lle, kuka välityspalvelin on

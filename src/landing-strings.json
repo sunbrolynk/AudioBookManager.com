@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Hanki se",
     "installH2": "Käynnissä yhdellä tiedostolla.",
     "buildP": "<b>Käännä lähdekoodista.</b> Vaihda repon kloonissa <code>image:</code> tilalle <code>build: .</code> ja aja <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, tavallinen Linux-palvelu.</b> Ei vielä. Docker on toistaiseksi ainoa tapa.",
+    "otherP": "<b>Docker on toistaiseksi ainoa tapa.</b> Natiiviasennukset yleisimmille alustoille ovat suunnitteilla, jotta ABM pyörisi siellä, missä jo muutenkin ylläpidät palveluitasi:",
     "note": "ABM on alfavaiheessa. Varmuuskopioi <code>/config</code> ennen päivitystä ja silmäile päivitystiedot ensin.",
     "fullGuide": "Koko asennusohje →",
     "faqEyebrow": "UKK",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Avaa issue",
     "helpH": "Haluatko auttaa sitä eteenpäin?",
     "helpP": "ABM on yhden ihmisen projekti. Ko-fi tai Monster pitää sen liikkeessä.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Tue kehitystä",
+    "kofiBtn": "Tue kehitystä",
+    "monsterBtn": "Buy Me a Monster",
     "finalH2": "Lopeta kansioiden<br />korjailu.",
     "ctaInstall": "Asenna ABM",
     "ctaDocs": "Lue dokumentaatio",
@@ -1370,6 +1370,33 @@
     "communityEyebrow": "Yhteisö",
     "communityH2": "Löydä omiesi joukko.",
     "communityP": "Onko sinulla kysyttävää, tarvitsetko apua asennuksesi kanssa vai haluatko jutella äänikirjoista? Liity AudioBook Managerin Discord-yhteisöön, josta saat tukea ja keskustelua.",
-    "communityBtn": "Liity Discordiin"
+    "communityBtn": "Liity Discordiin",
+    "planned": [
+      [
+        "Linux",
+        "natiivi paketti ja palvelu"
+      ],
+      [
+        "Windows",
+        ".exe-asennusohjelma"
+      ],
+      [
+        "macOS",
+        "natiivi sovellus"
+      ],
+      [
+        "Kubernetes",
+        "klusterikäyttöönotto"
+      ],
+      [
+        "Unraid",
+        "Community Apps -pohja"
+      ],
+      [
+        "Proxmox",
+        "LXC-asennusskripti"
+      ]
+    ],
+    "coming": "Tulossa"
   }
 }

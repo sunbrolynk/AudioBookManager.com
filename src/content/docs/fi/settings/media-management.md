@@ -7,7 +7,7 @@ description: Juurikansiot, tuonti, lisätiedostot, roskakori, skannaukset, paran
 
 ## Juurikansiot (Root Folders)
 
-Juurikansio on hakemisto, jossa ABM hallitsee kirjoja. Lisää sellainen painikkeella **Add Root Folder**, joka avaa kansioselaimen, johon voi myös kirjoittaa polun. ABM voi myös listata juurikansion alla olevat kansiot, joita ei ole vielä yhdistetty mihinkään, ja tuoda ne. Juurikansion vapaa tila ja kovalinkkituki tarkistetaan, kun se lisätään. Juurikansion poistaminen ei poista tiedostoja.
+Juurikansio on hakemisto, jossa ABM hallitsee kirjoja. Lisää sellainen painikkeella **Add Root Folder**, joka avaa kansioselaimen, johon voi myös kirjoittaa polun. ABM voi myös listata juurikansion alla olevat kansiot, joita ei ole vielä yhdistetty mihinkään, ja tuoda ne. Juurikansion vapaa tila ja kovalinkkituki tarkistetaan, kun se lisätään. Juurikansion poistaminen kysyy, mitä tehdään: **Remove from ABM only** (oletus) unohtaa sen alla olevat kirjat ja jättää tiedostot, ja **Delete the books and their files** poistaa pysyvästi kaiken polun alla olevan ilman roskakoria. Jos juurikansiossa on kirjoja, vahvistus pitää kirjoittaa.
 
 Oletusjuurikansio on se, johon uudet kirjat menevät, ja se ratkaisee, tarjotaanko kirjaston tuonnissa kovalinkitystä.
 
@@ -27,10 +27,10 @@ Oletusjuurikansio on se, johon uudet kirjat menevät, ja se ratkaisee, tarjotaan
 | Use Hardlinks instead of Copy | päällä | Valmiille latauksille: kovalinkitä kopioinnin sijaan, jotta jakaminen ei tuplaa tilantarvetta. Vaatii saman taltion. |
 | Library Import | Copy | [Kirjaston tuonnin](/fi/library-import/) oletus: kopioi, kovalinkitä tai siirrä. Kovalinkitys on harmaana, kunnes oletusjuurikansio on tarkistettu ja se tukee sitä. |
 | Import Extra Files | päällä | Pääkytkin muiden kuin äänitiedostojen tuomiselle mukana. Koskee kirjaston tuontia, Manual Importia ja valmiita latauksia |
-| Extra File Extensions (lisäasetus) | tyhjä | Tuotavat lisäpäätteet, kuten `srt, lrc`. Estetyt tyypit hylätään. |
+| Extra File Extensions (lisäasetus) | tyhjä | Muut tiedostotyypit, jotka tuodaan mukana omilla nimillään, esimerkiksi `srt, lrc`. Pisteen kanssa tai ilman, pilkuilla tai välilyönneillä eroteltuina. Estettyjä tyyppejä, kuten suoritettavia tiedostoja ja keskeneräisiä latauksia, ei voi tallentaa. Pois käytöstä, kun **Import Extra Files** on pois päältä |
 | Preferred Cover (lisäasetus) | Matched | Täsmätyn painoksen kansikuva tai kansion paras kuva, kun molemmat ovat olemassa |
 
-Lisätiedostoilla on viisi kytkintä:
+**Import Extra Files** tuo kirjan muut tiedostot mukaan äänen kanssa. Viisi kytkintä valitsee, mitkä lajit tulevat mukaan, ja tiedosto, joka vastaa asetusta **Extra File Extensions**, tulee mukaan, vaikka sen laji olisi kytketty pois:
 
 | Kytkin | Oletus | Kattaa |
 |---|---|---|
@@ -55,7 +55,7 @@ Kovalinkitys ei ole sama asia kuin **Use Hardlinks instead of Copy**. Se on lata
 | Recycling Bin Cleanup | 7 (päivää) | 0 poistaa automaattisen siivouksen käytöstä |
 | Library Scan Interval | 0 (pois) | Tunteja automaattisten skannausten välillä |
 | Watch for Changes | pois | Skannaa, kun tiedostoja lisätään, poistetaan tai muutetaan |
-| Cover Cache Workers | 4 | Montako kansikuvaa ladataan kerralla kuvia välimuistiin tallennettaessa, 1–16. Laske arvoa, jos välimuistiajo raportoi epäonnistumisia |
+| Cover Cache Workers | 4 | Montako kansikuvaa ladataan kerralla kuvia välimuistiin tallennettaessa, 1–16 |
 
 ## Laadun parannukset (Quality Upgrades)
 

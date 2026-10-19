@@ -3,7 +3,7 @@ title: Kirjaston tuonti
 description: Tuo olemassa oleva kokoelma ABM:ään Import Workbenchin avulla.
 ---
 
-Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen kansion metatietoihin ja lisää kirjat kirjastoosi. Sivun nimi on **Match Audiobooks**.
+Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen kansion metatietoihin ja lisää kirjat kirjastoosi. **Library > Library Import** avaa sivun "Import audiobooks you already have", jossa valitset skannattavan kansion. Kun skannaus alkaa, ABM siirtyy täsmäyssivulle, jonka otsikko on **Match Audiobooks**. Siellä tarkistat osumat ja lisäät kirjat.
 
 ## Kulku
 
@@ -41,7 +41,7 @@ Kovalinkitetty kirja ei vie lisää levytilaa, ja alkuperäinen pysyy paikallaan
 
 ## Pitkät arvot
 
-Lukija, nimi tai polku, joka on katkaistu kolmella pisteellä, avautuu kokonaan, kun napautat sitä tai painat Enteriä tai välilyöntiä. Napauta uudelleen sulkeaksesi sen.
+Lukija, nimi tai polku, joka on katkaistu kolmella pisteellä, avautuu kokonaan, kun napautat tai klikkaat sitä. Napauta tai klikkaa uudelleen, niin se sulkeutuu. Hiirellä koko arvo näkyy myös, kun viet osoittimen sen päälle. Näppäimistöllä siirrä kohdistus siihen ja paina Enteriä tai välilyöntiä.
 
 ## Muut vastaukset kuin tuonti
 

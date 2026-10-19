@@ -23,7 +23,7 @@ Tilin yhdistämiseen tarvitaan **Marketplace**, **Display Name** ja **Redirect U
 
 | Asetus | Oletus | Vaikutus |
 |---|---|---|
-| Auto Add to Library | päällä | Ladatut kirjat lisätään ABM:n kirjastoon |
+| Auto Add to Library | päällä | Kun lataat Audible-nimikkeen, jota ABM:ssä ei vielä ole, ABM lisää sen ensin kirjastoon. Pois päältä sellainen lataus hylätään. Seuraavassa julkaisussa tästä tulee [Mirror Audible library to ABM](/fi/audible/#audible-kirjaston-peilaus-abmään-mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | 1–5. Suurempi on nopeampi, mutta voi törmätä Audiblen pyyntörajoihin. |
 | Preferred Quality | High Quality | High, Normal tai Low |
 | Delete Encrypted Files | päällä | Poista salattu AAXC-tiedosto, kun se on purettu M4B:ksi |

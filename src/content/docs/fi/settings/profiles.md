@@ -22,6 +22,8 @@ Uusi kopio korvaa sen, mitä sinulla on, vain jos profiili sallii parannukset, u
 
 Jos tunnet Sonarrin: tämä on laatuprofiili, jossa laadut ovat äänimuotoja ja tiedostojen rakennetta eivätkä resoluutiota. Mukautettuja muotoja ei ole. [Julkaisuprofiilit](#julkaisuprofiilit) kattavat samantapaisia asioita.
 
+Bittinopeus- tai kokoportaita ei ole: laatu tarkoittaa vain muotoa ja tiedostojen rakennetta. Julkaisun muodon ABM ottaa indeksoijalta tai nimestä ja päättelee rakenteen nimestä (M4B ilman osa- tai raitanumeroita lasketaan yhdeksi tiedostoksi), ja tarkistaa sen uudelleen, kun tiedostot on tuotu. [Audible-asetusten](/fi/settings/audible/) **Preferred Quality** on eri asia: se on laatu, jossa Audible-lataukset tulevat.
+
 ## Viiveprofiilit
 
 Viiveprofiili pidättää julkaisua ennen nappaamista, jotta paremmalle julkaisulle jää aikaa ilmestyä.

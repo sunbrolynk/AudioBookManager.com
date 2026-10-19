@@ -26,15 +26,19 @@ Jos asiakas pyörii toisessa kontissa, tarkista, että se ja ABM näkevät latau
 
 ## 5. Määritä laatuprofiili
 
-**Settings > Profiles** sisältää laatuportaat, joiden perusteella ABM päättää, mitä se nappaa ja mikä lasketaan parannukseksi. Yksi profiili on oletus. Aloita sillä ja hio myöhemmin. Katso [Profiilit](/fi/settings/profiles/).
+**Settings > Profiles** sisältää laatuportaat, joiden perusteella ABM päättää, mitä se nappaa ja mikä lasketaan parannukseksi. Tuoreessa asennuksessa niitä ei ole yhtään, joten luo yksi. Ensimmäisestä tekemästäsi profiilista tulee oletus, ja voit hioa sitä myöhemmin. Katso [Profiilit](/fi/settings/profiles/).
 
-## 6. Tuo tai lisää kirjoja
+## 6. Yhdistä Audible (valinnainen)
+
+Jos sinulla on Audible-kirjoja, yhdistä tilisi kohdassa **Settings > Audible**. Valitse **Marketplace**, paina **Connect Audible Account** ja sitten **I Understand, Open Amazon Login**. Kirjaudu Amazoniin uudessa välilehdessä. Tyhjä tai "Page not found" -sivu, jolle päädyt sen jälkeen, on odotettu. Kopioi koko osoite osoiteriviltä kenttään **Redirect URL**, lisää halutessasi **Display Name** ja paina **Complete Login**. Salasanaasi ei koskaan tallenneta, ja ensimmäinen kirjaston synkronointi alkaa saman tien. Katso [Audible](/fi/audible/).
+
+## 7. Tuo tai lisää kirjoja
 
 - Onko sinulla jo kokoelma? Käytä [kirjaston tuontia](/fi/library-import/).
 - Aloitatko alusta? Käytä kohtaa **Library > Add New** ja hae nimellä, tekijällä tai sarjalla. Katso [Uuden lisääminen](/fi/using/add-new/).
 
 Lisäämäsi kirja on haluttujen listalla, kunnes sille tuodaan tiedosto. Halutut kirjat näkyvät kohdassa **Wanted > Missing**, ja niitä haetaan automaattisesti.
 
-## 7. Seuraa, kun se tekee työtään
+## 8. Seuraa, kun se tekee työtään
 
 **Activity > Queue** näyttää, mitä ladataan. **Activity > History** näyttää, mitä on napattu ja tuotu. Kun jokin menee pieleen, katso [Vianmääritys](/fi/troubleshooting/) ja [Tehtävät](/fi/system/tasks/)-sivu.
