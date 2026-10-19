@@ -1,0 +1,32 @@
+---
+title: 选择元数据源
+description: 内置、托管，或者你自己的 Libex 服务器。
+---
+
+:::caution[下个版本推出]
+元数据源的选择还没有出现在已发布的版本里。已发布的版本使用 libexdb.com 上的公共 Libex 实例，也没有这个设置项。
+:::
+
+在下个版本里，**Settings > Metadata > Source** 有一个 **Metadata Source** 设置，提供三种选择。
+
+| 选项 | 含义 |
+|---|---|
+| Built-in（默认） | Libex 跑在 ABM 内部。需要先选好一种出站连接。 |
+| Hosted (libexdb.com) | ABM 向公共 Libex 实例查询。 |
+| Self-hosted | ABM 向你指定的 Libex 服务器查询。填写它的 **Server URL**，比如 `http://192.168.1.20:8000`。 |
+
+**Test** 会检查选中的元数据源，但不保存。**Status** 显示它是否就绪。还没保存的选择会显示 “Not in use yet - save to switch”，直到你保存为止。
+
+## 内置模式和出站连接
+
+内置模式是从你的机器直接和 Audible 通信的，所以它使用 **Settings > General > Proxy & VPN**。那个页面决定走哪条线路：代理、内置的 WireGuard 隧道、你自己的 VPN 容器，或者你确认过的直连。一个都没选时，自动查询会被阻止，并提示原因。选中的线路断了，查询同样会被阻止，绝不会退回到用你自己的地址。选直连时会显示警告：Audible 能看到你的 IP 地址，以及 ABM 查询了哪些书。
+
+## 托管和自托管
+
+这两种模式下，ABM 向一个 Libex 服务器查询，由服务器去和 Audible 通信。自托管的 URL 在保存前会先检查，空的或不安全的地址会被拒绝。服务器宕机时，会报告为元数据源不可用，并写出它的名字。
+
+## 选哪个
+
+- 只想能用就行，也不在意 Audible 看到你的地址：内置模式加直连，或者托管。
+- 在意不把你的 IP 暴露给 Audible：内置模式走 VPN 或代理，或者托管。
+- 已经在跑 Libex 服务器了：自托管。
