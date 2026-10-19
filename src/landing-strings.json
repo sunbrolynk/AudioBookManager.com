@@ -25,9 +25,8 @@
     "altPage": "ABM's {name} page",
     "whyEyebrow": "Why ABM",
     "whyH2": "Built for the shelf, not bolted on.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "See it running",
     "shotsH2": "This is the real thing.",
-    "shotsAria": "Screenshots, scroll sideways",
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
@@ -144,16 +143,6 @@
         "7 supported"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Library",
-      "Book",
-      "Series",
-      "Calendar",
-      "Wanted",
-      "Profiles",
-      "Conversions"
-    ],
     "installSteps": [
       [
         "Save it",
@@ -230,7 +219,150 @@
         "an LXC install script"
       ]
     ],
-    "coming": "Coming"
+    "coming": "Coming",
+    "shotsP": "Every screenshot is the actual app, running on an invented demo library. Pick an area, then a view. Click any screenshot to see it full size.",
+    "areasAria": "Areas of ABM",
+    "viewsAria": "Views of {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Library",
+        "Three ways to look at the same shelf: covers, covers with the synopsis, or a table you can sort by anything. There's a light theme too.",
+        [
+          "Posters",
+          "Overview",
+          "Table",
+          "Light theme"
+        ]
+      ],
+      [
+        "Books",
+        "Every book gets its own page: who wrote and narrated it, where it sits in its series, every chapter, and every file on disk with its quality.",
+        [
+          "Overview",
+          "Chapters",
+          "Files"
+        ]
+      ],
+      [
+        "Series & Authors",
+        "Series and authors have their own pages too, so you can see what you have and what's still missing. Narrators get their own page later.",
+        [
+          "Series",
+          "One series",
+          "Authors",
+          "One author"
+        ]
+      ],
+      [
+        "Finding Books",
+        "Discover shows new and upcoming releases. Wanted lists what's missing or still below your quality cutoff, and the calendar shows when the books you monitor come out.",
+        [
+          "New releases",
+          "Coming soon",
+          "Missing",
+          "Cutoff unmet",
+          "Calendar"
+        ]
+      ],
+      [
+        "Import & Convert",
+        "Point ABM at the books you already have and check every match before anything moves. Conversions merge, split and re-chapter files.",
+        [
+          "Library Import",
+          "Matching",
+          "Conversions"
+        ]
+      ],
+      [
+        "Settings",
+        "If you've set up Sonarr, you know the shape: media management, profiles, what metadata gets written where, and how conversions run.",
+        [
+          "Media Management",
+          "Profiles",
+          "Metadata",
+          "Conversions",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "System",
+        "Nothing happens out of sight: a dashboard, scheduled tasks, an activity log of what happened to which book, events, log files and backups.",
+        [
+          "Dashboard",
+          "Tasks",
+          "Activity Log",
+          "Events",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "On your phone",
+    "phoneH2": "Built for phones too.",
+    "phoneP": "ABM works on a phone today, and the next release gives every page its own phone layout. These screenshots are from that release.",
+    "phoneShots": [
+      "Library",
+      "A book",
+      "Wanted"
+    ],
+    "phoneDiffs": [
+      [
+        "A tab bar under your thumb",
+        "Library, Activity, Wanted, Settings and System sit along the bottom, and their menus slide up from it."
+      ],
+      [
+        "Every library view",
+        "Posters, overview and table all work at any width. Nothing gets hidden because the screen is small."
+      ],
+      [
+        "Cards instead of wide tables",
+        "Wanted, Tasks and the other long lists turn into cards you can read without scrolling sideways."
+      ],
+      [
+        "Sheets instead of pop-ups",
+        "Sorting, adding a book and picking a search result open as sheets from the bottom, and your back button closes them."
+      ],
+      [
+        "Nothing left out",
+        "Settings, System and Library Import are all there. It isn't a cut-down mobile mode."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Bring your Audible library.",
+    "audP": "If you buy on Audible, ABM connects to your account and treats the books you own as part of your library. It only ever downloads books your own account owns.",
+    "aud": [
+      [
+        "Connect your account",
+        "Pick your marketplace and log in on Amazon's own page. ABM never sees your password. It keeps only the tokens Audible hands back, encrypted with your install's secret key. More than one account works too."
+      ],
+      [
+        "Sync your library",
+        "On a schedule or whenever you hit sync, ABM pulls in everything you own and lists it on its own Audible Library page, marked with what's already on your shelf."
+      ],
+      [
+        "Add and download",
+        "From there, add books to your library, download them, or both, one at a time or in bulk."
+      ],
+      [
+        "Mirror the whole thing",
+        "Turn mirroring on and every book you buy gets added and downloaded after each sync, a batch at a time. Plus Catalog titles and rentals are left out, and a book that leaves your Audible account stays in ABM."
+      ],
+      [
+        "Untouched M4B",
+        "Downloads are decrypted to M4B without re-encoding, so you get Audible's audio exactly as it was, with chapters and the cover built in."
+      ],
+      [
+        "Pick the quality",
+        "Choose High or Normal for your downloads."
+      ],
+      [
+        "Audible in Discover",
+        "Audible's best-seller lists show up in Discover, and every book links back to its Audible page."
+      ]
+    ],
+    "nextRelease": "Next release"
   },
   "en-gb": {
     "htmlLang": "en-GB",
@@ -258,9 +390,8 @@
     "altPage": "ABM's {name} page",
     "whyEyebrow": "Why ABM",
     "whyH2": "Built for the shelf, not bolted on.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "See it running",
     "shotsH2": "This is the real thing.",
-    "shotsAria": "Screenshots, scroll sideways",
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
@@ -377,16 +508,6 @@
         "7 supported"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Library",
-      "Book",
-      "Series",
-      "Calendar",
-      "Wanted",
-      "Profiles",
-      "Conversions"
-    ],
     "installSteps": [
       [
         "Save it",
@@ -463,7 +584,150 @@
         "an LXC install script"
       ]
     ],
-    "coming": "Coming"
+    "coming": "Coming",
+    "shotsP": "Every screenshot is the actual app, running on an invented demo library. Pick an area, then a view. Click any screenshot to see it full size.",
+    "areasAria": "Areas of ABM",
+    "viewsAria": "Views of {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Library",
+        "Three ways to look at the same shelf: covers, covers with the synopsis, or a table you can sort by anything. There's a light theme too.",
+        [
+          "Posters",
+          "Overview",
+          "Table",
+          "Light theme"
+        ]
+      ],
+      [
+        "Books",
+        "Every book gets its own page: who wrote and narrated it, where it sits in its series, every chapter, and every file on disk with its quality.",
+        [
+          "Overview",
+          "Chapters",
+          "Files"
+        ]
+      ],
+      [
+        "Series & Authors",
+        "Series and authors have their own pages too, so you can see what you have and what's still missing. Narrators get their own page later.",
+        [
+          "Series",
+          "One series",
+          "Authors",
+          "One author"
+        ]
+      ],
+      [
+        "Finding Books",
+        "Discover shows new and upcoming releases. Wanted lists what's missing or still below your quality cutoff, and the calendar shows when the books you monitor come out.",
+        [
+          "New releases",
+          "Coming soon",
+          "Missing",
+          "Cutoff unmet",
+          "Calendar"
+        ]
+      ],
+      [
+        "Import & Convert",
+        "Point ABM at the books you already have and check every match before anything moves. Conversions merge, split and re-chapter files.",
+        [
+          "Library Import",
+          "Matching",
+          "Conversions"
+        ]
+      ],
+      [
+        "Settings",
+        "If you've set up Sonarr, you know the shape: media management, profiles, what metadata gets written where, and how conversions run.",
+        [
+          "Media Management",
+          "Profiles",
+          "Metadata",
+          "Conversions",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "System",
+        "Nothing happens out of sight: a dashboard, scheduled tasks, an activity log of what happened to which book, events, log files and backups.",
+        [
+          "Dashboard",
+          "Tasks",
+          "Activity Log",
+          "Events",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "On your phone",
+    "phoneH2": "Built for phones too.",
+    "phoneP": "ABM works on a phone today, and the next release gives every page its own phone layout. These screenshots are from that release.",
+    "phoneShots": [
+      "Library",
+      "A book",
+      "Wanted"
+    ],
+    "phoneDiffs": [
+      [
+        "A tab bar under your thumb",
+        "Library, Activity, Wanted, Settings and System sit along the bottom, and their menus slide up from it."
+      ],
+      [
+        "Every library view",
+        "Posters, overview and table all work at any width. Nothing gets hidden because the screen is small."
+      ],
+      [
+        "Cards instead of wide tables",
+        "Wanted, Tasks and the other long lists turn into cards you can read without scrolling sideways."
+      ],
+      [
+        "Sheets instead of pop-ups",
+        "Sorting, adding a book and picking a search result open as sheets from the bottom, and your back button closes them."
+      ],
+      [
+        "Nothing left out",
+        "Settings, System and Library Import are all there. It isn't a cut-down mobile mode."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Bring your Audible library.",
+    "audP": "If you buy on Audible, ABM connects to your account and treats the books you own as part of your library. It only ever downloads books your own account owns.",
+    "aud": [
+      [
+        "Connect your account",
+        "Pick your marketplace and log in on Amazon's own page. ABM never sees your password. It keeps only the tokens Audible hands back, encrypted with your install's secret key. More than one account works too."
+      ],
+      [
+        "Sync your library",
+        "On a schedule or whenever you hit sync, ABM pulls in everything you own and lists it on its own Audible Library page, marked with what's already on your shelf."
+      ],
+      [
+        "Add and download",
+        "From there, add books to your library, download them, or both, one at a time or in bulk."
+      ],
+      [
+        "Mirror the whole thing",
+        "Turn mirroring on and every book you buy gets added and downloaded after each sync, a batch at a time. Plus Catalog titles and rentals are left out, and a book that leaves your Audible account stays in ABM."
+      ],
+      [
+        "Untouched M4B",
+        "Downloads are decrypted to M4B without re-encoding, so you get Audible's audio exactly as it was, with chapters and the cover built in."
+      ],
+      [
+        "Pick the quality",
+        "Choose High or Normal for your downloads."
+      ],
+      [
+        "Audible in Discover",
+        "Audible's best-seller lists show up in Discover, and every book links back to its Audible page."
+      ]
+    ],
+    "nextRelease": "Next release"
   },
   "uk": {
     "htmlLang": "uk",
@@ -491,9 +755,8 @@
     "altPage": "Сторінка {name} в ABM",
     "whyEyebrow": "Чому ABM",
     "whyH2": "Зроблений для полиці, а не прикручений збоку.",
-    "shotsEyebrow": "Скриншоти",
+    "shotsEyebrow": "Подивитися в роботі",
     "shotsH2": "Це справжній застосунок.",
-    "shotsAria": "Скриншоти, гортай убік",
     "getItEyebrow": "Встановлення",
     "installH2": "Запуск з одного файлу.",
     "buildP": "<b>Збірка з вихідного коду.</b> У клоні репозиторію заміни <code>image:</code> на <code>build: .</code> і виконай <code>docker compose up -d --build</code>.",
@@ -610,16 +873,6 @@
         "7 підтримуваних"
       ]
     ],
-    "shots": [
-      "Панель",
-      "Бібліотека",
-      "Книжка",
-      "Серії",
-      "Календар",
-      "Бажані",
-      "Профілі",
-      "Конвертації"
-    ],
     "installSteps": [
       [
         "Збережи",
@@ -697,7 +950,150 @@
         "скрипт встановлення в LXC"
       ]
     ],
-    "coming": "Скоро"
+    "coming": "Скоро",
+    "shotsP": "Кожен скриншот це справжній застосунок, запущений на вигаданій демо-бібліотеці. Вибери розділ, а потім вигляд. Натисни на будь-який скриншот, щоб побачити його в повному розмірі.",
+    "areasAria": "Розділи ABM",
+    "viewsAria": "Вигляди: {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Бібліотека",
+        "Три способи дивитися на ту саму полицю: обкладинки, обкладинки з анотацією або таблиця, яку можна сортувати за чим завгодно. Є й світла тема.",
+        [
+          "Постери",
+          "Огляд",
+          "Таблиця",
+          "Світла тема"
+        ]
+      ],
+      [
+        "Книжки",
+        "Кожна книжка має власну сторінку: хто її написав і озвучив, яке місце вона займає в серії, усі глави й кожен файл на диску з його якістю.",
+        [
+          "Огляд",
+          "Глави",
+          "Файли"
+        ]
+      ],
+      [
+        "Серії та автори",
+        "Серії та автори теж мають свої сторінки, тож видно, що в тебе є і чого ще бракує. Диктори отримають власну сторінку пізніше.",
+        [
+          "Серії",
+          "Одна серія",
+          "Автори",
+          "Один автор"
+        ]
+      ],
+      [
+        "Пошук книжок",
+        "Discover показує нові й майбутні релізи. Wanted перелічує, чого бракує або що досі нижче твого порогу якості, а календар показує, коли виходять книжки, за якими ти стежиш.",
+        [
+          "Новинки",
+          "Незабаром",
+          "Бракує",
+          "Нижче порогу",
+          "Календар"
+        ]
+      ],
+      [
+        "Імпорт і конвертація",
+        "Вкажи ABM книжки, які в тебе вже є, і перевір кожен збіг, перш ніж щось переміститься. Конвертації об'єднують, розділяють і заново ділять файли на глави.",
+        [
+          "Імпорт бібліотеки",
+          "Зіставлення",
+          "Конвертації"
+        ]
+      ],
+      [
+        "Налаштування",
+        "Якщо ти налаштовував Sonarr, ця схема тобі знайома: керування медіа, профілі, які метадані куди записуються і як працюють конвертації.",
+        [
+          "Керування медіа",
+          "Профілі",
+          "Метадані",
+          "Конвертації",
+          "Audible",
+          "Інтерфейс"
+        ]
+      ],
+      [
+        "Система",
+        "Нічого не відбувається непомітно: панель, заплановані завдання, журнал дій про те, що сталося з якою книжкою, події, файли журналів і резервні копії.",
+        [
+          "Панель",
+          "Завдання",
+          "Журнал дій",
+          "Події",
+          "Журнали",
+          "Резервні копії"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "На телефоні",
+    "phoneH2": "Зроблено й для телефонів.",
+    "phoneP": "ABM уже працює на телефоні, а в наступному релізі кожна сторінка отримає власний мобільний макет. Ці скриншоти саме з того релізу.",
+    "phoneShots": [
+      "Бібліотека",
+      "Книжка",
+      "Бажані"
+    ],
+    "phoneDiffs": [
+      [
+        "Вкладки під великим пальцем",
+        "Library, Activity, Wanted, Settings і System розташовані внизу, а їхні меню виїжджають звідти вгору."
+      ],
+      [
+        "Кожен вигляд бібліотеки",
+        "Постери, огляд і таблиця працюють за будь-якої ширини. Ніщо не ховається лише через те, що екран малий."
+      ],
+      [
+        "Картки замість широких таблиць",
+        "Wanted, Tasks та інші довгі списки перетворюються на картки, які можна читати без прокручування вбік."
+      ],
+      [
+        "Панелі замість спливних вікон",
+        "Сортування, додавання книжки й вибір результату пошуку відкриваються панелями знизу, а кнопка назад їх закриває."
+      ],
+      [
+        "Нічого не вирізано",
+        "Settings, System і Library Import на місці. Це не урізаний мобільний режим."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Підключи свою бібліотеку Audible.",
+    "audP": "Якщо ти купуєш на Audible, ABM підключається до твого акаунта й вважає книжки, які ти маєш, частиною твоєї бібліотеки. Він завантажує лише ті книжки, якими володіє саме твій акаунт.",
+    "aud": [
+      [
+        "Підключи акаунт",
+        "Вибери свій маркетплейс і увійди на сторінці самого Amazon. ABM ніколи не бачить твого пароля. Він зберігає лише токени, які повертає Audible, зашифровані секретним ключем твоєї інсталяції. Можна підключити й кілька акаунтів."
+      ],
+      [
+        "Синхронізуй бібліотеку",
+        "За розкладом або щоразу, коли ти натискаєш синхронізацію, ABM підтягує все, що ти маєш, і показує це на окремій сторінці Audible Library, позначаючи, що вже стоїть на твоїй полиці."
+      ],
+      [
+        "Додавай і завантажуй",
+        "Звідти можна додавати книжки до бібліотеки, завантажувати їх або все разом, по одній чи гуртом."
+      ],
+      [
+        "Дзеркаль усе",
+        "Увімкни дзеркалювання, і кожна куплена книжка після кожної синхронізації додаватиметься й завантажуватиметься, партія за партією. Назви з Plus Catalog і оренди пропускаються, а книжка, що зникла з твого акаунта Audible, лишається в ABM."
+      ],
+      [
+        "Недоторканий M4B",
+        "Завантаження розшифровуються в M4B без перекодування, тож ти отримуєш звук Audible точно таким, яким він був, із вбудованими главами й обкладинкою."
+      ],
+      [
+        "Вибери якість",
+        "Для завантажень обери High або Normal."
+      ],
+      [
+        "Audible у Discover",
+        "Списки бестселерів Audible з'являються в Discover, і кожна книжка має посилання на свою сторінку в Audible."
+      ]
+    ],
+    "nextRelease": "У наступному релізі"
   },
   "en-ca": {
     "htmlLang": "en-CA",
@@ -725,9 +1121,8 @@
     "altPage": "ABM's {name} page",
     "whyEyebrow": "Why ABM",
     "whyH2": "Built for the shelf, not bolted on.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "See it running",
     "shotsH2": "This is the real thing.",
-    "shotsAria": "Screenshots, scroll sideways",
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
@@ -844,16 +1239,6 @@
         "7 supported"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Library",
-      "Book",
-      "Series",
-      "Calendar",
-      "Wanted",
-      "Profiles",
-      "Conversions"
-    ],
     "installSteps": [
       [
         "Save it",
@@ -930,7 +1315,150 @@
         "an LXC install script"
       ]
     ],
-    "coming": "Coming"
+    "coming": "Coming",
+    "shotsP": "Every screenshot is the actual app, running on an invented demo library. Pick an area, then a view. Click any screenshot to see it full size.",
+    "areasAria": "Areas of ABM",
+    "viewsAria": "Views of {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Library",
+        "Three ways to look at the same shelf: covers, covers with the synopsis, or a table you can sort by anything. There's a light theme too.",
+        [
+          "Posters",
+          "Overview",
+          "Table",
+          "Light theme"
+        ]
+      ],
+      [
+        "Books",
+        "Every book gets its own page: who wrote and narrated it, where it sits in its series, every chapter, and every file on disk with its quality.",
+        [
+          "Overview",
+          "Chapters",
+          "Files"
+        ]
+      ],
+      [
+        "Series & Authors",
+        "Series and authors have their own pages too, so you can see what you have and what's still missing. Narrators get their own page later.",
+        [
+          "Series",
+          "One series",
+          "Authors",
+          "One author"
+        ]
+      ],
+      [
+        "Finding Books",
+        "Discover shows new and upcoming releases. Wanted lists what's missing or still below your quality cutoff, and the calendar shows when the books you monitor come out.",
+        [
+          "New releases",
+          "Coming soon",
+          "Missing",
+          "Cutoff unmet",
+          "Calendar"
+        ]
+      ],
+      [
+        "Import & Convert",
+        "Point ABM at the books you already have and check every match before anything moves. Conversions merge, split and re-chapter files.",
+        [
+          "Library Import",
+          "Matching",
+          "Conversions"
+        ]
+      ],
+      [
+        "Settings",
+        "If you've set up Sonarr, you know the shape: media management, profiles, what metadata gets written where, and how conversions run.",
+        [
+          "Media Management",
+          "Profiles",
+          "Metadata",
+          "Conversions",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "System",
+        "Nothing happens out of sight: a dashboard, scheduled tasks, an activity log of what happened to which book, events, log files and backups.",
+        [
+          "Dashboard",
+          "Tasks",
+          "Activity Log",
+          "Events",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "On your phone",
+    "phoneH2": "Built for phones too.",
+    "phoneP": "ABM works on a phone today, and the next release gives every page its own phone layout. These screenshots are from that release.",
+    "phoneShots": [
+      "Library",
+      "A book",
+      "Wanted"
+    ],
+    "phoneDiffs": [
+      [
+        "A tab bar under your thumb",
+        "Library, Activity, Wanted, Settings and System sit along the bottom, and their menus slide up from it."
+      ],
+      [
+        "Every library view",
+        "Posters, overview and table all work at any width. Nothing gets hidden because the screen is small."
+      ],
+      [
+        "Cards instead of wide tables",
+        "Wanted, Tasks and the other long lists turn into cards you can read without scrolling sideways."
+      ],
+      [
+        "Sheets instead of pop-ups",
+        "Sorting, adding a book and picking a search result open as sheets from the bottom, and your back button closes them."
+      ],
+      [
+        "Nothing left out",
+        "Settings, System and Library Import are all there. It isn't a cut-down mobile mode."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Bring your Audible library.",
+    "audP": "If you buy on Audible, ABM connects to your account and treats the books you own as part of your library. It only ever downloads books your own account owns.",
+    "aud": [
+      [
+        "Connect your account",
+        "Pick your marketplace and log in on Amazon's own page. ABM never sees your password. It keeps only the tokens Audible hands back, encrypted with your install's secret key. More than one account works too."
+      ],
+      [
+        "Sync your library",
+        "On a schedule or whenever you hit sync, ABM pulls in everything you own and lists it on its own Audible Library page, marked with what's already on your shelf."
+      ],
+      [
+        "Add and download",
+        "From there, add books to your library, download them, or both, one at a time or in bulk."
+      ],
+      [
+        "Mirror the whole thing",
+        "Turn mirroring on and every book you buy gets added and downloaded after each sync, a batch at a time. Plus Catalog titles and rentals are left out, and a book that leaves your Audible account stays in ABM."
+      ],
+      [
+        "Untouched M4B",
+        "Downloads are decrypted to M4B without re-encoding, so you get Audible's audio exactly as it was, with chapters and the cover built in."
+      ],
+      [
+        "Pick the quality",
+        "Choose High or Normal for your downloads."
+      ],
+      [
+        "Audible in Discover",
+        "Audible's best-seller lists show up in Discover, and every book links back to its Audible page."
+      ]
+    ],
+    "nextRelease": "Next release"
   },
   "en-au": {
     "htmlLang": "en-AU",
@@ -958,9 +1486,8 @@
     "altPage": "ABM's {name} page",
     "whyEyebrow": "Why ABM",
     "whyH2": "Built for the shelf, not bolted on.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "See it running",
     "shotsH2": "This is the real thing.",
-    "shotsAria": "Screenshots, scroll sideways",
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
@@ -1077,16 +1604,6 @@
         "7 supported"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Library",
-      "Book",
-      "Series",
-      "Calendar",
-      "Wanted",
-      "Profiles",
-      "Conversions"
-    ],
     "installSteps": [
       [
         "Save it",
@@ -1163,7 +1680,150 @@
         "an LXC install script"
       ]
     ],
-    "coming": "Coming"
+    "coming": "Coming",
+    "shotsP": "Every screenshot is the actual app, running on an invented demo library. Pick an area, then a view. Click any screenshot to see it full size.",
+    "areasAria": "Areas of ABM",
+    "viewsAria": "Views of {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Library",
+        "Three ways to look at the same shelf: covers, covers with the synopsis, or a table you can sort by anything. There's a light theme too.",
+        [
+          "Posters",
+          "Overview",
+          "Table",
+          "Light theme"
+        ]
+      ],
+      [
+        "Books",
+        "Every book gets its own page: who wrote and narrated it, where it sits in its series, every chapter, and every file on disk with its quality.",
+        [
+          "Overview",
+          "Chapters",
+          "Files"
+        ]
+      ],
+      [
+        "Series & Authors",
+        "Series and authors have their own pages too, so you can see what you have and what's still missing. Narrators get their own page later.",
+        [
+          "Series",
+          "One series",
+          "Authors",
+          "One author"
+        ]
+      ],
+      [
+        "Finding Books",
+        "Discover shows new and upcoming releases. Wanted lists what's missing or still below your quality cutoff, and the calendar shows when the books you monitor come out.",
+        [
+          "New releases",
+          "Coming soon",
+          "Missing",
+          "Cutoff unmet",
+          "Calendar"
+        ]
+      ],
+      [
+        "Import & Convert",
+        "Point ABM at the books you already have and check every match before anything moves. Conversions merge, split and re-chapter files.",
+        [
+          "Library Import",
+          "Matching",
+          "Conversions"
+        ]
+      ],
+      [
+        "Settings",
+        "If you've set up Sonarr, you know the shape: media management, profiles, what metadata gets written where, and how conversions run.",
+        [
+          "Media Management",
+          "Profiles",
+          "Metadata",
+          "Conversions",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "System",
+        "Nothing happens out of sight: a dashboard, scheduled tasks, an activity log of what happened to which book, events, log files and backups.",
+        [
+          "Dashboard",
+          "Tasks",
+          "Activity Log",
+          "Events",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "On your phone",
+    "phoneH2": "Built for phones too.",
+    "phoneP": "ABM works on a phone today, and the next release gives every page its own phone layout. These screenshots are from that release.",
+    "phoneShots": [
+      "Library",
+      "A book",
+      "Wanted"
+    ],
+    "phoneDiffs": [
+      [
+        "A tab bar under your thumb",
+        "Library, Activity, Wanted, Settings and System sit along the bottom, and their menus slide up from it."
+      ],
+      [
+        "Every library view",
+        "Posters, overview and table all work at any width. Nothing gets hidden because the screen is small."
+      ],
+      [
+        "Cards instead of wide tables",
+        "Wanted, Tasks and the other long lists turn into cards you can read without scrolling sideways."
+      ],
+      [
+        "Sheets instead of pop-ups",
+        "Sorting, adding a book and picking a search result open as sheets from the bottom, and your back button closes them."
+      ],
+      [
+        "Nothing left out",
+        "Settings, System and Library Import are all there. It isn't a cut-down mobile mode."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Bring your Audible library.",
+    "audP": "If you buy on Audible, ABM connects to your account and treats the books you own as part of your library. It only ever downloads books your own account owns.",
+    "aud": [
+      [
+        "Connect your account",
+        "Pick your marketplace and log in on Amazon's own page. ABM never sees your password. It keeps only the tokens Audible hands back, encrypted with your install's secret key. More than one account works too."
+      ],
+      [
+        "Sync your library",
+        "On a schedule or whenever you hit sync, ABM pulls in everything you own and lists it on its own Audible Library page, marked with what's already on your shelf."
+      ],
+      [
+        "Add and download",
+        "From there, add books to your library, download them, or both, one at a time or in bulk."
+      ],
+      [
+        "Mirror the whole thing",
+        "Turn mirroring on and every book you buy gets added and downloaded after each sync, a batch at a time. Plus Catalog titles and rentals are left out, and a book that leaves your Audible account stays in ABM."
+      ],
+      [
+        "Untouched M4B",
+        "Downloads are decrypted to M4B without re-encoding, so you get Audible's audio exactly as it was, with chapters and the cover built in."
+      ],
+      [
+        "Pick the quality",
+        "Choose High or Normal for your downloads."
+      ],
+      [
+        "Audible in Discover",
+        "Audible's best-seller lists show up in Discover, and every book links back to its Audible page."
+      ]
+    ],
+    "nextRelease": "Next release"
   },
   "fr": {
     "htmlLang": "fr",
@@ -1191,9 +1851,8 @@
     "altPage": "La page {name} d'ABM",
     "whyEyebrow": "Pourquoi ABM",
     "whyH2": "Fait pour l'étagère, pas greffé dessus.",
-    "shotsEyebrow": "Captures d'écran",
+    "shotsEyebrow": "Le voir tourner",
     "shotsH2": "C'est le vrai logiciel.",
-    "shotsAria": "Captures d'écran, fais défiler sur le côté",
     "getItEyebrow": "L'installer",
     "installH2": "Ça tourne avec un seul fichier.",
     "buildP": "<b>Compiler depuis les sources.</b> Dans un clone du dépôt, remplace <code>image:</code> par <code>build: .</code> et lance <code>docker compose up -d --build</code>.",
@@ -1310,16 +1969,6 @@
         "7 pris en charge"
       ]
     ],
-    "shots": [
-      "Tableau de bord",
-      "Bibliothèque",
-      "Livre",
-      "Série",
-      "Calendrier",
-      "Recherchés",
-      "Profils",
-      "Conversions"
-    ],
     "installSteps": [
       [
         "Enregistre-le",
@@ -1397,7 +2046,150 @@
         "un script d'installation LXC"
       ]
     ],
-    "coming": "Bientôt"
+    "coming": "Bientôt",
+    "shotsP": "Chaque capture d'écran montre la vraie app, qui tourne sur une bibliothèque de démo inventée. Choisis une section, puis une vue. Clique sur une capture pour la voir en grand.",
+    "areasAria": "Sections d'ABM",
+    "viewsAria": "Vues de {area}",
+    "altView": "ABM, {area} : {view}",
+    "areas": [
+      [
+        "Bibliothèque",
+        "Trois façons de regarder la même étagère : les couvertures, les couvertures avec le résumé, ou un tableau que tu peux trier selon n'importe quel critère. Il y a aussi un thème clair.",
+        [
+          "Affiches",
+          "Aperçu",
+          "Tableau",
+          "Thème clair"
+        ]
+      ],
+      [
+        "Livres",
+        "Chaque livre a sa propre page : qui l'a écrit et qui le lit, sa place dans la série, chaque chapitre, et chaque fichier sur le disque avec sa qualité.",
+        [
+          "Aperçu",
+          "Chapitres",
+          "Fichiers"
+        ]
+      ],
+      [
+        "Séries et auteurs",
+        "Les séries et les auteurs ont aussi leurs propres pages, pour voir ce que tu as et ce qui manque encore. Les narrateurs auront leur page plus tard.",
+        [
+          "Séries",
+          "Une série",
+          "Auteurs",
+          "Un auteur"
+        ]
+      ],
+      [
+        "Trouver des livres",
+        "Discover montre les nouveautés et les sorties à venir. Recherchés liste ce qui manque ou reste sous ton seuil de qualité, et le calendrier montre quand sortent les livres que tu surveilles.",
+        [
+          "Nouveautés",
+          "À venir",
+          "Manquants",
+          "Seuil non atteint",
+          "Calendrier"
+        ]
+      ],
+      [
+        "Importer et convertir",
+        "Indique à ABM les livres que tu as déjà et vérifie chaque correspondance avant que quoi que ce soit ne bouge. Les conversions fusionnent, découpent et refont les chapitres des fichiers.",
+        [
+          "Import de bibliothèque",
+          "Correspondances",
+          "Conversions"
+        ]
+      ],
+      [
+        "Paramètres",
+        "Si tu as déjà configuré Sonarr, tu connais la structure : gestion des médias, profils, quelles métadonnées sont écrites et où, et comment tournent les conversions.",
+        [
+          "Gestion des médias",
+          "Profils",
+          "Métadonnées",
+          "Conversions",
+          "Audible",
+          "Interface"
+        ]
+      ],
+      [
+        "Système",
+        "Rien ne se passe en douce : un tableau de bord, les tâches planifiées, un journal d'activité de ce qui est arrivé à quel livre, les événements, les fichiers journaux et les sauvegardes.",
+        [
+          "Tableau de bord",
+          "Tâches",
+          "Journal d'activité",
+          "Événements",
+          "Journaux",
+          "Sauvegardes"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Sur ton téléphone",
+    "phoneH2": "Pensé aussi pour les téléphones.",
+    "phoneP": "ABM marche déjà sur un téléphone, et la prochaine version donne à chaque page sa propre mise en page mobile. Ces captures viennent de cette version.",
+    "phoneShots": [
+      "Bibliothèque",
+      "Un livre",
+      "Recherchés"
+    ],
+    "phoneDiffs": [
+      [
+        "Une barre d'onglets sous ton pouce",
+        "Bibliothèque, Activité, Recherchés, Paramètres et Système sont alignés en bas, et leurs menus remontent depuis cette barre."
+      ],
+      [
+        "Toutes les vues de la bibliothèque",
+        "Affiches, aperçu et tableau marchent à toutes les largeurs. Rien n'est caché parce que l'écran est petit."
+      ],
+      [
+        "Des cartes plutôt que de larges tableaux",
+        "Recherchés, Tâches et les autres longues listes deviennent des cartes que tu lis sans faire défiler sur le côté."
+      ],
+      [
+        "Des panneaux plutôt que des pop-ups",
+        "Le tri, l'ajout d'un livre et le choix d'un résultat de recherche s'ouvrent dans des panneaux qui montent du bas, et ton bouton retour les ferme."
+      ],
+      [
+        "Rien n'est laissé de côté",
+        "Paramètres, Système et Import de bibliothèque sont tous là. Ce n'est pas un mode mobile au rabais."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Amène ta bibliothèque Audible.",
+    "audP": "Si tu achètes sur Audible, ABM se connecte à ton compte et considère les livres que tu possèdes comme faisant partie de ta bibliothèque. Il ne télécharge jamais que des livres que ton propre compte possède.",
+    "aud": [
+      [
+        "Connecte ton compte",
+        "Choisis ta boutique et connecte-toi sur la page d'Amazon elle-même. ABM ne voit jamais ton mot de passe. Il garde seulement les jetons qu'Audible lui renvoie, chiffrés avec la clé secrète de ton installation. Ça marche aussi avec plusieurs comptes."
+      ],
+      [
+        "Synchronise ta bibliothèque",
+        "Selon un planning ou dès que tu lances une synchro, ABM récupère tout ce que tu possèdes et l'affiche sur sa propre page Bibliothèque Audible, en indiquant ce qui est déjà sur ton étagère."
+      ],
+      [
+        "Ajoute et télécharge",
+        "De là, ajoute des livres à ta bibliothèque, télécharge-les, ou les deux, un par un ou en lot."
+      ],
+      [
+        "Mets tout en miroir",
+        "Active le miroir et chaque livre que tu achètes est ajouté et téléchargé après chaque synchro, un lot à la fois. Les titres du Plus Catalog et les locations sont exclus, et un livre qui quitte ton compte Audible reste dans ABM."
+      ],
+      [
+        "M4B intact",
+        "Les téléchargements sont déchiffrés en M4B sans réencodage, donc tu récupères l'audio d'Audible tel quel, avec les chapitres et la couverture intégrés."
+      ],
+      [
+        "Choisis la qualité",
+        "Choisis Haute ou Normale pour tes téléchargements."
+      ],
+      [
+        "Audible dans Discover",
+        "Les meilleures ventes d'Audible apparaissent dans Discover, et chaque livre renvoie vers sa page Audible."
+      ]
+    ],
+    "nextRelease": "Prochaine version"
   },
   "de": {
     "htmlLang": "de",
@@ -1425,9 +2217,8 @@
     "altPage": "Die Seite {name} in ABM",
     "whyEyebrow": "Warum ABM",
     "whyH2": "Fürs Regal gebaut, nicht drangeschraubt.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "In Aktion ansehen",
     "shotsH2": "Das ist das echte Ding.",
-    "shotsAria": "Screenshots, seitlich scrollen",
     "getItEyebrow": "Installation",
     "installH2": "Läuft mit einer Datei.",
     "buildP": "<b>Aus dem Quellcode bauen.</b> Ersetz in einem Klon des Repos <code>image:</code> durch <code>build: .</code> und führ <code>docker compose up -d --build</code> aus.",
@@ -1544,16 +2335,6 @@
         "7 unterstützt"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Bibliothek",
-      "Buch",
-      "Serie",
-      "Kalender",
-      "Gesucht",
-      "Profile",
-      "Konvertierungen"
-    ],
     "installSteps": [
       [
         "Speichern",
@@ -1631,7 +2412,150 @@
         "ein LXC-Installationsskript"
       ]
     ],
-    "coming": "Bald"
+    "coming": "Bald",
+    "shotsP": "Jeder Screenshot zeigt die echte App, die mit einer ausgedachten Demo-Bibliothek läuft. Wähl einen Bereich, dann eine Ansicht. Klick auf einen Screenshot, um ihn in voller Größe zu sehen.",
+    "areasAria": "Bereiche von ABM",
+    "viewsAria": "Ansichten von {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Bibliothek",
+        "Drei Arten, aufs selbe Regal zu schauen: Cover, Cover mit Klappentext oder eine Tabelle, die du nach allem sortieren kannst. Ein helles Theme gibt es auch.",
+        [
+          "Poster",
+          "Übersicht",
+          "Tabelle",
+          "Helles Theme"
+        ]
+      ],
+      [
+        "Bücher",
+        "Jedes Buch bekommt eine eigene Seite: wer es geschrieben und wer es eingesprochen hat, wo es in seiner Serie steht, jedes Kapitel und jede Datei auf der Platte mit ihrer Qualität.",
+        [
+          "Übersicht",
+          "Kapitel",
+          "Dateien"
+        ]
+      ],
+      [
+        "Serien & Autoren",
+        "Serien und Autoren haben auch eigene Seiten, damit du siehst, was du hast und was noch fehlt. Sprecher bekommen später ihre eigene Seite.",
+        [
+          "Serien",
+          "Eine Serie",
+          "Autoren",
+          "Ein Autor"
+        ]
+      ],
+      [
+        "Bücher finden",
+        "Discover zeigt neue und kommende Releases. Gesucht listet auf, was fehlt oder noch unter deinem Qualitäts-Cutoff liegt, und der Kalender zeigt, wann die Bücher erscheinen, die du überwachst.",
+        [
+          "Neuerscheinungen",
+          "Demnächst",
+          "Fehlend",
+          "Cutoff nicht erreicht",
+          "Kalender"
+        ]
+      ],
+      [
+        "Importieren & Konvertieren",
+        "Zeig ABM die Bücher, die du schon hast, und prüf jede Zuordnung, bevor irgendwas verschoben wird. Konvertierungen führen Dateien zusammen, teilen sie auf und setzen die Kapitel neu.",
+        [
+          "Bibliotheksimport",
+          "Zuordnung",
+          "Konvertierungen"
+        ]
+      ],
+      [
+        "Einstellungen",
+        "Wenn du Sonarr eingerichtet hast, kennst du den Aufbau: Medienverwaltung, Profile, welche Metadaten wohin geschrieben werden und wie Konvertierungen laufen.",
+        [
+          "Medienverwaltung",
+          "Profile",
+          "Metadaten",
+          "Konvertierungen",
+          "Audible",
+          "Oberfläche"
+        ]
+      ],
+      [
+        "System",
+        "Nichts passiert im Verborgenen: ein Dashboard, geplante Aufgaben, ein Aktivitätsprotokoll darüber, was mit welchem Buch passiert ist, Ereignisse, Logdateien und Backups.",
+        [
+          "Dashboard",
+          "Aufgaben",
+          "Aktivitätsprotokoll",
+          "Ereignisse",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Auf deinem Handy",
+    "phoneH2": "Auch fürs Handy gebaut.",
+    "phoneP": "ABM läuft schon heute auf dem Handy, und mit dem nächsten Release bekommt jede Seite ihr eigenes Handy-Layout. Diese Screenshots stammen aus diesem Release.",
+    "phoneShots": [
+      "Bibliothek",
+      "Ein Buch",
+      "Gesucht"
+    ],
+    "phoneDiffs": [
+      [
+        "Eine Tab-Leiste unter deinem Daumen",
+        "Bibliothek, Aktivität, Gesucht, Einstellungen und System sitzen am unteren Rand, und ihre Menüs gleiten von dort nach oben."
+      ],
+      [
+        "Jede Bibliotheksansicht",
+        "Poster, Übersicht und Tabelle funktionieren in jeder Breite. Nichts wird versteckt, nur weil der Bildschirm klein ist."
+      ],
+      [
+        "Karten statt breiter Tabellen",
+        "Gesucht, Aufgaben und die anderen langen Listen werden zu Karten, die du lesen kannst, ohne seitlich zu scrollen."
+      ],
+      [
+        "Panels von unten statt Pop-ups",
+        "Sortieren, ein Buch hinzufügen und ein Suchergebnis auswählen öffnen sich als Panels von unten, und deine Zurück-Taste schließt sie."
+      ],
+      [
+        "Nichts fehlt",
+        "Einstellungen, System und Bibliotheksimport sind alle da. Das ist kein abgespeckter Mobilmodus."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Bring deine Audible-Bibliothek mit.",
+    "audP": "Wenn du bei Audible kaufst, verbindet sich ABM mit deinem Konto und behandelt die Bücher, die dir gehören, als Teil deiner Bibliothek. Es lädt immer nur Bücher herunter, die deinem eigenen Konto gehören.",
+    "aud": [
+      [
+        "Konto verbinden",
+        "Wähl deinen Marketplace und melde dich direkt auf der Seite von Amazon an. ABM sieht dein Passwort nie. Es behält nur die Tokens, die Audible zurückgibt, verschlüsselt mit dem geheimen Schlüssel deiner Installation. Mehrere Konten gehen auch."
+      ],
+      [
+        "Bibliothek synchronisieren",
+        "Nach Zeitplan oder wann immer du auf Sync drückst, holt ABM alles, was dir gehört, und listet es auf einer eigenen Seite Audible-Bibliothek auf, samt Markierung, was schon in deinem Regal steht."
+      ],
+      [
+        "Hinzufügen und herunterladen",
+        "Von dort aus fügst du Bücher zu deiner Bibliothek hinzu, lädst sie herunter oder beides, einzeln oder gesammelt."
+      ],
+      [
+        "Alles spiegeln",
+        "Schalt das Spiegeln ein, und jedes Buch, das du kaufst, wird nach jedem Sync hinzugefügt und heruntergeladen, Stapel für Stapel. Titel aus dem Plus Catalog und Leihtitel bleiben außen vor, und ein Buch, das aus deinem Audible-Konto verschwindet, bleibt in ABM."
+      ],
+      [
+        "Unangetastete M4B",
+        "Downloads werden ohne Neukodierung zu M4B entschlüsselt, du bekommst Audibles Audio also genau so, wie es war, mit Kapiteln und Cover direkt eingebaut."
+      ],
+      [
+        "Qualität wählen",
+        "Wähl Hoch oder Normal für deine Downloads."
+      ],
+      [
+        "Audible in Discover",
+        "Audibles Bestsellerlisten tauchen in Discover auf, und jedes Buch verlinkt zurück auf seine Audible-Seite."
+      ]
+    ],
+    "nextRelease": "Nächstes Release"
   },
   "es": {
     "htmlLang": "es",
@@ -1659,9 +2583,8 @@
     "altPage": "La página {name} de ABM",
     "whyEyebrow": "Por qué ABM",
     "whyH2": "Hecho para la estantería, no añadido a la fuerza.",
-    "shotsEyebrow": "Capturas",
+    "shotsEyebrow": "Verlo en marcha",
     "shotsH2": "Esto es lo de verdad.",
-    "shotsAria": "Capturas, desplázate hacia los lados",
     "getItEyebrow": "Consíguelo",
     "installH2": "Funcionando con un solo archivo.",
     "buildP": "<b>Compilar desde el código fuente.</b> Desde un clon del repositorio, cambia <code>image:</code> por <code>build: .</code> y ejecuta <code>docker compose up -d --build</code>.",
@@ -1778,16 +2701,6 @@
         "7 compatibles"
       ]
     ],
-    "shots": [
-      "Panel",
-      "Biblioteca",
-      "Libro",
-      "Series",
-      "Calendario",
-      "Buscados",
-      "Perfiles",
-      "Conversiones"
-    ],
     "installSteps": [
       [
         "Guárdalo",
@@ -1865,7 +2778,150 @@
       ]
     ],
     "coming": "Próximamente",
-    "translatorNote": "Esta página está traducida automáticamente. Si el español es tu lengua materna y quieres ayudar a mejorarla, escríbeme a {mail}."
+    "translatorNote": "Esta página está traducida automáticamente. Si el español es tu lengua materna y quieres ayudar a mejorarla, escríbeme a {mail}.",
+    "shotsP": "Cada captura es la app de verdad, funcionando con una biblioteca de demostración inventada. Elige una sección y luego una vista. Haz clic en cualquier captura para verla a tamaño completo.",
+    "areasAria": "Secciones de ABM",
+    "viewsAria": "Vistas de {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Biblioteca",
+        "Tres formas de mirar la misma estantería: portadas, portadas con la sinopsis o una tabla que puedes ordenar por lo que quieras. También hay un tema claro.",
+        [
+          "Pósteres",
+          "Resumen",
+          "Tabla",
+          "Tema claro"
+        ]
+      ],
+      [
+        "Libros",
+        "Cada libro tiene su propia página: quién lo escribió y quién lo narra, qué lugar ocupa en su serie, cada capítulo y cada archivo en disco con su calidad.",
+        [
+          "Resumen",
+          "Capítulos",
+          "Archivos"
+        ]
+      ],
+      [
+        "Series y autores",
+        "Las series y los autores también tienen sus propias páginas, así ves lo que tienes y lo que todavía falta. Los narradores tendrán su página más adelante.",
+        [
+          "Series",
+          "Una serie",
+          "Autores",
+          "Un autor"
+        ]
+      ],
+      [
+        "Encontrar libros",
+        "Discover muestra novedades y próximos lanzamientos. Buscados lista lo que falta o sigue por debajo de tu límite de calidad, y el calendario muestra cuándo salen los libros que vigilas.",
+        [
+          "Novedades",
+          "Próximamente",
+          "Faltan",
+          "Límite no alcanzado",
+          "Calendario"
+        ]
+      ],
+      [
+        "Importar y convertir",
+        "Dile a ABM dónde están los libros que ya tienes y revisa cada coincidencia antes de que se mueva nada. Las conversiones unen y dividen archivos y rehacen sus capítulos.",
+        [
+          "Importar biblioteca",
+          "Coincidencias",
+          "Conversiones"
+        ]
+      ],
+      [
+        "Ajustes",
+        "Si has configurado Sonarr, ya conoces la estructura: gestión de medios, perfiles, qué metadatos se escriben y dónde, y cómo funcionan las conversiones.",
+        [
+          "Gestión de medios",
+          "Perfiles",
+          "Metadatos",
+          "Conversiones",
+          "Audible",
+          "Interfaz"
+        ]
+      ],
+      [
+        "Sistema",
+        "Nada pasa a escondidas: un panel, tareas programadas, un registro de actividad de lo que le pasó a cada libro, eventos, archivos de log y copias de seguridad.",
+        [
+          "Panel",
+          "Tareas",
+          "Registro de actividad",
+          "Eventos",
+          "Logs",
+          "Copias de seguridad"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "En tu móvil",
+    "phoneH2": "Hecho también para el móvil.",
+    "phoneP": "ABM ya funciona en el móvil, y la próxima versión le da a cada página su propio diseño para móvil. Estas capturas son de esa versión.",
+    "phoneShots": [
+      "Biblioteca",
+      "Un libro",
+      "Buscados"
+    ],
+    "phoneDiffs": [
+      [
+        "Una barra de pestañas bajo tu pulgar",
+        "Biblioteca, Actividad, Buscados, Ajustes y Sistema están abajo del todo, y sus menús suben desde ahí."
+      ],
+      [
+        "Todas las vistas de la biblioteca",
+        "Pósteres, resumen y tabla funcionan a cualquier ancho. No se oculta nada porque la pantalla sea pequeña."
+      ],
+      [
+        "Tarjetas en vez de tablas anchas",
+        "Buscados, Tareas y las demás listas largas se convierten en tarjetas que puedes leer sin desplazarte hacia los lados."
+      ],
+      [
+        "Paneles en vez de ventanas emergentes",
+        "Ordenar, añadir un libro y elegir un resultado de búsqueda se abren como paneles desde abajo, y el botón de atrás los cierra."
+      ],
+      [
+        "No falta nada",
+        "Ajustes, Sistema e Importar biblioteca están todos ahí. No es una versión móvil recortada."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Trae tu biblioteca de Audible.",
+    "audP": "Si compras en Audible, ABM se conecta a tu cuenta y trata los libros que tienes como parte de tu biblioteca. Solo descarga libros que sean de tu propia cuenta.",
+    "aud": [
+      [
+        "Conecta tu cuenta",
+        "Elige tu tienda e inicia sesión en la propia página de Amazon. ABM nunca ve tu contraseña. Solo guarda los tokens que devuelve Audible, cifrados con la clave secreta de tu instalación. También funciona con más de una cuenta."
+      ],
+      [
+        "Sincroniza tu biblioteca",
+        "De forma programada o cuando le des a sincronizar, ABM trae todo lo que tienes y lo muestra en su propia página Biblioteca de Audible, marcando lo que ya está en tu estantería."
+      ],
+      [
+        "Añade y descarga",
+        "Desde ahí, añade libros a tu biblioteca, descárgalos o las dos cosas, de uno en uno o en bloque."
+      ],
+      [
+        "Réplica completa",
+        "Activa la réplica y cada libro que compres se añade y se descarga después de cada sincronización, por tandas. Los títulos del Plus Catalog y los alquileres se quedan fuera, y un libro que sale de tu cuenta de Audible se queda en ABM."
+      ],
+      [
+        "M4B intacto",
+        "Las descargas se descifran a M4B sin recodificar, así que tienes el audio de Audible tal cual, con los capítulos y la portada incluidos."
+      ],
+      [
+        "Elige la calidad",
+        "Elige Alta o Normal para tus descargas."
+      ],
+      [
+        "Audible en Discover",
+        "Las listas de más vendidos de Audible aparecen en Discover, y cada libro enlaza a su página de Audible."
+      ]
+    ],
+    "nextRelease": "Próxima versión"
   },
   "it": {
     "htmlLang": "it",
@@ -1893,9 +2949,8 @@
     "altPage": "La pagina {name} di ABM",
     "whyEyebrow": "Perché ABM",
     "whyH2": "Fatto per lo scaffale, non appiccicato sopra.",
-    "shotsEyebrow": "Screenshot",
+    "shotsEyebrow": "Guardalo all'opera",
     "shotsH2": "È proprio lui.",
-    "shotsAria": "Screenshot, scorri di lato",
     "getItEyebrow": "Scaricalo",
     "installH2": "Gira con un solo file.",
     "buildP": "<b>Compilalo dai sorgenti.</b> Da un clone del repo, sostituisci <code>image:</code> con <code>build: .</code> e lancia <code>docker compose up -d --build</code>.",
@@ -2012,16 +3067,6 @@
         "7 supportati"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Libreria",
-      "Libro",
-      "Serie",
-      "Calendario",
-      "Cercati",
-      "Profili",
-      "Conversioni"
-    ],
     "installSteps": [
       [
         "Salvalo",
@@ -2099,7 +3144,150 @@
       ]
     ],
     "coming": "In arrivo",
-    "translatorNote": "Questa pagina è stata tradotta automaticamente. Se l'italiano è la tua lingua madre e ti va di aiutarmi a migliorarla, scrivimi a {mail}."
+    "translatorNote": "Questa pagina è stata tradotta automaticamente. Se l'italiano è la tua lingua madre e ti va di aiutarmi a migliorarla, scrivimi a {mail}.",
+    "shotsP": "Ogni screenshot è l'app vera, che gira su una libreria demo inventata. Scegli una sezione, poi una vista. Clicca su uno screenshot per vederlo a grandezza piena.",
+    "areasAria": "Sezioni di ABM",
+    "viewsAria": "Viste di {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Libreria",
+        "Tre modi di guardare lo stesso scaffale: copertine, copertine con la trama, o una tabella che puoi ordinare per qualsiasi cosa. C'è anche un tema chiaro.",
+        [
+          "Poster",
+          "Panoramica",
+          "Tabella",
+          "Tema chiaro"
+        ]
+      ],
+      [
+        "Libri",
+        "Ogni libro ha la sua pagina: chi l'ha scritto e chi lo legge, che posto occupa nella serie, ogni capitolo e ogni file su disco con la sua qualità.",
+        [
+          "Panoramica",
+          "Capitoli",
+          "File"
+        ]
+      ],
+      [
+        "Serie e autori",
+        "Anche serie e autori hanno le loro pagine, così vedi cosa hai e cosa manca ancora. I narratori avranno la loro pagina più avanti.",
+        [
+          "Serie",
+          "Una serie",
+          "Autori",
+          "Un autore"
+        ]
+      ],
+      [
+        "Trovare libri",
+        "Discover mostra le novità e le uscite in arrivo. Cercati elenca quello che manca o è ancora sotto il tuo cutoff di qualità, e il calendario mostra quando escono i libri che segui.",
+        [
+          "Novità",
+          "In arrivo",
+          "Mancanti",
+          "Cutoff non raggiunto",
+          "Calendario"
+        ]
+      ],
+      [
+        "Importa e converti",
+        "Indica ad ABM i libri che hai già e controlla ogni abbinamento prima che si sposti qualcosa. Le conversioni uniscono e dividono i file e ne rifanno i capitoli.",
+        [
+          "Importa libreria",
+          "Abbinamento",
+          "Conversioni"
+        ]
+      ],
+      [
+        "Impostazioni",
+        "Se hai configurato Sonarr, conosci già la struttura: gestione dei media, profili, quali metadati vengono scritti e dove, e come girano le conversioni.",
+        [
+          "Gestione media",
+          "Profili",
+          "Metadati",
+          "Conversioni",
+          "Audible",
+          "Interfaccia"
+        ]
+      ],
+      [
+        "Sistema",
+        "Niente succede di nascosto: una dashboard, i task pianificati, un registro attività di cosa è successo a quale libro, gli eventi, i file di log e i backup.",
+        [
+          "Dashboard",
+          "Task",
+          "Registro attività",
+          "Eventi",
+          "Log",
+          "Backup"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Sul tuo telefono",
+    "phoneH2": "Fatto anche per il telefono.",
+    "phoneP": "ABM funziona già sul telefono, e la prossima versione dà a ogni pagina un layout tutto suo per il telefono. Questi screenshot vengono da quella versione.",
+    "phoneShots": [
+      "Libreria",
+      "Un libro",
+      "Cercati"
+    ],
+    "phoneDiffs": [
+      [
+        "Una barra di schede sotto il pollice",
+        "Libreria, Attività, Cercati, Impostazioni e Sistema stanno in basso, e i loro menu salgono da lì."
+      ],
+      [
+        "Ogni vista della libreria",
+        "Poster, panoramica e tabella funzionano a qualsiasi larghezza. Non si nasconde niente solo perché lo schermo è piccolo."
+      ],
+      [
+        "Card invece di tabelle larghe",
+        "Cercati, Task e le altre liste lunghe diventano card che leggi senza scorrere di lato."
+      ],
+      [
+        "Pannelli invece di popup",
+        "Ordinare, aggiungere un libro e scegliere un risultato di ricerca si aprono in pannelli dal basso, e il tasto indietro li chiude."
+      ],
+      [
+        "Non manca niente",
+        "Impostazioni, Sistema e Importa libreria ci sono tutti. Non è una modalità mobile ridotta."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Porta la tua libreria Audible.",
+    "audP": "Se compri su Audible, ABM si collega al tuo account e tratta i libri che possiedi come parte della tua libreria. Scarica sempre e solo libri che appartengono al tuo account.",
+    "aud": [
+      [
+        "Collega il tuo account",
+        "Scegli il tuo marketplace e accedi direttamente sulla pagina di Amazon. ABM non vede mai la tua password. Tiene solo i token che Audible restituisce, cifrati con la chiave segreta della tua installazione. Funziona anche con più account."
+      ],
+      [
+        "Sincronizza la libreria",
+        "Secondo una pianificazione o ogni volta che premi sincronizza, ABM importa tutto quello che possiedi e lo elenca nella sua pagina Libreria Audible, segnando cosa c'è già sul tuo scaffale."
+      ],
+      [
+        "Aggiungi e scarica",
+        "Da lì aggiungi libri alla tua libreria, li scarichi, o tutte e due le cose, uno alla volta o in blocco."
+      ],
+      [
+        "Rispecchia tutto",
+        "Attiva il mirroring e ogni libro che compri viene aggiunto e scaricato dopo ogni sincronizzazione, un gruppo alla volta. I titoli del Plus Catalog e i noleggi restano fuori, e un libro che esce dal tuo account Audible resta in ABM."
+      ],
+      [
+        "M4B intatto",
+        "I download vengono decifrati in M4B senza ricodifica, così hai l'audio di Audible esattamente com'era, con capitoli e copertina inclusi."
+      ],
+      [
+        "Scegli la qualità",
+        "Scegli Alta o Normale per i tuoi download."
+      ],
+      [
+        "Audible in Discover",
+        "Le classifiche dei più venduti di Audible compaiono in Discover, e ogni libro rimanda alla sua pagina Audible."
+      ]
+    ],
+    "nextRelease": "Prossima versione"
   },
   "pt-br": {
     "htmlLang": "pt-BR",
@@ -2127,9 +3315,8 @@
     "altPage": "A página {name} do ABM",
     "whyEyebrow": "Por que o ABM",
     "whyH2": "Feito para a estante, não remendado.",
-    "shotsEyebrow": "Capturas de tela",
+    "shotsEyebrow": "Ver funcionando",
     "shotsH2": "Isso aqui é de verdade.",
-    "shotsAria": "Capturas de tela, role para o lado",
     "getItEyebrow": "Instale",
     "installH2": "Rodando com um arquivo só.",
     "buildP": "<b>Compilar a partir do código-fonte.</b> Num clone do repositório, troque <code>image:</code> por <code>build: .</code> e rode <code>docker compose up -d --build</code>.",
@@ -2246,16 +3433,6 @@
         "7 suportados"
       ]
     ],
-    "shots": [
-      "Painel",
-      "Biblioteca",
-      "Livro",
-      "Série",
-      "Calendário",
-      "Desejados",
-      "Perfis",
-      "Conversões"
-    ],
     "installSteps": [
       [
         "Salve",
@@ -2333,7 +3510,150 @@
       ]
     ],
     "coming": "Em breve",
-    "translatorNote": "Esta página foi traduzida por máquina. Se português do Brasil é a sua língua nativa e você quiser ajudar a melhorar a tradução, me mande um e-mail em {mail}."
+    "translatorNote": "Esta página foi traduzida por máquina. Se português do Brasil é a sua língua nativa e você quiser ajudar a melhorar a tradução, me mande um e-mail em {mail}.",
+    "shotsP": "Cada captura de tela é o app de verdade, rodando numa biblioteca de demonstração inventada. Escolha uma área e depois uma visualização. Clique em qualquer captura para ver em tamanho real.",
+    "areasAria": "Áreas do ABM",
+    "viewsAria": "Visualizações de {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Biblioteca",
+        "Três jeitos de olhar a mesma estante: capas, capas com a sinopse, ou uma tabela que você ordena por qualquer coisa. Também tem um tema claro.",
+        [
+          "Pôsteres",
+          "Visão geral",
+          "Tabela",
+          "Tema claro"
+        ]
+      ],
+      [
+        "Livros",
+        "Cada livro ganha sua própria página: quem escreveu e quem narrou, a posição na série, cada capítulo e cada arquivo no disco com sua qualidade.",
+        [
+          "Visão geral",
+          "Capítulos",
+          "Arquivos"
+        ]
+      ],
+      [
+        "Séries e autores",
+        "Séries e autores também têm suas próprias páginas, para você ver o que tem e o que ainda falta. Os narradores ganham uma página própria mais adiante.",
+        [
+          "Séries",
+          "Uma série",
+          "Autores",
+          "Um autor"
+        ]
+      ],
+      [
+        "Encontrar livros",
+        "O Discover mostra lançamentos novos e os que estão por vir. Desejados lista o que falta ou ainda está abaixo do seu cutoff de qualidade, e o calendário mostra quando saem os livros que você monitora.",
+        [
+          "Lançamentos",
+          "Em breve",
+          "Faltando",
+          "Cutoff não atingido",
+          "Calendário"
+        ]
+      ],
+      [
+        "Importar e converter",
+        "Aponte o ABM para os livros que você já tem e confira cada correspondência antes de qualquer coisa ser movida. As conversões juntam e dividem arquivos e refazem os capítulos.",
+        [
+          "Importar biblioteca",
+          "Correspondência",
+          "Conversões"
+        ]
+      ],
+      [
+        "Configurações",
+        "Se você já configurou o Sonarr, conhece o formato: gerenciamento de mídia, perfis, quais metadados são gravados e onde, e como as conversões rodam.",
+        [
+          "Gerenciamento de mídia",
+          "Perfis",
+          "Metadados",
+          "Conversões",
+          "Audible",
+          "Interface"
+        ]
+      ],
+      [
+        "Sistema",
+        "Nada acontece escondido: um painel, tarefas agendadas, um registro de atividades do que aconteceu com cada livro, eventos, arquivos de log e backups.",
+        [
+          "Painel",
+          "Tarefas",
+          "Registro de atividades",
+          "Eventos",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "No seu celular",
+    "phoneH2": "Feito para celular também.",
+    "phoneP": "O ABM já funciona no celular, e a próxima versão dá a cada página um layout próprio para celular. Essas capturas são dessa versão.",
+    "phoneShots": [
+      "Biblioteca",
+      "Um livro",
+      "Desejados"
+    ],
+    "phoneDiffs": [
+      [
+        "Uma barra de abas debaixo do polegar",
+        "Biblioteca, Atividade, Desejados, Configurações e Sistema ficam na parte de baixo, e os menus deles sobem a partir dali."
+      ],
+      [
+        "Todas as visualizações da biblioteca",
+        "Pôsteres, visão geral e tabela funcionam em qualquer largura. Nada fica escondido só porque a tela é pequena."
+      ],
+      [
+        "Cards em vez de tabelas largas",
+        "Desejados, Tarefas e as outras listas longas viram cards que você lê sem rolar para o lado."
+      ],
+      [
+        "Painéis em vez de pop-ups",
+        "Ordenar, adicionar um livro e escolher um resultado de busca abrem em painéis que sobem de baixo, e o botão voltar fecha eles."
+      ],
+      [
+        "Nada ficou de fora",
+        "Configurações, Sistema e Importar biblioteca estão todos lá. Não é um modo mobile capado."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Traga sua biblioteca da Audible.",
+    "audP": "Se você compra na Audible, o ABM se conecta à sua conta e trata os livros que você tem como parte da sua biblioteca. Ele só baixa livros que pertencem à sua própria conta.",
+    "aud": [
+      [
+        "Conecte sua conta",
+        "Escolha sua loja e faça login na própria página da Amazon. O ABM nunca vê sua senha. Ele guarda só os tokens que a Audible devolve, criptografados com a chave secreta da sua instalação. Mais de uma conta também funciona."
+      ],
+      [
+        "Sincronize sua biblioteca",
+        "Num agendamento ou sempre que você clicar em sincronizar, o ABM puxa tudo o que você tem e lista numa página própria, a Biblioteca da Audible, marcando o que já está na sua estante."
+      ],
+      [
+        "Adicione e baixe",
+        "A partir dali, adicione livros à sua biblioteca, baixe, ou os dois, um de cada vez ou em lote."
+      ],
+      [
+        "Espelhe tudo",
+        "Ative o espelhamento e cada livro que você comprar é adicionado e baixado depois de cada sincronização, um lote por vez. Títulos do Plus Catalog e aluguéis ficam de fora, e um livro que sai da sua conta da Audible continua no ABM."
+      ],
+      [
+        "M4B intocado",
+        "Os downloads são descriptografados para M4B sem recodificar, então você recebe o áudio da Audible exatamente como era, com os capítulos e a capa embutidos."
+      ],
+      [
+        "Escolha a qualidade",
+        "Escolha Alta ou Normal para seus downloads."
+      ],
+      [
+        "Audible no Discover",
+        "As listas de mais vendidos da Audible aparecem no Discover, e cada livro leva de volta à sua página na Audible."
+      ]
+    ],
+    "nextRelease": "Próxima versão"
   },
   "ja": {
     "htmlLang": "ja",
@@ -2361,9 +3681,8 @@
     "altPage": "ABM の{name}ページ",
     "whyEyebrow": "ABM を選ぶ理由",
     "whyH2": "後付けじゃなく、本棚のために作りました。",
-    "shotsEyebrow": "スクリーンショット",
+    "shotsEyebrow": "動いているところを見る",
     "shotsH2": "これが実際の画面です。",
-    "shotsAria": "スクリーンショット（横にスクロールできます）",
     "getItEyebrow": "入手する",
     "installH2": "ファイル1つで動きます。",
     "buildP": "<b>ソースからビルドする。</b>リポジトリをクローンして、<code>image:</code> を <code>build: .</code> に書き換え、<code>docker compose up -d --build</code> を実行します。",
@@ -2480,16 +3799,6 @@
         "7種類に対応"
       ]
     ],
-    "shots": [
-      "ダッシュボード",
-      "ライブラリ",
-      "本",
-      "シリーズ",
-      "カレンダー",
-      "未入手",
-      "プロファイル",
-      "変換"
-    ],
     "installSteps": [
       [
         "保存する",
@@ -2567,7 +3876,150 @@
         "LXC のインストールスクリプト"
       ]
     ],
-    "coming": "予定"
+    "coming": "予定",
+    "shotsP": "スクリーンショットはどれも本物のアプリで、架空のデモ用ライブラリで動かしています。エリアを選んで、次に画面を選んでください。スクリーンショットをクリックすると原寸で見られます。",
+    "areasAria": "ABM のエリア",
+    "viewsAria": "{area}の画面",
+    "altView": "ABM、{area}：{view}",
+    "areas": [
+      [
+        "ライブラリ",
+        "同じ本棚を3通りで見られます。表紙だけ、表紙とあらすじ、それに何でも並べ替えられる表。ライトテーマもあります。",
+        [
+          "ポスター",
+          "概要",
+          "表",
+          "ライトテーマ"
+        ]
+      ],
+      [
+        "本",
+        "本にはそれぞれ専用のページがあります。著者とナレーター、シリーズの何巻目か、全チャプター、そしてディスク上の全ファイルとその品質まで。",
+        [
+          "概要",
+          "チャプター",
+          "ファイル"
+        ]
+      ],
+      [
+        "シリーズと著者",
+        "シリーズと著者にも専用のページがあるので、持っているものとまだ足りないものがわかります。ナレーターのページもあとで追加します。",
+        [
+          "シリーズ一覧",
+          "シリーズ詳細",
+          "著者一覧",
+          "著者詳細"
+        ]
+      ],
+      [
+        "本を探す",
+        "ディスカバーでは新刊と近日発売の本をチェックできます。未入手には足りない本や品質のカットオフに届いていない本が並び、カレンダーでは監視している本の発売日がわかります。",
+        [
+          "新刊",
+          "近日発売",
+          "未入手",
+          "カットオフ未達",
+          "カレンダー"
+        ]
+      ],
+      [
+        "インポートと変換",
+        "手持ちの本の場所を ABM に教えれば、何かを動かす前にマッチをひとつ残らず確認できます。変換では、ファイルの結合や分割、チャプターの付け直しができます。",
+        [
+          "ライブラリのインポート",
+          "マッチング",
+          "変換"
+        ]
+      ],
+      [
+        "設定",
+        "Sonarr を設定したことがあれば、構成はおなじみのはず。メディア管理、プロファイル、どのメタデータをどこに書き込むか、変換をどう動かすか。",
+        [
+          "メディア管理",
+          "プロファイル",
+          "メタデータ",
+          "変換",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "システム",
+        "見えないところで勝手に何かが起きることはありません。ダッシュボード、スケジュールされたタスク、どの本に何があったかがわかるアクティビティログ、イベント、ログファイル、バックアップがそろっています。",
+        [
+          "ダッシュボード",
+          "タスク",
+          "アクティビティログ",
+          "イベント",
+          "ログ",
+          "バックアップ"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "スマホで",
+    "phoneH2": "スマホでも使いやすく。",
+    "phoneP": "ABM は今でもスマホで使えますが、次のリリースではすべてのページにスマホ専用のレイアウトが付きます。ここのスクリーンショットはそのリリースのものです。",
+    "phoneShots": [
+      "ライブラリ",
+      "本",
+      "未入手"
+    ],
+    "phoneDiffs": [
+      [
+        "親指の届くところにタブバー",
+        "ライブラリ、アクティビティ、未入手、設定、システムが画面の下に並び、メニューもそこからスライドして出てきます。"
+      ],
+      [
+        "ライブラリの表示はすべて使える",
+        "ポスター、概要、表のどれも、画面の幅を問わず使えます。画面が小さいからといって隠れるものはありません。"
+      ],
+      [
+        "横長の表の代わりにカード",
+        "未入手やタスクなどの長いリストは、横にスクロールしなくても読めるカードになります。"
+      ],
+      [
+        "ポップアップの代わりにシート",
+        "並べ替え、本の追加、検索結果の選択は画面の下からシートで開き、戻るボタンで閉じられます。"
+      ],
+      [
+        "削った機能はなし",
+        "設定もシステムもライブラリのインポートも、全部そろっています。機能を絞ったモバイル版ではありません。"
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Audible のライブラリも一緒に。",
+    "audP": "Audible で本を買っているなら、ABM がアカウントに接続して、持っている本をライブラリの一部として扱います。ダウンロードするのは、あなた自身のアカウントが持っている本だけです。",
+    "aud": [
+      [
+        "アカウントを接続",
+        "マーケットプレイスを選んで、Amazon 自身のページでログインします。ABM がパスワードを見ることはありません。保存するのは Audible が返すトークンだけで、インストールごとの秘密鍵で暗号化します。複数のアカウントにも対応しています。"
+      ],
+      [
+        "ライブラリを同期",
+        "スケジュールに沿って、または同期ボタンを押したときに、ABM は持っている本を全部取り込み、専用の Audible ライブラリページに並べます。すでに本棚にある本には印が付きます。"
+      ],
+      [
+        "追加してダウンロード",
+        "そこから本をライブラリに追加したり、ダウンロードしたり、その両方をしたりできます。1冊ずつでも、まとめてでも。"
+      ],
+      [
+        "まるごとミラーリング",
+        "ミラーリングをオンにすると、同期のたびに買った本が少しずつ追加され、ダウンロードされます。Plus Catalog のタイトルとレンタルは対象外で、Audible アカウントからなくなった本も ABM には残ります。"
+      ],
+      [
+        "手を加えない M4B",
+        "ダウンロードは再エンコードせずに M4B へ復号するので、Audible の音声がそのまま、チャプターと表紙も入った状態で手に入ります。"
+      ],
+      [
+        "品質を選べる",
+        "ダウンロードの品質は High か Normal から選べます。"
+      ],
+      [
+        "ディスカバーにも Audible",
+        "Audible のベストセラーリストがディスカバーに表示され、どの本も Audible のページにリンクしています。"
+      ]
+    ],
+    "nextRelease": "次のリリース"
   },
   "nl": {
     "htmlLang": "nl",
@@ -2595,9 +4047,8 @@
     "altPage": "De pagina {name} van ABM",
     "whyEyebrow": "Waarom ABM",
     "whyH2": "Gebouwd voor de boekenplank, niet erop geschroefd.",
-    "shotsEyebrow": "Screenshots",
+    "shotsEyebrow": "Zie het in actie",
     "shotsH2": "Dit is het echte werk.",
-    "shotsAria": "Screenshots, scroll opzij",
     "getItEyebrow": "Downloaden",
     "installH2": "Draaiend met één bestand.",
     "buildP": "<b>Zelf bouwen vanaf de broncode.</b> Vervang in een clone van de repo <code>image:</code> door <code>build: .</code> en draai <code>docker compose up -d --build</code>.",
@@ -2714,16 +4165,6 @@
         "7 ondersteund"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Bibliotheek",
-      "Boek",
-      "Serie",
-      "Agenda",
-      "Gewenst",
-      "Profielen",
-      "Conversies"
-    ],
     "installSteps": [
       [
         "Opslaan",
@@ -2801,7 +4242,150 @@
       ]
     ],
     "coming": "Binnenkort",
-    "translatorNote": "Deze pagina is machinaal vertaald. Is Nederlands je moedertaal en wil je helpen hem beter te maken? Mail me op {mail}."
+    "translatorNote": "Deze pagina is machinaal vertaald. Is Nederlands je moedertaal en wil je helpen hem beter te maken? Mail me op {mail}.",
+    "shotsP": "Elke screenshot is de echte app, draaiend op een verzonnen demobibliotheek. Kies een onderdeel en dan een weergave. Klik op een screenshot om hem op volle grootte te zien.",
+    "areasAria": "Onderdelen van ABM",
+    "viewsAria": "Weergaven van {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Bibliotheek",
+        "Drie manieren om naar dezelfde plank te kijken: covers, covers met de samenvatting, of een tabel die je op alles kunt sorteren. Er is ook een licht thema.",
+        [
+          "Posters",
+          "Overzicht",
+          "Tabel",
+          "Licht thema"
+        ]
+      ],
+      [
+        "Boeken",
+        "Elk boek krijgt een eigen pagina: wie het schreef en wie het inlas, waar het in de serie staat, elk hoofdstuk en elk bestand op schijf met de kwaliteit ervan.",
+        [
+          "Overzicht",
+          "Hoofdstukken",
+          "Bestanden"
+        ]
+      ],
+      [
+        "Series & auteurs",
+        "Series en auteurs hebben ook hun eigen pagina's, zodat je ziet wat je hebt en wat er nog ontbreekt. Vertellers krijgen later een eigen pagina.",
+        [
+          "Series",
+          "Eén serie",
+          "Auteurs",
+          "Eén auteur"
+        ]
+      ],
+      [
+        "Boeken vinden",
+        "Discover toont nieuwe en aankomende releases. Gewenst laat zien wat er ontbreekt of nog onder je kwaliteits-cutoff zit, en de agenda laat zien wanneer de boeken die je volgt uitkomen.",
+        [
+          "Nieuw",
+          "Binnenkort",
+          "Ontbrekend",
+          "Cutoff niet gehaald",
+          "Agenda"
+        ]
+      ],
+      [
+        "Importeren & converteren",
+        "Wijs ABM de boeken aan die je al hebt en controleer elke match voordat er iets verplaatst wordt. Conversies voegen bestanden samen, splitsen ze en delen de hoofdstukken opnieuw in.",
+        [
+          "Bibliotheekimport",
+          "Matchen",
+          "Conversies"
+        ]
+      ],
+      [
+        "Instellingen",
+        "Heb je Sonarr ingericht, dan ken je de opbouw: mediabeheer, profielen, welke metadata waar wordt weggeschreven, en hoe conversies draaien.",
+        [
+          "Mediabeheer",
+          "Profielen",
+          "Metadata",
+          "Conversies",
+          "Audible",
+          "Interface"
+        ]
+      ],
+      [
+        "Systeem",
+        "Niets gebeurt buiten beeld: een dashboard, geplande taken, een activiteitenlog van wat er met welk boek is gebeurd, gebeurtenissen, logbestanden en back-ups.",
+        [
+          "Dashboard",
+          "Taken",
+          "Activiteitenlog",
+          "Gebeurtenissen",
+          "Logs",
+          "Back-ups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Op je telefoon",
+    "phoneH2": "Ook gebouwd voor je telefoon.",
+    "phoneP": "ABM werkt nu al op een telefoon, en de volgende release geeft elke pagina een eigen telefoonlayout. Deze screenshots komen uit die release.",
+    "phoneShots": [
+      "Bibliotheek",
+      "Een boek",
+      "Gewenst"
+    ],
+    "phoneDiffs": [
+      [
+        "Een tabbalk onder je duim",
+        "Bibliotheek, Activiteit, Gewenst, Instellingen en Systeem staan onderaan, en hun menu's schuiven vanaf daar omhoog."
+      ],
+      [
+        "Elke bibliotheekweergave",
+        "Posters, overzicht en tabel werken op elke breedte. Er verdwijnt niets omdat het scherm klein is."
+      ],
+      [
+        "Kaarten in plaats van brede tabellen",
+        "Gewenst, Taken en de andere lange lijsten worden kaarten die je leest zonder opzij te scrollen."
+      ],
+      [
+        "Panelen in plaats van pop-ups",
+        "Sorteren, een boek toevoegen en een zoekresultaat kiezen openen als panelen van onderaf, en je terugknop sluit ze."
+      ],
+      [
+        "Niets weggelaten",
+        "Instellingen, Systeem en Bibliotheekimport zijn er allemaal. Het is geen uitgeklede mobiele modus."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Neem je Audible-bibliotheek mee.",
+    "audP": "Koop je bij Audible, dan maakt ABM verbinding met je account en behandelt het de boeken die je bezit als onderdeel van je bibliotheek. Het downloadt alleen boeken die van je eigen account zijn.",
+    "aud": [
+      [
+        "Koppel je account",
+        "Kies je marktplaats en log in op de eigen pagina van Amazon. ABM ziet je wachtwoord nooit. Het bewaart alleen de tokens die Audible teruggeeft, versleuteld met de geheime sleutel van je installatie. Meer dan één account kan ook."
+      ],
+      [
+        "Synchroniseer je bibliotheek",
+        "Volgens een schema of wanneer je op synchroniseren drukt, haalt ABM alles binnen wat je bezit en zet het op een eigen pagina, Audible-bibliotheek, met een markering bij wat al op je plank staat."
+      ],
+      [
+        "Toevoegen en downloaden",
+        "Van daaruit voeg je boeken toe aan je bibliotheek, download je ze, of allebei, één voor één of in bulk."
+      ],
+      [
+        "Spiegel alles",
+        "Zet spiegelen aan en elk boek dat je koopt wordt na elke synchronisatie toegevoegd en gedownload, een batch tegelijk. Titels uit de Plus Catalog en huurboeken worden overgeslagen, en een boek dat uit je Audible-account verdwijnt, blijft in ABM."
+      ],
+      [
+        "Onaangeroerde M4B",
+        "Downloads worden zonder hercodering ontsleuteld naar M4B, dus je krijgt de audio van Audible precies zoals die was, met hoofdstukken en cover erin."
+      ],
+      [
+        "Kies de kwaliteit",
+        "Kies Hoog of Normaal voor je downloads."
+      ],
+      [
+        "Audible in Discover",
+        "De bestsellerlijsten van Audible verschijnen in Discover, en elk boek linkt terug naar zijn Audible-pagina."
+      ]
+    ],
+    "nextRelease": "Volgende release"
   },
   "pl": {
     "htmlLang": "pl",
@@ -2829,9 +4413,8 @@
     "altPage": "Strona {name} w ABM",
     "whyEyebrow": "Dlaczego ABM",
     "whyH2": "Zrobione pod półkę z audiobookami, a nie doklejone na siłę.",
-    "shotsEyebrow": "Zrzuty ekranu",
+    "shotsEyebrow": "Zobacz, jak działa",
     "shotsH2": "Tak to naprawdę wygląda.",
-    "shotsAria": "Zrzuty ekranu, przewijaj w bok",
     "getItEyebrow": "Pobierz",
     "installH2": "Działa z jednego pliku.",
     "buildP": "<b>Zbuduj ze źródeł.</b> W sklonowanym repo zamień <code>image:</code> na <code>build: .</code> i odpal <code>docker compose up -d --build</code>.",
@@ -2948,16 +4531,6 @@
         "7 obsługiwanych"
       ]
     ],
-    "shots": [
-      "Pulpit",
-      "Biblioteka",
-      "Książka",
-      "Seria",
-      "Kalendarz",
-      "Brakujące",
-      "Profile",
-      "Konwersje"
-    ],
     "installSteps": [
       [
         "Zapisz",
@@ -3035,7 +4608,150 @@
       ]
     ],
     "coming": "Wkrótce",
-    "translatorNote": "Ta strona została przetłumaczona maszynowo. Jeśli polski to twój język ojczysty i chcesz pomóc go poprawić, napisz do mnie: {mail}."
+    "translatorNote": "Ta strona została przetłumaczona maszynowo. Jeśli polski to twój język ojczysty i chcesz pomóc go poprawić, napisz do mnie: {mail}.",
+    "shotsP": "Każdy zrzut ekranu to prawdziwa aplikacja, działająca na zmyślonej bibliotece demo. Wybierz obszar, potem widok. Kliknij dowolny zrzut, żeby zobaczyć go w pełnym rozmiarze.",
+    "areasAria": "Obszary ABM",
+    "viewsAria": "Widoki: {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Biblioteka",
+        "Trzy sposoby patrzenia na tę samą półkę: okładki, okładki z opisem albo tabela, którą posortujesz po czymkolwiek. Jest też jasny motyw.",
+        [
+          "Plakaty",
+          "Przegląd",
+          "Tabela",
+          "Jasny motyw"
+        ]
+      ],
+      [
+        "Książki",
+        "Każda książka ma własną stronę: kto ją napisał i kto czyta, które miejsce zajmuje w serii, wszystkie rozdziały i każdy plik na dysku z jego jakością.",
+        [
+          "Przegląd",
+          "Rozdziały",
+          "Pliki"
+        ]
+      ],
+      [
+        "Serie i autorzy",
+        "Serie i autorzy też mają swoje strony, więc widzisz, co masz i czego wciąż brakuje. Lektorzy dostaną własną stronę później.",
+        [
+          "Serie",
+          "Jedna seria",
+          "Autorzy",
+          "Jeden autor"
+        ]
+      ],
+      [
+        "Szukanie książek",
+        "Discover pokazuje nowe i nadchodzące premiery. Wanted wypisuje, czego brakuje albo co wciąż jest poniżej twojego progu jakości, a kalendarz pokazuje, kiedy wychodzą monitorowane książki.",
+        [
+          "Nowości",
+          "Wkrótce",
+          "Brakujące",
+          "Poniżej progu",
+          "Kalendarz"
+        ]
+      ],
+      [
+        "Import i konwersja",
+        "Wskaż ABM książki, które już masz, i sprawdź każde dopasowanie, zanim cokolwiek się przeniesie. Konwersje scalają, dzielą i na nowo dzielą pliki na rozdziały.",
+        [
+          "Import biblioteki",
+          "Dopasowanie",
+          "Konwersje"
+        ]
+      ],
+      [
+        "Ustawienia",
+        "Jeśli konfigurowałeś Sonarra, znasz ten układ: zarządzanie mediami, profile, jakie metadane trafiają gdzie i jak działają konwersje.",
+        [
+          "Zarządzanie mediami",
+          "Profile",
+          "Metadane",
+          "Konwersje",
+          "Audible",
+          "Interfejs"
+        ]
+      ],
+      [
+        "System",
+        "Nic nie dzieje się po cichu: pulpit, zaplanowane zadania, dziennik aktywności z tym, co stało się z którą książką, zdarzenia, pliki logów i kopie zapasowe.",
+        [
+          "Pulpit",
+          "Zadania",
+          "Dziennik aktywności",
+          "Zdarzenia",
+          "Logi",
+          "Kopie zapasowe"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Na telefonie",
+    "phoneH2": "Zrobione także pod telefony.",
+    "phoneP": "ABM działa na telefonie już dziś, a w następnym wydaniu każda strona dostanie własny układ na telefon. Te zrzuty pochodzą właśnie z tego wydania.",
+    "phoneShots": [
+      "Biblioteka",
+      "Książka",
+      "Brakujące"
+    ],
+    "phoneDiffs": [
+      [
+        "Pasek kart pod kciukiem",
+        "Library, Activity, Wanted, Settings i System siedzą na dole ekranu, a ich menu wysuwają się stamtąd do góry."
+      ],
+      [
+        "Każdy widok biblioteki",
+        "Plakaty, przegląd i tabela działają przy każdej szerokości. Nic nie znika tylko dlatego, że ekran jest mały."
+      ],
+      [
+        "Karty zamiast szerokich tabel",
+        "Wanted, Tasks i inne długie listy zamieniają się w karty, które przeczytasz bez przewijania w bok."
+      ],
+      [
+        "Panele zamiast okienek",
+        "Sortowanie, dodawanie książki i wybór wyniku wyszukiwania otwierają się jako panele od dołu, a przycisk wstecz je zamyka."
+      ],
+      [
+        "Niczego nie brakuje",
+        "Settings, System i Library Import są na miejscu. To nie jest okrojony tryb mobilny."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Podłącz swoją bibliotekę z Audible.",
+    "audP": "Jeśli kupujesz na Audible, ABM łączy się z twoim kontem i traktuje książki, które masz, jako część twojej biblioteki. Pobiera wyłącznie książki należące do twojego własnego konta.",
+    "aud": [
+      [
+        "Połącz konto",
+        "Wybierz swój rynek i zaloguj się na stronie samego Amazona. ABM nigdy nie widzi twojego hasła. Trzyma tylko tokeny, które zwraca Audible, zaszyfrowane tajnym kluczem twojej instalacji. Można też podłączyć więcej niż jedno konto."
+      ],
+      [
+        "Synchronizuj bibliotekę",
+        "Według harmonogramu albo kiedy tylko klikniesz synchronizację, ABM ściąga listę wszystkiego, co masz, i pokazuje ją na osobnej stronie Audible Library, z oznaczeniem tego, co już stoi na twojej półce."
+      ],
+      [
+        "Dodawaj i pobieraj",
+        "Stamtąd dodajesz książki do biblioteki, pobierasz je albo jedno i drugie, pojedynczo albo hurtem."
+      ],
+      [
+        "Kopia lustrzana całości",
+        "Włącz kopię lustrzaną, a każda kupiona książka zostanie dodana i pobrana po każdej synchronizacji, partia po partii. Tytuły z Plus Catalog i wypożyczenia są pomijane, a książka, która zniknie z twojego konta Audible, zostaje w ABM."
+      ],
+      [
+        "Nietknięte M4B",
+        "Pobrane pliki są odszyfrowywane do M4B bez ponownego kodowania, więc dostajesz dźwięk z Audible dokładnie taki, jaki był, z wbudowanymi rozdziałami i okładką."
+      ],
+      [
+        "Wybierz jakość",
+        "Dla swoich pobrań wybierz High albo Normal."
+      ],
+      [
+        "Audible w Discover",
+        "Listy bestsellerów Audible pojawiają się w Discover, a każda książka prowadzi z powrotem do swojej strony na Audible."
+      ]
+    ],
+    "nextRelease": "W następnym wydaniu"
   },
   "zh-cn": {
     "htmlLang": "zh-CN",
@@ -3063,9 +4779,8 @@
     "altPage": "ABM 的 {name} 页面",
     "whyEyebrow": "为什么选 ABM",
     "whyH2": "为书架而生，不是硬加上去的。",
-    "shotsEyebrow": "截图",
+    "shotsEyebrow": "看看实际效果",
     "shotsH2": "这就是真实的样子。",
-    "shotsAria": "截图，可以左右滑动",
     "getItEyebrow": "获取",
     "installH2": "一个文件就能跑起来。",
     "buildP": "<b>从源码构建。</b>在克隆下来的仓库里，把 <code>image:</code> 换成 <code>build: .</code>，然后运行 <code>docker compose up -d --build</code>。",
@@ -3182,16 +4897,6 @@
         "支持 7 种"
       ]
     ],
-    "shots": [
-      "仪表盘",
-      "书库",
-      "书籍",
-      "系列",
-      "日历",
-      "想要",
-      "配置",
-      "转换"
-    ],
     "installSteps": [
       [
         "保存",
@@ -3269,7 +4974,150 @@
         "LXC 安装脚本"
       ]
     ],
-    "coming": "即将推出"
+    "coming": "即将推出",
+    "shotsP": "每张截图都是真实的应用，跑在一个虚构的演示书库上。先选一个区域，再选一个视图。点击任意截图就能看大图。",
+    "areasAria": "ABM 的各个区域",
+    "viewsAria": "{area}的视图",
+    "altView": "ABM，{area}：{view}",
+    "areas": [
+      [
+        "书库",
+        "同一个书架，三种看法：只看封面、封面加简介，或者一张能按任意字段排序的表格。还有浅色主题。",
+        [
+          "海报",
+          "概览",
+          "表格",
+          "浅色主题"
+        ]
+      ],
+      [
+        "书籍",
+        "每本书都有自己的页面：作者和讲述者是谁、在系列里排第几、每一个章节，以及磁盘上的每个文件和它的质量。",
+        [
+          "概览",
+          "章节",
+          "文件"
+        ]
+      ],
+      [
+        "系列与作者",
+        "系列和作者也有各自的页面，你能看到自己有哪些、还缺哪些。讲述者的页面以后也会有。",
+        [
+          "系列列表",
+          "单个系列",
+          "作者列表",
+          "单个作者"
+        ]
+      ],
+      [
+        "找书",
+        "发现页展示新书和即将推出的书。想要列表列出缺失的书和还没达到质量截止线的书，日历则告诉你监控的书什么时候出。",
+        [
+          "新书",
+          "即将推出",
+          "缺失",
+          "未达截止线",
+          "日历"
+        ]
+      ],
+      [
+        "导入与转换",
+        "把 ABM 指向你已有的书，在移动任何东西之前逐一核对每个匹配。转换可以合并、拆分文件，还能重新划分章节。",
+        [
+          "书库导入",
+          "匹配",
+          "转换"
+        ]
+      ],
+      [
+        "设置",
+        "如果你配置过 Sonarr，这套结构一定很眼熟：媒体管理、配置、哪些元数据写到哪里，以及转换怎么跑。",
+        [
+          "媒体管理",
+          "配置",
+          "元数据",
+          "转换",
+          "Audible",
+          "界面"
+        ]
+      ],
+      [
+        "系统",
+        "没有什么是在背后悄悄发生的：仪表盘、计划任务、记录每本书发生了什么的活动日志、事件、日志文件和备份，全都摆在明面上。",
+        [
+          "仪表盘",
+          "任务",
+          "活动日志",
+          "事件",
+          "日志",
+          "备份"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "手机上",
+    "phoneH2": "手机上也好用。",
+    "phoneP": "ABM 现在就能在手机上用，下个版本还会给每个页面配上专门的手机布局。这些截图就来自那个版本。",
+    "phoneShots": [
+      "书库",
+      "一本书",
+      "想要"
+    ],
+    "phoneDiffs": [
+      [
+        "拇指够得着的标签栏",
+        "书库、活动、想要、设置和系统排在屏幕底部，它们的菜单也从底部滑出来。"
+      ],
+      [
+        "每种书库视图都能用",
+        "海报、概览和表格在任何宽度下都能用，不会因为屏幕小就藏起什么。"
+      ],
+      [
+        "卡片代替宽表格",
+        "想要、任务和其他长列表会变成卡片，不用左右滑动也能看清。"
+      ],
+      [
+        "底部面板代替弹窗",
+        "排序、添加书籍和挑选搜索结果都会从底部弹出面板，按返回键就能关掉。"
+      ],
+      [
+        "一样不少",
+        "设置、系统和书库导入全都在，不是缩水的移动版。"
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "把你的 Audible 书库也带过来。",
+    "audP": "如果你在 Audible 上买书，ABM 可以连接你的账号，把你拥有的书当作书库的一部分。它只会下载你自己账号拥有的书。",
+    "aud": [
+      [
+        "连接账号",
+        "选好你的商城，在 Amazon 自己的页面上登录。ABM 永远看不到你的密码，只保存 Audible 返回的令牌，并用你这套安装的密钥加密。也支持多个账号。"
+      ],
+      [
+        "同步书库",
+        "按计划，或者在你点同步的时候，ABM 会拉取你拥有的所有书，列在专门的 Audible 书库页面上，并标出哪些已经在你的书架上。"
+      ],
+      [
+        "添加和下载",
+        "在那里你可以把书加入书库、下载，或者两者都做，一本一本来或者批量都行。"
+      ],
+      [
+        "整个镜像过来",
+        "打开镜像后，每次同步完，你买的每本书都会一批一批地自动添加并下载。Plus Catalog 的书和租借的书不包括在内，从你 Audible 账号里消失的书也会留在 ABM 里。"
+      ],
+      [
+        "原汁原味的 M4B",
+        "下载会解密成 M4B，不重新编码，所以你拿到的就是 Audible 原本的音频，章节和封面也都内嵌好了。"
+      ],
+      [
+        "选择质量",
+        "下载可以选 High 或 Normal 质量。"
+      ],
+      [
+        "发现页里的 Audible",
+        "Audible 的畅销榜会出现在发现页，每本书都链接回它的 Audible 页面。"
+      ]
+    ],
+    "nextRelease": "下个版本"
   },
   "zh-tw": {
     "htmlLang": "zh-TW",
@@ -3297,9 +5145,8 @@
     "altPage": "ABM 的{name}頁面",
     "whyEyebrow": "為什麼選 ABM",
     "whyH2": "為書架而生，不是硬加上去的。",
-    "shotsEyebrow": "截圖",
+    "shotsEyebrow": "看它實際運作",
     "shotsH2": "這就是實際的樣子。",
-    "shotsAria": "截圖，可以左右捲動",
     "getItEyebrow": "取得",
     "installH2": "一個檔案就跑起來。",
     "buildP": "<b>從原始碼建置。</b> 在 clone 下來的 repo 裡，把 <code>image:</code> 換成 <code>build: .</code>，然後執行 <code>docker compose up -d --build</code>。",
@@ -3416,16 +5263,6 @@
         "支援 7 種"
       ]
     ],
-    "shots": [
-      "儀表板",
-      "書庫",
-      "書籍",
-      "系列",
-      "行事曆",
-      "想要",
-      "設定檔",
-      "轉換"
-    ],
     "installSteps": [
       [
         "存檔",
@@ -3503,7 +5340,150 @@
       ]
     ],
     "coming": "即將推出",
-    "translatorNote": "這個頁面是機器翻譯的。如果繁體中文是你的母語，而且你願意幫忙讓它更好，寫信給我：{mail}。"
+    "translatorNote": "這個頁面是機器翻譯的。如果繁體中文是你的母語，而且你願意幫忙讓它更好，寫信給我：{mail}。",
+    "shotsP": "每張截圖都是真正的應用程式，跑在一個虛構的示範書庫上。先選一個區域，再選一個畫面。點任何一張截圖就能看完整大小。",
+    "areasAria": "ABM 的各個區域",
+    "viewsAria": "{area}的畫面",
+    "altView": "ABM，{area}：{view}",
+    "areas": [
+      [
+        "書庫",
+        "同一個書架，三種看法：只看封面、封面加簡介，或是一張可以依任何欄位排序的表格。也有淺色主題。",
+        [
+          "海報",
+          "概覽",
+          "表格",
+          "淺色主題"
+        ]
+      ],
+      [
+        "書籍",
+        "每本書都有自己的頁面：作者和朗讀者是誰、在系列中排第幾集、每一個章節，以及磁碟上的每個檔案和它的品質。",
+        [
+          "概覽",
+          "章節",
+          "檔案"
+        ]
+      ],
+      [
+        "系列與作者",
+        "系列和作者也有各自的頁面，讓你看到自己有哪些、還缺哪些。朗讀者之後也會有自己的頁面。",
+        [
+          "系列列表",
+          "單一系列",
+          "作者列表",
+          "單一作者"
+        ]
+      ],
+      [
+        "找書",
+        "探索頁會列出新書和即將推出的書。想要清單列出缺少的書和品質還沒達到門檻的書，行事曆則告訴你監控的書什麼時候推出。",
+        [
+          "新書",
+          "即將推出",
+          "缺少",
+          "未達門檻",
+          "行事曆"
+        ]
+      ],
+      [
+        "匯入與轉換",
+        "把 ABM 指向你已經有的書，在任何東西被搬動之前，逐一確認每個比對結果。轉換可以合併、分割檔案，以及重新切分章節。",
+        [
+          "書庫匯入",
+          "比對",
+          "轉換"
+        ]
+      ],
+      [
+        "設定",
+        "如果你設定過 Sonarr，這個架構你一定很熟：媒體管理、設定檔、哪些中繼資料寫到哪裡，以及轉換怎麼跑。",
+        [
+          "媒體管理",
+          "設定檔",
+          "中繼資料",
+          "轉換",
+          "Audible",
+          "介面"
+        ]
+      ],
+      [
+        "系統",
+        "沒有什麼事是在背後偷偷發生的：儀表板、排程工作、記錄哪本書發生了什麼事的活動紀錄、事件、記錄檔和備份，全都看得到。",
+        [
+          "儀表板",
+          "工作",
+          "活動紀錄",
+          "事件",
+          "記錄檔",
+          "備份"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "在手機上",
+    "phoneH2": "手機上也好用。",
+    "phoneP": "ABM 現在就能在手機上用，下一個版本還會讓每個頁面都有自己的手機版面。這些截圖就是來自那個版本。",
+    "phoneShots": [
+      "書庫",
+      "一本書",
+      "想要"
+    ],
+    "phoneDiffs": [
+      [
+        "拇指就按得到的分頁列",
+        "書庫、活動、想要、設定和系統都排在畫面底部，它們的選單也是從底部滑上來。"
+      ],
+      [
+        "每種書庫檢視都能用",
+        "海報、概覽和表格在任何寬度下都能用，不會因為螢幕小就藏起東西。"
+      ],
+      [
+        "用卡片取代寬表格",
+        "想要、工作和其他長清單會變成卡片，不用左右捲動也看得清楚。"
+      ],
+      [
+        "用底部面板取代彈出視窗",
+        "排序、新增書籍和挑選搜尋結果都會從底部打開面板，按返回鍵就能關掉。"
+      ],
+      [
+        "什麼都沒少",
+        "設定、系統和書庫匯入全都在，不是縮水的行動版。"
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "把你的 Audible 書庫一起帶來。",
+    "audP": "如果你在 Audible 買書，ABM 可以連上你的帳號，把你擁有的書當成書庫的一部分。它只會下載你自己帳號擁有的書。",
+    "aud": [
+      [
+        "連結帳號",
+        "選好你的市集，在 Amazon 自己的頁面登入。ABM 永遠看不到你的密碼，只會保存 Audible 回傳的權杖，並用你這套安裝的密鑰加密。也支援多個帳號。"
+      ],
+      [
+        "同步書庫",
+        "依排程，或在你按下同步時，ABM 會把你擁有的書全部拉進來，列在專屬的 Audible 書庫頁面上，並標出哪些已經在你的書架上。"
+      ],
+      [
+        "新增並下載",
+        "在那裡你可以把書加進書庫、下載，或兩個都做，一次一本或批次處理都可以。"
+      ],
+      [
+        "整個鏡像過來",
+        "開啟鏡像後，每次同步完，你買的每本書都會一批一批地自動新增並下載。Plus Catalog 的書和租借的書不包含在內，從你 Audible 帳號消失的書也會留在 ABM 裡。"
+      ],
+      [
+        "原封不動的 M4B",
+        "下載會解密成 M4B 而不重新編碼，所以你拿到的就是 Audible 原本的音訊，章節和封面也都內嵌好了。"
+      ],
+      [
+        "選擇品質",
+        "下載可以選 High 或 Normal 品質。"
+      ],
+      [
+        "探索頁裡的 Audible",
+        "Audible 的暢銷排行榜會出現在探索頁，每本書都會連回它的 Audible 頁面。"
+      ]
+    ],
+    "nextRelease": "下個版本"
   },
   "ko": {
     "htmlLang": "ko",
@@ -3531,9 +5511,8 @@
     "altPage": "ABM의 {name} 페이지",
     "whyEyebrow": "왜 ABM인가요",
     "whyH2": "덧붙인 기능이 아니라, 처음부터 서재를 위해 만들었어요.",
-    "shotsEyebrow": "스크린샷",
+    "shotsEyebrow": "실제 화면 보기",
     "shotsH2": "진짜 실행 화면이에요.",
-    "shotsAria": "스크린샷, 옆으로 스크롤하세요",
     "getItEyebrow": "받아 가기",
     "installH2": "파일 하나면 돌아가요.",
     "buildP": "<b>소스에서 빌드하기.</b> 저장소를 클론한 뒤 <code>image:</code>를 <code>build: .</code>로 바꾸고 <code>docker compose up -d --build</code>를 실행하세요.",
@@ -3650,16 +5629,6 @@
         "7종 지원"
       ]
     ],
-    "shots": [
-      "대시보드",
-      "라이브러리",
-      "책",
-      "시리즈",
-      "캘린더",
-      "원하는 책",
-      "프로필",
-      "변환"
-    ],
     "installSteps": [
       [
         "저장하기",
@@ -3737,7 +5706,150 @@
       ]
     ],
     "coming": "예정",
-    "translatorNote": "이 페이지는 기계 번역으로 만들었어요. 한국어가 모국어이고 번역을 더 다듬는 걸 도와주고 싶다면 {mail}로 메일 주세요."
+    "translatorNote": "이 페이지는 기계 번역으로 만들었어요. 한국어가 모국어이고 번역을 더 다듬는 걸 도와주고 싶다면 {mail}로 메일 주세요.",
+    "shotsP": "모든 스크린샷은 진짜 앱이고, 가상의 데모 라이브러리로 돌리고 있어요. 영역을 고른 다음 화면을 고르세요. 스크린샷을 클릭하면 원래 크기로 볼 수 있어요.",
+    "areasAria": "ABM의 영역",
+    "viewsAria": "{area} 화면",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "라이브러리",
+        "같은 책장을 세 가지로 볼 수 있어요. 표지만, 표지와 줄거리, 아니면 뭐든 기준으로 정렬할 수 있는 표로요. 라이트 테마도 있어요.",
+        [
+          "포스터",
+          "개요",
+          "표",
+          "라이트 테마"
+        ]
+      ],
+      [
+        "책",
+        "책마다 전용 페이지가 있어요. 누가 쓰고 누가 읽었는지, 시리즈에서 몇 번째인지, 모든 챕터, 그리고 디스크에 있는 모든 파일과 그 품질까지요.",
+        [
+          "개요",
+          "챕터",
+          "파일"
+        ]
+      ],
+      [
+        "시리즈와 작가",
+        "시리즈와 작가도 각자 페이지가 있어서, 뭘 갖고 있고 뭐가 아직 빠졌는지 볼 수 있어요. 내레이터 페이지는 나중에 생겨요.",
+        [
+          "시리즈 목록",
+          "시리즈 상세",
+          "작가 목록",
+          "작가 상세"
+        ]
+      ],
+      [
+        "책 찾기",
+        "탐색에서는 새로 나온 책과 곧 나올 책을 보여 줘요. 원하는 책에는 빠진 책이나 아직 품질 기준에 못 미치는 책이 모이고, 캘린더에서는 모니터링 중인 책이 언제 나오는지 볼 수 있어요.",
+        [
+          "신간",
+          "출간 예정",
+          "빠진 책",
+          "기준 미달",
+          "캘린더"
+        ]
+      ],
+      [
+        "가져오기와 변환",
+        "이미 가진 책이 어디 있는지 ABM에 알려 주고, 뭔가 옮기기 전에 모든 매칭을 하나하나 확인하세요. 변환으로 파일을 합치고, 나누고, 챕터를 다시 나눌 수 있어요.",
+        [
+          "라이브러리 가져오기",
+          "매칭",
+          "변환"
+        ]
+      ],
+      [
+        "설정",
+        "Sonarr를 설정해 봤다면 구성이 익숙할 거예요. 미디어 관리, 프로필, 어떤 메타데이터를 어디에 쓸지, 변환을 어떻게 돌릴지까지요.",
+        [
+          "미디어 관리",
+          "프로필",
+          "메타데이터",
+          "변환",
+          "Audible",
+          "UI"
+        ]
+      ],
+      [
+        "시스템",
+        "보이지 않는 곳에서 몰래 일어나는 일은 없어요. 대시보드, 예약된 작업, 어떤 책에 무슨 일이 있었는지 남기는 활동 로그, 이벤트, 로그 파일, 백업까지 다 보여요.",
+        [
+          "대시보드",
+          "작업",
+          "활동 로그",
+          "이벤트",
+          "로그",
+          "백업"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "휴대폰에서",
+    "phoneH2": "휴대폰에서도 편하게.",
+    "phoneP": "ABM은 지금도 휴대폰에서 쓸 수 있고, 다음 릴리스에서는 모든 페이지에 휴대폰 전용 레이아웃이 생겨요. 이 스크린샷들은 그 릴리스에서 찍었어요.",
+    "phoneShots": [
+      "라이브러리",
+      "책 한 권",
+      "원하는 책"
+    ],
+    "phoneDiffs": [
+      [
+        "엄지가 닿는 곳에 탭 바",
+        "라이브러리, 활동, 원하는 책, 설정, 시스템이 화면 아래에 있고, 메뉴도 거기서 위로 올라와요."
+      ],
+      [
+        "모든 라이브러리 보기 지원",
+        "포스터, 개요, 표 모두 어떤 너비에서든 잘 돼요. 화면이 작다고 숨겨지는 건 없어요."
+      ],
+      [
+        "넓은 표 대신 카드",
+        "원하는 책, 작업 같은 긴 목록은 옆으로 스크롤하지 않아도 읽을 수 있는 카드로 바뀌어요."
+      ],
+      [
+        "팝업 대신 시트",
+        "정렬, 책 추가, 검색 결과 고르기는 아래에서 시트로 열리고, 뒤로 가기 버튼으로 닫혀요."
+      ],
+      [
+        "빠진 건 없어요",
+        "설정, 시스템, 라이브러리 가져오기까지 전부 있어요. 기능을 줄인 모바일 모드가 아니에요."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Audible 라이브러리도 가져오세요.",
+    "audP": "Audible에서 책을 산다면, ABM이 계정에 연결해서 내가 가진 책을 라이브러리의 일부로 다뤄요. 다운로드하는 건 언제나 내 계정이 소유한 책뿐이에요.",
+    "aud": [
+      [
+        "계정 연결하기",
+        "마켓플레이스를 고르고 Amazon 자체 페이지에서 로그인하세요. ABM은 비밀번호를 절대 보지 않아요. Audible이 돌려주는 토큰만 저장하고, 설치마다 있는 비밀 키로 암호화해요. 계정 여러 개도 연결할 수 있어요."
+      ],
+      [
+        "라이브러리 동기화",
+        "일정에 맞춰, 또는 동기화 버튼을 누를 때마다 ABM이 내가 가진 책을 전부 가져와서 전용 Audible 라이브러리 페이지에 보여 줘요. 이미 책장에 있는 책은 따로 표시해 두고요."
+      ],
+      [
+        "추가하고 다운로드하기",
+        "거기서 책을 라이브러리에 추가하거나, 다운로드하거나, 둘 다 할 수 있어요. 한 권씩도, 한꺼번에도요."
+      ],
+      [
+        "통째로 미러링",
+        "미러링을 켜면 동기화할 때마다 산 책이 한 묶음씩 추가되고 다운로드돼요. Plus Catalog 타이틀과 대여한 책은 빠지고, Audible 계정에서 사라진 책도 ABM에는 그대로 남아요."
+      ],
+      [
+        "손대지 않은 M4B",
+        "다운로드한 파일은 다시 인코딩하지 않고 M4B로 복호화해요. 그래서 Audible 오디오를 원래 그대로, 챕터와 표지까지 담긴 채로 받을 수 있어요."
+      ],
+      [
+        "품질 고르기",
+        "다운로드 품질은 High나 Normal 중에서 고르세요."
+      ],
+      [
+        "탐색에도 Audible",
+        "Audible 베스트셀러 목록이 탐색에 나오고, 모든 책이 Audible 페이지로 연결돼요."
+      ]
+    ],
+    "nextRelease": "다음 릴리스"
   },
   "sv": {
     "htmlLang": "sv",
@@ -3765,9 +5877,8 @@
     "altPage": "ABM:s sida {name}",
     "whyEyebrow": "Varför ABM",
     "whyH2": "Byggd för bokhyllan, inte påskruvad i efterhand.",
-    "shotsEyebrow": "Skärmbilder",
+    "shotsEyebrow": "Se den i drift",
     "shotsH2": "Så här ser den ut på riktigt.",
-    "shotsAria": "Skärmbilder, scrolla i sidled",
     "getItEyebrow": "Skaffa den",
     "installH2": "Igång med en enda fil.",
     "buildP": "<b>Bygg från källkoden.</b> I en klon av repot byter du <code>image:</code> mot <code>build: .</code> och kör <code>docker compose up -d --build</code>.",
@@ -3884,16 +5995,6 @@
         "7 som stöds"
       ]
     ],
-    "shots": [
-      "Översikt",
-      "Bibliotek",
-      "Bok",
-      "Serie",
-      "Kalender",
-      "Önskat",
-      "Profiler",
-      "Konverteringar"
-    ],
     "installSteps": [
       [
         "Spara den",
@@ -3971,7 +6072,150 @@
       ]
     ],
     "coming": "Kommer snart",
-    "translatorNote": "Den här sidan är maskinöversatt. Om svenska är ditt modersmål och du vill hjälpa till att göra översättningen bättre, mejla mig på {mail}."
+    "translatorNote": "Den här sidan är maskinöversatt. Om svenska är ditt modersmål och du vill hjälpa till att göra översättningen bättre, mejla mig på {mail}.",
+    "shotsP": "Varje skärmbild är den riktiga appen, igång med ett påhittat demobibliotek. Välj ett område och sedan en vy. Klicka på en skärmbild för att se den i full storlek.",
+    "areasAria": "Områden i ABM",
+    "viewsAria": "Vyer för {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Bibliotek",
+        "Tre sätt att se på samma hylla: omslag, omslag med beskrivning eller en tabell du kan sortera på vad som helst. Det finns ett ljust tema också.",
+        [
+          "Affischer",
+          "Översikt",
+          "Tabell",
+          "Ljust tema"
+        ]
+      ],
+      [
+        "Böcker",
+        "Varje bok får en egen sida: vem som skrev och läste in den, var den hamnar i sin serie, varje kapitel och varje fil på disken med dess kvalitet.",
+        [
+          "Översikt",
+          "Kapitel",
+          "Filer"
+        ]
+      ],
+      [
+        "Serier och författare",
+        "Serier och författare har också egna sidor, så du ser vad du har och vad som fortfarande saknas. Uppläsare får en egen sida längre fram.",
+        [
+          "Serier",
+          "En serie",
+          "Författare",
+          "En författare"
+        ]
+      ],
+      [
+        "Hitta böcker",
+        "Discover visar nya och kommande släpp. Wanted listar vad som saknas eller fortfarande ligger under din kvalitetsgräns, och kalendern visar när böckerna du bevakar kommer ut.",
+        [
+          "Nya släpp",
+          "Kommer snart",
+          "Saknas",
+          "Under gränsen",
+          "Kalender"
+        ]
+      ],
+      [
+        "Import och konvertering",
+        "Peka ABM mot böckerna du redan har och kolla varje matchning innan något flyttas. Konverteringar slår ihop, delar upp och kapitelindelar filer på nytt.",
+        [
+          "Biblioteksimport",
+          "Matchning",
+          "Konverteringar"
+        ]
+      ],
+      [
+        "Inställningar",
+        "Har du satt upp Sonarr känner du igen upplägget: mediehantering, profiler, vilken metadata som skrivs var och hur konverteringar körs.",
+        [
+          "Mediehantering",
+          "Profiler",
+          "Metadata",
+          "Konverteringar",
+          "Audible",
+          "Gränssnitt"
+        ]
+      ],
+      [
+        "System",
+        "Inget händer i skymundan: en översikt, schemalagda uppgifter, en aktivitetslogg över vad som hände med vilken bok, händelser, loggfiler och säkerhetskopior.",
+        [
+          "Översikt",
+          "Uppgifter",
+          "Aktivitetslogg",
+          "Händelser",
+          "Loggar",
+          "Säkerhetskopior"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "I mobilen",
+    "phoneH2": "Byggd för mobilen också.",
+    "phoneP": "ABM fungerar i mobilen redan i dag, och i nästa version får varje sida en egen mobillayout. De här skärmbilderna är från den versionen.",
+    "phoneShots": [
+      "Bibliotek",
+      "En bok",
+      "Önskat"
+    ],
+    "phoneDiffs": [
+      [
+        "Ett flikfält under tummen",
+        "Library, Activity, Wanted, Settings och System ligger längst ner, och deras menyer glider upp därifrån."
+      ],
+      [
+        "Alla biblioteksvyer",
+        "Affischer, översikt och tabell fungerar i alla bredder. Inget göms bara för att skärmen är liten."
+      ],
+      [
+        "Kort i stället för breda tabeller",
+        "Wanted, Tasks och de andra långa listorna blir kort som du kan läsa utan att scrolla i sidled."
+      ],
+      [
+        "Paneler i stället för popup-fönster",
+        "Sortering, att lägga till en bok och att välja ett sökresultat öppnas som paneler nerifrån, och bakåtknappen stänger dem."
+      ],
+      [
+        "Inget utelämnat",
+        "Settings, System och Library Import finns alla med. Det är inget nedbantat mobilläge."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Ta med ditt Audible-bibliotek.",
+    "audP": "Köper du på Audible kopplar ABM upp sig mot ditt konto och räknar böckerna du äger som en del av ditt bibliotek. Den laddar bara ner böcker som ditt eget konto äger.",
+    "aud": [
+      [
+        "Koppla ditt konto",
+        "Välj din marknad och logga in på Amazons egen sida. ABM ser aldrig ditt lösenord. Den sparar bara de tokens som Audible lämnar tillbaka, krypterade med installationens hemliga nyckel. Flera konton går också bra."
+      ],
+      [
+        "Synka ditt bibliotek",
+        "Enligt schema eller när du trycker på synka hämtar ABM in allt du äger och listar det på en egen Audible Library-sida, med markering för det som redan står på hyllan."
+      ],
+      [
+        "Lägg till och ladda ner",
+        "Därifrån kan du lägga till böcker i biblioteket, ladda ner dem eller både och, en i taget eller många på en gång."
+      ],
+      [
+        "Spegla allt",
+        "Slå på spegling så läggs varje bok du köper till och laddas ner efter varje synk, en omgång i taget. Plus Catalog-titlar och lån hoppas över, och en bok som försvinner från ditt Audible-konto finns kvar i ABM."
+      ],
+      [
+        "Orörd M4B",
+        "Nedladdningar dekrypteras till M4B utan omkodning, så du får Audibles ljud precis som det var, med kapitel och omslag inbyggda."
+      ],
+      [
+        "Välj kvalitet",
+        "Välj High eller Normal för dina nedladdningar."
+      ],
+      [
+        "Audible i Discover",
+        "Audibles topplistor dyker upp i Discover, och varje bok länkar tillbaka till sin sida på Audible."
+      ]
+    ],
+    "nextRelease": "Nästa version"
   },
   "cs": {
     "htmlLang": "cs",
@@ -3999,9 +6243,8 @@
     "altPage": "Stránka {name} v ABM",
     "whyEyebrow": "Proč ABM",
     "whyH2": "Postavený pro poličku, ne přišroubovaný bokem.",
-    "shotsEyebrow": "Snímky obrazovky",
+    "shotsEyebrow": "Podívej se, jak běží",
     "shotsH2": "Tohle je ta skutečná věc.",
-    "shotsAria": "Snímky obrazovky, posouvej do stran",
     "getItEyebrow": "Stáhni si ho",
     "installH2": "Běží z jednoho souboru.",
     "buildP": "<b>Sestavení ze zdrojáků.</b> V naklonovaném repu nahraď <code>image:</code> za <code>build: .</code> a spusť <code>docker compose up -d --build</code>.",
@@ -4118,16 +6361,6 @@
         "7 podporovaných"
       ]
     ],
-    "shots": [
-      "Přehled",
-      "Knihovna",
-      "Kniha",
-      "Série",
-      "Kalendář",
-      "Hledané",
-      "Profily",
-      "Převody"
-    ],
     "installSteps": [
       [
         "Ulož ho",
@@ -4205,7 +6438,150 @@
       ]
     ],
     "coming": "Brzy",
-    "translatorNote": "Tahle stránka je přeložená strojově. Jestli je čeština tvoje rodná řeč a chceš pomoct překlad vylepšit, napiš mi na {mail}."
+    "translatorNote": "Tahle stránka je přeložená strojově. Jestli je čeština tvoje rodná řeč a chceš pomoct překlad vylepšit, napiš mi na {mail}.",
+    "shotsP": "Každý snímek je skutečná aplikace, která běží na vymyšlené ukázkové knihovně. Vyber oblast a pak pohled. Klikni na kterýkoli snímek a uvidíš ho v plné velikosti.",
+    "areasAria": "Oblasti ABM",
+    "viewsAria": "Pohledy: {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Knihovna",
+        "Tři způsoby, jak se dívat na tutéž poličku: obálky, obálky s anotací, nebo tabulka, kterou seřadíš podle čehokoli. Je tu i světlý motiv.",
+        [
+          "Plakáty",
+          "Přehled",
+          "Tabulka",
+          "Světlý motiv"
+        ]
+      ],
+      [
+        "Knihy",
+        "Každá kniha má vlastní stránku: kdo ji napsal a kdo ji namluvil, kde stojí ve své sérii, všechny kapitoly a každý soubor na disku i s jeho kvalitou.",
+        [
+          "Přehled",
+          "Kapitoly",
+          "Soubory"
+        ]
+      ],
+      [
+        "Série a autoři",
+        "Série a autoři mají taky vlastní stránky, takže vidíš, co máš a co ti ještě chybí. Interpreti dostanou vlastní stránku později.",
+        [
+          "Série",
+          "Jedna série",
+          "Autoři",
+          "Jeden autor"
+        ]
+      ],
+      [
+        "Hledání knih",
+        "Discover ukazuje nové a chystané tituly. Wanted vypisuje, co chybí nebo je pořád pod tvou hranicí kvality, a kalendář ukazuje, kdy vycházejí knihy, které sleduješ.",
+        [
+          "Novinky",
+          "Brzy vyjde",
+          "Chybí",
+          "Pod hranicí kvality",
+          "Kalendář"
+        ]
+      ],
+      [
+        "Import a převody",
+        "Nasměruj ABM na knihy, které už máš, a zkontroluj každou shodu, než se cokoli přesune. Převody slučují, dělí a znovu rozdělují soubory na kapitoly.",
+        [
+          "Import knihovny",
+          "Párování",
+          "Převody"
+        ]
+      ],
+      [
+        "Nastavení",
+        "Jestli jsi nastavoval Sonarr, tohle rozložení znáš: správa médií, profily, jaká metadata se kam zapisují a jak probíhají převody.",
+        [
+          "Správa médií",
+          "Profily",
+          "Metadata",
+          "Převody",
+          "Audible",
+          "Rozhraní"
+        ]
+      ],
+      [
+        "Systém",
+        "Nic se neděje potají: přehled, naplánované úlohy, záznam aktivity o tom, co se stalo s kterou knihou, události, logy a zálohy.",
+        [
+          "Přehled",
+          "Úlohy",
+          "Záznam aktivity",
+          "Události",
+          "Logy",
+          "Zálohy"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Na telefonu",
+    "phoneH2": "Postavené i pro telefony.",
+    "phoneP": "ABM na telefonu funguje už dnes a v příští verzi dostane každá stránka vlastní mobilní rozvržení. Tyhle snímky jsou právě z ní.",
+    "phoneShots": [
+      "Knihovna",
+      "Kniha",
+      "Hledané"
+    ],
+    "phoneDiffs": [
+      [
+        "Lišta s kartami pod palcem",
+        "Library, Activity, Wanted, Settings a System jsou dole a jejich nabídky z ní vyjíždějí nahoru."
+      ],
+      [
+        "Každý pohled na knihovnu",
+        "Plakáty, přehled i tabulka fungují v jakékoli šířce. Nic se neschovává jen proto, že je obrazovka malá."
+      ],
+      [
+        "Karty místo širokých tabulek",
+        "Wanted, Tasks a další dlouhé seznamy se mění v karty, které přečteš bez posouvání do strany."
+      ],
+      [
+        "Panely místo vyskakovacích oken",
+        "Řazení, přidání knihy a výběr výsledku hledání se otevírají jako panely zespodu a tlačítko zpět je zavře."
+      ],
+      [
+        "Nic nechybí",
+        "Settings, System i Library Import jsou tu všechny. Není to žádný ořezaný mobilní režim."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Přiveď svou knihovnu z Audible.",
+    "audP": "Jestli nakupuješ na Audible, ABM se připojí k tvému účtu a knihy, které vlastníš, bere jako součást tvé knihovny. Stahuje jen knihy, které vlastní tvůj vlastní účet.",
+    "aud": [
+      [
+        "Připoj svůj účet",
+        "Vyber svůj obchod a přihlas se přímo na stránce Amazonu. ABM tvé heslo nikdy neuvidí. Uchovává jen tokeny, které Audible vrátí, zašifrované tajným klíčem tvé instalace. Funguje i víc účtů."
+      ],
+      [
+        "Synchronizuj knihovnu",
+        "Podle plánu, nebo kdykoli klikneš na synchronizaci, ABM načte všechno, co vlastníš, a ukáže to na vlastní stránce Audible Library, s označením toho, co už máš na poličce."
+      ],
+      [
+        "Přidávej a stahuj",
+        "Odtud můžeš knihy přidat do knihovny, stáhnout, nebo obojí, po jedné i hromadně."
+      ],
+      [
+        "Zrcadli všechno",
+        "Zapni zrcadlení a každá kniha, kterou koupíš, se po každé synchronizaci přidá a stáhne, vždy po dávkách. Tituly z Plus Catalog a výpůjčky se vynechávají a kniha, která z tvého účtu Audible zmizí, v ABM zůstane."
+      ],
+      [
+        "Nedotčené M4B",
+        "Stažené soubory se dešifrují do M4B bez překódování, takže dostaneš zvuk z Audible přesně takový, jaký byl, i s kapitolami a obálkou uvnitř."
+      ],
+      [
+        "Vyber kvalitu",
+        "Pro stahování si zvol High nebo Normal."
+      ],
+      [
+        "Audible v Discover",
+        "Žebříčky bestsellerů z Audible se objeví v Discover a každá kniha odkazuje zpátky na svou stránku na Audible."
+      ]
+    ],
+    "nextRelease": "V příští verzi"
   },
   "da": {
     "htmlLang": "da",
@@ -4233,9 +6609,8 @@
     "altPage": "ABM's side {name}",
     "whyEyebrow": "Hvorfor ABM",
     "whyH2": "Bygget til hylden, ikke boltet på.",
-    "shotsEyebrow": "Skærmbilleder",
+    "shotsEyebrow": "Se den køre",
     "shotsH2": "Det her er den ægte vare.",
-    "shotsAria": "Skærmbilleder, scroll sidelæns",
     "getItEyebrow": "Hent den",
     "installH2": "Kører fra én fil.",
     "buildP": "<b>Byg fra kildekoden.</b> Fra en klon af repoet skifter du <code>image:</code> ud med <code>build: .</code> og kører <code>docker compose up -d --build</code>.",
@@ -4352,16 +6727,6 @@
         "7 understøttet"
       ]
     ],
-    "shots": [
-      "Dashboard",
-      "Bibliotek",
-      "Bog",
-      "Serie",
-      "Kalender",
-      "Ønsket",
-      "Profiler",
-      "Konverteringer"
-    ],
     "installSteps": [
       [
         "Gem den",
@@ -4439,7 +6804,150 @@
       ]
     ],
     "coming": "Snart",
-    "translatorNote": "Denne side er maskinoversat. Er dansk dit modersmål, og har du lyst til at hjælpe med at gøre den bedre, så skriv til mig på {mail}."
+    "translatorNote": "Denne side er maskinoversat. Er dansk dit modersmål, og har du lyst til at hjælpe med at gøre den bedre, så skriv til mig på {mail}.",
+    "shotsP": "Hvert skærmbillede er den rigtige app, der kører på et opdigtet demobibliotek. Vælg et område og derefter en visning. Klik på et skærmbillede for at se det i fuld størrelse.",
+    "areasAria": "Områder i ABM",
+    "viewsAria": "Visninger af {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Bibliotek",
+        "Tre måder at se på den samme hylde: omslag, omslag med resumé eller en tabel, du kan sortere efter hvad som helst. Der er også et lyst tema.",
+        [
+          "Plakater",
+          "Oversigt",
+          "Tabel",
+          "Lyst tema"
+        ]
+      ],
+      [
+        "Bøger",
+        "Hver bog får sin egen side: hvem der har skrevet og indlæst den, hvor den hører til i serien, hvert kapitel og hver fil på disken med dens kvalitet.",
+        [
+          "Oversigt",
+          "Kapitler",
+          "Filer"
+        ]
+      ],
+      [
+        "Serier og forfattere",
+        "Serier og forfattere har også deres egne sider, så du kan se, hvad du har, og hvad der stadig mangler. Oplæsere får deres egen side senere.",
+        [
+          "Serier",
+          "Én serie",
+          "Forfattere",
+          "Én forfatter"
+        ]
+      ],
+      [
+        "Find bøger",
+        "Discover viser nye og kommende udgivelser. Wanted viser, hvad der mangler eller stadig ligger under din kvalitetsgrænse, og kalenderen viser, hvornår de bøger, du overvåger, udkommer.",
+        [
+          "Nye udgivelser",
+          "Kommer snart",
+          "Mangler",
+          "Under grænsen",
+          "Kalender"
+        ]
+      ],
+      [
+        "Import og konvertering",
+        "Peg ABM mod de bøger, du allerede har, og tjek hvert match, før noget flyttes. Konverteringer samler, deler og kapitelinddeler filer på ny.",
+        [
+          "Biblioteksimport",
+          "Matchning",
+          "Konverteringer"
+        ]
+      ],
+      [
+        "Indstillinger",
+        "Har du sat Sonarr op, kender du opbygningen: mediehåndtering, profiler, hvilke metadata der skrives hvor, og hvordan konverteringer kører.",
+        [
+          "Mediehåndtering",
+          "Profiler",
+          "Metadata",
+          "Konverteringer",
+          "Audible",
+          "Brugerflade"
+        ]
+      ],
+      [
+        "System",
+        "Intet sker i det skjulte: et dashboard, planlagte opgaver, en aktivitetslog over, hvad der skete med hvilken bog, hændelser, logfiler og backups.",
+        [
+          "Dashboard",
+          "Opgaver",
+          "Aktivitetslog",
+          "Hændelser",
+          "Logs",
+          "Backups"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "På din telefon",
+    "phoneH2": "Bygget til telefoner også.",
+    "phoneP": "ABM virker på en telefon allerede i dag, og i næste version får hver side sit eget telefonlayout. Skærmbillederne her er fra den version.",
+    "phoneShots": [
+      "Bibliotek",
+      "En bog",
+      "Ønsket"
+    ],
+    "phoneDiffs": [
+      [
+        "En fanebjælke under tommelfingeren",
+        "Library, Activity, Wanted, Settings og System ligger i bunden, og deres menuer glider op derfra."
+      ],
+      [
+        "Alle biblioteksvisninger",
+        "Plakater, oversigt og tabel virker i enhver bredde. Intet bliver skjult, bare fordi skærmen er lille."
+      ],
+      [
+        "Kort i stedet for brede tabeller",
+        "Wanted, Tasks og de andre lange lister bliver til kort, du kan læse uden at scrolle til siden."
+      ],
+      [
+        "Paneler i stedet for pop op-vinduer",
+        "Sortering, tilføjelse af en bog og valg af et søgeresultat åbner som paneler nedefra, og din tilbage-knap lukker dem."
+      ],
+      [
+        "Intet udeladt",
+        "Settings, System og Library Import er der alle sammen. Det er ikke en skrabet mobiludgave."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Tag dit Audible-bibliotek med.",
+    "audP": "Køber du på Audible, forbinder ABM sig til din konto og regner de bøger, du ejer, som en del af dit bibliotek. Den henter kun bøger, som din egen konto ejer.",
+    "aud": [
+      [
+        "Forbind din konto",
+        "Vælg din markedsplads, og log ind på Amazons egen side. ABM ser aldrig din adgangskode. Den gemmer kun de tokens, Audible sender tilbage, krypteret med din installations hemmelige nøgle. Flere konti virker også."
+      ],
+      [
+        "Synkroniser dit bibliotek",
+        "Efter en tidsplan, eller når du trykker synkroniser, henter ABM listen over alt, hvad du ejer, og viser den på sin egen Audible Library-side, markeret med det, der allerede står på din hylde."
+      ],
+      [
+        "Tilføj og hent",
+        "Derfra kan du tilføje bøger til dit bibliotek, hente dem eller begge dele, én ad gangen eller mange på én gang."
+      ],
+      [
+        "Spejl det hele",
+        "Slå spejling til, så bliver hver bog, du køber, tilføjet og hentet efter hver synkronisering, et hold ad gangen. Plus Catalog-titler og lån bliver sprunget over, og en bog, der forsvinder fra din Audible-konto, bliver i ABM."
+      ],
+      [
+        "Urørt M4B",
+        "Hentede bøger dekrypteres til M4B uden omkodning, så du får Audibles lyd præcis, som den var, med kapitler og omslag indbygget."
+      ],
+      [
+        "Vælg kvaliteten",
+        "Vælg High eller Normal til det, du henter."
+      ],
+      [
+        "Audible i Discover",
+        "Audibles bestsellerlister dukker op i Discover, og hver bog linker tilbage til sin side på Audible."
+      ]
+    ],
+    "nextRelease": "Næste version"
   },
   "nb": {
     "htmlLang": "nb",
@@ -4467,9 +6975,8 @@
     "altPage": "{name}-siden i ABM",
     "whyEyebrow": "Hvorfor ABM",
     "whyH2": "Laget for bokhylla, ikke skrudd på i etterkant.",
-    "shotsEyebrow": "Skjermbilder",
+    "shotsEyebrow": "Se den i bruk",
     "shotsH2": "Dette er den ekte varen.",
-    "shotsAria": "Skjermbilder, bla sidelengs",
     "getItEyebrow": "Skaff den",
     "installH2": "I gang med én fil.",
     "buildP": "<b>Bygg fra kildekoden.</b> Fra en klone av repoet bytter du <code>image:</code> med <code>build: .</code> og kjører <code>docker compose up -d --build</code>.",
@@ -4586,16 +7093,6 @@
         "7 støttet"
       ]
     ],
-    "shots": [
-      "Dashbord",
-      "Bibliotek",
-      "Bok",
-      "Serie",
-      "Kalender",
-      "Ønsket",
-      "Profiler",
-      "Konverteringer"
-    ],
     "installSteps": [
       [
         "Lagre den",
@@ -4673,7 +7170,150 @@
       ]
     ],
     "coming": "Kommer",
-    "translatorNote": "Denne siden er maskinoversatt. Er norsk morsmålet ditt og du har lyst til å hjelpe med å gjøre den bedre, send meg en e-post på {mail}."
+    "translatorNote": "Denne siden er maskinoversatt. Er norsk morsmålet ditt og du har lyst til å hjelpe med å gjøre den bedre, send meg en e-post på {mail}.",
+    "shotsP": "Hvert skjermbilde er den ekte appen, som kjører på et oppdiktet demobibliotek. Velg et område, deretter en visning. Klikk på et skjermbilde for å se det i full størrelse.",
+    "areasAria": "Områder i ABM",
+    "viewsAria": "Visninger av {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Bibliotek",
+        "Tre måter å se på den samme hylla: omslag, omslag med sammendrag eller en tabell du kan sortere på hva som helst. Det finnes et lyst tema også.",
+        [
+          "Plakater",
+          "Oversikt",
+          "Tabell",
+          "Lyst tema"
+        ]
+      ],
+      [
+        "Bøker",
+        "Hver bok får sin egen side: hvem som skrev og leste den inn, hvor den hører hjemme i serien, hvert kapittel og hver fil på disken med kvaliteten sin.",
+        [
+          "Oversikt",
+          "Kapitler",
+          "Filer"
+        ]
+      ],
+      [
+        "Serier og forfattere",
+        "Serier og forfattere har også egne sider, så du ser hva du har og hva som fortsatt mangler. Innlesere får sin egen side senere.",
+        [
+          "Serier",
+          "Én serie",
+          "Forfattere",
+          "Én forfatter"
+        ]
+      ],
+      [
+        "Finn bøker",
+        "Discover viser nye og kommende utgivelser. Wanted lister opp det som mangler eller fortsatt ligger under kvalitetsgrensen din, og kalenderen viser når bøkene du overvåker kommer ut.",
+        [
+          "Nye utgivelser",
+          "Kommer snart",
+          "Mangler",
+          "Under grensen",
+          "Kalender"
+        ]
+      ],
+      [
+        "Import og konvertering",
+        "Pek ABM mot bøkene du allerede har, og sjekk hvert treff før noe flyttes. Konverteringer slår sammen, deler opp og kapittelinndeler filer på nytt.",
+        [
+          "Bibliotekimport",
+          "Treff",
+          "Konverteringer"
+        ]
+      ],
+      [
+        "Innstillinger",
+        "Har du satt opp Sonarr, kjenner du oppsettet: mediehåndtering, profiler, hvilke metadata som skrives hvor, og hvordan konverteringer kjøres.",
+        [
+          "Mediehåndtering",
+          "Profiler",
+          "Metadata",
+          "Konverteringer",
+          "Audible",
+          "Grensesnitt"
+        ]
+      ],
+      [
+        "System",
+        "Ingenting skjer i det skjulte: et dashbord, planlagte oppgaver, en aktivitetslogg over hva som skjedde med hvilken bok, hendelser, loggfiler og sikkerhetskopier.",
+        [
+          "Dashbord",
+          "Oppgaver",
+          "Aktivitetslogg",
+          "Hendelser",
+          "Logger",
+          "Sikkerhetskopier"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "På mobilen",
+    "phoneH2": "Laget for mobil også.",
+    "phoneP": "ABM fungerer på mobil allerede i dag, og i neste versjon får hver side sin egen mobillayout. Disse skjermbildene er fra den versjonen.",
+    "phoneShots": [
+      "Bibliotek",
+      "En bok",
+      "Ønsket"
+    ],
+    "phoneDiffs": [
+      [
+        "En fanelinje under tommelen",
+        "Library, Activity, Wanted, Settings og System ligger nederst, og menyene deres glir opp derfra."
+      ],
+      [
+        "Alle bibliotekvisninger",
+        "Plakater, oversikt og tabell fungerer i alle bredder. Ingenting skjules bare fordi skjermen er liten."
+      ],
+      [
+        "Kort i stedet for brede tabeller",
+        "Wanted, Tasks og de andre lange listene blir til kort du kan lese uten å rulle sidelengs."
+      ],
+      [
+        "Paneler i stedet for popup-vinduer",
+        "Sortering, å legge til en bok og å velge et søkeresultat åpnes som paneler nedenfra, og tilbakeknappen lukker dem."
+      ],
+      [
+        "Ingenting utelatt",
+        "Settings, System og Library Import er der alle sammen. Det er ingen nedskalert mobilmodus."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Ta med Audible-biblioteket ditt.",
+    "audP": "Kjøper du på Audible, kobler ABM seg til kontoen din og regner bøkene du eier som en del av biblioteket ditt. Den laster bare ned bøker som din egen konto eier.",
+    "aud": [
+      [
+        "Koble til kontoen din",
+        "Velg markedet ditt og logg inn på Amazons egen side. ABM ser aldri passordet ditt. Den tar bare vare på tokenene Audible gir tilbake, kryptert med installasjonens hemmelige nøkkel. Flere kontoer går også fint."
+      ],
+      [
+        "Synkroniser biblioteket",
+        "Etter en tidsplan eller når du trykker synkroniser, henter ABM inn alt du eier og viser det på en egen Audible Library-side, merket med det som allerede står i hylla di."
+      ],
+      [
+        "Legg til og last ned",
+        "Derfra kan du legge bøker til i biblioteket, laste dem ned eller begge deler, én om gangen eller mange samtidig."
+      ],
+      [
+        "Speil hele greia",
+        "Slå på speiling, så blir hver bok du kjøper lagt til og lastet ned etter hver synkronisering, en porsjon om gangen. Plus Catalog-titler og lån holdes utenfor, og en bok som forsvinner fra Audible-kontoen din, blir værende i ABM."
+      ],
+      [
+        "Urørt M4B",
+        "Nedlastinger dekrypteres til M4B uten omkoding, så du får lyden fra Audible akkurat slik den var, med kapitler og omslag innebygd."
+      ],
+      [
+        "Velg kvaliteten",
+        "Velg High eller Normal for nedlastingene dine."
+      ],
+      [
+        "Audible i Discover",
+        "Bestselgerlistene til Audible dukker opp i Discover, og hver bok lenker tilbake til siden sin på Audible."
+      ]
+    ],
+    "nextRelease": "Neste versjon"
   },
   "fi": {
     "htmlLang": "fi",
@@ -4701,9 +7341,8 @@
     "altPage": "ABM:n sivu: {name}",
     "whyEyebrow": "Miksi ABM",
     "whyH2": "Tehty hyllyä varten, ei päälle liimattu.",
-    "shotsEyebrow": "Kuvakaappaukset",
+    "shotsEyebrow": "Katso se toiminnassa",
     "shotsH2": "Tämä on se oikea.",
-    "shotsAria": "Kuvakaappaukset, vieritä sivuttain",
     "getItEyebrow": "Hanki se",
     "installH2": "Käynnissä yhdellä tiedostolla.",
     "buildP": "<b>Käännä lähdekoodista.</b> Vaihda repon kloonissa <code>image:</code> tilalle <code>build: .</code> ja aja <code>docker compose up -d --build</code>.",
@@ -4820,16 +7459,6 @@
         "7 tuettua"
       ]
     ],
-    "shots": [
-      "Kojelauta",
-      "Kirjasto",
-      "Kirja",
-      "Sarja",
-      "Kalenteri",
-      "Halutut",
-      "Profiilit",
-      "Muunnokset"
-    ],
     "installSteps": [
       [
         "Tallenna se",
@@ -4907,6 +7536,149 @@
         "LXC-asennusskripti"
       ]
     ],
-    "coming": "Tulossa"
+    "coming": "Tulossa",
+    "shotsP": "Jokainen kuvakaappaus on oikea sovellus, joka pyörii keksityllä demokirjastolla. Valitse alue ja sitten näkymä. Klikkaa mitä tahansa kuvakaappausta, niin näet sen täysikokoisena.",
+    "areasAria": "ABM:n alueet",
+    "viewsAria": "Näkymät: {area}",
+    "altView": "ABM, {area}: {view}",
+    "areas": [
+      [
+        "Kirjasto",
+        "Kolme tapaa katsoa samaa hyllyä: kannet, kannet esittelytekstin kanssa tai taulukko, jonka voit lajitella minkä tahansa mukaan. Mukana on myös vaalea teema.",
+        [
+          "Julisteet",
+          "Yleiskatsaus",
+          "Taulukko",
+          "Vaalea teema"
+        ]
+      ],
+      [
+        "Kirjat",
+        "Jokainen kirja saa oman sivunsa: kuka sen kirjoitti ja kuka luki, mihin kohtaan sarjaa se kuuluu, jokainen luku ja jokainen levyllä oleva tiedosto laatuineen.",
+        [
+          "Yleiskatsaus",
+          "Luvut",
+          "Tiedostot"
+        ]
+      ],
+      [
+        "Sarjat ja tekijät",
+        "Sarjoilla ja tekijöillä on myös omat sivunsa, joten näet, mitä sinulla on ja mitä vielä puuttuu. Lukijat saavat oman sivunsa myöhemmin.",
+        [
+          "Sarjat",
+          "Yksi sarja",
+          "Tekijät",
+          "Yksi tekijä"
+        ]
+      ],
+      [
+        "Kirjojen löytäminen",
+        "Discover näyttää uudet ja tulevat julkaisut. Wanted listaa, mitä puuttuu tai mikä on yhä laaturajasi alla, ja kalenteri näyttää, milloin seuraamasi kirjat ilmestyvät.",
+        [
+          "Uutuudet",
+          "Tulossa",
+          "Puuttuvat",
+          "Laaturaja alittuu",
+          "Kalenteri"
+        ]
+      ],
+      [
+        "Tuonti ja muunnos",
+        "Osoita ABM:lle kirjat, jotka sinulla jo on, ja tarkista jokainen osuma ennen kuin mitään siirretään. Muunnokset yhdistävät, pilkkovat ja jakavat tiedostot uudelleen lukuihin.",
+        [
+          "Kirjaston tuonti",
+          "Täsmäytys",
+          "Muunnokset"
+        ]
+      ],
+      [
+        "Asetukset",
+        "Jos olet pystyttänyt Sonarrin, tunnet rakenteen: median hallinta, profiilit, mitkä metatiedot kirjoitetaan minne ja miten muunnokset ajetaan.",
+        [
+          "Median hallinta",
+          "Profiilit",
+          "Metatiedot",
+          "Muunnokset",
+          "Audible",
+          "Käyttöliittymä"
+        ]
+      ],
+      [
+        "Järjestelmä",
+        "Mitään ei tapahdu piilossa: kojelauta, ajastetut tehtävät, toimintoloki siitä, mitä millekin kirjalle tapahtui, tapahtumat, lokitiedostot ja varmuuskopiot.",
+        [
+          "Kojelauta",
+          "Tehtävät",
+          "Toimintoloki",
+          "Tapahtumat",
+          "Lokit",
+          "Varmuuskopiot"
+        ]
+      ]
+    ],
+    "phoneEyebrow": "Puhelimessa",
+    "phoneH2": "Tehty myös puhelimille.",
+    "phoneP": "ABM toimii puhelimessa jo nyt, ja seuraavassa versiossa jokainen sivu saa oman puhelinasettelunsa. Nämä kuvakaappaukset ovat siitä versiosta.",
+    "phoneShots": [
+      "Kirjasto",
+      "Kirja",
+      "Halutut"
+    ],
+    "phoneDiffs": [
+      [
+        "Välilehtipalkki peukalon ulottuvilla",
+        "Library, Activity, Wanted, Settings ja System ovat alareunassa, ja niiden valikot liukuvat sieltä ylös."
+      ],
+      [
+        "Kaikki kirjastonäkymät",
+        "Julisteet, yleiskatsaus ja taulukko toimivat millä tahansa leveydellä. Mitään ei piiloteta vain siksi, että näyttö on pieni."
+      ],
+      [
+        "Kortit leveiden taulukoiden sijaan",
+        "Wanted, Tasks ja muut pitkät listat muuttuvat korteiksi, joita voi lukea vierittämättä sivusuunnassa."
+      ],
+      [
+        "Paneelit ponnahdusikkunoiden sijaan",
+        "Lajittelu, kirjan lisääminen ja hakutuloksen valinta avautuvat paneeleina alhaalta, ja takaisin-painike sulkee ne."
+      ],
+      [
+        "Mitään ei ole jätetty pois",
+        "Settings, System ja Library Import ovat kaikki mukana. Kyse ei ole riisutusta mobiilitilasta."
+      ]
+    ],
+    "audEyebrow": "Audible",
+    "audH2": "Tuo Audible-kirjastosi mukaan.",
+    "audP": "Jos ostat Audiblesta, ABM yhdistää tiliisi ja käsittelee omistamiasi kirjoja osana kirjastoasi. Se lataa vain kirjoja, jotka omistaa oma tilisi.",
+    "aud": [
+      [
+        "Yhdistä tilisi",
+        "Valitse kauppasi ja kirjaudu sisään Amazonin omalla sivulla. ABM ei koskaan näe salasanaasi. Se säilyttää vain Audiblen palauttamat tunnisteet, salattuna asennuksesi salaisella avaimella. Useampikin tili toimii."
+      ],
+      [
+        "Synkronoi kirjastosi",
+        "Ajastetusti tai aina kun painat synkronointia, ABM hakee kaiken omistamasi ja listaa sen omalle Audible Library -sivulleen merkiten, mitä hyllyssäsi jo on."
+      ],
+      [
+        "Lisää ja lataa",
+        "Sieltä voit lisätä kirjoja kirjastoosi, ladata ne tai molemmat, yksi kerrallaan tai monta kerralla."
+      ],
+      [
+        "Peilaa kaikki",
+        "Kytke peilaus päälle, niin jokainen ostamasi kirja lisätään ja ladataan jokaisen synkronoinnin jälkeen, erä kerrallaan. Plus Catalog -nimikkeet ja lainat jätetään pois, ja Audible-tililtäsi poistuva kirja jää ABM:ään."
+      ],
+      [
+        "Koskematon M4B",
+        "Lataukset puretaan salauksesta M4B-muotoon ilman uudelleenkoodausta, joten saat Audiblen äänen täsmälleen sellaisena kuin se oli, luvut ja kansi upotettuina."
+      ],
+      [
+        "Valitse laatu",
+        "Valitse latauksillesi High tai Normal."
+      ],
+      [
+        "Audible Discoverissa",
+        "Audiblen myydyimpien listat näkyvät Discoverissa, ja jokaisesta kirjasta on linkki takaisin sen Audible-sivulle."
+      ]
+    ],
+    "nextRelease": "Seuraavassa versiossa"
   }
 }
