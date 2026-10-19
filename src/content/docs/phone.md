@@ -29,6 +29,12 @@ Pull down at the top of a page to refresh it.
 - Totals and the status legend sit at the end of the list.
 - Tables such as Queue and History show each row as a card.
 
+## Import Workbench
+
+- On Library Import's results page, the title is Match Audiobooks. It gets smaller below 390 pixels wide and wraps to two lines below 360, so it shows in full.
+- The **...** sheet has three groups. Selection holds Select all ready, Deselect unmatched and Join rows. Sort holds the sort choices. Scan holds Rescan for new folders.
+- The bar at the bottom keeps only the count of selected folders, Deselect all and Add. Joining is covered under Joining, splitting and adding in Library Import.
+
 ## Selection
 
 In selection mode, tapping a row selects it. The selection bar replaces the bottom tabs, and Back leaves selection mode.
