@@ -1,0 +1,102 @@
+---
+title: Instalacja ABM
+description: Jeden kontener, trzy foldery, jedno polecenie. Ta strona to cała instalacja.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Baza danych to plik SQLite w `/config`, więc nie musisz stawiać żadnej usługi bazy danych.
+
+**Będziesz potrzebować:**
+
+- Dockera z Compose
+- Folderu na bibliotekę audiobooków
+- Folderu, do którego klient pobierania wrzuca ukończone pobrania
+- Folderu na dane samego ABM
+
+## Instalacja
+
+<Steps>
+
+1. **Zrób plik compose.** Zapisz to jako `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Wskaż swoje foldery.** Zmień lewą stronę każdego wolumenu na prawdziwy folder na twojej maszynie. Prawej strony nie ruszaj.
+
+   | Ścieżka na hoście | Ścieżka w kontenerze | Co tam trafia |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Twoja biblioteka audiobooków. Wymagane. |
+   | `/path/to/downloads` | `/downloads` | Miejsce, do którego klient pobierania wrzuca ukończone pobrania. Wymagane. |
+   | `/path/to/config` | `/config` | Baza SQLite, kopie zapasowe, logi, kosze i wygenerowany sekret aplikacji. Nie usuwaj tego. |
+
+3. **Uruchom.** Odpal to w folderze z plikiem compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Otwórz.** Wejdź na `http://your-server:5173`. Przy pierwszej wizycie ABM przeprowadzi cię przez ustawienie logowania.
+
+</Steps>
+
+<Aside type="tip" title="Pobrania w innym kontenerze?">
+Jeśli twój klient pobierania działa we własnym kontenerze, jego folder pobranych plików musi być tym samym folderem, który ABM widzi jako `/downloads`. Jeśli ścieżki się różnią, dodaj mapowanie zdalnej ścieżki w **Settings > Download Clients**.
+</Aside>
+
+## Pierwsze uruchomienie
+
+Ustaw strefę czasową przez `TIMEZONE` w pliku compose. Potem w **Settings** dodaj folder główny w **Media Management**, indekser w **Indexers** i klienta pobierania w **Download Clients**. Zmienne środowiskowe i reverse proxy opisuje strona [Konfiguracja](/pl/configuration/).
+
+## Budowanie ze źródeł
+
+Żeby zbudować obraz samemu, sklonuj repo, zamień linię `image:` na `build: .` i uruchom:
+
+```bash
+docker compose up -d --build
+```
+
+## Inne sposoby instalacji
+
+Na razie jedyna droga to Docker. Natywne instalacje są w planach, żeby ABM dało się uruchomić tam, gdzie już hostujesz swoje rzeczy:
+
+| Platforma | W planach jako |
+|---|---|
+| Linux | Natywny pakiet i usługa |
+| Windows | Instalator `.exe` |
+| macOS | Natywna aplikacja |
+| Kubernetes | Wdrożenie na klastrze |
+| Unraid | Szablon Community Apps |
+| Proxmox | Skrypt instalacyjny LXC |
+
+Żadnej z nich jeszcze nie ma. Każda pojawi się na stronie [Aktualizacje](/pl/updates/), kiedy wyjdzie.
+
+## Aktualizacja
+
+Pobierz nowy obraz i odtwórz kontener. Strona [Aktualizacje](/pl/updates/) pokazuje, co się zmieniło w każdym wydaniu.
+
+<Aside type="caution" title="ABM jest w wersji alfa">
+Przed aktualizacją zrób kopię `/config` i przejrzyj najpierw informacje o wydaniu.
+</Aside>
+
+## Coś nie gra?
+
+- **Strona się nie ładuje.** Sprawdź mapowanie portów w pliku compose, a potem uruchom `docker logs audiobook-manager`.
+- **Zmiany z mojej domeny są odrzucane.** ABM odrzuca zmiany przychodzące z adresu, pod którym nie jest osiągany. Najpierw ustaw proxy tak, żeby przekazywało oryginalny nagłówek `Host`. Jeśli to nie wystarczy, dodaj swoją domenę do **CORS Allowed Domains** w **Settings > General** (to ustawienie zaawansowane, więc włącz **Show Advanced**) i zrestartuj ABM. Zobacz [Rozwiązywanie problemów](/pl/troubleshooting/).
+- **Pobrania się kończą, ale nigdy nie importują.** Sprawdź mapowanie folderów z podpowiedzi powyżej.

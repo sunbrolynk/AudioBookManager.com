@@ -42,5 +42,9 @@
   "nl": {
     "label": "Nederlands",
     "lang": "nl"
+  },
+  "pl": {
+    "label": "Polski",
+    "lang": "pl"
   }
 }
