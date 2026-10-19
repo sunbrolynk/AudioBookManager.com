@@ -38,5 +38,9 @@
   "ja": {
     "label": "日本語",
     "lang": "ja"
+  },
+  "nl": {
+    "label": "Nederlands",
+    "lang": "nl"
   }
 }
