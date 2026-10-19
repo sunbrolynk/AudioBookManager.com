@@ -7,6 +7,7 @@ import SiteHeader from './SiteHeader.astro';
 import LanguageSelect from './overrides/LanguageSelect.astro';
 import SiteFooter from './SiteFooter.astro';
 import PrereleaseBadge from './PrereleaseBadge.astro';
+import ReviewBadge from './ReviewBadge.astro';
 import strings from '../landing-strings.json';
 import { translationHtml } from '../lib/translation-html.mjs';
 import locales from '../locales.json';
@@ -61,6 +62,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
   <a class="skip" href="#main">{t.skip}</a>
   <SiteHeader locale={loc}><LanguageSelect locale={loc} /></SiteHeader>
   {noteParts && <p class="xl-note" lang={t.htmlLang}><span class="w">{noteParts[0]}<a href="mailto:translate@audiobookmanager.com">translate@audiobookmanager.com</a>{noteParts[1]}</span></p>}
+  <ReviewBadge locale={loc} bar />
   <main id="main">
     <section class="hero">
       <div class="w grid">
