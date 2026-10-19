@@ -28,6 +28,8 @@ an isolated environment without personal credentials or sensitive mounts.
 
 Keep exact dependency versions, lockfile integrity hashes, full commit pins
 for GitHub Actions, and digest pins for container images.
+`.npmrc` refuses any version published less than 14 days ago, and Dependabot
+waits out the same cooldown.
 
 Record review findings and validation results in the PR. Passing tests,
 vulnerability audits, and secret scans do not prove a dependency is harmless.
