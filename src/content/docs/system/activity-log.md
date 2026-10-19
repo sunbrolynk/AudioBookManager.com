@@ -5,6 +5,10 @@ description: The record of what happened, and how it differs from Logs.
 
 ABM keeps three kinds of record.
 
+![System, Activity Log: imports and metadata refreshes with their source](../../../assets/docs/system-activity-log.jpg)
+
+![System, Events: the same activity as a compact table](../../../assets/docs/system-events.jpg)
+
 | Where | What it is |
 |---|---|
 | **System > Events** and **System > Activity Log** | The activity log: a database list of things that happened. Events is the severity-filtered view. Activity Log (titled Activity History) filters by category and searches the message, and shows before and after state |

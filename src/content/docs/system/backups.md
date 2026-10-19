@@ -5,6 +5,8 @@ description: Back up, export and restore ABM.
 
 **System > Backups** creates and restores backups. **Backup Now** makes one. Schedules, retention and export targets are under [General](/settings/general/).
 
+![System, Backups: the list of backups with their size and date](../../../assets/docs/system-backups.jpg)
+
 ## What is in a backup
 
 An encrypted archive with a consistent copy of the database (`database.db`), the settings (`settings.json`) and a manifest. Also include `/config` in your own backups for the covers and the app secret file.

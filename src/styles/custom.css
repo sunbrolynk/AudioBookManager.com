@@ -73,3 +73,7 @@ starlight-toc a[aria-current='true'] { color: var(--r1-ink); }
 /* An icon inside running text, such as a GitHub link beside a name. */
 .sl-markdown-content .inline-icon { display: inline; vertical-align: -0.125em; }
 .sl-markdown-content .nowrap { white-space: nowrap; }
+
+/* App screenshots in the docs: framed like the app window, phone shots side by side. */
+.sl-markdown-content img[src*="/_astro/"] { border: 1px solid #3a3a3a; border-radius: 8px; }
+.sl-markdown-content img[src*="/_astro/phone-"] { display: inline-block; width: min(31%, 240px); margin-inline-end: 2%; vertical-align: top; border-radius: 14px; }

@@ -5,6 +5,8 @@ description: Accounts, sync schedule, downloads and diagnostics.
 
 **Settings > Audible** is where accounts connect and syncing and downloading are tuned. How the feature works is on the [Audible](/audible/) page.
 
+![Settings, Audible: connecting an account and the connection diagnostics](../../../assets/docs/settings-audible.jpg)
+
 ## Accounts
 
 Connecting an account takes a **Marketplace**, a **Display Name** and the **Redirect URL** that Amazon sends back after you sign in. Each account keeps its own library. If an account needs to sign in again, sign in on the same account instead of deleting it. Deleting drops its library and removes its device from Audible.

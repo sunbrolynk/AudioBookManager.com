@@ -5,6 +5,8 @@ description: Following a series so new books arrive as wanted.
 
 A series in ABM is a catalog: every book Libex knows in it, with the ones you own marked. It exists whether or not you own anything in it.
 
+![A series page: every book in order with its position, status and rating](../../../assets/docs/series-detail.jpg)
+
 ## Monitor New Books
 
 Each series and author has a **Monitor New Books** choice. When a refresh finds a book that was not in the catalog before, this decides whether it is added as wanted. A series you add yourself defaults to All. An author defaults to None. The choice is saved on the series or author, and refreshes apply it.

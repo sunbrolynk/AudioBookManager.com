@@ -5,6 +5,10 @@ description: How ABM behaves on screens narrower than 768px.
 
 Below 768px wide ABM uses phone layouts. From 768px to 1023px the sidebar shrinks to icons, and from 1024px up you get the full sidebar.
 
+![The Dashboard on a phone](../../assets/docs/phone-dashboard.jpg)
+![The Books page on a phone in poster view](../../assets/docs/phone-library.jpg)
+![The Books page on a phone in overview view](../../assets/docs/phone-library-overview.jpg)
+
 ## Navigation
 
 There is no sidebar. A bar at the bottom has five tabs: Library, Activity, Wanted, Settings and System. A tab with several pages opens a small menu above it. Library holds Books, Authors, Series, Add New, Library Import, Audible Library, Conversions and the Discover pages. Activity holds Queue, History, Calendar and Blocklist. Tap the logo for the Dashboard.
@@ -33,6 +37,10 @@ In selection mode, tapping a row selects it. The selection bar replaces the bott
 
 A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. On a series page, tapping a book you don't own opens its actions.
 
+![A book's page on a phone](../../assets/docs/phone-book.jpg)
+![A series page on a phone](../../assets/docs/phone-series-detail.jpg)
+![An author's page on a phone](../../assets/docs/phone-author.jpg)
+
 ## Other pages
 
 - Calendar is a day-by-day list. The view picker sets the period. Agenda is not offered.
@@ -40,15 +48,25 @@ A book page has Search, Interactive, Import (Convert once it has files) and Refr
 - Dashboard cards stack in one column.
 - Dialogs open as sheets from the bottom of the screen.
 
+![Discover on a phone](../../assets/docs/phone-discover.jpg)
+![Wanted, Missing on a phone](../../assets/docs/phone-wanted.jpg)
+![System, Tasks on a phone](../../assets/docs/phone-system-tasks.jpg)
+
 ## Settings
 
 Settings is a grouped list: Library, Sources and App. Each row is a link with the page's name and what it is for. Download clients, indexers and other entries are full-width cards.
+
+![The Profiles settings page on a phone](../../assets/docs/phone-settings-profiles.jpg)
+![System, Status on a phone](../../assets/docs/phone-system-status.jpg)
+![The Books page on a phone with the light theme](../../assets/docs/phone-library-light.jpg)
 
 ## Import Workbench
 
 :::caution[Coming in the next release]
 The phone layout of the Import Workbench is not in a released version yet.
 :::
+
+![The Import Workbench on a phone](../../assets/docs/phone-workbench.jpg)
 
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
 - The bottom bar shows how many are selected and the Add button, and says why Add is blocked.
