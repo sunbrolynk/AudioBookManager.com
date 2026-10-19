@@ -1,0 +1,87 @@
+---
+title: ABM:n asennus
+description: Yksi kontti, kolme kansiota, yksi komento. Tällä sivulla on koko asennus.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Tietokanta on SQLite-tiedosto kansiossa `/config`, joten erillistä tietokantapalvelua ei tarvitse pystyttää.
+
+**Tarvitset:**
+
+- Dockerin ja Composen
+- Kansion äänikirjakirjastollesi
+- Kansion, johon latausasiakkaasi laittaa valmiit lataukset
+- Kansion ABM:n omille tiedoille
+
+## Asennus
+
+<Steps>
+
+1. **Tee compose-tiedosto.** Tallenna tämä nimellä `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Osoita se kansioihisi.** Vaihda kunkin volyymin vasen puoli koneesi oikeaksi kansioksi. Jätä oikea puoli ennalleen.
+
+   | Isäntäkoneen polku | Kontin polku | Mitä sinne tulee |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Äänikirjakirjastosi. Pakollinen. |
+   | `/path/to/downloads` | `/downloads` | Paikka, johon latausasiakkaasi laittaa valmiit lataukset. Pakollinen. |
+   | `/path/to/config` | `/config` | SQLite-tietokanta, varmuuskopiot, lokit, roskakorit ja luotu sovellussalaisuus. Pidä tallessa. |
+
+3. **Käynnistä se.** Aja tämä kansiossa, jossa compose-tiedosto on:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Avaa se.** Mene osoitteeseen `http://your-server:5173`. Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset.
+
+</Steps>
+
+<Aside type="tip" title="Lataukset toisessa kontissa?">
+Jos latausasiakkaasi pyörii omassa kontissaan, sen latauskansion on oltava sama kansio, jonka ABM näkee polkuna `/downloads`. Jos polut eroavat, lisää etäpolun vastaavuus kohdassa **Settings > Download Clients**.
+</Aside>
+
+## Ensimmäinen käynnistys
+
+Aseta aikavyöhykkeesi compose-tiedostossa muuttujalla `TIMEZONE`. Lisää sitten kohdassa **Settings** juurikansio osioon **Media Management**, indeksoija osioon **Indexers** ja latausasiakas osioon **Download Clients**. Ympäristömuuttujat ja käänteiset välityspalvelimet käydään läpi sivulla [Ympäristömuuttujat](/fi/configuration/).
+
+## Kääntäminen lähdekoodista
+
+Jos haluat rakentaa imagen itse, kloonaa repo, vaihda `image:`-rivin tilalle `build: .` ja aja:
+
+```bash
+docker compose up -d --build
+```
+
+## Päivittäminen
+
+Hae uusi image ja luo kontti uudelleen. [Päivitykset](/fi/updates/)-sivulla kerrotaan, mitä kussakin julkaisussa muuttui.
+
+<Aside type="caution" title="ABM on alfavaiheessa">
+Varmuuskopioi `/config` ennen päivitystä ja silmäile päivitystiedot ensin.
+</Aside>
+
+## Jokin ei toimi?
+
+- **Sivu ei lataudu.** Tarkista compose-tiedoston porttimääritys ja aja sitten `docker logs audiobook-manager`.
+- **Muutokset hylätään omasta verkkotunnuksestani.** ABM hylkää muutokset osoitteesta, josta sitä ei käytetä. Laita välityspalvelimesi ensin välittämään alkuperäinen `Host`-otsake. Jos se ei riitä, lisää verkkotunnuksesi kenttään **CORS Allowed Domains** kohdassa **Settings > General** (se on lisäasetus, joten laita **Show Advanced** päälle) ja käynnistä ABM uudelleen. Katso [Vianmääritys](/fi/troubleshooting/).
+- **Lataukset valmistuvat, mutta niitä ei koskaan tuoda.** Tarkista kansiomääritys yllä olevasta vinkistä.

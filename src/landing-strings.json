@@ -1164,5 +1164,212 @@
       ]
     ],
     "coming": "Coming"
+  },
+  "fi": {
+    "htmlLang": "fi",
+    "title": "AudioBook Manager: *arr äänikirjoille",
+    "skip": "Siirry sisältöön",
+    "heroEyebrow": "Ilmainen · avoin lähdekoodi · omalla palvelimella",
+    "h1": "Äänikirjat,<br /><em>hoidettu.</em>",
+    "ctaDocker": "Asenna Dockerilla",
+    "ctaSee": "Katso se toiminnassa",
+    "runs": "yksi kontti · SQLite · portti 5173 · GPL-3.0",
+    "heroAlt": "ABM:n kirjasto: ruudukko äänikirjojen kansikuvia, joissa kussakin vihreä Downloaded- tai keltainen Wanted-palkki",
+    "phoneAlt": "Kirjan sivu ABM:ssä puhelimella",
+    "existsEyebrow": "Miksi se on olemassa",
+    "existsH2": "Äänikirjat ansaitsivat oman *arrinsa.",
+    "p1": "Sarjoille on Sonarr. Elokuville on Radarr. Readarr, joka rakentui samoille Servarr-perustuksille, hoiti kirjoja ja äänikirjoja yhdessä, ja se on sittemmin lopetettu.",
+    "p2": "ABM jatkaa sitä polkua pelkästään äänikirjoille. Se rakentuu Servarr-sovellusten luoman mallin päälle, ja se on muotoiltu lukijoiden, sarjojen järjestysnumeroiden, monilevyisten julkaisujen ja M4B:n ympärille.",
+    "p3": "Audiobookshelf toistaa kirjastosi upeasti. Se ei vain lähde etsimään sarjan seuraavaa kirjaa eikä siivoa sitä, mitä latauksista tulee. Sen osan hoitaa ABM.",
+    "beforeA": "Ennen",
+    "beforeB": "käsin",
+    "afterA": "Jälkeen",
+    "afterB": "ABM:n tekemänä",
+    "howEyebrow": "Miten se toimii",
+    "howH2": "Viisi vaihetta. Sinä teet ensimmäisen.",
+    "getEyebrow": "Mitä saat",
+    "altPage": "ABM:n sivu: {name}",
+    "whyEyebrow": "Miksi ABM",
+    "whyH2": "Tehty hyllyä varten, ei päälle liimattu.",
+    "shotsEyebrow": "Kuvakaappaukset",
+    "shotsH2": "Tämä on se oikea.",
+    "shotsAria": "Kuvakaappaukset, vieritä sivuttain",
+    "getItEyebrow": "Hanki se",
+    "installH2": "Käynnissä yhdellä tiedostolla.",
+    "buildP": "<b>Käännä lähdekoodista.</b> Vaihda repon kloonissa <code>image:</code> tilalle <code>build: .</code> ja aja <code>docker compose up -d --build</code>.",
+    "otherP": "<b>Unraid, Windows, macOS, tavallinen Linux-palvelu.</b> Ei vielä. Docker on toistaiseksi ainoa tapa.",
+    "note": "ABM on alfavaiheessa. Varmuuskopioi <code>/config</code> ennen päivitystä ja silmäile päivitystiedot ensin.",
+    "fullGuide": "Koko asennusohje →",
+    "faqEyebrow": "UKK",
+    "faqH2": "Aiheellisia kysymyksiä.",
+    "supportSr": "Tuki",
+    "brokenH": "Onko jokin rikki?",
+    "brokenP": "Avaa issue GitHubissa ja liitä mukaan loki kohdasta System › Log Files. Mitä enemmän lokia, sitä nopeampi korjaus.",
+    "brokenBtn": "Avaa issue",
+    "helpH": "Haluatko auttaa sitä eteenpäin?",
+    "helpP": "ABM on yhden ihmisen projekti. Ko-fi tai Monster pitää sen liikkeessä.",
+    "kofiBtn": "Buy Me a Monster",
+    "monsterBtn": "Tue kehitystä",
+    "finalH2": "Lopeta kansioiden<br />korjailu.",
+    "ctaInstall": "Asenna ABM",
+    "ctaDocs": "Lue dokumentaatio",
+    "sub": "ABM löytää haluamasi äänikirjat, nappaa ne jo käyttämälläsi latausasiakkaalla ja järjestää ne niin, että Audiobookshelf löytää siistin kirjaston.",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "Halua",
+        "Lisää kirja, sarja tai koko tekijä. ABM laittaa sen Wanted-listalle ja pitää silmällä."
+      ],
+      [
+        "Etsi",
+        "Usenet- ja torrent-indeksoijasi tarkistetaan ajastetusti, tai heti, jos painat hakua."
+      ],
+      [
+        "Nappaa",
+        "Paras julkaisu, jonka laatuprofiilisi sallii, menee jo käyttämällesi latausasiakkaalle."
+      ],
+      [
+        "Järjestä",
+        "Se tuodaan, nimetään uudelleen ja arkistoidaan tekijän ja sarjan alle. Monilevyiset julkaisut säilyttävät alikansionsa, kun kirjoja siirretään."
+      ],
+      [
+        "Pidä",
+        "Metatietosi, sinun päätöksesi: sinä valitset, mitä ABM säilyttää ja kirjoittaa ja mistä soittimesi sen lukee. Salli parannukset laatuprofiilissa, niin ABM vaihtaa tilalle paremman julkaisun, kun sellainen tulee vastaan."
+      ]
+    ],
+    "features": [
+      [
+        "Kirjasto",
+        "Jokainen kirja yhdellä silmäyksellä.",
+        "Kansikuvat, tila ja sarjat yhdessä ruudukossa. Vihreä on levyllä. Keltainen tarkoittaa, että ABM jahtaa sitä vielä."
+      ],
+      [
+        "Kirja",
+        "Tiedot ovat kohdallaan.",
+        "Tekijä, lukija, sarja, kesto, kustantaja ja jokainen tiedosto laatuineen ja sijainteineen."
+      ],
+      [
+        "Kalenteri",
+        "Tiedä, mitä on tulossa.",
+        "Seuraamiesi kirjojen julkaisupäivät kalenterissa."
+      ],
+      [
+        "Halutut",
+        "Lista siitä, mitä puuttuu.",
+        "Puuttuvat kirjat ja kirjat, jotka jäävät laadun katkaisutason alle, yhden klikkauksen päässä hausta."
+      ],
+      [
+        "Profiilit",
+        "Sinä päätät, mitä parempi tarkoittaa.",
+        "Yhden tiedoston M4B mieluummin kuin kansiollinen MP3:ia? Sano se kerran laatuprofiilissa, niin ABM odottaa sitä."
+      ],
+      [
+        "Muunnokset",
+        "Korjaa muotokin.",
+        "Yhdistä osat, pilko tai lisää kappaleita tai tee MP3:ista yksi M4B. ABM oppii, kuinka nopea koneesi on, ja arvioi, kauanko työ kestää."
+      ]
+    ],
+    "why": [
+      [
+        "Äänikirjat ensin.",
+        "Lukijat, sarjojen järjestysnumerot, usean tiedoston julkaisut, kappaleet ja M4B ovat tässä koko homman ydin, eivät jälkiajatus."
+      ],
+      [
+        "Tunnet jo paikat.",
+        "Wanted, Queue, History, Calendar, laatuprofiilit. Jos olet käyttänyt Sonarria tai Radarria, kaikki on siellä, mistä sitä etsisit."
+      ],
+      [
+        "Se kertoo totuuden.",
+        "Jos siirrossa 3 kirjaa viidestä menee perille, ABM kertoo, montako siirtyi ja miksi loput eivät."
+      ],
+      [
+        "Yksi kontti. Ei tietokantapalvelinta.",
+        "Kaikki on yhdessä SQLite-tiedostossa kansiossa <code>/config</code>. Varmuuskopioi se kansio, niin olet varmuuskopioinut ABM:n."
+      ]
+    ],
+    "works": [
+      [
+        "Toistetaan",
+        "Audiobookshelfissa"
+      ],
+      [
+        "Metatiedot",
+        "Libexiltä"
+      ],
+      [
+        "Indeksoijat",
+        "Newznab · Torznab"
+      ],
+      [
+        "Omistetut kirjat",
+        "Audiblesta"
+      ],
+      [
+        "Latausasiakkaat",
+        "7 tuettua"
+      ]
+    ],
+    "shots": [
+      "Kojelauta",
+      "Kirjasto",
+      "Kirja",
+      "Sarja",
+      "Kalenteri",
+      "Halutut",
+      "Profiilit",
+      "Muunnokset"
+    ],
+    "installSteps": [
+      [
+        "Tallenna se",
+        "Liitä tuo tiedostoon <code>docker-compose.yml</code> ja vaihda vasemmalla olevat kolme polkua omiksi kansioiksesi."
+      ],
+      [
+        "Käynnistä se",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "Avaa se",
+        "Mene osoitteeseen <code>http://your-server:5173</code>. Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset."
+      ]
+    ],
+    "faq": [
+      [
+        "Korvaako ABM Audiobookshelfin?",
+        "Ei. Audiobookshelf on soitin ja ABM on kirjastonhoitaja. Osoita molemmat samaan kirjastokansioon ja anna kummankin hoitaa oma tehtävänsä."
+      ],
+      [
+        "Mistä metatiedot tulevat?",
+        "Libexiltä, joka on avoin metatietopalvelu Audiblen tiedoille. ABM päivittää ne ajastetusti, ja itse valitsemasi kansikuvan voi lukita, jolloin päivitys jättää sen rauhaan."
+      ],
+      [
+        "Tarvitsenko erillisen tietokannan?",
+        "Et tarvitse. ABM pitää kaiken yhdessä SQLite-tiedostossa kansiossa <code>/config</code>. Mitään muuta ei tarvitse ajaa."
+      ],
+      [
+        "Pääsenkö siihen käsiksi oman verkkoni ulkopuolelta?",
+        "Pääset, versiosta 0.17.0 alkaen. Oletuksena kaikki lähiverkkosi ulkopuolelta tuleva joutuu kirjautumaan, ja kun asetat Authentication Required -arvoksi Enabled, kaikkien on kirjauduttava, myös omassa lähiverkossasi. Jos käytössä on nginx, Traefik tai Caddy, aseta <code>TRUSTED_PROXIES</code> välityspalvelimen osoitteeksi. Tallennetut tunnukset on salattu."
+      ],
+      [
+        "Mitä Readarrille tapahtui?",
+        "Readarr hoiti kirjoja ja äänikirjoja yhdessä, ja se on sittemmin lopetettu. ABM on pelkästään äänikirjoille, ja se rakentuu Servarr-sovellusten luoman mallin päälle."
+      ],
+      [
+        "Paljonko se maksaa?",
+        "Ei mitään. Se on ilmainen ja avointa lähdekoodia GPL-3.0-lisenssillä. Jos se säästää sinulta illan, Ko-fi-linkki on heti alla."
+      ]
+    ],
+    "strip": [
+      "Haluttu",
+      "Latautuu",
+      "Ladattu",
+      "Tiedostot puuttuvat"
+    ],
+    "translatorNote": "Tämä sivu on konekäännetty. Jos suomi on äidinkielesi ja haluaisit auttaa parantamaan käännöstä, laita minulle sähköpostia osoitteeseen {mail}.",
+    "communityEyebrow": "Yhteisö",
+    "communityH2": "Löydä omiesi joukko.",
+    "communityP": "Onko sinulla kysyttävää, tarvitsetko apua asennuksesi kanssa vai haluatko jutella äänikirjoista? Liity AudioBook Managerin Discord-yhteisöön, josta saat tukea ja keskustelua.",
+    "communityBtn": "Liity Discordiin"
   }
 }
