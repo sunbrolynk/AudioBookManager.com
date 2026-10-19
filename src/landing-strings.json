@@ -1164,5 +1164,212 @@
       ]
     ],
     "coming": "Coming"
+  },
+  "zh-tw": {
+    "htmlLang": "zh-TW",
+    "title": "AudioBook Manager：有聲書的 *arr",
+    "skip": "跳到主要內容",
+    "heroEyebrow": "免費 · 開源 · 自架",
+    "h1": "有聲書，<br /><em>交給它就好。</em>",
+    "ctaDocker": "用 Docker 安裝",
+    "ctaSee": "看它實際運作",
+    "runs": "一個容器 · SQLite · 連接埠 5173 · GPL-3.0",
+    "heroAlt": "ABM 的書庫：一整排有聲書封面，每張下面都有綠色的 Downloaded 或琥珀色的 Wanted 狀態條",
+    "phoneAlt": "手機上 ABM 的一本書頁面",
+    "existsEyebrow": "為什麼會有它",
+    "existsH2": "有聲書值得擁有自己的 *arr。",
+    "p1": "影集有 Sonarr，電影有 Radarr。Readarr 建立在同樣的 Servarr 基礎上，把書和有聲書放在一起處理，但它後來已經停止維護了。",
+    "p2": "ABM 接下這條路，只專心做有聲書。它建立在 Servarr 系列 App 開創的設計之上，並圍繞著朗讀者、系列集數、多光碟發行版本和 M4B 打造。",
+    "p3": "Audiobookshelf 播放你的書庫播得很漂亮，只是它不會去找系列的下一本，也不會整理下載進來的東西。這就是 ABM 負責的部分。",
+    "beforeA": "之前",
+    "beforeB": "手動整理",
+    "afterA": "之後",
+    "afterB": "交給 ABM",
+    "howEyebrow": "怎麼運作",
+    "howH2": "五個步驟，你只要做第一步。",
+    "getEyebrow": "你會得到什麼",
+    "altPage": "ABM 的{name}頁面",
+    "whyEyebrow": "為什麼選 ABM",
+    "whyH2": "為書架而生，不是硬加上去的。",
+    "shotsEyebrow": "截圖",
+    "shotsH2": "這就是實際的樣子。",
+    "shotsAria": "截圖，可以左右捲動",
+    "getItEyebrow": "取得",
+    "installH2": "一個檔案就跑起來。",
+    "buildP": "<b>從原始碼建置。</b> 在 clone 下來的 repo 裡，把 <code>image:</code> 換成 <code>build: .</code>，然後執行 <code>docker compose up -d --build</code>。",
+    "otherP": "<b>Unraid、Windows、macOS、一般的 Linux 服務。</b> 還不行。目前只能用 Docker。",
+    "note": "ABM 還在 alpha 階段。升級前先備份 <code>/config</code>，並先大致看過更新說明。",
+    "fullGuide": "完整安裝指南 →",
+    "faqEyebrow": "常見問題",
+    "faqH2": "合理的疑問。",
+    "supportSr": "支持",
+    "brokenH": "有東西壞了？",
+    "brokenP": "到 GitHub 開一個 issue，並附上 System › Log Files 裡的記錄檔。記錄檔給得越多，修得越快。",
+    "brokenBtn": "開一個 issue",
+    "helpH": "想幫它一把？",
+    "helpP": "ABM 是一個人的專案。Ko-fi 或一罐 Monster 能讓它繼續走下去。",
+    "kofiBtn": "請我喝罐 Monster",
+    "monsterBtn": "支持開發",
+    "finalH2": "別再整理<br />資料夾了。",
+    "ctaInstall": "安裝 ABM",
+    "ctaDocs": "閱讀文件",
+    "sub": "ABM 會找到你想要的有聲書，用你本來就在用的下載用戶端抓下來，再整理歸檔，讓 Audiobookshelf 看到一個乾淨整齊的書庫。",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "想要",
+        "加入一本書、一個系列或一整位作者。ABM 會把它放進 Wanted 清單，並持續盯著。"
+      ],
+      [
+        "尋找",
+        "你的 Usenet 和 BT 索引器會依排程被檢查，按下搜尋的話就是馬上。"
+      ],
+      [
+        "抓取",
+        "品質設定檔允許的最佳發行版本，會送到你本來就在用的下載用戶端。"
+      ],
+      [
+        "歸檔",
+        "它會被匯入、重新命名，並依作者和系列歸檔。書搬家時，多光碟發行版本會保留它們的子資料夾。"
+      ],
+      [
+        "保存",
+        "你的中繼資料由你作主：你決定 ABM 要保留和寫入什麼，以及你的播放器從哪裡讀取。在品質設定檔裡允許升級，有更好的發行版本出現時，ABM 就會換上去。"
+      ]
+    ],
+    "features": [
+      [
+        "書庫",
+        "每本書一目了然。",
+        "封面、狀態和系列都在同一個格狀檢視裡。綠色代表在磁碟上，琥珀色代表 ABM 還在找。"
+      ],
+      [
+        "書籍",
+        "細節都是對的。",
+        "作者、朗讀者、系列、播放長度、出版商和每一個檔案，包括它的品質和放在哪裡。"
+      ],
+      [
+        "行事曆",
+        "知道接下來有什麼。",
+        "你監控的書的發行日期，全部排在行事曆上。"
+      ],
+      [
+        "想要",
+        "缺了什麼，一張清單看清楚。",
+        "缺少的書，以及品質還沒達到門檻的書，點一下就能搜尋。"
+      ],
+      [
+        "設定檔",
+        "什麼叫更好，由你決定。",
+        "想要單檔 M4B，而不是一整個資料夾的 MP3？在品質設定檔裡說一次，ABM 就會等到它出現。"
+      ],
+      [
+        "轉換",
+        "格式也一起修好。",
+        "合併分段、分割或加入章節，或把 MP3 轉成一個 M4B。ABM 會學習你的機器有多快，並估算一個工作要花多久。"
+      ]
+    ],
+    "why": [
+      [
+        "有聲書優先。",
+        "朗讀者、系列集數、多檔發行版本、章節和 M4B 就是這裡的重點，不是事後才補上的。"
+      ],
+      [
+        "你本來就知道東西在哪。",
+        "Wanted、Queue、History、Calendar、品質設定檔。如果你用過 Sonarr 或 Radarr，每樣東西都在你會去找的地方。"
+      ],
+      [
+        "它跟你說實話。",
+        "如果一次搬移只搬過去 5 本裡的 3 本，ABM 會告訴你搬了幾本，以及其他幾本為什麼沒搬成。"
+      ],
+      [
+        "一個容器，不用資料庫伺服器。",
+        "所有東西都放在 <code>/config</code> 底下的一個 SQLite 檔案裡。備份那個資料夾，就等於備份好 ABM 了。"
+      ]
+    ],
+    "works": [
+      [
+        "播放於",
+        "Audiobookshelf"
+      ],
+      [
+        "中繼資料來自",
+        "Libex"
+      ],
+      [
+        "索引器",
+        "Newznab · Torznab"
+      ],
+      [
+        "已購書籍來自",
+        "Audible"
+      ],
+      [
+        "下載用戶端",
+        "支援 7 種"
+      ]
+    ],
+    "shots": [
+      "儀表板",
+      "書庫",
+      "書籍",
+      "系列",
+      "行事曆",
+      "想要",
+      "設定檔",
+      "轉換"
+    ],
+    "installSteps": [
+      [
+        "存檔",
+        "把那段貼進 <code>docker-compose.yml</code>，把左邊的三個路徑改成你自己的資料夾。"
+      ],
+      [
+        "啟動",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "打開",
+        "前往 <code>http://your-server:5173</code>。第一次開啟時會帶你設定登入帳號。"
+      ]
+    ],
+    "faq": [
+      [
+        "ABM 會取代 Audiobookshelf 嗎？",
+        "不會。Audiobookshelf 是播放器，ABM 是圖書管理員。把兩個都指向同一個書庫資料夾，讓它們各做各的事。"
+      ],
+      [
+        "中繼資料從哪裡來？",
+        "來自 Libex，一個提供 Audible 資料的開放中繼資料服務。ABM 會依排程重新整理，你自己挑的封面可以鎖定，重新整理時就不會動到它。"
+      ],
+      [
+        "我需要另外架一個資料庫嗎？",
+        "不用。ABM 把所有東西都放在 <code>/config</code> 裡的一個 SQLite 檔案，不需要再跑其他東西。"
+      ],
+      [
+        "我可以從外面的網路連進來嗎？",
+        "可以，0.17.0 以後的版本都行。預設情況下，從你區域網路以外連進來的都要登入；把 Authentication Required 設成 Enabled 的話，所有人都要登入，連你自己的區域網路也一樣。如果放在 nginx、Traefik 或 Caddy 後面，把 <code>TRUSTED_PROXIES</code> 設成代理的位址。已儲存的憑證都有加密。"
+      ],
+      [
+        "Readarr 怎麼了？",
+        "Readarr 以前是把書和有聲書放在一起處理，後來已經停止維護了。ABM 只做有聲書，建立在 Servarr 系列 App 開創的設計之上。"
+      ],
+      [
+        "要多少錢？",
+        "完全免費。它是以 GPL-3.0 授權的自由開源軟體。如果它幫你省下一個晚上，Ko-fi 連結就在下面。"
+      ]
+    ],
+    "strip": [
+      "想要",
+      "下載中",
+      "已下載",
+      "檔案遺失"
+    ],
+    "communityEyebrow": "社群",
+    "communityH2": "找到同好。",
+    "communityP": "有問題想問、設定需要幫忙，或只是想聊聊有聲書？加入 Discord 上的 AudioBook Manager 社群，在那裡取得支援和參與討論。",
+    "communityBtn": "加入 Discord",
+    "translatorNote": "這個頁面是機器翻譯的。如果繁體中文是你的母語，而且你願意幫忙讓它更好，寫信給我：{mail}。"
   }
 }
