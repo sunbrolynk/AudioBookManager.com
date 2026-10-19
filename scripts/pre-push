@@ -39,6 +39,9 @@ npm audit --audit-level=moderate
 echo "Running regression tests..."
 npm test
 
+echo "Type-checking the site source..."
+npm run typecheck
+
 echo "Building the website and checking it against its CSP..."
 npm run build
 

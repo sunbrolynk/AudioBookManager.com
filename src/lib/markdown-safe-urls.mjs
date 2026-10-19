@@ -1,4 +1,5 @@
 // Reject unsafe destinations before Markdown is converted to HTML.
+/** @param {unknown} value */
 export function validateMarkdownUrl(value, image = false) {
   if (typeof value !== 'string') {
     throw new Error('Markdown URL must be a string');
@@ -16,12 +17,15 @@ export function validateMarkdownUrl(value, image = false) {
 
 export const markdownSafeUrls = {
   name: 'markdown-safe-urls',
+  /** @param {{ url: string }} node */
   link(node) {
     validateMarkdownUrl(node.url);
   },
+  /** @param {{ url: string }} node */
   image(node) {
     validateMarkdownUrl(node.url, true);
   },
+  /** @param {{ url: string }} node */
   definition(node) {
     // Definitions may be used by either links or images.
     validateMarkdownUrl(node.url);

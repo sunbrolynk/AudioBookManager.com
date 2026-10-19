@@ -48,6 +48,9 @@ jobs:
       - name: Run regression tests
         run: npm test
 
+      - name: Type-check the site source
+        run: npm run typecheck
+
       - name: Build website, security headers and CSP check
         run: npm run build
 
