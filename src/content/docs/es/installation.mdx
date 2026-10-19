@@ -1,0 +1,102 @@
+---
+title: Instalar ABM
+description: Un contenedor, tres carpetas, un comando. Esta página es toda la instalación.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+La base de datos es un archivo SQLite en `/config`, así que no hay ningún servicio de base de datos que montar.
+
+**Vas a necesitar:**
+
+- Docker con Compose
+- Una carpeta para tu biblioteca de audiolibros
+- La carpeta donde tu cliente de descarga deja las descargas terminadas
+- Una carpeta para los datos del propio ABM
+
+## Instalación
+
+<Steps>
+
+1. **Crea un archivo compose.** Guarda esto como `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Apúntalo a tus carpetas.** Cambia la parte izquierda de cada volumen por una carpeta real de tu máquina. La parte derecha déjala como está.
+
+   | Ruta en el host | Ruta en el contenedor | Qué va ahí |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Tu biblioteca de audiolibros. Obligatoria. |
+   | `/path/to/downloads` | `/downloads` | Donde tu cliente de descarga deja las descargas terminadas. Obligatoria. |
+   | `/path/to/config` | `/config` | La base de datos SQLite, las copias de seguridad, los registros, las papeleras de reciclaje y el secreto de la aplicación generado. No la pierdas. |
+
+3. **Arráncalo.** Ejecuta esto desde la carpeta donde está el archivo compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Ábrelo.** Ve a `http://your-server:5173`. La primera visita te guía para crear un usuario.
+
+</Steps>
+
+<Aside type="tip" title="¿Las descargas están en otro contenedor?">
+Si tu cliente de descarga va en su propio contenedor, su carpeta de descargas tiene que ser la misma carpeta que ABM ve como `/downloads`. Si las rutas no coinciden, añade un mapeo de rutas remotas en **Settings > Download Clients**.
+</Aside>
+
+## Primer arranque
+
+Define tu zona horaria con `TIMEZONE` en el archivo compose. Después, en **Settings**, añade una carpeta raíz en **Media Management**, un indexador en **Indexers** y un cliente de descarga en **Download Clients**. Las variables de entorno y los proxies inversos se explican en [Configuración](/es/configuration/).
+
+## Compilar desde el código fuente
+
+Para construir la imagen tú mismo, clona el repositorio, cambia la línea `image:` por `build: .` y ejecuta:
+
+```bash
+docker compose up -d --build
+```
+
+## Otras formas de instalar
+
+Por ahora la única forma es Docker. Hay planes para instalaciones nativas, para que ABM funcione donde ya tengas tus servicios autoalojados:
+
+| Plataforma | Qué se planea |
+|---|---|
+| Linux | Un paquete y un servicio nativos |
+| Windows | Un instalador `.exe` |
+| macOS | Una aplicación nativa |
+| Kubernetes | Un despliegue en clúster |
+| Unraid | Una plantilla de Community Apps |
+| Proxmox | Un script de instalación LXC |
+
+Ninguna existe todavía. Cada una aparecerá en la página [Actualizaciones](/es/updates/) cuando salga.
+
+## Actualizar
+
+Descarga la imagen nueva y vuelve a crear el contenedor. La página [Actualizaciones](/es/updates/) recoge lo que cambia en cada versión.
+
+<Aside type="caution" title="ABM está en fase alfa">
+Haz una copia de seguridad de `/config` antes de actualizar, y échale un vistazo a las notas de la versión primero.
+</Aside>
+
+## ¿Algo no va bien?
+
+- **La página no carga.** Revisa el mapeo de puertos en tu archivo compose y luego ejecuta `docker logs audiobook-manager`.
+- **Se rechazan los cambios desde mi dominio.** ABM rechaza cambios que vienen de una dirección con la que no se accede a él. Primero haz que tu proxy deje pasar la cabecera `Host` original. Si con eso no basta, añade tu dominio en **CORS Allowed Domains** dentro de **Settings > General** (es un ajuste avanzado, así que activa **Show Advanced**) y reinicia ABM. Consulta [Solución de problemas](/es/troubleshooting/).
+- **Las descargas terminan pero nunca se importan.** Revisa el mapeo de carpetas del consejo de arriba.
