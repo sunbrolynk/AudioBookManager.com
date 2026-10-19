@@ -54,5 +54,9 @@
   "zh-tw": {
     "label": "繁體中文（台灣）",
     "lang": "zh-TW"
+  },
+  "ko": {
+    "label": "한국어",
+    "lang": "ko"
   }
 }

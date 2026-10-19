@@ -3504,5 +3504,239 @@
     ],
     "coming": "即將推出",
     "translatorNote": "這個頁面是機器翻譯的。如果繁體中文是你的母語，而且你願意幫忙讓它更好，寫信給我：{mail}。"
+  },
+  "ko": {
+    "htmlLang": "ko",
+    "title": "AudioBook Manager: 오디오북을 위한 *arr",
+    "skip": "본문으로 건너뛰기",
+    "heroEyebrow": "무료 · 오픈 소스 · 셀프 호스팅",
+    "h1": "오디오북,<br /><em>알아서 척척.</em>",
+    "ctaDocker": "Docker로 설치하기",
+    "ctaSee": "실제 화면 보기",
+    "runs": "컨테이너 하나 · SQLite · 포트 5173 · GPL-3.0",
+    "heroAlt": "ABM 라이브러리 화면: 오디오북 표지가 격자로 늘어서 있고, 표지마다 초록색 Downloaded 또는 주황색 Wanted 막대가 붙어 있어요",
+    "phoneAlt": "휴대폰에서 본 ABM의 책 상세 페이지",
+    "existsEyebrow": "왜 만들었냐면요",
+    "existsH2": "오디오북에도 전용 *arr가 있어야 했어요.",
+    "p1": "TV에는 Sonarr가, 영화에는 Radarr가 있죠. 같은 Servarr 기반으로 만들어진 Readarr는 전자책과 오디오북을 함께 다뤘는데, 지금은 개발이 종료됐어요.",
+    "p2": "ABM은 그 길을 이어받아 오디오북만 다뤄요. Servarr 앱들이 처음 만든 설계를 바탕으로, 내레이터, 시리즈 순번, 여러 디스크로 나뉜 릴리스, M4B에 맞춰 다듬었어요.",
+    "p3": "Audiobookshelf는 라이브러리를 정말 멋지게 재생해 줘요. 다만 시리즈 다음 권을 찾아다니거나, 받아 온 파일을 정리해 주지는 않죠. 그 부분을 ABM이 맡아요.",
+    "beforeA": "이전",
+    "beforeB": "손으로 정리",
+    "afterA": "이후",
+    "afterB": "ABM이 정리",
+    "howEyebrow": "작동 방식",
+    "howH2": "다섯 단계. 첫 단계만 직접 하면 돼요.",
+    "getEyebrow": "이런 걸 얻어요",
+    "altPage": "ABM의 {name} 페이지",
+    "whyEyebrow": "왜 ABM인가요",
+    "whyH2": "덧붙인 기능이 아니라, 처음부터 서재를 위해 만들었어요.",
+    "shotsEyebrow": "스크린샷",
+    "shotsH2": "진짜 실행 화면이에요.",
+    "shotsAria": "스크린샷, 옆으로 스크롤하세요",
+    "getItEyebrow": "받아 가기",
+    "installH2": "파일 하나면 돌아가요.",
+    "buildP": "<b>소스에서 빌드하기.</b> 저장소를 클론한 뒤 <code>image:</code>를 <code>build: .</code>로 바꾸고 <code>docker compose up -d --build</code>를 실행하세요.",
+    "otherP": "<b>지금은 Docker로만 설치할 수 있어요.</b> 많이 쓰는 환경용 네이티브 설치도 계획 중이라, 이미 셀프 호스팅하고 있는 곳이면 어디서든 ABM을 돌릴 수 있게 될 거예요:",
+    "note": "ABM은 알파 버전이에요. 업그레이드 전에 <code>/config</code>를 백업하고, 업데이트 노트도 먼저 훑어보세요.",
+    "fullGuide": "전체 설치 가이드 →",
+    "faqEyebrow": "FAQ",
+    "faqH2": "궁금할 만한 것들.",
+    "supportSr": "지원",
+    "brokenH": "뭔가 고장 났나요?",
+    "brokenP": "GitHub에 이슈를 열고 System › Log Files에서 받은 로그를 첨부해 주세요. 로그가 많을수록 더 빨리 고칠 수 있어요.",
+    "brokenBtn": "이슈 열기",
+    "helpH": "응원하고 싶으신가요?",
+    "helpP": "ABM은 혼자 만드는 프로젝트예요. Ko-fi나 Monster 한 캔이 계속 굴러가게 해 줘요.",
+    "kofiBtn": "개발 후원하기",
+    "monsterBtn": "Monster 한 캔 사 주기",
+    "finalH2": "폴더 정리는<br />이제 그만.",
+    "ctaInstall": "ABM 설치하기",
+    "ctaDocs": "문서 읽기",
+    "sub": "ABM은 원하는 오디오북을 찾아서, 이미 쓰고 있는 다운로드 클라이언트로 받아 오고, Audiobookshelf가 깔끔한 라이브러리를 볼 수 있게 정리해 줘요.",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "원하기",
+        "책 한 권, 시리즈, 아니면 작가 전체를 추가하세요. ABM이 Wanted 목록에 올려 두고 계속 지켜봐요."
+      ],
+      [
+        "찾기",
+        "Usenet과 토렌트 인덱서를 일정에 맞춰 확인해요. 검색 버튼을 누르면 바로 확인하고요."
+      ],
+      [
+        "받기",
+        "품질 프로필이 허용하는 가장 좋은 릴리스를 이미 쓰고 있는 다운로드 클라이언트로 보내요."
+      ],
+      [
+        "정리하기",
+        "가져와서 이름을 바꾸고 작가와 시리즈별로 정리해요. 여러 디스크로 된 릴리스는 책을 옮길 때도 하위 폴더를 그대로 유지해요."
+      ],
+      [
+        "유지하기",
+        "메타데이터는 내 마음대로: ABM이 무엇을 남기고 무엇을 쓸지, 플레이어가 어디서 읽을지 직접 정해요. 품질 프로필에서 업그레이드를 허용하면 더 좋은 릴리스가 나왔을 때 ABM이 알아서 바꿔 줘요."
+      ]
+    ],
+    "features": [
+      [
+        "라이브러리",
+        "모든 책을 한눈에.",
+        "표지, 상태, 시리즈를 격자 하나로 보여 줘요. 초록색은 디스크에 있다는 뜻이고, 주황색은 ABM이 아직 찾는 중이라는 뜻이에요."
+      ],
+      [
+        "책",
+        "세부 정보가 정확해요.",
+        "작가, 내레이터, 시리즈, 재생 시간, 출판사, 그리고 모든 파일의 품질과 위치까지 보여 줘요."
+      ],
+      [
+        "캘린더",
+        "뭐가 나올지 미리 알아요.",
+        "모니터링 중인 책의 출간일을 캘린더에 쭉 보여 줘요."
+      ],
+      [
+        "원하는 책",
+        "빠진 것들의 목록.",
+        "없는 책과 품질 기준에 못 미치는 책을 모아 두고, 클릭 한 번이면 검색해요."
+      ],
+      [
+        "프로필",
+        "뭐가 더 좋은지는 내가 정해요.",
+        "MP3 폴더보다 단일 M4B 파일이 좋다고요? 품질 프로필에 한 번만 적어 두면 ABM이 그걸 나올 때까지 기다려요."
+      ],
+      [
+        "변환",
+        "형식까지 고쳐 줘요.",
+        "파트를 합치고, 챕터를 나누거나 추가하고, MP3를 M4B 하나로 바꿔요. ABM이 내 서버 속도를 학습해서 작업이 얼마나 걸릴지 예상해 줘요."
+      ]
+    ],
+    "why": [
+      [
+        "오디오북이 먼저예요.",
+        "내레이터, 시리즈 순번, 여러 파일로 된 릴리스, 챕터, M4B가 여기선 핵심이에요. 나중에 덧붙인 기능이 아니에요."
+      ],
+      [
+        "이미 익숙한 구조예요.",
+        "Wanted, Queue, History, Calendar, 품질 프로필. Sonarr나 Radarr를 써 봤다면 모든 게 찾아볼 법한 자리에 있어요."
+      ],
+      [
+        "있는 그대로 알려 줘요.",
+        "책 5권 중 3권만 옮겨졌다면, ABM은 몇 권이 옮겨졌고 나머지는 왜 안 됐는지 알려 줘요."
+      ],
+      [
+        "컨테이너 하나. DB 서버는 없어요.",
+        "모든 데이터가 <code>/config</code> 아래 SQLite 파일 하나에 들어 있어요. 그 폴더만 백업하면 ABM 백업 끝이에요."
+      ]
+    ],
+    "works": [
+      [
+        "재생은",
+        "Audiobookshelf"
+      ],
+      [
+        "메타데이터는",
+        "Libex"
+      ],
+      [
+        "인덱서",
+        "Newznab · Torznab"
+      ],
+      [
+        "보유한 책은",
+        "Audible"
+      ],
+      [
+        "다운로드 클라이언트",
+        "7종 지원"
+      ]
+    ],
+    "shots": [
+      "대시보드",
+      "라이브러리",
+      "책",
+      "시리즈",
+      "캘린더",
+      "원하는 책",
+      "프로필",
+      "변환"
+    ],
+    "installSteps": [
+      [
+        "저장하기",
+        "위 내용을 <code>docker-compose.yml</code>에 붙여 넣고, 왼쪽에 있는 경로 세 개를 내 폴더로 바꾸세요."
+      ],
+      [
+        "실행하기",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "열기",
+        "<code>http://your-server:5173</code>로 들어가세요. 처음 접속하면 로그인 설정을 차근차근 안내해 줘요."
+      ]
+    ],
+    "faq": [
+      [
+        "ABM이 Audiobookshelf를 대체하나요?",
+        "아니요. Audiobookshelf는 플레이어고, ABM은 사서예요. 둘 다 같은 라이브러리 폴더를 가리키게 하고 각자 할 일을 하게 두세요."
+      ],
+      [
+        "메타데이터는 어디서 오나요?",
+        "Audible 데이터를 위한 오픈 메타데이터 서비스인 Libex에서 와요. ABM이 일정에 맞춰 새로 고치고, 직접 고른 표지는 잠가 두면 새로 고쳐도 그대로 남아요."
+      ],
+      [
+        "별도 데이터베이스가 필요한가요?",
+        "아니요. ABM은 모든 걸 <code>/config</code> 안의 SQLite 파일 하나에 보관해요. 따로 돌릴 건 아무것도 없어요."
+      ],
+      [
+        "외부 네트워크에서도 접속할 수 있나요?",
+        "네, 0.17.0 이상이면 돼요. 기본값으로는 로컬 네트워크 바깥에서 들어오는 접속만 로그인해야 하고, Authentication Required를 Enabled로 바꾸면 내 LAN까지 포함해 모두가 로그인해야 해요. nginx, Traefik, Caddy 뒤에 둔다면 <code>TRUSTED_PROXIES</code>에 프록시 주소를 넣으세요. 저장된 자격 증명은 암호화돼요."
+      ],
+      [
+        "Readarr는 어떻게 됐나요?",
+        "Readarr는 전자책과 오디오북을 함께 다뤘는데, 지금은 개발이 종료됐어요. ABM은 Servarr 앱들이 처음 만든 설계를 바탕으로 오디오북만 다뤄요."
+      ],
+      [
+        "얼마예요?",
+        "공짜예요. GPL-3.0 라이선스의 무료 오픈 소스예요. 덕분에 저녁 시간을 아꼈다면, Ko-fi 링크가 바로 아래에 있어요."
+      ]
+    ],
+    "strip": [
+      "원하는 책",
+      "다운로드 중",
+      "다운로드 완료",
+      "파일 없음"
+    ],
+    "communityEyebrow": "커뮤니티",
+    "communityH2": "같이 이야기해요.",
+    "communityP": "궁금한 게 있거나, 설정하다 도움이 필요하거나, 그냥 오디오북 이야기를 하고 싶나요? Discord의 AudioBook Manager 커뮤니티에 들어와서 도움도 받고 이야기도 나눠요.",
+    "communityBtn": "Discord 참여하기",
+    "planned": [
+      [
+        "Linux",
+        "네이티브 패키지와 서비스"
+      ],
+      [
+        "Windows",
+        ".exe 설치 프로그램"
+      ],
+      [
+        "macOS",
+        "네이티브 앱"
+      ],
+      [
+        "Kubernetes",
+        "클러스터 배포"
+      ],
+      [
+        "Unraid",
+        "Community Apps 템플릿"
+      ],
+      [
+        "Proxmox",
+        "LXC 설치 스크립트"
+      ]
+    ],
+    "coming": "예정",
+    "translatorNote": "이 페이지는 기계 번역으로 만들었어요. 한국어가 모국어이고 번역을 더 다듬는 걸 도와주고 싶다면 {mail}로 메일 주세요."
   }
 }
