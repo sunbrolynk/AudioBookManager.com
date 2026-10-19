@@ -1,21 +1,27 @@
 ---
 title: Sidecar-filer
-description: Omslag, OPF, beskrivning, uppläsare och cue-filer som ABM skriver bredvid en bok.
+description: Filerna metadata.json, omslag, OPF, beskrivning och uppläsare som ABM skriver bredvid en bok.
 ---
 
-En sidecar är en liten fil bredvid ljudet. Audiobookshelf och andra spelare läser dem. ABM kan skriva de här:
+En sidecar är en liten fil bredvid ljudet. Audiobookshelf och andra spelare läser dem. ABM skriver de här:
 
-| Fil | Innehåll |
-|---|---|
-| `cover.jpg` | Bokens omslag |
-| `.opf` | Metadata i OPF-form, som Audiobookshelf kan läsa. Döps efter bokens första ljudfil (till exempel `Dune.opf`), eller `title.opf` när boken inte har något ljud |
-| `desc.txt` | Beskrivningen |
-| `reader.txt` | Uppläsaren |
-| `.cue` | Kapitel från Libex (kommer i nästa version) |
+| Fil | Innehåll | Brytare |
+|---|---|---|
+| `metadata.json` | Audiobookshelfs egen metadatafil, plus ett `abm`-block som märker den som ABM:s. Audiobookshelf läser den före allt annat | Ingen, skrivs alltid |
+| `cover.jpg` | Bokens omslag. Skrivs inte när mappen redan har en `cover.*` | cover.jpg |
+| `.opf` | Metadata i OPF-form. Döps efter bokens första ljudfil (till exempel `Dune.opf`), eller `title.opf` när boken inte har något ljud | title.opf |
+| `desc.txt` | Beskrivningen, utan HTML. Hoppas över när det inte finns någon | desc.txt |
+| `reader.txt` | Uppläsarna. Hoppas över när det inte finns några | reader.txt |
+
+Tillsammans med mappstrukturen är det de här filerna Audiobookshelf läser för en boks detaljer, så den ser samma bok som ABM.
 
 ## När de skrivs
 
-Under **Settings > Metadata** väljer **Create on Book Add**, **Create on Import** och **Create on Refresh** när. Som standard skrivs de bara vid import. **Overwrite Existing** är av, så en fil som redan finns ligger kvar. Du kan också skriva dem från redigeringsdialogen, för en bok eller ett urval av serier och författare. Se [Metadatainställningar](/sv/settings/metadata/).
+`metadata.json` skrivs varje gång en bok läggs till, importeras eller uppdateras.
+
+De andra fyra har var sin brytare under **Settings > Metadata > Files to Create**, alla på som standard. De skrivs bara när den matchande utlösaren också är på: **Create on Book Add** (av), **Create on Import** (på, och gäller nedladdningar, Library Import och Audible-nedladdningar) och **Create on Refresh** (av). **Overwrite Existing** är av, så en fil som redan finns ligger kvar. Inget skrivs förrän bokens mapp finns.
+
+Redigeringsdialogens **Write to Directories** skriver också de fyra, för en bok eller ett urval av serier och författare. Se [Metadatainställningar](/sv/settings/metadata/).
 
 ## Omslaget är speciellt
 

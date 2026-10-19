@@ -3,7 +3,7 @@ title: Audible
 description: Koppla Audible-konton, synka och spegla ditt bibliotek.
 ---
 
-ABM kan koppla upp sig mot dina Audible-konton, hålla en kopia av varje kontos bibliotek och ladda ner det du äger.
+ABM kopplar upp sig mot ett eller flera Audible-konton och håller en kopia av varje kontos bibliotek på sidan **Audible Library**. Allt du äger kan laddas ner, dekrypteras till M4B och importeras som vilken bok som helst. Med spegling på lägger varje synk också till böckerna du saknar i ABM och laddar ner dem.
 
 ## Konton
 
@@ -28,7 +28,9 @@ Spegling gör att ditt ABM-bibliotek följer ditt Audible-bibliotek.
 - Den är på som standard.
 - Den lägger till dina köp och dina gratistitlar. Poddar lämnas utanför.
 - Varje synk hanterar som mest 25 titlar.
-- Innan den körs ber den dig bekräfta och visar hur många titlar den kommer att lägga till.
+- När du slår på den ber den dig bekräfta och visar hur många titlar nästa synk kommer att lägga till och ladda ner.
+- Titlar från Plus Catalog och lån lämnas utanför, och inget köas medan bibliotekets disk har ont om utrymme.
+- En titel vars nedladdning misslyckas gång på gång väntar längre mellan försöken: 1 timme, sedan 6, sedan 24.
 - Den laddar också ner titlar du vill ha som inte har några filer än.
 - Titlar som tas bort från Audible ligger kvar i ABM.
 

@@ -3,6 +3,10 @@ title: Omvänd proxy
 description: Lägg ABM bakom nginx, Traefik eller Caddy utan att förstöra inloggningen.
 ---
 
+:::caution[Rekommenderas inte]
+Att lägga ut ABM på internet, via en omvänd proxy eller en vidarebefordrad port, rekommenderas inte, samma råd som Servarr-apparna ger. Vill du nå den utifrån, använd en VPN som WireGuard eller Tailscale i stället. ABM är byggd för att vara säker bakom en proxy, men det finns ingen garanti för säkerheten när den väl är publik, och risken är din. Gör du det ändå, sätt **Authentication Required** till **Enabled** och håll ABM uppdaterad.
+:::
+
 Tre inställningar spelar roll. Får du dem rätt fungerar inloggning, websocket och sparningar.
 
 ## 1. Berätta för ABM vem proxyn är

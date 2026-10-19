@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Skaffa den",
     "installH2": "Igång med en enda fil.",
     "buildP": "<b>Bygg från källkoden.</b> I en klon av repot byter du <code>image:</code> mot <code>build: .</code> och kör <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, en vanlig Linux-tjänst.</b> Inte än. Just nu är Docker enda vägen in.",
+    "otherP": "<b>Just nu är Docker enda vägen in.</b> Native-installationer för de vanligaste uppsättningarna är planerade, så att ABM kan köras där du redan självhostar:",
     "note": "ABM är i alfa. Säkerhetskopiera <code>/config</code> innan du uppgraderar och skumma igenom uppdateringsanteckningarna först.",
     "fullGuide": "Hela installationsguiden →",
     "faqEyebrow": "Vanliga frågor",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Öppna ett issue",
     "helpH": "Vill du hjälpa till?",
     "helpP": "ABM är en enda persons projekt. Ko-fi eller en Monster håller det rullande.",
-    "kofiBtn": "Bjud mig på en Monster",
-    "monsterBtn": "Stöd utvecklingen",
+    "kofiBtn": "Stöd utvecklingen",
+    "monsterBtn": "Bjud mig på en Monster",
     "finalH2": "Sluta fixa<br />mappar.",
     "ctaInstall": "Installera ABM",
     "ctaDocs": "Läs dokumentationen",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Hitta ditt gäng.",
     "communityP": "Har du en fråga, behöver du hjälp med din setup eller vill du bara snacka ljudböcker? Gå med i AudioBook Managers community på Discord för support och diskussioner.",
-    "communityBtn": "Gå med på Discord",
+    "communityBtn": "Gå med i Discord",
+    "planned": [
+      [
+        "Linux",
+        "ett native-paket och en tjänst"
+      ],
+      [
+        "Windows",
+        "ett .exe-installationsprogram"
+      ],
+      [
+        "macOS",
+        "en native-app"
+      ],
+      [
+        "Kubernetes",
+        "en klusterdriftsättning"
+      ],
+      [
+        "Unraid",
+        "en mall för Community Apps"
+      ],
+      [
+        "Proxmox",
+        "ett installationsskript för LXC"
+      ]
+    ],
+    "coming": "Kommer snart",
     "translatorNote": "Den här sidan är maskinöversatt. Om svenska är ditt modersmål och du vill hjälpa till att göra översättningen bättre, mejla mig på {mail}."
   }
 }

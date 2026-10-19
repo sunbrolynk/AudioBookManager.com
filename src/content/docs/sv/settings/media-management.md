@@ -7,7 +7,7 @@ description: Rotmappar, import, extrafiler, papperskorg, skanningar, uppgraderin
 
 ## Rotmappar (Root Folders)
 
-En rotmapp är en katalog där ABM hanterar böcker. Lägg till en med **Add Root Folder**, som öppnar en mappbläddrare där du också kan skriva in sökvägen. ABM kan också lista omappade mappar under en rot och importera dem. En rots lediga utrymme och stöd för hårdlänkar kontrolleras när den läggs till. Att ta bort en rot raderar inga filer.
+En rotmapp är en katalog där ABM hanterar böcker. Lägg till en med **Add Root Folder**, som öppnar en mappbläddrare där du också kan skriva in sökvägen. ABM kan också lista omappade mappar under en rot och importera dem. En rots lediga utrymme och stöd för hårdlänkar kontrolleras när den läggs till. Att ta bort en rot frågar vad som ska hända: **Remove from ABM only** (standard) glömmer böckerna under den och lämnar filerna, och **Delete the books and their files** raderar permanent allt under sökvägen utan att gå via papperskorgen. En rot med böcker i kräver att du skriver för att bekräfta.
 
 Standardrotmappen är den som nya böcker hamnar i och den som avgör om hårdlänkning erbjuds för Library Import.
 
@@ -27,10 +27,10 @@ Standardrotmappen är den som nya böcker hamnar i och den som avgör om hårdl�
 | Use Hardlinks instead of Copy | på | För färdiga nedladdningar: hårdlänka i stället för att kopiera, så att seedning inte tar dubbelt utrymme. Kräver samma volym. |
 | Library Import | Copy | Standard för [Biblioteksimport](/sv/library-import/): kopiera, hårdlänka eller flytta. Hårdlänka är utgråat tills standardroten har kontrollerats och har stöd för det. |
 | Import Extra Files | på | Huvudbrytare för att ta med filer som inte är ljud. Gäller Library Import, Manual Import och färdiga nedladdningar |
-| Extra File Extensions (avancerad) | tom | Extra filändelser att importera, till exempel `srt, lrc`. Blockerade typer vägras. |
+| Extra File Extensions (avancerad) | tom | Fler filtyper att ta med, som behåller sina egna namn, till exempel `srt, lrc`. Med eller utan punkt, åtskilda med komma eller mellanslag. Blockerade typer, som körbara filer och ofullständiga nedladdningar, går inte att spara. Inaktiverad medan **Import Extra Files** är av |
 | Preferred Cover (avancerad) | Matched | Den matchade utgåvans omslag, eller mappens bästa bild, när båda finns |
 
-Extrafiler har fem brytare:
+**Import Extra Files** tar med bokens övriga filer tillsammans med ljudet. Fem brytare väljer vilka sorter som följer med, och en fil som matchar **Extra File Extensions** följer med även när dess sort är avslagen:
 
 | Brytare | Standard | Omfattar |
 |---|---|---|
@@ -55,7 +55,7 @@ Hårdlänka är inte samma sak som **Use Hardlinks instead of Copy**. Den är f�
 | Recycling Bin Cleanup | 7 (dagar) | 0 stänger av automatisk rensning |
 | Library Scan Interval | 0 (av) | Timmar mellan automatiska skanningar |
 | Watch for Changes | av | Skanna när filer läggs till, tas bort eller ändras |
-| Cover Cache Workers | 4 | Hur många omslag som laddas ner samtidigt när bilder cachas, från 1 till 16. Sänk den om en cachningskörning rapporterar fel |
+| Cover Cache Workers | 4 | Hur många omslag som laddas ner samtidigt när bilder cachas, från 1 till 16 |
 
 ## Kvalitetsuppgraderingar (Quality Upgrades)
 

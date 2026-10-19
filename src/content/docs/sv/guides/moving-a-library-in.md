@@ -17,9 +17,11 @@ description: Ta in en befintlig samling i ABM på ett säkert sätt.
 4. Markera raderna och lägg till dem. Det håller sig på två klick om du godtar standardvalen.
 5. Håll koll på uppgiften. Sammanfattningen säger hur många filer som kopierades i stället för att hårdlänkas och vad som misslyckades.
 
-## Om du vill att ABM ska hantera källmappen
+## Om samlingen redan ligger där du vill ha den
 
-Lägg till den som rotmapp i stället och låt ABM skanna den. Då ligger filerna kvar där de är och böckerna får sin status utifrån det som finns på disken.
+Att lägga till mappen som rotmapp lägger inte till några böcker av sig själv. ABM:s skanningar kollar bara böcker den redan känner till, så den plockar inte upp det som ligger där. Böckerna måste ändå komma in via Library Import: rotmappens antal **Unmapped Folders** under **Settings > Media Management** öppnar Library Import för just den rotmappen.
+
+Importen lägger varje bok i ABM:s egen struktur Author/Series/Book under standardrotmappen. Välj hårdlänk om du vill lämna originalen orörda utan att ta mer utrymme.
 
 ## Fallgropar
 

@@ -3,6 +3,8 @@ title: Välja metadatakälla
 description: Inbyggd, hostad eller din egen Libex-server.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Kommer i nästa version]
 Valet av källa finns inte i någon släppt version än. Släppta versioner använder den publika Libex-instansen på libexdb.com och har ingen inställning för det här.
 :::
@@ -12,10 +14,10 @@ I nästa version har **Settings > Metadata > Source** inställningen **Metadata 
 | Val | Vad det betyder |
 |---|---|
 | Built-in (standard) | Libex körs inuti ABM. Den kräver att en utgående anslutning har valts först. |
-| Hosted (libexdb.com) | ABM frågar den publika Libex-instansen. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex på GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM frågar den publika Libex-instansen. |
 | Self-hosted | ABM frågar en Libex-server som du pekar den mot. Ange dess **Server URL**, till exempel `http://192.168.1.20:8000`. |
 
-**Test** kollar den valda källan utan att spara. **Status** säger om den är redo. Ett val som du inte har sparat visar "Not in use yet - save to switch" tills du sparar.
+**Test** kollar den valda källan utan att spara. **Status** säger om den är redo. När du väljer en annan källa visar **Status** "Not in use yet - save to switch" tills du sparar.
 
 ## Inbyggd och den utgående anslutningen
 
@@ -28,5 +30,5 @@ Med de här två frågar ABM en Libex-server och servern pratar med Audible. En 
 ## Vilken ska du välja
 
 - Vill du att det bara ska funka och bryr dig inte om att Audible ser din adress: Built-in med direktanslutning, eller Hosted.
-- Vill du inte visa din IP för Audible: Built-in via en VPN eller proxy, eller Hosted.
+- Vill du inte visa din IP för Audible: Built-in via en proxy, den inbyggda WireGuard-tunneln eller en separat VPN-container eller VPN-tjänst. Eller Hosted, där Libex-servern pratar med Audible i stället för du.
 - Kör du redan en Libex-server: Self-hosted.

@@ -73,3 +73,7 @@ Lägg till en remote path mapping, eller se till att ABM och klienten ser mappen
 ## Docker når inte metadatakällan eller indexerarna
 
 Kolla DNS och inställningen för utgående anslutning innan något annat. I Docker fungerar en direktanslutning bara om containern kan nå internet.
+
+## Fortfarande fast
+
+Fråga i [ABM:s Discord](https://discord.gg/qeJRrM6AZ), [öppna en issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) eller mejla [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

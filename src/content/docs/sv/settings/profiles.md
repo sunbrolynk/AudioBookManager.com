@@ -22,6 +22,8 @@ En ny kopia ersätter det du har bara om profilen tillåter uppgraderingar, det 
 
 Om du kan Sonarr: det här är en kvalitetsprofil där kvaliteterna är ljudformat och fillayout i stället för upplösning. Custom formats finns inte. [Release-profiler](#release-profiler) täcker liknande mark.
 
+Det finns inga nivåer för bitrate eller storlek: kvalitet betyder bara format och fillayout. För en release tar ABM formatet från indexeraren eller titeln och gissar layouten utifrån titeln (en M4B utan del- eller spårnummer räknas som enfils), och kollar sedan igen när filerna har importerats. **Preferred Quality** i [Audible-inställningar](/sv/settings/audible/) är något annat: kvaliteten som Audible-nedladdningar kommer i.
+
 ## Delay-profiler
 
 En delay-profil håller tillbaka en release innan den hämtas, för att ge en bättre release tid att dyka upp.

@@ -26,15 +26,19 @@ Om klienten körs i en annan container, kolla att den och ABM ser nedladdningsma
 
 ## 5. Ställ in en kvalitetsprofil
 
-**Settings > Profiles** innehåller kvalitetsstegen som ABM använder för att avgöra vad som ska hämtas och vad som räknas som en uppgradering. En profil är standard. Börja med den och finslipa senare. Se [Profiler](/sv/settings/profiles/).
+**Settings > Profiles** innehåller kvalitetsstegen som ABM använder för att avgöra vad som ska hämtas och vad som räknas som en uppgradering. En ny installation har ingen, så skapa en. Den första profilen du gör blir standard, och du kan finslipa den senare. Se [Profiler](/sv/settings/profiles/).
 
-## 6. Ta in eller lägg till böcker
+## 6. Koppla Audible (valfritt)
+
+Om du har böcker på Audible kopplar du ditt konto under **Settings > Audible**. Välj din **Marketplace**, tryck på **Connect Audible Account** och sedan **I Understand, Open Amazon Login**. Logga in på Amazon i den nya fliken. Den tomma sidan eller sidan med "Page not found" som du hamnar på efteråt är väntad. Kopiera hela adressen från adressfältet till **Redirect URL**, lägg till ett **Display Name** om du vill och tryck på **Complete Login**. Ditt lösenord sparas aldrig, och den första synken av biblioteket startar direkt. Se [Audible](/sv/audible/).
+
+## 7. Ta in eller lägg till böcker
 
 - Har du redan en samling? Använd [Biblioteksimport](/sv/library-import/).
 - Börjar du från noll? Använd **Library > Add New** och sök på titel, författare eller serie. Se [Lägg till nytt](/sv/using/add-new/).
 
 En bok du lägger till är önskad tills en fil för den har importerats. Önskade böcker visas under **Wanted > Missing** och söks automatiskt.
 
-## 7. Se den jobba
+## 8. Se den jobba
 
 **Activity > Queue** visar vad som laddas ner. **Activity > History** visar vad som har hämtats och importerats. När något går fel är [Felsökning](/sv/troubleshooting/) och sidan [Uppgifter](/sv/system/tasks/) rätt ställen att titta på.

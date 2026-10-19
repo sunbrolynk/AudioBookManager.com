@@ -7,7 +7,7 @@ Menyn **Library** har tre listor: **Books**, **Series** och **Authors**. **Add N
 
 ## Böcker
 
-Varje bok är en rad, en affisch eller en tabellrad (vyväxlaren finns i verktygsfältet). En bok har en status:
+Varje bok är en översiktsrad, en affisch eller en tabellrad (vyväxlaren finns i verktygsfältet). En bok har en status:
 
 - **Wanted**: bevakad, inga filer än. ABM söker efter den.
 - **Downloaded**: filerna finns på disken.
@@ -18,9 +18,13 @@ Varje bok är en rad, en affisch eller en tabellrad (vyväxlaren finns i verktyg
 
 Om du kan Sonarr: en bok är ett avsnitt, en serie är säsong och serie i ett, och en författare är ett sätt att gruppera båda. Skillnaden är att en bok kan höra till flera serier, och ABM använder den primära (den lägsta platsen) när den måste välja.
 
-## Serier och författare
+## Serier
 
-Listorna Series och Authors visar antal ägda, önskade och med saknade filer. Öppna en för att se katalogen, som även innehåller böcker du inte äger. Därifrån kan du lägga till de saknade böckerna. Se [Seriebevakning](/sv/using/series-tracking/).
+**Library > Series** listar alla serier med antal ägda, önskade och med saknade filer, som Overview eller Posters. En seriesida visar hela katalogen, även böcker du inte äger. Filtrera den på All, In Library eller Not in Library. **Add Remaining** eller **Select to Add** tar in de saknade böckerna som önskade, och **Refresh Series** hämtar katalogen igen. **Monitor New Books** (All eller None) avgör om böcker som kommer ut senare läggs till som önskade. Se [Seriebevakning](/sv/using/series-tracking/).
+
+## Författare
+
+**Library > Authors** listar författare, som Overview eller Posters. En författarsida visar författarens katalog grupperad per serie, med antal nedladdade och totalt för varje serie, plus kvalitetsprofil, genrer och betyg. **Refresh Catalog** hämtar den igen och **Search Author** söker efter författarens önskade böcker. **Monitor New Books** fungerar likadant som för en serie, och en författare börjar på None.
 
 Att ta bort en serie eller författare vägras så länge den fortfarande har böcker i biblioteket. Ta bort böckerna först.
 

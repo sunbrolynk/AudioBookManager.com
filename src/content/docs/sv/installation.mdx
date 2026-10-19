@@ -72,6 +72,21 @@ Vill du bygga imagen själv klonar du repot, byter raden `image:` mot `build: .`
 docker compose up -d --build
 ```
 
+## Andra sätt att installera
+
+Just nu är Docker enda vägen in. Native-installationer är planerade, så att ABM kan köras där du redan självhostar:
+
+| Plattform | Planerad som |
+|---|---|
+| Linux | Ett native-paket och en tjänst |
+| Windows | Ett `.exe`-installationsprogram |
+| macOS | En native-app |
+| Kubernetes | En klusterdriftsättning |
+| Unraid | En mall för Community Apps |
+| Proxmox | Ett installationsskript för LXC |
+
+Inget av det här finns än. Var och en dyker upp på sidan [Uppdateringar](/sv/updates/) när den släpps.
+
 ## Uppdatera
 
 Hämta den nya imagen och skapa om containern. Sidan [Uppdateringar](/sv/updates/) listar vad som har ändrats i varje version.
