@@ -3036,5 +3036,239 @@
     ],
     "coming": "Wkrótce",
     "translatorNote": "Ta strona została przetłumaczona maszynowo. Jeśli polski to twój język ojczysty i chcesz pomóc go poprawić, napisz do mnie: {mail}."
+  },
+  "zh-cn": {
+    "htmlLang": "zh-CN",
+    "title": "AudioBook Manager：有声书的 *arr",
+    "skip": "跳到正文",
+    "heroEyebrow": "免费 · 开源 · 自托管",
+    "h1": "有声书，<br /><em>交给它。</em>",
+    "ctaDocker": "用 Docker 安装",
+    "ctaSee": "看看实际效果",
+    "runs": "一个容器 · SQLite · 端口 5173 · GPL-3.0",
+    "heroAlt": "ABM 的书库：一排排有声书封面，每张下面有绿色的 Downloaded 或琥珀色的 Wanted 状态条",
+    "phoneAlt": "手机上 ABM 里一本书的页面",
+    "existsEyebrow": "为什么会有它",
+    "existsH2": "有声书也该有自己的 *arr。",
+    "p1": "电视剧有 Sonarr，电影有 Radarr。Readarr 建立在同样的 Servarr 基础上，把电子书和有声书放在一起管，现在已经停止维护了。",
+    "p2": "ABM 接过了有声书这条路，而且只做有声书。它建立在 Servarr 系列应用开创的设计之上，围绕讲述者、系列序号、多碟发布和 M4B 来打造。",
+    "p3": "Audiobookshelf 播放你的书库非常出色，只是它不会去找系列的下一本，也不会整理下载下来的东西。这部分就是 ABM 干的活。",
+    "beforeA": "之前",
+    "beforeB": "手动整理",
+    "afterA": "之后",
+    "afterB": "ABM 整理",
+    "howEyebrow": "怎么运作",
+    "howH2": "五个步骤，你只管第一步。",
+    "getEyebrow": "你能得到什么",
+    "altPage": "ABM 的 {name} 页面",
+    "whyEyebrow": "为什么选 ABM",
+    "whyH2": "为书架而生，不是硬加上去的。",
+    "shotsEyebrow": "截图",
+    "shotsH2": "这就是真实的样子。",
+    "shotsAria": "截图，可以左右滑动",
+    "getItEyebrow": "获取",
+    "installH2": "一个文件就能跑起来。",
+    "buildP": "<b>从源码构建。</b>在克隆下来的仓库里，把 <code>image:</code> 换成 <code>build: .</code>，然后运行 <code>docker compose up -d --build</code>。",
+    "otherP": "<b>目前只能用 Docker。</b>常见环境的原生安装方式已经在计划中，这样你平时在哪里自托管，ABM 就能跑在哪里：",
+    "note": "ABM 还在 alpha 阶段。升级前先备份 <code>/config</code>，再大概看一下更新说明。",
+    "fullGuide": "完整安装指南 →",
+    "faqEyebrow": "常见问题",
+    "faqH2": "大家常问的。",
+    "supportSr": "支持",
+    "brokenH": "哪里坏了？",
+    "brokenP": "到 GitHub 上开一个 issue，附上 System › Log Files 里的日志。日志给得越全，修得越快。",
+    "brokenBtn": "提交 issue",
+    "helpH": "想帮它一把？",
+    "helpP": "ABM 是我一个人的项目。请杯 Ko-fi 或者一罐 Monster，就能让它继续往前走。",
+    "kofiBtn": "支持开发",
+    "monsterBtn": "请我喝罐 Monster",
+    "finalH2": "别再手动<br />整理文件夹了。",
+    "ctaInstall": "安装 ABM",
+    "ctaDocs": "阅读文档",
+    "sub": "ABM 会找到你想要的有声书，用你已经在用的下载客户端抓下来，再整理归档，让 Audiobookshelf 看到一个干干净净的书库。",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "想要",
+        "添加一本书、一个系列或者一位作者的全部作品。ABM 会把它放进 Wanted 列表，并一直盯着。"
+      ],
+      [
+        "查找",
+        "你的 Usenet 和种子索引器会按计划被检查，点一下搜索就立刻检查。"
+      ],
+      [
+        "抓取",
+        "质量配置允许的最佳发布，会发给你已经在用的下载客户端。"
+      ],
+      [
+        "归档",
+        "导入、重命名，并按作者和系列归档。多碟发布在移动时会保留子文件夹。"
+      ],
+      [
+        "保持",
+        "你的元数据你说了算：ABM 保留和写入什么、播放器从哪里读取，都由你决定。在质量配置里允许升级后，出现更好的发布时 ABM 会自动换上。"
+      ]
+    ],
+    "features": [
+      [
+        "书库",
+        "每本书，一目了然。",
+        "封面、状态和系列都在一个网格里。绿色表示已经在磁盘上，琥珀色表示 ABM 还在找。"
+      ],
+      [
+        "书籍",
+        "细节都对。",
+        "作者、讲述者、系列、时长、出版社，以及每个文件的质量和存放位置。"
+      ],
+      [
+        "日历",
+        "知道接下来有什么。",
+        "你监控的书的发布日期，排在一张日历上。"
+      ],
+      [
+        "想要",
+        "缺了什么，列得清清楚楚。",
+        "缺失的书和低于质量截止线的书，点一下就能搜索。"
+      ],
+      [
+        "配置",
+        "什么叫更好，你来定。",
+        "比起一文件夹的 MP3，更想要单文件 M4B？在质量配置里说一次，ABM 就会一直等它出现。"
+      ],
+      [
+        "转换",
+        "格式也一起搞定。",
+        "合并分段、拆分或添加章节，或者把 MP3 转成一个 M4B。ABM 会学习你机器的速度，估算一个任务要多久。"
+      ]
+    ],
+    "why": [
+      [
+        "有声书优先。",
+        "讲述者、系列序号、多文件发布、章节和 M4B 在这里是核心，不是事后补上的。"
+      ],
+      [
+        "你早就熟门熟路。",
+        "Wanted、Queue、History、Calendar、质量配置。如果你用过 Sonarr 或 Radarr，所有东西都在你会去找的地方。"
+      ],
+      [
+        "它跟你说实话。",
+        "如果一次移动只搬过去了 5 本里的 3 本，ABM 会告诉你搬了几本，以及剩下的为什么没搬。"
+      ],
+      [
+        "一个容器，不用数据库服务器。",
+        "所有东西都在 <code>/config</code> 下的一个 SQLite 文件里。备份这个文件夹，就等于备份了 ABM。"
+      ]
+    ],
+    "works": [
+      [
+        "在这里播放",
+        "Audiobookshelf"
+      ],
+      [
+        "元数据来自",
+        "Libex"
+      ],
+      [
+        "索引器",
+        "Newznab · Torznab"
+      ],
+      [
+        "已购书籍来自",
+        "Audible"
+      ],
+      [
+        "下载客户端",
+        "支持 7 种"
+      ]
+    ],
+    "shots": [
+      "仪表盘",
+      "书库",
+      "书籍",
+      "系列",
+      "日历",
+      "想要",
+      "配置",
+      "转换"
+    ],
+    "installSteps": [
+      [
+        "保存",
+        "把上面的内容粘贴到 <code>docker-compose.yml</code>，把左边的三个路径改成你自己的文件夹。"
+      ],
+      [
+        "启动",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "打开",
+        "访问 <code>http://your-server:5173</code>。第一次打开时会引导你设置登录账号。"
+      ]
+    ],
+    "faq": [
+      [
+        "ABM 会取代 Audiobookshelf 吗？",
+        "不会。Audiobookshelf 是播放器，ABM 是图书管理员。把两者指向同一个书库文件夹，让它们各干各的活。"
+      ],
+      [
+        "元数据从哪里来？",
+        "Libex，一个提供 Audible 数据的开放元数据服务。ABM 会按计划刷新元数据，你自己挑的封面可以锁定，刷新时就不会动它。"
+      ],
+      [
+        "需要单独的数据库吗？",
+        "不需要。ABM 把所有东西都存在 <code>/config</code> 里的一个 SQLite 文件中，不用再跑别的服务。"
+      ],
+      [
+        "能从外网访问吗？",
+        "可以，0.17.0 及以上版本都行。默认情况下，来自本地网络以外的访问都要登录；把 Authentication Required 设为 Enabled 后，所有人都要登录，包括你自己局域网里的设备。放在 nginx、Traefik 或 Caddy 后面时，把 <code>TRUSTED_PROXIES</code> 设为代理的地址。已存储的凭据都是加密的。"
+      ],
+      [
+        "Readarr 怎么了？",
+        "Readarr 以前把电子书和有声书放在一起管，现在已经停止维护了。ABM 只管有声书，建立在 Servarr 系列应用开创的设计之上。"
+      ],
+      [
+        "要花钱吗？",
+        "不要钱。它是免费开源软件，采用 GPL-3.0 许可。如果它帮你省下了一个晚上，Ko-fi 链接就在下面。"
+      ]
+    ],
+    "strip": [
+      "想要",
+      "下载中",
+      "已下载",
+      "文件缺失"
+    ],
+    "communityEyebrow": "社区",
+    "communityH2": "找到同好。",
+    "communityP": "有问题、配置上需要帮忙，或者就是想聊聊有声书？来 Discord 加入 AudioBook Manager 社区，获取支持、参与讨论。",
+    "communityBtn": "加入 Discord",
+    "translatorNote": "这个页面是机器翻译的。如果简体中文是你的母语，又愿意帮忙改进翻译，欢迎发邮件给我：{mail}。",
+    "planned": [
+      [
+        "Linux",
+        "原生软件包和服务"
+      ],
+      [
+        "Windows",
+        ".exe 安装程序"
+      ],
+      [
+        "macOS",
+        "原生应用"
+      ],
+      [
+        "Kubernetes",
+        "集群部署"
+      ],
+      [
+        "Unraid",
+        "Community Apps 模板"
+      ],
+      [
+        "Proxmox",
+        "LXC 安装脚本"
+      ]
+    ],
+    "coming": "即将推出"
   }
 }
