@@ -1,0 +1,55 @@
+---
+import { Icon } from '@astrojs/starlight/components';
+import strings from '../ui-strings.json';
+
+interface Props { locale?: string }
+const t = (strings as Record<string, Record<string, string>>)[Astro.props.locale ?? 'en'];
+---
+<dialog id="prerelease" class="pre" aria-modal="true" aria-labelledby="prerelease-h" aria-describedby="prerelease-p">
+  <div class="pre-head">
+    <span class="pre-tag">{t.prereleaseTag}</span>
+    <button type="button" class="pre-x" data-close aria-label={t.prereleaseDismiss}><Icon name="close" size="1.25rem" /></button>
+  </div>
+  <h2 id="prerelease-h" class="cond">{t.prereleaseTitle}</h2>
+  <p id="prerelease-p">{t.prereleaseBody}</p>
+  <div class="pre-links">
+    <a href="https://discord.gg/qeJRrM6AZ"><Icon name="discord" size="1.15rem" />{t.prereleaseDiscord}</a>
+    <a href="https://github.com/sunbrolynk"><Icon name="github" size="1.15rem" />{t.prereleaseGithub}</a>
+  </div>
+  <button type="button" class="btn pri" data-close autofocus>{t.prereleaseClose}</button>
+</dialog>
+
+<script>
+  // Opens once per browser; any close (button or Esc) remembers it, and focus goes back where it was.
+  const KEY = 'abm-prerelease-seen';
+  const dialog = document.getElementById('prerelease');
+  if (dialog instanceof HTMLDialogElement) {
+    let seen = false;
+    try { seen = localStorage.getItem(KEY) === '1'; } catch { /* storage blocked: show it, the page still works */ }
+    if (!seen) {
+      const back = document.activeElement;
+      dialog.addEventListener('close', () => {
+        try { localStorage.setItem(KEY, '1'); } catch { /* storage blocked: it shows again next page */ }
+        if (back instanceof HTMLElement) back.focus();
+      }, { once: true });
+      dialog.querySelectorAll('[data-close]').forEach((b) => b.addEventListener('click', () => dialog.close()));
+      dialog.showModal();
+    }
+  }
+</script>
+
+<style>
+  .pre { width: min(30rem, calc(100vw - 32px)); max-height: calc(100dvh - 32px); overflow-y: auto; margin: auto; padding: 0 24px 24px; border: 1px solid var(--r1-line); border-top: 0; border-radius: 0 0 3px 3px; background: var(--r1-s1); color: var(--r1-ink); font: 17px/1.6 var(--r1-sans); box-shadow: 0 30px 60px rgba(0,0,0,.55); }
+  /* The poster status bar in "wanted" amber: the app itself isn't out yet. */
+  .pre::before { content: ''; display: block; height: 6px; margin: 0 -24px; background: var(--r1-want); }
+  .pre::backdrop { background: rgba(10,10,10,.78); }
+  .pre-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; }
+  .pre-tag { font: 500 12.5px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--r1-want); }
+  .pre-x { display: inline-flex; padding: 6px; margin-inline-end: -6px; background: none; border: 0; color: var(--r1-mut); cursor: pointer; border-radius: 3px; }
+  .pre-x:hover { color: var(--r1-ink); }
+  .pre h2 { font-size: clamp(26px, 6vw, 34px); margin: 10px 0 12px; }
+  .pre p { margin: 0 0 18px; color: #d6d6d6; }
+  .pre-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 0 0 22px; font-size: 16px; }
+  .pre-links a { display: inline-flex; align-items: center; gap: 8px; color: var(--r1-acc-hi); text-underline-offset: 3px; }
+  .pre :focus-visible { outline: 2px solid var(--r1-acc-hi); outline-offset: 2px; }
+</style>
