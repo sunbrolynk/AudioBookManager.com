@@ -3972,5 +3972,239 @@
     ],
     "coming": "Kommer snart",
     "translatorNote": "Den här sidan är maskinöversatt. Om svenska är ditt modersmål och du vill hjälpa till att göra översättningen bättre, mejla mig på {mail}."
+  },
+  "cs": {
+    "htmlLang": "cs",
+    "title": "AudioBook Manager: *arr pro audioknihy",
+    "skip": "Přejít na obsah",
+    "heroEyebrow": "Zdarma · open source · na vlastním serveru",
+    "h1": "Audioknihy,<br /><em>vyřešené.</em>",
+    "ctaDocker": "Instalace přes Docker",
+    "ctaSee": "Podívej se, jak běží",
+    "runs": "jeden kontejner · SQLite · port 5173 · GPL-3.0",
+    "heroAlt": "Knihovna v ABM: mřížka obálek audioknih, každá se zeleným pruhem Downloaded nebo jantarovým pruhem Wanted",
+    "phoneAlt": "Stránka knihy v ABM na telefonu",
+    "existsEyebrow": "Proč vznikl",
+    "existsH2": "Audioknihy si zasloužily vlastní *arr.",
+    "p1": "Seriály mají Sonarr. Filmy mají Radarr. Readarr, postavený na stejných základech Servarr, řešil knihy a audioknihy dohromady a mezitím skončil.",
+    "p2": "ABM v té cestě pokračuje, ale jen pro audioknihy. Stojí na návrhu, se kterým přišly aplikace Servarr, a je postavený kolem interpretů, pořadí v sériích, vydání na více discích a M4B.",
+    "p3": "Audiobookshelf tvou knihovnu přehrává skvěle. Jen nejde hledat další knihu ze série a neuklízí, co ti přistane na disku. Tohle dělá ABM.",
+    "beforeA": "Předtím",
+    "beforeB": "ručně",
+    "afterA": "Potom",
+    "afterB": "přes ABM",
+    "howEyebrow": "Jak to funguje",
+    "howH2": "Pět kroků. Ten první uděláš ty.",
+    "getEyebrow": "Co dostaneš",
+    "altPage": "Stránka {name} v ABM",
+    "whyEyebrow": "Proč ABM",
+    "whyH2": "Postavený pro poličku, ne přišroubovaný bokem.",
+    "shotsEyebrow": "Snímky obrazovky",
+    "shotsH2": "Tohle je ta skutečná věc.",
+    "shotsAria": "Snímky obrazovky, posouvej do stran",
+    "getItEyebrow": "Stáhni si ho",
+    "installH2": "Běží z jednoho souboru.",
+    "buildP": "<b>Sestavení ze zdrojáků.</b> V naklonovaném repu nahraď <code>image:</code> za <code>build: .</code> a spusť <code>docker compose up -d --build</code>.",
+    "otherP": "<b>Prozatím je jedinou cestou Docker.</b> Nativní instalace pro běžná prostředí jsou v plánu, aby ABM běžel všude, kde už něco hostuješ sám:",
+    "note": "ABM je v alfě. Před upgradem si zazálohuj <code>/config</code> a projdi si poznámky k aktualizaci.",
+    "fullGuide": "Celý návod k instalaci →",
+    "faqEyebrow": "Časté otázky",
+    "faqH2": "Férové otázky.",
+    "supportSr": "Podpora",
+    "brokenH": "Něco nefunguje?",
+    "brokenP": "Založ issue na GitHubu a přilož log ze System › Log Files. Čím víc logu, tím rychlejší oprava.",
+    "brokenBtn": "Založit issue",
+    "helpH": "Chceš ho trochu popostrčit?",
+    "helpP": "ABM je projekt jednoho člověka. Ko-fi nebo Monster ho drží v pohybu.",
+    "kofiBtn": "Podpoř vývoj",
+    "monsterBtn": "Kup mi Monster",
+    "finalH2": "Přestaň opravovat<br />složky.",
+    "ctaInstall": "Nainstalovat ABM",
+    "ctaDocs": "Přečíst dokumentaci",
+    "sub": "ABM najde audioknihy, které chceš, stáhne je přes klienta pro stahování, kterého už máš, a roztřídí je tak, aby Audiobookshelf našel uklizenou knihovnu.",
+    "messy": "Downloads/\n  DCC.Bk4.The.Gate.of.the.Feral.Gods.MP3-WEB/\n    CD1/  CD2/  CD3/\n    01 - Track 01.mp3\n  Project Hail Mary (Unabridged) [128k]/\n    phm_part1of3.m4b\n  Mark of the Fool 6 - J.M. Clarke [2024].zip",
+    "clean": "Audiobooks/\n  Matt Dinniman/\n    Dungeon Crawler Carl/\n      Vol 04 - 2021 - The Gate of the Feral Gods/\n  Andy Weir/\n    Project Hail Mary/\n  J.M. Clarke/\n    Mark of the Fool/\n      Vol 06 - 2024 - Mark of the Fool 6/",
+    "steps": [
+      [
+        "Chtít",
+        "Přidej knihu, sérii nebo celého autora. ABM to dá na seznam Wanted a hlídá dál."
+      ],
+      [
+        "Najít",
+        "Tvoje indexery pro Usenet a torrenty se prochází podle plánu, nebo hned, když klikneš na hledání."
+      ],
+      [
+        "Stáhnout",
+        "Nejlepší vydání, které tvůj profil kvality dovolí, jde do klienta pro stahování, kterého už máš."
+      ],
+      [
+        "Zařadit",
+        "Naimportuje se, přejmenuje a zařadí pod autora a sérii. Vydání na více discích si při přesunu knih nechají své podsložky."
+      ],
+      [
+        "Udržet",
+        "Tvoje metadata, tvoje rozhodnutí: vybíráš, co ABM uchovává a zapisuje a kde to tvůj přehrávač čte. Povol v profilu kvality vylepšení a ABM vymění vydání za lepší, jakmile se nějaké objeví."
+      ]
+    ],
+    "features": [
+      [
+        "Knihovna",
+        "Všechny knihy na první pohled.",
+        "Obálky, stav a série v jedné mřížce. Zelená znamená na disku. Jantarová znamená, že ABM pořád hledá."
+      ],
+      [
+        "Kniha",
+        "Detaily sedí.",
+        "Autor, interpret, série, délka, vydavatel a každý soubor s jeho kvalitou a umístěním."
+      ],
+      [
+        "Kalendář",
+        "Věz, co přijde.",
+        "Data vydání knih, které sleduješ, rozložená v kalendáři."
+      ],
+      [
+        "Hledané",
+        "Seznam toho, co chybí.",
+        "Chybějící knihy a knihy pod tvou hranicí kvality, jedno kliknutí od hledání."
+      ],
+      [
+        "Profily",
+        "Ty rozhoduješ, co znamená lepší.",
+        "M4B v jednom souboru místo složky plné MP3? Řekni to jednou v profilu kvality a ABM si na to počká."
+      ],
+      [
+        "Převody",
+        "Oprav i formát.",
+        "Spoj části, rozděl nebo přidej kapitoly, nebo udělej z MP3 jedno M4B. ABM se naučí, jak rychlý je tvůj stroj, a odhadne, jak dlouho úloha potrvá."
+      ]
+    ],
+    "why": [
+      [
+        "Audioknihy na prvním místě.",
+        "Interpreti, pořadí v sériích, vydání z více souborů, kapitoly a M4B jsou tady to hlavní, ne něco přilepeného dodatečně."
+      ],
+      [
+        "Vyznáš se v tom hned.",
+        "Wanted, Queue, History, Calendar, profily kvality. Pokud jsi používal Sonarr nebo Radarr, všechno je tam, kde bys to hledal."
+      ],
+      [
+        "Říká ti pravdu.",
+        "Když přesun dostane na místo 3 z 5 knih, ABM ti řekne, kolik se jich přesunulo a proč zbytek ne."
+      ],
+      [
+        "Jeden kontejner. Žádný databázový server.",
+        "Všechno je v jednom souboru SQLite v <code>/config</code>. Zazálohuj tu složku a máš zazálohovaný celý ABM."
+      ]
+    ],
+    "works": [
+      [
+        "Přehrává se v",
+        "Audiobookshelf"
+      ],
+      [
+        "Metadata z",
+        "Libex"
+      ],
+      [
+        "Indexery",
+        "Newznab · Torznab"
+      ],
+      [
+        "Vlastněné knihy z",
+        "Audible"
+      ],
+      [
+        "Klienti pro stahování",
+        "7 podporovaných"
+      ]
+    ],
+    "shots": [
+      "Přehled",
+      "Knihovna",
+      "Kniha",
+      "Série",
+      "Kalendář",
+      "Hledané",
+      "Profily",
+      "Převody"
+    ],
+    "installSteps": [
+      [
+        "Ulož ho",
+        "Vlož tohle do <code>docker-compose.yml</code> a tři cesty vlevo změň na své vlastní složky."
+      ],
+      [
+        "Spusť ho",
+        "<code>docker compose up -d</code>"
+      ],
+      [
+        "Otevři ho",
+        "Jdi na <code>http://your-server:5173</code>. Při první návštěvě tě ABM provede nastavením přihlášení."
+      ]
+    ],
+    "faq": [
+      [
+        "Nahrazuje ABM Audiobookshelf?",
+        "Ne. Audiobookshelf je přehrávač a ABM je knihovník. Nasměruj oba na stejnou složku s knihovnou a nech každý dělat svou práci."
+      ],
+      [
+        "Odkud se berou metadata?",
+        "Z Libexu, otevřené služby s metadaty z Audible. ABM je obnovuje podle plánu a obálku, kterou sis vybral sám, můžeš zamknout, aby ji obnova nechala být."
+      ],
+      [
+        "Potřebuju samostatnou databázi?",
+        "Ne. ABM má všechno v jednom souboru SQLite v <code>/config</code>. Nic dalšího spouštět nemusíš."
+      ],
+      [
+        "Dostanu se k němu i zvenku?",
+        "Ano, od verze 0.17.0. Ve výchozím stavu se musí přihlásit všechno, co přichází zvenčí tvé lokální sítě, a když nastavíš Authentication Required na Enabled, přihlašuje se každý, včetně tvé vlastní LAN. Za nginx, Traefikem nebo Caddy nastav <code>TRUSTED_PROXIES</code> na adresu proxy. Uložené přihlašovací údaje jsou šifrované."
+      ],
+      [
+        "Co se stalo s Readarrem?",
+        "Readarr řešil knihy a audioknihy dohromady a mezitím skončil. ABM je jen pro audioknihy a stojí na návrhu, se kterým přišly aplikace Servarr."
+      ],
+      [
+        "Kolik to stojí?",
+        "Nic. Je zdarma a open source pod GPL-3.0. Jestli ti ušetří večer, odkaz na Ko-fi je hned níž."
+      ]
+    ],
+    "strip": [
+      "Hledané",
+      "Stahuje se",
+      "Staženo",
+      "Chybí soubory"
+    ],
+    "communityEyebrow": "Komunita",
+    "communityH2": "Najdi svoje lidi.",
+    "communityP": "Máš otázku, potřebuješ pomoct s nastavením, nebo si chceš popovídat o audioknihách? Přidej se ke komunitě AudioBook Manageru na Discordu, kde najdeš podporu i diskuze.",
+    "communityBtn": "Přidej se na Discord",
+    "planned": [
+      [
+        "Linux",
+        "nativní balíček a služba"
+      ],
+      [
+        "Windows",
+        "instalátor .exe"
+      ],
+      [
+        "macOS",
+        "nativní aplikace"
+      ],
+      [
+        "Kubernetes",
+        "nasazení do clusteru"
+      ],
+      [
+        "Unraid",
+        "šablona pro Community Apps"
+      ],
+      [
+        "Proxmox",
+        "instalační skript pro LXC"
+      ]
+    ],
+    "coming": "Brzy",
+    "translatorNote": "Tahle stránka je přeložená strojově. Jestli je čeština tvoje rodná řeč a chceš pomoct překlad vylepšit, napiš mi na {mail}."
   }
 }

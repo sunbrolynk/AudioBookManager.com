@@ -62,5 +62,9 @@
   "sv": {
     "label": "Svenska",
     "lang": "sv"
+  },
+  "cs": {
+    "label": "Čeština",
+    "lang": "cs"
   }
 }
