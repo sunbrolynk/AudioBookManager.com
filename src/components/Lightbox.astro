@@ -24,7 +24,7 @@ const t = (strings as Record<string, Record<string, string>>)[Astro.props.locale
     };
     dialog.addEventListener('close', () => { big.removeAttribute('src'); back?.focus(); });
     dialog.addEventListener('click', (e) => { if (e.target !== big) dialog.close(); });
-    document.querySelectorAll<HTMLImageElement>('.sl-markdown-content img[src*="/_astro/"], .crop img, .stage img').forEach((img) => {
+    document.querySelectorAll<HTMLImageElement>('.sl-markdown-content img[src*="/_astro/"], .crop img, .stage img, .sc-view img, .phone-f img').forEach((img) => {
       img.tabIndex = 0;
       img.setAttribute('role', 'button');
       img.setAttribute('aria-haspopup', 'dialog');
