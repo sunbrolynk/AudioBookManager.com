@@ -4,6 +4,7 @@
 // when a configured locale is missing pages, or when a locale folder exists but is not configured.
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join, relative } from 'node:path';
+import { translationHtml } from '../src/lib/translation-html.mjs';
 
 const docs = new URL('../src/content/docs/', import.meta.url).pathname;
 const locales = JSON.parse(readFileSync(new URL('../src/locales.json', import.meta.url), 'utf8'));
@@ -50,6 +51,16 @@ for (const code of codes) {
   const missing = Object.keys(ui.en).filter((k) => typeof ui[code]?.[k] !== 'string' || !ui[code][k].trim());
   if (missing.length) problems.push(`src/ui-strings.json for ${code} is missing ${missing.join(', ')}`);
 }
+// Translated strings may carry only <b>, <em>, <code> and <br>: some are rendered as HTML, so anything else would run on the page.
+const markup = (file, value, path) => {
+  if (typeof value === 'string') {
+    try { translationHtml(value); } catch (error) { problems.push(`${file} "${path}": ${error.message}`); }
+  } else if (value && typeof value === 'object') {
+    for (const [k, v] of Object.entries(value)) markup(file, v, path ? `${path}.${k}` : k);
+  }
+};
+markup('src/landing-strings.json', landing, '');
+markup('src/ui-strings.json', ui, '');
 // Non-English locales need the translator call-out (with a {mail} slot); English ones must not have it.
 const english = (c) => /^en(-|$)/i.test(locales[c].lang);
 for (const code of codes) {
