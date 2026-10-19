@@ -22,6 +22,8 @@ Uma cópia nova só substitui o que você tem se o perfil permitir upgrades, o d
 
 Se você conhece o Sonarr: é um perfil de qualidade em que as qualidades são formatos de áudio e organização dos arquivos, e não resolução. Custom formats não existem. Os [perfis de release](#perfis-de-release) cobrem um terreno parecido.
 
+Não existem faixas de bitrate nem de tamanho: qualidade quer dizer só formato e organização dos arquivos. Para um release, o ABM pega o formato do indexador ou do título e deduz a organização pelo título (um M4B sem números de parte ou de faixa conta como arquivo único), e depois confere de novo quando os arquivos são importados. A **Preferred Quality** das [configurações da Audible](/pt-br/settings/audible/) é outra coisa: é a qualidade em que os downloads da Audible chegam.
+
 ## Perfis de atraso
 
 Um perfil de atraso segura uma release antes de baixar, para dar tempo de uma release melhor aparecer.

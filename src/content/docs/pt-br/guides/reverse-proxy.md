@@ -3,6 +3,10 @@ title: Proxy reverso
 description: Colocando o ABM atrás do nginx, Traefik ou Caddy sem quebrar o login.
 ---
 
+:::caution[Não recomendado]
+Colocar o ABM na internet, por um proxy reverso ou por uma porta encaminhada, não é recomendado, o mesmo conselho que os apps Servarr dão. Para acessar de fora, use uma VPN como WireGuard ou Tailscale. O ABM foi feito para ser seguro atrás de um proxy, mas não tem garantia de segurança depois que ele fica público, e o risco é seu. Se fizer mesmo assim, coloque **Authentication Required** em **Enabled** e mantenha o ABM atualizado.
+:::
+
 Três configurações importam. Acerte essas e o login, o websocket e o salvamento funcionam.
 
 ## 1. Diga ao ABM quem é o proxy

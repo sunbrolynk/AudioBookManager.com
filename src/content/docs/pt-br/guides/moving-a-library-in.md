@@ -17,9 +17,11 @@ description: Traga uma coleção que você já tem para o ABM com segurança.
 4. Selecione as linhas e adicione. Continua em dois cliques se você aceitar os padrões.
 5. Acompanhe a tarefa. O resumo diz quantos arquivos foram copiados em vez de receber hardlink e o que falhou.
 
-## Se você quer que o ABM gerencie a pasta de origem
+## Se a sua coleção já está onde você quer
 
-Adicione ela como pasta raiz e deixe o ABM varrer. Assim os arquivos ficam onde estão e os livros ganham o status a partir do que está no disco.
+Adicionar a pasta como pasta raiz não adiciona nenhum livro sozinho. As varreduras do ABM só verificam livros que ele já conhece, então ele não vai pegar o que está lá dentro. Os livros ainda precisam entrar pelo Library Import: a contagem de **Unmapped Folders** da pasta raiz em **Settings > Media Management** abre o Library Import para essa raiz.
+
+Importar coloca cada livro na estrutura Autor/Série/Livro do próprio ABM, dentro da pasta raiz padrão. Escolha hardlink para deixar os originais intactos sem gastar mais espaço.
 
 ## Pegadinhas
 

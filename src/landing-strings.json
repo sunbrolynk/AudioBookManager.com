@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Instale",
     "installH2": "Rodando com um arquivo só.",
     "buildP": "<b>Compilar a partir do código-fonte.</b> Num clone do repositório, troque <code>image:</code> por <code>build: .</code> e rode <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, um serviço Linux comum.</b> Ainda não. Por enquanto, o Docker é o único caminho.",
+    "otherP": "<b>Por enquanto, o Docker é o único caminho.</b> Instalações nativas para os setups mais comuns estão nos planos, para o ABM rodar onde você já faz self-hosting:",
     "note": "O ABM está em alfa. Faça backup de <code>/config</code> antes de atualizar e dê uma olhada nas notas da atualização antes.",
     "fullGuide": "Guia completo de instalação →",
     "faqEyebrow": "Perguntas frequentes",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Abrir uma issue",
     "helpH": "Quer dar uma força?",
     "helpP": "O ABM é o projeto de uma pessoa só. Um Ko-fi ou um Monster mantém ele andando.",
-    "kofiBtn": "Me pague um Monster",
-    "monsterBtn": "Apoiar o desenvolvimento",
+    "kofiBtn": "Apoiar o desenvolvimento",
+    "monsterBtn": "Me pague um Monster",
     "finalH2": "Pare de arrumar<br />pastas.",
     "ctaInstall": "Instalar o ABM",
     "ctaDocs": "Ler a documentação",
@@ -1370,6 +1370,33 @@
     "communityH2": "Encontre a sua turma.",
     "communityP": "Tem uma dúvida, precisa de uma mão com a sua instalação ou quer falar de audiolivros? Entre na comunidade do AudioBook Manager no Discord para suporte e conversas.",
     "communityBtn": "Entre no Discord",
+    "planned": [
+      [
+        "Linux",
+        "um pacote nativo e serviço"
+      ],
+      [
+        "Windows",
+        "um instalador .exe"
+      ],
+      [
+        "macOS",
+        "um app nativo"
+      ],
+      [
+        "Kubernetes",
+        "uma implantação em cluster"
+      ],
+      [
+        "Unraid",
+        "um template do Community Apps"
+      ],
+      [
+        "Proxmox",
+        "um script de instalação LXC"
+      ]
+    ],
+    "coming": "Em breve",
     "translatorNote": "Esta página foi traduzida por máquina. Se português do Brasil é a sua língua nativa e você quiser ajudar a melhorar a tradução, me mande um e-mail em {mail}."
   }
 }

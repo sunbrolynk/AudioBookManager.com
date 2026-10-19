@@ -3,7 +3,7 @@ title: Audible
 description: Conecte contas da Audible, sincronize e espelhe sua biblioteca.
 ---
 
-O ABM pode se conectar às suas contas da Audible, manter uma cópia da biblioteca de cada conta e baixar o que você tem.
+O ABM se conecta a uma ou mais contas da Audible e mantém uma cópia da biblioteca de cada conta na página **Audible Library**. Tudo o que você tem pode ser baixado, descriptografado para M4B e importado como qualquer outro livro. Com o espelhamento ligado, cada sincronização também adiciona ao ABM os livros que estão faltando e baixa esses livros.
 
 ## Contas
 
@@ -28,7 +28,9 @@ O espelhamento faz a sua biblioteca do ABM acompanhar a sua biblioteca da Audibl
 - Vem ligado por padrão.
 - Adiciona suas compras e seus títulos gratuitos. Podcasts ficam de fora.
 - Cada sincronização trata no máximo 25 títulos.
-- Antes de rodar, ele pede confirmação e mostra quantos títulos vai adicionar.
+- Ao ligar, ele pede confirmação e mostra quantos títulos a próxima sincronização vai adicionar e baixar.
+- Títulos do Plus Catalog e empréstimos ficam de fora, e nada entra na fila enquanto o disco da biblioteca estiver com pouco espaço.
+- Um título cujo download continua falhando espera cada vez mais entre as tentativas: 1 hora, depois 6, depois 24.
 - Ele também baixa os títulos que você quer e que ainda não têm arquivos.
 - Títulos removidos da Audible continuam no ABM.
 

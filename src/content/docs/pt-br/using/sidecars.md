@@ -1,21 +1,27 @@
 ---
 title: Arquivos sidecar
-description: Os arquivos de capa, OPF, descrição, narrador e cue que o ABM grava ao lado de um livro.
+description: Os arquivos metadata.json, de capa, OPF, descrição e narrador que o ABM grava ao lado de um livro.
 ---
 
-Um sidecar é um arquivo pequeno ao lado do áudio. O Audiobookshelf e outros players leem esses arquivos. O ABM pode gravar estes:
+Um sidecar é um arquivo pequeno ao lado do áudio. O Audiobookshelf e outros players leem esses arquivos. O ABM grava estes:
 
-| Arquivo | Conteúdo |
-|---|---|
-| `cover.jpg` | A capa do livro |
-| `.opf` | Metadados em formato OPF, que o Audiobookshelf lê. Leva o nome do primeiro arquivo de áudio do livro (por exemplo `Dune.opf`), ou `title.opf` quando o livro não tem áudio |
-| `desc.txt` | A descrição |
-| `reader.txt` | O narrador |
-| `.cue` | Capítulos do Libex (chega na próxima versão) |
+| Arquivo | Conteúdo | Interruptor |
+|---|---|---|
+| `metadata.json` | O próprio arquivo de metadados do Audiobookshelf, mais um bloco `abm` que marca o arquivo como do ABM. O Audiobookshelf lê esse antes de qualquer outro | Nenhum, sempre é gravado |
+| `cover.jpg` | A capa do livro. Não é gravado quando a pasta já tem um `cover.*` | cover.jpg |
+| `.opf` | Metadados em formato OPF. Leva o nome do primeiro arquivo de áudio do livro (por exemplo `Dune.opf`), ou `title.opf` quando o livro não tem áudio | title.opf |
+| `desc.txt` | A descrição, sem HTML. Não é gravado quando não tem descrição | desc.txt |
+| `reader.txt` | Os narradores. Não é gravado quando não tem narrador | reader.txt |
+
+Junto com a estrutura de pastas, esses são os arquivos que o Audiobookshelf lê para os detalhes de um livro, então ele vê o mesmo livro que o ABM.
 
 ## Quando eles são gravados
 
-Em **Settings > Metadata**, **Create on Book Add**, **Create on Import** e **Create on Refresh** escolhem quando. Por padrão, só a importação grava esses arquivos. **Overwrite Existing** vem desligado, então um arquivo que já está lá fica. Você também pode gravar pelo diálogo de edição, para um livro ou uma seleção de séries e autores. Veja [Configurações de metadados](/pt-br/settings/metadata/).
+O `metadata.json` é gravado toda vez que um livro é adicionado, importado ou atualizado.
+
+Os outros quatro têm cada um o seu interruptor em **Settings > Metadata > Files to Create**, todos ligados por padrão. Eles só são gravados quando o gatilho correspondente também está ligado: **Create on Book Add** (desligado), **Create on Import** (ligado, o que cobre downloads, Library Import e downloads da Audible) e **Create on Refresh** (desligado). **Overwrite Existing** vem desligado, então um arquivo que já está lá fica. Nada é gravado enquanto a pasta do livro não existe.
+
+O **Write to Directories** do diálogo de edição também grava os quatro, para um livro ou uma seleção de séries e autores. Veja [Configurações de metadados](/pt-br/settings/metadata/).
 
 ## A capa é especial
 

@@ -3,6 +3,8 @@ title: Escolhendo uma fonte de metadados
 description: Embutida, hospedada ou o seu próprio servidor Libex.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Chega na próxima versão]
 A escolha da fonte ainda não está em nenhuma versão lançada. As versões lançadas usam a instância pública do Libex em libexdb.com e não têm configuração para isso.
 :::
@@ -12,10 +14,10 @@ Na próxima versão, **Settings > Metadata > Source** tem uma configuração **M
 | Opção | O que significa |
 |---|---|
 | Built-in (padrão) | O Libex roda dentro do ABM. Precisa que uma conexão de saída seja escolhida antes. |
-| Hosted (libexdb.com) | O ABM consulta a instância pública do Libex. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex no GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | O ABM consulta a instância pública do Libex. |
 | Self-hosted | O ABM consulta um servidor Libex que você indicar. Preencha o **Server URL** dele, por exemplo `http://192.168.1.20:8000`. |
 
-**Test** verifica a fonte selecionada sem salvar. **Status** diz se ela está pronta. Uma escolha que você ainda não salvou mostra "Not in use yet - save to switch" até você salvar.
+**Test** verifica a fonte selecionada sem salvar. **Status** diz se ela está pronta. Quando você escolhe outra fonte, **Status** mostra "Not in use yet - save to switch" até você salvar.
 
 ## Built-in e a conexão de saída
 
@@ -28,5 +30,5 @@ Com essas duas, o ABM consulta um servidor Libex e é o servidor que conversa co
 ## Qual escolher
 
 - Quer que simplesmente funcione e não liga de a Audible ver o seu endereço: Built-in com conexão direta, ou Hosted.
-- Não quer expor o seu IP para a Audible: Built-in por uma VPN ou proxy, ou Hosted.
+- Não quer expor o seu IP para a Audible: Built-in por um proxy, pelo túnel WireGuard embutido ou por um contêiner ou serviço de VPN separado. Ou Hosted, em que é o servidor Libex que conversa com a Audible, não você.
 - Já roda um servidor Libex: Self-hosted.

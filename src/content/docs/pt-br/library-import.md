@@ -3,7 +3,7 @@ title: Importação da biblioteca
 description: Traga uma coleção que você já tem para o ABM com o Import Workbench.
 ---
 
-O Library Import varre uma pasta de audiolivros, associa cada pasta a metadados e adiciona os livros à sua biblioteca. A página se chama **Match Audiobooks**.
+O Library Import varre uma pasta de audiolivros, associa cada pasta a metadados e adiciona os livros à sua biblioteca. **Library > Library Import** abre "Import audiobooks you already have", onde você escolhe uma pasta para varrer. Quando a varredura começa, o ABM vai para a página de correspondências, com o título **Match Audiobooks**, onde você confere as correspondências e adiciona os livros.
 
 ## O fluxo
 
@@ -41,7 +41,7 @@ Um livro com hardlink não ocupa espaço extra em disco e o original fica onde e
 
 ## Valores longos
 
-Um narrador, título ou caminho cortado com reticências abre inteiro quando você toca nele ou aperta Enter ou Espaço. Toque de novo para fechar.
+Um narrador, título ou caminho cortado com reticências abre inteiro quando você toca ou clica nele. Toque ou clique de novo para fechar. Com mouse, passar o cursor por cima também mostra o valor inteiro. Pelo teclado, coloque o foco nele e aperte Enter ou Espaço.
 
 ## Respostas além de importar
 

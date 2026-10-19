@@ -7,7 +7,7 @@ description: Pastas raiz, importação, arquivos extras, lixeira, varreduras, up
 
 ## Pastas raiz (Root Folders)
 
-Uma pasta raiz é um diretório em que o ABM gerencia livros. Adicione uma com **Add Root Folder**, que abre um navegador de pastas onde também dá para digitar o caminho. O ABM também consegue listar as pastas não mapeadas dentro de uma raiz e importar elas. O espaço livre e o suporte a hardlink de uma raiz são verificados quando ela é adicionada. Remover uma raiz não apaga arquivos.
+Uma pasta raiz é um diretório em que o ABM gerencia livros. Adicione uma com **Add Root Folder**, que abre um navegador de pastas onde também dá para digitar o caminho. O ABM também consegue listar as pastas não mapeadas dentro de uma raiz e importar elas. O espaço livre e o suporte a hardlink de uma raiz são verificados quando ela é adicionada. Remover uma raiz pergunta o que fazer: **Remove from ABM only** (o padrão) esquece os livros dentro dela e deixa os arquivos, e **Delete the books and their files** apaga de vez tudo o que está no caminho, sem passar pela lixeira. Uma raiz com livros pede que você digite para confirmar.
 
 A pasta raiz padrão é para onde vão os livros novos e é ela que decide se o hardlink é oferecido no Library Import.
 
@@ -27,10 +27,10 @@ A pasta raiz padrão é para onde vão os livros novos e é ela que decide se o 
 | Use Hardlinks instead of Copy | ligado | Para downloads concluídos: hardlink em vez de cópia, assim o seed não dobra o espaço usado. Precisa ser o mesmo volume. |
 | Library Import | Copy | O padrão do [Library Import](/pt-br/library-import/): copiar, hardlink ou mover. O hardlink fica desativado até a raiz padrão ter sido verificada e ter suporte. |
 | Import Extra Files | ligado | Interruptor geral para trazer junto os arquivos que não são áudio. Vale para o Library Import, o Manual Import e os downloads concluídos |
-| Extra File Extensions (avançado) | vazio | Extensões extras para importar, como `srt, lrc`. Tipos bloqueados são recusados. |
+| Extra File Extensions (avançado) | vazio | Mais tipos de arquivo para trazer junto, mantidos com o próprio nome, por exemplo `srt, lrc`. Com ou sem o ponto, separados por vírgulas ou espaços. Tipos bloqueados, como executáveis e downloads incompletos, não podem ser salvos. Fica desativado enquanto **Import Extra Files** estiver desligado |
 | Preferred Cover (avançado) | Matched | A capa da edição que teve correspondência, ou a melhor imagem da pasta, quando existem as duas |
 
-Os arquivos extras têm cinco interruptores:
+**Import Extra Files** traz os outros arquivos de um livro junto com o áudio. Cinco interruptores escolhem quais tipos vêm junto, e um arquivo que bate com **Extra File Extensions** vem junto mesmo quando o tipo dele está desligado:
 
 | Interruptor | Padrão | O que cobre |
 |---|---|---|
@@ -55,7 +55,7 @@ O hardlink aqui não é a mesma coisa que **Use Hardlinks instead of Copy**. Aqu
 | Recycling Bin Cleanup | 7 (dias) | 0 desativa a limpeza automática |
 | Library Scan Interval | 0 (desligado) | Horas entre as varreduras automáticas |
 | Watch for Changes | desligado | Varre quando arquivos são adicionados, removidos ou alterados |
-| Cover Cache Workers | 4 | Quantas capas são baixadas ao mesmo tempo ao guardar a arte em cache, de 1 a 16. Diminua se uma rodada de cache reportar falhas |
+| Cover Cache Workers | 4 | Quantas capas são baixadas ao mesmo tempo ao guardar a arte em cache, de 1 a 16 |
 
 ## Upgrades de qualidade (Quality Upgrades)
 
