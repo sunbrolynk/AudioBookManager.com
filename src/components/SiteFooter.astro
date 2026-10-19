@@ -56,6 +56,8 @@ const groups = [
       { label: 'Radarr', href: 'https://radarr.video/', icon: 'external' },
       { label: 'Lidarr', href: 'https://lidarr.audio/', icon: 'external' },
       { label: 'Prowlarr', href: 'https://prowlarr.com/', icon: 'external' },
+      { label: 'Libex', href: 'https://github.com/LibexHQ/Libex', icon: 'github' },
+      { label: `Libex ${t.footerApiReference}`, href: 'https://libexdb.com/redoc', icon: 'external' },
       { label: 'Servarr Wiki', href: 'https://wiki.servarr.com/', icon: 'open-book' },
     ],
   },
@@ -70,7 +72,7 @@ const groups = [
           <ul>
             {group.links.map((link) => (
               <li>
-                <a href={link.href}>
+                <a href={link.href} rel={link.href.startsWith('https://') ? 'noopener' : undefined}>
                   <Icon name={link.icon} size="1.1rem" />
                   <span>{link.label}</span>
                 </a>
