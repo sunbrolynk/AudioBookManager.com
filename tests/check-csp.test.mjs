@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
-import { allowed, checkSite, parsePolicy, srcsetUrls } from '../scripts/check-csp.mjs';
+import { allowed, checkSite, parsePolicy, parseRules, policyFor, srcsetUrls } from '../scripts/check-csp.mjs';
 
 const headers = "/*\n  Content-Security-Policy: default-src 'self'; img-src 'self' data:; font-src 'self'; object-src 'none'\n";
 
@@ -63,4 +63,11 @@ test('single-quoted and unquoted attributes and string-form CSS imports are chec
     assert.ok(problems.includes(blocked), `missing: ${blocked}\n${problems}`);
   }
   assert.doesNotMatch(problems, /local\.css/);
+});
+
+test('a later path rule replaces the site policy for its own pages only', () => {
+  const rules = parseRules("/*\n  Content-Security-Policy: default-src 'self'; style-src 'self'\n\n/api-reference/*\n  ! Content-Security-Policy\n  Content-Security-Policy: default-src 'self'; style-src 'self' 'unsafe-inline'\n");
+  assert.deepEqual(policyFor(rules, '/api-reference/').get('style-src'), ["'self'", "'unsafe-inline'"]);
+  assert.deepEqual(policyFor(rules, '/installation/').get('style-src'), ["'self'"]);
+  assert.deepEqual(policyFor(rules, '/_astro/a.css').get('style-src'), ["'self'"]);
 });

@@ -68,9 +68,21 @@ a fix.
 
 ## API reference
 
-The API Reference page is currently a placeholder. A reviewed OpenAPI
-specification generated from AudioBook Manager's source and a locally bundled
-Redoc renderer are planned.
+`/api-reference/` is ABM's ReDoc page, served entirely from this site:
+
+- `public/api-reference/openapi.json`: ABM's OpenAPI schema. Regenerate it from an ABM checkout
+  with `bash scripts/update-openapi.sh <ref>` (default `main`; `ABM_REPO` points at the checkout).
+  Add `--check` to fail when the committed copy is stale.
+- `public/api-reference/redoc.standalone.js`: ReDoc 2.5.3, the same pinned build Libex serves.
+  `bash scripts/fetch-redoc.sh` fetches it from the npm registry, checks the tarball's integrity
+  and the bundle's checksum, and swaps Redocly's CDN logo for a blank pixel so the page contacts
+  nothing but this site.
+- `scripts/check-api-reference.mjs` runs before every build. It fails on any other bundle, and on
+  a spec that names servers or carries a home path, LAN address or email address.
+
+ReDoc injects its styles at runtime and runs search in a `blob:` worker, so `/api-reference/*`
+gets its own Content-Security-Policy in `_headers` that allows those two things. Scripts stay
+hash-only there too.
 
 ## Dependency maintenance
 
