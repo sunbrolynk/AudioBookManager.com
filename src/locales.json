@@ -56,7 +56,7 @@
   "ja": {
     "label": "日本語",
     "lang": "ja",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 60
   },
   "nl": {
