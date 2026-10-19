@@ -1,0 +1,87 @@
+---
+title: Installér ABM
+description: Én container, tre mapper, én kommando. Denne side er hele installationen.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Databasen er en SQLite-fil i `/config`, så der er ingen databaseservice at sætte op.
+
+**Du skal bruge:**
+
+- Docker med Compose
+- En mappe til dit lydbogsbibliotek
+- Mappen, hvor din downloadklient lægger færdige downloads
+- En mappe til ABM's egne data
+
+## Installation
+
+<Steps>
+
+1. **Lav en compose-fil.** Gem det her som `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Peg den på dine mapper.** Ret venstre side af hvert volume til en rigtig mappe på din maskine. Lad højre side være.
+
+   | Sti på værten | Sti i containeren | Hvad ligger der |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | Dit lydbogsbibliotek. Påkrævet. |
+   | `/path/to/downloads` | `/downloads` | Hvor din downloadklient lægger færdige downloads. Påkrævet. |
+   | `/path/to/config` | `/config` | SQLite-databasen, backups, logs, papirkurve og den genererede app-hemmelighed. Pas på den. |
+
+3. **Start den.** Kør det her fra mappen med compose-filen:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Åbn den.** Gå til `http://your-server:5173`. Første gang bliver du guidet igennem opsætningen af et login.
+
+</Steps>
+
+<Aside type="tip" title="Ligger dine downloads i en anden container?">
+Hvis din downloadklient kører i sin egen container, skal dens downloadmappe være den samme mappe, som ABM ser som `/downloads`. Hvis stierne er forskellige, så tilføj en remote path mapping under **Settings > Download Clients**.
+</Aside>
+
+## Første opstart
+
+Sæt din tidszone med `TIMEZONE` i compose-filen. Gå så til **Settings** og tilføj en rodmappe under **Media Management**, en indekser under **Indexers** og en downloadklient under **Download Clients**. Miljøvariabler og reverse proxies er beskrevet under [Konfiguration](/da/configuration/).
+
+## Byg fra kildekoden
+
+Vil du bygge imaget selv, så klon repoet, skift linjen `image:` ud med `build: .` og kør:
+
+```bash
+docker compose up -d --build
+```
+
+## Opdatering
+
+Hent det nye image og genopret containeren. Siden [Opdateringer](/da/updates/) viser, hvad der er ændret i hver udgivelse.
+
+<Aside type="caution" title="ABM er i alpha">
+Tag en backup af `/config`, før du opgraderer, og skim opdateringsnoterne først.
+</Aside>
+
+## Noget, der ikke virker?
+
+- **Siden vil ikke loade.** Tjek port-mappingen i din compose-fil, og kør så `docker logs audiobook-manager`.
+- **Ændringer bliver afvist fra mit domæne.** ABM afviser ændringer fra en adresse, den ikke bliver tilgået på. Sørg først for, at din proxy sender den oprindelige `Host`-header videre. Er det ikke nok, så tilføj dit domæne under **CORS Allowed Domains** i **Settings > General** (det er en avanceret indstilling, så slå **Show Advanced** til) og genstart ABM. Se [Fejlfinding](/da/troubleshooting/).
+- **Downloads bliver færdige, men bliver aldrig importeret.** Tjek mappe-mappingen i tippet ovenfor.
