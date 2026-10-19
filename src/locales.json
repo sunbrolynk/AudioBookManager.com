@@ -26,5 +26,9 @@
   "es": {
     "label": "Español",
     "lang": "es"
+  },
+  "it": {
+    "label": "Italiano",
+    "lang": "it"
   }
 }
