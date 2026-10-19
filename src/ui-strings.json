@@ -218,6 +218,13 @@
     "footerReportIssue": "Nahlásit problém s aplikací",
     "footerSupport": "Podpoř vývoj",
     "footerApiReference": "Reference API",
-    "footerBuyMonster": "Kup mi Monster"
+    "footerBuyMonster": "Kup mi Monster",
+    "footerContact": "Kontakt",
+    "footerMailSupport": "Pomoc s ABM",
+    "footerMailTranslate": "Překlady",
+    "footerMailPrivacy": "Soukromí",
+    "footerMailAdmin": "Cokoli jiného",
+    "releasesNone": "Zatím žádná vydání.",
+    "releasesBeforeUpgrade": "Než aktualizuješ"
   }
 }

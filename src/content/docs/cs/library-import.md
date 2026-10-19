@@ -3,7 +3,7 @@ title: Import knihovny (Library Import)
 description: Dostaň stávající sbírku do ABM přes Import Workbench.
 ---
 
-Library Import naskenuje složku s audioknihami, ke každé složce najde metadata a přidá knihy do tvé knihovny. Stránka se jmenuje **Match Audiobooks**.
+Library Import naskenuje složku s audioknihami, ke každé složce najde metadata a přidá knihy do tvé knihovny. **Library > Library Import** otevře stránku "Import audiobooks you already have", kde vybereš složku ke skenování. Jakmile skenování začne, ABM přejde na stránku pro párování s nadpisem **Match Audiobooks**, kde zkontroluješ shody a knihy přidáš.
 
 ## Postup
 
@@ -41,7 +41,7 @@ Kniha přes hardlink nezabere žádné místo navíc a originál zůstane, kde j
 
 ## Dlouhé hodnoty
 
-Interpret, název nebo cesta zkrácená výpustkou se otevře celá, když na ni klepneš nebo stiskneš Enter či mezerník. Dalším klepnutím ji zavřeš.
+Interpret, název nebo cesta zkrácená výpustkou se otevře celá, když na ni klepneš nebo klikneš. Dalším klepnutím nebo kliknutím ji zavřeš. S myší se celá hodnota ukáže i při najetí kurzorem. Z klávesnice na ni přejdi a stiskni Enter nebo mezerník.
 
 ## Jiné odpovědi než import
 

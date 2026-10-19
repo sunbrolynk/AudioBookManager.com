@@ -23,7 +23,7 @@ K připojení účtu potřebuješ **Marketplace**, **Display Name** a **Redirect
 
 | Nastavení | Výchozí | Co dělá |
 |---|---|---|
-| Auto Add to Library | zapnuto | Stažené knihy se přidají do knihovny ABM |
+| Auto Add to Library | zapnuto | Když stahuješ titul z Audible, který v ABM ještě není, ABM ho nejdřív přidá do knihovny. Vypnuté, takové stažení se odmítne. V příští verzi se z toho stane [Mirror Audible library to ABM](/cs/audible/#zrcadlení-knihovny-audible-do-abm-mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | 1 až 5. Víc je rychlejší a může narazit na limity Audible. |
 | Preferred Quality | High Quality | High, Normal nebo Low |
 | Delete Encrypted Files | zapnuto | Po dešifrování do M4B odstraní šifrovaný soubor AAXC |

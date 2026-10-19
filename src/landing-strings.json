@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Stáhni si ho",
     "installH2": "Běží z jednoho souboru.",
     "buildP": "<b>Sestavení ze zdrojáků.</b> V naklonovaném repu nahraď <code>image:</code> za <code>build: .</code> a spusť <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, obyčejná linuxová služba.</b> Zatím ne. Prozatím je jedinou cestou Docker.",
+    "otherP": "<b>Prozatím je jedinou cestou Docker.</b> Nativní instalace pro běžná prostředí jsou v plánu, aby ABM běžel všude, kde už něco hostuješ sám:",
     "note": "ABM je v alfě. Před upgradem si zazálohuj <code>/config</code> a projdi si poznámky k aktualizaci.",
     "fullGuide": "Celý návod k instalaci →",
     "faqEyebrow": "Časté otázky",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Založit issue",
     "helpH": "Chceš ho trochu popostrčit?",
     "helpP": "ABM je projekt jednoho člověka. Ko-fi nebo Monster ho drží v pohybu.",
-    "kofiBtn": "Kup mi Monster",
-    "monsterBtn": "Podpoř vývoj",
+    "kofiBtn": "Podpoř vývoj",
+    "monsterBtn": "Kup mi Monster",
     "finalH2": "Přestaň opravovat<br />složky.",
     "ctaInstall": "Nainstalovat ABM",
     "ctaDocs": "Přečíst dokumentaci",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Komunita",
     "communityH2": "Najdi svoje lidi.",
     "communityP": "Máš otázku, potřebuješ pomoct s nastavením, nebo si chceš popovídat o audioknihách? Přidej se ke komunitě AudioBook Manageru na Discordu, kde najdeš podporu i diskuze.",
-    "communityBtn": "Přidej se na Discordu",
+    "communityBtn": "Přidej se na Discord",
+    "planned": [
+      [
+        "Linux",
+        "nativní balíček a služba"
+      ],
+      [
+        "Windows",
+        "instalátor .exe"
+      ],
+      [
+        "macOS",
+        "nativní aplikace"
+      ],
+      [
+        "Kubernetes",
+        "nasazení do clusteru"
+      ],
+      [
+        "Unraid",
+        "šablona pro Community Apps"
+      ],
+      [
+        "Proxmox",
+        "instalační skript pro LXC"
+      ]
+    ],
+    "coming": "Brzy",
     "translatorNote": "Tahle stránka je přeložená strojově. Jestli je čeština tvoje rodná řeč a chceš pomoct překlad vylepšit, napiš mi na {mail}."
   }
 }

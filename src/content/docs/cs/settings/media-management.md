@@ -7,7 +7,7 @@ description: Kořenové složky, import, další soubory, koš, skenování, vyl
 
 ## Kořenové složky (Root Folders)
 
-Kořenová složka je adresář, ve kterém ABM spravuje knihy. Přidáš ji přes **Add Root Folder**, které otevře prohlížeč složek s cestou, kterou můžeš i napsat. ABM taky umí vypsat nenamapované složky pod kořenovou složkou a naimportovat je. Při přidání se ověří volné místo a podpora hardlinků. Odebráním kořenové složky se soubory nesmažou.
+Kořenová složka je adresář, ve kterém ABM spravuje knihy. Přidáš ji přes **Add Root Folder**, které otevře prohlížeč složek s cestou, kterou můžeš i napsat. ABM taky umí vypsat nenamapované složky pod kořenovou složkou a naimportovat je. Při přidání se ověří volné místo a podpora hardlinků. Při odebrání kořenové složky se ABM zeptá, co dělat: **Remove from ABM only** (výchozí) zapomene knihy pod ní a soubory nechá být, **Delete the books and their files** natrvalo smaže všechno pod cestou a koš přitom nepoužije. U kořenové složky, ve které jsou knihy, musíš potvrzení napsat.
 
 Výchozí kořenová složka je ta, kam jdou nové knihy, a ta, podle které se rozhoduje, jestli Library Import nabídne hardlink.
 
@@ -27,10 +27,10 @@ Výchozí kořenová složka je ta, kam jdou nové knihy, a ta, podle které se 
 | Use Hardlinks instead of Copy | zapnuto | Pro dokončená stahování: hardlink místo kopie, aby seedování nezabíralo dvojnásobek místa. Vyžaduje stejný svazek. |
 | Library Import | Copy | Výchozí pro [Library Import](/cs/library-import/): kopie, hardlink nebo přesun. Hardlink je zašedlý, dokud výchozí kořenová složka není ověřená a nepodporuje ho. |
 | Import Extra Files | zapnuto | Hlavní vypínač pro přenášení souborů, které nejsou zvuk. Platí pro Library Import, Manual Import i dokončená stahování |
-| Extra File Extensions (pokročilé) | prázdné | Další přípony k importu, třeba `srt, lrc`. Zakázané typy se odmítnou. |
+| Extra File Extensions (pokročilé) | prázdné | Další typy souborů, které se přenesou s knihou pod svými vlastními názvy, třeba `srt, lrc`. S tečkou nebo bez ní, oddělené čárkami nebo mezerami. Zakázané typy, jako spustitelné soubory a nedokončená stahování, uložit nejde. Když je **Import Extra Files** vypnuté, je pole neaktivní |
 | Preferred Cover (pokročilé) | Matched | Obálka nalezené edice, nebo nejlepší obrázek ze složky, když existují obojí |
 
-Další soubory mají pět přepínačů:
+**Import Extra Files** přenese s knihou kromě zvuku i její další soubory. Pět přepínačů určuje, které druhy se přenesou, a soubor, který odpovídá **Extra File Extensions**, se přenese, i když je jeho druh vypnutý:
 
 | Přepínač | Výchozí | Co zahrnuje |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink tady není totéž co **Use Hardlinks instead of Copy**. To druhé je p
 | Recycling Bin Cleanup | 7 (dní) | 0 vypne automatický úklid |
 | Library Scan Interval | 0 (vypnuto) | Počet hodin mezi automatickými skenováními |
 | Watch for Changes | vypnuto | Skenuje, když se soubory přidají, odeberou nebo změní |
-| Cover Cache Workers | 4 | Kolik obálek se stahuje najednou při ukládání obrázků do mezipaměti, od 1 do 16. Sniž to, pokud běh mezipaměti hlásí chyby |
+| Cover Cache Workers | 4 | Kolik obálek se stahuje najednou při ukládání obrázků do mezipaměti, od 1 do 16 |
 
 ## Vylepšování kvality (Quality Upgrades)
 

@@ -1,21 +1,27 @@
 ---
 title: Doprovodné soubory
-description: Soubory s obálkou, OPF, popisem, interpretem a cue, které ABM zapisuje vedle knihy.
+description: Soubory metadata.json, obálka, OPF, popis a interpret, které ABM zapisuje vedle knihy.
 ---
 
-Doprovodný soubor (sidecar) je malý soubor vedle zvuku. Čte je Audiobookshelf i další přehrávače. ABM umí zapsat tyhle:
+Doprovodný soubor (sidecar) je malý soubor vedle zvuku. Čte je Audiobookshelf i další přehrávače. ABM zapisuje tyhle:
 
-| Soubor | Obsah |
-|---|---|
-| `cover.jpg` | Obálka knihy |
-| `.opf` | Metadata ve formátu OPF, která přečte Audiobookshelf. Jmenuje se podle prvního zvukového souboru knihy (třeba `Dune.opf`), nebo `title.opf`, když kniha žádný zvuk nemá |
-| `desc.txt` | Popis |
-| `reader.txt` | Interpret |
-| `.cue` | Kapitoly z Libexu (přijde v příští verzi) |
+| Soubor | Obsah | Přepínač |
+|---|---|---|
+| `metadata.json` | Vlastní soubor metadat Audiobookshelfu a k tomu blok `abm`, který ho označí jako soubor ABM. Audiobookshelf ho čte přede vším ostatním | Žádný, zapisuje se vždy |
+| `cover.jpg` | Obálka knihy. Nezapíše se, když už ve složce je nějaký `cover.*` | cover.jpg |
+| `.opf` | Metadata ve formátu OPF. Jmenuje se podle prvního zvukového souboru knihy (třeba `Dune.opf`), nebo `title.opf`, když kniha žádný zvuk nemá | title.opf |
+| `desc.txt` | Popis bez HTML. Vynechá se, když žádný není | desc.txt |
+| `reader.txt` | Interpreti. Vynechá se, když žádní nejsou | reader.txt |
+
+Spolu s rozložením složek jsou to soubory, ze kterých Audiobookshelf čte podrobnosti o knize, takže vidí stejnou knihu jako ABM.
 
 ## Kdy se zapisují
 
-V **Settings > Metadata** volí **Create on Book Add**, **Create on Import** a **Create on Refresh**, kdy se to stane. Ve výchozím stavu je zapisuje jen import. **Overwrite Existing** je vypnuté, takže soubor, který už tam je, zůstane. Zapsat je můžeš i z dialogu úprav, pro jednu knihu nebo výběr sérií a autorů. Viz [Nastavení metadat](/cs/settings/metadata/).
+`metadata.json` se zapíše pokaždé, když se kniha přidá, naimportuje nebo obnoví.
+
+Zbylé čtyři mají každý svůj přepínač v **Settings > Metadata > Files to Create**, ve výchozím stavu všechny zapnuté. Zapíšou se jen tehdy, když je zapnutý i odpovídající spouštěč: **Create on Book Add** (vypnuto), **Create on Import** (zapnuto, pokrývá stahování, Library Import i stahování z Audible) a **Create on Refresh** (vypnuto). **Overwrite Existing** je vypnuté, takže soubor, který už tam je, zůstane. Dokud složka knihy neexistuje, nezapíše se nic.
+
+**Write to Directories** v dialogu úprav zapíše ty čtyři taky, pro jednu knihu nebo výběr sérií a autorů. Viz [Nastavení metadat](/cs/settings/metadata/).
 
 ## Obálka je zvláštní
 

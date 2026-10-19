@@ -3,6 +3,8 @@ title: Výběr zdroje metadat
 description: Vestavěný, hostovaný nebo tvůj vlastní server Libex.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Přijde v příští verzi]
 Výběr zdroje zatím není v žádné vydané verzi. Vydané verze používají veřejnou instanci Libexu na libexdb.com a žádné nastavení pro to nemají.
 :::
@@ -12,10 +14,10 @@ V příští verzi bude v **Settings > Metadata > Source** nastavení **Metadata
 | Možnost | Co znamená |
 |---|---|
 | Built-in (výchozí) | Libex běží přímo v ABM. Nejdřív je potřeba vybrat odchozí připojení. |
-| Hosted (libexdb.com) | ABM se ptá veřejné instance Libexu. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex na GitHubu"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM se ptá veřejné instance Libexu. |
 | Self-hosted | ABM se ptá serveru Libex, na který ho nasměruješ. Zadej jeho **Server URL**, třeba `http://192.168.1.20:8000`. |
 
-**Test** ověří vybraný zdroj bez uložení. **Status** řekne, jestli je připravený. Volba, kterou jsi ještě neuložil, ukazuje "Not in use yet - save to switch", dokud ji neuložíš.
+**Test** ověří vybraný zdroj bez uložení. **Status** řekne, jestli je připravený. Když vybereš jiný zdroj, **Status** ukazuje "Not in use yet - save to switch", dokud neuložíš.
 
 ## Vestavěný zdroj a odchozí připojení
 
@@ -28,5 +30,5 @@ U těchhle dvou se ABM ptá serveru Libex a s Audible mluví server. Adresa vlas
 ## Co vybrat
 
 - Chceš, aby to prostě fungovalo, a nevadí ti, že Audible uvidí tvou adresu: Built-in s přímým připojením, nebo Hosted.
-- Nechceš Audible ukazovat svou IP: Built-in přes VPN nebo proxy, nebo Hosted.
+- Nechceš Audible ukazovat svou IP: Built-in přes proxy, vestavěný tunel WireGuard nebo samostatný kontejner či službu s VPN. Nebo Hosted, kde s Audible mluví server Libex místo tebe.
 - Už provozuješ server Libex: Self-hosted.

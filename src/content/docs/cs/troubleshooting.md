@@ -73,3 +73,7 @@ Přidej mapování vzdálené cesty, nebo zařiď, aby ABM i klient viděli slo�
 ## Docker se nedostane ke zdroji metadat ani k indexerům
 
 Ze všeho nejdřív zkontroluj DNS a nastavení odchozího připojení. V Dockeru funguje přímé připojení jen tehdy, když se kontejner dostane na internet.
+
+## Pořád nevíš kudy kam
+
+Zeptej se na [Discordu ABM](https://discord.gg/qeJRrM6AZ), [založ issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) nebo napiš e-mail na [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

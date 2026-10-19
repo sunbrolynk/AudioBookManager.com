@@ -26,15 +26,19 @@ Pokud klient běží v jiném kontejneru, zkontroluj, že on i ABM vidí složku
 
 ## 5. Nastav profil kvality
 
-**Settings > Profiles** obsahuje žebříček kvality, podle kterého ABM rozhoduje, co stáhnout a co se počítá jako vylepšení. Jeden profil je výchozí. Začni s ním a dolaď ho později. Viz [Profily](/cs/settings/profiles/).
+**Settings > Profiles** obsahuje žebříček kvality, podle kterého ABM rozhoduje, co stáhnout a co se počítá jako vylepšení. Čerstvá instalace žádný nemá, takže si jeden vytvoř. První profil, který uděláš, se stane výchozím, a doladit ho můžeš později. Viz [Profily](/cs/settings/profiles/).
 
-## 6. Přines nebo přidej knihy
+## 6. Připoj Audible (volitelné)
+
+Pokud máš knihy na Audible, připoj svůj účet v **Settings > Audible**. Vyber **Marketplace**, klikni na **Connect Audible Account** a pak na **I Understand, Open Amazon Login**. V nové kartě se přihlas k Amazonu. Prázdná stránka nebo "Page not found", na které potom skončíš, je v pořádku. Zkopíruj celou adresu z adresního řádku do **Redirect URL**, jestli chceš, doplň **Display Name** a klikni na **Complete Login**. Heslo se nikdy neukládá a první synchronizace knihovny začne hned. Viz [Audible](/cs/audible/).
+
+## 7. Přines nebo přidej knihy
 
 - Už máš sbírku? Použij [Library Import](/cs/library-import/).
 - Začínáš od nuly? Použij **Library > Add New** a hledej podle názvu, autora nebo série. Viz [Přidání nové knihy](/cs/using/add-new/).
 
 Přidaná kniha je hledaná, dokud se pro ni nenaimportuje soubor. Hledané knihy se objeví ve **Wanted > Missing** a vyhledávají se automaticky.
 
-## 7. Sleduj, jak to maká
+## 8. Sleduj, jak to maká
 
 **Activity > Queue** ukazuje, co se stahuje. **Activity > History** ukazuje, co se stáhlo a naimportovalo. Když se něco pokazí, hledej v [Řešení problémů](/cs/troubleshooting/) a na stránce [Úlohy](/cs/system/tasks/).

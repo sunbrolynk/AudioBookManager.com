@@ -22,6 +22,8 @@ Nová kopie nahradí tu, kterou máš, jen když profil vylepšení povoluje, no
 
 Pokud znáš Sonarr: tohle je profil kvality, kde kvality jsou zvukové formáty a rozložení souborů místo rozlišení. Vlastní formáty tu nejsou. Podobnou oblast pokrývají [profily vydání](#profily-vydání).
 
+Žádné úrovně podle datového toku nebo velikosti tu nejsou: kvalita znamená jen formát a rozložení souborů. U vydání ABM vezme formát z indexeru nebo z názvu a rozložení odhadne z názvu (M4B bez čísel dílů nebo stop se počítá jako jeden soubor). Po naimportování souborů to pak ověří znovu. **Preferred Quality** v [nastavení Audible](/cs/settings/audible/) je něco jiného: kvalita, ve které se stahuje z Audible.
+
 ## Profily zpoždění
 
 Profil zpoždění vydání chvíli podrží, než ho stáhne, aby se mělo čas objevit lepší vydání.

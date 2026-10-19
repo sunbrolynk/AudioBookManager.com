@@ -17,9 +17,11 @@ description: Jak bezpečně dostat stávající sbírku do ABM.
 4. Vyber řádky a přidej je. Když přijmeš výchozí nastavení, zůstanou to dvě kliknutí.
 5. Sleduj úlohu. Souhrn ti řekne, kolik souborů se zkopírovalo místo hardlinku a co selhalo.
 
-## Pokud chceš, aby ABM spravoval zdrojovou složku
+## Pokud už máš sbírku tam, kde ji chceš mít
 
-Přidej ji místo toho jako kořenovou složku a nech ji ABM naskenovat. Soubory zůstanou na místě a knihy dostanou stav podle toho, co je na disku.
+Když složku přidáš jako kořenovou, samo o sobě to žádné knihy nepřidá. Skenování v ABM kontroluje jen knihy, o kterých už ví, takže to, co v ní je, nepobere. Knihy stejně musí přijít přes Library Import: počet **Unmapped Folders** u kořenové složky v **Settings > Media Management** otevře Library Import pro tuhle složku.
+
+Import dá každou knihu do vlastního rozložení ABM Autor/Série/Kniha pod výchozí kořenovou složkou. Zvol hardlink, pokud chceš nechat originály netknuté a nezabírat víc místa.
 
 ## Na co si dát pozor
 

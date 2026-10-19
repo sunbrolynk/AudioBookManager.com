@@ -3,6 +3,10 @@ title: Reverzní proxy
 description: Jak dát ABM za nginx, Traefik nebo Caddy a nerozbít přihlašování.
 ---
 
+:::caution[Nedoporučuje se]
+Vystavovat ABM na internet, ať přes reverzní proxy, nebo přes přesměrovaný port, se nedoporučuje. Stejně radí i aplikace Servarr. Pokud se k němu chceš dostat zvenku, použij místo toho VPN, třeba WireGuard nebo Tailscale. ABM je postavený tak, aby byl za proxy bezpečný, ale jakmile je veřejně dostupný, žádnou záruku bezpečnosti nemáš a riziko neseš ty. Pokud to přesto uděláš, nastav **Authentication Required** na **Enabled** a ABM udržuj aktuální.
+:::
+
 Záleží na třech nastaveních. Když je máš správně, funguje přihlášení, websocket i ukládání.
 
 ## 1. Řekni ABM, kdo je proxy

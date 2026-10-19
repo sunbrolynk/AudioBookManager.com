@@ -7,7 +7,7 @@ Nabídka **Library** má tři seznamy: **Books**, **Series** a **Authors**. Pln�
 
 ## Knihy
 
-Každá kniha je řádek, plakát nebo řádek tabulky (přepínač zobrazení je na liště nástrojů). Kniha má stav:
+Každá kniha je řádek přehledu, plakát nebo řádek tabulky (přepínač zobrazení je na liště nástrojů). Kniha má stav:
 
 - **Wanted**: sledovaná, zatím bez souborů. ABM ji hledá.
 - **Downloaded**: soubory jsou na disku.
@@ -18,9 +18,13 @@ Otevři knihu a uvidíš její detail: soubory, metadata, historii, kvalitu, kte
 
 Pokud znáš Sonarr: kniha je epizoda, série je řada a seriál v jednom a autor je způsob, jak seskupit obojí. Rozdíl je v tom, že jedna kniha může patřit do víc sérií, a když ABM musí vybrat, použije hlavní (s nejnižším pořadím).
 
-## Série a autoři
+## Série
 
-Seznamy Series a Authors ukazují počty vlastněných, hledaných knih a knih s chybějícími soubory. Otevři jeden a uvidíš katalog, který obsahuje i knihy, které nemáš. Odtud můžeš chybějící knihy přidat. Viz [Sledování sérií](/cs/using/series-tracking/).
+**Library > Series** vypíše všechny série s počty vlastněných, hledaných knih a knih s chybějícími soubory, jako Overview nebo Posters. Stránka série ukazuje celý katalog, včetně knih, které nemáš. Můžeš ho filtrovat na All, In Library nebo Not in Library. **Add Remaining** nebo **Select to Add** přidá chybějící knihy jako hledané a **Refresh Series** katalog znovu načte. **Monitor New Books** (All nebo None) určuje, jestli se knihy, které vyjdou později, přidají jako hledané. Viz [Sledování sérií](/cs/using/series-tracking/).
+
+## Autoři
+
+**Library > Authors** vypíše autory, jako Overview nebo Posters. Stránka autora ukazuje jeho katalog seskupený podle sérií, u každé série s počtem stažených a všech knih, a k tomu jeho profil kvality, žánry a hodnocení. **Refresh Catalog** ho znovu načte a **Search Author** vyhledá jeho hledané knihy. **Monitor New Books** funguje stejně jako u série a autor začíná na None.
 
 Smazání série nebo autora se odmítne, dokud má v knihovně ještě knihy. Nejdřív odeber knihy.
 
