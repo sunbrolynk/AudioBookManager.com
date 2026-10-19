@@ -73,3 +73,7 @@ Content-Security-Policy 响应头只允许 HTTPS 的封面图片。到浏览器�
 ## Docker 连不上元数据源或索引器
 
 先检查 DNS 和出站连接设置。在 Docker 里，直连只有在容器本身能上网时才有效。
+
+## 还是没解决
+
+到 [ABM Discord](https://discord.gg/qeJRrM6AZ) 里问，[提交一个 issue](https://github.com/sunbrolynk/AudioBook-Manager/issues)，或者发邮件到 [support@audiobookmanager.com](mailto:support@audiobookmanager.com)。

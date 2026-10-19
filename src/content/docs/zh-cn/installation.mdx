@@ -72,6 +72,21 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 docker compose up -d --build
 ```
 
+## 其他安装方式
+
+目前只能用 Docker。原生安装方式已经在计划中，这样你平时在哪里自托管，ABM 就能跑在哪里：
+
+| 平台 | 计划形式 |
+|---|---|
+| Linux | 原生软件包和服务 |
+| Windows | `.exe` 安装程序 |
+| macOS | 原生应用 |
+| Kubernetes | 集群部署 |
+| Unraid | Community Apps 模板 |
+| Proxmox | LXC 安装脚本 |
+
+这些目前都还没有。哪个上线了，就会出现在 [更新](/zh-cn/updates/) 页面上。
+
 ## 更新
 
 拉取新镜像，然后重建容器。每个版本改了什么，可以在 [更新](/zh-cn/updates/) 页面查看。

@@ -3,7 +3,7 @@ title: 书库导入
 description: 用 Import Workbench 把现有收藏导入 ABM。
 ---
 
-书库导入会扫描一个有声书文件夹，为每个子文件夹匹配元数据，然后把书加进你的书库。这个页面叫 **Match Audiobooks**。
+书库导入会扫描一个有声书文件夹，为每个子文件夹匹配元数据，然后把书加进你的书库。**Library > Library Import** 会打开 “Import audiobooks you already have”，在这里选一个要扫描的文件夹。扫描开始后，ABM 会跳到匹配页面，标题是 **Match Audiobooks**，你在那里检查匹配结果并添加书。
 
 ## 流程
 
@@ -41,7 +41,7 @@ description: 用 Import Workbench 把现有收藏导入 ABM。
 
 ## 过长的内容
 
-被省略号截断的讲述者、标题或路径，点一下、按 Enter 或空格就会完整显示。再点一下收起。
+被省略号截断的讲述者、标题或路径，轻点或单击一下就会完整显示。再轻点或单击一下收起。用鼠标的话，悬停也能看到完整内容。用键盘的话，先把焦点移到它上面，再按 Enter 或空格。
 
 ## 导入以外的处理方式
 

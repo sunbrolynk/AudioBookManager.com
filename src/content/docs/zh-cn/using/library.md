@@ -7,7 +7,7 @@ description: 书、作者和系列，以及 ABM 怎么追踪它们的状态。
 
 ## 书
 
-每本书显示为一行、一张海报或一条表格记录（视图切换在工具栏里）。每本书都有一个状态：
+每本书显示为一个概览行、一张海报或一条表格记录（视图切换在工具栏里）。每本书都有一个状态：
 
 - **Wanted**：已监控，还没有文件。ABM 会去搜索它。
 - **Downloaded**：文件已经在磁盘上。
@@ -18,9 +18,13 @@ description: 书、作者和系列，以及 ABM 怎么追踪它们的状态。
 
 如果你用过 Sonarr：一本书相当于一集，一个系列相当于把季和剧合在一起，作者则是把两者归到一起的一种方式。区别在于，一本书可以属于好几个系列，ABM 需要挑一个时会用主系列（序号最小的那个）。
 
-## 系列和作者
+## 系列
 
-Series 和 Authors 列表会显示已拥有、想要和缺失文件的数量。打开一个就能看到它的目录，包括你还没有的书。在那里你可以把缺的书加进来。见 [系列追踪](/zh-cn/using/series-tracking/)。
+**Library > Series** 列出所有系列，以及每个系列已拥有、想要和缺失文件的数量，可以用 Overview 或 Posters 显示。系列页面显示完整的目录，包括你还没有的书。可以筛选为 All、In Library 或 Not in Library。**Add Remaining** 或 **Select to Add** 会把缺的书以想要（Wanted）状态加进来，**Refresh Series** 会重新拉取目录。**Monitor New Books**（All 或 None）决定以后新出的书是否以想要状态加进来。见 [系列追踪](/zh-cn/using/series-tracking/)。
+
+## 作者
+
+**Library > Authors** 列出所有作者，可以用 Overview 或 Posters 显示。作者页面按系列分组显示他们的目录，每个系列都有已下载数和总数，另外还有作者的质量配置、类型和评分。**Refresh Catalog** 会重新拉取目录，**Search Author** 会搜索他们想要的书。**Monitor New Books** 的作用和系列一样，作者默认是 None。
 
 只要书库里还有它的书，系列或作者就不能删除。先把书删掉。
 

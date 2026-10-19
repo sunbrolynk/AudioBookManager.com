@@ -7,7 +7,7 @@ description: 根文件夹、导入、额外文件、回收站、扫描、升级�
 
 ## 根文件夹（Root Folders）
 
-根文件夹是 ABM 管理书的目录。用 **Add Root Folder** 添加，它会打开一个文件夹浏览器，也可以直接输入路径。ABM 还能列出根文件夹下尚未映射的文件夹，并导入它们。添加根文件夹时，会检查它的剩余空间和是否支持硬链接。删除根文件夹不会删除文件。
+根文件夹是 ABM 管理书的目录。用 **Add Root Folder** 添加，它会打开一个文件夹浏览器，也可以直接输入路径。ABM 还能列出根文件夹下尚未映射的文件夹，并导入它们。添加根文件夹时，会检查它的剩余空间和是否支持硬链接。删除根文件夹时会问你怎么处理：**Remove from ABM only**（默认）会让 ABM 忘掉它下面的书，但保留文件；**Delete the books and their files** 会永久删除这个路径下的所有内容，而且不经过回收站。里面有书的根文件夹，需要你输入文字来确认。
 
 默认根文件夹是新书存放的位置，也决定了书库导入时是否提供硬链接选项。
 
@@ -27,10 +27,10 @@ description: 根文件夹、导入、额外文件、回收站、扫描、升级�
 | Use Hardlinks instead of Copy | 开 | 针对已完成的下载：用硬链接代替复制，这样做种时不会占用双倍空间。需要在同一个卷上。 |
 | Library Import | Copy | [书库导入](/zh-cn/library-import/) 的默认方式：复制、硬链接或移动。在默认根文件夹通过检查并确认支持之前，硬链接是灰色的。 |
 | Import Extra Files | 开 | 是否把非音频文件一起带过来的总开关。对书库导入、手动导入和已完成的下载都生效 |
-| Extra File Extensions（高级） | 空 | 额外要导入的扩展名，比如 `srt, lrc`。被禁止的类型会被拒绝。 |
+| Extra File Extensions（高级） | 空 | 还要一起带过来的文件类型，保留原来的文件名，比如 `srt, lrc`。带不带点都行，用逗号或空格分隔。被禁止的类型（比如可执行文件和未下载完的文件）无法保存。**Import Extra Files** 关闭时这一项不可用 |
 | Preferred Cover（高级） | Matched | 两者都有时，用匹配版本的封面，还是文件夹里最好的那张图 |
 
-额外文件有五个开关：
+**Import Extra Files** 会把一本书除音频以外的其他文件也一起带过来。五个开关决定带哪几类；匹配 **Extra File Extensions** 的文件，即使它那一类的开关是关的，也会一起带过来：
 
 | 开关 | 默认值 | 包括 |
 |---|---|---|
@@ -55,7 +55,7 @@ description: 根文件夹、导入、额外文件、回收站、扫描、升级�
 | Recycling Bin Cleanup | 7（天） | 0 表示关闭自动清理 |
 | Library Scan Interval | 0（关） | 自动扫描的间隔小时数 |
 | Watch for Changes | 关 | 文件被添加、删除或修改时扫描 |
-| Cover Cache Workers | 4 | 缓存封面时同时下载多少张，1 到 16。如果缓存任务报告失败，就调低一点 |
+| Cover Cache Workers | 4 | 缓存封面时同时下载多少张，1 到 16 |
 
 ## 质量升级（Quality Upgrades）
 

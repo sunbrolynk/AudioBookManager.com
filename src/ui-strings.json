@@ -218,6 +218,13 @@
     "footerReportIssue": "报告应用问题",
     "footerSupport": "支持开发",
     "footerApiReference": "API 参考",
-    "footerBuyMonster": "请我喝罐 Monster"
+    "footerBuyMonster": "请我喝罐 Monster",
+    "footerContact": "联系",
+    "footerMailSupport": "ABM 使用求助",
+    "footerMailTranslate": "翻译",
+    "footerMailPrivacy": "隐私",
+    "footerMailAdmin": "其他事情",
+    "releasesNone": "还没有发布任何版本。",
+    "releasesBeforeUpgrade": "升级之前"
   }
 }

@@ -26,15 +26,19 @@ description: 从全新安装到你的第一本被监控的书。
 
 ## 5. 设置质量配置
 
-**Settings > Profiles** 里是质量阶梯，ABM 用它来决定抓取什么、什么算升级。其中一个配置是默认的。先用它，以后再慢慢调。见 [配置文件](/zh-cn/settings/profiles/)。
+**Settings > Profiles** 里是质量阶梯，ABM 用它来决定抓取什么、什么算升级。全新安装时一个都没有，所以先建一个。你建的第一个配置会成为默认配置，以后可以再慢慢调。见 [配置文件](/zh-cn/settings/profiles/)。
 
-## 6. 导入或添加书
+## 6. 连接 Audible（可选）
+
+如果你有 Audible 的书，就在 **Settings > Audible** 下连接你的账号。选好 **Marketplace**，按 **Connect Audible Account**，再按 **I Understand, Open Amazon Login**。在新标签页里登录 Amazon。登录后跳到一个空白页或 “Page not found” 页面是正常的。把地址栏里的完整地址复制到 **Redirect URL**，想的话再填个 **Display Name**，然后按 **Complete Login**。你的密码永远不会被保存，第一次书库同步会马上开始。见 [Audible](/zh-cn/audible/)。
+
+## 7. 导入或添加书
 
 - 已经有收藏了？用 [书库导入](/zh-cn/library-import/)。
 - 从零开始？用 **Library > Add New**，按标题、作者或系列搜索。见 [添加新书](/zh-cn/using/add-new/)。
 
 你添加的书在导入它的文件之前都处于想要（Wanted）状态。想要的书会出现在 **Wanted > Missing** 下，并会被自动搜索。
 
-## 7. 看它干活
+## 8. 看它干活
 
 **Activity > Queue** 显示正在下载什么。**Activity > History** 显示抓取和导入了什么。出问题时，去看 [故障排除](/zh-cn/troubleshooting/) 和 [任务](/zh-cn/system/tasks/) 页面。

@@ -1197,7 +1197,7 @@
     "getItEyebrow": "获取",
     "installH2": "一个文件就能跑起来。",
     "buildP": "<b>从源码构建。</b>在克隆下来的仓库里，把 <code>image:</code> 换成 <code>build: .</code>，然后运行 <code>docker compose up -d --build</code>。",
-    "otherP": "<b>Unraid、Windows、macOS、普通的 Linux 服务。</b>暂时还不行，目前只能用 Docker。",
+    "otherP": "<b>目前只能用 Docker。</b>常见环境的原生安装方式已经在计划中，这样你平时在哪里自托管，ABM 就能跑在哪里：",
     "note": "ABM 还在 alpha 阶段。升级前先备份 <code>/config</code>，再大概看一下更新说明。",
     "fullGuide": "完整安装指南 →",
     "faqEyebrow": "常见问题",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "提交 issue",
     "helpH": "想帮它一把？",
     "helpP": "ABM 是我一个人的项目。请杯 Ko-fi 或者一罐 Monster，就能让它继续往前走。",
-    "kofiBtn": "请我喝罐 Monster",
-    "monsterBtn": "支持开发",
+    "kofiBtn": "支持开发",
+    "monsterBtn": "请我喝罐 Monster",
     "finalH2": "别再手动<br />整理文件夹了。",
     "ctaInstall": "安装 ABM",
     "ctaDocs": "阅读文档",
@@ -1370,6 +1370,33 @@
     "communityH2": "找到同好。",
     "communityP": "有问题、配置上需要帮忙，或者就是想聊聊有声书？来 Discord 加入 AudioBook Manager 社区，获取支持、参与讨论。",
     "communityBtn": "加入 Discord",
-    "translatorNote": "这个页面是机器翻译的。如果简体中文是你的母语，又愿意帮忙改进翻译，欢迎发邮件给我：{mail}。"
+    "translatorNote": "这个页面是机器翻译的。如果简体中文是你的母语，又愿意帮忙改进翻译，欢迎发邮件给我：{mail}。",
+    "planned": [
+      [
+        "Linux",
+        "原生软件包和服务"
+      ],
+      [
+        "Windows",
+        ".exe 安装程序"
+      ],
+      [
+        "macOS",
+        "原生应用"
+      ],
+      [
+        "Kubernetes",
+        "集群部署"
+      ],
+      [
+        "Unraid",
+        "Community Apps 模板"
+      ],
+      [
+        "Proxmox",
+        "LXC 安装脚本"
+      ]
+    ],
+    "coming": "即将推出"
   }
 }
