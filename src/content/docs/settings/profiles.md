@@ -5,6 +5,10 @@ description: Quality profiles, delay profiles and release profiles.
 
 **Settings > Profiles** is one page with three sections. They answer three different questions about a release.
 
+![Settings, Profiles: quality, delay and release profiles on one page](../../../assets/docs/settings-profiles.jpg)
+
+![Settings, Profiles on a phone](../../../assets/docs/phone-settings-profiles.jpg)
+
 ## Quality profiles
 
 A quality profile is a ladder of formats, worst at the bottom to best at the top. A rung is a format (M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA) in either a single-file or multi-file form. Rungs can be grouped so they rank equally, and a rung can be switched off.

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Refreshes the app screenshots in src/assets/screens from a running ABM.
 // Usage: node scripts/capture-screens.mjs [base URL, default http://127.0.0.1:5181]
-// Point it at an instance on a neutralised database: the shots are public, so no real paths,
+// Point it at an instance running an invented demo library, never a real one: the shots are public, so no real paths,
 // hostnames, clients or indexers may show. Check every image before committing it.
 // Playwright is not a dependency of this site; it is loaded from ABM's own frontend
 // (set ABM_FRONTEND to that folder if it isn't ~/audiobook-manager/frontend).
@@ -16,17 +16,17 @@ const out = new URL('../src/assets/screens/', import.meta.url).pathname;
 
 // file -> [route, where the image is used]
 const desktop = {
-  'dashboard.jpg': ['/', 'Home: screenshots strip'],
-  'library.jpg': ['/library', 'Home: hero window, "Every book, at a glance", screenshots strip'],
-  'book.jpg': ['/library/book/939', 'Home: "The details are right", screenshots strip'],
-  'series.jpg': ['/library/series/355', 'Home: screenshots strip'],
-  'calendar.jpg': ['/calendar', 'Home: "Know what\'s coming", screenshots strip'],
-  'missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing", screenshots strip'],
-  'profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means", screenshots strip'],
-  'conversions.jpg': ['/library/conversions', 'Home: "Fix the format too", screenshots strip'],
+  'demo-dashboard.jpg': ['/', 'Home: screenshots strip'],
+  'demo-library.jpg': ['/library', 'Home: hero window, "Every book, at a glance", screenshots strip'],
+  'demo-book.jpg': ['/library/book/3', 'Home: "The details are right", screenshots strip'],
+  'demo-series.jpg': ['/library/series/8', 'Home: screenshots strip'],
+  'demo-calendar.jpg': ['/calendar', 'Home: "Know what\'s coming", screenshots strip'],
+  'demo-missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing", screenshots strip'],
+  'demo-profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means", screenshots strip'],
+  'demo-conversions.jpg': ['/library/conversions', 'Home: "Fix the format too", screenshots strip'],
 };
 const phone = {
-  'book-m.jpg': ['/library/book/939', 'Home: phone over the hero window'],
+  'demo-book-phone.jpg': ['/library/book/3', 'Home: phone over the hero window'],
 };
 
 const shoot = async (browser, shots, viewport) => {

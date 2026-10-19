@@ -13,6 +13,8 @@ Removing a row from the queue follows **Queue Page Remove Action** in the downlo
 
 Grabs, imports, failures and upgrades. A failed grab says which clients were tried.
 
+![Activity, History: grabs and imports with the book, author, series and date](../../../assets/docs/activity-history.jpg)
+
 ## Blocklist
 
 Releases ABM will not grab again, usually because they failed. **Remove from Blocklist** lets one back in. **Redownload Failed** in download handling adds a failed release here and searches again.

@@ -7,6 +7,8 @@ description: Compare a book's embedded chapters with Libex and fix them.
 Everything on this page except the conversion defaults is not in a released version yet.
 :::
 
+![The Chapters section of a book's page](../../../assets/docs/book-chapters.jpg)
+
 A book's detail page shows the chapters Libex has next to the chapters actually embedded in your files. Libex is the reference. The question the view answers is whether your files carry what Libex says they should.
 
 ## Reading the comparison
