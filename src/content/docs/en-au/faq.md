@@ -5,7 +5,7 @@ description: Short answers to the questions people ask first.
 
 ## Does ABM replace Audiobookshelf?
 
-No, not at all. Audiobookshelf is the player and ABM is the librarian. Point both at the same library folder and let each do its own job.
+No. Audiobookshelf is the player and ABM is the librarian. Point both at the same library folder and let each do its own job.
 
 ## Where does the metadata come from?
 

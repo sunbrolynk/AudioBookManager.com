@@ -10,26 +10,23 @@ Release notes stay in English in every language.
 
 ## How a language goes live
 
-1. **Publish PR.** The complete translation goes on a `translation/publish-<code>`
-   branch (for example `translation/publish-de`) and a PR into `main`. It merges
-   once the required `Site validation` check passes (build, languages, links,
-   security). Deploying `main` puts
-   the language live.
-2. **Review PR.** Straight after, a `translation/<code>` branch (for example
-   `translation/de`) gets a draft PR into `main` titled
-   "<Language>: community translation corrections". It starts with a review
-   record at `translations/<code>.md`, since GitHub needs a change to open a PR.
-   This PR is where corrections collect.
-3. **Discord post.** Opening the review PR runs
+1. **Translation PR.** The complete translation goes on a `translation/<code>`
+   branch (for example `translation/de`) and a PR into `main` titled
+   "<Language>: community translation review". It merges once the required
+   `Site validation` check passes (build, languages, links, overflow, security).
+   Deploying `main` puts the language live.
+2. **Discord post.** Opening that PR runs
    `.github/workflows/translation-review-discord.yml`. It posts a thread in the
    translation-review forum on Discord, tagged for review, with a link to the PR,
    then comments the thread link back on the PR.
-4. **Issue.** The language also gets a GitHub issue labelled `translation`,
-   linked from the Discord thread. Review PRs are merged and replaced in
-   batches; the issue stays put, so it's the link to share.
-5. **Batches.** I apply accepted corrections to the review branch and merge it
-   when a batch is ready. The live translation stays up the whole time. The next
-   round gets a new review PR, which posts a new Discord thread by itself.
+3. **Issue.** The language also gets a GitHub issue labelled `translation`,
+   titled "<Language>: translation review". The issue stays open for good. It's
+   the review channel for that language and the link to share, before and after
+   the PR merges.
+4. **Corrections.** Once a language is live, fixes come in as comments on its
+   issue or as small PRs into `main`. The live translation stays up the whole
+   time. A bigger review round can go on a fresh `translation/<code>` branch and
+   PR, which posts a new Discord thread by itself.
 
 ### What the Discord workflow can and can't do
 
@@ -50,19 +47,17 @@ Release notes stay in English in every language.
 
 You don't need to clone anything. Pick whichever suits you.
 
-### Comment on the review PR
+### Comment on the language's issue
 
-Open the review PR for your language (the Discord thread and the issue link to
+Open the "<Language>: translation review" issue (the Discord thread links to
 it) and leave a comment with:
 
 - the page link or file path,
 - the current wording,
 - your suggested wording.
 
-Suggestions with GitHub's "Suggest changes" button only work on lines the PR
-already changes. Most translated text isn't in the diff yet, so a plain comment
-is usually the way. You can also attach the corrected file, or a ZIP of only the
-files you changed with their folder structure kept.
+You can also attach the corrected file, or a ZIP of only the files you changed
+with their folder structure kept.
 
 ### Edit the file and open your own PR
 
@@ -71,12 +66,12 @@ files you changed with their folder structure kept.
    `src/ui-strings.json`, both under your language's code.
 2. Press the pencil icon. GitHub makes a fork for you.
 3. Make your changes and choose **Propose changes**.
-4. On the next screen, set the base branch to `translation/<code>` instead of
-   `main`, then open the pull request.
+4. Open the pull request into `main`, and mention your language's issue in it.
 
-The site checks (build, languages, links, security) run on your PR. Change only
-your language. Keep placeholders such as `{mail}` and `{name}`, links,
-frontmatter keys, code, and Markdown or HTML formatting as they are. Never paste
+The site checks (build, languages, links, overflow, security) run on your PR.
+Change only your language. Keep placeholders such as `{mail}` and `{name}`,
+links, frontmatter keys, code, and Markdown or HTML formatting as they are.
+Translated strings may only use `<b>`, `<em>`, `<code>` and `<br />`. Never paste
 credentials or anything from your own setup.
 
 ### Email
@@ -91,11 +86,10 @@ Anyone with a translation PR merged here gets the **Translator** role on the
 the server name menu → **Linked Roles** → **Translator** and link your GitHub
 account. It counts your merged PRs that carry the `translation` label or change a
 language's pages, gives you the role at one or more, and lets go of the GitHub
-sign-in as soon as it has counted. A PR merged into a `translation/<code>`
-review branch counts too.
+sign-in as soon as it has counted.
 
 Corrections sent by comment or email get applied by me, so they don't show up
-under your account. Say so in the review thread and I'll sort the role out.
+under your account. Say so on the language's issue and I'll sort the role out.
 
 ## Adding a new language
 
@@ -110,20 +104,18 @@ language. A new language needs:
 - `src/locales.json`: the registration, last, once everything else is done.
 - `src/locale-names.json`: its name in each published language.
 - `scripts/announce-translation-review.py`: its English name in `LANGUAGES`, or
-  its review PR won't be posted to Discord.
+  its translation PR won't be posted to Discord.
 
 `npm run build` tells you what's missing.
 
 ## Branch rules
 
 `main` only takes pull requests, and each one needs the `Site validation` check
-to pass. The `translation/<code>` branches aren't protected, so anyone can open
-a PR into them and accepted corrections can be pushed straight to them. A batch
-still reaches `main` only through its review PR, which is squash-merged once
-`Site validation` passes.
+to pass. A `translation/<code>` PR is merged with a merge commit, not squashed,
+so the PR shows as merged and the history keeps each language's commits.
 
-## Keeping a review branch current
+## Keeping a translation branch current
 
 Merge `main` into `translation/<code>` when it falls behind. Keep the other
-languages' entries when a shared JSON file conflicts. Don't rebase a review
-branch, since other people's PRs target it.
+languages' entries when a shared JSON file conflicts. Don't rebase a branch that
+already has a PR open, since other people may have commented on its commits.
