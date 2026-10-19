@@ -73,3 +73,7 @@ Content-Security-Policy ヘッダーは HTTPS の表紙画像しか許可しま�
 ## Docker からメタデータの取得元やインデクサーにつながらない
 
 何よりも先に、DNS と外向きの接続の設定を確認してください。Docker では、直接接続はコンテナがインターネットにつながる場合にしか動きません。
+
+## それでも解決しないとき
+
+[ABM の Discord](https://discord.gg/qeJRrM6AZ) で聞くか、[Issue を立てる](https://github.com/sunbrolynk/AudioBook-Manager/issues)か、[support@audiobookmanager.com](mailto:support@audiobookmanager.com) にメールしてください。

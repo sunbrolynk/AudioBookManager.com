@@ -1,21 +1,27 @@
 ---
 title: サイドカーファイル
-description: ABM が本の横に書き込む表紙、OPF、説明、ナレーター、cue のファイル。
+description: ABM が本の横に書き込む metadata.json、表紙、OPF、説明、ナレーターのファイル。
 ---
 
-サイドカーは音声ファイルの横に置く小さなファイルです。Audiobookshelf などのプレーヤーがこれを読みます。ABM が書き込めるのは次のファイルです。
+サイドカーは音声ファイルの横に置く小さなファイルです。Audiobookshelf などのプレーヤーがこれを読みます。ABM が書き込むのは次のファイルです。
 
-| ファイル | 中身 |
-|---|---|
-| `cover.jpg` | 本の表紙 |
-| `.opf` | OPF 形式のメタデータで、Audiobookshelf が読めます。本の最初の音声ファイルにちなんだ名前になり（例：`Dune.opf`）、音声がない本では `title.opf` になります |
-| `desc.txt` | 説明 |
-| `reader.txt` | ナレーター |
-| `.cue` | Libex から取得したチャプター（次のリリースで登場） |
+| ファイル | 中身 | スイッチ |
+|---|---|---|
+| `metadata.json` | Audiobookshelf 自身のメタデータファイルに、ABM のものだと示す `abm` ブロックを足したもの。Audiobookshelf はほかの何よりも先にこれを読みます | なし、常に書き込む |
+| `cover.jpg` | 本の表紙。フォルダにすでに `cover.*` があるときは書き込みません | cover.jpg |
+| `.opf` | OPF 形式のメタデータ。本の最初の音声ファイルにちなんだ名前になり（例：`Dune.opf`）、音声がない本では `title.opf` になります | title.opf |
+| `desc.txt` | HTML を取り除いた説明。説明がなければ書き込みません | desc.txt |
+| `reader.txt` | ナレーター。ナレーターがいなければ書き込みません | reader.txt |
+
+フォルダの構成と合わせて、これらが Audiobookshelf が本の詳細を読むファイルです。なので Audiobookshelf にも ABM と同じ本が見えます。
 
 ## いつ書き込まれるか
 
-**Settings > Metadata** の **Create on Book Add**、**Create on Import**、**Create on Refresh** でタイミングを選びます。デフォルトではインポート時だけ書き込みます。**Overwrite Existing** はオフなので、すでにあるファイルはそのまま残ります。編集ダイアログからも、1冊の本や、選んだシリーズや著者に対して書き込めます。[メタデータの設定](/ja/settings/metadata/)を見てください。
+`metadata.json` は、本を追加、インポート、更新するたびに書き込まれます。
+
+ほかの4つには、それぞれ **Settings > Metadata > Files to Create** にスイッチがあり、デフォルトではすべてオンです。書き込まれるのは、対応するきっかけもオンになっているときだけです：**Create on Book Add**（オフ）、**Create on Import**（オン。ダウンロード、Library Import、Audible のダウンロードが含まれます）、**Create on Refresh**（オフ）。**Overwrite Existing** はオフなので、すでにあるファイルはそのまま残ります。本のフォルダができるまでは何も書き込まれません。
+
+編集ダイアログの **Write to Directories** でも、1冊の本や、選んだシリーズや著者に対してこの4つを書き込めます。[メタデータの設定](/ja/settings/metadata/)を見てください。
 
 ## 表紙は特別
 

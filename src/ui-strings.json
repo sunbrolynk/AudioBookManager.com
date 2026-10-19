@@ -218,6 +218,13 @@
     "footerReportIssue": "アプリの不具合を報告する",
     "footerSupport": "開発を支援する",
     "footerApiReference": "API リファレンス",
-    "footerBuyMonster": "Buy Me a Monster"
+    "footerBuyMonster": "モンスターをおごる",
+    "footerContact": "お問い合わせ",
+    "footerMailSupport": "ABM のサポート",
+    "footerMailTranslate": "翻訳",
+    "footerMailPrivacy": "プライバシー",
+    "footerMailAdmin": "そのほか",
+    "releasesNone": "まだリリースはありません。",
+    "releasesBeforeUpgrade": "アップグレードの前に"
   }
 }

@@ -1197,7 +1197,7 @@
     "getItEyebrow": "入手する",
     "installH2": "ファイル1つで動きます。",
     "buildP": "<b>ソースからビルドする。</b>リポジトリをクローンして、<code>image:</code> を <code>build: .</code> に書き換え、<code>docker compose up -d --build</code> を実行します。",
-    "otherP": "<b>Unraid、Windows、macOS、普通の Linux サービス。</b>まだです。今のところ Docker が唯一の方法です。",
+    "otherP": "<b>今のところ Docker が唯一の方法です。</b>よく使われる環境へのネイティブインストールを予定していて、すでにセルフホストしている場所ならどこでも ABM を動かせるようにするつもりです：",
     "note": "ABM はアルファ版です。アップグレードの前に <code>/config</code> をバックアップして、更新ノートにざっと目を通しておいてください。",
     "fullGuide": "インストールガイドを全部読む →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Issue を立てる",
     "helpH": "応援してもらえますか？",
     "helpP": "ABM は個人で作っているプロジェクトです。Ko-fi やモンスター1本が開発を進める力になります。",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "開発を支援する",
+    "kofiBtn": "開発を支援する",
+    "monsterBtn": "モンスターをおごる",
     "finalH2": "フォルダの手直しは<br />もう終わり。",
     "ctaInstall": "ABM をインストール",
     "ctaDocs": "ドキュメントを読む",
@@ -1370,6 +1370,33 @@
     "communityH2": "仲間を見つけよう。",
     "communityP": "質問がある、セットアップを手伝ってほしい、オーディオブックの話がしたい。そんなときは Discord の AudioBook Manager コミュニティに来てください。サポートも雑談もあります。",
     "communityBtn": "Discord に参加する",
-    "translatorNote": "このページは機械翻訳です。日本語が母語で、翻訳をよくするのを手伝ってもらえるなら、{mail} までメールしてください。"
+    "translatorNote": "このページは機械翻訳です。日本語が母語で、翻訳をよくするのを手伝ってもらえるなら、{mail} までメールしてください。",
+    "planned": [
+      [
+        "Linux",
+        "ネイティブのパッケージとサービス"
+      ],
+      [
+        "Windows",
+        ".exe インストーラー"
+      ],
+      [
+        "macOS",
+        "ネイティブアプリ"
+      ],
+      [
+        "Kubernetes",
+        "クラスターへのデプロイ"
+      ],
+      [
+        "Unraid",
+        "Community Apps のテンプレート"
+      ],
+      [
+        "Proxmox",
+        "LXC のインストールスクリプト"
+      ]
+    ],
+    "coming": "予定"
   }
 }

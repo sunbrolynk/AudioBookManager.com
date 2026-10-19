@@ -3,6 +3,8 @@ title: メタデータの取得元を選ぶ
 description: 内蔵、ホスト型、または自前の Libex サーバー。
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[次のリリースで登場]
 取得元の選択はまだリリース版には入っていません。リリース版は libexdb.com の公開 Libex インスタンスを使い、これを変える設定はありません。
 :::
@@ -12,10 +14,10 @@ description: 内蔵、ホスト型、または自前の Libex サーバー。
 | 選択肢 | 意味 |
 |---|---|
 | Built-in（デフォルト） | Libex が ABM の中で動きます。先に外向きの接続を選んでおく必要があります。 |
-| Hosted (libexdb.com) | ABM が公開 Libex インスタンスに問い合わせます。 |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="GitHub の Libex"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM が公開 Libex インスタンスに問い合わせます。 |
 | Self-hosted | ABM が指定した Libex サーバーに問い合わせます。**Server URL** を入力します（例：`http://192.168.1.20:8000`）。 |
 
-**Test** は選んだ取得元を保存せずにチェックします。**Status** は準備ができているかどうかを表示します。保存していない選択には、保存するまで「Not in use yet - save to switch」と表示されます。
+**Test** は選んだ取得元を保存せずにチェックします。**Status** は準備ができているかどうかを表示します。別の取得元を選ぶと、保存するまで **Status** に「Not in use yet - save to switch」と表示されます。
 
 ## 内蔵と外向きの接続
 
@@ -28,5 +30,5 @@ Built-in は自分のマシンから Audible と通信するので、**Settings 
 ## どれを選ぶか
 
 - とにかく動いてほしくて、Audible にアドレスを見られてもかまわない：直接接続の Built-in、または Hosted。
-- Audible に IP を見せたくない：VPN かプロキシ経由の Built-in、または Hosted。
+- Audible に IP を見せたくない：プロキシ、内蔵の WireGuard トンネル、または別の VPN コンテナやサービスを経由する Built-in。もしくは Hosted で、この場合は自分ではなく Libex サーバーが Audible と通信します。
 - すでに Libex サーバーを動かしている：Self-hosted。
