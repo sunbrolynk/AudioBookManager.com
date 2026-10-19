@@ -35,7 +35,15 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Anything else",
     "releasesNone": "No releases yet.",
-    "releasesBeforeUpgrade": "Before you upgrade"
+    "releasesBeforeUpgrade": "Before you upgrade",
+    "prereleaseTag": "Not released yet",
+    "prereleaseTitle": "ABM isn't out yet",
+    "prereleaseBody": "I'm still getting AudioBook Manager ready for its first public release, so the install steps on this site won't work just yet. Have a look around, and follow along on Discord or GitHub to hear when it lands.",
+    "prereleaseBadge": "These install steps start working with the first release.",
+    "prereleaseDiscord": "Join the Discord",
+    "prereleaseGithub": "Follow on GitHub",
+    "prereleaseClose": "Got it",
+    "prereleaseDismiss": "Close"
   },
   "en-gb": {
     "features": "Features",
@@ -73,7 +81,15 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Anything else",
     "releasesNone": "No releases yet.",
-    "releasesBeforeUpgrade": "Before you upgrade"
+    "releasesBeforeUpgrade": "Before you upgrade",
+    "prereleaseTag": "Not released yet",
+    "prereleaseTitle": "ABM isn't out yet",
+    "prereleaseBody": "I'm still getting AudioBook Manager ready for its first public release, so the install steps on this site won't work just yet. Have a look around, and follow along on Discord or GitHub to hear when it lands.",
+    "prereleaseBadge": "These install steps start working with the first release.",
+    "prereleaseDiscord": "Join the Discord",
+    "prereleaseGithub": "Follow on GitHub",
+    "prereleaseClose": "Got it",
+    "prereleaseDismiss": "Close"
   },
   "uk": {
     "features": "Можливості",
@@ -111,7 +127,15 @@
     "footerMailPrivacy": "Конфіденційність",
     "footerMailAdmin": "Усе інше",
     "releasesNone": "Релізів ще немає.",
-    "releasesBeforeUpgrade": "Перед оновленням"
+    "releasesBeforeUpgrade": "Перед оновленням",
+    "prereleaseTag": "Ще не випущено",
+    "prereleaseTitle": "ABM ще не вийшов",
+    "prereleaseBody": "Я ще готую AudioBook Manager до першого публічного релізу, тож кроки встановлення на цьому сайті поки не спрацюють. Роздивляйся, а щоб дізнатися, коли він вийде, стеж за новинами в Discord або на GitHub.",
+    "prereleaseBadge": "Ці кроки встановлення запрацюють із першим релізом.",
+    "prereleaseDiscord": "Приєднатися до Discord",
+    "prereleaseGithub": "Стежити на GitHub",
+    "prereleaseClose": "Зрозуміло",
+    "prereleaseDismiss": "Закрити"
   },
   "en-ca": {
     "features": "Features",
@@ -149,7 +173,15 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Anything else",
     "releasesNone": "No releases yet.",
-    "releasesBeforeUpgrade": "Before you upgrade"
+    "releasesBeforeUpgrade": "Before you upgrade",
+    "prereleaseTag": "Not released yet",
+    "prereleaseTitle": "ABM isn't out yet",
+    "prereleaseBody": "I'm still getting AudioBook Manager ready for its first public release, so the install steps on this site won't work just yet. Have a look around, and follow along on Discord or GitHub to hear when it lands.",
+    "prereleaseBadge": "These install steps start working with the first release.",
+    "prereleaseDiscord": "Join the Discord",
+    "prereleaseGithub": "Follow on GitHub",
+    "prereleaseClose": "Got it",
+    "prereleaseDismiss": "Close"
   },
   "en-au": {
     "features": "Features",
@@ -187,6 +219,14 @@
     "footerMailPrivacy": "Privacy",
     "footerMailAdmin": "Anything else",
     "releasesNone": "No releases yet.",
-    "releasesBeforeUpgrade": "Before you upgrade"
+    "releasesBeforeUpgrade": "Before you upgrade",
+    "prereleaseTag": "Not released yet",
+    "prereleaseTitle": "ABM isn't out yet",
+    "prereleaseBody": "I'm still getting AudioBook Manager ready for its first public release, so the install steps on this site won't work just yet. Have a look around, and follow along on Discord or GitHub to hear when it lands.",
+    "prereleaseBadge": "These install steps start working with the first release.",
+    "prereleaseDiscord": "Join the Discord",
+    "prereleaseGithub": "Follow on GitHub",
+    "prereleaseClose": "Got it",
+    "prereleaseDismiss": "Close"
   }
 }

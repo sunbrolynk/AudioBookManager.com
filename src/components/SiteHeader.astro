@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets';
 import icon from '../assets/icon.png';
 import strings from '../ui-strings.json';
+import PrereleaseNotice from './PrereleaseNotice.astro';
+import { PRERELEASE } from '../prerelease';
 
 interface Props { current?: 'docs' | 'updates'; locale?: string }
 const { current, locale } = Astro.props;
@@ -28,3 +30,4 @@ const links = [
     </div>
   </div>
 </header>
+{PRERELEASE && <PrereleaseNotice locale={locale} />}

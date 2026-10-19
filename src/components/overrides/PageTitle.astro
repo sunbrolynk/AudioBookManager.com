@@ -1,5 +1,8 @@
 ---
-const { entry, sidebar } = Astro.locals.starlightRoute;
+import PrereleaseBadge from '../PrereleaseBadge.astro';
+
+const { entry, sidebar, id, locale } = Astro.locals.starlightRoute;
+const installPage = /(^|\/)(installation|getting-started\/quick-start)$/.test(id);
 type Entry = { type: 'link'; isCurrent: boolean } | { type: 'group'; label: string; entries: Entry[] };
 const holds = (e: Entry): boolean => (e.type === 'link' ? e.isCurrent : e.entries.some(holds));
 const group = (sidebar as Entry[]).find((e) => e.type === 'group' && holds(e)) as { label: string } | undefined;
@@ -8,6 +11,7 @@ const group = (sidebar as Entry[]).find((e) => e.type === 'group' && holds(e)) a
   {group && <div class="eyebrow">{group.label}</div>}
   <h1 id="_top" class="cond">{entry.data.title}</h1>
   {entry.data.description && <p class="lede">{entry.data.description}</p>}
+  {installPage && <PrereleaseBadge locale={locale} />}
   <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
 </div>
 

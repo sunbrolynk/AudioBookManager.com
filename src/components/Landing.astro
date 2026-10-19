@@ -6,6 +6,7 @@ import '../styles/landing.css';
 import SiteHeader from './SiteHeader.astro';
 import LanguageSelect from './overrides/LanguageSelect.astro';
 import SiteFooter from './SiteFooter.astro';
+import PrereleaseBadge from './PrereleaseBadge.astro';
 import strings from '../landing-strings.json';
 import { translationHtml } from '../lib/translation-html.mjs';
 import locales from '../locales.json';
@@ -68,6 +69,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
           <h1 class="cond" set:html={translationHtml(t.h1)} />
           <p class="sub">{sub}</p>
           <div class="ctas"><a class="btn pri" href="#install">{t.ctaDocker}</a><a class="btn" href="#screens">{t.ctaSee}</a></div>
+          <PrereleaseBadge locale={loc} />
           <div class="runs">{t.runs}</div>
           <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i>{strip.map((s) => <span>{s}</span>)}</div>
         </div>
@@ -144,6 +146,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
       <div class="w">
         <div class="eyebrow">{t.getItEyebrow}</div>
         <h2 class="big cond">{t.installH2}</h2>
+        <PrereleaseBadge locale={loc} />
         <div class="install">
           <pre class="code" set:html={composeHtml}></pre>
           <div>

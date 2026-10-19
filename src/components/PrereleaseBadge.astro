@@ -1,0 +1,13 @@
+---
+import strings from '../ui-strings.json';
+import { PRERELEASE } from '../prerelease';
+
+interface Props { locale?: string }
+const t = (strings as Record<string, Record<string, string>>)[Astro.props.locale ?? 'en'];
+---
+{PRERELEASE && <p class="pre-badge"><b>{t.prereleaseTag}</b><span>{t.prereleaseBadge}</span></p>}
+
+<style>
+  .pre-badge { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; max-width: 46ch; margin: 14px 0; padding: 8px 12px; border-inline-start: 4px solid var(--r1-want); background: rgba(245,158,11,.08); font-size: 15px; line-height: 1.5; color: #d6d6d6; }
+  .pre-badge b { font: 500 12px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--r1-want); }
+</style>
