@@ -86,9 +86,16 @@ If GitHub isn't your thing, send corrections to
 
 ## Discord Translator role
 
-Anyone whose corrections land gets the **Translator** role on the
-[ABM Discord](https://discord.gg/qeJRrM6AZ). Say which language you helped with in
-the review thread and it gets added.
+Anyone with a translation PR merged here gets the **Translator** role on the
+[ABM Discord](https://discord.gg/qeJRrM6AZ). Once one of yours is merged, open
+the server name menu → **Linked Roles** → **Translator** and link your GitHub
+account. It counts your merged PRs that carry the `translation` label or change a
+language's pages, gives you the role at one or more, and lets go of the GitHub
+sign-in as soon as it has counted. A PR merged into a `translation/<code>`
+review branch counts too.
+
+Corrections sent by comment or email get applied by me, so they don't show up
+under your account. Say so in the review thread and I'll sort the role out.
 
 ## Adding a new language
 
