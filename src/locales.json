@@ -34,5 +34,9 @@
   "pt-br": {
     "label": "Português (Brasil)",
     "lang": "pt-BR"
+  },
+  "ja": {
+    "label": "日本語",
+    "lang": "ja"
   }
 }

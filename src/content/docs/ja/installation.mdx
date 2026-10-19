@@ -1,0 +1,102 @@
+---
+title: ABM をインストールする
+description: コンテナ1つ、フォルダ3つ、コマンド1つ。インストールはこのページで全部です。
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+データベースは `/config` の中の SQLite ファイルなので、データベースサービスを用意する必要はありません。
+
+**必要なもの：**
+
+- Docker と Compose
+- オーディオブックのライブラリ用のフォルダ
+- ダウンロードクライアントが完了したダウンロードを置くフォルダ
+- ABM 自身のデータ用のフォルダ
+
+## インストール
+
+<Steps>
+
+1. **compose ファイルを作る**。次の内容を `docker-compose.yml` として保存します。
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **自分のフォルダを指定する**。各ボリュームの左側を、自分のマシンにある実際のフォルダに変えます。右側はそのままにしてください。
+
+   | ホスト側のパス | コンテナ側のパス | 置くもの |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | オーディオブックのライブラリ。必須。 |
+   | `/path/to/downloads` | `/downloads` | ダウンロードクライアントが完了したダウンロードを置く場所。必須。 |
+   | `/path/to/config` | `/config` | SQLite データベース、バックアップ、ログ、ゴミ箱、生成されたアプリのシークレット。消さないでください。 |
+
+3. **起動する**。compose ファイルがあるフォルダで次を実行します。
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **開く**。`http://your-server:5173` にアクセスします。最初のアクセスでログインの設定を案内してくれます。
+
+</Steps>
+
+<Aside type="tip" title="ダウンロードクライアントが別のコンテナにある？">
+ダウンロードクライアントが専用のコンテナで動いているなら、そのダウンロードフォルダは ABM が `/downloads` として見ているのと同じフォルダである必要があります。パスが違うなら、**Settings > Download Clients** でリモートパスマッピングを追加してください。
+</Aside>
+
+## 初回の起動
+
+compose ファイルの `TIMEZONE` でタイムゾーンを設定します。それから **Settings** で、**Media Management** にルートフォルダ、**Indexers** にインデクサー、**Download Clients** にダウンロードクライアントを追加します。環境変数とリバースプロキシについては[環境変数](/ja/configuration/)で説明しています。
+
+## ソースからビルドする
+
+イメージを自分でビルドするなら、リポジトリをクローンして、`image:` の行を `build: .` に書き換え、次を実行します。
+
+```bash
+docker compose up -d --build
+```
+
+## ほかのインストール方法
+
+今のところ Docker が唯一の方法です。ネイティブインストールを予定していて、すでにセルフホストしている環境ならどこでも ABM を動かせるようにするつもりです。
+
+| プラットフォーム | 予定している形 |
+|---|---|
+| Linux | ネイティブのパッケージとサービス |
+| Windows | `.exe` インストーラー |
+| macOS | ネイティブアプリ |
+| Kubernetes | クラスターへのデプロイ |
+| Unraid | Community Apps のテンプレート |
+| Proxmox | LXC のインストールスクリプト |
+
+どれもまだありません。出たら[更新情報](/ja/updates/)のページに載せます。
+
+## アップデート
+
+新しいイメージを pull して、コンテナを作り直します。[更新情報](/ja/updates/)のページに、リリースごとの変更点が載っています。
+
+<Aside type="caution" title="ABM はアルファ版です">
+アップグレードの前に `/config` をバックアップして、更新ノートにざっと目を通しておいてください。
+</Aside>
+
+## うまくいかない？
+
+- **ページが開かない**。compose ファイルのポートの割り当てを確認してから、`docker logs audiobook-manager` を実行してください。
+- **自分のドメインからの変更が拒否される**。ABM は、アクセスに使われていないアドレスからの変更を拒否します。まずプロキシが元の `Host` ヘッダーを渡すようにしてください。それで足りなければ、**Settings > General** の **CORS Allowed Domains**（詳細設定なので **Show Advanced** をオンにします）に自分のドメインを追加して、ABM を再起動します。[トラブルシューティング](/ja/troubleshooting/)を見てください。
+- **ダウンロードは終わるのにインポートされない**。上のヒントにあるフォルダの割り当てを確認してください。
