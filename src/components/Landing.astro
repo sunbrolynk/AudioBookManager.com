@@ -7,6 +7,7 @@ import SiteHeader from './SiteHeader.astro';
 import LanguageSelect from './overrides/LanguageSelect.astro';
 import SiteFooter from './SiteFooter.astro';
 import strings from '../landing-strings.json';
+import { translationHtml } from '../lib/translation-html.mjs';
 import locales from '../locales.json';
 import dashboard from '../assets/screens/dashboard.jpg';
 import library from '../assets/screens/library.jpg';
@@ -64,7 +65,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
       <div class="w grid">
         <div>
           <div class="eyebrow">{t.heroEyebrow}</div>
-          <h1 class="cond" set:html={t.h1} />
+          <h1 class="cond" set:html={translationHtml(t.h1)} />
           <p class="sub">{sub}</p>
           <div class="ctas"><a class="btn pri" href="#install">{t.ctaDocker}</a><a class="btn" href="#screens">{t.ctaSee}</a></div>
           <div class="runs">{t.runs}</div>
@@ -123,7 +124,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
         <div class="eyebrow">{t.whyEyebrow}</div>
         <h2 class="big cond">{t.whyH2}</h2>
         <div class="why">
-          {why.map(([h, p], i) => <div><span class="n cond">0{i + 1}</span><div><h3>{h}</h3><p set:html={p} /></div></div>)}
+          {why.map(([h, p], i) => <div><span class="n cond">0{i + 1}</span><div><h3>{h}</h3><p set:html={translationHtml(p)} /></div></div>)}
         </div>
         <div class="works">{works.map(([a, b]) => <div><span>{a}</span><b>{b}</b></div>)}</div>
       </div>
@@ -146,13 +147,13 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
         <div class="install">
           <pre class="code" set:html={composeHtml}></pre>
           <div>
-            <ol class="isteps">{installSteps.map(([h, p]) => <li><div><b>{h}</b><span set:html={p} /></div></li>)}</ol>
+            <ol class="isteps">{installSteps.map(([h, p]) => <li><div><b>{h}</b><span set:html={translationHtml(p)} /></div></li>)}</ol>
             <div class="other">
-              <p set:html={t.buildP} />
-              <p set:html={t.otherP} />
+              <p set:html={translationHtml(t.buildP)} />
+              <p set:html={translationHtml(t.otherP)} />
               <ul class="planned">{t.planned.map(([name, how]: [string, string]) => <li><b>{name}</b><span>{how}</span><em>{t.coming}</em></li>)}</ul>
             </div>
-            <div class="note" set:html={t.note} />
+            <div class="note" set:html={translationHtml(t.note)} />
             <p class="more"><a class="btn" href={`${prefix}/installation/`}>{t.fullGuide}</a></p>
           </div>
         </div>
@@ -162,7 +163,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
     <section class="band alt">
       <div class="w faqgrid">
         <div><div class="eyebrow">{t.faqEyebrow}</div><h2 class="big cond">{t.faqH2}</h2></div>
-        <div class="faq">{faq.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p set:html={a} /></details>)}</div>
+        <div class="faq">{faq.map(([q, a], i) => <details open={i === 0}><summary>{q}</summary><p set:html={translationHtml(a)} /></details>)}</div>
       </div>
     </section>
 
@@ -194,7 +195,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
 
     <section class="final">
       <div class="w">
-        <h2 class="cond" set:html={t.finalH2} />
+        <h2 class="cond" set:html={translationHtml(t.finalH2)} />
         <div class="ctas"><a class="btn pri" href="#install">{t.ctaInstall}</a><a class="btn" href={`${prefix}/installation/`}>{t.ctaDocs}</a></div>
         <div class="strip" aria-hidden="true"><i></i><i></i><i></i><i></i>{strip.map((s) => <span>{s}</span>)}</div>
       </div>
