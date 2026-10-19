@@ -3,7 +3,7 @@ title: Bibliotheksimport
 description: Eine bestehende Sammlung mit der Import Workbench in ABM übernehmen.
 ---
 
-Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ordnet jedem Unterordner Metadaten zu und fügt die Bücher deiner Bibliothek hinzu. Die Seite heißt **Match Audiobooks**.
+Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ordnet jedem Unterordner Metadaten zu und fügt die Bücher deiner Bibliothek hinzu. **Library > Library Import** öffnet "Import audiobooks you already have", wo du einen Ordner zum Scannen auswählst. Sobald der Scan startet, wechselt ABM zur Zuordnungsseite mit der Überschrift **Match Audiobooks**, wo du die Zuordnungen prüfst und die Bücher hinzufügst.
 
 ## Der Ablauf
 
@@ -41,7 +41,7 @@ Ein per Hardlink übernommenes Buch braucht keinen zusätzlichen Speicherplatz, 
 
 ## Lange Werte
 
-Ein Sprecher, Titel oder Pfad, der mit Auslassungspunkten abgeschnitten ist, öffnet sich vollständig, wenn du darauf tippst oder Enter bzw. Leertaste drückst. Tipp noch mal, um ihn zu schließen.
+Ein Sprecher, Titel oder Pfad, der mit Auslassungspunkten abgeschnitten ist, öffnet sich vollständig, wenn du darauf tippst oder klickst. Tipp oder klick noch mal, um ihn zu schließen. Mit der Maus siehst du den ganzen Wert auch, wenn du drüberfährst. Mit der Tastatur fokussierst du ihn und drückst Enter oder Leertaste.
 
 ## Andere Antworten als Import
 

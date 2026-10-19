@@ -3,6 +3,10 @@ title: Reverse Proxy
 description: ABM hinter nginx, Traefik oder Caddy betreiben, ohne die Anmeldung kaputtzumachen.
 ---
 
+:::caution[Nicht empfohlen]
+ABM ins Internet zu stellen, über einen Reverse Proxy oder einen weitergeleiteten Port, wird nicht empfohlen. Das raten auch die Servarr-Apps. Wenn du von außen drankommen willst, nimm stattdessen ein VPN wie WireGuard oder Tailscale. ABM ist darauf ausgelegt, hinter einem Proxy sicher zu sein, aber sobald es öffentlich erreichbar ist, gibt es keine Garantie für Sicherheit, und das Risiko trägst du. Wenn du es trotzdem machst, stell **Authentication Required** auf **Enabled** und halte ABM aktuell.
+:::
+
 Drei Einstellungen zählen. Wenn die stimmen, funktionieren Anmeldung, Websocket und Speichern.
 
 ## 1. ABM sagen, wer der Proxy ist

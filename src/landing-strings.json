@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Installation",
     "installH2": "Läuft mit einer Datei.",
     "buildP": "<b>Aus dem Quellcode bauen.</b> Ersetz in einem Klon des Repos <code>image:</code> durch <code>build: .</code> und führ <code>docker compose up -d --build</code> aus.",
-    "otherP": "<b>Unraid, Windows, macOS, ein einfacher Linux-Dienst.</b> Noch nicht. Docker ist vorerst der einzige Weg.",
+    "otherP": "<b>Docker ist vorerst der einzige Weg.</b> Native Installationen für die gängigen Setups sind geplant, damit ABM überall laufen kann, wo du sowieso schon selbst hostest:",
     "note": "ABM ist Alpha. Sichere <code>/config</code>, bevor du upgradest, und überflieg vorher die Update-Hinweise.",
     "fullGuide": "Komplette Installationsanleitung →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Issue aufmachen",
     "helpH": "Willst du es unterstützen?",
     "helpP": "ABM ist das Projekt einer einzelnen Person. Ko-fi oder ein Monster hält es am Laufen.",
-    "kofiBtn": "Spendier mir ein Monster",
-    "monsterBtn": "Entwicklung unterstützen",
+    "kofiBtn": "Entwicklung unterstützen",
+    "monsterBtn": "Spendier mir ein Monster",
     "finalH2": "Schluss mit dem<br />Ordnerbasteln.",
     "ctaInstall": "ABM installieren",
     "ctaDocs": "Zur Doku",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Finde deine Leute.",
     "communityP": "Du hast eine Frage, brauchst Hilfe beim Einrichten oder willst über Hörbücher reden? Komm in die AudioBook-Manager-Community auf Discord, für Support und Austausch.",
-    "communityBtn": "Komm zu uns auf Discord",
-    "translatorNote": "Diese Seite wurde maschinell übersetzt. Wenn Deutsch deine Muttersprache ist und du helfen willst, sie besser zu machen, schreib mir eine Mail an {mail}."
+    "communityBtn": "Komm in den Discord",
+    "translatorNote": "Diese Seite wurde maschinell übersetzt. Wenn Deutsch deine Muttersprache ist und du helfen willst, sie besser zu machen, schreib mir eine Mail an {mail}.",
+    "planned": [
+      [
+        "Linux",
+        "ein natives Paket mit Dienst"
+      ],
+      [
+        "Windows",
+        "ein .exe-Installer"
+      ],
+      [
+        "macOS",
+        "eine native App"
+      ],
+      [
+        "Kubernetes",
+        "ein Cluster-Deployment"
+      ],
+      [
+        "Unraid",
+        "eine Vorlage für Community Apps"
+      ],
+      [
+        "Proxmox",
+        "ein LXC-Installationsskript"
+      ]
+    ],
+    "coming": "Bald"
   }
 }

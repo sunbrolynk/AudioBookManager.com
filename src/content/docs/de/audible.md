@@ -3,7 +3,7 @@ title: Audible
 description: Audible-Konten verbinden, synchronisieren und deine Bibliothek spiegeln.
 ---
 
-ABM kann sich mit deinen Audible-Konten verbinden, eine Kopie der Bibliothek jedes Kontos vorhalten und herunterladen, was dir gehört.
+ABM verbindet sich mit einem oder mehreren Audible-Konten und hält auf der Seite **Audible Library** eine Kopie der Bibliothek jedes Kontos vor. Alles, was dir gehört, kannst du herunterladen, nach M4B entschlüsseln und wie jedes andere Buch importieren. Mit eingeschaltetem Spiegeln fügt jeder Sync außerdem die Bücher, die dir in ABM noch fehlen, hinzu und lädt sie herunter.
 
 ## Konten
 
@@ -28,7 +28,9 @@ Mit dem Spiegeln (Mirror) folgt deine ABM-Bibliothek deiner Audible-Bibliothek.
 - Es ist standardmäßig an.
 - Es fügt deine Käufe und deine kostenlosen Titel hinzu. Podcasts bleiben außen vor.
 - Jeder Sync verarbeitet höchstens 25 Titel.
-- Bevor es läuft, fragt es dich nach einer Bestätigung und zeigt, wie viele Titel es hinzufügen wird.
+- Beim Einschalten fragt es dich nach einer Bestätigung und zeigt, wie viele Titel der nächste Sync hinzufügen und herunterladen wird.
+- Titel aus dem Plus-Katalog und Leihtitel bleiben außen vor, und solange auf der Platte der Bibliothek kaum noch Platz ist, kommt nichts in die Warteschlange.
+- Ein Titel, dessen Download immer wieder fehlschlägt, wartet zwischen den Versuchen immer länger: 1 Stunde, dann 6, dann 24.
 - Es lädt außerdem gesuchte Titel herunter, für die es noch keine Dateien gibt.
 - Titel, die aus Audible entfernt werden, bleiben in ABM.
 

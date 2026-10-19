@@ -17,9 +17,11 @@ description: Eine bestehende Sammlung sicher in ABM übernehmen.
 4. Wähl die Zeilen aus und füg sie hinzu. Wenn du die Standards übernimmst, bleibt es bei zwei Klicks.
 5. Behalt die Aufgabe im Blick. Die Zusammenfassung sagt, wie viele Dateien kopiert statt per Hardlink übernommen wurden und was fehlgeschlagen ist.
 
-## Wenn ABM den Quellordner verwalten soll
+## Wenn deine Sammlung schon da liegt, wo du sie haben willst
 
-Leg ihn stattdessen als Root-Ordner an und lass ABM ihn scannen. So bleiben die Dateien, wo sie sind, und die Bücher bekommen ihren Status aus dem, was auf der Platte liegt.
+Den Ordner als Root-Ordner anzulegen, fügt von sich aus keine Bücher hinzu. ABMs Scans prüfen nur Bücher, die es schon kennt, also findet es nicht, was dort liegt. Die Bücher müssen trotzdem über den Bibliotheksimport rein: Die Zahl **Unmapped Folders** beim Root-Ordner unter **Settings > Media Management** öffnet den Bibliotheksimport für diesen Root-Ordner.
+
+Beim Import landet jedes Buch in ABMs eigener Struktur Autor/Serie/Buch unter dem Standard-Root-Ordner. Nimm Hardlink, dann bleiben die Originale unangetastet, ohne dass es mehr Platz kostet.
 
 ## Stolperfallen
 

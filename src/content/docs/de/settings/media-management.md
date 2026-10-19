@@ -7,7 +7,7 @@ description: Root-Ordner, Import, zusätzliche Dateien, Papierkorb, Scans, Upgra
 
 ## Root-Ordner (Root Folders)
 
-Ein Root-Ordner ist ein Verzeichnis, in dem ABM Bücher verwaltet. Du legst einen über **Add Root Folder** an, das einen Ordner-Browser öffnet, in den du den Pfad auch eintippen kannst. ABM kann außerdem nicht zugeordnete Ordner unter einem Root auflisten und importieren. Freier Speicherplatz und Hardlink-Unterstützung eines Roots werden beim Hinzufügen geprüft. Einen Root zu entfernen löscht keine Dateien.
+Ein Root-Ordner ist ein Verzeichnis, in dem ABM Bücher verwaltet. Du legst einen über **Add Root Folder** an, das einen Ordner-Browser öffnet, in den du den Pfad auch eintippen kannst. ABM kann außerdem nicht zugeordnete Ordner unter einem Root auflisten und importieren. Freier Speicherplatz und Hardlink-Unterstützung eines Roots werden beim Hinzufügen geprüft. Beim Entfernen eines Roots fragt ABM, was passieren soll: **Remove from ABM only** (der Standard) vergisst die Bücher darunter und lässt die Dateien liegen, und **Delete the books and their files** löscht alles unter dem Pfad endgültig, ohne den Papierkorb. Bei einem Root mit Büchern musst du zur Bestätigung etwas eintippen.
 
 Der Standard-Root-Ordner ist der, in dem neue Bücher landen, und der, der entscheidet, ob beim Bibliotheksimport Hardlinks angeboten werden.
 
@@ -27,10 +27,10 @@ Der Standard-Root-Ordner ist der, in dem neue Bücher landen, und der, der entsc
 | Use Hardlinks instead of Copy | an | Für abgeschlossene Downloads: Hardlink statt Kopie, damit das Seeden nicht den doppelten Platz braucht. Erfordert dasselbe Volume. |
 | Library Import | Copy | Der Standard für den [Bibliotheksimport](/de/library-import/): kopieren, Hardlink oder verschieben. Hardlink ist ausgegraut, bis der Standard-Root geprüft wurde und es unterstützt. |
 | Import Extra Files | an | Hauptschalter dafür, Nicht-Audio-Dateien mitzunehmen. Gilt für Library Import, Manual Import und abgeschlossene Downloads |
-| Extra File Extensions (erweitert) | leer | Zusätzliche Endungen, die importiert werden sollen, etwa `srt, lrc`. Gesperrte Dateitypen werden abgelehnt. |
+| Extra File Extensions (erweitert) | leer | Weitere Dateitypen, die mitkommen sollen und ihren Namen behalten, zum Beispiel `srt, lrc`. Mit oder ohne Punkt, getrennt durch Kommas oder Leerzeichen. Gesperrte Typen wie ausführbare Dateien und unfertige Downloads lassen sich nicht speichern. Deaktiviert, solange **Import Extra Files** aus ist |
 | Preferred Cover (erweitert) | Matched | Das Cover der zugeordneten Ausgabe oder das beste Bild des Ordners, wenn beides vorhanden ist |
 
-Für zusätzliche Dateien gibt es fünf Schalter:
+**Import Extra Files** nimmt die anderen Dateien eines Buchs zusammen mit seinem Audio mit. Fünf Schalter legen fest, welche Arten mitkommen, und eine Datei, die zu **Extra File Extensions** passt, kommt auch dann mit, wenn ihre Art ausgeschaltet ist:
 
 | Schalter | Standard | Umfasst |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink ist nicht dasselbe wie **Use Hardlinks instead of Copy**. Das ist für 
 | Recycling Bin Cleanup | 7 (Tage) | 0 schaltet das automatische Aufräumen ab |
 | Library Scan Interval | 0 (aus) | Stunden zwischen automatischen Scans |
 | Watch for Changes | aus | Scannt, wenn Dateien hinzugefügt, entfernt oder geändert werden |
-| Cover Cache Workers | 4 | Wie viele Cover beim Zwischenspeichern von Artwork gleichzeitig heruntergeladen werden, von 1 bis 16. Setz den Wert runter, wenn ein Durchlauf Fehler meldet |
+| Cover Cache Workers | 4 | Wie viele Cover beim Zwischenspeichern von Artwork gleichzeitig heruntergeladen werden, von 1 bis 16 |
 
 ## Qualitäts-Upgrades (Quality Upgrades)
 

@@ -7,7 +7,7 @@ Das Menü **Library** hat drei Listen: **Books**, **Series** und **Authors**. Ü
 
 ## Bücher
 
-Jedes Buch ist eine Zeile, ein Poster oder eine Tabellenzeile (der Ansichtsschalter sitzt in der Werkzeugleiste). Ein Buch hat einen Status:
+Jedes Buch ist eine Übersichtszeile, ein Poster oder eine Tabellenzeile (der Ansichtsschalter sitzt in der Werkzeugleiste). Ein Buch hat einen Status:
 
 - **Wanted**: überwacht, noch keine Dateien. ABM sucht danach.
 - **Downloaded**: Die Dateien liegen auf der Platte.
@@ -18,9 +18,13 @@ Jedes Buch ist eine Zeile, ein Poster oder eine Tabellenzeile (der Ansichtsschal
 
 Wenn du Sonarr kennst: Ein Buch ist eine Episode, eine Serie ist Staffel und Show in einem, und ein Autor ist eine Möglichkeit, beides zu gruppieren. Der Unterschied: Ein Buch kann zu mehreren Serien gehören, und ABM nimmt die primäre (die mit der niedrigsten Position), wenn es sich entscheiden muss.
 
-## Serien und Autoren
+## Serien
 
-Die Listen Series und Authors zeigen, wie viele Bücher du hast, wie viele gesucht sind und bei wie vielen Dateien fehlen. Öffne eine Serie oder einen Autor, um den Katalog zu sehen, inklusive der Bücher, die du nicht hast. Von dort kannst du die fehlenden Bücher hinzufügen. Siehe [Serien verfolgen](/de/using/series-tracking/).
+**Library > Series** listet jede Serie mit der Zahl der Bücher, die du hast, die gesucht sind und bei denen Dateien fehlen, als Overview oder Posters. Eine Serienseite zeigt den ganzen Katalog, auch die Bücher, die du nicht hast. Du kannst sie nach All, In Library oder Not in Library filtern. **Add Remaining** oder **Select to Add** holt die fehlenden Bücher als gesucht rein, und **Refresh Series** lädt den Katalog neu. **Monitor New Books** (All oder None) entscheidet, ob Bücher, die später erscheinen, als gesucht hinzugefügt werden. Siehe [Serien verfolgen](/de/using/series-tracking/).
+
+## Autoren
+
+**Library > Authors** listet die Autoren, als Overview oder Posters. Eine Autorenseite zeigt den Katalog nach Serien gruppiert, mit der Zahl der heruntergeladenen und aller Bücher pro Serie, dazu Qualitätsprofil, Genres und Bewertung. **Refresh Catalog** lädt ihn neu, und **Search Author** sucht nach den gesuchten Büchern des Autors. **Monitor New Books** funktioniert wie bei einer Serie, und ein Autor startet mit None.
 
 Eine Serie oder einen Autor zu löschen wird verweigert, solange noch Bücher davon in der Bibliothek sind. Entfern zuerst die Bücher.
 

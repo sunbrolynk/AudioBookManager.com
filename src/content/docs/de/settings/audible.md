@@ -23,7 +23,7 @@ Um ein Konto zu verbinden, brauchst du einen **Marketplace**, einen **Display Na
 
 | Einstellung | Standard | Wirkung |
 |---|---|---|
-| Auto Add to Library | an | Heruntergeladene Bücher werden zu ABMs Bibliothek hinzugefügt |
+| Auto Add to Library | an | Wenn du einen Audible-Titel herunterlädst, der noch nicht in ABM ist, fügt ABM ihn zuerst der Bibliothek hinzu. Ist es aus, wird dieser Download abgelehnt. Mit dem nächsten Release wird daraus [Audible-Bibliothek nach ABM spiegeln](/de/audible/#audible-bibliothek-nach-abm-spiegeln) |
 | Concurrent Downloads | 2 | 1 bis 5. Mehr ist schneller und kann an Audibles Rate-Limits stoßen. |
 | Preferred Quality | High Quality | High, Normal oder Low |
 | Delete Encrypted Files | an | Die verschlüsselte AAXC-Datei entfernen, nachdem sie zu M4B entschlüsselt wurde |

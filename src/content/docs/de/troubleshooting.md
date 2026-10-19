@@ -73,3 +73,7 @@ Leg ein Remote Path Mapping an oder sorg dafür, dass ABM und der Client den Ord
 ## Docker erreicht die Metadatenquelle oder die Indexer nicht
 
 Prüf vor allem anderen DNS und die Einstellung für die ausgehende Verbindung. Unter Docker funktioniert eine direkte Verbindung nur, wenn der Container ins Internet kommt.
+
+## Immer noch nicht gelöst?
+
+Frag im [ABM-Discord](https://discord.gg/qeJRrM6AZ), [eröffne ein Issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) oder schreib eine Mail an [support@audiobookmanager.com](mailto:support@audiobookmanager.com).
