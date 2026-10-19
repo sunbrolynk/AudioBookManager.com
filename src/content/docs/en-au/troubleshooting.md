@@ -50,7 +50,7 @@ Adds, searches, refreshes and Discover need the metadata source. The message nam
 
 1. Check **Settings > General > Proxy & VPN** and that the route is up.
 2. Try again after a minute. A rate-limited source answers 503 with a 30 second retry hint.
-3. You can still add and import books by hand meanwhile.
+3. You can still add and import books by hand in the meantime.
 
 Background tasks that hit an outage fail with the reason, and send one notification per outage.
 
@@ -73,7 +73,3 @@ Add a remote path mapping, or make ABM and the client see the folder at the same
 ## Docker cannot reach the metadata source or indexers
 
 Check DNS and the outbound connection setting before anything else. In Docker, a direct connection only works if the container can reach the internet.
-
-## Still stuck
-
-Ask in the [ABM Discord](https://discord.gg/qeJRrM6AZ), [open an issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), or email [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

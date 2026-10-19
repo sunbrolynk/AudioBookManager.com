@@ -23,7 +23,7 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 
 | Setting | Default | Effect |
 |---|---|---|
-| Auto Add to Library | on | When you download an Audible title that isn't in ABM yet, ABM adds it to the library first. Off, that download is refused. In the next release this becomes [Mirror Audible library to ABM](/en-au/audible/#mirror-audible-library-to-abm) |
+| Auto Add to Library | on | Downloaded books are added to ABM's library |
 | Concurrent Downloads | 2 | 1 to 5. Higher is faster and can hit Audible's rate limits. |
 | Preferred Quality | High Quality | High, Normal or Low |
 | Delete Encrypted Files | on | Remove the encrypted AAXC file after it is decrypted to M4B |

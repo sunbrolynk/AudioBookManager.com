@@ -7,7 +7,7 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 ## Root Folders
 
-A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm.
+A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root does not delete files.
 
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
@@ -27,10 +27,10 @@ The default root folder is the one new books go to and the one that decides whet
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
 | Library Import | Copy | The default for [Library Import](/en-au/library-import/): copy, hardlink or move. Hardlink is greyed out until the default root has been checked and supports it. |
 | Import Extra Files | on | Master switch for bringing non-audio files along. Applies to Library Import, Manual Import and completed downloads |
-| Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
+| Extra File Extensions (advanced) | empty | Extra extensions to import, such as `srt, lrc`. Blocked types are refused. |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |
 
-**Import Extra Files** brings a book's other files along with its audio. Five switches pick which kinds come along, and a file matching **Extra File Extensions** comes along even when its kind is switched off:
+Extra files have five switches:
 
 | Switch | Default | Covers |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 | Recycling Bin Cleanup | 7 (days) | 0 disables automatic cleanup |
 | Library Scan Interval | 0 (off) | Hours between automatic scans |
 | Watch for Changes | off | Scan when files are added, removed or changed |
-| Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16 |
+| Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16. Lower it if a caching run reports failures |
 
 ## Quality Upgrades
 

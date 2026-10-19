@@ -22,13 +22,13 @@ Multi-file books are laid end to end on one timeline in filename order. A chapte
 
 ## Wrong edition
 
-Libex timings fit only the edition they describe. If your audio length differs from Libex's by more than 15 seconds or 0.5 percent, whichever is larger, a warning appears and both **Update** and **Create .cue** are blocked. There is no override.
+Libex timings fit only the edition they describe. If your audio length differs from Libex's by more than 15 seconds or 0.5 per cent, whichever is larger, a warning appears and both **Update** and **Create .cue** are blocked. There is no override.
 
 ## Update embedded chapters
 
 Replaces the chapters in every audio file with Libex's. It runs as a chapter job in the [conversion queue](/en-au/using/conversions/), without re-encoding. It is offered only when the comparison says "differs" or "no embedded chapters".
 
-- Each file is rewritten to a temporary file, checked, then swapped in. The check requires that it is readable, not shorter than the original by more than 0.5 seconds or 1 percent, in the same codec, and carries exactly the number of chapters asked for. On a failed check the original stays.
+- Each file is rewritten to a temporary file, checked, then swapped in. The check requires that it is readable, not shorter than the original by more than 0.5 seconds or 1 per cent, in the same codec, and carries exactly the number of chapters asked for. On a failed check the original stays.
 - If a job stops partway, files already rewritten stay rewritten. The error says "N of M files already updated". Run Update again after fixing the cause.
 - Refused up front: another conversion for the book is running, no ASIN or no Libex chapters, wrong edition, an unreadable file, or nothing to update.
 

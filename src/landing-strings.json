@@ -964,7 +964,7 @@
     "getItEyebrow": "Get it",
     "installH2": "Running in one file.",
     "buildP": "<b>Build from source.</b> From a clone of the repo, swap <code>image:</code> for <code>build: .</code> and run <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Docker is the only way in for now.</b> Native installs for the common setups are planned, so ABM can run wherever you already self-host:",
+    "otherP": "<b>Unraid, Windows, macOS, a plain Linux service.</b> Not yet. Docker is the only way in for now.",
     "note": "ABM is alpha. Back up <code>/config</code> before you upgrade, and skim the update notes first.",
     "fullGuide": "Full install guide →",
     "faqEyebrow": "FAQ",
@@ -975,8 +975,8 @@
     "brokenBtn": "Open an issue",
     "helpH": "Want to help it along?",
     "helpP": "ABM is one person's project. Ko-fi or a Monster keeps it moving.",
-    "kofiBtn": "Support Development",
-    "monsterBtn": "Buy Me a Monster",
+    "kofiBtn": "Buy Me a Monster",
+    "monsterBtn": "Support Development",
     "finalH2": "Stop fixing<br />folders.",
     "ctaInstall": "Install ABM",
     "ctaDocs": "Read the docs",
@@ -1136,7 +1136,7 @@
     "communityEyebrow": "Community",
     "communityH2": "Find your people.",
     "communityP": "Have a question, need a hand with your setup, or want to talk audiobooks? Join the AudioBook Manager community on Discord for support and discussions.",
-    "communityBtn": "Join the Discord",
+    "communityBtn": "Join us on Discord",
     "planned": [
       [
         "Linux",

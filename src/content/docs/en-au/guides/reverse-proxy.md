@@ -3,10 +3,6 @@ title: Reverse proxy
 description: Putting ABM behind nginx, Traefik or Caddy without breaking sign-in.
 ---
 
-:::caution[Not recommended]
-Putting ABM on the internet, through a reverse proxy or a forwarded port, is not recommended, the same advice the Servarr apps give. To reach it from outside, use a VPN such as WireGuard or Tailscale instead. ABM is built to be safe behind a proxy, but there is no guarantee of security once it's public, and the risk is yours. If you do it anyway, set **Authentication Required** to **Enabled** and keep ABM up to date.
-:::
-
 Three settings matter. Get them right and sign-in, the websocket and saves all work.
 
 ## 1. Tell ABM who the proxy is

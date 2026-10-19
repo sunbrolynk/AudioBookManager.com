@@ -5,7 +5,7 @@ description: Short answers to the questions people ask first.
 
 ## Does ABM replace Audiobookshelf?
 
-No, not at all. Audiobookshelf is the player and ABM is the librarian. Point both at the same library folder and let each do its own job.
+No. Audiobookshelf is the player and ABM is the librarian. Point both at the same library folder and let each do its own job.
 
 ## Where does the metadata come from?
 
@@ -27,9 +27,9 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet and Blackhole.
 
 Readarr handled books and audiobooks together, and it has since been retired. ABM is for audiobooks alone, built on the design the Servarr apps pioneered.
 
-## Can I install it without Docker?
+## How do I install it on Unraid, Windows or macOS?
 
-Not yet. Docker is the only way in for now. Native Linux, Windows and macOS installs, plus Kubernetes, Unraid and Proxmox, are planned. See [Other ways to install](/en-au/installation/#other-ways-to-install).
+Not yet. Docker is the only way in for now. See [Install ABM](/en-au/installation/).
 
 ## What does it cost?
 

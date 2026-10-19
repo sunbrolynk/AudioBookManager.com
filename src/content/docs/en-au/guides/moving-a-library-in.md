@@ -17,11 +17,9 @@ description: Bring an existing collection into ABM safely.
 4. Select the rows and add them. It stays two clicks if you accept the defaults.
 5. Watch the task. The summary says how many files were copied instead of hardlinked and what failed.
 
-## If your collection is already where you want it
+## If you want ABM to manage the source folder
 
-Adding the folder as a root folder doesn't add any books by itself. ABM's scans only check books it already knows about, so it won't pick up what's in there. The books still have to come in through Library Import: the root's **Unmapped Folders** count under **Settings > Media Management** opens Library Import for that root.
-
-Importing puts each book in ABM's own Author/Series/Book layout under the default root folder. Pick hardlink to leave the originals untouched without using more space.
+Add it as a root folder instead and let ABM scan it. This leaves files in place and gives books their status from what is on disk.
 
 ## Gotchas
 
