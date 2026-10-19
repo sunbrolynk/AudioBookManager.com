@@ -17,11 +17,11 @@ description: Terms, for new users and for people coming from the arrs.
 
 **Delay profile**: a wait before grabbing, per protocol.
 
-**Discover**: browseable Audible catalogues.
+**Discover**: browsable Audible catalogues.
 
 **Hardlink**: a second name for the same file on the same filesystem. No extra space.
 
-**Import Workbench**: the page-name behind Library Import. Scan, match, add.
+**Import Workbench**: the page name behind Library Import. Scan, match, add.
 
 **Indexer**: a site ABM searches for releases.
 
