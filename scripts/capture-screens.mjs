@@ -16,17 +16,11 @@ const out = new URL('../src/assets/screens/', import.meta.url).pathname;
 
 // file -> [route, where the image is used]
 const desktop = {
-  'demo-dashboard.jpg': ['/', 'Home: screenshots strip'],
-  'demo-library.jpg': ['/library', 'Home: hero window, "Every book, at a glance", screenshots strip'],
-  'demo-book.jpg': ['/library/book/3', 'Home: "The details are right", screenshots strip'],
-  'demo-series.jpg': ['/library/series/8', 'Home: screenshots strip'],
-  'demo-calendar.jpg': ['/calendar', 'Home: "Know what\'s coming", screenshots strip'],
-  'demo-missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing", screenshots strip'],
-  'demo-profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means", screenshots strip'],
-  'demo-conversions.jpg': ['/library/conversions', 'Home: "Fix the format too", screenshots strip'],
-};
-const phone = {
-  'demo-book-phone.jpg': ['/library/book/3', 'Home: phone over the hero window'],
+  'demo-book.jpg': ['/library/book/3', 'Home: "The details are right"'],
+  'demo-calendar.jpg': ['/calendar', 'Home: "Know what\'s coming"'],
+  'demo-missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing"'],
+  'demo-profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means"'],
+  'demo-conversions.jpg': ['/library/conversions', 'Home: "Fix the format too"'],
 };
 
 const shoot = async (browser, shots, viewport) => {
@@ -48,7 +42,6 @@ const shoot = async (browser, shots, viewport) => {
 const browser = await chromium.launch();
 try {
   await shoot(browser, desktop, { width: 1440, height: 900 });
-  await shoot(browser, phone, { width: 390, height: 844 });
 } finally {
   await browser.close();
 }
