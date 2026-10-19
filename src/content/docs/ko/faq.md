@@ -27,9 +27,9 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet, Blackhole이에요
 
 Readarr는 전자책과 오디오북을 함께 다뤘는데, 지금은 개발이 종료됐어요. ABM은 Servarr 앱들이 처음 만든 설계를 바탕으로 오디오북만 다뤄요.
 
-## Unraid, Windows, macOS에는 어떻게 설치하나요?
+## Docker 없이 설치할 수 있나요?
 
-아직은 안 돼요. 지금은 Docker로만 설치할 수 있어요. [ABM 설치하기](/ko/installation/)를 보세요.
+아직은 안 돼요. 지금은 Docker로만 설치할 수 있어요. Linux, Windows, macOS 네이티브 설치와 Kubernetes, Unraid, Proxmox도 계획 중이에요. [다른 설치 방법](/ko/installation/#다른-설치-방법)을 보세요.
 
 ## 얼마예요?
 

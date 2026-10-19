@@ -3,7 +3,7 @@ title: 라이브러리 가져오기
 description: Import Workbench로 기존 컬렉션을 ABM에 들여와요.
 ---
 
-Library Import는 오디오북 폴더를 스캔하고, 폴더마다 메타데이터를 매칭한 다음, 책을 라이브러리에 추가해요. 페이지 이름은 **Match Audiobooks**예요.
+Library Import는 오디오북 폴더를 스캔하고, 폴더마다 메타데이터를 매칭한 다음, 책을 라이브러리에 추가해요. **Library > Library Import**를 누르면 "Import audiobooks you already have" 페이지가 열리고, 여기서 스캔할 폴더를 골라요. 스캔이 시작되면 ABM이 **Match Audiobooks**라는 제목의 매칭 페이지로 넘어가고, 거기서 매칭을 확인하고 책을 추가해요.
 
 ## 흐름
 
@@ -41,7 +41,7 @@ Library Import는 오디오북 폴더를 스캔하고, 폴더마다 메타데이
 
 ## 긴 값
 
-말줄임표로 잘린 내레이터, 제목, 경로는 탭하거나 Enter나 Space를 누르면 전체가 보여요. 다시 탭하면 닫혀요.
+말줄임표로 잘린 내레이터, 제목, 경로는 탭하거나 클릭하면 전체가 보여요. 다시 탭하거나 클릭하면 닫혀요. 마우스로는 위에 올려 두기만 해도 전체 값이 보여요. 키보드로는 포커스를 옮기고 Enter나 Space를 누르세요.
 
 ## 가져오기 말고 다른 답
 

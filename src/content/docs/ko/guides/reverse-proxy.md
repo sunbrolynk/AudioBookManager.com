@@ -3,6 +3,10 @@ title: 리버스 프록시
 description: 로그인을 깨뜨리지 않고 ABM을 nginx, Traefik, Caddy 뒤에 두는 방법이에요.
 ---
 
+:::caution[권장하지 않아요]
+리버스 프록시든 포트 포워딩이든 ABM을 인터넷에 여는 건 권장하지 않아요. Servarr 앱들도 똑같이 말해요. 밖에서 접속하려면 대신 WireGuard나 Tailscale 같은 VPN을 쓰세요. ABM은 프록시 뒤에서도 안전하게 만들어져 있지만, 공개된 뒤의 보안은 보장할 수 없고 위험은 본인 몫이에요. 그래도 하겠다면 **Authentication Required**를 **Enabled**로 두고 ABM을 항상 최신으로 유지하세요.
+:::
+
 중요한 설정은 세 가지예요. 이것만 제대로 하면 로그인, 웹소켓, 저장이 다 잘 돼요.
 
 ## 1. 프록시가 누군지 ABM에 알려 주기

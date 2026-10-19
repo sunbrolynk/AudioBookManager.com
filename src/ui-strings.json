@@ -218,6 +218,13 @@
     "footerReportIssue": "앱 문제 신고하기",
     "footerSupport": "개발 후원하기",
     "footerApiReference": "API 레퍼런스",
-    "footerBuyMonster": "Monster 한 캔 사 주기"
+    "footerBuyMonster": "Monster 한 캔 사 주기",
+    "footerContact": "연락처",
+    "footerMailSupport": "ABM 사용 도움",
+    "footerMailTranslate": "번역",
+    "footerMailPrivacy": "개인정보",
+    "footerMailAdmin": "그 밖의 문의",
+    "releasesNone": "아직 릴리스가 없어요.",
+    "releasesBeforeUpgrade": "업그레이드하기 전에"
   }
 }

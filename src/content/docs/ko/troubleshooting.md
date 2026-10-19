@@ -73,3 +73,7 @@ Content-Security-Policy 헤더는 HTTPS 표지 이미지만 허용해요. 브라
 ## Docker에서 메타데이터 소스나 인덱서에 연결이 안 돼요
 
 다른 것보다 먼저 DNS와 외부 연결 설정을 확인하세요. Docker에서 직접 연결은 컨테이너가 인터넷에 나갈 수 있을 때만 돼요.
+
+## 그래도 안 풀린다면
+
+[ABM Discord](https://discord.gg/qeJRrM6AZ)에서 물어보거나, [이슈를 열거나](https://github.com/sunbrolynk/AudioBook-Manager/issues), [support@audiobookmanager.com](mailto:support@audiobookmanager.com)으로 메일을 보내 주세요.

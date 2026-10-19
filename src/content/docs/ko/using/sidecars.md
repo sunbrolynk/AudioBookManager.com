@@ -1,21 +1,27 @@
 ---
 title: 사이드카 파일
-description: ABM이 책 옆에 쓰는 표지, OPF, 설명, 내레이터, cue 파일이에요.
+description: ABM이 책 옆에 쓰는 metadata.json, 표지, OPF, 설명, 내레이터 파일이에요.
 ---
 
-사이드카는 오디오 옆에 두는 작은 파일이에요. Audiobookshelf와 다른 플레이어들이 이걸 읽어요. ABM이 쓸 수 있는 파일은 이래요:
+사이드카는 오디오 옆에 두는 작은 파일이에요. Audiobookshelf와 다른 플레이어들이 이걸 읽어요. ABM이 쓰는 파일은 이래요:
 
-| 파일 | 내용 |
-|---|---|
-| `cover.jpg` | 책 표지 |
-| `.opf` | Audiobookshelf가 읽을 수 있는 OPF 형식의 메타데이터. 책의 첫 번째 오디오 파일 이름을 따르고(예: `Dune.opf`), 오디오가 없는 책이면 `title.opf`예요 |
-| `desc.txt` | 설명 |
-| `reader.txt` | 내레이터 |
-| `.cue` | Libex에서 받은 챕터(다음 릴리스에서 추가돼요) |
+| 파일 | 내용 | 스위치 |
+|---|---|---|
+| `metadata.json` | Audiobookshelf 자체 메타데이터 파일이에요. ABM 것이라고 표시하는 `abm` 블록이 더 들어 있어요. Audiobookshelf는 이 파일을 제일 먼저 읽어요 | 없음, 항상 써요 |
+| `cover.jpg` | 책 표지. 폴더에 이미 `cover.*`가 있으면 쓰지 않아요 | cover.jpg |
+| `.opf` | OPF 형식의 메타데이터. 책의 첫 번째 오디오 파일 이름을 따르고(예: `Dune.opf`), 오디오가 없는 책이면 `title.opf`예요 | title.opf |
+| `desc.txt` | HTML을 뺀 설명. 설명이 없으면 건너뛰어요 | desc.txt |
+| `reader.txt` | 내레이터. 내레이터가 없으면 건너뛰어요 | reader.txt |
+
+폴더 구조와 함께 이 파일들이 Audiobookshelf가 책 정보를 읽는 파일이에요. 그래서 Audiobookshelf도 ABM과 똑같은 책을 보게 돼요.
 
 ## 언제 쓰나요
 
-**Settings > Metadata**의 **Create on Book Add**, **Create on Import**, **Create on Refresh**로 시점을 정해요. 기본값으로는 가져올 때만 써요. **Overwrite Existing**은 꺼져 있어서 이미 있는 파일은 그대로 둬요. 편집 대화 상자에서 책 한 권, 또는 선택한 시리즈와 작가에 대해 직접 쓸 수도 있어요. [메타데이터 설정](/ko/settings/metadata/)을 보세요.
+`metadata.json`은 책을 추가하거나, 가져오거나, 새로 고칠 때마다 써요.
+
+나머지 네 개는 **Settings > Metadata > Files to Create**에 각자 스위치가 있고, 기본값은 모두 켜짐이에요. 해당하는 트리거도 켜져 있어야 써요: **Create on Book Add**(꺼짐), **Create on Import**(켜짐, 다운로드, Library Import, Audible 다운로드를 다 포함해요), **Create on Refresh**(꺼짐). **Overwrite Existing**은 꺼져 있어서 이미 있는 파일은 그대로 둬요. 책 폴더가 생기기 전에는 아무것도 쓰지 않아요.
+
+편집 대화 상자의 **Write to Directories**로도 이 네 개를 쓸 수 있어요. 책 한 권, 또는 선택한 시리즈와 작가에 대해 쓸 수 있어요. [메타데이터 설정](/ko/settings/metadata/)을 보세요.
 
 ## 표지는 특별해요
 

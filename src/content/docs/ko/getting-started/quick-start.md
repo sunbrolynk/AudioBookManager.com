@@ -26,15 +26,19 @@ description: 새로 설치한 상태에서 첫 모니터링 책까지 가는 길
 
 ## 5. 품질 프로필 정하기
 
-**Settings > Profiles**에는 ABM이 무엇을 grab할지, 무엇을 업그레이드로 칠지 정하는 품질 사다리가 있어요. 프로필 하나가 기본값이에요. 그걸로 시작하고 나중에 다듬으세요. [프로필](/ko/settings/profiles/)을 보세요.
+**Settings > Profiles**에는 ABM이 무엇을 grab할지, 무엇을 업그레이드로 칠지 정하는 품질 사다리가 있어요. 새로 설치하면 프로필이 하나도 없으니 하나 만드세요. 처음 만든 프로필이 기본값이 되고, 나중에 다듬으면 돼요. [프로필](/ko/settings/profiles/)을 보세요.
 
-## 6. 책 들여오기 또는 추가하기
+## 6. Audible 연결하기 (선택)
+
+Audible 책이 있다면 **Settings > Audible**에서 계정을 연결하세요. **Marketplace**를 고르고 **Connect Audible Account**를 누른 다음 **I Understand, Open Amazon Login**을 누르세요. 새 탭에서 Amazon에 로그인하세요. 로그인 후에 빈 페이지나 "Page not found" 페이지가 뜨는 건 정상이에요. 주소창의 주소 전체를 복사해서 **Redirect URL**에 붙여 넣고, 원하면 **Display Name**도 넣은 다음 **Complete Login**을 누르세요. 비밀번호는 저장되지 않고, 첫 라이브러리 동기화가 바로 시작돼요. [Audible](/ko/audible/)을 보세요.
+
+## 7. 책 들여오기 또는 추가하기
 
 - 이미 컬렉션이 있나요? [라이브러리 가져오기](/ko/library-import/)를 쓰세요.
 - 처음부터 시작하나요? **Library > Add New**에서 제목, 작가, 시리즈로 검색하세요. [새로 추가](/ko/using/add-new/)를 보세요.
 
 추가한 책은 파일을 가져올 때까지 Wanted 상태예요. Wanted 책은 **Wanted > Missing**에 나오고 자동으로 검색돼요.
 
-## 7. 돌아가는 걸 지켜보기
+## 8. 돌아가는 걸 지켜보기
 
 **Activity > Queue**는 지금 다운로드 중인 걸 보여 줘요. **Activity > History**는 grab하고 가져온 걸 보여 줘요. 뭔가 잘못되면 [문제 해결](/ko/troubleshooting/)과 [작업](/ko/system/tasks/) 페이지를 보세요.
