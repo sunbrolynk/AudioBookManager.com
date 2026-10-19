@@ -74,5 +74,9 @@
   "nb": {
     "label": "Norsk bokmål",
     "lang": "nb"
+  },
+  "fi": {
+    "label": "Suomi",
+    "lang": "fi"
   }
 }
