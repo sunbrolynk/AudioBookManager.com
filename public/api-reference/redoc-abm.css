@@ -14,3 +14,5 @@ body { margin: 0; padding: 0; }
 }
 
 .abm-failed { padding: 2rem; font-family: system-ui, sans-serif; }
+
+.abm-version a { color: #b07ce0; }

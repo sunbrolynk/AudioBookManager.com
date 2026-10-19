@@ -36,6 +36,10 @@
               line.className = 'abm-version';
               line.textContent = 'v' + spec.info.version;
               block.parentNode.parentNode.insertBefore(line, block.parentNode.nextSibling);
+              var other = document.createElement('div');
+              other.className = 'abm-version';
+              other.innerHTML = 'ABM\'s API \u00b7 <a href="https://libexdb.com/redoc" rel="noopener">Libex\'s API</a>';
+              line.parentNode.insertBefore(other, line.nextSibling);
             });
           })
           .catch(function () {
