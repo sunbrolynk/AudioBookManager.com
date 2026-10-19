@@ -45,6 +45,40 @@ def request_json(url, *, token=None, data=None):
         raise RuntimeError("API request failed or timed out") from None
 
 
+# English names for the Discord post. The branch name is the only thing taken from the PR, and only
+# a code listed here is posted, so nothing the PR contains is ever read or run.
+LANGUAGES = {
+    "cs": "Czech",
+    "da": "Danish",
+    "de": "German",
+    "en-au": "English (Australia)",
+    "en-ca": "English (Canada)",
+    "en-gb": "English (UK)",
+    "es": "Spanish",
+    "fi": "Finnish",
+    "fr": "French",
+    "it": "Italian",
+    "ja": "Japanese",
+    "ko": "Korean",
+    "nb": "Norwegian Bokmål",
+    "nl": "Dutch",
+    "pl": "Polish",
+    "pt-br": "Portuguese (Brazil)",
+    "sv": "Swedish",
+    "uk": "Ukrainian",
+    "zh-cn": "Chinese (Simplified)",
+    "zh-tw": "Chinese (Traditional, Taiwan)",
+}
+
+
+def language_for(branch):
+    """The (code, English name) a review branch is for, or None for any other branch."""
+    match = re.fullmatch(r"translation/([a-z]{2}(?:-[a-z]{2})?)", branch)
+    if not match or match.group(1) not in LANGUAGES:
+        return None
+    return match.group(1), LANGUAGES[match.group(1)]
+
+
 def main():
     event = json.loads(
         Path(os.environ["GITHUB_EVENT_PATH"]).read_text(encoding="utf-8")
@@ -62,45 +96,12 @@ def main():
         print("Not an eligible correction PR; nothing posted.")
         return
 
-    match = re.fullmatch(r"translation/([a-z]{2,3}(?:-[a-z0-9]+)*)", branch)
-    if not match or branch.startswith("translation/publish-"):
-        print("Not a language correction branch; nothing posted.")
+    language = language_for(branch)
+    if not language:
+        print("Not a language review branch; nothing posted.")
         return
 
-    code = match.group(1)
-    locales = json.loads(Path("src/locales.json").read_text(encoding="utf-8"))
-    if code not in locales:
-        raise RuntimeError("Locale is not published in the trusted base commit")
-
-    display_names = {
-        "en-gb": "English (UK)",
-        "uk": "Ukrainian",
-        "en-ca": "English (Canada)",
-        "fr": "French",
-        "de": "German",
-        "es": "Spanish",
-        "it": "Italian",
-        "pt-br": "Portuguese (Brazil)",
-        "ja": "Japanese",
-        "nl": "Dutch",
-        "pl": "Polish",
-        "en-au": "English (Australia)",
-        "en-in": "English (India)",
-        "fr-ca": "French (Canada)",
-        "es-mx": "Spanish (Mexico)",
-        "zh-cn": "Simplified Chinese",
-        "zh-tw": "Traditional Chinese",
-        "sv": "Swedish",
-        "cs": "Czech",
-        "da": "Danish",
-        "nb": "Norwegian Bokmål",
-        "ro": "Romanian",
-        "tr": "Turkish",
-        "ko": "Korean",
-    }
-    if code not in display_names:
-        raise RuntimeError("Locale needs an English Discord display name")
-    label = display_names[code]
+    code, label = language
     display_code = "UA" if code == "uk" else code.upper()
     number = int(pr["number"])
     pr_url = f"https://github.com/{repo}/pull/{number}"
@@ -148,21 +149,21 @@ def main():
         raise RuntimeError("Webhook response has no valid server ID")
 
     payload = {
-        "thread_name": f"{label} ({display_code}) — translation review #{number}"[:100],
+        "thread_name": f"{label} ({display_code}): translation review #{number}"[:100],
         "applied_tags": tags,
         "allowed_mentions": {"parse": []},
         "content": (
-            f"**{label} ({display_code}) — community translation review**\n\n"
-            "This locale's complete translation has been merged into the website's "
-            "main branch. Community corrections are welcome.\n\n"
+            f"**{label} ({display_code}): community translation review**\n\n"
+            "This language is live on the website. Corrections from native "
+            "speakers are welcome.\n\n"
             f"**Review PR:** {pr_url}\n\n"
-            "On the PR, include the page URL or file path, current wording, and "
-            "your suggested replacement. You can also attach corrected files "
-            "or a ZIP preserving filenames and folder structure.\n\n"
-            "Inline suggestions work on lines included in the PR diff. "
-            "For other text, use comments or attachments.\n\n"
-            "Release notes intentionally remain in English. "
-            "Please keep credentials and personal configuration out of submissions."
+            "Comment on the PR with the page link, the current wording and your "
+            "fix, or attach the corrected file. To edit it yourself, press the "
+            "pencil on the file in GitHub and open a pull request into "
+            f"`{branch}`. How it all works: "
+            f"https://github.com/{repo}/blob/main/TRANSLATING.md\n\n"
+            "Release notes stay in English. Keep credentials and anything from "
+            "your own setup out of what you post."
         ),
     }
 

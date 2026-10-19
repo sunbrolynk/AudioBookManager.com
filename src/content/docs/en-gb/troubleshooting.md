@@ -73,3 +73,7 @@ Add a remote path mapping, or make ABM and the client see the folder at the same
 ## Docker cannot reach the metadata source or indexers
 
 Check DNS and the outbound connection setting before anything else. In Docker, a direct connection only works if the container can reach the internet.
+
+## Still stuck
+
+Ask in the [ABM Discord](https://discord.gg/qeJRrM6AZ), [open an issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), or email [support@audiobookmanager.com](mailto:support@audiobookmanager.com).
