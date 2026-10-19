@@ -3,6 +3,8 @@ title: Choisir une source de métadonnées
 description: Intégrée, hébergée, ou ton propre serveur Libex.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Prévu pour la prochaine version]
 Le choix de la source n'est pas encore dans une version publiée. Les versions publiées utilisent l'instance publique de Libex sur libexdb.com et n'ont aucun réglage pour ça.
 :::
@@ -12,10 +14,10 @@ Dans la prochaine version, **Settings > Metadata > Source** a un réglage **Meta
 | Choix | Ce que ça veut dire |
 |---|---|
 | Built-in (par défaut) | Libex tourne à l'intérieur d'ABM. Il faut d'abord choisir une connexion sortante. |
-| Hosted (libexdb.com) | ABM interroge l'instance publique de Libex. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex sur GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM interroge l'instance publique de Libex. |
 | Self-hosted | ABM interroge un serveur Libex que tu lui indiques. Saisis sa **Server URL**, par exemple `http://192.168.1.20:8000`. |
 
-**Test** vérifie la source sélectionnée sans enregistrer. **Status** indique si elle est prête. Un choix que tu n'as pas encore enregistré affiche « Not in use yet - save to switch » jusqu'à ce que tu enregistres.
+**Test** vérifie la source sélectionnée sans enregistrer. **Status** indique si elle est prête. Quand tu choisis une autre source, **Status** affiche « Not in use yet - save to switch » jusqu'à ce que tu enregistres.
 
 ## Built-in et la connexion sortante
 
@@ -28,5 +30,5 @@ Avec ces deux-là, ABM interroge un serveur Libex et c'est le serveur qui parle 
 ## Lequel choisir
 
 - Tu veux que ça marche, tout simplement, et ça ne te gêne pas qu'Audible voie ton adresse : Built-in avec une connexion directe, ou Hosted.
-- Tu tiens à ne pas exposer ton IP à Audible : Built-in à travers un VPN ou un proxy, ou Hosted.
+- Tu tiens à ne pas exposer ton IP à Audible : Built-in à travers un proxy, le tunnel WireGuard intégré ou un conteneur ou service VPN à part. Ou Hosted, où c'est le serveur Libex qui parle à Audible à ta place.
 - Tu fais déjà tourner un serveur Libex : Self-hosted.

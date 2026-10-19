@@ -73,3 +73,7 @@ Ajoute une correspondance de chemin distant, ou fais en sorte qu'ABM et le clien
 ## Docker n'arrive pas à joindre la source de métadonnées ou les indexeurs
 
 Vérifie le DNS et le réglage de la connexion sortante avant toute chose. Sous Docker, une connexion directe ne fonctionne que si le conteneur peut accéder à Internet.
+
+## Toujours bloqué
+
+Pose ta question sur le [Discord d'ABM](https://discord.gg/qeJRrM6AZ), [ouvre une issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), ou écris à [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

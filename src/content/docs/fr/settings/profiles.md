@@ -22,6 +22,8 @@ Une nouvelle copie ne remplace ce que tu as que si le profil autorise les mises 
 
 Si tu connais Sonarr : c'est un profil de qualité où les qualités sont des formats audio et une organisation des fichiers, plutôt qu'une résolution. Les formats personnalisés n'existent pas. Les [profils de release](#profils-de-release) couvrent un terrain similaire.
 
+Il n'y a pas de paliers de débit ou de taille : la qualité, c'est uniquement le format et l'organisation des fichiers. Pour une sortie, ABM prend le format depuis l'indexeur ou le titre et devine l'organisation à partir du titre (un M4B sans numéros de partie ou de piste compte comme un seul fichier), puis vérifie de nouveau une fois les fichiers importés. La **Preferred Quality** des [réglages Audible](/fr/settings/audible/), c'est autre chose : la qualité dans laquelle arrivent les téléchargements Audible.
+
 ## Profils de délai
 
 Un profil de délai retient une sortie avant de la récupérer, pour laisser le temps à une meilleure sortie d'apparaître.

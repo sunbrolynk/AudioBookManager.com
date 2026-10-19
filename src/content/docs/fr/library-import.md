@@ -3,7 +3,7 @@ title: Import de bibliothèque
 description: Fais entrer une collection existante dans ABM avec l'Import Workbench.
 ---
 
-Library Import scanne un dossier de livres audio, fait correspondre chaque dossier à des métadonnées et ajoute les livres à ta bibliothèque. La page s'appelle **Match Audiobooks**.
+Library Import scanne un dossier de livres audio, fait correspondre chaque dossier à des métadonnées et ajoute les livres à ta bibliothèque. **Library > Library Import** ouvre « Import audiobooks you already have », où tu choisis un dossier à scanner. Une fois le scan lancé, ABM passe à la page de correspondance, intitulée **Match Audiobooks**, où tu vérifies les correspondances et ajoutes les livres.
 
 ## Le déroulement
 
@@ -41,7 +41,7 @@ Un livre en lien physique ne prend aucun espace disque en plus et l'original res
 
 ## Valeurs longues
 
-Un narrateur, un titre ou un chemin coupé par des points de suspension s'affiche en entier quand tu le touches ou que tu appuies sur Entrée ou Espace. Touche de nouveau pour le refermer.
+Un narrateur, un titre ou un chemin coupé par des points de suspension s'affiche en entier quand tu le touches ou que tu cliques dessus. Touche-le ou clique de nouveau pour le refermer. Avec une souris, le survoler affiche aussi la valeur entière. Au clavier, mets le focus dessus et appuie sur Entrée ou Espace.
 
 ## Autres réponses que l'import
 

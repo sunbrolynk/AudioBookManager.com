@@ -17,9 +17,11 @@ description: Amène une collection existante dans ABM sans risque.
 4. Sélectionne les lignes et ajoute-les. Ça reste deux clics si tu acceptes les valeurs par défaut.
 5. Surveille la tâche. Le résumé indique combien de fichiers ont été copiés au lieu d'être liés physiquement, et ce qui a échoué.
 
-## Si tu veux qu'ABM gère le dossier source
+## Si ta collection est déjà là où tu la veux
 
-Ajoute-le plutôt comme dossier racine et laisse ABM le scanner. Les fichiers restent en place et les livres prennent leur statut d'après ce qu'il y a sur le disque.
+Ajouter le dossier comme dossier racine n'ajoute aucun livre à lui seul. Les scans d'ABM ne vérifient que les livres qu'il connaît déjà, donc il ne va pas récupérer ce qu'il y a dedans. Les livres doivent quand même passer par Library Import : le compteur **Unmapped Folders** du dossier racine, dans **Settings > Media Management**, ouvre Library Import pour ce dossier.
+
+L'import range chaque livre dans la structure Auteur/Série/Livre d'ABM, sous le dossier racine par défaut. Choisis le lien physique pour laisser les originaux intacts sans prendre plus de place.
 
 ## Pièges à éviter
 

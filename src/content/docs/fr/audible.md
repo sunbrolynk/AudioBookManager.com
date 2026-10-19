@@ -3,7 +3,7 @@ title: Audible
 description: Connecte des comptes Audible, synchronise-les et fais un miroir de ta bibliothèque.
 ---
 
-ABM peut se connecter à tes comptes Audible, garder une copie de la bibliothèque de chaque compte et télécharger ce que tu possèdes.
+ABM se connecte à un ou plusieurs comptes Audible et garde une copie de la bibliothèque de chaque compte sur la page **Audible Library**. Tout ce que tu possèdes peut être téléchargé, déchiffré en M4B et importé comme n'importe quel autre livre. Avec le miroir activé, chaque synchronisation ajoute aussi dans ABM les livres qui te manquent et les télécharge.
 
 ## Comptes
 
@@ -28,7 +28,9 @@ Le miroir fait suivre ta bibliothèque Audible à ta bibliothèque ABM.
 - Il est activé par défaut.
 - Il ajoute tes achats et tes titres gratuits. Les podcasts sont laissés de côté.
 - Chaque synchronisation traite au maximum 25 titres.
-- Avant de tourner, il te demande de confirmer et affiche combien de titres il va ajouter.
+- L'activer te demande de confirmer et affiche combien de titres la prochaine synchronisation va ajouter et télécharger.
+- Les titres du Plus Catalog et les prêts sont laissés de côté, et rien n'est mis en file tant que le disque de la bibliothèque manque de place.
+- Un titre dont le téléchargement échoue sans arrêt attend de plus en plus longtemps entre deux essais : 1 heure, puis 6, puis 24.
 - Il télécharge aussi les titres que tu veux et qui n'ont pas encore de fichiers.
 - Les titres retirés d'Audible restent dans ABM.
 

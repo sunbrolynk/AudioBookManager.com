@@ -27,9 +27,9 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet et Blackhole.
 
 Readarr gérait les livres et les livres audio ensemble, et il a depuis été abandonné. ABM est fait uniquement pour les livres audio, sur le design inventé par les apps Servarr.
 
-## Comment je l'installe sur Unraid, Windows ou macOS ?
+## Je peux l'installer sans Docker ?
 
-Pas encore possible. Pour l'instant, Docker est la seule façon de l'installer. Voir [Installer ABM](/fr/installation/).
+Pas encore. Pour l'instant, Docker est la seule façon de l'installer. Des installations natives pour Linux, Windows et macOS, plus Kubernetes, Unraid et Proxmox, sont prévues. Voir [Autres façons d'installer](/fr/installation/#autres-façons-dinstaller).
 
 ## Combien ça coûte ?
 

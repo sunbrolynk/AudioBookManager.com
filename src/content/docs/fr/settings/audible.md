@@ -23,7 +23,7 @@ Pour connecter un compte, il faut un **Marketplace**, un **Display Name** et la 
 
 | Réglage | Par défaut | Effet |
 |---|---|---|
-| Auto Add to Library | activé | Les livres téléchargés sont ajoutés à la bibliothèque d'ABM |
+| Auto Add to Library | activé | Quand tu télécharges un titre Audible qui n'est pas encore dans ABM, ABM l'ajoute d'abord à la bibliothèque. Désactivé, ce téléchargement est refusé. Dans la prochaine version, ça devient [Mirror Audible library to ABM](/fr/audible/#faire-un-miroir-de-la-bibliothèque-audible-dans-abm) |
 | Concurrent Downloads | 2 | De 1 à 5. Plus haut, c'est plus rapide, mais ça peut toucher les limites de débit d'Audible. |
 | Preferred Quality | High Quality | High, Normal ou Low |
 | Delete Encrypted Files | activé | Supprime le fichier AAXC chiffré une fois déchiffré en M4B |

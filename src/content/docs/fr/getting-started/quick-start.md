@@ -26,15 +26,19 @@ Si le client tourne dans un autre conteneur, vérifie que lui et ABM voient le d
 
 ## 5. Définis un profil de qualité
 
-**Settings > Profiles** contient l'échelle de qualité qu'ABM utilise pour décider quoi récupérer et ce qui compte comme une mise à niveau. Un profil est celui par défaut. Commence avec celui-là et affine plus tard. Voir [Profils](/fr/settings/profiles/).
+**Settings > Profiles** contient l'échelle de qualité qu'ABM utilise pour décider quoi récupérer et ce qui compte comme une mise à niveau. Une installation toute neuve n'en a aucun, donc crée-en un. Le premier profil que tu crées devient celui par défaut, et tu pourras l'affiner plus tard. Voir [Profils](/fr/settings/profiles/).
 
-## 6. Fais entrer ou ajoute des livres
+## 6. Connecte Audible (facultatif)
+
+Si tu as des livres Audible, connecte ton compte dans **Settings > Audible**. Choisis ta **Marketplace**, appuie sur **Connect Audible Account**, puis sur **I Understand, Open Amazon Login**. Connecte-toi à Amazon dans le nouvel onglet. La page vide ou « Page not found » sur laquelle tu arrives ensuite, c'est normal. Copie l'adresse entière depuis la barre d'adresse dans **Redirect URL**, ajoute un **Display Name** si tu veux et appuie sur **Complete Login**. Ton mot de passe n'est jamais enregistré, et la première synchronisation de la bibliothèque démarre tout de suite. Voir [Audible](/fr/audible/).
+
+## 7. Fais entrer ou ajoute des livres
 
 - Tu as déjà une collection ? Utilise [Import de bibliothèque](/fr/library-import/).
 - Tu pars de zéro ? Utilise **Library > Add New** et cherche par titre, auteur ou série. Voir [Ajouter un livre](/fr/using/add-new/).
 
 Un livre que tu ajoutes est wanted jusqu'à ce qu'un fichier pour lui soit importé. Les livres wanted apparaissent dans **Wanted > Missing** et sont cherchés automatiquement.
 
-## 7. Regarde-le travailler
+## 8. Regarde-le travailler
 
 **Activity > Queue** montre ce qui est en train de se télécharger. **Activity > History** montre ce qui a été récupéré et importé. Quand quelque chose se passe mal, c'est dans [Dépannage](/fr/troubleshooting/) et sur la page [Tâches](/fr/system/tasks/) qu'il faut regarder.

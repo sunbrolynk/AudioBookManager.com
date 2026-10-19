@@ -1197,7 +1197,7 @@
     "getItEyebrow": "L'installer",
     "installH2": "Ça tourne avec un seul fichier.",
     "buildP": "<b>Compiler depuis les sources.</b> Dans un clone du dépôt, remplace <code>image:</code> par <code>build: .</code> et lance <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, un simple service Linux.</b> Pas encore. Pour l'instant, Docker est la seule façon de l'installer.",
+    "otherP": "<b>Pour l'instant, Docker est la seule façon de l'installer.</b> Des installations natives pour les configurations courantes sont prévues, pour qu'ABM puisse tourner là où tu héberges déjà tes services :",
     "note": "ABM est en alpha. Sauvegarde <code>/config</code> avant de mettre à jour, et jette d'abord un œil aux notes de mise à jour.",
     "fullGuide": "Guide d'installation complet →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Ouvrir une issue",
     "helpH": "Envie de donner un coup de main ?",
     "helpP": "ABM est le projet d'une seule personne. Ko-fi ou une Monster le font avancer.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Soutenir le développement",
+    "kofiBtn": "Soutenir le développement",
+    "monsterBtn": "Offre-moi une Monster",
     "finalH2": "Arrête de réparer<br />des dossiers.",
     "ctaInstall": "Installer ABM",
     "ctaDocs": "Lire la doc",
@@ -1370,6 +1370,33 @@
     "communityEyebrow": "Communauté",
     "communityH2": "Retrouve ta communauté.",
     "communityP": "Une question, besoin d'un coup de main pour ton installation, ou envie de parler livres audio ? Rejoins la communauté AudioBook Manager sur Discord pour l'entraide et les discussions.",
-    "communityBtn": "Rejoindre le Discord"
+    "communityBtn": "Rejoindre le Discord",
+    "planned": [
+      [
+        "Linux",
+        "un paquet natif et un service"
+      ],
+      [
+        "Windows",
+        "un installeur .exe"
+      ],
+      [
+        "macOS",
+        "une app native"
+      ],
+      [
+        "Kubernetes",
+        "un déploiement sur cluster"
+      ],
+      [
+        "Unraid",
+        "un modèle Community Apps"
+      ],
+      [
+        "Proxmox",
+        "un script d'installation LXC"
+      ]
+    ],
+    "coming": "Bientôt"
   }
 }
