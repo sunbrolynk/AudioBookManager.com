@@ -1,3 +1,18 @@
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/readme/banner-dark.svg">
+    <source media="(prefers-color-scheme: light)" srcset="docs/readme/banner-light.svg">
+    <img src="docs/readme/banner-dark.svg" alt="AudioBook Manager" width="560">
+  </picture>
+</p>
+
+<p align="center"><b>The website, docs and release notes for AudioBook Manager.</b></p>
+
+<p align="center">
+  <a href="https://github.com/sunbrolynk/audiobookmanager.com/actions/workflows/site-checks.yml"><img src="https://github.com/sunbrolynk/audiobookmanager.com/actions/workflows/site-checks.yml/badge.svg" alt="Site checks"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-8b45c6" alt="GPLv3 license"></a>
+</p>
+
 # audiobookmanager.com
 
 The source for [audiobookmanager.com](https://audiobookmanager.com): the website,
@@ -31,6 +46,18 @@ The dev server prints a local address. The other commands:
 | `npm test` | The regression tests (`node --test`) |
 | `node scripts/check-links.mjs` | Checks every internal link and anchor in `dist/` |
 | `node scripts/check-overflow.mjs` | Loads every built page at widths from 320 to 1920px and fails if one scrolls sideways. Needs `npx playwright install chromium` once |
+
+## The site
+
+<table>
+  <tr>
+    <td width="68%"><img src="docs/readme/website-home-desktop.png" alt="The landing page on a desktop"></td>
+    <td width="32%"><img src="docs/readme/website-home-phone.png" alt="The landing page on a phone"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/readme/website-docs.png" alt="A documentation page"></td>
+  </tr>
+</table>
 
 ## What's where
 

@@ -153,9 +153,10 @@ vulnerability reporting, Dependabot alerts and Dependabot security updates.
 
 `scripts/capture-screens.mjs [base URL]` refreshes `src/assets/screens/` from a
 running ABM. It borrows Playwright from ABM's frontend (`ABM_FRONTEND`, default
-`~/audiobook-manager/frontend`). Point it at an instance on a neutralised
-database: no real paths, hostnames, download clients, indexers or personal
-library. Look at every image before committing it. When ABM's README
+`~/audiobook-manager/frontend`). Point it at an instance running an invented
+demo library, never a real one: no real paths, hostnames, download clients,
+indexers, books or covers. The docs screenshots in `src/assets/docs/` come from
+the same demo library. Look at every image before committing it. When ABM's README
 screenshots change, refresh these in the same pass.
 
 ### Release notes

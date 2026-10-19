@@ -5,6 +5,8 @@ description: Defaults, codec options, chapters, metadata, recycling and ffmpeg.
 
 **Settings > Conversions** sets the defaults for [Conversions](/using/conversions/). Any job can override them.
 
+![Settings, Conversions: audio quality, chapter and metadata defaults](../../../assets/docs/settings-conversions.jpg)
+
 ## General
 
 | Setting | Default | Effect |

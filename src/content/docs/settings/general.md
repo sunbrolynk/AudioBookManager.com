@@ -5,6 +5,8 @@ description: Host, outbound connection, security, logging and backups.
 
 **Settings > General** has sections for Host, Proxy & VPN, Security, Logging and Backups. Security has [its own page](/settings/security/).
 
+![Settings, General: host, port and security](../../../assets/docs/settings-general.jpg)
+
 ## Host
 
 | Setting | Default | Effect |

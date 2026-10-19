@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Refreshes the app screenshots in src/assets/screens from a running ABM.
 // Usage: node scripts/capture-screens.mjs [base URL, default http://127.0.0.1:5181]
-// Point it at an instance on a neutralised database: the shots are public, so no real paths,
+// Point it at an instance running an invented demo library, never a real one: the shots are public, so no real paths,
 // hostnames, clients or indexers may show. Check every image before committing it.
 // Playwright is not a dependency of this site; it is loaded from ABM's own frontend
 // (set ABM_FRONTEND to that folder if it isn't ~/audiobook-manager/frontend).
@@ -16,17 +16,11 @@ const out = new URL('../src/assets/screens/', import.meta.url).pathname;
 
 // file -> [route, where the image is used]
 const desktop = {
-  'dashboard.jpg': ['/', 'Home: screenshots strip'],
-  'library.jpg': ['/library', 'Home: hero window, "Every book, at a glance", screenshots strip'],
-  'book.jpg': ['/library/book/939', 'Home: "The details are right", screenshots strip'],
-  'series.jpg': ['/library/series/355', 'Home: screenshots strip'],
-  'calendar.jpg': ['/calendar', 'Home: "Know what\'s coming", screenshots strip'],
-  'missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing", screenshots strip'],
-  'profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means", screenshots strip'],
-  'conversions.jpg': ['/library/conversions', 'Home: "Fix the format too", screenshots strip'],
-};
-const phone = {
-  'book-m.jpg': ['/library/book/939', 'Home: phone over the hero window'],
+  'demo-book.jpg': ['/library/book/3', 'Home: "The details are right"'],
+  'demo-calendar.jpg': ['/calendar', 'Home: "Know what\'s coming"'],
+  'demo-missing.jpg': ['/wanted/missing', 'Home: "A list of what\'s missing"'],
+  'demo-profiles.jpg': ['/settings/quality-profiles', 'Home: "You decide what better means"'],
+  'demo-conversions.jpg': ['/library/conversions', 'Home: "Fix the format too"'],
 };
 
 const shoot = async (browser, shots, viewport) => {
@@ -48,7 +42,6 @@ const shoot = async (browser, shots, viewport) => {
 const browser = await chromium.launch();
 try {
   await shoot(browser, desktop, { width: 1440, height: 900 });
-  await shoot(browser, phone, { width: 390, height: 844 });
 } finally {
   await browser.close();
 }
