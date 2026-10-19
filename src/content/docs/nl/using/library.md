@@ -7,7 +7,7 @@ Het menu **Library** heeft drie lijsten: **Books**, **Series** en **Authors**. M
 
 ## Boeken
 
-Elk boek is een rij, een poster of een regel in een tabel (de weergaveschakelaar zit in de werkbalk). Een boek heeft een status:
+Elk boek is een overzichtsrij, een poster of een regel in een tabel (de weergaveschakelaar zit in de werkbalk). Een boek heeft een status:
 
 - **Wanted**: gevolgd, nog geen bestanden. ABM zoekt ernaar.
 - **Downloaded**: de bestanden staan op schijf.
@@ -18,9 +18,13 @@ Open een boek voor de detailpagina: bestanden, metadata, geschiedenis, de kwalit
 
 Ken je Sonarr? Een boek is een aflevering, een serie is seizoen en show in één, en een auteur is een manier om die twee te groeperen. Het verschil is dat één boek bij meerdere series kan horen, en ABM gebruikt de primaire serie (die met de laagste positie) als het er een moet kiezen.
 
-## Series en auteurs
+## Series
 
-De lijsten Series en Authors tonen het aantal boeken dat je hebt, dat gewenst is en waarvan bestanden ontbreken. Open er een om de catalogus te zien, inclusief boeken die je niet hebt. Van daaruit kun je de ontbrekende boeken toevoegen. Zie [Series volgen](/nl/using/series-tracking/).
+**Library > Series** toont elke serie met het aantal boeken dat je hebt, dat gewenst is en waarvan bestanden ontbreken, als Overview of Posters. Een seriepagina toont de hele catalogus, ook boeken die je niet hebt. Filter op All, In Library of Not in Library. **Add Remaining** of **Select to Add** haalt de ontbrekende boeken binnen als gewenst, en **Refresh Series** haalt de catalogus opnieuw op. **Monitor New Books** (All of None) bepaalt of boeken die later uitkomen als gewenst worden toegevoegd. Zie [Series volgen](/nl/using/series-tracking/).
+
+## Auteurs
+
+**Library > Authors** toont de auteurs, als Overview of Posters. Een auteurspagina toont hun catalogus gegroepeerd per serie, met per serie het aantal gedownloade boeken en het totaal, plus hun kwaliteitsprofiel, genres en beoordeling. **Refresh Catalog** haalt hem opnieuw op en **Search Author** zoekt naar hun gewenste boeken. **Monitor New Books** werkt hetzelfde als bij een serie, en een auteur begint op None.
 
 Een serie of auteur verwijderen wordt geweigerd zolang er nog boeken van in de bibliotheek staan. Haal eerst de boeken weg.
 

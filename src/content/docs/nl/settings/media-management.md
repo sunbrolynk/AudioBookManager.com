@@ -7,7 +7,7 @@ description: Rootmappen, importeren, extra bestanden, prullenbak, scans, upgrade
 
 ## Rootmappen (Root Folders)
 
-Een rootmap is een map waarin ABM boeken beheert. Voeg er een toe met **Add Root Folder**, die een mapbrowser opent waarin je ook een pad kunt typen. ABM kan ook mappen onder een root tonen die nog nergens aan gekoppeld zijn, en die importeren. Bij het toevoegen van een root worden de vrije ruimte en de ondersteuning voor hardlinks gecontroleerd. Een root verwijderen verwijdert geen bestanden.
+Een rootmap is een map waarin ABM boeken beheert. Voeg er een toe met **Add Root Folder**, die een mapbrowser opent waarin je ook een pad kunt typen. ABM kan ook mappen onder een root tonen die nog nergens aan gekoppeld zijn, en die importeren. Bij het toevoegen van een root worden de vrije ruimte en de ondersteuning voor hardlinks gecontroleerd. Een root verwijderen vraagt wat je wilt: **Remove from ABM only** (de standaard) vergeet de boeken eronder en laat de bestanden staan, en **Delete the books and their files** verwijdert alles onder het pad definitief, zonder de prullenbak te gebruiken. Staan er boeken in de root, dan moet je typen om te bevestigen.
 
 De standaard rootmap is de map waar nieuwe boeken heen gaan, en de map die bepaalt of hardlinken wordt aangeboden bij Library Import.
 
@@ -27,10 +27,10 @@ De standaard rootmap is de map waar nieuwe boeken heen gaan, en de map die bepaa
 | Use Hardlinks instead of Copy | aan | Voor afgeronde downloads: hardlinken in plaats van kopiëren, zodat seeden de ruimte niet verdubbelt. Moet op hetzelfde volume. |
 | Library Import | Copy | De standaard voor [Bibliotheek importeren](/nl/library-import/): kopiëren, hardlinken of verplaatsen. Hardlinken is grijs tot de standaard root gecontroleerd is en het ondersteunt. |
 | Import Extra Files | aan | Hoofdschakelaar voor het meenemen van niet-audiobestanden. Geldt voor Library Import, Manual Import en afgeronde downloads |
-| Extra File Extensions (geavanceerd) | leeg | Extra extensies om te importeren, zoals `srt, lrc`. Geblokkeerde types worden geweigerd. |
+| Extra File Extensions (geavanceerd) | leeg | Meer bestandstypes om mee te nemen, onder hun eigen naam, bijvoorbeeld `srt, lrc`. Met of zonder punt, gescheiden door komma's of spaties. Geblokkeerde types, zoals uitvoerbare bestanden en half gedownloade bestanden, kun je niet opslaan. Uitgeschakeld zolang **Import Extra Files** uit staat |
 | Preferred Cover (geavanceerd) | Matched | De cover van de gematchte editie, of de beste afbeelding uit de map, als ze er allebei zijn |
 
-Extra bestanden hebben vijf schakelaars:
+**Import Extra Files** neemt de andere bestanden van een boek mee met de audio. Vijf schakelaars bepalen welke soorten meegaan, en een bestand dat past bij **Extra File Extensions** gaat ook mee als zijn soort uit staat:
 
 | Schakelaar | Standaard | Omvat |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlinken is niet hetzelfde als **Use Hardlinks instead of Copy**. Die is voor 
 | Recycling Bin Cleanup | 7 (dagen) | 0 zet automatisch opruimen uit |
 | Library Scan Interval | 0 (uit) | Aantal uur tussen automatische scans |
 | Watch for Changes | uit | Scant als bestanden worden toegevoegd, verwijderd of gewijzigd |
-| Cover Cache Workers | 4 | Hoeveel covers er tegelijk gedownload worden bij het cachen van artwork, van 1 tot 16. Zet hem lager als een cache-run fouten meldt |
+| Cover Cache Workers | 4 | Hoeveel covers er tegelijk gedownload worden bij het cachen van artwork, van 1 tot 16 |
 
 ## Kwaliteitsupgrades (Quality Upgrades)
 

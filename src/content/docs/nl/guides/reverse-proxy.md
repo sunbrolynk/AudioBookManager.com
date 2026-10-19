@@ -3,6 +3,10 @@ title: Reverse proxy
 description: ABM achter nginx, Traefik of Caddy zetten zonder dat inloggen stukgaat.
 ---
 
+:::caution[Niet aangeraden]
+ABM op het internet zetten, via een reverse proxy of een doorgestuurde poort, raad ik af, net als de Servarr-apps. Wil je er van buitenaf bij, gebruik dan liever een VPN zoals WireGuard of Tailscale. ABM is gebouwd om veilig achter een proxy te draaien, maar zodra het publiek bereikbaar is, is er geen garantie op veiligheid en ligt het risico bij jou. Doe je het toch, zet dan **Authentication Required** op **Enabled** en houd ABM up-to-date.
+:::
+
 Drie instellingen doen ertoe. Zet je die goed, dan werken inloggen, de websocket en opslaan allemaal.
 
 ## 1. Vertel ABM wie de proxy is

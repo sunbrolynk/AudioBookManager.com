@@ -27,9 +27,9 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet en Blackhole.
 
 Readarr deed boeken en luisterboeken samen, en is inmiddels met pensioen. ABM is alleen voor luisterboeken, gebouwd op het ontwerp waar de Servarr-apps mee begonnen zijn.
 
-## Hoe installeer ik het op Unraid, Windows of macOS?
+## Kan ik het zonder Docker installeren?
 
-Nog niet. Docker is voorlopig de enige manier. Zie [ABM installeren](/nl/installation/).
+Nog niet. Docker is voorlopig de enige manier. Native installaties voor Linux, Windows en macOS, plus Kubernetes, Unraid en Proxmox, staan op de planning. Zie [Andere manieren om te installeren](/nl/installation/#andere-manieren-om-te-installeren).
 
 ## Wat kost het?
 

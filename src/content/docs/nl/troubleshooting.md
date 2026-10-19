@@ -73,3 +73,7 @@ Voeg een remote path mapping toe, of zorg dat ABM en de client de map op hetzelf
 ## Docker kan de metadatabron of indexers niet bereiken
 
 Controleer eerst DNS en de instelling voor de uitgaande verbinding. In Docker werkt een directe verbinding alleen als de container bij het internet kan.
+
+## Kom je er nog steeds niet uit?
+
+Vraag het in de [ABM Discord](https://discord.gg/qeJRrM6AZ), [open een issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), of mail naar [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

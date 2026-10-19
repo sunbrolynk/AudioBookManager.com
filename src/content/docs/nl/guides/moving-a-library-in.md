@@ -17,9 +17,11 @@ description: Breng een bestaande collectie veilig in ABM.
 4. Selecteer de rijen en voeg ze toe. Neem je de standaard over, dan blijft het bij twee klikken.
 5. Houd de taak in de gaten. De samenvatting meldt hoeveel bestanden er gekopieerd zijn in plaats van gehardlinkt, en wat er misging.
 
-## Als je wilt dat ABM de bronmap beheert
+## Als je collectie al staat waar je hem wilt hebben
 
-Voeg hem dan liever toe als rootmap en laat ABM hem scannen. Zo blijven de bestanden staan waar ze staan en krijgen boeken hun status op basis van wat er op schijf staat.
+Een map toevoegen als rootmap voegt zelf nog geen boeken toe. De scans van ABM controleren alleen boeken die het al kent, dus wat er in die map staat pakt het niet op. De boeken moeten nog steeds via Library Import binnenkomen: het aantal **Unmapped Folders** van de rootmap onder **Settings > Media Management** opent Library Import voor die rootmap.
+
+Bij het importeren zet ABM elk boek in zijn eigen indeling Auteur/Serie/Boek onder de standaard rootmap. Kies hardlinken als je de originelen ongemoeid wilt laten zonder extra ruimte te gebruiken.
 
 ## Valkuilen
 

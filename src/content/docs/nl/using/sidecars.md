@@ -1,21 +1,27 @@
 ---
 title: Sidecarbestanden
-description: De cover-, OPF-, beschrijvings-, verteller- en cue-bestanden die ABM naast een boek schrijft.
+description: De metadata.json-, cover-, OPF-, beschrijvings- en vertellerbestanden die ABM naast een boek schrijft.
 ---
 
-Een sidecar is een klein bestand naast de audio. Audiobookshelf en andere spelers lezen ze. ABM kan deze schrijven:
+Een sidecar is een klein bestand naast de audio. Audiobookshelf en andere spelers lezen ze. ABM schrijft deze:
 
-| Bestand | Inhoud |
-|---|---|
-| `cover.jpg` | De cover van het boek |
-| `.opf` | Metadata in OPF-vorm, leesbaar voor Audiobookshelf. Vernoemd naar het eerste audiobestand van het boek (bijvoorbeeld `Dune.opf`), of `title.opf` als het boek geen audio heeft |
-| `desc.txt` | De beschrijving |
-| `reader.txt` | De verteller |
-| `.cue` | Hoofdstukken van Libex (komt in de volgende release) |
+| Bestand | Inhoud | Schakelaar |
+|---|---|---|
+| `metadata.json` | Het eigen metadatabestand van Audiobookshelf, plus een `abm`-blok dat aangeeft dat het van ABM is. Audiobookshelf leest het vóór al het andere | Geen, wordt altijd geschreven |
+| `cover.jpg` | De cover van het boek. Wordt niet geschreven als de map al een `cover.*` heeft | cover.jpg |
+| `.opf` | Metadata in OPF-vorm. Vernoemd naar het eerste audiobestand van het boek (bijvoorbeeld `Dune.opf`), of `title.opf` als het boek geen audio heeft | title.opf |
+| `desc.txt` | De beschrijving, zonder HTML. Wordt overgeslagen als er geen is | desc.txt |
+| `reader.txt` | De vertellers. Wordt overgeslagen als er geen zijn | reader.txt |
+
+Samen met de mapindeling zijn dit de bestanden waar Audiobookshelf de gegevens van een boek uit haalt, zodat het hetzelfde boek ziet als ABM.
 
 ## Wanneer ze geschreven worden
 
-Onder **Settings > Metadata** bepalen **Create on Book Add**, **Create on Import** en **Create on Refresh** wanneer. Standaard worden ze alleen bij importeren geschreven. **Overwrite Existing** staat uit, dus een bestand dat er al staat, blijft staan. Je kunt ze ook schrijven vanuit het bewerkdialoogvenster, voor één boek of een selectie series en auteurs. Zie [Metadata-instellingen](/nl/settings/metadata/).
+`metadata.json` wordt elke keer geschreven als een boek wordt toegevoegd, geïmporteerd of ververst.
+
+De andere vier hebben elk een schakelaar onder **Settings > Metadata > Files to Create**, standaard allemaal aan. Ze worden alleen geschreven als de bijbehorende trigger ook aan staat: **Create on Book Add** (uit), **Create on Import** (aan, en dat geldt voor downloads, Library Import en Audible-downloads) en **Create on Refresh** (uit). **Overwrite Existing** staat uit, dus een bestand dat er al staat, blijft staan. Er wordt niks geschreven zolang de map van het boek nog niet bestaat.
+
+**Write to Directories** in het bewerkdialoogvenster schrijft de vier ook, voor één boek of een selectie series en auteurs. Zie [Metadata-instellingen](/nl/settings/metadata/).
 
 ## De cover is een speciaal geval
 

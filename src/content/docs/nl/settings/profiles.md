@@ -22,6 +22,8 @@ Een nieuwe kopie vervangt wat je hebt alleen als het profiel upgrades toestaat, 
 
 Ken je Sonarr? Dit is een kwaliteitsprofiel waarbij kwaliteiten audioformaten en bestandsindeling zijn in plaats van resolutie. Custom formats bestaan niet. [Releaseprofielen](#releaseprofielen) dekken vergelijkbaar terrein.
 
+Er zijn geen niveaus op bitrate of grootte: kwaliteit betekent alleen formaat en bestandsindeling. Bij een release haalt ABM het formaat uit de indexer of de titel en schat het de indeling in op basis van de titel (een M4B zonder deel- of tracknummers telt als één bestand), en daarna controleert het dat opnieuw zodra de bestanden geïmporteerd zijn. De **Preferred Quality** bij [Audible-instellingen](/nl/settings/audible/) is iets anders: dat is de kwaliteit waarin Audible-downloads binnenkomen.
+
 ## Delayprofielen
 
 Een delayprofiel houdt een release even tegen voor het binnenhalen, zodat een betere release de tijd krijgt om op te duiken.

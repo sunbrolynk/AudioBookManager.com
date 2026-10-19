@@ -218,6 +218,13 @@
     "footerReportIssue": "Meld een probleem met de app",
     "footerSupport": "Steun de ontwikkeling",
     "footerApiReference": "API-referentie",
-    "footerBuyMonster": "Trakteer me op een Monster"
+    "footerBuyMonster": "Trakteer me op een Monster",
+    "footerContact": "Contact",
+    "footerMailSupport": "Hulp met ABM",
+    "footerMailTranslate": "Vertalingen",
+    "footerMailPrivacy": "Privacy",
+    "footerMailAdmin": "Al het andere",
+    "releasesNone": "Nog geen releases.",
+    "releasesBeforeUpgrade": "Voordat je upgradet"
   }
 }

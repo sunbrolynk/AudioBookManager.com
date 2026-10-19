@@ -3,7 +3,7 @@ title: Bibliotheek importeren
 description: Breng een bestaande collectie in ABM met de Import Workbench.
 ---
 
-Library Import scant een map met luisterboeken, koppelt elke map aan metadata en voegt de boeken toe aan je bibliotheek. De pagina heet **Match Audiobooks**.
+Library Import scant een map met luisterboeken, koppelt elke map aan metadata en voegt de boeken toe aan je bibliotheek. **Library > Library Import** opent "Import audiobooks you already have", waar je een map kiest om te scannen. Zodra de scan begint, gaat ABM naar de matchpagina met de kop **Match Audiobooks**, waar je de matches controleert en de boeken toevoegt.
 
 ## Zo werkt het
 
@@ -41,7 +41,7 @@ Een gehardlinkt boek kost geen extra schijfruimte en het origineel blijft waar h
 
 ## Lange waarden
 
-Een verteller, titel of pad dat is afgekapt met een beletselteken zie je in zijn geheel als je erop tikt, of op Enter of de spatiebalk drukt. Tik nog een keer om het weer te sluiten.
+Een verteller, titel of pad dat is afgekapt met een beletselteken zie je in zijn geheel als je erop tikt of klikt. Tik of klik nog een keer om het weer te sluiten. Met een muis zie je de hele waarde ook als je eroverheen beweegt. Met het toetsenbord geef je het focus en druk je op Enter of de spatiebalk.
 
 ## Andere antwoorden dan importeren
 

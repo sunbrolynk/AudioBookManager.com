@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Downloaden",
     "installH2": "Draaiend met één bestand.",
     "buildP": "<b>Zelf bouwen vanaf de broncode.</b> Vervang in een clone van de repo <code>image:</code> door <code>build: .</code> en draai <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, een gewone Linux-service.</b> Nog niet. Docker is voorlopig de enige manier.",
+    "otherP": "<b>Docker is voorlopig de enige manier.</b> Native installaties voor de gangbare setups staan op de planning, zodat ABM kan draaien waar je nu al selfhost:",
     "note": "ABM is alpha. Maak een back-up van <code>/config</code> voordat je upgradet, en lees eerst even de updatenotities.",
     "fullGuide": "Volledige installatiehandleiding →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Issue openen",
     "helpH": "Wil je een handje helpen?",
     "helpP": "ABM is het project van één persoon. Ko-fi of een Monster houdt het draaiende.",
-    "kofiBtn": "Trakteer me op een Monster",
-    "monsterBtn": "Steun de ontwikkeling",
+    "kofiBtn": "Steun de ontwikkeling",
+    "monsterBtn": "Trakteer me op een Monster",
     "finalH2": "Stop met mappen<br />fixen.",
     "ctaInstall": "ABM installeren",
     "ctaDocs": "Lees de docs",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Community",
     "communityH2": "Vind je mensen.",
     "communityP": "Heb je een vraag, kun je hulp gebruiken bij je setup, of wil je gewoon over luisterboeken praten? Kom naar de AudioBook Manager-community op Discord voor support en discussie.",
-    "communityBtn": "Kom erbij op Discord",
+    "communityBtn": "Kom naar de Discord",
+    "planned": [
+      [
+        "Linux",
+        "een native pakket en service"
+      ],
+      [
+        "Windows",
+        "een .exe-installer"
+      ],
+      [
+        "macOS",
+        "een native app"
+      ],
+      [
+        "Kubernetes",
+        "een clusterdeployment"
+      ],
+      [
+        "Unraid",
+        "een Community Apps-template"
+      ],
+      [
+        "Proxmox",
+        "een LXC-installatiescript"
+      ]
+    ],
+    "coming": "Binnenkort",
     "translatorNote": "Deze pagina is machinaal vertaald. Is Nederlands je moedertaal en wil je helpen hem beter te maken? Mail me op {mail}."
   }
 }

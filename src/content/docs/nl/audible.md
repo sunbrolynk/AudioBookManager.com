@@ -3,7 +3,7 @@ title: Audible
 description: Koppel Audible-accounts, synchroniseer en spiegel je bibliotheek.
 ---
 
-ABM kan je Audible-accounts koppelen, van elk account een kopie van de bibliotheek bijhouden en downloaden wat je bezit.
+ABM koppelt een of meer Audible-accounts en houdt van elk account een kopie van de bibliotheek bij op de pagina **Audible Library**. Alles wat je bezit kun je downloaden, ontsleutelen naar M4B en importeren zoals elk ander boek. Staat spiegelen aan, dan voegt elke sync ook de boeken die je in ABM nog mist toe en downloadt ze.
 
 ## Accounts
 
@@ -28,7 +28,9 @@ Met spiegelen volgt je ABM-bibliotheek je Audible-bibliotheek.
 - Het staat standaard aan.
 - Het voegt je aankopen en je gratis titels toe. Podcasts worden overgeslagen.
 - Elke sync verwerkt maximaal 25 titels.
-- Voordat het draait, vraagt het om bevestiging en laat het zien hoeveel titels het gaat toevoegen.
+- Als je het aanzet, vraagt het om bevestiging en laat het zien hoeveel titels de volgende sync gaat toevoegen en downloaden.
+- Titels uit de Plus Catalog en leentitels worden overgeslagen, en er komt niks in de wachtrij zolang de schijf van de bibliotheek bijna vol is.
+- Een titel waarvan de download steeds mislukt, wacht steeds langer tussen pogingen: 1 uur, dan 6, dan 24.
 - Het downloadt ook gewenste titels waar nog geen bestanden van zijn.
 - Titels die uit Audible verdwijnen, blijven in ABM staan.
 
