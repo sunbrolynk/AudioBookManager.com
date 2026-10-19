@@ -218,6 +218,13 @@
     "footerReportIssue": "Informar de un problema de la app",
     "footerSupport": "Apoya el desarrollo",
     "footerApiReference": "Referencia de la API",
-    "footerBuyMonster": "Invítame a un Monster"
+    "footerBuyMonster": "Invítame a un Monster",
+    "footerContact": "Contacto",
+    "footerMailSupport": "Ayuda con ABM",
+    "footerMailTranslate": "Traducciones",
+    "footerMailPrivacy": "Privacidad",
+    "footerMailAdmin": "Cualquier otra cosa",
+    "releasesNone": "Todavía no hay versiones.",
+    "releasesBeforeUpgrade": "Antes de actualizar"
   }
 }

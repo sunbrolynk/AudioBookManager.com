@@ -1,21 +1,27 @@
 ---
 title: Archivos auxiliares
-description: Los archivos de portada, OPF, descripción, narrador y cue que ABM escribe junto a un libro.
+description: Los archivos metadata.json, de portada, OPF, descripción y narrador que ABM escribe junto a un libro.
 ---
 
-Un archivo auxiliar (sidecar) es un archivo pequeño junto al audio. Audiobookshelf y otros reproductores los leen. ABM puede escribir estos:
+Un archivo auxiliar (sidecar) es un archivo pequeño junto al audio. Audiobookshelf y otros reproductores los leen. ABM escribe estos:
 
-| Archivo | Contenido |
-|---|---|
-| `cover.jpg` | La portada del libro |
-| `.opf` | Metadatos en formato OPF, que Audiobookshelf puede leer. Toma el nombre del primer archivo de audio del libro (por ejemplo `Dune.opf`), o `title.opf` cuando el libro no tiene audio |
-| `desc.txt` | La descripción |
-| `reader.txt` | El narrador |
-| `.cue` | Los capítulos de Libex (llega en la próxima versión) |
+| Archivo | Contenido | Interruptor |
+|---|---|---|
+| `metadata.json` | El archivo de metadatos propio de Audiobookshelf, más un bloque `abm` que lo marca como de ABM. Audiobookshelf lo lee antes que nada | Ninguno, se escribe siempre |
+| `cover.jpg` | La portada del libro. No se escribe si la carpeta ya tiene un `cover.*` | cover.jpg |
+| `.opf` | Metadatos en formato OPF. Toma el nombre del primer archivo de audio del libro (por ejemplo `Dune.opf`), o `title.opf` cuando el libro no tiene audio | title.opf |
+| `desc.txt` | La descripción, sin HTML. Se omite si no hay | desc.txt |
+| `reader.txt` | Los narradores. Se omite si no hay | reader.txt |
+
+Junto con la estructura de carpetas, estos son los archivos que Audiobookshelf lee para los detalles de un libro, así que ve el mismo libro que ABM.
 
 ## Cuándo se escriben
 
-En **Settings > Metadata**, **Create on Book Add**, **Create on Import** y **Create on Refresh** eligen cuándo. Por defecto, solo los escribe la importación. **Overwrite Existing** está desactivado, así que un archivo que ya existe se queda. También puedes escribirlos desde el diálogo de edición, para un libro o para una selección de series y autores. Consulta [Ajustes de metadatos](/es/settings/metadata/).
+`metadata.json` se escribe cada vez que un libro se añade, se importa o se actualiza.
+
+Los otros cuatro tienen cada uno un interruptor en **Settings > Metadata > Files to Create**, todos activados por defecto. Solo se escriben cuando también está activado el disparador correspondiente: **Create on Book Add** (desactivado), **Create on Import** (activado, que cubre las descargas, Library Import y las descargas de Audible) y **Create on Refresh** (desactivado). **Overwrite Existing** está desactivado, así que un archivo que ya existe se queda. No se escribe nada hasta que existe la carpeta del libro.
+
+**Write to Directories**, en el diálogo de edición, también escribe los cuatro, para un libro o para una selección de series y autores. Consulta [Ajustes de metadatos](/es/settings/metadata/).
 
 ## La portada es especial
 

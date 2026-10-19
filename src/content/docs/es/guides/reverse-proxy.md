@@ -3,6 +3,10 @@ title: Proxy inverso
 description: Poner ABM detrás de nginx, Traefik o Caddy sin romper el inicio de sesión.
 ---
 
+:::caution[No recomendado]
+No se recomienda poner ABM en internet, ni con un proxy inverso ni con un puerto redirigido, el mismo consejo que dan las aplicaciones de Servarr. Para entrar desde fuera, usa mejor una VPN como WireGuard o Tailscale. ABM está hecho para ser seguro detrás de un proxy, pero no hay ninguna garantía de seguridad una vez que es público, y el riesgo es tuyo. Si aun así lo haces, pon **Authentication Required** en **Enabled** y mantén ABM actualizado.
+:::
+
 Importan tres ajustes. Si los configuras bien, el inicio de sesión, el websocket y los guardados funcionan.
 
 ## 1. Dile a ABM quién es el proxy

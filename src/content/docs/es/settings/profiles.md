@@ -22,6 +22,8 @@ Una copia nueva sustituye a la que tienes solo si el perfil permite mejoras, el 
 
 Si conoces Sonarr: es un perfil de calidad en el que las calidades son formatos de audio y la disposición de los archivos en lugar de la resolución. Los formatos personalizados no existen. Los [perfiles de lanzamiento](#perfiles-de-lanzamiento) cubren algo parecido.
 
+No hay niveles por bitrate ni por tamaño: la calidad es solo el formato y la disposición de los archivos. Para un lanzamiento, ABM toma el formato del indexador o del título y deduce la disposición por el título (un M4B sin números de parte ni de pista cuenta como un solo archivo), y luego lo vuelve a comprobar cuando los archivos ya están importados. El **Preferred Quality** de los [ajustes de Audible](/es/settings/audible/) es otra cosa: la calidad con la que llegan las descargas de Audible.
+
 ## Perfiles de retraso
 
 Un perfil de retraso retiene un lanzamiento antes de descargarlo, para dar tiempo a que aparezca uno mejor.

@@ -3,7 +3,7 @@ title: Audible
 description: Conecta cuentas de Audible, sincronízalas y replica tu biblioteca.
 ---
 
-ABM puede conectarse a tus cuentas de Audible, guardar una copia de la biblioteca de cada cuenta y descargar lo que tienes comprado.
+ABM se conecta a una o varias cuentas de Audible y guarda una copia de la biblioteca de cada cuenta en la página **Audible Library**. Todo lo que tienes se puede descargar, descifrar a M4B e importar como cualquier otro libro. Con la réplica activada, cada sincronización también añade a ABM los libros que te faltan y los descarga.
 
 ## Cuentas
 
@@ -28,7 +28,9 @@ La réplica hace que tu biblioteca de ABM siga a tu biblioteca de Audible.
 - Viene activada por defecto.
 - Añade tus compras y tus títulos gratuitos. Los pódcasts se quedan fuera.
 - Cada sincronización procesa como máximo 25 títulos.
-- Antes de ejecutarse, te pide confirmación y te dice cuántos títulos va a añadir.
+- Al activarla te pide confirmación y te dice cuántos títulos va a añadir y descargar la próxima sincronización.
+- Los títulos de Plus Catalog y los préstamos se quedan fuera, y no se pone nada en cola mientras al disco de la biblioteca le quede poco espacio.
+- Un título cuya descarga sigue fallando espera cada vez más entre intentos: 1 hora, luego 6 y luego 24.
 - También descarga los títulos que quieres y que todavía no tienen archivos.
 - Los títulos que se quitan de Audible se quedan en ABM.
 

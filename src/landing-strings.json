@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Consíguelo",
     "installH2": "Funcionando con un solo archivo.",
     "buildP": "<b>Compilar desde el código fuente.</b> Desde un clon del repositorio, cambia <code>image:</code> por <code>build: .</code> y ejecuta <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, un servicio de Linux normal.</b> Todavía no. Por ahora la única forma es Docker.",
+    "otherP": "<b>Por ahora la única forma es Docker.</b> Hay planes para instalaciones nativas en los entornos más comunes, para que ABM funcione donde ya tengas tus servicios autoalojados:",
     "note": "ABM está en fase alfa. Haz una copia de seguridad de <code>/config</code> antes de actualizar, y échale un vistazo a las notas de la versión primero.",
     "fullGuide": "Guía de instalación completa →",
     "faqEyebrow": "Preguntas frecuentes",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Abrir una incidencia",
     "helpH": "¿Quieres echar una mano?",
     "helpP": "ABM es el proyecto de una sola persona. Un Ko-fi o un Monster lo mantienen en marcha.",
-    "kofiBtn": "Invítame a un Monster",
-    "monsterBtn": "Apoya el desarrollo",
+    "kofiBtn": "Apoya el desarrollo",
+    "monsterBtn": "Invítame a un Monster",
     "finalH2": "Deja de arreglar<br />carpetas.",
     "ctaInstall": "Instalar ABM",
     "ctaDocs": "Leer la documentación",
@@ -1369,7 +1369,34 @@
     "communityEyebrow": "Comunidad",
     "communityH2": "Encuentra a tu gente.",
     "communityP": "¿Tienes una pregunta, necesitas ayuda con tu instalación o quieres hablar de audiolibros? Únete a la comunidad de AudioBook Manager en Discord para pedir ayuda y charlar.",
-    "communityBtn": "Únete en Discord",
+    "communityBtn": "Únete al Discord",
+    "planned": [
+      [
+        "Linux",
+        "un paquete y un servicio nativos"
+      ],
+      [
+        "Windows",
+        "un instalador .exe"
+      ],
+      [
+        "macOS",
+        "una aplicación nativa"
+      ],
+      [
+        "Kubernetes",
+        "un despliegue en clúster"
+      ],
+      [
+        "Unraid",
+        "una plantilla de Community Apps"
+      ],
+      [
+        "Proxmox",
+        "un script de instalación LXC"
+      ]
+    ],
+    "coming": "Próximamente",
     "translatorNote": "Esta página está traducida automáticamente. Si el español es tu lengua materna y quieres ayudar a mejorarla, escríbeme a {mail}."
   }
 }

@@ -26,15 +26,19 @@ Si el cliente va en otro contenedor, comprueba que él y ABM ven la carpeta de d
 
 ## 5. Define un perfil de calidad
 
-**Settings > Profiles** contiene la escala de calidades que ABM usa para decidir qué descargar y qué cuenta como mejora. Un perfil es el predeterminado. Empieza con ese y ajústalo más adelante. Consulta [Perfiles](/es/settings/profiles/).
+**Settings > Profiles** contiene la escala de calidades que ABM usa para decidir qué descargar y qué cuenta como mejora. Una instalación nueva no trae ninguno, así que crea uno. El primer perfil que crees pasa a ser el predeterminado, y puedes ajustarlo más adelante. Consulta [Perfiles](/es/settings/profiles/).
 
-## 6. Trae o añade libros
+## 6. Conecta Audible (opcional)
+
+Si tienes libros de Audible, conecta tu cuenta en **Settings > Audible**. Elige tu **Marketplace**, pulsa **Connect Audible Account** y luego **I Understand, Open Amazon Login**. Inicia sesión en Amazon en la pestaña nueva. Es normal que acabes en una página en blanco o de "Page not found". Copia la dirección completa de la barra de direcciones en **Redirect URL**, añade un **Display Name** si quieres y pulsa **Complete Login**. Tu contraseña nunca se guarda, y la primera sincronización de la biblioteca empieza enseguida. Consulta [Audible](/es/audible/).
+
+## 7. Trae o añade libros
 
 - ¿Ya tienes una colección? Usa [Library Import](/es/library-import/).
 - ¿Empiezas de cero? Usa **Library > Add New** y busca por título, autor o serie. Consulta [Añadir libros](/es/using/add-new/).
 
 Un libro que añades queda como buscado (wanted) hasta que se importa un archivo suyo. Los libros buscados aparecen en **Wanted > Missing** y se buscan automáticamente.
 
-## 7. Míralo funcionar
+## 8. Míralo funcionar
 
 **Activity > Queue** muestra lo que se está descargando. **Activity > History** muestra lo que se descargó y se importó. Cuando algo sale mal, [Solución de problemas](/es/troubleshooting/) y la página [Tareas](/es/system/tasks/) son los sitios donde mirar.

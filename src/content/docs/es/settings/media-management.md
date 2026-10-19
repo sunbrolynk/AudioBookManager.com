@@ -7,7 +7,7 @@ description: Carpetas raíz, importación, archivos extra, reciclaje, escaneos, 
 
 ## Carpetas raíz (Root Folders)
 
-Una carpeta raíz es un directorio en el que ABM gestiona libros. Añade una con **Add Root Folder**, que abre un explorador de carpetas donde también puedes escribir la ruta. ABM también puede mostrar las carpetas sin asignar dentro de una raíz e importarlas. Al añadir una raíz se comprueban su espacio libre y si admite enlaces duros. Quitar una raíz no borra archivos.
+Una carpeta raíz es un directorio en el que ABM gestiona libros. Añade una con **Add Root Folder**, que abre un explorador de carpetas donde también puedes escribir la ruta. ABM también puede mostrar las carpetas sin asignar dentro de una raíz e importarlas. Al añadir una raíz se comprueban su espacio libre y si admite enlaces duros. Al quitar una raíz, ABM te pregunta qué hacer: **Remove from ABM only** (la opción por defecto) olvida los libros que hay dentro y deja los archivos, y **Delete the books and their files** borra para siempre todo lo que hay bajo la ruta sin pasar por la papelera de reciclaje. Si la raíz tiene libros, tienes que escribir algo para confirmarlo.
 
 La carpeta raíz por defecto es a la que van los libros nuevos y la que decide si Library Import ofrece el enlace duro.
 
@@ -27,10 +27,10 @@ La carpeta raíz por defecto es a la que van los libros nuevos y la que decide s
 | Use Hardlinks instead of Copy | activado | Para las descargas completadas: enlace duro en lugar de copia, para que sembrar no duplique el espacio. Necesita el mismo volumen. |
 | Library Import | Copy | El valor por defecto de [Library Import](/es/library-import/): copiar, enlace duro o mover. El enlace duro aparece en gris hasta que la raíz por defecto se haya comprobado y lo admita. |
 | Import Extra Files | activado | Interruptor general para traer también los archivos que no son audio. Se aplica a Library Import, Manual Import y las descargas completadas |
-| Extra File Extensions (avanzado) | vacío | Extensiones adicionales que importar, como `srt, lrc`. Los tipos bloqueados se rechazan. |
+| Extra File Extensions (avanzado) | vacío | Más tipos de archivo que traer, que conservan su propio nombre, por ejemplo `srt, lrc`. Con o sin punto, separados por comas o espacios. Los tipos bloqueados, como los ejecutables y las descargas parciales, no se pueden guardar. Desactivado mientras **Import Extra Files** está desactivado |
 | Preferred Cover (avanzado) | Matched | La portada de la edición emparejada, o la mejor imagen de la carpeta, cuando existen las dos |
 
-Los archivos extra tienen cinco interruptores:
+**Import Extra Files** trae los demás archivos de un libro junto con su audio. Cinco interruptores eligen qué tipos vienen, y un archivo que coincide con **Extra File Extensions** viene igualmente aunque su tipo esté desactivado:
 
 | Interruptor | Por defecto | Qué incluye |
 |---|---|---|
@@ -55,7 +55,7 @@ El enlace duro de aquí no es lo mismo que **Use Hardlinks instead of Copy**. Es
 | Recycling Bin Cleanup | 7 (días) | 0 desactiva la limpieza automática |
 | Library Scan Interval | 0 (desactivado) | Horas entre escaneos automáticos |
 | Watch for Changes | desactivado | Escanea cuando se añaden, quitan o cambian archivos |
-| Cover Cache Workers | 4 | Cuántas portadas se descargan a la vez al guardar las ilustraciones en caché, de 1 a 16. Bájalo si una pasada de caché da fallos |
+| Cover Cache Workers | 4 | Cuántas portadas se descargan a la vez al guardar las ilustraciones en caché, de 1 a 16 |
 
 ## Mejoras de calidad (Quality Upgrades)
 

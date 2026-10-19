@@ -17,9 +17,11 @@ description: Mete una colección que ya tienes en ABM sin riesgos.
 4. Selecciona las filas y añádelas. Si aceptas los valores por defecto, siguen siendo dos clics.
 5. Sigue la tarea. El resumen dice cuántos archivos se copiaron en lugar de enlazarse y qué falló.
 
-## Si quieres que ABM gestione la carpeta de origen
+## Si tu colección ya está donde la quieres
 
-Añádela como carpeta raíz y deja que ABM la escanee. Así los archivos se quedan donde están y los libros toman su estado de lo que hay en el disco.
+Añadir la carpeta como carpeta raíz no añade ningún libro por sí solo. Los escaneos de ABM solo revisan los libros que ya conoce, así que no va a recoger lo que haya dentro. Los libros tienen que entrar igualmente por Library Import: el contador **Unmapped Folders** de esa carpeta raíz en **Settings > Media Management** abre Library Import para ella.
+
+Al importar, cada libro se coloca con la estructura Author/Series/Book propia de ABM dentro de la carpeta raíz por defecto. Elige enlace duro para dejar los originales intactos sin ocupar más espacio.
 
 ## Detalles a tener en cuenta
 

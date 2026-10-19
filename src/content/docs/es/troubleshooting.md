@@ -73,3 +73,7 @@ Añade un mapeo de rutas remotas, o haz que ABM y el cliente vean la carpeta en 
 ## Docker no llega a la fuente de metadatos ni a los indexadores
 
 Antes que nada, revisa el DNS y el ajuste de conexión de salida. En Docker, una conexión directa solo funciona si el contenedor puede llegar a internet.
+
+## Si sigues atascado
+
+Pregunta en el [Discord de ABM](https://discord.gg/qeJRrM6AZ), [abre una incidencia](https://github.com/sunbrolynk/AudioBook-Manager/issues) o escribe a [support@audiobookmanager.com](mailto:support@audiobookmanager.com).
