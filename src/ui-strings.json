@@ -33,7 +33,9 @@
     "footerMailSupport": "Help with ABM",
     "footerMailTranslate": "Translations",
     "footerMailPrivacy": "Privacy",
-    "footerMailAdmin": "Anything else"
+    "footerMailAdmin": "Anything else",
+    "releasesNone": "No releases yet.",
+    "releasesBeforeUpgrade": "Before you upgrade"
   },
   "en-gb": {
     "features": "Features",
@@ -69,7 +71,9 @@
     "footerMailSupport": "Help with ABM",
     "footerMailTranslate": "Translations",
     "footerMailPrivacy": "Privacy",
-    "footerMailAdmin": "Anything else"
+    "footerMailAdmin": "Anything else",
+    "releasesNone": "No releases yet.",
+    "releasesBeforeUpgrade": "Before you upgrade"
   },
   "uk": {
     "features": "Можливості",
@@ -105,7 +109,9 @@
     "footerMailSupport": "Допомога з ABM",
     "footerMailTranslate": "Переклади",
     "footerMailPrivacy": "Конфіденційність",
-    "footerMailAdmin": "Усе інше"
+    "footerMailAdmin": "Усе інше",
+    "releasesNone": "Релізів ще немає.",
+    "releasesBeforeUpgrade": "Перед оновленням"
   },
   "en-ca": {
     "features": "Features",
@@ -141,7 +147,9 @@
     "footerMailSupport": "Help with ABM",
     "footerMailTranslate": "Translations",
     "footerMailPrivacy": "Privacy",
-    "footerMailAdmin": "Anything else"
+    "footerMailAdmin": "Anything else",
+    "releasesNone": "No releases yet.",
+    "releasesBeforeUpgrade": "Before you upgrade"
   },
   "en-au": {
     "features": "Features",
@@ -177,6 +185,8 @@
     "footerMailSupport": "Help with ABM",
     "footerMailTranslate": "Translations",
     "footerMailPrivacy": "Privacy",
-    "footerMailAdmin": "Anything else"
+    "footerMailAdmin": "Anything else",
+    "releasesNone": "No releases yet.",
+    "releasesBeforeUpgrade": "Before you upgrade"
   }
 }
