@@ -116,7 +116,7 @@
   "fi": {
     "label": "Suomi",
     "lang": "fi",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 50
   }
 }
