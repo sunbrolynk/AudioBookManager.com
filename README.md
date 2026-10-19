@@ -49,9 +49,15 @@ The dev server prints a local address. The other commands:
 
 ## The site
 
-<p align="center">
-  <img src="docs/readme/website-docs.png" alt="A documentation page on audiobookmanager.com" width="880">
-</p>
+<table>
+  <tr>
+    <td width="68%"><img src="docs/readme/website-home-desktop.png" alt="The landing page on a desktop"></td>
+    <td width="32%"><img src="docs/readme/website-home-phone.png" alt="The landing page on a phone"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/readme/website-docs.png" alt="A documentation page"></td>
+  </tr>
+</table>
 
 ## What's where
 
