@@ -1,35 +1,9 @@
 # Contributing
 
-## Translation corrections
+## Translations
 
-Languages are published once every page and UI string has been translated.
-Complete AI translations qualify; human review is not required for publication.
-Incomplete languages remain in private preparation.
-
-After publication, language-specific correction PRs collect community feedback.
-Follow the current PR link for your language from Discord. See
-[the translation workflow](translations/README.md) for details.
-
-You can contribute without cloning or forking the repository:
-
-- Comment on the language PR with the page, original text, and correction.
-- Use the PR's Files changed tab to suggest replacements for lines in its diff.
-  For unchanged files, use comments or attachments.
-- Attach corrected files, or a ZIP containing only the files you changed,
-  to a PR comment. Keep the original filenames and folder structure.
-
-Attachments do not automatically change the repository. A maintainer reviews
-and applies accepted corrections to the language branch.
-
-Preserve placeholders such as `{mail}`, links, frontmatter keys, code examples,
-and formatting syntax unless your correction specifically concerns them.
-Do not include credentials, personal configuration, or unrelated files.
-
-For larger contributions, you may fork the repository and open a PR targeting
-the relevant language branch. Include only changes for that language.
-
-After a language PR is merged, further corrections need a new PR.
-Discord links will be updated for subsequent review rounds.
+Everything about translating the site, from how a language goes live to how to
+send a fix, is in [TRANSLATING.md](TRANSLATING.md).
 
 ## Website changes
 

@@ -61,18 +61,10 @@ secret-scan test skips there with that reason rather than failing.
 
 ## Translations
 
-The new repository currently contains the English foundation.
-
-A language is published once every documentation page and UI string has been
-translated. Complete AI translations qualify; human review is not required
-before publication. Incomplete languages remain in private preparation.
-
-After publication, a separate language-specific correction PR provides a place
-for community comments, suggested edits on changed lines, and corrected-file
-attachments. Maintainers review and merge corrections in batches.
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) and
-[the translation workflow](translations/README.md) for details.
+A language goes live only once every page and string is translated. Each one
+then has a review PR, a GitHub issue and a Discord thread where corrections
+collect. See [TRANSLATING.md](TRANSLATING.md) for the whole flow and how to send
+a fix.
 
 ## API reference
 
