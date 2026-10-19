@@ -17,7 +17,7 @@ description: みんなが最初に聞く質問への短い答え。
 
 ## 自宅のネットワークの外からアクセスできますか？
 
-できます（0.17.0 以降）。デフォルトでは、ローカルネットワークの外からのアクセスはサインインが必要です。**Authentication Required** を **Enabled** にすると、自分の LAN も含めて全員がサインインすることになります。nginx、Traefik、Caddy の後ろに置くなら、`TRUSTED_PROXIES` にプロキシのアドレスを設定してください。保存された認証情報は暗号化されます。[環境変数](/ja/configuration/#リバースプロキシ)を見てください。
+できます（0.17.0 以降）。ただ、Servarr 系アプリと同じく、ABM をインターネットに公開するのはおすすめしません。WireGuard や Tailscale などの VPN を使うほうが安全です。デフォルトでは、ローカルネットワークの外からのアクセスはサインインが必要です。**Authentication Required** を **Enabled** にすると、自分の LAN も含めて全員がサインインすることになります。nginx、Traefik、Caddy の後ろに置くなら、`TRUSTED_PROXIES` にプロキシのアドレスを設定してください。保存された認証情報は暗号化されます。[リバースプロキシのガイド](/ja/guides/reverse-proxy/)と[環境変数](/ja/configuration/#リバースプロキシ)を見てください。
 
 ## どのダウンロードクライアントが使えますか？
 

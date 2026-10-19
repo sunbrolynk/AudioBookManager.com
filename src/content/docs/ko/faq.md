@@ -17,7 +17,7 @@ Audible 데이터를 위한 오픈 메타데이터 서비스인 [Libex](https://
 
 ## 외부 네트워크에서도 접속할 수 있나요?
 
-네, 0.17.0 이상이면 돼요. 기본값으로는 로컬 네트워크 바깥에서 들어오는 접속만 로그인해야 하고, **Authentication Required**를 **Enabled**로 바꾸면 내 LAN까지 포함해 모두가 로그인해야 해요. nginx, Traefik, Caddy 뒤에 둔다면 `TRUSTED_PROXIES`에 프록시 주소를 넣으세요. 저장된 자격 증명은 암호화돼요. [환경 변수](/ko/configuration/#리버스-프록시)를 보세요.
+네, 0.17.0 이상이면 돼요. 다만 Servarr 앱들과 마찬가지로 ABM을 인터넷에 그대로 공개하는 건 추천하지 않아요. WireGuard나 Tailscale 같은 VPN으로 들어오는 게 더 안전해요. 기본값으로는 로컬 네트워크 바깥에서 들어오는 접속만 로그인해야 하고, **Authentication Required**를 **Enabled**로 바꾸면 내 LAN까지 포함해 모두가 로그인해야 해요. nginx, Traefik, Caddy 뒤에 둔다면 `TRUSTED_PROXIES`에 프록시 주소를 넣으세요. 저장된 자격 증명은 암호화돼요. [리버스 프록시 가이드](/ko/guides/reverse-proxy/)와 [환경 변수](/ko/configuration/#리버스-프록시)를 보세요.
 
 ## 어떤 다운로드 클라이언트를 쓸 수 있나요?
 

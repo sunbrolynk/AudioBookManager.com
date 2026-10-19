@@ -17,7 +17,7 @@ Nee. ABM bewaart alles in één SQLite-bestand in `/config`. Er hoeft verder nik
 
 ## Kan ik er van buiten mijn netwerk bij?
 
-Ja, vanaf 0.17.0. Standaard moet alles van buiten je lokale netwerk inloggen, en zet je **Authentication Required** op **Enabled**, dan moet iedereen inloggen, ook op je eigen LAN. Draait het achter nginx, Traefik of Caddy, zet dan `TRUSTED_PROXIES` op het adres van de proxy. Opgeslagen inloggegevens worden versleuteld. Zie [Configuratie](/nl/configuration/#reverse-proxy).
+Ja, vanaf 0.17.0, maar ik raad je af om ABM op internet te zetten, hetzelfde advies dat de Servarr-apps geven. Een VPN zoals WireGuard of Tailscale is de veiligere manier. Standaard moet alles van buiten je lokale netwerk inloggen, en zet je **Authentication Required** op **Enabled**, dan moet iedereen inloggen, ook op je eigen LAN. Draait het achter nginx, Traefik of Caddy, zet dan `TRUSTED_PROXIES` op het adres van de proxy. Opgeslagen inloggegevens worden versleuteld. Zie de [reverse-proxyhandleiding](/nl/guides/reverse-proxy/) en [Configuratie](/nl/configuration/#reverse-proxy).
 
 ## Welke downloadclients werken?
 

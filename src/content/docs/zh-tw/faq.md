@@ -17,7 +17,7 @@ description: 大家最先會問的問題，簡短回答。
 
 ## 我可以從外面的網路連進來嗎？
 
-可以，0.17.0 以後的版本都行。預設情況下，從你區域網路以外連進來的都要登入；把 **Authentication Required** 設成 **Enabled** 的話，所有人都要登入，連你自己的區域網路也一樣。如果放在 nginx、Traefik 或 Caddy 後面，把 `TRUSTED_PROXIES` 設成代理的位址。已儲存的憑證都有加密。請看〈[設定](/zh-tw/configuration/#反向代理)〉。
+可以，0.17.0 以後的版本都行，不過我不建議把 ABM 直接放到網際網路上，Servarr 那幾個 App 也是這樣建議的。用 WireGuard 或 Tailscale 這類 VPN 連進來比較安全。預設情況下，從你區域網路以外連進來的都要登入；把 **Authentication Required** 設成 **Enabled** 的話，所有人都要登入，連你自己的區域網路也一樣。如果放在 nginx、Traefik 或 Caddy 後面，把 `TRUSTED_PROXIES` 設成代理的位址。已儲存的憑證都有加密。請看〈[反向代理指南](/zh-tw/guides/reverse-proxy/)〉和〈[設定](/zh-tw/configuration/#反向代理)〉。
 
 ## 支援哪些下載用戶端？
 

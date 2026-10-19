@@ -17,7 +17,7 @@ description: 大家最先会问的问题，简短回答。
 
 ## 能从外网访问吗？
 
-可以，0.17.0 及以上版本都行。默认情况下，来自本地网络以外的访问都要登录；把 **Authentication Required** 设为 **Enabled** 后，所有人都要登录，包括你自己局域网里的设备。放在 nginx、Traefik 或 Caddy 后面时，把 `TRUSTED_PROXIES` 设为代理的地址。已存储的凭据都是加密的。见 [配置](/zh-cn/configuration/#反向代理)。
+可以，0.17.0 及以上版本都行，不过我不建议把 ABM 直接暴露到公网上，Servarr 那几个应用也是这么建议的。用 WireGuard 或 Tailscale 这类 VPN 访问更安全。默认情况下，来自本地网络以外的访问都要登录；把 **Authentication Required** 设为 **Enabled** 后，所有人都要登录，包括你自己局域网里的设备。放在 nginx、Traefik 或 Caddy 后面时，把 `TRUSTED_PROXIES` 设为代理的地址。已存储的凭据都是加密的。见 [反向代理指南](/zh-cn/guides/reverse-proxy/) 和 [配置](/zh-cn/configuration/#反向代理)。
 
 ## 支持哪些下载客户端？
 

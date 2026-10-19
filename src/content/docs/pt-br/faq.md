@@ -17,7 +17,7 @@ Não. O ABM guarda tudo em um único arquivo SQLite em `/config`. Não tem mais 
 
 ## Dá para acessar de fora da minha rede?
 
-Sim, a partir da 0.17.0. Por padrão, tudo o que vem de fora da sua rede local precisa fazer login, e colocar **Authentication Required** em **Enabled** obriga todo mundo a fazer login, inclusive a sua própria LAN. Atrás do nginx, Traefik ou Caddy, defina `TRUSTED_PROXIES` com o endereço do proxy. As credenciais guardadas ficam criptografadas. Veja [Configuração](/pt-br/configuration/#proxy-reverso).
+Sim, a partir da 0.17.0, mas não recomendo colocar o ABM na internet, o mesmo conselho que os apps Servarr dão. Uma VPN como WireGuard ou Tailscale é o jeito mais seguro de acessar. Por padrão, tudo o que vem de fora da sua rede local precisa fazer login, e colocar **Authentication Required** em **Enabled** obriga todo mundo a fazer login, inclusive a sua própria LAN. Atrás do nginx, Traefik ou Caddy, defina `TRUSTED_PROXIES` com o endereço do proxy. As credenciais guardadas ficam criptografadas. Veja o [guia de proxy reverso](/pt-br/guides/reverse-proxy/) e [Configuração](/pt-br/configuration/#proxy-reverso).
 
 ## Quais clientes de download funcionam?
 

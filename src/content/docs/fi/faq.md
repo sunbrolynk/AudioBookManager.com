@@ -17,7 +17,7 @@ Et tarvitse. ABM pitää kaiken yhdessä SQLite-tiedostossa kansiossa `/config`.
 
 ## Pääsenkö siihen käsiksi oman verkkoni ulkopuolelta?
 
-Pääset, versiosta 0.17.0 alkaen. Oletuksena kaikki lähiverkkosi ulkopuolelta tuleva joutuu kirjautumaan, ja kun asetat **Authentication Required** -arvoksi **Enabled**, kaikkien on kirjauduttava, myös omassa lähiverkossasi. Jos käytössä on nginx, Traefik tai Caddy, aseta `TRUSTED_PROXIES` välityspalvelimen osoitteeksi. Tallennetut tunnukset on salattu. Katso [Ympäristömuuttujat](/fi/configuration/#käänteinen-välityspalvelin).
+Pääset, versiosta 0.17.0 alkaen, mutta en suosittele ABM:n laittamista suoraan internetiin, ja samaa neuvovat Servarr-sovellukset. Turvallisempi tapa on VPN, kuten WireGuard tai Tailscale. Oletuksena kaikki lähiverkkosi ulkopuolelta tuleva joutuu kirjautumaan, ja kun asetat **Authentication Required** -arvoksi **Enabled**, kaikkien on kirjauduttava, myös omassa lähiverkossasi. Jos käytössä on nginx, Traefik tai Caddy, aseta `TRUSTED_PROXIES` välityspalvelimen osoitteeksi. Tallennetut tunnukset on salattu. Katso [käänteisen välityspalvelimen opas](/fi/guides/reverse-proxy/) ja [Ympäristömuuttujat](/fi/configuration/#käänteinen-välityspalvelin).
 
 ## Mitkä latausasiakkaat toimivat?
 

@@ -17,7 +17,7 @@ Ne. ABM má všechno v jednom souboru SQLite v `/config`. Nic dalšího spoušt�
 
 ## Dostanu se k němu i zvenku?
 
-Ano, od verze 0.17.0. Ve výchozím stavu se musí přihlásit všechno, co přichází zvenčí tvé lokální sítě, a když nastavíš **Authentication Required** na **Enabled**, přihlašuje se každý, včetně tvé vlastní LAN. Za nginx, Traefikem nebo Caddy nastav `TRUSTED_PROXIES` na adresu proxy. Uložené přihlašovací údaje jsou šifrované. Viz [Konfigurace](/cs/configuration/#reverzní-proxy).
+Ano, od verze 0.17.0, ale vystavovat ABM do internetu nedoporučuju, stejně jako aplikace Servarr. Bezpečnější je chodit přes VPN, třeba WireGuard nebo Tailscale. Ve výchozím stavu se musí přihlásit všechno, co přichází zvenčí tvé lokální sítě, a když nastavíš **Authentication Required** na **Enabled**, přihlašuje se každý, včetně tvé vlastní LAN. Za nginx, Traefikem nebo Caddy nastav `TRUSTED_PROXIES` na adresu proxy. Uložené přihlašovací údaje jsou šifrované. Viz [návod k reverzní proxy](/cs/guides/reverse-proxy/) a [Konfigurace](/cs/configuration/#reverzní-proxy).
 
 ## Které klienty pro stahování to umí?
 

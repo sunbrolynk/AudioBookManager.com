@@ -17,7 +17,7 @@ Nej. ABM gemmer alt i én SQLite-fil i `/config`. Der er ikke andet, der skal k�
 
 ## Kan jeg nå den udefra?
 
-Ja, fra 0.17.0 og frem. Som standard skal alt, der kommer udefra dit lokale netværk, logge ind, og sætter du **Authentication Required** til **Enabled**, skal alle logge ind, også fra dit eget LAN. Bag nginx, Traefik eller Caddy skal du sætte `TRUSTED_PROXIES` til proxyens adresse. Gemte loginoplysninger er krypterede. Se [Konfiguration](/da/configuration/#reverse-proxy).
+Ja, fra 0.17.0 og frem, men jeg fraråder at lægge ABM ud på internettet, det samme råd som Servarr-apperne giver. En VPN som WireGuard eller Tailscale er den sikre vej ind. Som standard skal alt, der kommer udefra dit lokale netværk, logge ind, og sætter du **Authentication Required** til **Enabled**, skal alle logge ind, også fra dit eget LAN. Bag nginx, Traefik eller Caddy skal du sætte `TRUSTED_PROXIES` til proxyens adresse. Gemte loginoplysninger er krypterede. Se [vejledningen om reverse proxy](/da/guides/reverse-proxy/) og [Konfiguration](/da/configuration/#reverse-proxy).
 
 ## Hvilke downloadklienter virker?
 
