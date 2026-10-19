@@ -35,7 +35,7 @@ clone. It refuses to overwrite a different existing hook or a custom
   live language is complete, against exactly what's being committed.
 - **pre-push** needs a clean tree and the pushed commit checked out, then runs
   the full-history secret scan, `npm ci --ignore-scripts`,
-  `npm audit --audit-level=moderate`, `npm test`, `npm run build`, the link
+  `npm audit --audit-level=moderate`, `npm test`, `npm run typecheck`, `npm run build`, the link
   check and the overflow check. Any failure stops the push.
 
 The hooks are a convenience, not a security boundary. They can be skipped and

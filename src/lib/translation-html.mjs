@@ -1,6 +1,7 @@
 // A deliberately restricted formatting grammar, not a general HTML sanitizer.
 // Only attribute-free b, em, code, and br tags are accepted.
 // Literal less-than signs in prose must be written as &lt;.
+/** @param {unknown} value */
 export function translationHtml(value) {
   if (typeof value !== 'string') {
     throw new TypeError('Formatted translation must be a string');

@@ -44,6 +44,7 @@ The dev server prints a local address. The other commands:
 | `npm run build` | Checks the languages and the API reference, builds into `dist/`, fills the CSP hashes in `dist/_headers`, then fails if any page loads something that policy blocks |
 | `npm run preview` | Serves the built `dist/` |
 | `npm test` | The regression tests (`node --test`) |
+| `npm run typecheck` | Generates Astro's content types and type-checks `src/` and `astro.config.mjs` with `tsc` |
 | `node scripts/check-links.mjs` | Checks every internal link and anchor in `dist/` |
 | `node scripts/check-overflow.mjs` | Loads every built page at widths from 320 to 1920px and fails if one scrolls sideways. Needs `npx playwright install chromium` once |
 

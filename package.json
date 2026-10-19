@@ -7,6 +7,7 @@
     "dev": "astro dev",
     "build": "node scripts/check-locales.mjs && node scripts/check-api-reference.mjs && astro build && node scripts/csp.mjs && node scripts/check-csp.mjs",
     "test": "node --test",
+    "typecheck": "astro sync && tsc --noEmit",
     "preview": "astro preview",
     "capture-screens": "node scripts/capture-screens.mjs"
   },
