@@ -13,8 +13,6 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-8b45c6" alt="GPLv3 license"></a>
 </p>
 
-# audiobookmanager.com
-
 The source for [audiobookmanager.com](https://audiobookmanager.com): the website,
 documentation and release notes for [AudioBook Manager](https://github.com/sunbrolynk/AudioBook-Manager)
 (ABM), my self-hosted audiobook manager in the style of Sonarr and Radarr.
