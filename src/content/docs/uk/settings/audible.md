@@ -23,7 +23,7 @@ description: Облікові записи, розклад синхроніза�
 
 | Налаштування | Типово | Дія |
 |---|---|---|
-| Auto Add to Library | on | Завантажені книги додаються до бібліотеки ABM |
+| Auto Add to Library | on | Коли ти завантажуєш назву з Audible, якої ще немає в ABM, ABM спершу додає її до бібліотеки. Якщо вимкнено, таке завантаження відхиляється. У наступному релізі це стане [Mirror Audible library to ABM](/uk/audible/#mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | Від 1 до 5. Більше значення пришвидшує завантаження, але може упертися в ліміти запитів Audible. |
 | Preferred Quality | High Quality | High, Normal або Low |
 | Delete Encrypted Files | on | Видаляти зашифрований файл AAXC після розшифрування в M4B |

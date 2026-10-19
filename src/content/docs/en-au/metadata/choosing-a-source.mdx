@@ -3,6 +3,8 @@ title: Choosing a metadata source
 description: Built-in, hosted, or your own Libex server.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Coming in the next release]
 The source choice is not in a released version yet. Released versions use the public Libex instance at libexdb.com and have no setting for this.
 :::
@@ -12,10 +14,10 @@ In the next release, **Settings > Metadata > Source** has a **Metadata Source** 
 | Choice | What it means |
 |---|---|
 | Built-in (default) | Libex runs inside ABM. It needs an outbound connection chosen first. |
-| Hosted (libexdb.com) | ABM asks the public Libex instance. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex on GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM asks the public Libex instance. |
 | Self-hosted | ABM asks a Libex server you point it at. Enter its **Server URL**, for example `http://192.168.1.20:8000`. |
 
-**Test** checks the selected source without saving. **Status** says whether it is ready. A choice you haven't saved shows "Not in use yet - save to switch" until you save.
+**Test** checks the selected source without saving. **Status** says whether it is ready. When you pick a different source, **Status** shows "Not in use yet - save to switch" until you save.
 
 ## Built-in and the outbound connection
 
@@ -28,5 +30,5 @@ With these two, ABM asks a Libex server and the server talks to Audible. A self-
 ## Which to pick
 
 - Want it to just work and do not mind Audible seeing your address: Built-in with a direct connection, or Hosted.
-- Care about not exposing your IP to Audible: Built-in through a VPN or proxy, or Hosted.
+- Care about not exposing your IP to Audible: Built-in through a proxy, the built-in WireGuard tunnel or a separate VPN container or service. Or Hosted, where the Libex server talks to Audible instead of you.
 - Already run a Libex server: Self-hosted.

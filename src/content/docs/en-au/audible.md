@@ -3,7 +3,7 @@ title: Audible
 description: Connect Audible accounts, sync, and mirror your library.
 ---
 
-ABM can connect to your Audible accounts, keep a copy of each account's library, and download what you own.
+ABM connects to one or more Audible accounts and keeps a copy of each account's library on the **Audible Library** page. Anything you own can be downloaded, decrypted to M4B and imported like any other book. With mirroring on, each sync also adds the books you're missing to ABM and downloads them.
 
 ## Accounts
 
@@ -28,7 +28,9 @@ Mirror makes your ABM library follow your Audible library.
 - It is on by default.
 - It adds your purchases and your free titles. Podcasts are left out.
 - Each sync handles at most 25 titles.
-- Before it runs, it asks you to confirm and shows how many titles it will add.
+- Turning it on asks you to confirm and shows how many titles the next sync will add and download.
+- Plus Catalog titles and loans are left out, and nothing is queued while the library's disk is low on space.
+- A title whose download keeps failing waits longer between tries: 1 hour, then 6, then 24.
 - It also downloads titles you want that have no files yet.
 - Titles removed from Audible stay in ABM.
 
