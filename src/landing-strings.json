@@ -183,7 +183,7 @@
       ],
       [
         "Can I reach it from outside my network?",
-        "Yes, on 0.17.0 or later. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
+        "Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
       ],
       [
         "What happened to Readarr?",
@@ -416,7 +416,7 @@
       ],
       [
         "Can I reach it from outside my network?",
-        "Yes, on 0.17.0 or later. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
+        "Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
       ],
       [
         "What happened to Readarr?",
@@ -649,7 +649,7 @@
       ],
       [
         "Чи можна зайти ззовні моєї мережі?",
-        "Так, починаючи з версії 0.17.0. За замовчуванням усі, хто поза твоєю локальною мережею, мусять увійти, а якщо встановити для Authentication Required значення Enabled, входити доведеться всім, зокрема й у твоїй LAN. За nginx, Traefik чи Caddy задай <code>TRUSTED_PROXIES</code> з адресою проксі. Збережені облікові дані зашифровано."
+        "Так, починаючи з версії 0.17.0, але виставляти ABM в інтернет я не раджу, як і застосунки Servarr. Безпечніше заходити через VPN, наприклад WireGuard або Tailscale. За замовчуванням усі, хто поза твоєю локальною мережею, мусять увійти, а якщо встановити для Authentication Required значення Enabled, входити доведеться всім, зокрема й у твоїй LAN. За nginx, Traefik чи Caddy задай <code>TRUSTED_PROXIES</code> з адресою проксі. Збережені облікові дані зашифровано."
       ],
       [
         "Що сталося з Readarr?",
@@ -883,7 +883,7 @@
       ],
       [
         "Can I reach it from outside my network?",
-        "Yes, on 0.17.0 or later. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
+        "Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
       ],
       [
         "What happened to Readarr?",
@@ -1116,7 +1116,7 @@
       ],
       [
         "Can I reach it from outside my network?",
-        "Yes, on 0.17.0 or later. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
+        "Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. By default, anything from outside your local network has to sign in, and setting Authentication Required to Enabled makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set <code>TRUSTED_PROXIES</code> to the proxy's address. Stored credentials are encrypted."
       ],
       [
         "What happened to Readarr?",
