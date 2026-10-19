@@ -18,5 +18,9 @@
   "fr": {
     "label": "Français",
     "lang": "fr"
+  },
+  "de": {
+    "label": "Deutsch",
+    "lang": "de"
   }
 }
