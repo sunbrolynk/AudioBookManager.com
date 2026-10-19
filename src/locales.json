@@ -14,5 +14,9 @@
   "en-au": {
     "label": "English (Australia)",
     "lang": "en-AU"
+  },
+  "nb": {
+    "label": "Norsk bokmål",
+    "lang": "nb"
   }
 }
