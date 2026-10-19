@@ -17,9 +17,11 @@ description: Få en eksisterende samling trygt inn i ABM.
 4. Velg radene og legg dem til. Det holder med to klikk hvis du godtar standardene.
 5. Følg med på oppgaven. Sammendraget sier hvor mange filer som ble kopiert i stedet for hardlenket, og hva som feilet.
 
-## Hvis du vil at ABM skal styre kildemappen
+## Hvis samlingen allerede ligger der du vil ha den
 
-Legg den til som rotmappe i stedet, og la ABM skanne den. Da blir filene liggende der de er, og bøkene får status ut fra det som ligger på disken.
+Å legge til mappen som rotmappe legger ikke til noen bøker i seg selv. Skanningene til ABM sjekker bare bøker den allerede kjenner til, så den plukker ikke opp det som ligger der. Bøkene må fortsatt inn via Library Import: tallet **Unmapped Folders** for rotmappen under **Settings > Media Management** åpner Library Import for den rotmappen.
+
+Importen legger hver bok i ABMs egen Forfatter/Serie/Bok-struktur under standard rotmappe. Velg hardlenke for å la originalene være urørt uten å bruke mer plass.
 
 ## Fallgruver
 

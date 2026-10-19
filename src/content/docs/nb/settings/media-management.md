@@ -7,7 +7,7 @@ description: Rotmapper, import, ekstrafiler, papirkurv, skanninger, oppgradering
 
 ## Rotmapper (Root Folders)
 
-En rotmappe er en mappe der ABM styrer bøker. Legg til en med **Add Root Folder**, som åpner en mappeleser der du også kan skrive inn stien. ABM kan også liste opp mapper under en rot som ikke er tilordnet, og importere dem. Ledig plass og støtte for hardlenker sjekkes når en rot legges til. Å fjerne en rot sletter ikke filer.
+En rotmappe er en mappe der ABM styrer bøker. Legg til en med **Add Root Folder**, som åpner en mappeleser der du også kan skrive inn stien. ABM kan også liste opp mapper under en rot som ikke er tilordnet, og importere dem. Ledig plass og støtte for hardlenker sjekkes når en rot legges til. Når du fjerner en rot, blir du spurt hva som skal skje: **Remove from ABM only** (standard) glemmer bøkene under den og lar filene ligge, og **Delete the books and their files** sletter alt under stien for godt, uten å gå via papirkurven. En rot med bøker i krever at du skriver inn en bekreftelse.
 
 Standard-rotmappen er den nye bøker havner i, og den som avgjør om hardlenke tilbys for Library Import.
 
@@ -27,10 +27,10 @@ Standard-rotmappen er den nye bøker havner i, og den som avgjør om hardlenke t
 | Use Hardlinks instead of Copy | på | For fullførte nedlastinger: hardlenke i stedet for kopi, så seeding ikke dobler plassen. Krever samme volum. |
 | Library Import | Copy | Standarden for [Bibliotekimport](/nb/library-import/): kopiere, hardlenke eller flytte. Hardlenke er grået ut til standard-roten er sjekket og støtter det. |
 | Import Extra Files | på | Hovedbryter for å ta med filer som ikke er lyd. Gjelder Library Import, Manual Import og fullførte nedlastinger |
-| Extra File Extensions (avansert) | tom | Ekstra filendelser som skal importeres, som `srt, lrc`. Blokkerte typer avvises. |
+| Extra File Extensions (avansert) | tom | Flere filtyper som skal tas med, under sine egne navn, for eksempel `srt, lrc`. Med eller uten punktum, skilt med komma eller mellomrom. Blokkerte typer, som kjørbare filer og ufullstendige nedlastinger, kan ikke lagres. Deaktivert mens **Import Extra Files** er av |
 | Preferred Cover (avansert) | Matched | Coveret til den matchede utgaven, eller det beste bildet i mappen, når begge finnes |
 
-Ekstrafiler har fem brytere:
+**Import Extra Files** tar med de andre filene til en bok sammen med lyden. Fem brytere velger hvilke typer som blir med, og en fil som passer med **Extra File Extensions**, blir med selv om typen er slått av:
 
 | Bryter | Standard | Dekker |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlenke er ikke det samme som **Use Hardlinks instead of Copy**. Den er for ne
 | Recycling Bin Cleanup | 7 (dager) | 0 slår av automatisk opprydding |
 | Library Scan Interval | 0 (av) | Timer mellom automatiske skanninger |
 | Watch for Changes | av | Skann når filer legges til, fjernes eller endres |
-| Cover Cache Workers | 4 | Hvor mange cover som lastes ned samtidig når bilder mellomlagres, fra 1 til 16. Senk det hvis en mellomlagringskjøring melder om feil |
+| Cover Cache Workers | 4 | Hvor mange cover som lastes ned samtidig når bilder mellomlagres, fra 1 til 16 |
 
 ## Kvalitetsoppgraderinger (Quality Upgrades)
 

@@ -3,7 +3,7 @@ title: Bibliotekimport
 description: Få en eksisterende samling inn i ABM med Import Workbench.
 ---
 
-Library Import skanner en mappe med lydbøker, finner metadata som passer til hver mappe, og legger bøkene til i biblioteket ditt. Siden heter **Match Audiobooks**.
+Library Import skanner en mappe med lydbøker, finner metadata som passer til hver mappe, og legger bøkene til i biblioteket ditt. **Library > Library Import** åpner "Import audiobooks you already have", der du velger en mappe som skal skannes. Når skanningen starter, går ABM over til treffsiden med overskriften **Match Audiobooks**, der du sjekker treffene og legger til bøkene.
 
 ## Flyten
 
@@ -41,7 +41,7 @@ En hardlenket bok tar ingen ekstra diskplass, og originalen blir liggende der de
 
 ## Lange verdier
 
-En oppleser, tittel eller sti som er kuttet med tre prikker, åpnes i sin helhet når du trykker på den, eller trykker Enter eller mellomrom. Trykk igjen for å lukke.
+En oppleser, tittel eller sti som er kuttet med tre prikker, åpnes i sin helhet når du trykker eller klikker på den. Trykk eller klikk igjen for å lukke den. Med mus viser du også hele verdien ved å holde pekeren over den. Fra tastaturet setter du fokus på den og trykker Enter eller mellomrom.
 
 ## Andre svar enn import
 

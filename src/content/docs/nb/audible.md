@@ -3,7 +3,7 @@ title: Audible
 description: Koble til Audible-kontoer, synkroniser og speil biblioteket ditt.
 ---
 
-ABM kan koble seg til Audible-kontoene dine, holde en kopi av biblioteket til hver konto og laste ned det du eier.
+ABM kobler seg til én eller flere Audible-kontoer og holder en kopi av biblioteket til hver konto på siden **Audible Library**. Alt du eier, kan lastes ned, dekrypteres til M4B og importeres som en hvilken som helst annen bok. Med speiling på legger hver synkronisering også til bøkene du mangler i ABM, og laster dem ned.
 
 ## Kontoer
 
@@ -28,7 +28,9 @@ Speiling gjør at ABM-biblioteket ditt følger Audible-biblioteket ditt.
 - Det er på som standard.
 - Det legger til kjøpene dine og gratistitlene dine. Podkaster tas ikke med.
 - Hver synkronisering tar maks 25 titler.
-- Før det kjører, ber det deg bekrefte og viser hvor mange titler som blir lagt til.
+- Når du slår det på, ber det deg bekrefte og viser hvor mange titler neste synkronisering kommer til å legge til og laste ned.
+- Titler fra Plus-katalogen og lån tas ikke med, og ingenting settes i kø mens disken til biblioteket har lite ledig plass.
+- En tittel der nedlastingen stadig feiler, venter lenger mellom hvert forsøk: 1 time, så 6, så 24.
 - Det laster også ned titler du vil ha som ikke har filer ennå.
 - Titler som fjernes fra Audible, blir liggende i ABM.
 

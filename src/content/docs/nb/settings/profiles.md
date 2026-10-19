@@ -22,6 +22,8 @@ En ny kopi erstatter det du har bare hvis profilen tillater oppgraderinger, det 
 
 Kan du Sonarr: dette er en kvalitetsprofil der kvalitetene er lydformater og filoppsett i stedet for oppløsning. Custom formats finnes ikke. [Release-profiler](#release-profiler) dekker noe av det samme.
 
+Det finnes ingen trinn for bitrate eller størrelse: kvalitet betyr bare format og filoppsett. For en utgivelse henter ABM formatet fra indeksereren eller tittelen og gjetter oppsettet ut fra tittelen (en M4B uten del- eller spornummer regnes som én fil), og sjekker det på nytt når filene er importert. **Preferred Quality** i [Audible-innstillinger](/nb/settings/audible/) er noe annet: det er kvaliteten Audible-nedlastinger kommer i.
+
 ## Forsinkelsesprofiler
 
 En forsinkelsesprofil holder igjen en utgivelse før den hentes, for å gi en bedre utgivelse tid til å dukke opp.

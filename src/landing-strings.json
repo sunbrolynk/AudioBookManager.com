@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Skaff den",
     "installH2": "I gang med én fil.",
     "buildP": "<b>Bygg fra kildekoden.</b> Fra en klone av repoet bytter du <code>image:</code> med <code>build: .</code> og kjører <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, en vanlig Linux-tjeneste.</b> Ikke ennå. Docker er eneste vei inn foreløpig.",
+    "otherP": "<b>Docker er eneste vei inn foreløpig.</b> Native installasjoner for de vanlige oppsettene er planlagt, så ABM kan kjøre der du allerede selvhoster:",
     "note": "ABM er i alfa. Ta sikkerhetskopi av <code>/config</code> før du oppgraderer, og skum gjennom oppdateringsnotatene først.",
     "fullGuide": "Hele installasjonsguiden →",
     "faqEyebrow": "Vanlige spørsmål",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Opprett en issue",
     "helpH": "Vil du hjelpe til?",
     "helpP": "ABM er ett menneskes prosjekt. Ko-fi eller en Monster holder det i gang.",
-    "kofiBtn": "Buy Me a Monster",
-    "monsterBtn": "Støtt utviklingen",
+    "kofiBtn": "Støtt utviklingen",
+    "monsterBtn": "Spander en Monster på meg",
     "finalH2": "Slutt å fikse<br />mapper.",
     "ctaInstall": "Installer ABM",
     "ctaDocs": "Les dokumentasjonen",
@@ -1370,6 +1370,33 @@
     "communityH2": "Finn folka dine.",
     "communityP": "Har du et spørsmål, trenger du hjelp med oppsettet, eller vil du bare prate lydbøker? Bli med i AudioBook Manager-fellesskapet på Discord for hjelp og diskusjoner.",
     "communityBtn": "Bli med på Discord",
+    "planned": [
+      [
+        "Linux",
+        "en native pakke og tjeneste"
+      ],
+      [
+        "Windows",
+        "et .exe-installasjonsprogram"
+      ],
+      [
+        "macOS",
+        "en native app"
+      ],
+      [
+        "Kubernetes",
+        "en klyngeutrulling"
+      ],
+      [
+        "Unraid",
+        "en mal i Community Apps"
+      ],
+      [
+        "Proxmox",
+        "et installasjonsskript for LXC"
+      ]
+    ],
+    "coming": "Kommer",
     "translatorNote": "Denne siden er maskinoversatt. Er norsk morsmålet ditt og du har lyst til å hjelpe med å gjøre den bedre, send meg en e-post på {mail}."
   }
 }

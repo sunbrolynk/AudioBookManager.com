@@ -7,7 +7,7 @@ description: Bøker, forfattere og serier, og hvordan ABM holder styr på status
 
 ## Bøker
 
-Hver bok er en rad, en plakat eller en tabellinje (visningsbryteren ligger i verktøylinja). En bok har en status:
+Hver bok er en oversiktsrad, en plakat eller en tabellinje (visningsbryteren ligger i verktøylinja). En bok har en status:
 
 - **Wanted**: overvåket, ingen filer ennå. ABM søker etter den.
 - **Downloaded**: filene ligger på disken.
@@ -18,9 +18,13 @@ Hver bok er en rad, en plakat eller en tabellinje (visningsbryteren ligger i ver
 
 Kan du Sonarr: en bok er en episode, en serie er sesong og serie i ett, og en forfatter er en måte å gruppere begge på. Forskjellen er at én bok kan høre til flere serier, og ABM bruker hovedserien (den laveste plasseringen) når den må velge.
 
-## Serier og forfattere
+## Serier
 
-Listene Series og Authors viser antall eide, ønskede og bøker med manglende filer. Åpne en for å se katalogen, som også har bøker du ikke eier. Derfra kan du legge til bøkene som mangler. Se [Seriesporing](/nb/using/series-tracking/).
+**Library > Series** viser alle serier med antall eide, ønskede og bøker med manglende filer, som Overview eller Posters. En serieside viser hele katalogen, også bøker du ikke eier. Filtrer den på All, In Library eller Not in Library. **Add Remaining** eller **Select to Add** legger til bøkene som mangler som ønsket, og **Refresh Series** henter katalogen på nytt. **Monitor New Books** (All eller None) bestemmer om bøker som kommer ut senere, legges til som ønsket. Se [Seriesporing](/nb/using/series-tracking/).
+
+## Forfattere
+
+**Library > Authors** viser forfattere, som Overview eller Posters. En forfatterside viser katalogen deres gruppert etter serie, med antall nedlastede og totalt for hver serie, pluss kvalitetsprofil, sjangre og vurdering. **Refresh Catalog** henter den på nytt, og **Search Author** søker etter de ønskede bøkene deres. **Monitor New Books** virker på samme måte som for en serie, og en forfatter starter på None.
 
 Å slette en serie eller forfatter blir avvist så lenge den fortsatt har bøker i biblioteket. Fjern bøkene først.
 

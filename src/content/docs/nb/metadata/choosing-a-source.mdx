@@ -3,6 +3,8 @@ title: Velge metadatakilde
 description: Innebygd, hostet eller din egen Libex-server.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Kommer i neste versjon]
 Valg av kilde er ikke med i en utgitt versjon ennå. Utgitte versjoner bruker den offentlige Libex-instansen på libexdb.com og har ingen innstilling for dette.
 :::
@@ -12,10 +14,10 @@ I neste versjon har **Settings > Metadata > Source** en **Metadata Source**-inns
 | Valg | Hva det betyr |
 |---|---|
 | Built-in (standard) | Libex kjører inne i ABM. Den trenger at du har valgt en utgående tilkobling først. |
-| Hosted (libexdb.com) | ABM spør den offentlige Libex-instansen. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex på GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM spør den offentlige Libex-instansen. |
 | Self-hosted | ABM spør en Libex-server du peker den mot. Fyll inn **Server URL**, for eksempel `http://192.168.1.20:8000`. |
 
-**Test** sjekker den valgte kilden uten å lagre. **Status** sier om den er klar. Et valg du ikke har lagret, viser "Not in use yet - save to switch" til du lagrer.
+**Test** sjekker den valgte kilden uten å lagre. **Status** sier om den er klar. Når du velger en annen kilde, viser **Status** "Not in use yet - save to switch" til du lagrer.
 
 ## Innebygd og den utgående tilkoblingen
 
@@ -28,5 +30,5 @@ Med disse to spør ABM en Libex-server, og serveren snakker med Audible. En selv
 ## Hva du bør velge
 
 - Vil du bare at det skal virke, og bryr deg ikke om at Audible ser adressen din: Built-in med direkte tilkobling, eller Hosted.
-- Vil du ikke vise IP-en din til Audible: Built-in gjennom VPN eller proxy, eller Hosted.
+- Vil du ikke vise IP-en din til Audible: Built-in gjennom en proxy, den innebygde WireGuard-tunnelen eller en egen VPN-container eller -tjeneste. Eller Hosted, der Libex-serveren snakker med Audible i stedet for deg.
 - Kjører du allerede en Libex-server: Self-hosted.
