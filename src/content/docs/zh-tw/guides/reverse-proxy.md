@@ -3,6 +3,10 @@ title: 反向代理
 description: 把 ABM 放在 nginx、Traefik 或 Caddy 後面，又不弄壞登入。
 ---
 
+:::caution[不建議這樣做]
+不建議把 ABM 放到網際網路上，不管是透過反向代理還是轉送連接埠，Servarr 系列 App 也是這樣建議的。想從外面連進來，請改用 WireGuard 或 Tailscale 這類 VPN。ABM 的設計在代理後面是安全的，但一旦公開出去就不保證安全，風險要你自己承擔。如果你還是要這麼做，請把 **Authentication Required** 設成 **Enabled**，並讓 ABM 保持最新版本。
+:::
+
 有三個設定很重要。設對了，登入、WebSocket 和儲存就都會正常。
 
 ## 1. 告訴 ABM 代理是誰

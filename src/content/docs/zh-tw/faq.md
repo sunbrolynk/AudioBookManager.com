@@ -27,9 +27,9 @@ Deluge、qBittorrent、Transmission、rTorrent、SABnzbd、NZBGet 和 Blackhole�
 
 Readarr 以前是把書和有聲書放在一起處理，後來已經停止維護了。ABM 只做有聲書，建立在 Servarr 系列 App 開創的設計之上。
 
-## 怎麼在 Unraid、Windows 或 macOS 上安裝？
+## 可以不用 Docker 安裝嗎？
 
-還不行。目前只能用 Docker。請看〈[安裝 ABM](/zh-tw/installation/)〉。
+還不行。目前只能用 Docker。原生的 Linux、Windows 和 macOS 安裝方式，還有 Kubernetes、Unraid 和 Proxmox，都在計畫中。請看〈[其他安裝方式](/zh-tw/installation/#其他安裝方式)〉。
 
 ## 要多少錢？
 

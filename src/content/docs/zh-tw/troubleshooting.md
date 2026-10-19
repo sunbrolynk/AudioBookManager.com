@@ -73,3 +73,7 @@ Content-Security-Policy 標頭只允許 HTTPS 的封面圖片。到瀏覽器主�
 ## Docker 連不到中繼資料來源或索引器
 
 先檢查 DNS 和對外連線設定。在 Docker 裡，直接連線只有在容器能連上網路時才有用。
+
+## 還是搞不定
+
+到 [ABM Discord](https://discord.gg/qeJRrM6AZ) 發問、[開一個 issue](https://github.com/sunbrolynk/AudioBook-Manager/issues)，或寄信到 [support@audiobookmanager.com](mailto:support@audiobookmanager.com)。

@@ -3,6 +3,8 @@ title: 選擇中繼資料來源
 description: 內建、託管，或是你自己的 Libex 伺服器。
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[下一個版本推出]
 來源選擇還沒有出現在任何已發行的版本裡。已發行的版本使用 libexdb.com 上的公開 Libex 執行個體，也沒有相關設定。
 :::
@@ -12,10 +14,10 @@ description: 內建、託管，或是你自己的 Libex 伺服器。
 | 選項 | 意思 |
 |---|---|
 | Built-in（預設） | Libex 直接在 ABM 裡面執行。需要先選好對外連線方式。 |
-| Hosted (libexdb.com) | ABM 向公開的 Libex 執行個體查詢。 |
+| <span class="nowrap">Hosted（[LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="GitHub 上的 Libex"><Icon name="github" size="1em" class="inline-icon" /></a>）</span> | ABM 向公開的 Libex 執行個體查詢。 |
 | Self-hosted | ABM 向你指定的 Libex 伺服器查詢。在 **Server URL** 填入它的位址，例如 `http://192.168.1.20:8000`。 |
 
-**Test** 會在不儲存的情況下檢查選取的來源。**Status** 會告訴你它準備好了沒。還沒儲存的選擇會顯示「Not in use yet - save to switch」，直到你儲存為止。
+**Test** 會在不儲存的情況下檢查選取的來源。**Status** 會告訴你它準備好了沒。當你改選另一個來源時，**Status** 會顯示「Not in use yet - save to switch」，直到你儲存為止。
 
 ## 內建來源與對外連線
 
@@ -28,5 +30,5 @@ description: 內建、託管，或是你自己的 Libex 伺服器。
 ## 該選哪個
 
 - 只想要它能用，不在意 Audible 看到你的位址：選 Built-in 搭配直接連線，或選 Hosted。
-- 在意不要把你的 IP 暴露給 Audible：選 Built-in 走 VPN 或代理伺服器，或選 Hosted。
+- 在意不要把你的 IP 暴露給 Audible：選 Built-in，走代理伺服器、內建的 WireGuard 通道，或另外的 VPN 容器或服務。也可以選 Hosted，由 Libex 伺服器代替你跟 Audible 溝通。
 - 已經有在跑 Libex 伺服器：選 Self-hosted。

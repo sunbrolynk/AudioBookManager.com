@@ -1197,7 +1197,7 @@
     "getItEyebrow": "取得",
     "installH2": "一個檔案就跑起來。",
     "buildP": "<b>從原始碼建置。</b> 在 clone 下來的 repo 裡，把 <code>image:</code> 換成 <code>build: .</code>，然後執行 <code>docker compose up -d --build</code>。",
-    "otherP": "<b>Unraid、Windows、macOS、一般的 Linux 服務。</b> 還不行。目前只能用 Docker。",
+    "otherP": "<b>目前只能用 Docker。</b> 常見環境的原生安裝方式已經在計畫中，讓 ABM 可以跑在你本來就在自架的地方：",
     "note": "ABM 還在 alpha 階段。升級前先備份 <code>/config</code>，並先大致看過更新說明。",
     "fullGuide": "完整安裝指南 →",
     "faqEyebrow": "常見問題",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "開一個 issue",
     "helpH": "想幫它一把？",
     "helpP": "ABM 是一個人的專案。Ko-fi 或一罐 Monster 能讓它繼續走下去。",
-    "kofiBtn": "請我喝罐 Monster",
-    "monsterBtn": "支持開發",
+    "kofiBtn": "支持開發",
+    "monsterBtn": "請我喝罐 Monster",
     "finalH2": "別再整理<br />資料夾了。",
     "ctaInstall": "安裝 ABM",
     "ctaDocs": "閱讀文件",
@@ -1370,6 +1370,33 @@
     "communityH2": "找到同好。",
     "communityP": "有問題想問、設定需要幫忙，或只是想聊聊有聲書？加入 Discord 上的 AudioBook Manager 社群，在那裡取得支援和參與討論。",
     "communityBtn": "加入 Discord",
+    "planned": [
+      [
+        "Linux",
+        "原生套件和系統服務"
+      ],
+      [
+        "Windows",
+        ".exe 安裝程式"
+      ],
+      [
+        "macOS",
+        "原生 App"
+      ],
+      [
+        "Kubernetes",
+        "叢集部署"
+      ],
+      [
+        "Unraid",
+        "Community Apps 範本"
+      ],
+      [
+        "Proxmox",
+        "LXC 安裝腳本"
+      ]
+    ],
+    "coming": "即將推出",
     "translatorNote": "這個頁面是機器翻譯的。如果繁體中文是你的母語，而且你願意幫忙讓它更好，寫信給我：{mail}。"
   }
 }

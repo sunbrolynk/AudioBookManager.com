@@ -26,15 +26,19 @@ description: 從剛裝好到第一本被監控的書。
 
 ## 5. 設定品質設定檔
 
-**Settings > Profiles** 裡有 ABM 用來決定要抓什麼、什麼算升級的品質階梯。其中一個設定檔是預設的，先用它就好，之後再慢慢調。請看〈[設定檔](/zh-tw/settings/profiles/)〉。
+**Settings > Profiles** 裡有 ABM 用來決定要抓什麼、什麼算升級的品質階梯。剛裝好的時候一個都沒有，所以先建立一個。你建立的第一個設定檔會變成預設，之後再慢慢調。請看〈[設定檔](/zh-tw/settings/profiles/)〉。
 
-## 6. 匯入或新增書
+## 6. 連結 Audible（選用）
+
+如果你有 Audible 的書，到 **Settings > Audible** 連結你的帳號。選好 **Marketplace**，按 **Connect Audible Account**，再按 **I Understand, Open Amazon Login**。在新分頁登入 Amazon。登入後跳到一個空白頁或「Page not found」頁是正常的。把網址列上的完整網址複製到 **Redirect URL**，想的話再填個 **Display Name**，然後按 **Complete Login**。你的密碼不會被儲存，第一次書庫同步會馬上開始。請看〈[Audible](/zh-tw/audible/)〉。
+
+## 7. 匯入或新增書
 
 - 已經有收藏了？用〈[書庫匯入](/zh-tw/library-import/)〉。
 - 從零開始？用 **Library > Add New**，依書名、作者或系列搜尋。請看〈[新增書籍](/zh-tw/using/add-new/)〉。
 
 你新增的書在匯入檔案之前都算是「想要」的書。想要的書會出現在 **Wanted > Missing**，並且會被自動搜尋。
 
-## 7. 看它運作
+## 8. 看它運作
 
 **Activity > Queue** 顯示正在下載的東西，**Activity > History** 顯示抓過和匯入過的東西。出問題的時候，去看〈[疑難排解](/zh-tw/troubleshooting/)〉和〈[任務](/zh-tw/system/tasks/)〉頁面。
