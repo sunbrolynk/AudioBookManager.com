@@ -73,3 +73,7 @@ description: Виправлення проблем, які трапляютьс�
 ## Docker не може дістатися до джерела метаданих чи індексаторів
 
 Спершу перевір DNS і налаштування вихідного підключення. У Docker пряме підключення працює, лише якщо контейнер має доступ до інтернету.
+
+## Досі не виходить
+
+Запитай у [Discord ABM](https://discord.gg/qeJRrM6AZ), [створи issue](https://github.com/sunbrolynk/AudioBook-Manager/issues) або напиши на [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

@@ -152,5 +152,27 @@
     "da": "Hjælp",
     "nb": "Hjelp",
     "fi": "Ohjeet"
+  },
+  "API reference": {
+    "en-GB": "API reference",
+    "uk": "Довідник API",
+    "en-CA": "API reference",
+    "en-AU": "API reference",
+    "fr": "Référence de l'API",
+    "de": "API-Referenz",
+    "es": "Referencia de la API",
+    "it": "Riferimento API",
+    "pt-BR": "Referência da API",
+    "ja": "APIリファレンス",
+    "nl": "API-referentie",
+    "pl": "Dokumentacja API",
+    "zh-CN": "API 参考",
+    "zh-TW": "API 參考文件",
+    "ko": "API 레퍼런스",
+    "sv": "API-referens",
+    "cs": "Reference API",
+    "da": "API-reference",
+    "nb": "API-referanse",
+    "fi": "API-viite"
   }
 }
