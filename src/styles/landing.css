@@ -82,6 +82,12 @@ pre.code .k { color: var(--r1-acc-hi); }
 .isteps li::before { content: counter(s); font: 800 30px var(--r1-cond); font-variation-settings: "wdth" 62; color: var(--r1-done); line-height: 1; }
 .isteps b { display: block; } .isteps span { color: var(--r1-mut); font-size: 15.5px; }
 .other { font-size: 15px; color: var(--r1-mut); } .other b { color: var(--r1-ink); }
+/* Planned install targets, tagged in the status strip's wanted colour. */
+.planned { list-style: none; margin: 0 0 18px; padding: 0; font-size: 14.5px; }
+.planned li { display: grid; grid-template-columns: 6.5em minmax(0, 1fr) auto; gap: 10px; align-items: baseline; padding: 7px 0; border-top: 1px solid var(--r1-line); color: var(--r1-mut); }
+.planned li:last-child { border-bottom: 1px solid var(--r1-line); }
+.planned b { color: var(--r1-ink); }
+.planned em { font: 500 11px var(--r1-mono); font-style: normal; letter-spacing: .08em; text-transform: uppercase; color: var(--r1-want); }
 .note { border-inline-start: 4px solid var(--r1-want); background: rgba(245,158,11,.07); padding: 12px 16px; font-size: 15px; margin-top: 18px; }
 
 .faqgrid { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 56px; }

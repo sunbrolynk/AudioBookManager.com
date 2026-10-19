@@ -150,6 +150,7 @@ const composeHtml = esc(compose).replace(/^(\s*)([a-z_-]+):/gm, '$1<span class="
             <div class="other">
               <p set:html={t.buildP} />
               <p set:html={t.otherP} />
+              <ul class="planned">{t.planned.map(([name, how]: [string, string]) => <li><b>{name}</b><span>{how}</span><em>{t.coming}</em></li>)}</ul>
             </div>
             <div class="note" set:html={t.note} />
             <p class="more"><a class="btn" href={`${prefix}/installation/`}>{t.fullGuide}</a></p>
