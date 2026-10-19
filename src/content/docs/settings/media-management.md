@@ -5,6 +5,8 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 **Settings > Media Management** controls where books live and how files move in. Settings marked advanced appear with **Show Advanced**.
 
+![Settings, Media Management: importing options](../../../assets/docs/settings-media.jpg)
+
 ## Root Folders
 
 A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm.

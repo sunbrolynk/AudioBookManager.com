@@ -5,6 +5,8 @@ description: Convert, merge, split and add chapters to audio files, with a queue
 
 **Library > Conversions** runs ffmpeg jobs on your library. Four kinds:
 
+![The Conversions page: pick books, then convert, merge, split or add chapters](../../../assets/docs/conversions.jpg)
+
 | Job | What it does |
 |---|---|
 | Convert Format | Re-encodes to M4B, MP3, M4A, FLAC or Opus |

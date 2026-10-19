@@ -5,6 +5,8 @@ description: Log files, levels, retention and rotation.
 
 **System > Log Files** lists ABM's text logs. Open one to read it, download it, delete it, or clear them all. Logs appear as operations run.
 
+![System, Logs: log files grouped by area](../../../assets/docs/system-logs.jpg)
+
 - Tasks and conversions write their own log. The Tasks page links each one.
 - The main log is `app.log`. It rolls at start-up, at least hourly and at 10 MiB. Old files are kept for **Log File Retention** (30 days by default).
 - A separate security log carries one line per sign-in attempt for fail2ban and similar tools.

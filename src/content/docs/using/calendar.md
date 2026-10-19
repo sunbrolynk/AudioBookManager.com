@@ -5,6 +5,10 @@ description: Upcoming releases and an iCal feed.
 
 **Calendar** shows release dates of the books ABM knows about, colored by status. Views are month, week, forecast, day and agenda. Week start and date formats come from [UI settings](/settings/ui/).
 
+![The Calendar in month view: upcoming and recent releases with their covers and status](../../../assets/docs/calendar.jpg)
+
+![The Calendar on a phone, as an agenda list](../../../assets/docs/phone-calendar.jpg)
+
 ## Options
 
 The **Calendar Options** button offers: collapse multiple books releasing on the same day, color the whole event with the status color, and show author and series information.
