@@ -78,11 +78,11 @@
   "uk": {
     "features": "Можливості",
     "screenshots": "Скриншоти",
-    "docs": "Документація",
+    "docs": "Довідка",
     "updates": "Оновлення",
     "support": "Підтримка",
     "github": "GitHub",
-    "install": "Встановлення",
+    "install": "Встановити",
     "nav": "Сайт",
     "foot": "AudioBook Manager · GPL-3.0 · автор SunBroLynk. Побудований на підході, який започаткували застосунки Servarr. Метадані від Libex.",
     "kofi": "Ko-fi",
@@ -105,12 +105,12 @@
     "footerSupport": "Підтримати розробку",
     "footerApiReference": "Довідник API",
     "footerBuyMonster": "Пригости мене Monster",
-    "footerContact": "Контакти",
+    "footerContact": "Зв'язок",
     "footerMailSupport": "Допомога з ABM",
     "footerMailTranslate": "Переклади",
     "footerMailPrivacy": "Конфіденційність",
     "footerMailAdmin": "Усе інше",
-    "releasesNone": "Релізів ще немає.",
+    "releasesNone": "Випусків ще немає.",
     "releasesBeforeUpgrade": "Перед оновленням"
   },
   "en-ca": {
