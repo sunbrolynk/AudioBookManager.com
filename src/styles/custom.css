@@ -1,4 +1,4 @@
-/* Starlight themed to R1 "Status line". The site is dark-only, so both themes get the same tokens. */
+/* Starlight themed to the "Status line" look. The site is dark-only, so both themes get the same tokens. */
 @import './tokens.css';
 
 :root, :root[data-theme='light'], :root[data-theme='dark'] {
