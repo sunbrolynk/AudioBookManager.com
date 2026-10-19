@@ -31,6 +31,12 @@ for (const code of codes) {
   if (!existsSync(new URL(`../src/pages/${code}/index.astro`, import.meta.url))) missing.push('landing page (src/pages/' + code + '/index.astro)');
   if (missing.length) problems.push(`${code} is configured but incomplete, missing ${missing.length} of ${rootPages.length + 1} pages:\n  ${missing.join('\n  ')}`);
 }
+// Each locale says whether a reviewer has confirmed it, and which issue its review runs on; the badge links there.
+for (const code of codes) {
+  const { reviewed, issue } = locales[code];
+  if (typeof reviewed !== 'boolean') problems.push(`src/locales.json: ${code} needs "reviewed": true or false`);
+  if (!Number.isInteger(issue) || issue < 1) problems.push(`src/locales.json: ${code} needs "issue", the number of its review issue`);
+}
 // Landing copy lives in src/landing-strings.json: every configured locale needs every key (and array length) of the root.
 const landing = JSON.parse(readFileSync(new URL('../src/landing-strings.json', import.meta.url), 'utf8'));
 const shape = (a, b, path, code) => {

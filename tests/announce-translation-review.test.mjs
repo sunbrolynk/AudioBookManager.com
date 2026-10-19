@@ -24,3 +24,17 @@ test('publish branches, unknown codes and anything shaped oddly are refused', ()
     assert.equal(languageFor(branch), null, JSON.stringify(branch));
   }
 });
+
+const threadFrom = (body, guild) => JSON.parse(execFileSync('python3', ['-I', '-B', '-c', `
+import importlib.util, json, sys
+spec = importlib.util.spec_from_file_location("announce", sys.argv[1])
+mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+print(json.dumps(mod.thread_from_issue(sys.argv[2], sys.argv[3])))`, script, body, guild], { encoding: 'utf8' }));
+
+test('a review issue reuses its Discord thread only on this server', () => {
+  assert.equal(threadFrom('Discord thread: https://discord.com/channels/111/222', '111'), '222');
+  assert.equal(threadFrom('Discord thread: https://discord.com/channels/999/222', '111'), null);
+  assert.equal(threadFrom('https://discord.com/channels/111/222/333', '111'), null);
+  assert.equal(threadFrom('no thread here', '111'), null);
+  assert.equal(threadFrom('https://discord.com/channels/1111/222', '111'), null);
+});

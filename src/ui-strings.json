@@ -43,7 +43,9 @@
     "prereleaseDiscord": "Join the Discord",
     "prereleaseGithub": "Follow on GitHub",
     "prereleaseClose": "Got it",
-    "prereleaseDismiss": "Close"
+    "prereleaseDismiss": "Close",
+    "reviewPending": "Awaiting community review",
+    "reviewHelp": "Spot a mistake? Help fix it"
   },
   "en-gb": {
     "features": "Features",
@@ -89,7 +91,9 @@
     "prereleaseDiscord": "Join the Discord",
     "prereleaseGithub": "Follow on GitHub",
     "prereleaseClose": "Got it",
-    "prereleaseDismiss": "Close"
+    "prereleaseDismiss": "Close",
+    "reviewPending": "Awaiting community review",
+    "reviewHelp": "Spot a mistake? Help fix it"
   },
   "uk": {
     "features": "Можливості",
@@ -135,7 +139,9 @@
     "prereleaseDiscord": "Заходь у Discord",
     "prereleaseGithub": "Стеж на GitHub",
     "prereleaseClose": "Зрозуміло",
-    "prereleaseDismiss": "Закрити"
+    "prereleaseDismiss": "Закрити",
+    "reviewPending": "Чекає на перевірку спільнотою",
+    "reviewHelp": "Помітив помилку? Допоможи виправити"
   },
   "en-ca": {
     "features": "Features",
@@ -181,7 +187,9 @@
     "prereleaseDiscord": "Join the Discord",
     "prereleaseGithub": "Follow on GitHub",
     "prereleaseClose": "Got it",
-    "prereleaseDismiss": "Close"
+    "prereleaseDismiss": "Close",
+    "reviewPending": "Awaiting community review",
+    "reviewHelp": "Spot a mistake? Help fix it"
   },
   "en-au": {
     "features": "Features",
@@ -227,7 +235,9 @@
     "prereleaseDiscord": "Join the Discord",
     "prereleaseGithub": "Follow on GitHub",
     "prereleaseClose": "Got it",
-    "prereleaseDismiss": "Close"
+    "prereleaseDismiss": "Close",
+    "reviewPending": "Awaiting community review",
+    "reviewHelp": "Spot a mistake? Help fix it"
   },
   "fr": {
     "features": "Fonctionnalités",
@@ -273,7 +283,9 @@
     "prereleaseDiscord": "Rejoindre le Discord",
     "prereleaseGithub": "Suivre sur GitHub",
     "prereleaseClose": "Compris",
-    "prereleaseDismiss": "Fermer"
+    "prereleaseDismiss": "Fermer",
+    "reviewPending": "En attente de relecture par la communauté",
+    "reviewHelp": "Tu as repéré une erreur ? Aide à la corriger"
   },
   "de": {
     "features": "Funktionen",
@@ -319,7 +331,9 @@
     "prereleaseDiscord": "Komm in den Discord",
     "prereleaseGithub": "Auf GitHub folgen",
     "prereleaseClose": "Alles klar",
-    "prereleaseDismiss": "Schließen"
+    "prereleaseDismiss": "Schließen",
+    "reviewPending": "Wartet auf Prüfung durch die Community",
+    "reviewHelp": "Fehler entdeckt? Hilf mit, ihn zu beheben"
   },
   "es": {
     "features": "Funciones",
@@ -365,7 +379,9 @@
     "prereleaseDiscord": "Únete al Discord",
     "prereleaseGithub": "Síguelo en GitHub",
     "prereleaseClose": "Entendido",
-    "prereleaseDismiss": "Cerrar"
+    "prereleaseDismiss": "Cerrar",
+    "reviewPending": "Pendiente de revisión por la comunidad",
+    "reviewHelp": "¿Ves un error? Ayuda a corregirlo"
   },
   "it": {
     "features": "Funzionalità",
@@ -411,7 +427,9 @@
     "prereleaseDiscord": "Entra nel Discord",
     "prereleaseGithub": "Seguilo su GitHub",
     "prereleaseClose": "Ok, capito",
-    "prereleaseDismiss": "Chiudi"
+    "prereleaseDismiss": "Chiudi",
+    "reviewPending": "In attesa di revisione da parte della community",
+    "reviewHelp": "Hai trovato un errore? Aiuta a correggerlo"
   },
   "pt-br": {
     "features": "Recursos",
@@ -457,7 +475,9 @@
     "prereleaseDiscord": "Entre no Discord",
     "prereleaseGithub": "Acompanhe no GitHub",
     "prereleaseClose": "Entendi",
-    "prereleaseDismiss": "Fechar"
+    "prereleaseDismiss": "Fechar",
+    "reviewPending": "Aguardando revisão da comunidade",
+    "reviewHelp": "Achou um erro? Ajude a corrigir"
   },
   "ja": {
     "features": "機能",
@@ -503,7 +523,9 @@
     "prereleaseDiscord": "Discord に参加する",
     "prereleaseGithub": "GitHub でフォローする",
     "prereleaseClose": "わかりました",
-    "prereleaseDismiss": "閉じる"
+    "prereleaseDismiss": "閉じる",
+    "reviewPending": "コミュニティによる確認待ち",
+    "reviewHelp": "まちがいを見つけたら、直すのを手伝ってください"
   },
   "nl": {
     "features": "Functies",
@@ -549,7 +571,9 @@
     "prereleaseDiscord": "Kom naar de Discord",
     "prereleaseGithub": "Volg op GitHub",
     "prereleaseClose": "Begrepen",
-    "prereleaseDismiss": "Sluiten"
+    "prereleaseDismiss": "Sluiten",
+    "reviewPending": "Wacht op controle door de community",
+    "reviewHelp": "Fout gezien? Help hem te verbeteren"
   },
   "pl": {
     "features": "Funkcje",
@@ -595,7 +619,9 @@
     "prereleaseDiscord": "Dołącz do Discorda",
     "prereleaseGithub": "Obserwuj na GitHubie",
     "prereleaseClose": "Jasne",
-    "prereleaseDismiss": "Zamknij"
+    "prereleaseDismiss": "Zamknij",
+    "reviewPending": "Czeka na sprawdzenie przez społeczność",
+    "reviewHelp": "Widzisz błąd? Pomóż go poprawić"
   },
   "zh-cn": {
     "features": "功能",
@@ -641,7 +667,9 @@
     "prereleaseDiscord": "加入 Discord",
     "prereleaseGithub": "在 GitHub 上关注",
     "prereleaseClose": "知道了",
-    "prereleaseDismiss": "关闭"
+    "prereleaseDismiss": "关闭",
+    "reviewPending": "等待社区审校",
+    "reviewHelp": "发现错误？帮忙改一下吧"
   },
   "zh-tw": {
     "features": "功能",
@@ -687,7 +715,9 @@
     "prereleaseDiscord": "加入 Discord",
     "prereleaseGithub": "在 GitHub 上追蹤",
     "prereleaseClose": "知道了",
-    "prereleaseDismiss": "關閉"
+    "prereleaseDismiss": "關閉",
+    "reviewPending": "等待社群審閱",
+    "reviewHelp": "發現錯誤？幫忙改一下吧"
   },
   "ko": {
     "features": "기능",
@@ -733,7 +763,9 @@
     "prereleaseDiscord": "Discord 참여하기",
     "prereleaseGithub": "GitHub에서 팔로우하기",
     "prereleaseClose": "알겠어요",
-    "prereleaseDismiss": "닫기"
+    "prereleaseDismiss": "닫기",
+    "reviewPending": "커뮤니티 검토를 기다리는 중",
+    "reviewHelp": "틀린 곳을 찾았나요? 고치는 걸 도와주세요"
   },
   "sv": {
     "features": "Funktioner",
@@ -779,7 +811,9 @@
     "prereleaseDiscord": "Gå med i Discord",
     "prereleaseGithub": "Följ på GitHub",
     "prereleaseClose": "Uppfattat",
-    "prereleaseDismiss": "Stäng"
+    "prereleaseDismiss": "Stäng",
+    "reviewPending": "Väntar på granskning av communityn",
+    "reviewHelp": "Hittat ett fel? Hjälp till att rätta det"
   },
   "cs": {
     "features": "Funkce",
@@ -825,7 +859,9 @@
     "prereleaseDiscord": "Přidej se na Discord",
     "prereleaseGithub": "Sleduj na GitHubu",
     "prereleaseClose": "Rozumím",
-    "prereleaseDismiss": "Zavřít"
+    "prereleaseDismiss": "Zavřít",
+    "reviewPending": "Čeká na kontrolu komunitou",
+    "reviewHelp": "Našel jsi chybu? Pomoz ji opravit"
   },
   "da": {
     "features": "Funktioner",
@@ -871,7 +907,9 @@
     "prereleaseDiscord": "Kom med på Discord",
     "prereleaseGithub": "Følg med på GitHub",
     "prereleaseClose": "Forstået",
-    "prereleaseDismiss": "Luk"
+    "prereleaseDismiss": "Luk",
+    "reviewPending": "Venter på gennemsyn fra fællesskabet",
+    "reviewHelp": "Har du fundet en fejl? Hjælp med at rette den"
   },
   "nb": {
     "features": "Funksjoner",
@@ -917,7 +955,9 @@
     "prereleaseDiscord": "Bli med på Discord",
     "prereleaseGithub": "Følg på GitHub",
     "prereleaseClose": "Skjønner",
-    "prereleaseDismiss": "Lukk"
+    "prereleaseDismiss": "Lukk",
+    "reviewPending": "Venter på gjennomgang fra fellesskapet",
+    "reviewHelp": "Fant du en feil? Hjelp til med å rette den"
   },
   "fi": {
     "features": "Ominaisuudet",
@@ -963,6 +1003,8 @@
     "prereleaseDiscord": "Liity Discordiin",
     "prereleaseGithub": "Seuraa GitHubissa",
     "prereleaseClose": "Selvä",
-    "prereleaseDismiss": "Sulje"
+    "prereleaseDismiss": "Sulje",
+    "reviewPending": "Odottaa yhteisön tarkistusta",
+    "reviewHelp": "Löysitkö virheen? Auta korjaamaan se"
   }
 }

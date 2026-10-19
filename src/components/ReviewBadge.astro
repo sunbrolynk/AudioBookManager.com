@@ -1,0 +1,27 @@
+---
+import locales from '../locales.json';
+import strings from '../ui-strings.json';
+
+interface Props { locale?: string; bar?: boolean }
+const { locale, bar } = Astro.props;
+// A language shows this until a reviewer confirms it, which flips its "reviewed" flag in src/locales.json.
+const meta = locale ? (locales as Record<string, { reviewed?: boolean; issue?: number }>)[locale] : undefined;
+const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
+const href = meta ? `https://github.com/sunbrolynk/audiobookmanager.com/issues/${meta.issue}` : '';
+---
+{meta && meta.reviewed === false && (
+  <p class:list={['rv-badge', { bar }]}>
+    <span class="w"><b>{t.reviewPending}</b><a href={href}>{t.reviewHelp}</a></span>
+  </p>
+)}
+
+<style>
+  .rv-badge { margin: 0 0 .9rem; font-size: 14px; line-height: 1.5; color: var(--r1-mut); }
+  .rv-badge .w { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 12px; }
+  .rv-badge b { display: inline-flex; align-items: baseline; gap: 8px; font: 500 12px var(--r1-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--r1-want); overflow-wrap: anywhere; }
+  .rv-badge b::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: var(--r1-want); flex: none; }
+  .rv-badge a { color: var(--r1-acc-hi); text-underline-offset: 3px; overflow-wrap: anywhere; }
+  .rv-badge.bar { margin: 0; background: var(--r1-s1); border-bottom: 1px solid var(--r1-line); }
+  .rv-badge.bar .w { max-width: var(--r1-max); margin: 0 auto; padding: 7px 40px; }
+  @media (max-width: 760px) { .rv-badge.bar .w { padding: 7px 16px; } }
+</style>
