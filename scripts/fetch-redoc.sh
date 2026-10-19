@@ -13,6 +13,9 @@ VERSION="2.5.3"
 TARBALL_INTEGRITY="sha512-bBbat+Sx6xKWdyoCGTtA0BWeTEW9Vs4VnEja7q7ZLOk4IM7cHQLrf+kDxWF6dKeKxT8kOBnoy/OsNXCeLttpyQ=="
 BUNDLE_SHA256="1320f442151c57c447d3b70c7ffc6c4f86d08464020fe34c8cc5d3164e9944f0"
 PATCHED_SHA256="488ad6f335c47d69afe969ab3c9a906d5d2b91695d6b3e0be63ab76f63c94021"
+# ReDoc's MIT licence and the bundle's third-party notices, which the bundle's own header points at.
+LICENSE_SHA256="d3026d549cf68ab7355bcfa85877bf8f845b3334a7efbfdc63936432fb34ff0e"
+NOTICES_SHA256="469cc94b600aac09643f70e167cd1f66f24301ebb546532fad5db7c60f7b30d0"
 LOGO_URL="https://cdn.redoc.ly/redoc/logo-mini.svg"
 BLANK_PIXEL="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
 
@@ -25,7 +28,11 @@ curl -sfL "https://registry.npmjs.org/redoc/-/redoc-${VERSION}.tgz" -o "$work/re
 got="sha512-$(openssl dgst -sha512 -binary "$work/redoc.tgz" | base64 -w0)"
 [[ "$got" == "$TARBALL_INTEGRITY" ]] || { echo "redoc ${VERSION} tarball integrity mismatch: $got" >&2; exit 1; }
 
-tar -xzf "$work/redoc.tgz" -C "$work" package/bundles/redoc.standalone.js
+tar -xzf "$work/redoc.tgz" -C "$work" package/bundles/redoc.standalone.js package/bundles/redoc.standalone.js.LICENSE.txt package/LICENSE
+for pair in "package/LICENSE:$LICENSE_SHA256" "package/bundles/redoc.standalone.js.LICENSE.txt:$NOTICES_SHA256"; do
+    got="$(sha256sum "$work/${pair%%:*}" | cut -d' ' -f1)"
+    [[ "$got" == "${pair##*:}" ]] || { echo "redoc ${VERSION} ${pair%%:*} checksum mismatch: $got" >&2; exit 1; }
+done
 bundle="$work/package/bundles/redoc.standalone.js"
 got="$(sha256sum "$bundle" | cut -d' ' -f1)"
 [[ "$got" == "$BUNDLE_SHA256" ]] || { echo "redoc ${VERSION} bundle checksum mismatch: $got" >&2; exit 1; }
@@ -44,4 +51,6 @@ got="$(sha256sum "$work/patched.js" | cut -d' ' -f1)"
 [[ "$got" == "$PATCHED_SHA256" ]] || { echo "patched bundle checksum mismatch: $got" >&2; exit 1; }
 mkdir -p "$(dirname "$dest")"
 cp "$work/patched.js" "$dest"
-echo "redoc ${VERSION} written to public/api-reference/redoc.standalone.js"
+cp "$work/package/bundles/redoc.standalone.js.LICENSE.txt" "$dest.LICENSE.txt"
+cp "$work/package/LICENSE" "$(dirname "$dest")/redoc.LICENSE.txt"
+echo "redoc ${VERSION} written to public/api-reference/ with its licence and notices"

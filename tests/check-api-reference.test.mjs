@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { checkBundle, checkSpec } from '../scripts/check-api-reference.mjs';
+import { checkBundle, checkLicences, checkSpec } from '../scripts/check-api-reference.mjs';
 
 const spec = (extra = {}) => JSON.stringify({ openapi: '3.1.0', info: { title: 'ABM', version: '0.17.0' }, paths: { '/api/health': {} }, ...extra });
 
@@ -21,4 +21,9 @@ test('broken or empty specs fail', () => {
 test('any bundle other than the pinned one fails, and so does a cdn.redoc.ly reference', () => {
   const problems = checkBundle(Buffer.from('x https://cdn.redoc.ly/redoc/logo-mini.svg'));
   assert.equal(problems.length, 2);
+});
+
+test('the licence and notices files must ship unchanged', () => {
+  assert.deepEqual(checkLicences(() => { throw new Error('nope'); }), ['redoc.LICENSE.txt is missing', 'redoc.standalone.js.LICENSE.txt is missing']);
+  assert.equal(checkLicences(() => Buffer.from('edited')).length, 2);
 });

@@ -7,6 +7,11 @@ import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
 const PATCHED_SHA256 = '488ad6f335c47d69afe969ab3c9a906d5d2b91695d6b3e0be63ab76f63c94021';
+// ReDoc's MIT licence and the third-party notices its bundle points at ship beside it.
+const LICENCES = {
+  'redoc.LICENSE.txt': 'd3026d549cf68ab7355bcfa85877bf8f845b3334a7efbfdc63936432fb34ff0e',
+  'redoc.standalone.js.LICENSE.txt': '469cc94b600aac09643f70e167cd1f66f24301ebb546532fad5db7c60f7b30d0',
+};
 // Example values ABM's own schema uses; anything else matching these patterns came from a real setup.
 const ALLOWED = new Set(['127.0.0.1', '/mnt/books/Author/Series/Book.m4b']);
 const PRIVATE = [
@@ -30,6 +35,16 @@ export function checkSpec(text) {
   return problems;
 }
 
+export function checkLicences(read) {
+  const problems = [];
+  for (const [name, want] of Object.entries(LICENCES)) {
+    let buffer;
+    try { buffer = read(name); } catch { problems.push(`${name} is missing`); continue; }
+    if (createHash('sha256').update(buffer).digest('hex') !== want) problems.push(`${name} is not ReDoc 2.5.3's`);
+  }
+  return problems;
+}
+
 export function checkBundle(buffer) {
   const problems = [];
   const sha = createHash('sha256').update(buffer).digest('hex');
@@ -43,6 +58,7 @@ if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const problems = [
     ...checkBundle(readFileSync(new URL('redoc.standalone.js', dir))),
     ...checkSpec(readFileSync(new URL('openapi.json', dir), 'utf8')),
+    ...checkLicences((name) => readFileSync(new URL(name, dir))),
   ];
   if (problems.length) {
     console.error(`check-api-reference:\n  ${problems.join('\n  ')}`);
