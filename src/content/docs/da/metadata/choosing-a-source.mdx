@@ -3,6 +3,8 @@ title: Vælg en metadatakilde
 description: Indbygget, hostet eller din egen Libex-server.
 ---
 
+import { Icon } from '@astrojs/starlight/components';
+
 :::caution[Kommer i næste udgivelse]
 Valget af kilde er ikke med i en udgivet version endnu. Udgivne versioner bruger den offentlige Libex-instans på libexdb.com og har ingen indstilling for det.
 :::
@@ -12,10 +14,10 @@ I næste udgivelse har **Settings > Metadata > Source** en indstilling, der hedd
 | Valg | Hvad det betyder |
 |---|---|
 | Built-in (standard) | Libex kører inde i ABM. Det kræver, at der er valgt en udgående forbindelse først. |
-| Hosted (libexdb.com) | ABM spørger den offentlige Libex-instans. |
+| <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex på GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM spørger den offentlige Libex-instans. |
 | Self-hosted | ABM spørger en Libex-server, du peger den på. Skriv dens **Server URL**, fx `http://192.168.1.20:8000`. |
 
-**Test** tjekker den valgte kilde uden at gemme. **Status** fortæller, om den er klar. Et valg, du ikke har gemt, viser "Not in use yet - save to switch", indtil du gemmer.
+**Test** tjekker den valgte kilde uden at gemme. **Status** fortæller, om den er klar. Når du vælger en anden kilde, viser **Status** "Not in use yet - save to switch", indtil du gemmer.
 
 ## Indbygget og den udgående forbindelse
 
@@ -28,5 +30,5 @@ Med de to spørger ABM en Libex-server, og serveren snakker med Audible. En selv
 ## Hvad skal du vælge
 
 - Vil du bare have, at det virker, og er du ligeglad med, at Audible ser din adresse: Built-in med en direkte forbindelse, eller Hosted.
-- Vil du ikke vise din IP til Audible: Built-in gennem en VPN eller proxy, eller Hosted.
+- Vil du ikke vise din IP til Audible: Built-in gennem en proxy, den indbyggede WireGuard-tunnel eller en separat VPN-container eller -tjeneste. Eller Hosted, hvor det er Libex-serveren, der snakker med Audible i stedet for dig.
 - Kører du allerede en Libex-server: Self-hosted.

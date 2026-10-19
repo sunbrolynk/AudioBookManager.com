@@ -1197,7 +1197,7 @@
     "getItEyebrow": "Hent den",
     "installH2": "Kører fra én fil.",
     "buildP": "<b>Byg fra kildekoden.</b> Fra en klon af repoet skifter du <code>image:</code> ud med <code>build: .</code> og kører <code>docker compose up -d --build</code>.",
-    "otherP": "<b>Unraid, Windows, macOS, en almindelig Linux-service.</b> Ikke endnu. Docker er den eneste vej ind lige nu.",
+    "otherP": "<b>Docker er den eneste vej ind lige nu.</b> Native installationer til de almindelige opsætninger er planlagt, så ABM kan køre, hvor du allerede selvhoster:",
     "note": "ABM er i alpha. Tag backup af <code>/config</code>, før du opgraderer, og skim opdateringsnoterne først.",
     "fullGuide": "Hele installationsguiden →",
     "faqEyebrow": "FAQ",
@@ -1208,8 +1208,8 @@
     "brokenBtn": "Opret et issue",
     "helpH": "Vil du give en hånd med?",
     "helpP": "ABM er én persons projekt. Ko-fi eller en Monster holder det kørende.",
-    "kofiBtn": "Køb mig en Monster",
-    "monsterBtn": "Støt udviklingen",
+    "kofiBtn": "Støt udviklingen",
+    "monsterBtn": "Køb mig en Monster",
     "finalH2": "Stop med at rode<br />med mapper.",
     "ctaInstall": "Installér ABM",
     "ctaDocs": "Læs dokumentationen",
@@ -1370,6 +1370,33 @@
     "communityH2": "Find dine folk.",
     "communityP": "Har du et spørgsmål, brug for en hånd med din opsætning, eller vil du bare snakke lydbøger? Kom med i AudioBook Manager-fællesskabet på Discord for hjælp og snak.",
     "communityBtn": "Kom med på Discord",
+    "planned": [
+      [
+        "Linux",
+        "en native pakke og service"
+      ],
+      [
+        "Windows",
+        "et .exe-installationsprogram"
+      ],
+      [
+        "macOS",
+        "en native app"
+      ],
+      [
+        "Kubernetes",
+        "en cluster-deployment"
+      ],
+      [
+        "Unraid",
+        "en Community Apps-skabelon"
+      ],
+      [
+        "Proxmox",
+        "et LXC-installationsscript"
+      ]
+    ],
+    "coming": "Snart",
     "translatorNote": "Denne side er maskinoversat. Er dansk dit modersmål, og har du lyst til at hjælpe med at gøre den bedre, så skriv til mig på {mail}."
   }
 }

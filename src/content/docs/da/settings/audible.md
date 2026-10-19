@@ -23,7 +23,7 @@ For at forbinde en konto skal du bruge en **Marketplace**, et **Display Name** o
 
 | Indstilling | Standard | Virkning |
 |---|---|---|
-| Auto Add to Library | til | Hentede bøger bliver tilføjet til ABM's bibliotek |
+| Auto Add to Library | til | Når du henter en Audible-titel, der ikke er i ABM endnu, tilføjer ABM den til biblioteket først. Slået fra bliver den download afvist. I næste udgivelse bliver det til [Spejl Audible-biblioteket til ABM](/da/audible/#spejl-audible-biblioteket-til-abm) |
 | Concurrent Downloads | 2 | 1 til 5. Højere er hurtigere og kan ramme Audibles begrænsning af kald. |
 | Preferred Quality | High Quality | High, Normal eller Low |
 | Delete Encrypted Files | til | Fjern den krypterede AAXC-fil, når den er dekrypteret til M4B |

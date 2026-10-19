@@ -7,7 +7,7 @@ description: Rodmapper, import, ekstra filer, papirkurv, scanninger, opgradering
 
 ## Rodmapper (Root Folders)
 
-En rodmappe er en mappe, hvor ABM styrer bøger. Tilføj en med **Add Root Folder**, som åbner en mappebrowser, hvor du også kan skrive stien. ABM kan også vise mapper under en rod, der ikke er koblet til noget, og importere dem. En rods ledige plads og understøttelse af hardlinks bliver tjekket, når den tilføjes. Fjerner du en rod, bliver der ikke slettet filer.
+En rodmappe er en mappe, hvor ABM styrer bøger. Tilføj en med **Add Root Folder**, som åbner en mappebrowser, hvor du også kan skrive stien. ABM kan også vise mapper under en rod, der ikke er koblet til noget, og importere dem. En rods ledige plads og understøttelse af hardlinks bliver tjekket, når den tilføjes. Fjerner du en rod, bliver du spurgt, hvad der skal ske: **Remove from ABM only** (standard) glemmer bøgerne under den og lader filerne være, og **Delete the books and their files** sletter alt under stien permanent uden om papirkurven. En rod med bøger i kræver, at du skriver noget for at bekræfte.
 
 Standard-rodmappen er den, nye bøger havner i, og den, der afgør, om hardlink bliver tilbudt i Biblioteksimport.
 
@@ -27,10 +27,10 @@ Standard-rodmappen er den, nye bøger havner i, og den, der afgør, om hardlink 
 | Use Hardlinks instead of Copy | til | Til færdige downloads: hardlink i stedet for kopi, så seeding ikke fordobler pladsen. Kræver samme volume. |
 | Library Import | Copy | Standarden for [Biblioteksimport](/da/library-import/): kopiér, hardlink eller flyt. Hardlink er grå, indtil standard-roden er blevet tjekket og understøtter det. |
 | Import Extra Files | til | Hovedkontakten for at tage filer, der ikke er lyd, med. Gælder for Biblioteksimport, Manual Import og færdige downloads |
-| Extra File Extensions (advanced) | tom | Ekstra filtyper at importere, fx `srt, lrc`. Blokerede typer bliver afvist. |
+| Extra File Extensions (advanced) | tom | Flere filtyper, der skal med, og som beholder deres egne navne, fx `srt, lrc`. Med eller uden punktum, adskilt af kommaer eller mellemrum. Blokerede typer, som eksekverbare filer og ufærdige downloads, kan ikke gemmes. Slået fra, mens **Import Extra Files** er slået fra |
 | Preferred Cover (advanced) | Matched | Den matchede udgaves cover eller mappens bedste billede, når begge findes |
 
-Ekstra filer har fem kontakter:
+**Import Extra Files** tager en bogs andre filer med sammen med lyden. Fem kontakter vælger, hvilke slags der kommer med, og en fil, der matcher **Extra File Extensions**, kommer med, selv når dens slags er slået fra:
 
 | Kontakt | Standard | Omfatter |
 |---|---|---|
@@ -55,7 +55,7 @@ Hardlink er ikke det samme som **Use Hardlinks instead of Copy**. Den er til dow
 | Recycling Bin Cleanup | 7 (dage) | 0 slår automatisk oprydning fra |
 | Library Scan Interval | 0 (fra) | Timer mellem automatiske scanninger |
 | Watch for Changes | fra | Scan, når filer bliver tilføjet, fjernet eller ændret |
-| Cover Cache Workers | 4 | Hvor mange covers der hentes ad gangen, når billeder bliver cachet, fra 1 til 16. Sænk det, hvis en cache-kørsel melder fejl |
+| Cover Cache Workers | 4 | Hvor mange covers der hentes ad gangen, når billeder bliver cachet, fra 1 til 16 |
 
 ## Kvalitetsopgraderinger (Quality Upgrades)
 

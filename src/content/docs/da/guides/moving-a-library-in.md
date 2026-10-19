@@ -17,9 +17,11 @@ description: Tag en eksisterende samling med ind i ABM på en sikker måde.
 4. Vælg rækkerne, og tilføj dem. Det bliver ved to klik, hvis du accepterer standarderne.
 5. Hold øje med opgaven. Oversigten siger, hvor mange filer der blev kopieret i stedet for hardlinket, og hvad der fejlede.
 
-## Hvis ABM skal styre kildemappen
+## Hvis din samling allerede ligger, hvor du vil have den
 
-Tilføj den som rodmappe i stedet, og lad ABM scanne den. Så bliver filerne liggende, og bøgerne får deres status ud fra det, der ligger på disken.
+At tilføje mappen som rodmappe tilføjer ikke selv nogen bøger. ABM's scanninger tjekker kun bøger, den allerede kender, så den samler ikke op på, hvad der ligger derinde. Bøgerne skal stadig ind gennem Biblioteksimport: rodmappens tal for **Unmapped Folders** under **Settings > Media Management** åbner Biblioteksimport for den rodmappe.
+
+Importen lægger hver bog i ABM's eget Forfatter/Serie/Bog-layout under standard-rodmappen. Vælg hardlink, så originalerne bliver urørte uden at fylde mere.
 
 ## Faldgruber
 

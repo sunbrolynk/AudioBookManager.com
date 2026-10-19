@@ -26,15 +26,19 @@ Kører klienten i en anden container, så tjek, at den og ABM ser downloadmappen
 
 ## 5. Sæt en kvalitetsprofil
 
-**Settings > Profiles** har den kvalitetsstige, ABM bruger til at afgøre, hvad der skal hentes, og hvad der tæller som en opgradering. Én profil er standard. Start med den, og finpuds senere. Se [Profiler](/da/settings/profiles/).
+**Settings > Profiles** har den kvalitetsstige, ABM bruger til at afgøre, hvad der skal hentes, og hvad der tæller som en opgradering. En frisk installation har ingen, så opret en. Den første profil, du laver, bliver standard, og du kan finpudse den senere. Se [Profiler](/da/settings/profiles/).
 
-## 6. Hent eller tilføj bøger
+## 6. Forbind Audible (valgfrit)
+
+Har du Audible-bøger, så forbind din konto under **Settings > Audible**. Vælg din **Marketplace**, tryk på **Connect Audible Account** og så **I Understand, Open Amazon Login**. Log ind hos Amazon i den nye fane. Den tomme side eller "Page not found"-side, du lander på bagefter, er helt forventet. Kopiér hele adressen fra adresselinjen ind i **Redirect URL**, tilføj et **Display Name**, hvis du har lyst, og tryk på **Complete Login**. Din adgangskode bliver aldrig gemt, og den første synkronisering af biblioteket starter med det samme. Se [Audible](/da/audible/).
+
+## 7. Hent eller tilføj bøger
 
 - Har du allerede en samling? Brug [Biblioteksimport](/da/library-import/).
 - Starter du forfra? Brug **Library > Add New**, og søg efter titel, forfatter eller serie. Se [Tilføj ny](/da/using/add-new/).
 
 En bog, du tilføjer, står som ønsket, indtil der er importeret en fil til den. Ønskede bøger dukker op under **Wanted > Missing** og bliver søgt efter automatisk.
 
-## 7. Se den arbejde
+## 8. Se den arbejde
 
 **Activity > Queue** viser, hvad der bliver hentet. **Activity > History** viser, hvad der er blevet hentet og importeret. Når noget går galt, er [Fejlfinding](/da/troubleshooting/) og siden [Opgaver](/da/system/tasks/) stederne at kigge.

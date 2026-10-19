@@ -1,21 +1,27 @@
 ---
 title: Sidecar-filer
-description: De cover-, OPF-, beskrivelses-, oplæser- og cue-filer, ABM skriver ved siden af en bog.
+description: De metadata.json-, cover-, OPF-, beskrivelses- og oplæserfiler, ABM skriver ved siden af en bog.
 ---
 
-En sidecar er en lille fil ved siden af lyden. Audiobookshelf og andre afspillere læser dem. ABM kan skrive disse:
+En sidecar er en lille fil ved siden af lyden. Audiobookshelf og andre afspillere læser dem. ABM skriver disse:
 
-| Fil | Indhold |
-|---|---|
-| `cover.jpg` | Bogens cover |
-| `.opf` | Metadata i OPF-format, som Audiobookshelf kan læse. Opkaldt efter bogens første lydfil (fx `Dune.opf`), eller `title.opf`, når bogen ikke har nogen lyd |
-| `desc.txt` | Beskrivelsen |
-| `reader.txt` | Oplæseren |
-| `.cue` | Kapitler fra Libex (kommer i næste udgivelse) |
+| Fil | Indhold | Kontakt |
+|---|---|---|
+| `metadata.json` | Audiobookshelfs egen metadatafil plus en `abm`-blok, der markerer den som ABM's. Audiobookshelf læser den før alt andet | Ingen, bliver altid skrevet |
+| `cover.jpg` | Bogens cover. Bliver ikke skrevet, når mappen allerede har en `cover.*` | cover.jpg |
+| `.opf` | Metadata i OPF-format. Opkaldt efter bogens første lydfil (fx `Dune.opf`), eller `title.opf`, når bogen ikke har nogen lyd | title.opf |
+| `desc.txt` | Beskrivelsen, uden HTML. Springes over, når der ikke er nogen | desc.txt |
+| `reader.txt` | Oplæserne. Springes over, når der ikke er nogen | reader.txt |
+
+Sammen med mappelayoutet er det de filer, Audiobookshelf læser en bogs detaljer fra, så den ser den samme bog, som ABM gør.
 
 ## Hvornår de bliver skrevet
 
-Under **Settings > Metadata** vælger **Create on Book Add**, **Create on Import** og **Create on Refresh** hvornår. Som standard er det kun import, der skriver dem. **Overwrite Existing** er slået fra, så en fil, der allerede er der, bliver liggende. Du kan også skrive dem fra redigeringsdialogen, for én bog eller en markering af serier og forfattere. Se [Metadata-indstillinger](/da/settings/metadata/).
+`metadata.json` bliver skrevet, hver gang en bog bliver tilføjet, importeret eller opdateret.
+
+De fire andre har hver deres kontakt under **Settings > Metadata > Files to Create**, alle slået til som standard. De bliver kun skrevet, når den tilhørende udløser også er slået til: **Create on Book Add** (fra), **Create on Import** (til, hvilket dækker downloads, Biblioteksimport og Audible-downloads) og **Create on Refresh** (fra). **Overwrite Existing** er slået fra, så en fil, der allerede er der, bliver liggende. Der bliver ikke skrevet noget, før bogens mappe findes.
+
+Redigeringsdialogens **Write to Directories** skriver også de fire, for én bog eller en markering af serier og forfattere. Se [Metadata-indstillinger](/da/settings/metadata/).
 
 ## Coveret er særligt
 

@@ -3,6 +3,10 @@ title: Reverse proxy
 description: Sæt ABM bag nginx, Traefik eller Caddy uden at ødelægge login.
 ---
 
+:::caution[Anbefales ikke]
+Det anbefales ikke at lægge ABM ud på internettet, hverken gennem en reverse proxy eller en port forward. Det er det samme råd, Servarr-apps'ene giver. Vil du nå den udefra, så brug en VPN som WireGuard eller Tailscale i stedet. ABM er bygget til at være sikker bag en proxy, men der er ingen garanti for sikkerheden, når den først er offentlig, og risikoen er din. Gør du det alligevel, så sæt **Authentication Required** til **Enabled**, og hold ABM opdateret.
+:::
+
 Tre indstillinger betyder noget. Får du dem rigtigt, virker login, websocket og gemning.
 
 ## 1. Fortæl ABM, hvem proxyen er

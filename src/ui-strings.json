@@ -218,6 +218,13 @@
     "footerReportIssue": "Rapportér et problem med appen",
     "footerSupport": "Støt udviklingen",
     "footerApiReference": "API-reference",
-    "footerBuyMonster": "Køb mig en Monster"
+    "footerBuyMonster": "Køb mig en Monster",
+    "footerContact": "Kontakt",
+    "footerMailSupport": "Hjælp med ABM",
+    "footerMailTranslate": "Oversættelser",
+    "footerMailPrivacy": "Privatliv",
+    "footerMailAdmin": "Alt andet",
+    "releasesNone": "Ingen udgivelser endnu.",
+    "releasesBeforeUpgrade": "Før du opgraderer"
   }
 }
