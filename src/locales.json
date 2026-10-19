@@ -14,5 +14,9 @@
   "en-au": {
     "label": "English (Australia)",
     "lang": "en-AU"
+  },
+  "it": {
+    "label": "Italiano",
+    "lang": "it"
   }
 }

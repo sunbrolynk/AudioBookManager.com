@@ -1,0 +1,87 @@
+---
+title: Installare ABM
+description: Un container, tre cartelle, un comando. Questa pagina è tutta l'installazione.
+---
+
+import { Aside, Steps } from '@astrojs/starlight/components';
+
+Il database è un file SQLite in `/config`, quindi non c'è nessun servizio database da configurare.
+
+**Ti serve:**
+
+- Docker con Compose
+- Una cartella per la tua libreria di audiolibri
+- La cartella in cui il tuo client di download mette i download completati
+- Una cartella per i dati di ABM
+
+## Installazione
+
+<Steps>
+
+1. **Crea un file compose.** Salva questo come `docker-compose.yml`:
+
+   ```yaml
+   services:
+     audiobook-manager:
+       image: ghcr.io/sunbrolynk/audiobook-manager:latest
+       container_name: audiobook-manager
+       restart: unless-stopped
+       ports:
+         - "${PORT:-5173}:5173"
+       environment:
+         TIMEZONE: ${TIMEZONE:-UTC}
+         LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
+         TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
+       volumes:
+         - /path/to/library:/audiobooks
+         - /path/to/downloads:/downloads
+         - /path/to/config:/config
+   ```
+
+2. **Puntalo sulle tue cartelle.** Cambia la parte sinistra di ogni volume con una cartella vera della tua macchina. La parte destra lasciala com'è.
+
+   | Percorso sull'host | Percorso nel container | Cosa ci va |
+   |---|---|---|
+   | `/path/to/library` | `/audiobooks` | La tua libreria di audiolibri. Obbligatoria. |
+   | `/path/to/downloads` | `/downloads` | Dove il tuo client di download mette i download completati. Obbligatoria. |
+   | `/path/to/config` | `/config` | Il database SQLite, i backup, i log, i cestini e la chiave segreta generata. Non perderla. |
+
+3. **Avvialo.** Lancia questo dalla cartella con il file compose:
+
+   ```bash
+   docker compose up -d
+   ```
+
+4. **Aprilo.** Vai su `http://your-server:5173`. Alla prima visita ti guida nella configurazione di un login.
+
+</Steps>
+
+<Aside type="tip" title="Download in un altro container?">
+Se il tuo client di download gira in un suo container, la sua cartella dei download deve essere la stessa cartella che ABM vede come `/downloads`. Se i percorsi sono diversi, aggiungi una mappatura dei percorsi remoti in **Settings > Download Clients**.
+</Aside>
+
+## Primo avvio
+
+Imposta il tuo fuso orario con `TIMEZONE` nel file compose. Poi, in **Settings**, aggiungi una cartella radice in **Media Management**, un indexer in **Indexers** e un client di download in **Download Clients**. Variabili d'ambiente e reverse proxy sono spiegati in [Configurazione](/it/configuration/).
+
+## Compilare dai sorgenti
+
+Per compilare l'immagine da solo, clona il repo, sostituisci la riga `image:` con `build: .` e lancia:
+
+```bash
+docker compose up -d --build
+```
+
+## Aggiornare
+
+Scarica la nuova immagine e ricrea il container. La pagina [Aggiornamenti](/it/updates/) elenca cosa è cambiato in ogni release.
+
+<Aside type="caution" title="ABM è in alpha">
+Fai un backup di `/config` prima di aggiornare, e dai prima un'occhiata alle note di aggiornamento.
+</Aside>
+
+## Qualcosa non va?
+
+- **La pagina non si carica.** Controlla la mappatura delle porte nel file compose, poi lancia `docker logs audiobook-manager`.
+- **Le modifiche dal mio dominio vengono rifiutate.** ABM rifiuta le modifiche da un indirizzo che non è quello da cui lo raggiungi. Per prima cosa fai passare al proxy l'header `Host` originale. Se non basta, aggiungi il tuo dominio a **CORS Allowed Domains** in **Settings > General** (è un'impostazione avanzata, quindi attiva **Show Advanced**) e riavvia ABM. Vedi [Risoluzione dei problemi](/it/troubleshooting/).
+- **I download finiscono ma non vengono mai importati.** Controlla la mappatura delle cartelle nel suggerimento qui sopra.
