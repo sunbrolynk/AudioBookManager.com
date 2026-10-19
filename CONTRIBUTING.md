@@ -35,15 +35,22 @@ Updates require a manual merge.
 
 ## Repository settings
 
-Checks only protect `main` when GitHub enforces them. Branch protection and
-rulesets need a public repository or GitHub Pro, so set these as soon as the
-repository goes public:
+`main` has the **protect main** ruleset. Changes reach `main` only through a
+pull request, and the `Site validation` check (the `Site checks` workflow) has
+to pass first. GitHub only enforces rulesets on a public repository or GitHub
+Pro, so it starts working when the repository goes public.
 
-- A ruleset on `main`: require a pull request, require the `Site validation`
-  check to pass and the branch to be up to date, block force pushes and
-  deletion, and require linear history.
-- The same ruleset on `translation/**`, without the linear history rule, since
-  `main` is merged into those branches.
+- Every PR into `main` runs `Site validation`, including Dependabot's and the
+  translation review PRs, so the required check is never missing.
+- The `translation/<code>` branches are deliberately left out of the ruleset.
+  Translators' fork PRs target them, and corrections get pushed to them
+  directly. Their PRs still run the same checks, and nothing on them reaches
+  `main` except through a review PR, which runs them again.
+- Merge PRs into `main` with **Squash and merge**. Review branches have `main`
+  merged into them, and a squash keeps those merge commits off `main`.
+
+Still to set once the repository is public:
+
 - Actions: allow only GitHub-owned actions and actions pinned to a full commit
   SHA, keep the default workflow token read-only, and require approval before
   running workflows from first-time outside contributors.

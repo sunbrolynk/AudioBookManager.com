@@ -12,7 +12,8 @@ Release notes stay in English in every language.
 
 1. **Publish PR.** The complete translation goes on a `translation/publish-<code>`
    branch (for example `translation/publish-de`) and a PR into `main`. It merges
-   once the build, link check and security checks pass. Deploying `main` puts
+   once the required `Site validation` check passes (build, languages, links,
+   security). Deploying `main` puts
    the language live.
 2. **Review PR.** Straight after, a `translation/<code>` branch (for example
    `translation/de`) gets a draft PR into `main` titled
@@ -105,6 +106,14 @@ language. A new language needs:
   its review PR won't be posted to Discord.
 
 `npm run build` tells you what's missing.
+
+## Branch rules
+
+`main` only takes pull requests, and each one needs the `Site validation` check
+to pass. The `translation/<code>` branches aren't protected, so anyone can open
+a PR into them and accepted corrections can be pushed straight to them. A batch
+still reaches `main` only through its review PR, which is squash-merged once
+`Site validation` passes.
 
 ## Keeping a review branch current
 
