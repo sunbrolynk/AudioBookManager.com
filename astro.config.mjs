@@ -4,6 +4,7 @@ import { satteri } from '@astrojs/markdown-satteri';
 import locales from './src/locales.json' with { type: 'json' };
 import sidebarLabels from './src/sidebar-labels.json' with { type: 'json' };
 import { htmlAsText } from './src/lib/html-as-text.mjs';
+import { markdownSafeUrls } from './src/lib/markdown-safe-urls.mjs';
 
 export default defineConfig({
   site: 'https://audiobookmanager.com',
@@ -13,7 +14,7 @@ export default defineConfig({
   build: { inlineStylesheets: 'never' },
   // Small fonts as files too, since the Content-Security-Policy allows no data: fonts.
   vite: { build: { assetsInlineLimit: 0 } },
-  markdown: { processor: satteri({ mdastPlugins: [htmlAsText] }) },
+  markdown: { processor: satteri({ mdastPlugins: [htmlAsText, markdownSafeUrls] }) },
   integrations: [
     starlight({
       title: 'AudioBook Manager',
