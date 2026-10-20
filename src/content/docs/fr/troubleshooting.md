@@ -46,13 +46,14 @@ Augmente `MAX_REQUEST_BODY_BYTES`. Un reverse proxy peut aussi imposer une limit
 
 ## La source de métadonnées est indisponible
 
-Les ajouts, les recherches, les rafraîchissements et Discover ont besoin de la source de métadonnées. Le message la nomme, par exemple « The metadata source is unavailable ». Les causes : la source est en panne ou limite le débit, ou ta connexion sortante la bloque.
+Ajouter, chercher, actualiser et Discover ont besoin de Libex. Quand ABM n'obtient pas de réponse, une recherche de livres échoue avec "Libex search failed" et une recherche d'auteurs ou de séries avec "Libex could not be reached; try again shortly", au lieu d'afficher une liste vide. Causes : Libex est en panne, ou la connexion d'ABM ne l'atteint pas.
 
-1. Vérifie **Settings > General > Proxy & VPN** et que le chemin fonctionne.
-2. Réessaie au bout d'une minute. Une source qui limite le débit répond 503 avec une indication de nouvelle tentative au bout de 30 secondes.
-3. En attendant, tu peux toujours ajouter et importer des livres à la main.
+1. Regarde la [page d'état d'ABM](https://status.audiobookmanager.com) et la [page d'état de Libex](https://status.libexdb.com) pour voir si c'est en panne pour tout le monde.
+2. Vérifie que le conteneur a accès à Internet, et que le proxy sous **Settings > General > Proxy** est bon si tu en utilises un.
+3. Réessaie au bout d'une minute.
+4. Tu peux continuer à ajouter et importer des livres à la main en attendant.
 
-Les tâches en arrière-plan qui tombent sur une panne échouent avec la raison, et envoient une seule notification par panne.
+Une tâche en arrière-plan qui tombe sur une panne échoue en donnant la raison. Elle est relancée toute seule, jusqu'à six fois ou pendant six heures, selon ce qui arrive en premier.
 
 ## Un rafraîchissement a changé les détails d'un livre
 
@@ -72,7 +73,7 @@ Ajoute une correspondance de chemin distant, ou fais en sorte qu'ABM et le clien
 
 ## Docker n'arrive pas à joindre la source de métadonnées ou les indexeurs
 
-Vérifie le DNS et le réglage de la connexion sortante avant toute chose. Sous Docker, une connexion directe ne fonctionne que si le conteneur peut accéder à Internet.
+Vérifie d'abord le DNS et le réglage du proxy. Dans Docker, ABM n'atteint Libex et tes indexeurs que si le conteneur a accès à Internet.
 
 ## Toujours bloqué
 

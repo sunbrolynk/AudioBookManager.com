@@ -3,7 +3,7 @@ title: Status
 description: Gezondheidschecks en een blik op wat ABM aan het doen is.
 ---
 
-**System > Status** draait gezondheidschecks en toont alles wat er mis is: downloadclients en indexers die falen, problemen met rootmappen en problemen met de uitgaande verbinding. Ook zie je hoeveel van de databaseverbindingspool in gebruik is. Is er niks aan de hand, dan staat er "All systems healthy".
+**System > Status** voert gezondheidscontroles uit en toont alles wat niet klopt: mislukkende downloadclients en indexers, problemen met rootmappen en een onbereikbare Libex. Het toont ook het gebruik van de databaseverbindingspool. Is alles in orde, dan staat er "All systems healthy".
 
 De gezondheidschecks draaien ook elke 6 uur op de achtergrond. Connect kan een melding sturen bij **On Health Issue** en **On Health Restored**. Zie [Connect](/nl/settings/connect/).
 

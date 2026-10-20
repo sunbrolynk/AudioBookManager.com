@@ -53,8 +53,8 @@ Hardlink non è la stessa cosa di **Use Hardlinks instead of Copy**. Quella vale
 | Enable Recycling Bin | attivo | I file dei libri eliminati vanno in un cestino invece di essere cancellati |
 | Recycling Bin | vuoto | Dove sta il cestino. Se è vuoto usa il predefinito di ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (giorni) | 0 disattiva la pulizia automatica |
-| Library Scan Interval | 0 (disattivo) | Ore tra una scansione automatica e l'altra |
-| Watch for Changes | disattivo | Scansiona quando dei file vengono aggiunti, rimossi o modificati |
+| Library Scan Interval | 24 | Ore tra una scansione automatica e l'altra |
+| Watch for Changes | attivo | Scansiona quando dei file vengono aggiunti, rimossi o modificati |
 | Cover Cache Workers | 4 | Quante copertine vengono scaricate insieme quando si mettono in cache le immagini, da 1 a 16 |
 
 ## Upgrade di qualità (Quality Upgrades)

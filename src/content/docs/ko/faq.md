@@ -41,7 +41,7 @@ Readarr는 전자책과 오디오북을 함께 다뤘는데, 지금은 개발이
 
 ## ABM이 챕터, 설명, 태그를 Audiobookshelf가 읽는 곳에 써 줄 수 있나요?
 
-`cover.jpg`, `.opf`, `desc.txt`, `reader.txt`를 쓰고, 오디오에 태그도 쓸 수 있어요. 출간본과 챕터를 비교하는 기능과 `.cue` 파일은 다음 릴리스에서 추가돼요. [사이드카 파일](/ko/using/sidecars/)을 보세요.
+`cover.jpg`, `.opf`, `desc.txt`, `reader.txt`를 쓰고, 오디오에 태그도 쓸 수 있어요. 정식 에디션과의 챕터 비교와 `.cue` 파일은 이후 릴리스에서 추가할 예정이에요. [사이드카 파일](/ko/using/sidecars/)을 보세요.
 
 ## 파일을 변환할 수 있나요?
 

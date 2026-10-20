@@ -41,7 +41,7 @@ No. Esos datos vienen de la fuente de metadatos y ABM no los edita a mano. Lo qu
 
 ## ¿ABM puede escribir capítulos, descripciones y etiquetas donde los lee Audiobookshelf?
 
-Escribe `cover.jpg`, un `.opf`, `desc.txt` y `reader.txt`, y puede escribir etiquetas dentro del audio. La comparación de capítulos con la edición publicada y los archivos `.cue` llegan en la próxima versión. Consulta [Archivos auxiliares](/es/using/sidecars/).
+Escribe `cover.jpg`, un `.opf`, `desc.txt` y `reader.txt`, y puede escribir etiquetas en el audio. La comparación de capítulos con la edición publicada y los archivos `.cue` están previstos para una versión posterior. Consulta [Archivos sidecar](/es/using/sidecars/).
 
 ## ¿Puedo convertir mis archivos?
 

@@ -28,11 +28,9 @@ ffmpeg로 오디오 파일 자체에 태그를 써요.
 
 태그 필드는 모두 기본값이 켜짐이에요: Title, Artist(Author), Album Artist(Author), Album(Title/Series), Genre, Year, Comment(Description), Narrator(Composer), Cover Art.
 
-## 다음 릴리스에서 바뀌는 것
+## 이후 릴리스에서 추가돼요
 
-페이지가 섹션별로 다시 정리되고, **Metadata Source** 선택, **Test**, **Status**가 있는 **Source** 섹션이 생겨요. [메타데이터 소스 고르기](/ko/metadata/choosing-a-source/)를 보세요.
-
-**Local Metadata Library** 섹션도 생겨요(직접 켜야 하고, 아직 연결되지 않은 미리 보기로 보여요). 라이브러리를 SQLite로 내려받을 수 있고, 자체 예약 백업도 있어요. 백업 옵션은 General 백업 옵션과 똑같고, 기본값은 매주 04:00, 28일 보관이에요.
+메타데이터 소스 선택과 메타데이터 라이브러리의 로컬 사본은 이후 릴리스에서 추가할 예정이에요. [내 메타데이터, 내 통제](/ko/metadata/control/)를 보세요.
 
 ## 주의할 점
 

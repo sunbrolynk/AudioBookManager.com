@@ -30,4 +30,4 @@ De standaardwaarden staan in de app en worden hier niet herhaald. Open de pagina
 
 ## Valkuilen
 
-Vernieuwingen worden overgeslagen als de metadatabron niet klaar is, en dat wordt één keer gelogd.
+Vernieuwingen worden overgeslagen als Libex niet bereikbaar is, en dat wordt één keer gelogd.

@@ -9,9 +9,9 @@ Desde cualquier página puedes añadir un libro a la biblioteca. Recommended usa
 
 ## Mantenerlo al día
 
-Las programaciones de actualización y los límites están en los [ajustes de Discover](/es/settings/discover/). Si un catálogo está vacío, la página puede actualizarlo por ti en cuanto se pueda llegar a la fuente de metadatos.
+Los horarios y límites de actualización están en los [ajustes de Discover](/es/settings/discover/). Si un catálogo está vacío, la página puede actualizarlo por ti cuando Libex sea accesible.
 
 ## Detalles a tener en cuenta
 
-- Los catálogos dependen de la fuente de metadatos. Si no se puede llegar a ella o no hay ninguna conexión de salida elegida, las actualizaciones se saltan y el registro dice por qué.
+- Los catálogos dependen de Libex. Si no es accesible, las actualizaciones se omiten y el registro dice por qué.
 - Discover muestra lo que publica Audible. No dice nada sobre lo que tienen tus indexadores.

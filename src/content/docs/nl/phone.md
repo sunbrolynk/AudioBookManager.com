@@ -46,9 +46,5 @@ Settings is een gegroepeerde lijst: Library, Sources en App. Elke rij is een lin
 
 ## Importwerkbank (Import Workbench)
 
-:::caution[Komt in de volgende release]
-De telefoonweergave van de Import Workbench zit nog niet in een uitgebrachte versie.
-:::
-
 - Een samenvattingskaart laat zien hoeveel mappen klaar zijn. Tik erop om de legenda te openen en de lijst te filteren.
 - De onderbalk toont hoeveel er geselecteerd zijn en de knop Add, en zegt waarom Add geblokkeerd is.

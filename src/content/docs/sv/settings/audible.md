@@ -23,9 +23,9 @@ För att koppla ett konto behövs en **Marketplace**, ett **Display Name** och d
 
 | Inställning | Standard | Effekt |
 |---|---|---|
-| Auto Add to Library | på | När du laddar ner en Audible-titel som inte finns i ABM än lägger ABM först till den i biblioteket. Av vägras den nedladdningen. I nästa version blir det här [Mirror Audible library to ABM](/sv/audible/#spegla-audible-biblioteket-till-abm-mirror-audible-library-to-abm) |
+| Mirror Audible library to ABM | på | Varje synk lägger till Audible-böcker som inte finns i ABM än och laddar ner de som saknar filer, upp till 25 per synk. När du slår på det ser du hur många böcker nästa synk lägger till och laddar ner. Se [Spegla Audible-biblioteket till ABM](/sv/audible/#spegla-audible-biblioteket-till-abm-mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | 1 till 5. Högre går snabbare men kan slå i Audibles gränser för antal anrop. |
-| Preferred Quality | High Quality | High, Normal eller Low |
+| Preferred Quality | High | High eller Normal |
 | Delete Encrypted Files | på | Ta bort den krypterade AAXC-filen när den har dekrypterats till M4B |
 | Temp Download Path | tom | Tom använder systemets temp-mapp |
 

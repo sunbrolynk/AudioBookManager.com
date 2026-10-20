@@ -27,11 +27,11 @@ En planlagt kørsel, der ikke havde noget at lave, skriver ingenting. En gentage
 
 ## Opbevaring
 
-**Activity Log Retention** i General sletter poster efter 90 dage som standard. 0 beholder dem. Logfiler har deres egen opbevaringstid (30 dage), så et link fra en post til en log kan leve længere end loggen.
+**Activity Log Retention** i General sletter poster efter 90 dage som standard. 0 beholder dem. Logfiler har deres egen opbevaring (30 dage).
 
 ## Se loggen (View log)
 
-:::caution[Kommer i næste udgivelse]
+:::caution[Kommer i en senere udgivelse]
 View log-links fra poster er ikke med i en udgivet version endnu.
 :::
 

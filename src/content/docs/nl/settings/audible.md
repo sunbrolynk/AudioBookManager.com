@@ -23,9 +23,9 @@ Voor het koppelen van een account heb je een **Marketplace**, een **Display Name
 
 | Instelling | Standaard | Wat het doet |
 |---|---|---|
-| Auto Add to Library | aan | Download je een Audible-titel die nog niet in ABM staat, dan voegt ABM hem eerst aan de bibliotheek toe. Staat het uit, dan wordt die download geweigerd. In de volgende release wordt dit [Mirror Audible library to ABM](/nl/audible/#audible-bibliotheek-spiegelen-naar-abm) |
+| Mirror Audible library to ABM | aan | Elke sync voegt de Audible-boeken toe die nog niet in ABM staan en downloadt die zonder bestanden, tot 25 per sync. Bij het aanzetten zie je hoeveel boeken de volgende sync toevoegt en downloadt. Zie [Audible-bibliotheek naar ABM spiegelen](/nl/audible/#audible-bibliotheek-spiegelen-naar-abm) |
 | Concurrent Downloads | 2 | 1 tot 5. Hoger is sneller en kan tegen de rate limits van Audible aanlopen. |
-| Preferred Quality | High Quality | High, Normal of Low |
+| Preferred Quality | High | High of Normal |
 | Delete Encrypted Files | aan | Verwijdert het versleutelde AAXC-bestand nadat het naar M4B is ontsleuteld |
 | Temp Download Path | leeg | Leeg gebruikt de tijdelijke map van het systeem |
 

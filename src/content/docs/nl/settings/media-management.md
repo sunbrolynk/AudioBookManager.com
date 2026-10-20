@@ -53,8 +53,8 @@ Hardlinken is niet hetzelfde als **Use Hardlinks instead of Copy**. Die is voor 
 | Enable Recycling Bin | aan | Verwijderde boekbestanden gaan naar een prullenbak in plaats van weg te zijn |
 | Recycling Bin | leeg | Waar de prullenbak staat. Leeg gebruikt de standaard van ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dagen) | 0 zet automatisch opruimen uit |
-| Library Scan Interval | 0 (uit) | Aantal uur tussen automatische scans |
-| Watch for Changes | uit | Scant als bestanden worden toegevoegd, verwijderd of gewijzigd |
+| Library Scan Interval | 24 | Aantal uur tussen automatische scans |
+| Watch for Changes | aan | Scant als bestanden worden toegevoegd, verwijderd of gewijzigd |
 | Cover Cache Workers | 4 | Hoeveel covers er tegelijk gedownload worden bij het cachen van artwork, van 1 tot 16 |
 
 ## Kwaliteitsupgrades (Quality Upgrades)

@@ -3,7 +3,7 @@ title: Status
 description: Hälsokontroller och en titt på vad ABM håller på med.
 ---
 
-**System > Status** kör hälsokontroller och listar allt som är fel: nedladdningsklienter och indexerare som strular, problem med rotmappar och problem med den utgående anslutningen. Den visar också hur databasens anslutningspool används. När inget är fel står det "All systems healthy".
+**System > Status** kör hälsokontroller och listar allt som är fel: nedladdningsklienter och indexerare som fallerar, problem med rotmappar och ett Libex som inte går att nå. Den visar också användningen av databasens anslutningspool. När allt är bra står det "All systems healthy".
 
 Hälsokontrollerna körs också var sjätte timme i bakgrunden. Connect kan skicka notiser vid **On Health Issue** och **On Health Restored**. Se [Connect](/sv/settings/connect/).
 

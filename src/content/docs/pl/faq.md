@@ -41,7 +41,7 @@ Nie. Te dane pochodzą ze źródła metadanych i ABM nie edytuje ich ręcznie. K
 
 ## Czy ABM może zapisywać rozdziały, opisy i tagi tam, gdzie czyta je Audiobookshelf?
 
-Zapisuje `cover.jpg`, plik `.opf`, `desc.txt` i `reader.txt`, i potrafi wpisać tagi do samego audio. Porównywanie rozdziałów z wydaną edycją i pliki `.cue` będą w następnym wydaniu. Zobacz [Pliki sidecar](/pl/using/sidecars/).
+Zapisuje `cover.jpg`, plik `.opf`, `desc.txt` i `reader.txt` i może zapisywać tagi w audio. Porównywanie rozdziałów z wydaniem opublikowanym i pliki `.cue` są planowane na późniejsze wydanie. Zobacz [Pliki sidecar](/pl/using/sidecars/).
 
 ## Mogę konwertować swoje pliki?
 

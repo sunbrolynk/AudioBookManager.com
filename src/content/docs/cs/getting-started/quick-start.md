@@ -11,7 +11,7 @@ Při první návštěvě tě ABM provede vytvořením přihlášení. Dokud to n
 
 ## 2. Vyber, jak se ABM dostane na internet
 
-V **Settings > General** je sekce **Proxy & VPN**. Pokud chceš používat vestavěný zdroj metadat, musíš nejdřív vybrat připojení. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
+V **Settings > General** je sekce **Proxy**. Nastav tam proxy, pokud ABM musí na internet přes proxy. Pokud se ABM na internet dostane přímo, tohle přeskoč.
 
 ## 3. Přidej kořenovou složku
 

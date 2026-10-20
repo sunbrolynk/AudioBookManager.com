@@ -30,4 +30,4 @@ Les valeurs par défaut sont dans l'app et ne sont pas répétées ici. Ouvre la
 
 ## Pièges à éviter
 
-Les rafraîchissements sont sautés quand la source de métadonnées n'est pas prête, et c'est noté une seule fois dans le journal.
+Les actualisations sont ignorées quand Libex est injoignable, et c'est noté une seule fois dans le journal.

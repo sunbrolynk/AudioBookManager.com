@@ -3,7 +3,7 @@ title: Hoofdstukken
 description: Vergelijk de ingesloten hoofdstukken van een boek met Libex en verbeter ze.
 ---
 
-:::caution[Komt in de volgende release]
+:::caution[Komt in een latere release]
 Alles op deze pagina behalve de conversiestandaarden zit nog niet in een uitgebrachte versie.
 :::
 

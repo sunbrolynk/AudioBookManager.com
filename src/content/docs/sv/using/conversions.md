@@ -30,10 +30,6 @@ Om placeringen av resultatet misslyckas (till exempel om biblioteksmappen är fu
 
 ## Pausa och återuppta
 
-:::caution[Kommer i nästa version]
-Paus finns inte i någon släppt version än.
-:::
-
 Två sorters paus, och ingen av dem avbryter något:
 
 - **Pause** på ett jobb som körs fryser dess ffmpeg-processer där de är. Resume fortsätter från samma punkt.
@@ -47,6 +43,6 @@ Om du kan Sonarr: det finns inget sådant i arr-apparna. Se det som en liten kod
 
 ## Fallgropar
 
-- Concurrent Conversions gånger Threads Per Job bör inte överstiga antalet CPU-kärnor du har.
+- Concurrent Conversions gånger Threads Per Job bör inte överstiga antalet CPU-kärnor du har. Med Auto delar ABM de lediga kärnorna mellan jobben som körs samtidigt åt dig.
 - En konverterad fil får ny storlek och ny ändringstid, så Audiobookshelf skannar om den.
 - Att konvertera en fil som är hårdlänkad till en torrent som seedas skapar en ny fil. Kopian som seedas behåller de gamla byten.

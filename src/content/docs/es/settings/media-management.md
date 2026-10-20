@@ -53,8 +53,8 @@ El enlace duro de aquí no es lo mismo que **Use Hardlinks instead of Copy**. Es
 | Enable Recycling Bin | activado | Los archivos de libro borrados van a una papelera en lugar de borrarse |
 | Recycling Bin | vacío | Dónde está la papelera. Vacío usa la de ABM por defecto (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (días) | 0 desactiva la limpieza automática |
-| Library Scan Interval | 0 (desactivado) | Horas entre escaneos automáticos |
-| Watch for Changes | desactivado | Escanea cuando se añaden, quitan o cambian archivos |
+| Library Scan Interval | 24 | Horas entre escaneos automáticos |
+| Watch for Changes | activado | Escanea cuando se añaden, quitan o cambian archivos |
 | Cover Cache Workers | 4 | Cuántas portadas se descargan a la vez al guardar las ilustraciones en caché, de 1 a 16 |
 
 ## Mejoras de calidad (Quality Upgrades)

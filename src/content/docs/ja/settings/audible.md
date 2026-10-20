@@ -23,9 +23,9 @@ description: アカウント、同期のスケジュール、ダウンロード�
 
 | 設定 | デフォルト | 効果 |
 |---|---|---|
-| Auto Add to Library | オン | まだ ABM にない Audible のタイトルをダウンロードするとき、先にライブラリに追加する。オフだとそのダウンロードは拒否される。次のリリースで [Audible のライブラリを ABM にミラーする](/ja/audible/#audible-のライブラリを-abm-にミラーする)に置き換わる |
+| Mirror Audible library to ABM | オン | 同期のたびに、まだ ABM にない Audible の本を追加し、ファイルのない本をダウンロードします。1回の同期で最大25冊です。オンにすると、次の同期で追加とダウンロードされる冊数が表示されます。[Audible のライブラリを ABM にミラーする](/ja/audible/#audible-のライブラリを-abm-にミラーする)を見てください |
 | Concurrent Downloads | 2 | 1〜5。大きいほど速いが、Audible のレート制限に引っかかることがある |
-| Preferred Quality | High Quality | High、Normal、Low |
+| Preferred Quality | High | High または Normal |
 | Delete Encrypted Files | オン | M4B に復号したあと、暗号化された AAXC ファイルを削除する |
 | Temp Download Path | 空 | 空ならシステムの一時フォルダを使う |
 

@@ -13,7 +13,7 @@ Et krypteret arkiv med en konsistent kopi af databasen (`database.db`), indstill
 
 Vælg en fra listen, eller upload en backupfil (op til 500 MiB). Der bliver gemt en kopi af den kørende database først. En gendannelse kan ikke fortrydes.
 
-Som standard henter en gendannelse ikke **sikkerhedsindstillinger** (godkendelsestilstand, loginoplysninger, betroede netværk) eller den **udgående forbindelse** tilbage. Dine nuværende bliver beholdt, og resultatet siger det. Sæt flueben i tilvalget ved upload for at gendanne dem. Det betyder, at et uploadet arkiv aldrig kan slå login fra bare ved at blive gendannet.
+Som standard genskaber en gendannelse ikke **sikkerhedsindstillingerne** (godkendelsestilstand, loginoplysninger, betroede netværk). Dine nuværende bliver, og resultatet siger det. Siden har ingen kontakt til det. Kun et API-kald til `restore-upload` med `restore_security_settings=true` bringer dem tilbage, så et uploadet arkiv aldrig kan slå login fra bare ved at blive gendannet.
 
 Er backuppen lavet på en ældre version, så genstart containeren efter gendannelsen, så migreringen kører.
 

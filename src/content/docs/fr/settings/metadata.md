@@ -28,11 +28,9 @@ Utilise ffmpeg pour écrire les tags dans l'audio lui-même.
 
 Champs de tag, tous activés par défaut : Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) et Cover Art.
 
-## Prévu pour la prochaine version
+## Prévu pour une version ultérieure
 
-La page est réorganisée en sections et gagne une section **Source** avec un choix **Metadata Source**, **Test** et **Status**. Voir [Choisir une source de métadonnées](/fr/metadata/choosing-a-source/).
-
-Elle gagne aussi une section **Local Metadata Library** (à activer soi-même, affichée en aperçu et pas encore branchée) avec un téléchargement de la bibliothèque au format SQLite et ses propres sauvegardes planifiées. Ces sauvegardes reprennent les options de sauvegarde de General et sont par défaut hebdomadaires à 04:00, gardées 28 jours.
+Un choix de source de métadonnées et une copie locale de la bibliothèque de métadonnées sont prévus pour une version ultérieure. Voir [Tes métadonnées, ton contrôle](/fr/metadata/control/).
 
 ## Pièges à éviter
 

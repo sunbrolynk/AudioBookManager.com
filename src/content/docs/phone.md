@@ -71,11 +71,8 @@ In Log Files, **Live** and **Refresh** are in the top bar, and with Live on the 
 
 ## Import Workbench
 
-:::caution[Coming in the next release]
-The phone layout of the Import Workbench is not in a released version yet.
-:::
-
 ![The Import Workbench on a phone](../../assets/docs/phone-workbench.jpg)
 
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
+- A row of status chips under it filters the list. Tap a folder to open it as its own screen.
 - The bottom bar shows how many are selected and the Add button, and says why Add is blocked.

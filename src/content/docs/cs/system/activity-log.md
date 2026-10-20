@@ -27,11 +27,11 @@ Plánované spuštění, které nemělo co dělat, nezapíše nic. Opakování s
 
 ## Uchovávání
 
-**Activity Log Retention** v General ve výchozím stavu maže záznamy po 90 dnech. 0 je uchová. Logy mají vlastní dobu uchovávání (30 dní), takže odkaz ze záznamu na log může log přežít.
+**Activity Log Retention** v General ve výchozím stavu maže záznamy po 90 dnech. 0 je ponechá. Logovací soubory mají vlastní uchování (30 dní).
 
 ## Zobrazení logu (View log)
 
-:::caution[Přijde v příští verzi]
+:::caution[Přijde v pozdější verzi]
 Odkazy View log ze záznamů zatím nejsou v žádné vydané verzi.
 :::
 

@@ -19,10 +19,6 @@ La pagina **Audible Library** elenca tutto ciò che è stato sincronizzato. Puoi
 
 ## Rispecchiare la libreria Audible in ABM
 
-:::caution[In arrivo nella prossima release]
-Non è ancora in una versione rilasciata.
-:::
-
 Il mirroring fa sì che la tua libreria ABM segua la tua libreria Audible.
 
 - È attivo di default.

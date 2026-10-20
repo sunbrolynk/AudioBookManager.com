@@ -31,7 +31,7 @@ Um proxy que não envia cabeçalhos de encaminhamento parece um cliente local. S
 
 ## Confirmação de senha
 
-Algumas alterações pedem a sua senha atual de novo: salvar as configurações de Security, mostrar ou gerar de novo a chave de API, e salvar ou apagar uma configuração do WireGuard. Uma senha errada conta como login que falhou no log de segurança. Se ainda não houver senha definida, nenhuma é pedida.
+Algumas mudanças pedem sua senha atual de novo: salvar as configurações de Security e mostrar ou gerar de novo a chave de API. Uma senha errada conta como login falho no log de segurança. Se ainda não há senha definida, nenhuma é pedida.
 
 ## Chave de API
 

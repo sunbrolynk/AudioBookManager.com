@@ -11,7 +11,7 @@ description: 从全新安装到你的第一本被监控的书。
 
 ## 2. 选择 ABM 怎么连上互联网
 
-**Settings > General** 下有一个 **Proxy & VPN** 部分。如果你打算用内置的元数据源，得先选好一种连接方式。见 [选择元数据源](/zh-cn/metadata/choosing-a-source/)。
+**Settings > General** 下有一个 **Proxy** 部分。如果 ABM 得通过代理才能上网，就在那里设置代理。如果 ABM 能直接上网，跳过这一步就行。
 
 ## 3. 添加根文件夹
 

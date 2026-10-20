@@ -1,9 +1,9 @@
 ---
 title: 一般
-description: 主機、對外連線、安全性、記錄和備份。
+description: 主機、安全性、代理、記錄和備份。
 ---
 
-**Settings > General** 有 Host、Proxy & VPN、Security、Logging 和 Backups 幾個區塊。Security 有〈[自己的頁面](/zh-tw/settings/security/)〉。
+**Settings > General** 有 Host、Security、Proxy、Logging 和 Backups 幾個區塊。Security 有[專屬頁面](/zh-tw/settings/security/)。
 
 ## 主機（Host）
 
@@ -18,7 +18,7 @@ description: 主機、對外連線、安全性、記錄和備份。
 
 在 Docker 裡，實際上真正有影響的是 `PORT` 環境變數和 compose 的連接埠對應。請看〈[環境變數](/zh-tw/configuration/)〉。
 
-## 代理伺服器與對外連線
+## 代理
 
 ABM 連上網路取得中繼資料、封面和 Audible 頁面的方式。
 
@@ -31,7 +31,7 @@ ABM 連上網路取得中繼資料、封面和 Audible 頁面的方式。
 | Bypass Addresses | `localhost,127.0.0.1` | 不經過代理的主機 |
 | Test Connection | | 檢查代理伺服器 |
 
-這個頁面也會顯示外部服務看到的你的對外 IP。下一個版本會加入內建的 WireGuard 通道，以及內建中繼資料來源需要的明確連線選擇（無、直接、代理伺服器、WireGuard，或你自己的 VPN 容器）。斷線的路徑會擋下流量，而不是退回用你自己的位址連線。備份匯出和區域網路內的目的地一律直接連線。
+這個區塊還會顯示外部服務看到的你的對外 IP。包含內建 VPN 在內的連線選擇，預計在後續版本提供。
 
 ## 記錄（Logging）
 

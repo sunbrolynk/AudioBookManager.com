@@ -19,10 +19,6 @@ La page **Audible Library** liste tout ce qui a été synchronisé. Filtre-la su
 
 ## Faire un miroir de la bibliothèque Audible dans ABM
 
-:::caution[Prévu pour la prochaine version]
-Ce n'est pas encore dans une version publiée.
-:::
-
 Le miroir fait suivre ta bibliothèque Audible à ta bibliothèque ABM.
 
 - Il est activé par défaut.

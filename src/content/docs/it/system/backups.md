@@ -13,7 +13,7 @@ Un archivio cifrato con una copia coerente del database (`database.db`), le impo
 
 Scegline uno dall'elenco, oppure carica un file di backup (fino a 500 MiB). Prima viene salvata una copia del database attuale. Il ripristino non si può annullare.
 
-Di default un ripristino non riporta indietro le **impostazioni di sicurezza** (modalità di autenticazione, credenziali, reti fidate) né la **connessione in uscita**. Le tue attuali restano, e il risultato te lo dice. Spunta l'opzione apposita nel caricamento per ripristinarle. Così un archivio caricato non può mai disattivare l'accesso solo perché viene ripristinato.
+Di default un ripristino non riporta indietro le **impostazioni di sicurezza** (modalità di autenticazione, credenziali, reti attendibili). Restano quelle attuali e il risultato lo dice. La pagina non ha un interruttore per questo. Solo una chiamata API a `restore-upload` con `restore_security_settings=true` le riporta indietro, così un archivio caricato non può mai disattivare l'accesso solo perché viene ripristinato.
 
 Se il backup è stato fatto con una versione più vecchia, riavvia il container dopo il ripristino così parte la migrazione.
 

@@ -30,10 +30,6 @@ Pokud umístění výsledku selže (třeba proto, že je složka knihovny plná)
 
 ## Pozastavení a pokračování
 
-:::caution[Přijde v příští verzi]
-Pozastavení zatím není v žádné vydané verzi.
-:::
-
 Jsou dva druhy pozastavení a ani jedno nic neruší:
 
 - **Pause** u jedné běžící úlohy uspí její procesy ffmpeg tam, kde jsou. Resume pokračuje ze stejného místa.
@@ -47,6 +43,6 @@ Pokud znáš Sonarr: v arrech nic takového není. Ber to jako malou frontu enko
 
 ## Na co si dát pozor
 
-- Concurrent Conversions krát Threads Per Job by nemělo překročit počet jader tvého CPU.
+- Concurrent Conversions krát Threads Per Job by nemělo překročit počet jader tvého CPU. S Auto ABM rozdělí zbylá jádra mezi úlohy běžící zároveň za tebe.
 - Převedený soubor má novou velikost a čas změny, takže ho Audiobookshelf znovu naskenuje.
 - Převod souboru, který je hardlinkem na seedovaný torrent, vytvoří nový soubor. Seedovaná kopie si nechá staré bajty.

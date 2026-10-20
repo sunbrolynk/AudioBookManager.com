@@ -31,7 +31,7 @@ Ein Proxy, der keine Forwarding-Header schickt, sieht aus wie ein lokaler Client
 
 ## Passwortbestätigung
 
-Manche Änderungen fragen noch einmal nach deinem aktuellen Passwort: das Speichern der Security-Einstellungen, das Anzeigen oder Erneuern des API-Keys und das Speichern oder Löschen einer WireGuard-Konfiguration. Ein falsches Passwort zählt im Security-Log als fehlgeschlagene Anmeldung. Ist noch kein Passwort gesetzt, wird auch keins abgefragt.
+Manche Änderungen fragen noch einmal nach deinem aktuellen Passwort: das Speichern der Security-Einstellungen und das Anzeigen oder Erneuern des API-Keys. Ein falsches Passwort zählt im Security-Log als fehlgeschlagene Anmeldung. Ist noch kein Passwort gesetzt, wird keins gefragt.
 
 ## API-Key
 

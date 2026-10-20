@@ -41,7 +41,7 @@ Et. Ne tiedot tulevat metatietolähteestä, eikä ABM muokkaa niitä käsin. Sin
 
 ## Voiko ABM kirjoittaa kappaleet, kuvaukset ja tagit sinne, mistä Audiobookshelf ne lukee?
 
-Se kirjoittaa tiedostot `cover.jpg`, `.opf`, `desc.txt` ja `reader.txt`, ja se voi kirjoittaa tagit ääneen. Kappaleiden vertailu julkaistuun painokseen ja `.cue`-tiedostot tulevat seuraavassa julkaisussa. Katso [Sivutiedostot](/fi/using/sidecars/).
+Se kirjoittaa `cover.jpg`-, `.opf`-, `desc.txt`- ja `reader.txt`-tiedostot ja voi kirjoittaa tunnisteita ääneen. Lukujen vertailu julkaistuun painokseen ja `.cue`-tiedostot on suunniteltu myöhempään julkaisuun. Katso [Sidecar-tiedostot](/fi/using/sidecars/).
 
 ## Voinko muuntaa tiedostojani?
 

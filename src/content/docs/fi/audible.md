@@ -19,10 +19,6 @@ Synkronointi päivittää kunkin tilin kirjaston Audiblesta. Audible-asetussivu 
 
 ## Audible-kirjaston peilaus ABM:ään (Mirror Audible library to ABM)
 
-:::caution[Tulossa seuraavaan julkaisuun]
-Tämä ei ole vielä missään julkaistussa versiossa.
-:::
-
 Peilaus saa ABM-kirjastosi seuraamaan Audible-kirjastoasi.
 
 - Se on oletuksena päällä.

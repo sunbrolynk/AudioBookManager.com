@@ -27,11 +27,11 @@ Ein geplanter Lauf, der nichts zu tun hatte, schreibt nichts. Eine Wiederholung 
 
 ## Aufbewahrung
 
-**Activity Log Retention** unter General löscht Einträge standardmäßig nach 90 Tagen. Mit 0 bleiben sie erhalten. Logdateien haben ihre eigene Aufbewahrung (30 Tage), ein Link von einem Eintrag auf ein Log kann das Log also überdauern.
+**Activity Log Retention** unter General löscht Einträge standardmäßig nach 90 Tagen. Mit 0 bleiben sie erhalten. Logdateien haben ihre eigene Aufbewahrung (30 Tage).
 
 ## Log ansehen
 
-:::caution[Kommt mit dem nächsten Release]
+:::caution[Kommt in einem späteren Release]
 Links von Einträgen zum Log sind noch in keiner veröffentlichten Version drin.
 :::
 

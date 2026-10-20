@@ -3,7 +3,7 @@ title: Stav
 description: Kontroly stavu a pohled na to, co ABM zrovna dělá.
 ---
 
-**System > Status** spouští kontroly stavu a vypíše všechno, co je špatně: selhávající klienty pro stahování a indexery, problémy s kořenovými složkami a problémy s odchozím připojením. Ukazuje taky využití fondu připojení k databázi. Když je všechno v pořádku, napíše "All systems healthy".
+**System > Status** spouští kontroly stavu a vypisuje všechno, co je špatně: selhávající klienty stahování a indexery, problémy s kořenovými složkami a nedostupný Libex. Ukazuje také využití fondu připojení k databázi. Když je všechno v pořádku, napíše "All systems healthy".
 
 Kontroly stavu běží na pozadí i každých 6 hodin. Connect může posílat oznámení při **On Health Issue** a **On Health Restored**. Viz [Connect](/cs/settings/connect/).
 

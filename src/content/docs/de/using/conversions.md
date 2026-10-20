@@ -30,10 +30,6 @@ Schlägt das Einsortieren des Ergebnisses fehl (etwa weil der Bibliotheksordner 
 
 ## Pausieren und fortsetzen
 
-:::caution[Kommt mit dem nächsten Release]
-Pausieren ist noch in keiner veröffentlichten Version drin.
-:::
-
 Es gibt zwei Arten von Pause, und keine bricht etwas ab:
 
 - **Pause** bei einem laufenden Job hält seine ffmpeg-Prozesse an der Stelle an, an der sie sind. Resume macht genau dort weiter.
@@ -47,6 +43,6 @@ Wenn du Sonarr kennst: So etwas gibt es in den Arrs nicht. Stell es dir als klei
 
 ## Stolperfallen
 
-- Concurrent Conversions mal Threads Per Job sollte die Zahl deiner CPU-Kerne nicht übersteigen.
+- Concurrent Conversions mal Threads Per Job sollte die Zahl deiner CPU-Kerne nicht übersteigen. Bei Auto verteilt ABM die übrigen Kerne für dich auf die gleichzeitig laufenden Jobs.
 - Eine konvertierte Datei hat eine neue Größe und Änderungszeit, Audiobookshelf scannt sie also neu.
 - Wenn du eine Datei konvertierst, die per Hardlink an einem seedenden Torrent hängt, entsteht eine neue Datei. Die geseedete Kopie behält die alten Bytes.

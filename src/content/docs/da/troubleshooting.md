@@ -46,13 +46,14 @@ Hæv `MAX_REQUEST_BODY_BYTES`. En reverse proxy kan også have en lavere grænse
 
 ## Metadatakilden er ikke tilgængelig
 
-Tilføjelser, søgninger, opdateringer og Discover kræver metadatakilden. Beskeden nævner den, for eksempel "The metadata source is unavailable". Årsager: kilden er nede eller begrænser antallet af kald, eller din udgående forbindelse blokerer den.
+Tilføjelse, søgning, opdatering og Discover har brug for Libex. Får ABM ikke svar, fejler en bogsøgning med "Libex search failed" og en søgning efter forfattere eller serier med "Libex could not be reached; try again shortly", i stedet for at vise en tom liste. Årsager: Libex er nede, eller ABM's forbindelse når det ikke.
 
-1. Tjek **Settings > General > Proxy & VPN**, og at forbindelsen er oppe.
-2. Prøv igen om et minut. En kilde, der begrænser kald, svarer 503 med et hint om at prøve igen om 30 sekunder.
-3. I mellemtiden kan du stadig tilføje og importere bøger i hånden.
+1. Se [ABM's statusside](https://status.audiobookmanager.com) og [Libex' statusside](https://status.libexdb.com) for at se, om det er nede for alle.
+2. Tjek, at containeren kan nå internettet, og at proxyen under **Settings > General > Proxy** er rigtig, hvis du bruger en.
+3. Prøv igen efter et minut.
+4. I mellemtiden kan du stadig tilføje og importere bøger i hånden.
 
-Baggrundsopgaver, der rammer et nedbrud, fejler med årsagen og sender én notifikation pr. nedbrud.
+En baggrundsopgave, der rammer et udfald, fejler med årsagen. Den prøves igen af sig selv, op til seks gange eller i seks timer, alt efter hvad der kommer først.
 
 ## En opdatering ændrede en bogs detaljer
 
@@ -72,7 +73,7 @@ Tilføj en remote path mapping, eller få ABM og klienten til at se mappen på s
 
 ## Docker kan ikke nå metadatakilden eller indekserne
 
-Tjek DNS og indstillingen for udgående forbindelse før alt andet. I Docker virker en direkte forbindelse kun, hvis containeren kan nå internettet.
+Tjek DNS og proxyindstillingen først. I Docker når ABM kun Libex og dine indexere, hvis containeren kan nå internettet.
 
 ## Sidder du stadig fast?
 

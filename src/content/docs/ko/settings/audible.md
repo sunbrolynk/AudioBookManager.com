@@ -23,9 +23,9 @@ description: 계정, 동기화 일정, 다운로드, 진단이에요.
 
 | 설정 | 기본값 | 효과 |
 |---|---|---|
-| Auto Add to Library | 켜짐 | ABM에 아직 없는 Audible 타이틀을 내려받으면 먼저 라이브러리에 추가해요. 끄면 그 다운로드는 거부돼요. 다음 릴리스에서는 [Audible 라이브러리를 ABM에 미러링하기](/ko/audible/#audible-라이브러리를-abm에-미러링하기)로 바뀌어요 |
+| Mirror Audible library to ABM | 켜짐 | 동기화할 때마다 아직 ABM에 없는 Audible 책을 추가하고, 파일이 없는 책을 다운로드해요. 한 번에 최대 25권이에요. 켤 때 다음 동기화에서 추가하고 다운로드할 책이 몇 권인지 보여 줘요. [Audible 라이브러리를 ABM에 미러링하기](/ko/audible/#audible-라이브러리를-abm에-미러링하기)을 보세요 |
 | Concurrent Downloads | 2 | 1~5. 높을수록 빠르지만 Audible 요청 제한에 걸릴 수 있어요. |
-| Preferred Quality | High Quality | High, Normal 또는 Low |
+| Preferred Quality | High | High 또는 Normal |
 | Delete Encrypted Files | 켜짐 | 암호화된 AAXC 파일을 M4B로 복호화한 뒤 지워요 |
 | Temp Download Path | 비어 있음 | 비워 두면 시스템 임시 폴더를 써요 |
 

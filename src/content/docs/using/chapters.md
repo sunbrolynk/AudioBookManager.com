@@ -3,7 +3,7 @@ title: Chapters
 description: Compare a book's embedded chapters with Libex and fix them.
 ---
 
-:::caution[Coming in the next release]
+:::caution[Coming in a later release]
 Everything on this page except the conversion defaults is not in a released version yet.
 :::
 

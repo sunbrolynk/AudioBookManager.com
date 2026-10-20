@@ -6,7 +6,7 @@ description: Bring an existing collection into ABM safely.
 ## Before you start
 
 1. Back up the collection. Library Import copies by default, but plan for mistakes.
-2. Set up a root folder and a quality profile, and make sure the metadata source is reachable.
+2. Set up a root folder and a quality profile, and make sure Libex is reachable.
 3. Decide copy, move or hardlink. Copy is safest. Hardlink saves space if the library is on the same filesystem as the source. See [Media Management](/settings/media-management/).
 
 ## The steps

@@ -21,6 +21,6 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 
 ## Výpadky metadat
 
-Endpoint, který závisí na zdroji metadat, odpoví 503 (`metadata_unavailable`), 503 s `Retry-After: 30` (`metadata_declined`) nebo 502 (`metadata_rejected`) v poli `code` těla. Některé vyhledávací endpointy při výpadku pořád vracejí prázdný výsledek.
+Vyhledávání knih, které nedostane odpověď od Libexu, vrátí 502 s "Libex search failed". Vyhledávání autorů nebo sérií vrátí 503 s "Libex could not be reached; try again shortly". Některé vyhledávací cesty při výpadku pořád vracejí prázdný výsledek.
 
 Pokud znáš Sonarr: API není kompatibilní s v3. Prowlarr umí do ABM synchronizovat indexery přes své připojení Prowlarr.

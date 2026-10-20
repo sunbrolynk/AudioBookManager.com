@@ -30,4 +30,4 @@ Los valores por defecto están en la aplicación y no se repiten aquí. Abre la 
 
 ## Detalles a tener en cuenta
 
-Las actualizaciones se saltan cuando la fuente de metadatos no está lista, y se registra una sola vez.
+Las actualizaciones se omiten cuando Libex no es accesible, y se registra una sola vez.

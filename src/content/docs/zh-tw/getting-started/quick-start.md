@@ -11,7 +11,7 @@ description: 從剛裝好到第一本被監控的書。
 
 ## 2. 選擇 ABM 連上網路的方式
 
-**Settings > General** 裡有一個 **Proxy & VPN** 區塊。如果你打算用內建的中繼資料來源，要先選好連線方式。請看〈[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)〉。
+**Settings > General** 裡有一個 **Proxy** 區塊。如果 ABM 得透過代理才能上網，就在那裡設定代理。如果 ABM 能直接上網，跳過這一步就好。
 
 ## 3. 新增根資料夾
 

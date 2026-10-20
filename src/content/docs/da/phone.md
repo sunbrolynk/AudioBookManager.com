@@ -46,9 +46,5 @@ Settings er en grupperet liste: Library, Sources og App. Hver række er et link 
 
 ## Importværksted (Import Workbench)
 
-:::caution[Kommer i næste udgivelse]
-Telefonlayoutet til Import Workbench er ikke med i en udgivet version endnu.
-:::
-
 - Et oversigtskort viser, hvor mange mapper der er klar. Tryk på det for at åbne forklaringen og filtrere listen.
 - Bundbjælken viser, hvor mange der er valgt, og knappen Add, og fortæller, hvorfor Add er blokeret.

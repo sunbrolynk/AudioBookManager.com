@@ -3,7 +3,7 @@ title: Kapitoly
 description: Porovnej kapitoly vložené v knize s Libexem a oprav je.
 ---
 
-:::caution[Přijde v příští verzi]
+:::caution[Přijde v pozdější verzi]
 Nic na téhle stránce kromě výchozích hodnot převodů zatím není v žádné vydané verzi.
 :::
 

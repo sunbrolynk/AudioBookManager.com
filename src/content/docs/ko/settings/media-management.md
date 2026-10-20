@@ -53,8 +53,8 @@ description: 루트 폴더, 가져오기, 추가 파일, 휴지통, 스캔, 업�
 | Enable Recycling Bin | 켜짐 | 지운 책 파일을 바로 삭제하지 않고 휴지통으로 옮겨요 |
 | Recycling Bin | 비어 있음 | 휴지통 위치. 비워 두면 ABM 기본값(`/config/recycle/media`)을 써요 |
 | Recycling Bin Cleanup | 7(일) | 0이면 자동 정리를 꺼요 |
-| Library Scan Interval | 0(꺼짐) | 자동 스캔 사이의 시간 |
-| Watch for Changes | 꺼짐 | 파일이 추가, 삭제, 변경되면 스캔해요 |
+| Library Scan Interval | 24 | 자동 스캔 사이의 시간 |
+| Watch for Changes | 켜짐 | 파일이 추가, 삭제, 변경되면 스캔해요 |
 | Cover Cache Workers | 4 | 아트워크를 캐시할 때 동시에 내려받는 표지 수, 1~16 |
 
 ## 품질 업그레이드 (Quality Upgrades)

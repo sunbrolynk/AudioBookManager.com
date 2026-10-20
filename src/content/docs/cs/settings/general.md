@@ -1,9 +1,9 @@
 ---
 title: Obecné
-description: Hostitel, odchozí připojení, zabezpečení, logování a zálohy.
+description: Hostitel, zabezpečení, proxy, logování a zálohy.
 ---
 
-**Settings > General** má sekce Host, Proxy & VPN, Security, Logging a Backups. Security má [vlastní stránku](/cs/settings/security/).
+**Settings > General** má sekce Host, Security, Proxy, Logging a Backups. Security má [vlastní stránku](/cs/settings/security/).
 
 ## Hostitel (Host)
 
@@ -18,7 +18,7 @@ description: Hostitel, odchozí připojení, zabezpečení, logování a zálohy
 
 V Dockeru jsou v praxi rozhodující proměnná prostředí `PORT` a mapování portu v compose. Viz [Proměnné prostředí](/cs/configuration/).
 
-## Proxy a odchozí připojení
+## Proxy
 
 Jak se ABM dostává na internet pro metadata, obálky a stránky Audible.
 
@@ -31,7 +31,7 @@ Jak se ABM dostává na internet pro metadata, obálky a stránky Audible.
 | Bypass Addresses | `localhost,127.0.0.1` | Hostitelé, kteří proxy obejdou |
 | Test Connection | | Ověří proxy |
 
-Stránka taky ukazuje tvou odchozí IP tak, jak ji vidí vnější služby. Příští verze přidá vestavěný tunel WireGuard a výslovnou volbu připojení (žádné, přímé, proxy, WireGuard nebo tvůj vlastní kontejner s VPN), kterou vestavěný zdroj metadat vyžaduje. Cesta, která nefunguje, provoz zablokuje, místo aby se přepnula zpátky na tvou vlastní adresu. Exporty záloh a cíle v LAN jdou vždycky napřímo.
+Sekce také ukazuje tvou odchozí IP adresu tak, jak ji vidí externí služby. Výběr připojení, včetně vestavěné VPN, je plánovaný na pozdější verzi.
 
 ## Logování (Logging)
 

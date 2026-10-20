@@ -9,9 +9,9 @@ Z kterékoli stránky můžeš knihu přidat do knihovny. Recommended při každ
 
 ## Aby to bylo čerstvé
 
-Plány obnovy a limity jsou v [nastavení Discover](/cs/settings/discover/). Pokud je katalog prázdný, stránka ho za tebe může obnovit, jakmile bude zdroj metadat dostupný.
+Plány obnovování a limity jsou v [nastavení Discover](/cs/settings/discover/). Je-li katalog prázdný, stránka ho může obnovit za tebe, jakmile bude Libex dostupný.
 
 ## Na co si dát pozor
 
-- Katalogy závisí na zdroji metadat. Pokud není dostupný nebo není vybrané žádné odchozí připojení, obnovy se přeskočí a v logu je důvod.
+- Katalogy závisejí na Libexu. Když je nedostupný, obnovování se přeskočí a log řekne proč.
 - Discover ukazuje, co nabízí Audible. Neříká nic o tom, co mají tvoje indexery.

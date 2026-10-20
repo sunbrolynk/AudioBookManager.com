@@ -30,4 +30,4 @@ Standarderne bor i appen og bliver ikke gentaget her. Åbn siden for at se dem.
 
 ## Faldgruber
 
-Opdateringer bliver sprunget over, når metadatakilden ikke er klar, og det bliver logget én gang.
+Opdateringer springes over, når Libex ikke kan nås, og det logges én gang.

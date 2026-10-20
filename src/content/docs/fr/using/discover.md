@@ -9,9 +9,9 @@ Depuis n'importe quelle page, tu peux ajouter un livre à la bibliothèque. Reco
 
 ## Le garder à jour
 
-Les plannings de rafraîchissement et les limites se trouvent dans les [réglages Discover](/fr/settings/discover/). Si un catalogue est vide, la page peut le rafraîchir pour toi dès que la source de métadonnées est joignable.
+Les planifications et limites d'actualisation sont dans les [réglages de Discover](/fr/settings/discover/). Si un catalogue est vide, la page peut l'actualiser pour toi dès que Libex est joignable.
 
 ## Pièges à éviter
 
-- Les catalogues dépendent de la source de métadonnées. Si elle est injoignable ou qu'aucune connexion sortante n'est choisie, les rafraîchissements sont sautés et le journal dit pourquoi.
+- Les catalogues dépendent de Libex. S'il est injoignable, les actualisations sont ignorées et le journal dit pourquoi.
 - Discover montre ce qu'Audible liste. Il ne dit rien de ce que tes indexeurs proposent.

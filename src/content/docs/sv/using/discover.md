@@ -9,9 +9,9 @@ Från vilken sida som helst kan du lägga till en bok i biblioteket. Recommended
 
 ## Hålla det färskt
 
-Scheman och gränser för uppdatering finns i [Discover-inställningar](/sv/settings/discover/). Om en katalog är tom kan sidan uppdatera den åt dig när metadatakällan går att nå.
+Uppdateringsscheman och gränser finns i [Discover-inställningarna](/sv/settings/discover/). Är en katalog tom kan sidan uppdatera den åt dig när Libex går att nå.
 
 ## Fallgropar
 
-- Katalogerna är beroende av metadatakällan. Om den inte går att nå eller ingen utgående anslutning är vald hoppas uppdateringarna över, och loggen säger varför.
+- Katalogerna beror på Libex. Går det inte att nå hoppas uppdateringar över och loggen säger varför.
 - Discover visar det som Audible listar. Den säger ingenting om vad dina indexerare har.

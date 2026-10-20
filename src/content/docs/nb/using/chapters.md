@@ -3,7 +3,7 @@ title: Kapitler
 description: Sammenlign de innebygde kapitlene i en bok med Libex, og fiks dem.
 ---
 
-:::caution[Kommer i neste versjon]
+:::caution[Kommer i en senere versjon]
 Alt på denne siden unntatt standardene for konvertering er ikke med i en utgitt versjon ennå.
 :::
 

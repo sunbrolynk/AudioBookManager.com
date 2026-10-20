@@ -13,7 +13,7 @@ Un archivo cifrado con una copia coherente de la base de datos (`database.db`), 
 
 Elige una de la lista o sube un archivo de copia de seguridad (hasta 500 MiB). Antes se guarda una copia de la base de datos actual. La restauración no se puede deshacer.
 
-Por defecto, una restauración no recupera los **ajustes de seguridad** (modo de autenticación, credenciales, redes de confianza) ni la **conexión de salida**. Se conservan los actuales y el resultado lo indica. Marca la opción al subir el archivo para restaurarlos. Así, un archivo subido nunca puede desactivar el inicio de sesión solo por restaurarlo.
+Por defecto, una restauración no recupera los **ajustes de seguridad** (modo de autenticación, credenciales, redes de confianza). Se conservan los actuales y el resultado lo dice. La página no tiene ningún interruptor para esto. Solo una llamada a la API de `restore-upload` con `restore_security_settings=true` los recupera, así que un archivo subido nunca puede desactivar el inicio de sesión solo por restaurarse.
 
 Si la copia se hizo con una versión anterior, reinicia el contenedor después de restaurar para que se ejecute la migración.
 

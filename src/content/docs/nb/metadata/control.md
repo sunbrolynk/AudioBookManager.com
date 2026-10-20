@@ -25,7 +25,7 @@ Redigeringsdialogen endrer overvåking, kvalitetsprofil, sti og tagger, og lar d
 
 ## Sidefiler spilleren din leser
 
-ABM skriver `cover.jpg`, en `.opf`, `desc.txt` og `reader.txt` ved siden av lyden, og et `.cue`-kapittelark i neste versjon. Audiobookshelf leser OPF-, cover- og tekstfilene, så det du valgte i ABM, er det spilleren viser. Se [Sidefiler](/nb/using/sidecars/).
+ABM skriver `cover.jpg`, en `.opf`, `desc.txt` og `reader.txt` ved siden av lyden. Audiobookshelf leser OPF-filen, omslaget og tekstfilene, så spilleren viser det du valgte i ABM. Se [Sidecar-filer](/nb/using/sidecars/).
 
 ## Tagger skrevet inn i lyden
 
@@ -33,7 +33,7 @@ ABM kan skrive tittel, artist, albumartist, album, sjanger, år, kommentar, oppl
 
 ## Kapitler
 
-ABM sammenligner kapitlene som ligger i filene dine med kapitlene i den utgitte utgaven, og kan skrive de utgitte kapitlene inn i filene uten å kode om. Den nekter når lengden på lyden viser at det er en annen utgave. Se [Kapitler](/nb/using/chapters/). Kommer i neste versjon.
+Å sammenligne kapitlene i filene dine med den utgitte utgavens, og skrive de utgitte kapitlene inn i filene, er planlagt til en senere versjon. Se [Kapitler](/nb/using/chapters/).
 
 ## Serie og plassering
 
@@ -47,8 +47,8 @@ Taggene er dine. Automatiske tagger setter dem etter regler (sjanger, oppleser, 
 
 Alt ABM lærer om en bok, blir værende i ABMs egen SQLite-database i `/config`, også bøker du fjerner senere. Ta sikkerhetskopi av den mappen, så er oversikten sikret. Metadataene er ikke avhengige av at kilden er tilgjengelig når en bok først er inne.
 
-:::caution[Kommer i neste versjon]
-Et eget **Local Metadata Library** er planlagt: en kopi du velger å slå på, av alt ABM noen gang har slått opp, som blir værende selv etter at en bok har forlatt biblioteket ditt, med egne planlagte sikkerhetskopier og nedlasting som SQLite. Seksjonen for den på Metadata-siden finnes i arbeidet som ikke er slått sammen ennå, og er merket som forhåndsvisning, ikke koblet til ennå.
+:::caution[Kommer i en senere versjon]
+Et eget **Local Metadata Library** er planlagt: en valgfri kopi av alt ABM noensinne har slått opp, beholdt selv etter at en bok har forlatt biblioteket ditt, med egne planlagte sikkerhetskopier og en SQLite-nedlasting.
 :::
 
 ## Tidsplaner for oppdatering

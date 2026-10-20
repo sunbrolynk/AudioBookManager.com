@@ -19,7 +19,7 @@ A restore asks for your current password, since it replaces the whole database. 
 
 Only one restore runs at a time. A second one, from another tab or a double press of Enter, is refused with "A restore is already running." (HTTP 409).
 
-By default a restore does not bring back **security settings** (authentication mode, credentials, trusted networks) or the **outbound connection**. Your current ones are kept and the result says so. The page has no switch for this. Only an API call to `restore-upload` with `restore_security_settings=true` brings them back, so an uploaded archive can never switch sign-in off just by being restored.
+By default a restore does not bring back **security settings** (authentication mode, credentials, trusted networks). Your current ones are kept and the result says so. The page has no switch for this. Only an API call to `restore-upload` with `restore_security_settings=true` brings them back, so an uploaded archive can never switch sign-in off just by being restored.
 
 Restoring the security settings (through the API) signs out every session, so you sign in again. Open pages lose their live connection when that happens, and a tab you left open needs a reload. A restore that fails part way also closes open connections, since it may already have swapped the database.
 

@@ -30,10 +30,6 @@ Si falla la colocación del resultado (por ejemplo, porque la carpeta de la bibl
 
 ## Pausar y reanudar
 
-:::caution[Llega en la próxima versión]
-La pausa todavía no está en ninguna versión publicada.
-:::
-
 Hay dos tipos de pausa, y ninguno cancela nada:
 
 - **Pause** en un trabajo en curso suspende sus procesos de ffmpeg donde estén. Resume sigue desde el mismo punto.
@@ -47,6 +43,6 @@ Si conoces Sonarr: en las arr no hay nada parecido. Piénsalo como una pequeña 
 
 ## Detalles a tener en cuenta
 
-- Concurrent Conversions por Threads Per Job no debería superar el número de núcleos de tu CPU.
+- Concurrent Conversions por Threads Per Job no debería superar el número de núcleos de tu CPU. Con Auto, ABM reparte por ti los núcleos libres entre los trabajos que se ejecutan a la vez.
 - Un archivo convertido tiene un tamaño y una fecha de modificación nuevos, así que Audiobookshelf lo volverá a escanear.
 - Convertir un archivo con enlace duro a un torrent que se está sembrando crea un archivo nuevo. La copia que se siembra conserva los bytes antiguos.

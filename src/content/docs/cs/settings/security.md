@@ -31,7 +31,7 @@ Proxy, která neposílá žádné přeposílací hlavičky, vypadá jako lokáln
 
 ## Potvrzení heslem
 
-Některé změny se znovu ptají na tvoje současné heslo: uložení nastavení Security, zobrazení nebo vygenerování nového klíče API a uložení nebo smazání konfigurace WireGuard. Špatné heslo se v bezpečnostním logu počítá jako neúspěšné přihlášení. Když ještě žádné heslo nastavené není, nic se neptá.
+Některé změny se tě znovu zeptají na současné heslo: uložení nastavení Security a zobrazení nebo znovuvytvoření klíče API. Špatné heslo se v bezpečnostním logu počítá jako neúspěšné přihlášení. Pokud ještě žádné heslo není, nic se nechce.
 
 ## Klíč API
 

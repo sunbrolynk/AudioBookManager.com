@@ -30,4 +30,4 @@ Os padrões ficam no app e não estão repetidos aqui. Abra a página para ver.
 
 ## Pegadinhas
 
-As atualizações são puladas quando a fonte de metadados não está pronta, e isso vai para o log uma vez.
+As atualizações são puladas quando o Libex não está acessível, e isso é registrado uma vez no log.

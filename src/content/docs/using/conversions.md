@@ -32,10 +32,6 @@ If placing the result fails (the library folder is full, say), the job fails and
 
 ## Pause and resume
 
-:::caution[Coming in the next release]
-Pausing is not in a released version yet.
-:::
-
 Two kinds of pause, neither of which cancels anything:
 
 - **Pause** on one running job suspends its ffmpeg processes where they are. Resume continues from the same point.

@@ -41,7 +41,7 @@ Não. Esses dados vêm da fonte de metadados e o ABM não edita isso à mão. O 
 
 ## O ABM consegue gravar capítulos, descrições e tags onde o Audiobookshelf lê?
 
-Ele grava `cover.jpg`, um `.opf`, `desc.txt` e `reader.txt`, e pode gravar tags dentro do áudio. A comparação de capítulos com a edição publicada e os arquivos `.cue` chegam na próxima versão. Veja [Arquivos sidecar](/pt-br/using/sidecars/).
+Ele grava `cover.jpg`, um `.opf`, `desc.txt` e `reader.txt`, e pode gravar tags no áudio. A comparação de capítulos com a edição publicada e os arquivos `.cue` estão previstos para uma versão futura. Veja [Arquivos sidecar](/pt-br/using/sidecars/).
 
 ## Posso converter meus arquivos?
 

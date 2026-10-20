@@ -46,13 +46,14 @@ Nosta arvoa `MAX_REQUEST_BODY_BYTES`. Myös käänteinen välityspalvelin voi pa
 
 ## Metatietolähde ei ole käytettävissä
 
-Lisäykset, haut, päivitykset ja Discover tarvitsevat metatietolähdettä. Ilmoitus nimeää sen, esimerkiksi "The metadata source is unavailable". Syyt: lähde on alhaalla tai rajoittaa pyyntöjä, tai ulospäin lähtevä yhteytesi estää sen.
+Lisääminen, haku, päivitys ja Discover tarvitsevat Libexin. Jos ABM ei saa vastausta, kirjahaku epäonnistuu viestillä "Libex search failed" ja kirjailija- tai sarjahaku viestillä "Libex could not be reached; try again shortly" tyhjän listan näyttämisen sijaan. Syyt: Libex on alhaalla, tai ABM:n yhteys ei yllä siihen.
 
-1. Tarkista **Settings > General > Proxy & VPN** ja se, että reitti on ylhäällä.
-2. Yritä uudelleen minuutin päästä. Pyyntöjä rajoittava lähde vastaa 503 ja vihjeen yrittää uudelleen 30 sekunnin kuluttua.
-3. Voit silti lisätä ja tuoda kirjoja käsin sillä välin.
+1. Katso [ABM:n tilasivu](https://status.audiobookmanager.com) ja [Libexin tilasivu](https://status.libexdb.com), onko se alhaalla kaikilla.
+2. Tarkista, että kontti pääsee internetiin ja että **Settings > General > Proxy** -kohdan välityspalvelin on oikein, jos käytät sellaista.
+3. Yritä uudelleen minuutin kuluttua.
+4. Sillä välin voit yhä lisätä ja tuoda kirjoja käsin.
 
-Katkokseen törmäävät taustatehtävät epäonnistuvat syyn kanssa ja lähettävät yhden ilmoituksen katkosta kohden.
+Taustatehtävä, joka osuu katkoon, epäonnistuu syyn kanssa. Sitä yritetään itsestään uudelleen enintään kuusi kertaa tai kuuden tunnin ajan sen mukaan, kumpi tulee ensin.
 
 ## Päivitys muutti kirjan tietoja
 
@@ -72,7 +73,7 @@ Lisää etäpolun vastaavuus tai järjestä niin, että ABM ja asiakas näkevät
 
 ## Docker ei saa yhteyttä metatietolähteeseen tai indeksoijiin
 
-Tarkista DNS ja ulospäin lähtevän yhteyden asetus ennen mitään muuta. Dockerissa suora yhteys toimii vain, jos kontti pääsee internetiin.
+Tarkista ensin DNS ja välityspalvelimen asetus. Dockerissa ABM tavoittaa Libexin ja indeksoijasi vain, jos kontti pääsee internetiin.
 
 ## Yhä jumissa
 

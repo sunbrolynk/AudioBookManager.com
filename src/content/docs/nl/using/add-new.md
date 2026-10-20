@@ -11,11 +11,7 @@ Een toegevoegd boek wordt **Wanted** in de rootmap en het kwaliteitsprofiel dat 
 
 ## Zoeken op auteur en serie
 
-:::caution[Komt in de volgende release]
-De zoekmodi Author en Series zitten nog niet in een uitgebrachte versie.
-:::
-
-De zoekfunctie krijgt twee modi die auteurs en series zelf vinden. De oudere boekmodi heten voortaan "Books by author" en "Books in series". Voeg je een auteur of serie toe, dan wordt de catalogus opgebouwd en worden de boeken als gewenst toegevoegd volgens **Monitor**:
+De zoekfunctie heeft modi voor Title, Author, Series, Books by author, Books in series en ASIN. Author en Series vinden auteurs en series zelf; Books by author en Books in series vinden boeken. Een auteur of serie toevoegen bouwt de catalogus op en voegt de boeken toe als gezocht, volgens **Monitor**:
 
 | Monitor | Voegt toe |
 |---|---|

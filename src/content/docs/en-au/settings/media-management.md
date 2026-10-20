@@ -53,8 +53,8 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 | Enable Recycling Bin | on | Deleted book files move to a bin instead of being deleted |
 | Recycling Bin | empty | Where the bin is. Empty uses ABM's default (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (days) | 0 disables automatic cleanup |
-| Library Scan Interval | 0 (off) | Hours between automatic scans |
-| Watch for Changes | off | Scan when files are added, removed or changed |
+| Library Scan Interval | 24 (hours) | Hours between automatic scans |
+| Watch for Changes | on | Scan when files are added, removed or changed |
 | Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16 |
 
 ## Quality Upgrades

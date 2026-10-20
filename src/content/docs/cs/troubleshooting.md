@@ -46,13 +46,14 @@ Zvyš `MAX_REQUEST_BODY_BYTES`. Nižší limit může vynucovat i reverzní prox
 
 ## Zdroj metadat není dostupný
 
-Přidávání, hledání, obnova i Discover potřebují zdroj metadat. Hláška ho pojmenuje, třeba "The metadata source is unavailable". Příčiny: zdroj nefunguje nebo omezuje počet požadavků, nebo ho blokuje tvoje odchozí připojení.
+Přidávání, hledání, obnovování a Discover potřebují Libex. Když ABM nedostane odpověď, vyhledávání knih selže s hlášením "Libex search failed" a vyhledávání autorů nebo sérií s hlášením "Libex could not be reached; try again shortly", místo aby ukázalo prázdný seznam. Příčiny: Libex nefunguje, nebo se k němu připojení ABM nedostane.
 
-1. Zkontroluj **Settings > General > Proxy & VPN** a jestli cesta funguje.
-2. Zkus to znovu za minutu. Zdroj, který omezuje požadavky, odpoví 503 s nápovědou zkusit to za 30 sekund.
-3. Mezitím můžeš knihy dál přidávat a importovat ručně.
+1. Podívej se na [stavovou stránku ABM](https://status.audiobookmanager.com) a [stavovou stránku Libexu](https://status.libexdb.com), jestli to nefunguje pro všechny.
+2. Zkontroluj, že kontejner se dostane na internet a že proxy v **Settings > General > Proxy** je správně, pokud nějakou používáš.
+3. Za minutu to zkus znovu.
+4. Mezitím můžeš knihy pořád přidávat a importovat ručně.
 
-Úlohy na pozadí, které narazí na výpadek, selžou i s důvodem a pošlou jedno oznámení za výpadek.
+Úloha na pozadí, která narazí na výpadek, selže s uvedením důvodu. Zkouší se sama znovu, nejvýš šestkrát nebo šest hodin, podle toho, co nastane dřív.
 
 ## Obnova změnila údaje o knize
 
@@ -72,7 +73,7 @@ Přidej mapování vzdálené cesty, nebo zařiď, aby ABM i klient viděli slo�
 
 ## Docker se nedostane ke zdroji metadat ani k indexerům
 
-Ze všeho nejdřív zkontroluj DNS a nastavení odchozího připojení. V Dockeru funguje přímé připojení jen tehdy, když se kontejner dostane na internet.
+Nejdřív zkontroluj DNS a nastavení proxy. V Dockeru se ABM k Libexu a tvým indexerům dostane jen tehdy, když se kontejner dostane na internet.
 
 ## Pořád nevíš kudy kam
 

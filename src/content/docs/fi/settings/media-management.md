@@ -53,8 +53,8 @@ Kovalinkitys ei ole sama asia kuin **Use Hardlinks instead of Copy**. Se on lata
 | Enable Recycling Bin | päällä | Poistetut kirjatiedostot siirtyvät roskakoriin sen sijaan, että ne poistettaisiin |
 | Recycling Bin | tyhjä | Missä roskakori on. Tyhjä käyttää ABM:n oletusta (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (päivää) | 0 poistaa automaattisen siivouksen käytöstä |
-| Library Scan Interval | 0 (pois) | Tunteja automaattisten skannausten välillä |
-| Watch for Changes | pois | Skannaa, kun tiedostoja lisätään, poistetaan tai muutetaan |
+| Library Scan Interval | 24 | Tunteja automaattisten skannausten välillä |
+| Watch for Changes | päällä | Skannaa, kun tiedostoja lisätään, poistetaan tai muutetaan |
 | Cover Cache Workers | 4 | Montako kansikuvaa ladataan kerralla kuvia välimuistiin tallennettaessa, 1–16 |
 
 ## Laadun parannukset (Quality Upgrades)

@@ -31,11 +31,11 @@ A scheduled run that was idle writes nothing. A repeat of the same failure write
 
 ## Retention
 
-**Activity Log Retention** in General deletes entries after 90 days by default. 0 keeps them. Log files have their own retention (30 days), so a link from an entry to a log can outlive the log.
+**Activity Log Retention** in General deletes entries after 90 days by default. 0 keeps them. Log files have their own retention (30 days).
 
 ## View log
 
-:::caution[Coming in the next release]
+:::caution[Coming in a later release]
 View log links from entries are not in a released version yet.
 :::
 

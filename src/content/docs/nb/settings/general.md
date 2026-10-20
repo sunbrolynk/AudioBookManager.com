@@ -1,9 +1,9 @@
 ---
 title: Generelt
-description: Vert, utgående tilkobling, sikkerhet, logging og sikkerhetskopier.
+description: Vert, sikkerhet, proxy, logging og sikkerhetskopier.
 ---
 
-**Settings > General** har seksjoner for Host, Proxy & VPN, Security, Logging og Backups. Security har [sin egen side](/nb/settings/security/).
+**Settings > General** har seksjoner for Host, Security, Proxy, Logging og Backups. Security har [sin egen side](/nb/settings/security/).
 
 ## Vert (Host)
 
@@ -18,7 +18,7 @@ description: Vert, utgående tilkobling, sikkerhet, logging og sikkerhetskopier.
 
 I Docker er det miljøvariabelen `PORT` og portmappingen i compose som betyr noe i praksis. Se [Miljøvariabler](/nb/configuration/).
 
-## Proxy og utgående tilkobling
+## Proxy
 
 Hvordan ABM kommer seg ut på internett for metadata, cover og Audible-sider.
 
@@ -31,7 +31,7 @@ Hvordan ABM kommer seg ut på internett for metadata, cover og Audible-sider.
 | Bypass Addresses | `localhost,127.0.0.1` | Verter som går utenom proxyen |
 | Test Connection | | Sjekker proxyen |
 
-Siden viser også den utgående IP-en din slik eksterne tjenester ser den. Neste versjon legger til en innebygd WireGuard-tunnel og et eksplisitt valg av tilkobling (ingen, direkte, proxy, WireGuard eller din egen VPN-container) som den innebygde metadatakilden krever. En rute som er nede, blokkerer trafikken i stedet for å falle tilbake til din egen adresse. Eksport av sikkerhetskopier og mål på LAN går alltid direkte.
+Seksjonen viser også den utgående IP-adressen din slik eksterne tjenester ser den. Et valg av tilkobling, med en innebygd VPN, er planlagt til en senere versjon.
 
 ## Logging
 

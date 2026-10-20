@@ -46,9 +46,5 @@ Settings é uma lista agrupada: Library, Sources e App. Cada linha é um link co
 
 ## Bancada de importação (Import Workbench)
 
-:::caution[Chega na próxima versão]
-O layout de celular do Import Workbench ainda não está em nenhuma versão lançada.
-:::
-
 - Um cartão de resumo mostra quantas pastas estão prontas. Toque nele para abrir a legenda e filtrar a lista.
 - A barra inferior mostra quantas estão selecionadas e o botão Add, e explica por que o Add está bloqueado.

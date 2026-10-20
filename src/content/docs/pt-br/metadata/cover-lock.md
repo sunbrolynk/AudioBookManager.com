@@ -22,4 +22,4 @@ A capa do livro pode voltar para a automática, o que destrava ela. Depois disso
 ## Pegadinhas
 
 - A trava vale só para a capa. Título, autor e o resto continuam sendo atualizados.
-- As capas são baixadas pela sua conexão de saída. Se nenhuma estiver escolhida, capas novas não são baixadas, e as capas em cache continuam sendo servidas.
+- As capas são baixadas pelo seu proxy se você configurou um em **Settings > General > Proxy**.

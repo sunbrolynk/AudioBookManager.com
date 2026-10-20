@@ -21,6 +21,6 @@ ABM には `/api` の下に REST API があります。インタラクティブ�
 
 ## メタデータの障害
 
-メタデータの取得元に依存するルートは、ボディの `code` に 503（`metadata_unavailable`）、`Retry-After: 30` 付きの 503（`metadata_declined`）、502（`metadata_rejected`）のどれかを入れて返します。障害中でも空の結果を返すだけの検索系ルートもあります。
+Libex から応答がない本の検索は、502 と "Libex search failed" を返します。著者やシリーズの検索は、503 と "Libex could not be reached; try again shortly" を返します。障害中でも、一部の検索ルートは空の結果を返します。
 
 Sonarr を知っているなら：この API は v3 互換ではありません。Prowlarr は自身の Prowlarr 連携を通じて ABM にインデクサーを同期できます。

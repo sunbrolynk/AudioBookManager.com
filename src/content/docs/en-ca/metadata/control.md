@@ -25,7 +25,7 @@ The edit dialog changes monitoring, quality profile, path and tags, and lets you
 
 ## Sidecars your player reads
 
-ABM writes `cover.jpg`, an `.opf`, `desc.txt` and `reader.txt` beside the audio, and a `.cue` chapter sheet in the next release. Audiobookshelf reads the OPF, cover and text files, so what you chose in ABM is what the player shows. See [Sidecar files](/en-ca/using/sidecars/).
+ABM writes `cover.jpg`, an `.opf`, `desc.txt` and `reader.txt` beside the audio. Audiobookshelf reads the OPF, cover and text files, so what you chose in ABM is what the player shows. See [Sidecar files](/en-ca/using/sidecars/).
 
 ## Tags written into the audio
 
@@ -33,7 +33,7 @@ ABM can write title, artist, album artist, album, genre, year, comment, narrator
 
 ## Chapters
 
-ABM compares the chapters embedded in your files with the published edition's, and can write the published chapters into the files without re-encoding. It refuses when your audio length shows it is a different edition. See [Chapters](/en-ca/using/chapters/). Coming in the next release.
+Comparing the chapters embedded in your files with the published edition's, and writing the published chapters into the files, is planned for a later release. See [Chapters](/en-ca/using/chapters/).
 
 ## Series and position
 
@@ -47,8 +47,8 @@ Tags are yours. Auto tags apply them by rules (genre, narrator, rating, runtime 
 
 Everything ABM learns about a book stays in ABM's own SQLite database in `/config`, including books you later remove. Back that folder up and the record is backed up. Metadata does not depend on the source being reachable once a book is in.
 
-:::caution[Coming in the next release]
-A dedicated **Local Metadata Library** is planned: an opt-in copy of everything ABM has ever looked up, kept even after a book leaves your library, with its own scheduled backups and a SQLite download. The Metadata page section for it is present in the unmerged work and marked as a preview, not connected yet.
+:::caution[Coming in a later release]
+A dedicated **Local Metadata Library** is planned: an opt-in copy of everything ABM has ever looked up, kept even after a book leaves your library, with its own scheduled backups and a SQLite download.
 :::
 
 ## Refresh schedules

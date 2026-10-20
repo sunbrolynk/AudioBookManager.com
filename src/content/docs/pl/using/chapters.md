@@ -3,7 +3,7 @@ title: Rozdziały
 description: Porównaj osadzone rozdziały książki z Libex i je popraw.
 ---
 
-:::caution[W następnym wydaniu]
+:::caution[W późniejszym wydaniu]
 Wszystkiego na tej stronie poza domyślnymi ustawieniami konwersji nie ma jeszcze w żadnej wydanej wersji.
 :::
 

@@ -7,7 +7,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 ![Settings, Metadata: which sidecar files to create and which audio tags to write](../../../assets/docs/settings-metadata.jpg)
 
-## Metadata file creation
+## Metadata File Creation
 
 | Setting | Default | Effect |
 |---|---|---|
@@ -16,7 +16,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 | Create on Refresh | off | Create or update files when metadata is refreshed |
 | Overwrite Existing | off | Replace files already in the folder |
 
-Files to create: `cover.jpg` (on), `title.opf` (on, Audiobookshelf-compatible), `desc.txt` (on) and `reader.txt` (on).
+Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). **Create on Refresh** shows with **Show Advanced**.
 
 ## Audio file tag writing
 
@@ -30,11 +30,9 @@ Uses ffmpeg to write tags into the audio itself.
 
 Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 
-## Coming in the next release
+## Coming in a later release
 
-The page is reorganized into sections and gains a **Source** section with a **Metadata Source** choice, **Test** and **Status**. See [Choosing a metadata source](/metadata/choosing-a-source/).
-
-It also gains a **Local Metadata Library** section (opt-in, shown as a preview that is not connected yet) with a download of the library as SQLite and scheduled backups of its own. The backups mirror the General backup options and default to weekly at 04:00, kept 28 days.
+A choice of metadata source and a local copy of the metadata library are planned for a later release. See [Your metadata, your control](/metadata/control/).
 
 ## Gotchas
 

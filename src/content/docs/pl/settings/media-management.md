@@ -53,8 +53,8 @@ Hardlink to nie to samo co **Use Hardlinks instead of Copy**. Tamto dotyczy pobr
 | Enable Recycling Bin | wł. | Usunięte pliki książek trafiają do kosza, zamiast znikać |
 | Recycling Bin | puste | Gdzie jest kosz. Puste oznacza domyślny kosz ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dni) | 0 wyłącza automatyczne czyszczenie |
-| Library Scan Interval | 0 (wył.) | Liczba godzin między automatycznymi skanowaniami |
-| Watch for Changes | wył. | Skanuje, gdy pliki są dodawane, usuwane albo zmieniane |
+| Library Scan Interval | 24 | Liczba godzin między automatycznymi skanowaniami |
+| Watch for Changes | wł. | Skanuje, gdy pliki są dodawane, usuwane albo zmieniane |
 | Cover Cache Workers | 4 | Ile okładek pobierać naraz przy buforowaniu grafik, od 1 do 16 |
 
 ## Ulepszenia jakości (Quality Upgrades)

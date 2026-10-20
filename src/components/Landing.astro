@@ -42,9 +42,9 @@ const areas = (t.areas as [string, string, string[]][]).map(([name, blurb, views
   ({ name, blurb, views: views.map((view, v) => ({ view, img: shot(areaShots[a][v]), alt: t.altView.replace('{area}', name).replace('{view}', view) })) }));
 const phoneShots = ['phone-library', 'phone-book', 'phone-wanted'].map((n, i) => [shot(n), t.phoneShots[i]] as const);
 const audShot = shot('settings-audible');
-// Items that only arrive with the next release, by their index in t.aud and t.phoneDiffs.
-const audNext = [3, 5];
-const phoneNext = [0, 2, 3];
+// Items that only arrive with the next release, by their index in t.aud and t.phoneDiffs. Empty while everything shown ships.
+const audNext: number[] = [];
+const phoneNext: number[] = [];
 const imgW = 1440, imgH = 900;
 
 const compose = `services:

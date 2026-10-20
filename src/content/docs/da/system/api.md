@@ -21,6 +21,6 @@ ABM har et REST API under `/api`. Den interaktive reference ligger på `/api/doc
 
 ## Nedbrud hos metadatakilden
 
-En route, der afhænger af metadatakilden, svarer 503 (`metadata_unavailable`), 503 med `Retry-After: 30` (`metadata_declined`) eller 502 (`metadata_rejected`) i bodyens `code`. Nogle opslags-routes returnerer stadig et tomt resultat under et nedbrud.
+En bogsøgning, der ikke får svar fra Libex, giver 502 med "Libex search failed". En søgning efter forfattere eller serier giver 503 med "Libex could not be reached; try again shortly". Nogle opslagsruter giver stadig et tomt resultat under et udfald.
 
 Kender du Sonarr: API'et er ikke v3-kompatibelt. Prowlarr kan synkronisere indeksere ind i ABM gennem sin Prowlarr-forbindelse.

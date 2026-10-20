@@ -11,11 +11,7 @@ description: 搜索一本书，把它添加为想要。
 
 ## 作者和系列搜索
 
-:::caution[下个版本推出]
-Author 和 Series 搜索模式还没有出现在已发布的版本里。
-:::
-
-搜索会新增两种模式，直接查找作者和系列本身。原来按书搜索的模式会改名为 “Books by author” 和 “Books in series”。添加一个作者或系列时，会建立它的目录，并按照 **Monitor** 把其中的书添加为想要：
+搜索有 Title、Author、Series、Books by author、Books in series 和 ASIN 几种模式。Author 和 Series 查找作者和系列本身，Books by author 和 Books in series 查找书。添加作者或系列时会建立它的目录，并按 **Monitor** 把书作为想要的书添加进来：
 
 | Monitor | 添加 |
 |---|---|

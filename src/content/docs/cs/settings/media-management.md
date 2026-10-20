@@ -53,8 +53,8 @@ Hardlink tady není totéž co **Use Hardlinks instead of Copy**. To druhé je p
 | Enable Recycling Bin | zapnuto | Smazané soubory knih se přesunou do koše místo smazání |
 | Recycling Bin | prázdné | Kde koš je. Prázdné použije výchozí místo ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dní) | 0 vypne automatický úklid |
-| Library Scan Interval | 0 (vypnuto) | Počet hodin mezi automatickými skenováními |
-| Watch for Changes | vypnuto | Skenuje, když se soubory přidají, odeberou nebo změní |
+| Library Scan Interval | 24 | Počet hodin mezi automatickými skenováními |
+| Watch for Changes | zapnuto | Skenuje, když se soubory přidají, odeberou nebo změní |
 | Cover Cache Workers | 4 | Kolik obálek se stahuje najednou při ukládání obrázků do mezipaměti, od 1 do 16 |
 
 ## Vylepšování kvality (Quality Upgrades)

@@ -3,7 +3,7 @@ title: Status
 description: Helsesjekker og et blikk på hva ABM driver med.
 ---
 
-**System > Status** kjører helsesjekker og viser alt som er galt: nedlastingsklienter og indekserere som feiler, problemer med rotmapper og problemer med den utgående tilkoblingen. Den viser også bruken av databasens tilkoblingspool. Når ingenting er galt, står det "All systems healthy".
+**System > Status** kjører helsesjekker og lister alt som er galt: nedlastingsklienter og indekserere som feiler, problemer med rotmapper og et Libex som ikke kan nås. Den viser også bruken av databasens tilkoblingspool. Når alt er i orden, står det "All systems healthy".
 
 Helsesjekkene kjører også hver 6. time i bakgrunnen. Connect kan varsle ved **On Health Issue** og **On Health Restored**. Se [Connect](/nb/settings/connect/).
 

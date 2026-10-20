@@ -11,7 +11,7 @@ Alla prima visita ABM ti guida nella creazione di un login. Finché non lo fai, 
 
 ## 2. Scegli come ABM esce su internet
 
-In **Settings > General** c'è una sezione **Proxy & VPN**. Se pensi di usare la fonte di metadati integrata, devi prima scegliere una connessione. Vedi [Scegliere una fonte di metadati](/it/metadata/choosing-a-source/).
+In **Settings > General** c'è una sezione **Proxy**. Imposta lì un proxy se ABM deve passare da uno per arrivare a internet. Se ABM esce direttamente su internet, salta questo passaggio.
 
 ## 3. Aggiungi una cartella radice
 

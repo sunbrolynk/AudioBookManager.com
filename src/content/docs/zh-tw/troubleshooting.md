@@ -46,13 +46,14 @@ Content-Security-Policy 標頭只允許 HTTPS 的封面圖片。到瀏覽器主�
 
 ## 中繼資料來源無法使用
 
-新增、搜尋、重新整理和 Discover 都需要中繼資料來源。訊息裡會指出來源，例如「The metadata source is unavailable」。可能的原因：來源掛了或在限制請求頻率，或是你的對外連線把它擋住了。
+新增、搜尋、重新整理和 Discover 都需要 Libex。ABM 得不到回應時，書籍搜尋會以 "Libex search failed" 失敗，作者或系列搜尋會以 "Libex could not be reached; try again shortly" 失敗，而不是顯示空白清單。原因：Libex 掛了，或是 ABM 的連線碰不到它。
 
-1. 檢查 **Settings > General > Proxy & VPN**，並確認連線路徑是通的。
-2. 等一分鐘再試。被限制頻率的來源會回 503，並建議 30 秒後重試。
-3. 在這段期間，你還是可以手動新增和匯入書。
+1. 看看 [ABM 狀態頁](https://status.audiobookmanager.com)和 [Libex 狀態頁](https://status.libexdb.com)，確認是不是對所有人都掛了。
+2. 檢查容器能不能上網；如果你有用代理，檢查 **Settings > General > Proxy** 裡的設定對不對。
+3. 過一分鐘再試。
+4. 這段期間你還是可以手動新增和匯入書籍。
 
-碰上服務中斷的背景任務會失敗並附上原因，每次中斷只會送出一則通知。
+碰到服務中斷的背景工作會帶著原因失敗。它會自動重試，最多六次或六小時，以先到的為準。
 
 ## 重新整理改掉了書的詳細資料
 
@@ -72,7 +73,7 @@ Content-Security-Policy 標頭只允許 HTTPS 的封面圖片。到瀏覽器主�
 
 ## Docker 連不到中繼資料來源或索引器
 
-先檢查 DNS 和對外連線設定。在 Docker 裡，直接連線只有在容器能連上網路時才有用。
+先檢查 DNS 和代理設定。在 Docker 裡，容器要能上網，ABM 才碰得到 Libex 和你的索引器。
 
 ## 還是搞不定
 
