@@ -11,7 +11,7 @@ The **Security** section of **Settings > General** controls who can use ABM and 
 |---|---|---|
 | Authentication | Forms (Login Page) | None, Basic (Browser Popup), Forms (Login Page), External (Reverse Proxy) |
 | Authentication Required | Disabled for Local Addresses | Enabled (Always), Disabled for Local Addresses, Disabled (Not Recommended) |
-| Username, New Password, Confirm New Password | | Leave the password blank to keep the current one |
+| Username, New Password, Confirm New Password | | Leave the password blank to keep the current one. Setting a new password signs out every other session and closes open live connections, so a stale tab must reload and sign in again. The tab you saved from stays signed in |
 | Certificate Validation | Enabled | Enabled, Disabled for Local Addresses, Disabled (Not Recommended) |
 | Local Networks | empty | Extra CIDR ranges whose clients skip sign-in |
 | CORS Allowed Domains | empty | Other origins allowed to call the API from a browser. Needs a restart |
