@@ -11,11 +11,7 @@ Ein hinzugefügtes Buch wird im gewählten Root-Ordner und Qualitätsprofil zu *
 
 ## Suche nach Autoren und Serien
 
-:::caution[Kommt mit dem nächsten Release]
-Die Suchmodi Author und Series sind noch in keiner veröffentlichten Version drin.
-:::
-
-Die Suche bekommt zwei Modi, die Autoren und Serien selbst finden. Die älteren Buch-Modi heißen dann "Books by author" und "Books in series". Wenn du einen Autor oder eine Serie hinzufügst, wird der Katalog aufgebaut, und die Bücher werden je nach **Monitor** als gesucht hinzugefügt:
+Die Suche hat Modi für Title, Author, Series, Books by author, Books in series und ASIN. Author und Series finden Autoren und Serien selbst, Books by author und Books in series finden Bücher. Wenn du einen Autor oder eine Serie hinzufügst, wird der Katalog aufgebaut, und die Bücher werden je nach **Monitor** als gesucht hinzugefügt:
 
 | Monitor | Fügt hinzu |
 |---|---|

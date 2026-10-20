@@ -53,8 +53,8 @@ description: ルートフォルダ、インポート、追加ファイル、ゴ�
 | Enable Recycling Bin | オン | 削除した本のファイルを、消さずにゴミ箱へ移す |
 | Recycling Bin | 空 | ゴミ箱の場所。空なら ABM のデフォルト（`/config/recycle/media`）を使う |
 | Recycling Bin Cleanup | 7（日） | 0 で自動削除をオフ |
-| Library Scan Interval | 0（オフ） | 自動スキャンの間隔（時間） |
-| Watch for Changes | オフ | ファイルの追加、削除、変更があったらスキャンする |
+| Library Scan Interval | 24 | 自動スキャンの間隔（時間） |
+| Watch for Changes | オン | ファイルの追加、削除、変更があったらスキャンする |
 | Cover Cache Workers | 4 | アートワークをキャッシュするとき、同時にダウンロードする表紙の数（1〜16） |
 
 ## 品質のアップグレード（Quality Upgrades）

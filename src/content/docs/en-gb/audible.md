@@ -19,10 +19,6 @@ The **Audible Library** page lists everything synced. Filter it to All, Not in L
 
 ## Mirror Audible library to ABM
 
-:::caution[Coming in the next release]
-This is not in a released version yet.
-:::
-
 Mirror makes your ABM library follow your Audible library.
 
 - It is on by default.

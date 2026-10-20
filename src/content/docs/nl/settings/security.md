@@ -31,7 +31,7 @@ Een proxy die geen forwarding-headers meestuurt, ziet eruit als een lokale clien
 
 ## Wachtwoordbevestiging
 
-Sommige wijzigingen vragen opnieuw om je huidige wachtwoord: Security-instellingen opslaan, de API-sleutel tonen of opnieuw genereren, en een WireGuard-config opslaan of verwijderen. Een verkeerd wachtwoord telt in het beveiligingslog als mislukte inlogpoging. Is er nog geen wachtwoord ingesteld, dan wordt er niks gevraagd.
+Sommige wijzigingen vragen opnieuw om je huidige wachtwoord: het opslaan van de Security-instellingen en het tonen of opnieuw genereren van de API-sleutel. Een fout wachtwoord telt als mislukte aanmelding in het beveiligingslog. Is er nog geen wachtwoord ingesteld, dan wordt er geen gevraagd.
 
 ## API-sleutel
 

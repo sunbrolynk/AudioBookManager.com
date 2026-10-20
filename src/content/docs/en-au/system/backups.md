@@ -13,7 +13,7 @@ An encrypted archive with a consistent copy of the database (`database.db`), the
 
 Pick one from the list, or upload a backup file (up to 500 MiB). A copy of the live database is saved first. Restoring cannot be undone.
 
-By default a restore does not bring back **security settings** (authentication mode, credentials, trusted networks) or the **outbound connection**. Your current ones are kept and the result says so. Tick the opt-in on the upload to restore them. This means an uploaded archive can never switch sign-in off just by being restored.
+By default a restore does not bring back **security settings** (authentication mode, credentials, trusted networks). Your current ones are kept and the result says so. The page has no switch for this. Only an API call to `restore-upload` with `restore_security_settings=true` brings them back, so an uploaded archive can never switch sign-in off just by being restored.
 
 If the backup was made on an older version, restart the container after restoring so the migration runs.
 

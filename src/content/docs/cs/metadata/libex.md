@@ -7,6 +7,6 @@ ABM bere data o knihách, autorech, sériích a kapitolách z **Libexu**, otevř
 
 Libex: [Zdrojový kód](https://github.com/LibexHQ/Libex) · [Reference API](https://libexdb.com/redoc)
 
-Vydané verze se ve výchozím stavu ptají veřejné instance Libexu na libexdb.com. Příští verze přidá výběr zdroje. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
+ABM se ptá veřejné instance Libexu na libexdb.com. Výběr zdroje je plánovaný na pozdější verzi.
 
 Když Libex není dostupný, ABM to řekne a uvede zdroj. Knihy můžeš dál přidávat a importovat ručně. Viz [Řešení problémů](/cs/troubleshooting/#zdroj-metadat-není-dostupný).

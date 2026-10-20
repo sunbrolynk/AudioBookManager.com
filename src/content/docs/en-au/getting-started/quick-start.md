@@ -11,7 +11,7 @@ The first visit walks you through creating a login. Until you do, ABM refuses re
 
 ## 2. Choose how ABM reaches the internet
 
-Under **Settings > General** there is a **Proxy & VPN** section. If you plan to use the built-in metadata source, a connection has to be chosen first. See [Choosing a metadata source](/en-au/metadata/choosing-a-source/).
+Under **Settings > General** there is a **Proxy** section. Set a proxy there if ABM has to go through one to reach the internet. Skip it if ABM can reach the internet directly.
 
 ## 3. Add a root folder
 

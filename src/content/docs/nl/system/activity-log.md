@@ -27,11 +27,11 @@ Een geplande run die niks te doen had, schrijft niks. Een herhaling van dezelfde
 
 ## Bewaartermijn
 
-**Activity Log Retention** in General verwijdert regels standaard na 90 dagen. Met 0 blijven ze bewaard. Logbestanden hebben hun eigen bewaartermijn (30 dagen), dus een link van een regel naar een log kan langer bestaan dan het log zelf.
+**Activity Log Retention** in General verwijdert items standaard na 90 dagen. Met 0 blijven ze staan. Logbestanden hebben hun eigen bewaartermijn (30 dagen).
 
 ## Log bekijken
 
-:::caution[Komt in de volgende release]
+:::caution[Komt in een latere release]
 Links naar het log vanuit regels zitten nog niet in een uitgebrachte versie.
 :::
 

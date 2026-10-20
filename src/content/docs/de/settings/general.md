@@ -1,9 +1,9 @@
 ---
 title: Allgemein
-description: Host, ausgehende Verbindung, Sicherheit, Logging und Backups.
+description: Host, Sicherheit, Proxy, Logging und Backups.
 ---
 
-**Settings > General** hat Abschnitte für Host, Proxy & VPN, Security, Logging und Backups. Security hat [eine eigene Seite](/de/settings/security/).
+**Settings > General** hat Abschnitte für Host, Security, Proxy, Logging und Backups. Security hat [eine eigene Seite](/de/settings/security/).
 
 ## Host
 
@@ -18,7 +18,7 @@ description: Host, ausgehende Verbindung, Sicherheit, Logging und Backups.
 
 Unter Docker zählen in der Praxis die Umgebungsvariable `PORT` und das Port-Mapping in der Compose-Datei. Siehe [Umgebungsvariablen](/de/configuration/).
 
-## Proxy und ausgehende Verbindung
+## Proxy
 
 Wie ABM für Metadaten, Cover und Audible-Seiten ins Internet kommt.
 
@@ -31,7 +31,7 @@ Wie ABM für Metadaten, Cover und Audible-Seiten ins Internet kommt.
 | Bypass Addresses | `localhost,127.0.0.1` | Hosts, die am Proxy vorbeigehen |
 | Test Connection | | Prüft den Proxy |
 
-Die Seite zeigt außerdem deine ausgehende IP so, wie externe Dienste sie sehen. Das nächste Release bringt einen eingebauten WireGuard-Tunnel und eine ausdrückliche Wahl der Verbindung (keine, direkt, Proxy, WireGuard oder dein eigener VPN-Container), die die eingebaute Metadatenquelle voraussetzt. Ein Weg, der down ist, blockiert den Verkehr, statt auf deine eigene Adresse zurückzufallen. Backup-Exporte und Ziele im LAN gehen immer direkt.
+Der Abschnitt zeigt außerdem deine ausgehende IP so, wie externe Dienste sie sehen. Eine Auswahl der Verbindung, auch mit eingebautem VPN, ist für ein späteres Release geplant.
 
 ## Logging
 

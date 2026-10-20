@@ -13,7 +13,7 @@ description: Zálohování, export a obnova ABM.
 
 Vyber zálohu ze seznamu, nebo nahraj soubor se zálohou (až 500 MiB). Nejdřív se uloží kopie živé databáze. Obnova se nedá vrátit.
 
-Ve výchozím stavu obnova nevrací **nastavení zabezpečení** (režim ověřování, přihlašovací údaje, důvěryhodné sítě) ani **odchozí připojení**. Tvoje současná zůstanou a výsledek to řekne. Pokud je chceš obnovit, zaškrtni u nahrávání příslušnou volbu. Díky tomu nahraný archiv nikdy nevypne přihlašování jen tím, že se obnoví.
+Obnova ve výchozím stavu nevrací **nastavení zabezpečení** (režim ověřování, přihlašovací údaje, důvěryhodné sítě). Zůstanou ty současné a výsledek to uvede. Stránka na to nemá přepínač. Vrátí je jen volání API `restore-upload` s `restore_security_settings=true`, takže nahraný archiv nikdy nemůže vypnout přihlašování pouhým obnovením.
 
 Pokud záloha vznikla na starší verzi, po obnově restartuj kontejner, aby proběhla migrace.
 

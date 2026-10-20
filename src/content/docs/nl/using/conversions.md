@@ -30,10 +30,6 @@ Mislukt het plaatsen van het resultaat (omdat de bibliotheekmap vol is, bijvoorb
 
 ## Pauzeren en hervatten
 
-:::caution[Komt in de volgende release]
-Pauzeren zit nog niet in een uitgebrachte versie.
-:::
-
 Er zijn twee soorten pauze, en geen van beide annuleert iets:
 
 - **Pause** op één lopende job zet de ffmpeg-processen stil waar ze zijn. Resume gaat verder vanaf hetzelfde punt.
@@ -47,6 +43,6 @@ Ken je Sonarr? Zoiets bestaat niet in de arrs. Zie het als een kleine encoderwac
 
 ## Valkuilen
 
-- Concurrent Conversions keer Threads Per Job mag niet hoger zijn dan het aantal CPU-cores.
+- Concurrent Conversions keer Threads Per Job mag niet hoger zijn dan het aantal CPU-cores. Bij Auto verdeelt ABM de overgebleven kernen voor je over de jobs die tegelijk draaien.
 - Een geconverteerd bestand heeft een nieuwe grootte en wijzigingstijd, dus Audiobookshelf scant het opnieuw.
 - Converteer je een bestand dat gehardlinkt is aan een torrent die nog seedt, dan ontstaat er een nieuw bestand. De kopie die seedt houdt de oude bytes.

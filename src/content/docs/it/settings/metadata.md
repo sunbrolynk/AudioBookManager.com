@@ -28,11 +28,9 @@ Usa ffmpeg per scrivere i tag dentro l'audio stesso.
 
 Campi dei tag, tutti attivi di default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) e Cover Art.
 
-## In arrivo nella prossima release
+## In arrivo in una release successiva
 
-La pagina viene riorganizzata in sezioni e guadagna una sezione **Source** con la scelta **Metadata Source**, **Test** e **Status**. Vedi [Scegliere una fonte di metadati](/it/metadata/choosing-a-source/).
-
-Guadagna anche una sezione **Local Metadata Library** (facoltativa, mostrata come anteprima non ancora collegata) con un download della libreria in SQLite e backup pianificati tutti suoi. I backup riprendono le opzioni di backup di General e di default sono settimanali alle 04:00, conservati per 28 giorni.
+Una scelta della fonte di metadati e una copia locale della libreria di metadati sono previste per una release successiva. Vedi [I tuoi metadati, il tuo controllo](/it/metadata/control/).
 
 ## Da tenere presente
 

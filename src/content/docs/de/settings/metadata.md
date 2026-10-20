@@ -28,11 +28,9 @@ Schreibt die Tags mit ffmpeg direkt ins Audio.
 
 Tag-Felder, standardmäßig alle an: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) und Cover Art.
 
-## Kommt mit dem nächsten Release
+## Kommt in einem späteren Release
 
-Die Seite wird in Abschnitte gegliedert und bekommt einen Abschnitt **Source** mit der Auswahl **Metadata Source**, **Test** und **Status**. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/).
-
-Außerdem kommt ein Abschnitt **Local Metadata Library** dazu (optional, als Vorschau angezeigt und noch nicht angebunden), mit einem Download der Bibliothek als SQLite und eigenen geplanten Backups. Die Backups spiegeln die Backup-Optionen unter General und laufen standardmäßig wöchentlich um 04:00, aufbewahrt für 28 Tage.
+Eine Auswahl der Metadatenquelle und eine lokale Kopie der Metadaten-Bibliothek sind für ein späteres Release geplant. Siehe [Deine Metadaten, deine Kontrolle](/de/metadata/control/).
 
 ## Stolperfallen
 

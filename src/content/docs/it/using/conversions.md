@@ -30,10 +30,6 @@ Se mettere a posto il risultato fallisce (per esempio perché la cartella della 
 
 ## Pausa e ripresa
 
-:::caution[In arrivo nella prossima release]
-La pausa non è ancora in una versione rilasciata.
-:::
-
 Due tipi di pausa, nessuno dei due annulla niente:
 
 - **Pause** su un singolo lavoro in corso sospende i suoi processi ffmpeg dove sono. La ripresa continua dallo stesso punto.
@@ -47,6 +43,6 @@ Se conosci Sonarr: negli arr non c'è niente del genere. Pensalo come una piccol
 
 ## Da tenere presente
 
-- Concurrent Conversions moltiplicato per Threads Per Job non dovrebbe superare il numero di core della tua CPU.
+- Concurrent Conversions moltiplicato per Threads Per Job non dovrebbe superare il numero di core della tua CPU. Con Auto, ABM divide per te i core rimasti tra i job in esecuzione contemporaneamente.
 - Un file convertito ha una nuova dimensione e una nuova data di modifica, quindi Audiobookshelf lo riscansiona.
 - Convertire un file collegato con hardlink a un torrent in seed crea un file nuovo. La copia in seed mantiene i vecchi byte.

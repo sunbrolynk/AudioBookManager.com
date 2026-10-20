@@ -22,4 +22,4 @@ Je kunt de cover van het boek terugzetten naar de automatische, en dan is hij ni
 ## Valkuilen
 
 - Vastzetten geldt alleen voor de cover. Titel, auteur en de rest worden nog steeds vernieuwd.
-- Covers worden opgehaald via je uitgaande verbinding. Is er geen gekozen, dan worden nieuwe covers niet gedownload, en worden gecachete covers nog wel geserveerd.
+- Covers worden opgehaald via je proxy als je er onder **Settings > General > Proxy** een hebt ingesteld.

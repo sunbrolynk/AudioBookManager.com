@@ -53,8 +53,8 @@ O hardlink aqui não é a mesma coisa que **Use Hardlinks instead of Copy**. Aqu
 | Enable Recycling Bin | ligado | Arquivos de livro apagados vão para uma lixeira em vez de serem apagados |
 | Recycling Bin | vazio | Onde fica a lixeira. Vazio usa o padrão do ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dias) | 0 desativa a limpeza automática |
-| Library Scan Interval | 0 (desligado) | Horas entre as varreduras automáticas |
-| Watch for Changes | desligado | Varre quando arquivos são adicionados, removidos ou alterados |
+| Library Scan Interval | 24 | Horas entre as varreduras automáticas |
+| Watch for Changes | ligado | Varre quando arquivos são adicionados, removidos ou alterados |
 | Cover Cache Workers | 4 | Quantas capas são baixadas ao mesmo tempo ao guardar a arte em cache, de 1 a 16 |
 
 ## Upgrades de qualidade (Quality Upgrades)

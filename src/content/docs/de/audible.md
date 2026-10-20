@@ -19,10 +19,6 @@ Die Seite **Audible Library** listet alles auf, was synchronisiert wurde. Du kan
 
 ## Audible-Bibliothek nach ABM spiegeln
 
-:::caution[Kommt mit dem nächsten Release]
-Das ist noch in keiner veröffentlichten Version drin.
-:::
-
 Mit dem Spiegeln (Mirror) folgt deine ABM-Bibliothek deiner Audible-Bibliothek.
 
 - Es ist standardmäßig an.

@@ -1,9 +1,9 @@
 ---
 title: Général
-description: Hôte, connexion sortante, sécurité, journalisation et sauvegardes.
+description: Hôte, sécurité, proxy, journaux et sauvegardes.
 ---
 
-**Settings > General** a des sections pour Host, Proxy & VPN, Security, Logging et Backups. Security a [sa propre page](/fr/settings/security/).
+**Settings > General** a des sections pour Host, Security, Proxy, Logging et Backups. Security a [sa propre page](/fr/settings/security/).
 
 ## Hôte (Host)
 
@@ -18,7 +18,7 @@ description: Hôte, connexion sortante, sécurité, journalisation et sauvegarde
 
 Sous Docker, ce qui compte en pratique, ce sont la variable d'environnement `PORT` et la redirection de port du fichier compose. Voir [Variables d'environnement](/fr/configuration/).
 
-## Proxy et connexion sortante
+## Proxy
 
 La façon dont ABM accède à Internet pour les métadonnées, les couvertures et les pages Audible.
 
@@ -31,7 +31,7 @@ La façon dont ABM accède à Internet pour les métadonnées, les couvertures e
 | Bypass Addresses | `localhost,127.0.0.1` | Les hôtes qui ne passent pas par le proxy |
 | Test Connection | | Vérifie le proxy |
 
-La page affiche aussi ton IP sortante telle que les services externes la voient. La prochaine version ajoute un tunnel WireGuard intégré et un choix explicite de connexion (aucune, directe, proxy, WireGuard ou ton propre conteneur VPN), que la source de métadonnées intégrée exige. Un chemin en panne bloque le trafic au lieu de se rabattre sur ta propre adresse. Les exports de sauvegarde et les destinations sur le LAN passent toujours en direct.
+La section affiche aussi ton IP sortante telle que les services externes la voient. Un choix de connexion, avec un VPN intégré, est prévu pour une version ultérieure.
 
 ## Journalisation (Logging)
 

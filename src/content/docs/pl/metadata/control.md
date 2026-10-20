@@ -25,7 +25,7 @@ Okno edycji zmienia monitorowanie, profil jakości, ścieżkę i tagi, a w tym s
 
 ## Pliki sidecar, które czyta twój odtwarzacz
 
-ABM zapisuje obok audio `cover.jpg`, plik `.opf`, `desc.txt` i `reader.txt`, a w następnym wydaniu także arkusz rozdziałów `.cue`. Audiobookshelf czyta OPF, okładkę i pliki tekstowe, więc to, co wybrałeś w ABM, jest tym, co pokazuje odtwarzacz. Zobacz [Pliki sidecar](/pl/using/sidecars/).
+ABM zapisuje `cover.jpg`, plik `.opf`, `desc.txt` i `reader.txt` obok audio. Audiobookshelf czyta OPF, okładkę i pliki tekstowe, więc odtwarzacz pokazuje to, co wybrałeś w ABM. Zobacz [Pliki sidecar](/pl/using/sidecars/).
 
 ## Tagi zapisywane w audio
 
@@ -33,7 +33,7 @@ ABM potrafi zapisać tytuł, wykonawcę, wykonawcę albumu, album, gatunek, rok,
 
 ## Rozdziały
 
-ABM porównuje rozdziały osadzone w twoich plikach z rozdziałami wydanej edycji i potrafi wpisać wydane rozdziały do plików bez ponownego kodowania. Odmawia, gdy długość twojego audio pokazuje, że to inna edycja. Zobacz [Rozdziały](/pl/using/chapters/). Będzie w następnym wydaniu.
+Porównywanie rozdziałów osadzonych w twoich plikach z rozdziałami wydania opublikowanego i zapisywanie opublikowanych rozdziałów w plikach jest planowane na późniejsze wydanie. Zobacz [Rozdziały](/pl/using/chapters/).
 
 ## Seria i pozycja
 
@@ -47,8 +47,8 @@ Tagi są twoje. Automatyczne tagi nadają je według reguł (gatunek, lektor, oc
 
 Wszystko, czego ABM dowie się o książce, zostaje we własnej bazie SQLite ABM w `/config`, łącznie z książkami, które potem usuniesz. Zrób kopię tego folderu i masz kopię całego zapisu. Gdy książka już jest w bibliotece, metadane nie zależą od tego, czy źródło jest osiągalne.
 
-:::caution[W następnym wydaniu]
-Planowana jest osobna **Local Metadata Library**: opcjonalna kopia wszystkiego, czego ABM kiedykolwiek szukał, zachowywana nawet wtedy, gdy książka opuści twoją bibliotekę, z własnymi zaplanowanymi kopiami zapasowymi i możliwością pobrania pliku SQLite. Sekcja strony Metadata dla niej jest w niescalonej jeszcze pracy i oznaczona jako podgląd, na razie niepodłączona.
+:::caution[W późniejszym wydaniu]
+Planowana jest osobna **Local Metadata Library**: opcjonalna kopia wszystkiego, co ABM kiedykolwiek sprawdził, zachowana nawet po tym, jak książka opuści twoją bibliotekę, z własnymi zaplanowanymi kopiami zapasowymi i pobraniem w SQLite.
 :::
 
 ## Harmonogramy odświeżania

@@ -41,7 +41,7 @@ Nee. Die data komt van de metadatabron en ABM past die niet met de hand aan. Wat
 
 ## Kan ABM hoofdstukken, beschrijvingen en tags schrijven op de plek waar Audiobookshelf ze leest?
 
-Het schrijft `cover.jpg`, een `.opf`, `desc.txt` en `reader.txt`, en kan tags in de audio zelf zetten. Hoofdstukken vergelijken met de gepubliceerde editie en `.cue`-bestanden komen in de volgende release. Zie [Sidecarbestanden](/nl/using/sidecars/).
+Het schrijft `cover.jpg`, een `.opf`, `desc.txt` en `reader.txt`, en kan tags in de audio schrijven. Hoofdstukken vergelijken met de gepubliceerde uitgave en `.cue`-bestanden staan gepland voor een latere release. Zie [Sidecar-bestanden](/nl/using/sidecars/).
 
 ## Kan ik mijn bestanden converteren?
 

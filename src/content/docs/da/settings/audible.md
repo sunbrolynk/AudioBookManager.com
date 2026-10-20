@@ -23,9 +23,9 @@ For at forbinde en konto skal du bruge en **Marketplace**, et **Display Name** o
 
 | Indstilling | Standard | Virkning |
 |---|---|---|
-| Auto Add to Library | til | Når du henter en Audible-titel, der ikke er i ABM endnu, tilføjer ABM den til biblioteket først. Slået fra bliver den download afvist. I næste udgivelse bliver det til [Spejl Audible-biblioteket til ABM](/da/audible/#spejl-audible-biblioteket-til-abm) |
+| Mirror Audible library to ABM | til | Hver synkronisering tilføjer de Audible-bøger, der ikke er i ABM endnu, og henter dem uden filer, op til 25 pr. synkronisering. Når du slår det til, kan du se, hvor mange bøger den næste synkronisering tilføjer og henter. Se [Spejl Audible-biblioteket til ABM](/da/audible/#spejl-audible-biblioteket-til-abm) |
 | Concurrent Downloads | 2 | 1 til 5. Højere er hurtigere og kan ramme Audibles begrænsning af kald. |
-| Preferred Quality | High Quality | High, Normal eller Low |
+| Preferred Quality | High | High eller Normal |
 | Delete Encrypted Files | til | Fjern den krypterede AAXC-fil, når den er dekrypteret til M4B |
 | Temp Download Path | tom | Tom bruger systemets midlertidige mappe |
 

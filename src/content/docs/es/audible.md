@@ -19,10 +19,6 @@ La página **Audible Library** muestra todo lo sincronizado. Puedes filtrarla po
 
 ## Replicar la biblioteca de Audible en ABM
 
-:::caution[Llega en la próxima versión]
-Esto todavía no está en ninguna versión publicada.
-:::
-
 La réplica hace que tu biblioteca de ABM siga a tu biblioteca de Audible.
 
 - Viene activada por defecto.

@@ -46,13 +46,14 @@ Verhoog `MAX_REQUEST_BODY_BYTES`. Een reverse proxy kan ook een lagere limiet he
 
 ## De metadatabron is niet bereikbaar
 
-Toevoegen, zoeken, vernieuwen en Discover hebben de metadatabron nodig. De melding noemt de bron, bijvoorbeeld "The metadata source is unavailable". Oorzaken: de bron ligt eruit of hanteert een rate limit, of je uitgaande verbinding blokkeert hem.
+Toevoegen, zoeken, vernieuwen en Discover hebben Libex nodig. Krijgt ABM geen antwoord, dan mislukt een zoekopdracht op boeken met "Libex search failed" en een zoekopdracht op auteurs of series met "Libex could not be reached; try again shortly", in plaats van een lege lijst te tonen. Oorzaken: Libex ligt eruit, of de verbinding van ABM komt er niet bij.
 
-1. Controleer **Settings > General > Proxy & VPN** en of de route in de lucht is.
-2. Probeer het na een minuut nog eens. Een bron met rate limit antwoordt met 503 en een hint om het over 30 seconden opnieuw te proberen.
-3. Ondertussen kun je boeken nog steeds met de hand toevoegen en importeren.
+1. Kijk op de [ABM-statuspagina](https://status.audiobookmanager.com) en de [Libex-statuspagina](https://status.libexdb.com) of het voor iedereen stuk is.
+2. Controleer of de container het internet op kan, en of de proxy onder **Settings > General > Proxy** klopt als je er een gebruikt.
+3. Probeer het na een minuut opnieuw.
+4. Intussen kun je boeken gewoon met de hand toevoegen en importeren.
 
-Achtergrondtaken die tegen een storing aanlopen, mislukken met de reden erbij en sturen één melding per storing.
+Een achtergrondtaak die in een storing loopt, mislukt met de reden. Hij wordt vanzelf opnieuw geprobeerd, tot zes keer of zes uur lang, wat het eerst komt.
 
 ## Een vernieuwing heeft de gegevens van een boek veranderd
 
@@ -72,7 +73,7 @@ Voeg een remote path mapping toe, of zorg dat ABM en de client de map op hetzelf
 
 ## Docker kan de metadatabron of indexers niet bereiken
 
-Controleer eerst DNS en de instelling voor de uitgaande verbinding. In Docker werkt een directe verbinding alleen als de container bij het internet kan.
+Controleer eerst DNS en de proxy-instelling. In Docker bereikt ABM Libex en je indexers alleen als de container het internet op kan.
 
 ## Kom je er nog steeds niet uit?
 

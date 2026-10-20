@@ -22,4 +22,4 @@ La portada del libro se puede restablecer a la automática, lo que la desbloquea
 ## Detalles a tener en cuenta
 
 - El bloqueo solo afecta a la portada. El título, el autor y lo demás se siguen actualizando.
-- Las portadas se descargan a través de tu conexión de salida. Si no hay ninguna elegida, no se descargan portadas nuevas, y las que están en caché se siguen sirviendo.
+- Las portadas se descargan a través de tu proxy si has configurado uno en **Settings > General > Proxy**.

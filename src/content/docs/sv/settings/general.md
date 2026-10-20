@@ -1,9 +1,9 @@
 ---
 title: Allmänt
-description: Värd, utgående anslutning, säkerhet, loggning och säkerhetskopior.
+description: Värd, säkerhet, proxy, loggning och säkerhetskopior.
 ---
 
-**Settings > General** har sektionerna Host, Proxy & VPN, Security, Logging och Backups. Security har [en egen sida](/sv/settings/security/).
+**Settings > General** har sektioner för Host, Security, Proxy, Logging och Backups. Security har [en egen sida](/sv/settings/security/).
 
 ## Värd (Host)
 
@@ -18,7 +18,7 @@ description: Värd, utgående anslutning, säkerhet, loggning och säkerhetskopi
 
 I Docker är det miljövariabeln `PORT` och portmappningen i compose som spelar roll i praktiken. Se [Miljövariabler](/sv/configuration/).
 
-## Proxy och utgående anslutning
+## Proxy
 
 Hur ABM når internet för metadata, omslag och Audible-sidor.
 
@@ -31,7 +31,7 @@ Hur ABM når internet för metadata, omslag och Audible-sidor.
 | Bypass Addresses | `localhost,127.0.0.1` | Värdar som går förbi proxyn |
 | Test Connection | | Kollar proxyn |
 
-Sidan visar också din utgående IP som externa tjänster ser den. Nästa version lägger till en inbyggd WireGuard-tunnel och ett uttryckligt val av anslutning (ingen, direkt, proxy, WireGuard eller din egen VPN-container) som den inbyggda metadatakällan kräver. En väg som ligger nere blockerar trafiken i stället för att falla tillbaka på din egen adress. Export av säkerhetskopior och mål på LAN går alltid direkt.
+Sektionen visar också din utgående IP-adress så som externa tjänster ser den. Ett val av anslutning, med ett inbyggt VPN, är planerat till en senare version.
 
 ## Loggning (Logging)
 

@@ -19,10 +19,6 @@ Siden **Audible Library** viser alt som er synkronisert. Du kan filtrere på All
 
 ## Speil Audible-biblioteket til ABM (Mirror Audible library to ABM)
 
-:::caution[Kommer i neste versjon]
-Dette er ikke med i en utgitt versjon ennå.
-:::
-
 Speiling gjør at ABM-biblioteket ditt følger Audible-biblioteket ditt.
 
 - Det er på som standard.

@@ -46,9 +46,5 @@ Settings to pogrupowana lista: Library, Sources i App. Każdy wiersz to link z n
 
 ## Warsztat importu (Import Workbench)
 
-:::caution[W następnym wydaniu]
-Telefonicznego układu Import Workbench nie ma jeszcze w żadnej wydanej wersji.
-:::
-
 - Karta podsumowania pokazuje, ile folderów jest gotowych. Stuknij ją, żeby otworzyć legendę i przefiltrować listę.
 - Dolny pasek pokazuje, ile jest zaznaczonych, i przycisk Add, a do tego mówi, czemu Add jest zablokowany.

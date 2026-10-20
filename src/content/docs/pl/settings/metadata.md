@@ -28,11 +28,9 @@ Używa ffmpeg, żeby wpisać tagi do samego audio.
 
 Pola tagów, domyślnie wszystkie włączone: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) i Cover Art.
 
-## W następnym wydaniu
+## W późniejszym wydaniu
 
-Strona jest przeorganizowana w sekcje i dostaje sekcję **Source** z wyborem **Metadata Source**, przyciskami **Test** i **Status**. Zobacz [Wybór źródła metadanych](/pl/metadata/choosing-a-source/).
-
-Dostaje też sekcję **Local Metadata Library** (opcjonalną, pokazaną jako podgląd, na razie niepodłączoną) z możliwością pobrania biblioteki jako SQLite i własnymi zaplanowanymi kopiami zapasowymi. Kopie odwzorowują opcje kopii z General i domyślnie idą co tydzień o 04:00, z przechowywaniem przez 28 dni.
+Wybór źródła metadanych i lokalna kopia biblioteki metadanych są planowane na późniejsze wydanie. Zobacz [Twoje metadane, twoja kontrola](/pl/metadata/control/).
 
 ## Pułapki
 

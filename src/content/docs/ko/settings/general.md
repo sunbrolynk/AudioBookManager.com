@@ -1,9 +1,9 @@
 ---
 title: 일반
-description: 호스트, 외부 연결, 보안, 로깅, 백업이에요.
+description: 호스트, 보안, 프록시, 로그, 백업.
 ---
 
-**Settings > General**에는 Host, Proxy & VPN, Security, Logging, Backups 섹션이 있어요. Security는 [따로 페이지](/ko/settings/security/)가 있어요.
+**Settings > General**에는 Host, Security, Proxy, Logging, Backups 섹션이 있어요. Security는 [별도 페이지](/ko/settings/security/)가 있어요.
 
 ## 호스트 (Host)
 
@@ -18,7 +18,7 @@ description: 호스트, 외부 연결, 보안, 로깅, 백업이에요.
 
 Docker에서는 실제로 환경 변수 `PORT`와 compose의 포트 매핑이 중요해요. [환경 변수](/ko/configuration/)를 보세요.
 
-## 프록시와 외부 연결
+## 프록시
 
 ABM이 메타데이터, 표지, Audible 페이지를 받으러 인터넷에 나가는 방법이에요.
 
@@ -31,7 +31,7 @@ ABM이 메타데이터, 표지, Audible 페이지를 받으러 인터넷에 나�
 | Bypass Addresses | `localhost,127.0.0.1` | 프록시를 거치지 않는 호스트 |
 | Test Connection | | 프록시를 확인해요 |
 
-이 페이지에는 외부 서비스가 보는 내 외부 IP도 나와요. 다음 릴리스에서는 내장 WireGuard 터널과, 내장 메타데이터 소스에 필요한 명시적인 연결 선택(없음, 직접, 프록시, WireGuard, 내 VPN 컨테이너)이 추가돼요. 경로가 끊기면 내 주소로 돌아가지 않고 트래픽을 막아요. 백업 내보내기와 LAN 대상은 항상 직접 연결해요.
+이 섹션에는 외부 서비스에 보이는 내 외부 IP도 표시돼요. 내장 VPN을 포함한 연결 선택은 이후 릴리스에서 추가할 예정이에요.
 
 ## 로깅 (Logging)
 

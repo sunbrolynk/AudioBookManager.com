@@ -38,7 +38,7 @@ An address in `TRUSTED_PROXIES` that sends no `X-Forwarded-For` or `X-Real-IP` i
 
 ## Password confirmation
 
-Some changes ask for your current password again: saving Security settings, showing or regenerating the API key, and saving or deleting a WireGuard config. A wrong password counts as a failed sign-in in the security log. If no password is set yet, none is asked.
+Some changes ask for your current password again: saving Security settings, and showing or regenerating the API key. A wrong password counts as a failed sign-in in the security log. If no password is set yet, none is asked.
 
 ## API key
 

@@ -25,7 +25,7 @@ Dialog úprav mění sledování, profil kvality, cestu a štítky a ve stejném
 
 ## Doprovodné soubory, které čte tvůj přehrávač
 
-ABM zapisuje vedle zvuku `cover.jpg`, `.opf`, `desc.txt` a `reader.txt` a v příští verzi i kapitolový soubor `.cue`. Audiobookshelf čte OPF, obálku i textové soubory, takže co jsi vybral v ABM, to přehrávač ukáže. Viz [Doprovodné soubory](/cs/using/sidecars/).
+ABM zapisuje `cover.jpg`, soubor `.opf`, `desc.txt` a `reader.txt` vedle zvuku. Audiobookshelf čte OPF, obálku a textové soubory, takže přehrávač ukazuje to, co sis vybral v ABM. Viz [Sidecar soubory](/cs/using/sidecars/).
 
 ## Tagy zapsané do zvuku
 
@@ -33,7 +33,7 @@ ABM umí zapsat název, umělce, umělce alba, album, žánr, rok, komentář, i
 
 ## Kapitoly
 
-ABM porovná kapitoly vložené v tvých souborech s kapitolami vydané edice a umí vydané kapitoly zapsat do souborů bez překódování. Odmítne to, když délka tvého zvuku ukazuje, že jde o jinou edici. Viz [Kapitoly](/cs/using/chapters/). Přijde v příští verzi.
+Porovnávání kapitol vložených ve tvých souborech s kapitolami vydané edice a zapisování vydaných kapitol do souborů je plánované na pozdější verzi. Viz [Kapitoly](/cs/using/chapters/).
 
 ## Série a pořadí
 
@@ -47,8 +47,8 @@ Kniha nese svou sérii a pořadí. ABM sleduje série jako katalogy, takže umí
 
 Všechno, co se ABM o knize dozví, zůstává ve vlastní databázi SQLite v `/config`, včetně knih, které později odebereš. Zazálohuj tuhle složku a máš zazálohovaný i záznam. Jakmile je kniha uvnitř, metadata nezávisí na tom, jestli je zdroj dostupný.
 
-:::caution[Přijde v příští verzi]
-Plánuju vyhrazenou **Local Metadata Library**: volitelnou kopii všeho, co ABM kdy vyhledal, která zůstane i po odebrání knihy z knihovny, s vlastními plánovanými zálohami a stažením SQLite. Sekce pro ni na stránce Metadata je v nesloučené práci a je označená jako náhled, zatím nepropojená.
+:::caution[Přijde v pozdější verzi]
+Plánuje se samostatná **Local Metadata Library**: volitelná kopie všeho, co ABM kdy vyhledal, zachovaná i poté, co kniha opustí tvou knihovnu, s vlastními plánovanými zálohami a stažením v SQLite.
 :::
 
 ## Plány obnovy

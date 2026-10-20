@@ -41,7 +41,7 @@ Readarr 以前把电子书和有声书放在一起管，现在已经停止维护
 
 ## ABM 能把章节、简介和标签写到 Audiobookshelf 读取的位置吗？
 
-它会写 `cover.jpg`、一个 `.opf`、`desc.txt` 和 `reader.txt`，也可以把标签写进音频文件。和已出版版本对比章节，以及 `.cue` 文件，会在下个版本推出。见 [附属文件](/zh-cn/using/sidecars/)。
+它会写入 `cover.jpg`、一个 `.opf`、`desc.txt` 和 `reader.txt`，还能把标签写进音频。与已发布版本的章节对比和 `.cue` 文件，计划在后续版本中提供。见[附属文件](/zh-cn/using/sidecars/)。
 
 ## 能转换文件吗？
 

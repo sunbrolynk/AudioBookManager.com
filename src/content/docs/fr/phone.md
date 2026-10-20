@@ -46,9 +46,5 @@ Settings est une liste groupée : Library, Sources et App. Chaque ligne est un l
 
 ## Atelier d'import (Import Workbench)
 
-:::caution[Prévu pour la prochaine version]
-La mise en page téléphone de l'Import Workbench n'est pas encore dans une version publiée.
-:::
-
 - Une carte de résumé montre combien de dossiers sont prêts. Touche-la pour ouvrir la légende et filtrer la liste.
 - La barre du bas affiche combien d'éléments sont sélectionnés et le bouton Add, et dit pourquoi Add est bloqué.

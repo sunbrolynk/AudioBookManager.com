@@ -19,10 +19,6 @@ ABM 可以連結一個或多個 Audible 帳號，並在 **Audible Library** 頁�
 
 ## 把 Audible 書庫鏡像到 ABM（Mirror Audible library to ABM）
 
-:::caution[下一個版本推出]
-這個功能還沒有出現在任何已發行的版本裡。
-:::
-
 鏡像（Mirror）會讓你的 ABM 書庫跟著 Audible 書庫走。
 
 - 預設是開啟的。

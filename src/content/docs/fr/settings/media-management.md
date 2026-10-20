@@ -53,8 +53,8 @@ Le lien physique de Library Import, ce n'est pas la même chose que **Use Hardli
 | Enable Recycling Bin | activé | Les fichiers de livres supprimés vont dans une corbeille au lieu d'être effacés |
 | Recycling Bin | vide | L'emplacement de la corbeille. Vide, c'est l'emplacement par défaut d'ABM (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (jours) | 0 désactive le nettoyage automatique |
-| Library Scan Interval | 0 (désactivé) | Le nombre d'heures entre deux scans automatiques |
-| Watch for Changes | désactivé | Lance un scan quand des fichiers sont ajoutés, retirés ou modifiés |
+| Library Scan Interval | 24 | Le nombre d'heures entre deux scans automatiques |
+| Watch for Changes | activé | Lance un scan quand des fichiers sont ajoutés, retirés ou modifiés |
 | Cover Cache Workers | 4 | Combien de couvertures sont téléchargées à la fois lors de la mise en cache des images, de 1 à 16 |
 
 ## Mises à niveau de qualité (Quality Upgrades)

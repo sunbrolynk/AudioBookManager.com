@@ -46,9 +46,5 @@ Nastavení je seskupený seznam: Library, Sources a App. Každý řádek je odka
 
 ## Pracovní plocha importu (Import Workbench)
 
-:::caution[Přijde v příští verzi]
-Rozložení Import Workbench pro telefon zatím není v žádné vydané verzi.
-:::
-
 - Souhrnná karta ukazuje, kolik složek je připravených. Klepnutím otevřeš legendu a vyfiltruješ seznam.
 - Spodní lišta ukazuje, kolik je vybráno, a tlačítko Add a řekne, proč přidání nejde.

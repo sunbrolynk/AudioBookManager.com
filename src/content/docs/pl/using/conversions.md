@@ -30,10 +30,6 @@ Jeśli umieszczenie wyniku się nie uda (bo na przykład folder biblioteki jest 
 
 ## Wstrzymywanie i wznawianie
 
-:::caution[W następnym wydaniu]
-Wstrzymywania nie ma jeszcze w żadnej wydanej wersji.
-:::
-
 Są dwa rodzaje wstrzymania i żadne niczego nie anuluje:
 
 - **Pause** przy jednym działającym zadaniu zawiesza jego procesy ffmpeg tam, gdzie są. Resume kontynuuje od tego samego miejsca.
@@ -47,6 +43,6 @@ Jeśli znasz Sonarra: w arrach nie ma nic takiego. Pomyśl o tym jak o małej ko
 
 ## Pułapki
 
-- Concurrent Conversions razy Threads Per Job nie powinno przekraczać liczby rdzeni twojego CPU.
+- Concurrent Conversions razy Threads Per Job nie powinno przekraczać liczby rdzeni twojego CPU. Przy Auto ABM dzieli za ciebie pozostałe rdzenie między zadania działające jednocześnie.
 - Przekonwertowany plik ma nowy rozmiar i czas modyfikacji, więc Audiobookshelf go przeskanuje.
 - Konwersja pliku podlinkowanego hardlinkiem do seedowanego torrenta tworzy nowy plik. Seedowana kopia zachowuje stare bajty.

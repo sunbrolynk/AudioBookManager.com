@@ -7,6 +7,6 @@ O ABM pega os dados de livros, autores, séries e capítulos do **Libex**, um se
 
 Libex: [Código-fonte](https://github.com/LibexHQ/Libex) · [Referência da API](https://libexdb.com/redoc)
 
-Por padrão, as versões lançadas consultam a instância pública do Libex em libexdb.com. A próxima versão adiciona a escolha da fonte. Veja [Escolhendo uma fonte de metadados](/pt-br/metadata/choosing-a-source/).
+O ABM consulta a instância pública do Libex em libexdb.com. Uma escolha de fonte está prevista para uma versão futura.
 
 Quando o Libex não está acessível, o ABM avisa e diz o nome da fonte. Você ainda pode adicionar e importar livros à mão. Veja [Solução de problemas](/pt-br/troubleshooting/#a-fonte-de-metadados-está-indisponível).

@@ -11,7 +11,7 @@ Beim ersten Besuch legst du einen Login an. Bis das erledigt ist, lehnt ABM Anfr
 
 ## 2. Festlegen, wie ABM ins Internet kommt
 
-Unter **Settings > General** gibt es den Abschnitt **Proxy & VPN**. Wenn du die eingebaute Metadatenquelle nutzen willst, musst du dort zuerst eine Verbindung auswählen. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/).
+Unter **Settings > General** gibt es den Abschnitt **Proxy**. Stell dort einen Proxy ein, wenn ABM über einen ins Internet muss. Kommt ABM direkt ins Internet, überspring das.
 
 ## 3. Einen Root-Ordner anlegen
 

@@ -31,7 +31,7 @@ En proxy, der ikke sender forwarding-headers, ligner en lokal klient. Kører du 
 
 ## Bekræftelse med adgangskode
 
-Nogle ændringer beder om din nuværende adgangskode igen: når du gemmer Security-indstillinger, viser eller genererer API-nøglen igen, og når du gemmer eller sletter en WireGuard-konfiguration. En forkert adgangskode tæller som et mislykket login i sikkerhedsloggen. Er der ikke sat nogen adgangskode endnu, bliver der ikke spurgt.
+Nogle ændringer spørger igen efter din nuværende adgangskode: at gemme Security-indstillingerne og at vise eller genskabe API-nøglen. En forkert adgangskode tæller som et mislykket login i sikkerhedsloggen. Er der ikke sat en adgangskode endnu, spørges der ikke.
 
 ## API-nøgle
 

@@ -23,9 +23,9 @@ Um ein Konto zu verbinden, brauchst du einen **Marketplace**, einen **Display Na
 
 | Einstellung | Standard | Wirkung |
 |---|---|---|
-| Auto Add to Library | an | Wenn du einen Audible-Titel herunterlädst, der noch nicht in ABM ist, fügt ABM ihn zuerst der Bibliothek hinzu. Ist es aus, wird dieser Download abgelehnt. Mit dem nächsten Release wird daraus [Audible-Bibliothek nach ABM spiegeln](/de/audible/#audible-bibliothek-nach-abm-spiegeln) |
+| Mirror Audible library to ABM | an | Jeder Sync fügt die Audible-Bücher hinzu, die noch nicht in ABM sind, und lädt die ohne Dateien herunter, bis zu 25 pro Sync. Beim Einschalten siehst du, wie viele Bücher der nächste Sync hinzufügt und herunterlädt. Siehe [Audible-Bibliothek nach ABM spiegeln](/de/audible/#audible-bibliothek-nach-abm-spiegeln) |
 | Concurrent Downloads | 2 | 1 bis 5. Mehr ist schneller und kann an Audibles Rate-Limits stoßen. |
-| Preferred Quality | High Quality | High, Normal oder Low |
+| Preferred Quality | High | High oder Normal |
 | Delete Encrypted Files | an | Die verschlüsselte AAXC-Datei entfernen, nachdem sie zu M4B entschlüsselt wurde |
 | Temp Download Path | leer | Leer heißt, der temporäre Ordner des Systems wird genutzt |
 

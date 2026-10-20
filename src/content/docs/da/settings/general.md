@@ -1,9 +1,9 @@
 ---
 title: Generelt
-description: Vært, udgående forbindelse, sikkerhed, logning og backups.
+description: Vært, sikkerhed, proxy, logning og sikkerhedskopier.
 ---
 
-**Settings > General** har sektionerne Host, Proxy & VPN, Security, Logging og Backups. Security har [sin egen side](/da/settings/security/).
+**Settings > General** har sektioner for Host, Security, Proxy, Logging og Backups. Security har [sin egen side](/da/settings/security/).
 
 ## Vært (Host)
 
@@ -18,7 +18,7 @@ description: Vært, udgående forbindelse, sikkerhed, logning og backups.
 
 I Docker er det i praksis miljøvariablen `PORT` og port-mappingen i compose, der tæller. Se [Miljøvariabler](/da/configuration/).
 
-## Proxy og udgående forbindelse
+## Proxy
 
 Hvordan ABM kommer på nettet efter metadata, covers og Audible-sider.
 
@@ -31,7 +31,7 @@ Hvordan ABM kommer på nettet efter metadata, covers og Audible-sider.
 | Bypass Addresses | `localhost,127.0.0.1` | Værter, der springer proxyen over |
 | Test Connection | | Tjekker proxyen |
 
-Siden viser også din udgående IP, som eksterne tjenester ser den. Næste udgivelse tilføjer en indbygget WireGuard-tunnel og et eksplicit valg af forbindelse (ingen, direkte, proxy, WireGuard eller din egen VPN-container), som den indbyggede metadatakilde kræver. En rute, der er nede, blokerer trafikken i stedet for at falde tilbage til din egen adresse. Eksport af backups og destinationer på LAN'et går altid direkte.
+Sektionen viser også din udgående IP-adresse, som eksterne tjenester ser den. Et valg af forbindelse, med en indbygget VPN, er planlagt til en senere udgivelse.
 
 ## Logning (Logging)
 

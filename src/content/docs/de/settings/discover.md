@@ -30,4 +30,4 @@ Die Standards stehen in der App und werden hier nicht wiederholt. Öffne die Sei
 
 ## Stolperfallen
 
-Aktualisierungen werden übersprungen, wenn die Metadatenquelle nicht bereit ist, und das wird einmal geloggt.
+Aktualisierungen werden übersprungen, wenn Libex nicht erreichbar ist, und das wird einmal geloggt.

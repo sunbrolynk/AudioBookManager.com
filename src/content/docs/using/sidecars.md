@@ -8,10 +8,10 @@ A sidecar is a small file beside the audio. Audiobookshelf and other players rea
 | File | Contents | Switch |
 |---|---|---|
 | `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else | None, always written |
-| `cover.jpg` | The book's cover. Not written when the folder already has a `cover.*` | cover.jpg |
-| `.opf` | Metadata in OPF form. Named after the book's first audio file (for example `Dune.opf`), or `title.opf` when the book has no audio | title.opf |
-| `desc.txt` | The description, without HTML. Skipped when there is none | desc.txt |
-| `reader.txt` | The narrators. Skipped when there are none | reader.txt |
+| `cover.jpg` | The book's cover. Not written when the folder already has a `cover.*` | Cover image |
+| `.opf` | Metadata in OPF form. Named after the book's first audio file (for example `Dune.opf`), or `title.opf` when the book has no audio | Book info |
+| `desc.txt` | The description, without HTML. Skipped when there is none | Description |
+| `reader.txt` | The narrators. Skipped when there are none | Narrator |
 
 Together with the folder layout, these are the files Audiobookshelf reads for a book's details, so it sees the same book ABM does.
 
@@ -37,6 +37,7 @@ A hardlinked import keeps the original untouched. When ABM writes any of these f
 
 ## Gotchas
 
+- Besides these, **Backup Original Metadata** in [Conversion settings](/settings/conversions/) writes a JSON file to a `.metadata_backup` folder before a conversion. It is a record for you, not something a player reads.
 - A `metadata.json` is handled by ABM when it carries ABM's own block. Another tool's `metadata.json` follows the Book info files switch.
 - In a folder shared by several books, only files named after this book's audio belong to it.
-- Deleting a book removes its sidecars when they are named after that book's files.
+- Deleting a book's files removes its whole folder when no other book uses it. In a folder shared with another book, only that book's own files and ABM's `.opf`, `desc.txt`, `reader.txt` and `metadata.json` go.

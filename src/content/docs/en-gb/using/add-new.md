@@ -11,11 +11,7 @@ An added book becomes **Wanted** in the root folder and quality profile you chos
 
 ## Author and series search
 
-:::caution[Coming in the next release]
-Author and Series search modes are not in a released version yet.
-:::
-
-The search gains two modes that find authors and series themselves. The older book modes are renamed to "Books by author" and "Books in series". Adding an author or series builds its catalogue and adds its books as wanted according to **Monitor**:
+The search has modes for Title, Author, Series, Books by author, Books in series and ASIN. Author and Series find authors and series themselves; Books by author and Books in series find books. Adding an author or series builds its catalog and adds its books as wanted according to **Monitor**:
 
 | Monitor | Adds |
 |---|---|

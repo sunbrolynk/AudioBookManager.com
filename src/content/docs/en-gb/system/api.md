@@ -21,6 +21,6 @@ ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Sw
 
 ## Metadata outages
 
-A route that depends on the metadata source answers 503 (`metadata_unavailable`), 503 with `Retry-After: 30` (`metadata_declined`) or 502 (`metadata_rejected`) in the body's `code`. Some lookup routes still return an empty result in an outage.
+A book search that gets no answer from Libex returns 502 with "Libex search failed". An author or series search returns 503 with "Libex could not be reached; try again shortly". Some lookup routes still return an empty result in an outage.
 
 If you know Sonarr: the API is not v3-compatible. Prowlarr can sync indexers into ABM through its Prowlarr connection.

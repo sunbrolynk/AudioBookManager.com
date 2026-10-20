@@ -13,7 +13,7 @@ Um arquivo criptografado com uma cópia consistente do banco de dados (`database
 
 Escolha um da lista, ou envie um arquivo de backup (até 500 MiB). Antes, é salva uma cópia do banco de dados em uso. A restauração não pode ser desfeita.
 
-Por padrão, uma restauração não traz de volta as **configurações de segurança** (modo de autenticação, credenciais, redes confiáveis) nem a **conexão de saída**. As atuais são mantidas e o resultado avisa disso. Marque a opção no envio para restaurar essas também. Isso quer dizer que um arquivo enviado nunca consegue desligar o login só por ser restaurado.
+Por padrão, uma restauração não traz de volta as **configurações de segurança** (modo de autenticação, credenciais, redes confiáveis). As atuais são mantidas e o resultado avisa. A página não tem um botão para isso. Só uma chamada de API a `restore-upload` com `restore_security_settings=true` as traz de volta, assim um arquivo enviado nunca pode desligar o login só por ser restaurado.
 
 Se o backup foi feito numa versão mais antiga, reinicie o contêiner depois de restaurar para a migração rodar.
 

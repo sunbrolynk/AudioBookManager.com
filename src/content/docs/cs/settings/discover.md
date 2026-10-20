@@ -30,4 +30,4 @@ Výchozí hodnoty jsou v aplikaci a tady je neopakuju. Otevři stránku a uvidí
 
 ## Na co si dát pozor
 
-Když zdroj metadat není připravený, obnovy se přeskočí a zaloguje se to jednou.
+Obnovování se přeskočí, když Libex není dostupný, a zapíše se to do logu jednou.

@@ -3,7 +3,7 @@ title: Capítulos
 description: Compare os capítulos embutidos de um livro com o Libex e corrija.
 ---
 
-:::caution[Chega na próxima versão]
+:::caution[Chega em uma versão futura]
 Tudo nesta página, menos os padrões de conversão, ainda não está em nenhuma versão lançada.
 :::
 

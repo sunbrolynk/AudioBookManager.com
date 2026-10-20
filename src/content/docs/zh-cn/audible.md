@@ -19,10 +19,6 @@ ABM 可以连接一个或多个 Audible 账号，并在 **Audible Library** 页�
 
 ## 把 Audible 书库镜像到 ABM
 
-:::caution[下个版本推出]
-这个功能还没有出现在已发布的版本里。
-:::
-
 镜像功能会让你的 ABM 书库跟着 Audible 书库走。
 
 - 默认开启。

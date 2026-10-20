@@ -28,11 +28,9 @@ Používá ffmpeg k zápisu tagů přímo do zvuku.
 
 Pole tagů, všechna ve výchozím stavu zapnutá: Title, Artist (autor), Album Artist (autor), Album (název/série), Genre, Year, Comment (popis), Narrator (Composer) a Cover Art.
 
-## Přijde v příští verzi
+## Přijde v pozdější verzi
 
-Stránka se rozdělí do sekcí a dostane sekci **Source** s volbou **Metadata Source**, tlačítkem **Test** a **Status**. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
-
-Přibude taky sekce **Local Metadata Library** (volitelná, zobrazená jako náhled, zatím nepropojená) se stažením knihovny jako SQLite a s vlastními plánovanými zálohami. Zálohy kopírují volby záloh z General a ve výchozím stavu běží týdně ve 04:00 a drží se 28 dní.
+Výběr zdroje metadat a místní kopie knihovny metadat jsou plánované na pozdější verzi. Viz [Tvoje metadata, tvoje kontrola](/cs/metadata/control/).
 
 ## Na co si dát pozor
 

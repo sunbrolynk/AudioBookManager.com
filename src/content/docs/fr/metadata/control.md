@@ -25,7 +25,7 @@ La fenêtre de modification change la surveillance, le profil de qualité, le ch
 
 ## Les fichiers annexes que lit ton lecteur
 
-ABM écrit `cover.jpg`, un `.opf`, `desc.txt` et `reader.txt` à côté de l'audio, et une feuille de chapitres `.cue` dans la prochaine version. Audiobookshelf lit l'OPF, la couverture et les fichiers texte, donc ce que tu as choisi dans ABM, c'est ce que le lecteur affiche. Voir [Fichiers annexes](/fr/using/sidecars/).
+ABM écrit `cover.jpg`, un `.opf`, `desc.txt` et `reader.txt` à côté de l'audio. Audiobookshelf lit l'OPF, la jaquette et les fichiers texte, donc le lecteur affiche ce que tu as choisi dans ABM. Voir [Fichiers sidecar](/fr/using/sidecars/).
 
 ## Les tags écrits dans l'audio
 
@@ -33,7 +33,7 @@ ABM peut écrire le titre, l'artiste, l'artiste de l'album, l'album, le genre, l
 
 ## Chapitres
 
-ABM compare les chapitres intégrés dans tes fichiers avec ceux de l'édition publiée, et peut écrire les chapitres publiés dans les fichiers sans réencodage. Il refuse quand la durée de ton audio montre qu'il s'agit d'une autre édition. Voir [Chapitres](/fr/using/chapters/). Prévu pour la prochaine version.
+Comparer les chapitres intégrés à tes fichiers avec ceux de l'édition publiée, et écrire les chapitres publiés dans les fichiers, est prévu pour une version ultérieure. Voir [Chapitres](/fr/using/chapters/).
 
 ## Série et position
 
@@ -47,8 +47,8 @@ Les tags t'appartiennent. Les tags automatiques les posent selon des règles (ge
 
 Tout ce qu'ABM apprend sur un livre reste dans la base SQLite d'ABM dans `/config`, y compris les livres que tu retires ensuite. Sauvegarde ce dossier et le registre est sauvegardé. Une fois un livre entré, ses métadonnées ne dépendent plus de la disponibilité de la source.
 
-:::caution[Prévu pour la prochaine version]
-Une **Local Metadata Library** dédiée est prévue : une copie, à activer soi-même, de tout ce qu'ABM a déjà recherché, gardée même après qu'un livre a quitté ta bibliothèque, avec ses propres sauvegardes planifiées et un téléchargement au format SQLite. La section de la page Metadata qui lui correspond existe dans le travail pas encore fusionné et elle est marquée comme aperçu, pas encore branchée.
+:::caution[Prévu pour une version ultérieure]
+Une **Local Metadata Library** dédiée est prévue : une copie facultative de tout ce qu'ABM a déjà consulté, conservée même après qu'un livre a quitté ta bibliothèque, avec ses propres sauvegardes planifiées et un téléchargement SQLite.
 :::
 
 ## Plannings de rafraîchissement

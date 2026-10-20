@@ -31,7 +31,7 @@ En proxy som inte skickar några forwarding-headers ser ut som en lokal klient. 
 
 ## Bekräfta med lösenord
 
-Vissa ändringar ber om ditt nuvarande lösenord igen: att spara inställningarna i Security, att visa eller generera om API-nyckeln, och att spara eller ta bort en WireGuard-konfiguration. Ett felaktigt lösenord räknas som en misslyckad inloggning i säkerhetsloggen. Om inget lösenord är satt än frågas inget.
+Vissa ändringar frågar efter ditt nuvarande lösenord igen: att spara Security-inställningarna och att visa eller skapa en ny API-nyckel. Ett fel lösenord räknas som en misslyckad inloggning i säkerhetsloggen. Om inget lösenord är satt än frågas det inte efter något.
 
 ## API-nyckel
 

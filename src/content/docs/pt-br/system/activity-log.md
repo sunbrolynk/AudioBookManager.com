@@ -27,11 +27,11 @@ Uma execução agendada que não teve nada para fazer não grava nada. Uma repet
 
 ## Retenção
 
-**Activity Log Retention** em General apaga as entradas depois de 90 dias por padrão. 0 mantém tudo. Os arquivos de log têm a própria retenção (30 dias), então um link de uma entrada para um log pode durar mais que o log.
+**Activity Log Retention** em General apaga as entradas após 90 dias por padrão. Com 0 elas ficam. Os arquivos de log têm retenção própria (30 dias).
 
 ## Ver log
 
-:::caution[Chega na próxima versão]
+:::caution[Chega em uma versão futura]
 Os links de ver log nas entradas ainda não estão em nenhuma versão lançada.
 :::
 

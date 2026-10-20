@@ -31,7 +31,7 @@ Un proxy que no envía cabeceras de reenvío parece un cliente local. Si usas un
 
 ## Confirmación de contraseña
 
-Algunos cambios te vuelven a pedir la contraseña actual: guardar los ajustes de Security, mostrar o regenerar la clave de API, y guardar o borrar una configuración de WireGuard. Una contraseña incorrecta cuenta como un inicio de sesión fallido en el registro de seguridad. Si todavía no hay contraseña, no se pide ninguna.
+Algunos cambios te piden otra vez tu contraseña actual: guardar los ajustes de Security y mostrar o regenerar la clave de API. Una contraseña incorrecta cuenta como un inicio de sesión fallido en el registro de seguridad. Si aún no hay contraseña, no se pide ninguna.
 
 ## Clave de API
 

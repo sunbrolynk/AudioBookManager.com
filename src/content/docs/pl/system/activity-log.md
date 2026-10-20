@@ -27,11 +27,11 @@ Zaplanowane uruchomienie, które nic nie robiło, niczego nie zapisuje. Powtórk
 
 ## Przechowywanie
 
-**Activity Log Retention** w General domyślnie usuwa wpisy po 90 dniach. 0 zachowuje je na zawsze. Pliki logów mają własny okres przechowywania (30 dni), więc link z wpisu do logu może przeżyć sam log.
+**Activity Log Retention** w General domyślnie usuwa wpisy po 90 dniach. 0 zachowuje je na zawsze. Pliki logów mają własny okres przechowywania (30 dni).
 
 ## Podgląd logu (View log)
 
-:::caution[W następnym wydaniu]
+:::caution[W późniejszym wydaniu]
 Linków View log przy wpisach nie ma jeszcze w żadnej wydanej wersji.
 :::
 

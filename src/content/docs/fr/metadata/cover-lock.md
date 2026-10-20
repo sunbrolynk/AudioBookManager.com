@@ -22,4 +22,4 @@ La couverture du livre peut être remise sur l'automatique, ce qui la déverroui
 ## Pièges à éviter
 
 - Le verrouillage ne s'applique qu'à la couverture. Le titre, l'auteur et le reste continuent de se rafraîchir.
-- Les couvertures sont récupérées via ta connexion sortante. Si aucune n'est choisie, les nouvelles couvertures ne sont pas téléchargées, et les couvertures en cache restent servies.
+- Les jaquettes sont récupérées via ton proxy si tu en as réglé un sous **Settings > General > Proxy**.

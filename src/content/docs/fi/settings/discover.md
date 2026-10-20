@@ -30,4 +30,4 @@ Oletukset ovat sovelluksessa, eikä niitä toisteta tässä. Avaa sivu nähdäks
 
 ## Sudenkuopat
 
-Päivitykset ohitetaan, kun metatietolähde ei ole valmis, ja siitä kirjataan lokiin kerran.
+Päivitykset ohitetaan, kun Libex ei ole tavoitettavissa, ja siitä kirjataan lokiin kerran.

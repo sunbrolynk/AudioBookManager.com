@@ -31,7 +31,7 @@ Proxy, które nie wysyła nagłówków przekierowania, wygląda jak lokalny klie
 
 ## Potwierdzanie hasłem
 
-Niektóre zmiany proszą jeszcze raz o twoje obecne hasło: zapisanie ustawień Security, pokazanie albo wygenerowanie nowego klucza API oraz zapisanie albo usunięcie konfiguracji WireGuard. Złe hasło liczy się w logu bezpieczeństwa jako nieudane logowanie. Jeśli hasło nie jest jeszcze ustawione, ABM o nie nie pyta.
+Niektóre zmiany ponownie proszą o twoje obecne hasło: zapis ustawień Security oraz pokazanie lub ponowne wygenerowanie klucza API. Błędne hasło liczy się w dzienniku bezpieczeństwa jako nieudane logowanie. Jeśli hasło nie jest jeszcze ustawione, nic nie jest wymagane.
 
 ## Klucz API
 

@@ -3,7 +3,7 @@ title: Kapitel
 description: Jämför en boks inbäddade kapitel med Libex och rätta dem.
 ---
 
-:::caution[Kommer i nästa version]
+:::caution[Kommer i en senare version]
 Allt på den här sidan utom standardvalen för konverteringar finns inte i någon släppt version än.
 :::
 

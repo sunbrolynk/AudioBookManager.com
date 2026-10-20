@@ -11,11 +11,7 @@ En tilføjet bog bliver **Wanted** i den rodmappe og kvalitetsprofil, du har val
 
 ## Søgning efter forfatter og serie
 
-:::caution[Kommer i næste udgivelse]
-Søgetilstandene Author og Series er ikke med i en udgivet version endnu.
-:::
-
-Søgningen får to nye tilstande, der finder selve forfatterne og serierne. De gamle bogtilstande bliver omdøbt til "Books by author" og "Books in series". Tilføjer du en forfatter eller serie, bliver dens katalog bygget, og dens bøger bliver tilføjet som ønskede ud fra **Monitor**:
+Søgningen har tilstande for Title, Author, Series, Books by author, Books in series og ASIN. Author og Series finder forfattere og serier selv; Books by author og Books in series finder bøger. Når du tilføjer en forfatter eller serie, bygges kataloget op, og bøgerne tilføjes som ønskede efter **Monitor**:
 
 | Monitor | Tilføjer |
 |---|---|

@@ -23,9 +23,9 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 
 | Setting | Default | Effect |
 |---|---|---|
-| Auto Add to Library | on | When you download an Audible title that isn't in ABM yet, ABM adds it to the library first. Off, that download is refused. In the next release this becomes [Mirror Audible library to ABM](/en-ca/audible/#mirror-audible-library-to-abm) |
+| Mirror Audible library to ABM | on | Each sync adds the Audible books that aren't in ABM yet and downloads the ones without files, up to 25 per sync. Turning it on shows how many books the next sync will add and download. See [Mirror Audible library to ABM](/en-ca/audible/#mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | 1 to 5. Higher is faster and can hit Audible's rate limits. |
-| Preferred Quality | High Quality | High, Normal or Low |
+| Preferred Quality | High | High or Normal. This is the quality ABM asks Audible for on every download |
 | Delete Encrypted Files | on | Remove the encrypted AAXC file after it is decrypted to M4B |
 | Temp Download Path | empty | Empty uses the system temp folder |
 

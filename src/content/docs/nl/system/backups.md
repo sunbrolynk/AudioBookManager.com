@@ -13,7 +13,7 @@ Een versleuteld archief met een consistente kopie van de database (`database.db`
 
 Kies er een uit de lijst, of upload een back-upbestand (tot 500 MiB). Er wordt eerst een kopie van de live database opgeslagen. Terugzetten kun je niet ongedaan maken.
 
-Standaard zet een restore de **beveiligingsinstellingen** (authenticatiemodus, inloggegevens, vertrouwde netwerken) en de **uitgaande verbinding** niet terug. Je huidige instellingen blijven staan en het resultaat meldt dat. Vink de optie bij het uploaden aan om ze wel terug te zetten. Zo kan een geüpload archief inloggen nooit uitzetten alleen doordat het wordt teruggezet.
+Standaard haalt een herstel de **beveiligingsinstellingen** (authenticatiemodus, inloggegevens, vertrouwde netwerken) niet terug. Je huidige blijven staan en het resultaat zegt dat. De pagina heeft hier geen schakelaar voor. Alleen een API-aanroep naar `restore-upload` met `restore_security_settings=true` brengt ze terug, zodat een geüpload archief nooit de aanmelding kan uitschakelen door alleen hersteld te worden.
 
 Is de back-up gemaakt met een oudere versie, herstart dan de container na het terugzetten zodat de migratie draait.
 

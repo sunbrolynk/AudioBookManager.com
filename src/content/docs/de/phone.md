@@ -46,9 +46,5 @@ Settings ist eine gruppierte Liste: Library, Sources und App. Jede Zeile ist ein
 
 ## Import-Werkbank (Import Workbench)
 
-:::caution[Kommt mit dem nächsten Release]
-Das Handy-Layout der Import Workbench ist noch in keiner veröffentlichten Version drin.
-:::
-
 - Eine Übersichtskarte zeigt, wie viele Ordner bereit sind. Tipp darauf, um die Legende zu öffnen und die Liste zu filtern.
 - Die untere Leiste zeigt, wie viele ausgewählt sind, und den Button Add, und sagt dir, warum Add gesperrt ist.

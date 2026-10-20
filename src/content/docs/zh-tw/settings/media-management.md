@@ -53,8 +53,8 @@ description: 根資料夾、匯入、額外檔案、資源回收、掃描、升�
 | Enable Recycling Bin | 開啟 | 刪除的書檔案會移到回收筒，而不是直接刪除 |
 | Recycling Bin | 空白 | 回收筒的位置。空白時使用 ABM 的預設位置（`/config/recycle/media`） |
 | Recycling Bin Cleanup | 7（天） | 0 代表停用自動清理 |
-| Library Scan Interval | 0（關閉） | 自動掃描之間間隔幾小時 |
-| Watch for Changes | 關閉 | 檔案新增、移除或變更時就掃描 |
+| Library Scan Interval | 24 | 自動掃描之間間隔幾小時 |
+| Watch for Changes | 開啟 | 檔案新增、移除或變更時就掃描 |
 | Cover Cache Workers | 4 | 快取封面時同時下載幾張，範圍 1 到 16 |
 
 ## 品質升級（Quality Upgrades）

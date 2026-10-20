@@ -30,10 +30,6 @@ Jos tuloksen siirto epäonnistuu (vaikkapa kirjastokansio on täynnä), työ ep�
 
 ## Keskeytys ja jatkaminen
 
-:::caution[Tulossa seuraavaan julkaisuun]
-Keskeytys ei ole vielä missään julkaistussa versiossa.
-:::
-
 Keskeytyksiä on kahdenlaisia, eikä kumpikaan peru mitään:
 
 - Yhden käynnissä olevan työn **Pause** pysäyttää sen ffmpeg-prosessit siihen kohtaan, missä ne ovat. Resume jatkaa samasta kohdasta.
@@ -47,6 +43,6 @@ Jos tunnet Sonarrin: arr-sovelluksissa ei ole mitään tällaista. Ajattele sit�
 
 ## Sudenkuopat
 
-- Concurrent Conversions kertaa Threads Per Job ei saisi ylittää suorittimesi ytimien määrää.
+- Concurrent Conversions kertaa Threads Per Job ei saisi ylittää suorittimesi ytimien määrää. Autolla ABM jakaa jäljelle jäävät ytimet puolestasi samanaikaisesti ajettavien töiden kesken.
 - Muunnetulla tiedostolla on uusi koko ja muokkausaika, joten Audiobookshelf skannaa sen uudelleen.
 - Jaossa olevaan torrentiin kovalinkitetyn tiedoston muuntaminen luo uuden tiedoston. Jaettava kopio säilyttää vanhat tavut.

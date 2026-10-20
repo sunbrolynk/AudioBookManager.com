@@ -3,7 +3,7 @@ title: 상태
 description: 상태 점검과 ABM이 지금 뭘 하고 있는지 살펴보기예요.
 ---
 
-**System > Status**는 상태 점검을 돌리고 문제가 있는 걸 모두 보여 줘요. 실패하는 다운로드 클라이언트와 인덱서, 루트 폴더 문제, 외부 연결 문제 같은 것들이요. 데이터베이스 연결 풀 사용량도 보여 줘요. 아무 문제가 없으면 "All systems healthy"라고 나와요.
+**System > Status**는 상태 점검을 실행해서 문제가 있는 것을 보여 줘요. 실패하는 다운로드 클라이언트와 인덱서, 루트 폴더 문제, 접속할 수 없는 Libex 등이에요. 데이터베이스 연결 풀 사용량도 보여 줘요. 문제가 없으면 "All systems healthy"라고 나와요.
 
 상태 점검은 백그라운드에서 6시간마다 돌아가기도 해요. Connect로 **On Health Issue**와 **On Health Restored** 알림을 받을 수 있어요. [Connect](/ko/settings/connect/)를 보세요.
 

@@ -46,13 +46,14 @@ Podnieś `MAX_REQUEST_BODY_BYTES`. Reverse proxy też może mieć niższy limit 
 
 ## Źródło metadanych jest niedostępne
 
-Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują źródła metadanych. Komunikat podaje jego nazwę, na przykład "The metadata source is unavailable". Przyczyny: źródło leży albo ogranicza liczbę zapytań, albo twoje połączenie wychodzące je blokuje.
+Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują Libexa. Gdy ABM nie dostaje odpowiedzi, wyszukiwanie książek kończy się błędem "Libex search failed", a wyszukiwanie autorów lub serii błędem "Libex could not be reached; try again shortly", zamiast pokazywać pustą listę. Przyczyny: Libex nie działa albo połączenie ABM go nie dosięga.
 
-1. Sprawdź **Settings > General > Proxy & VPN** i czy trasa działa.
-2. Spróbuj ponownie za minutę. Źródło, które ogranicza zapytania, odpowiada 503 z podpowiedzią, żeby ponowić za 30 sekund.
-3. W międzyczasie nadal możesz dodawać i importować książki ręcznie.
+1. Zajrzyj na [stronę statusu ABM](https://status.audiobookmanager.com) i [stronę statusu Libexa](https://status.libexdb.com), żeby sprawdzić, czy nie działa dla wszystkich.
+2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > General > Proxy** jest poprawne, jeśli z niego korzystasz.
+3. Spróbuj ponownie po minucie.
+4. W międzyczasie nadal możesz dodawać i importować książki ręcznie.
 
-Zadania w tle, które trafią na awarię, kończą się błędem z podaniem powodu i wysyłają jedno powiadomienie na awarię.
+Zadanie w tle, które trafi na awarię, kończy się błędem z podaniem powodu. Jest ponawiane samo, do sześciu razy lub przez sześć godzin, zależnie od tego, co nastąpi pierwsze.
 
 ## Odświeżenie zmieniło szczegóły książki
 
@@ -72,7 +73,7 @@ Dodaj mapowanie zdalnej ścieżki albo ustaw ABM i klienta tak, żeby widzieli f
 
 ## Docker nie może dosięgnąć źródła metadanych ani indekserów
 
-Zanim cokolwiek innego, sprawdź DNS i ustawienie połączenia wychodzącego. W Dockerze połączenie bezpośrednie działa tylko wtedy, gdy kontener ma dostęp do internetu.
+Najpierw sprawdź DNS i ustawienie proxy. W Dockerze ABM dosięgnie Libexa i twoich indeksatorów tylko wtedy, gdy kontener ma dostęp do internetu.
 
 ## Dalej nie działa
 

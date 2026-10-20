@@ -30,4 +30,4 @@ I valori predefiniti stanno nell'app e non li ripeto qui. Apri la pagina per ved
 
 ## Da tenere presente
 
-Gli aggiornamenti vengono saltati quando la fonte dei metadati non è pronta, e finiscono nel log una volta sola.
+Gli aggiornamenti vengono saltati quando Libex non è raggiungibile, e viene scritto nel log una sola volta.

@@ -30,4 +30,4 @@ Standardverdiene ligger i appen og gjentas ikke her. Åpne siden for å se dem.
 
 ## Fallgruver
 
-Oppdateringer hoppes over når metadatakilden ikke er klar, og det logges én gang.
+Oppdateringer hoppes over når Libex ikke kan nås, og det logges én gang.

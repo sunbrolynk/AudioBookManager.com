@@ -9,9 +9,9 @@ Vanaf elke pagina kun je een boek aan de bibliotheek toevoegen. Recommended gebr
 
 ## Up-to-date houden
 
-Schema's en limieten voor vernieuwen vind je bij [Discover-instellingen](/nl/settings/discover/). Is een catalogus leeg, dan kan de pagina hem voor je vernieuwen zodra de metadatabron bereikbaar is.
+Vernieuwschema's en limieten staan in de [Discover-instellingen](/nl/settings/discover/). Is een catalogus leeg, dan kan de pagina hem voor je vernieuwen zodra Libex bereikbaar is.
 
 ## Valkuilen
 
-- De catalogi hangen af van de metadatabron. Is die onbereikbaar of is er geen uitgaande verbinding gekozen, dan worden vernieuwingen overgeslagen en staat in het log waarom.
+- De catalogi hangen van Libex af. Is het onbereikbaar, dan worden vernieuwingen overgeslagen en zegt het log waarom.
 - Discover laat zien wat Audible aanbiedt. Het zegt niks over wat je indexers hebben.

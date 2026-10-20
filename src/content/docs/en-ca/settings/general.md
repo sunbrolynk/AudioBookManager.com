@@ -1,9 +1,9 @@
 ---
 title: General
-description: Host, outbound connection, security, logging and backups.
+description: Host, security, proxy, logging and backups.
 ---
 
-**Settings > General** has sections for Host, Proxy & VPN, Security, Logging and Backups. Security has [its own page](/en-ca/settings/security/).
+**Settings > General** has sections for Host, Security, Proxy, Logging and Backups. Security has [its own page](/en-ca/settings/security/).
 
 ## Host
 
@@ -18,7 +18,7 @@ description: Host, outbound connection, security, logging and backups.
 
 In Docker the environment variables `PORT` and the compose port mapping are what matter in practice. See [Environment variables](/en-ca/configuration/).
 
-## Proxy and outbound connection
+## Proxy
 
 How ABM reaches the internet for metadata, covers and Audible pages.
 
@@ -31,7 +31,7 @@ How ABM reaches the internet for metadata, covers and Audible pages.
 | Bypass Addresses | `localhost,127.0.0.1` | Hosts that skip the proxy |
 | Test Connection | | Checks the proxy |
 
-The page also shows your outgoing IP as external services see it. The next release adds a built-in WireGuard tunnel and an explicit connection choice (none, direct, proxy, WireGuard, or your own VPN container) that the built-in metadata source requires. A route that is down blocks traffic instead of falling back to your own address. Backup exports and LAN destinations always go direct.
+The section also shows your outgoing IP as external services see it. A choice of connection, including a built-in VPN, is planned for a later release.
 
 ## Logging
 

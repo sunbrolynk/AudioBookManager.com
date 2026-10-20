@@ -1,9 +1,9 @@
 ---
 title: 一般
-description: ホスト、外向きの接続、セキュリティ、ログ、バックアップ。
+description: ホスト、セキュリティ、プロキシ、ログ、バックアップ。
 ---
 
-**Settings > General** には Host、Proxy & VPN、Security、Logging、Backups のセクションがあります。Security には[専用のページ](/ja/settings/security/)があります。
+**Settings > General** には Host、Security、Proxy、Logging、Backups のセクションがあります。Security には[専用のページ](/ja/settings/security/)があります。
 
 ## ホスト（Host）
 
@@ -18,7 +18,7 @@ description: ホスト、外向きの接続、セキュリティ、ログ、バ�
 
 Docker では、実際に効いてくるのは環境変数の `PORT` と compose のポートの割り当てです。[環境変数](/ja/configuration/)を見てください。
 
-## プロキシと外向きの接続
+## プロキシ
 
 ABM がメタデータ、表紙、Audible のページを取りにインターネットへ出るときの経路です。
 
@@ -31,7 +31,7 @@ ABM がメタデータ、表紙、Audible のページを取りにインター�
 | Bypass Addresses | `localhost,127.0.0.1` | プロキシを通さないホスト |
 | Test Connection | | プロキシをチェックする |
 
-このページには、外部のサービスから見える自分の送信元 IP も表示されます。次のリリースでは、内蔵の WireGuard トンネルと、内蔵のメタデータ取得元に必要な明示的な接続の選択（なし、直接、プロキシ、WireGuard、自分の VPN コンテナ）が加わります。落ちている経路は、自分のアドレスにフォールバックせずに通信をブロックします。バックアップのエクスポートと LAN 内の宛先は常に直接接続です。
+このセクションには、外部のサービスから見える自分の送信元 IP も表示されます。内蔵 VPN を含む接続方法の選択は、今後のリリースで予定しています。
 
 ## ログ（Logging）
 

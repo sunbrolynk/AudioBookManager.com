@@ -28,11 +28,9 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 标签字段，默认全部开启：Title、Artist (Author)、Album Artist (Author)、Album (Title/Series)、Genre、Year、Comment (Description)、Narrator (Composer) 和 Cover Art。
 
-## 下个版本推出
+## 后续版本推出
 
-页面会重新整理成几个部分，并新增一个 **Source** 部分，包含 **Metadata Source** 选择、**Test** 和 **Status**。见 [选择元数据源](/zh-cn/metadata/choosing-a-source/)。
-
-还会新增一个 **Local Metadata Library** 部分（可选开启，目前显示为尚未接通的预览），可以把这个库下载成 SQLite 文件，还有它自己的定时备份。这些备份的选项和 General 里的备份选项一样，默认每周 04:00 运行，保留 28 天。
+元数据源的选择，以及元数据库的本地副本，计划在后续版本中提供。见[你的元数据，你说了算](/zh-cn/metadata/control/)。
 
 ## 注意事项
 

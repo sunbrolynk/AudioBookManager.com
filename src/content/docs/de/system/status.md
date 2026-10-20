@@ -3,7 +3,7 @@ title: Status
 description: Health-Checks und ein Blick darauf, was ABM gerade macht.
 ---
 
-**System > Status** führt Health-Checks aus und listet alles auf, was nicht stimmt: Download-Clients und Indexer mit Fehlern, Probleme mit Root-Ordnern und Probleme mit der ausgehenden Verbindung. Außerdem zeigt die Seite die Auslastung des Datenbank-Connection-Pools. Ist alles in Ordnung, steht dort "All systems healthy".
+**System > Status** führt Gesundheitsprüfungen aus und listet alles, was nicht stimmt: ausfallende Download-Clients und Indexer, Probleme mit Root-Ordnern und ein nicht erreichbares Libex. Außerdem zeigt es die Auslastung des Datenbank-Verbindungspools. Ist alles in Ordnung, steht dort "All systems healthy".
 
 Health-Checks laufen außerdem alle 6 Stunden im Hintergrund. Connect kann bei **On Health Issue** und **On Health Restored** benachrichtigen. Siehe [Connect](/de/settings/connect/).
 

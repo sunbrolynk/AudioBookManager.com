@@ -27,11 +27,11 @@ Una ejecución programada que no tuvo nada que hacer no escribe nada. Repetir el
 
 ## Retención
 
-**Activity Log Retention** en General borra las entradas a los 90 días por defecto. 0 las conserva. Los archivos de registro tienen su propia retención (30 días), así que el enlace de una entrada a un registro puede durar más que el propio registro.
+**Activity Log Retention** en General borra las entradas a los 90 días por defecto. Con 0 se conservan. Los archivos de registro tienen su propia retención (30 días).
 
 ## Ver el registro
 
-:::caution[Llega en la próxima versión]
+:::caution[Llega en una versión posterior]
 Los enlaces para ver el registro desde las entradas todavía no están en ninguna versión publicada.
 :::
 

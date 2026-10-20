@@ -11,11 +11,7 @@ En tillagd bok blir **Wanted** i den rotmapp och kvalitetsprofil du valde, och A
 
 ## Sökning på författare och serie
 
-:::caution[Kommer i nästa version]
-Söklägena Author och Series finns inte i någon släppt version än.
-:::
-
-Sökningen får två lägen som hittar själva författarna och serierna. De äldre boklägena byter namn till "Books by author" och "Books in series". Att lägga till en författare eller serie bygger upp dess katalog och lägger till dess böcker som önskade enligt **Monitor**:
+Sökningen har lägen för Title, Author, Series, Books by author, Books in series och ASIN. Author och Series hittar författare och serier i sig; Books by author och Books in series hittar böcker. När du lägger till en författare eller serie byggs katalogen upp och böckerna läggs till som eftersökta enligt **Monitor**:
 
 | Monitor | Lägger till |
 |---|---|

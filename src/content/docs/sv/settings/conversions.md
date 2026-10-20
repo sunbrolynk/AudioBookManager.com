@@ -9,9 +9,10 @@ description: Standardval, codec-alternativ, kapitel, metadata, papperskorg och f
 
 | Inställning | Standard | Effekt |
 |---|---|---|
-| Enable Conversions | på | Stänger av konvertering på sidan Conversions. **Auto-Reformat on Import** styrs separat |
+| Enable Conversions | på | Är det av avvisas det att skapa, massköa eller försöka om en konvertering med HTTP 409, ett redan köat jobb misslyckas med ett meddelande som säger det, och **Auto-Reformat on Import** köar ingenting |
 | Conversion Folder | tom | Arbetsyta. Tom använder systemets temp-mapp |
-| Concurrent Conversions | 2 | 1 till 4. Håll det här gånger **Threads Per Job** (under **Advanced FFmpeg** längst ner på sidan) på eller under antalet kärnor. Sidan varnar när det blir högre |
+| Concurrent Conversions | 2 | 1 till 4. Håll det här gånger **Threads Per Job** vid eller under antalet kärnor. Sidan varnar när det är högre |
+| Threads Per Job | Auto | FFmpeg-trådar per jobb, i avancerad vy. Auto lämnar två kärnor åt ABM och delar resten mellan jobben som körs samtidigt, så 8 kärnor och 2 samtidiga jobb ger 3 trådar var. Eller välj ett fast antal |
 | Process Priority | Normal | Low håller resten av systemet responsivt. High blir klar snabbare |
 
 ## Standardval för ljudkvalitet
@@ -20,14 +21,16 @@ description: Standardval, codec-alternativ, kapitel, metadata, papperskorg och f
 |---|---|
 | Default Output Format | M4B (även MP3, M4A, FLAC, Opus) |
 | Default Bitrate | 128 kbps (64, 96, 128, 192, 256, eller Copy för ingen omkodning) |
-| Default Sample Rate | Auto, som matchar källan. Eller 22050, 44100 eller 48000 Hz |
-| Default Channels | Auto, som matchar källan. Eller Mono eller Stereo |
+| Default Sample Rate | Auto, som inte skickar med någon frekvens och låter FFmpeg bestämma. Eller 22050, 44100 eller 48000 Hz, som omsamplar. Opus tar bara vissa frekvenser, så 22050 blir 24000 och 44100 blir 48000 (loggen säger det) |
+| Default Channels | Auto, som behåller källans layout. Mono mixar ner till en kanal för mindre filer. Stereo tvingar fram två |
+
+De två listorna för frekvens och kanaler tar bara emot det sidan erbjuder. Ett ogiltigt sparat värde läses in som Auto.
 
 ## Codec-alternativ
 
 | Format | Kodare | Alternativ |
 |---|---|---|
-| M4B, M4A | AAC | AAC Profile (AAC-LC som standard) och AAC VBR, kvalitet 1 till 5. Bitrate gäller när VBR är av. HE-AAC och HE-AACv2 finns i listan men kodas just nu som AAC-LC |
+| M4B, M4A | AAC | AAC Profile (AAC-LC som standard) och AAC VBR, kvalitet 1 till 5. Bitraten gäller när VBR är av. AAC-LC är den enda profilen, eftersom kodaren inte kan göra HE-AAC. En sparad HE-profil läses in som AAC-LC |
 | MP3 | LAME | VBR-kvalitet 0 till 9 (4 som standard) och Joint Stereo (på). Bitrate gäller när VBR är av |
 | Opus | libopus | Variabel bitrate (på) och Application: Audio (standard), VoIP eller Low Delay |
 | FLAC | FLAC | Komprimeringsnivå 0 till 12 (5 som standard). Bitrate ignoreras |
@@ -40,8 +43,8 @@ En bitrate på **Copy** hoppar över omkodning och alla codec-alternativ.
 |---|---|---|
 | Default Chapter Behavior | Auto | Behåll om de finns, generera annars. Övriga: bara behåll, generera alltid, inga |
 | Chapter Naming Format | `Chapter {n}` | Namnger kapitlen som ABM måste hitta på själv. `{n}` är numret och `{title}` källfilens namn. Kapitelnamn från filerna eller från Libex behålls |
-| Silence Detection | av | Experimentell. Används bara när du delar upp en bok som saknar kapitel: ABM delar den vid tystnader. Av misslyckas en sådan uppdelning |
-| Minimum Chapter Length | 60 s | Det kortaste kapitel som tystnadsdetekteringen gör |
+| Silence Detection | av | För en fil utan kapitel gör ABM kapitel vid de längsta pauserna i ljudet. Används av Split Chapters och av Ensure Chapters på en enskild fil när Libex saknar kapitel. Är det av misslyckas delning av en sådan fil |
+| Target Chapter Length | 600 s | Visas när Silence Detection är på, 60 s eller mer. Varje kapitel slutar vid den längsta pausen inom halva den här längden åt vardera håll, eller vid den här längden om det inte finns någon paus. En kort svans slås ihop med sista kapitlet, och kapitlen täcker hela filen |
 | Chapter Image Handling | Keep in file | Eller ta bort, eller extrahera till en mapp |
 
 ## Hantering av metadata
@@ -58,14 +61,14 @@ En bitrate på **Copy** hoppar över omkodning och alla codec-alternativ.
 |---|---|---|
 | Enable Recycle Bin | på | Originalen hamnar i papperskorgen i stället för att raderas |
 | Recycle Bin Path | tom | Tom använder `/config/recycle/conversions` |
-| Retention Period | 7 dagar | Sätter utgångsdatumet som visas på poster i papperskorgen. Än så länge raderar inget dem på det datumet |
-| Auto-Empty on Low Disk Space | av | Slår på tröskeln nedanför |
-| Auto-Empty Threshold | 10 | Efter en konvertering raderas de äldsta posterna om papperskorgen innehåller mer än så här många GB. Sidan visar det som procent, men det läses som GB |
+| Retention Period | 7 dagar | Poster äldre än så raderas av papperskorgens rensningsuppgift. 0 behåller dem för alltid |
+| Auto-Empty When Bin Is Large | av | Slår på tröskeln nedan |
+| Auto-Empty Threshold | 10 GB | Efter en konvertering raderas de äldsta posterna om papperskorgen håller mer än så här |
 | Delete Original | av | Standard för varje jobb, kan åsidosättas |
 | Update Library Paths | på | Bokposterna följer de konverterade filerna |
 | Auto-Reformat on Import | av | Konverterar nyimporterade böcker som kommer i ett annat format, med standardvalen ovan |
-| Backup Original Metadata | av | Sparar en förteckning över originalfilerna (namn, format, storlek) i `.metadata_backup/` bredvid dem innan konverteringen. Ljudtaggarna sparas inte |
+| Backup Original Metadata | av | Skriver före konverteringen en JSON-fil till en mapp `.metadata_backup` inne i bokens mapp. Den listar varje originalfils namn, format och storlek, plus taggarna och kapitlen som finns i den |
 
 ## Avancerat för FFmpeg
 
-FFmpeg Path (tom hittar den via PATH), Threads Per Job (0 väljer automatiskt antal CPU:er minus 2), Custom FFmpeg Arguments (läggs till i varje kommando; felaktiga gör att konverteringar misslyckas), Logging Level (error som standard) och Keep FFmpeg Logs (av).
+FFmpeg Path (tom hittar den via PATH), Custom FFmpeg Arguments (läggs till i varje kommando; felaktiga gör att konverteringar misslyckas), Logging Level (error som standard) och Keep FFmpeg Logs (av).

@@ -41,7 +41,7 @@ Nei. De dataene kommer fra metadatakilden, og ABM redigerer dem ikke for hånd. 
 
 ## Kan ABM skrive kapitler, beskrivelser og tagger der Audiobookshelf leser dem?
 
-Den skriver `cover.jpg`, en `.opf`, `desc.txt` og `reader.txt`, og kan skrive tagger inn i lyden. Sammenligning av kapitler mot den utgitte utgaven og `.cue`-filer kommer i neste versjon. Se [Sidefiler](/nb/using/sidecars/).
+Den skriver `cover.jpg`, en `.opf`, `desc.txt` og `reader.txt`, og kan skrive tagger inn i lyden. Kapittelsammenligning mot den utgitte utgaven og `.cue`-filer er planlagt til en senere versjon. Se [Sidecar-filer](/nb/using/sidecars/).
 
 ## Kan jeg konvertere filene mine?
 

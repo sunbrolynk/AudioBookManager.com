@@ -3,7 +3,7 @@ title: Stato
 description: Controlli di salute e uno sguardo a cosa sta facendo ABM.
 ---
 
-**System > Status** esegue i controlli di salute ed elenca tutto quello che non va: client di download e indexer in errore, problemi delle cartelle radice e problemi della connessione in uscita. Mostra anche l'uso del pool di connessioni al database. Quando va tutto bene dice "All systems healthy".
+**System > Status** esegue controlli di salute ed elenca tutto ciò che non va: client di download e indexer in errore, problemi con le cartelle radice e un Libex irraggiungibile. Mostra anche l'uso del pool di connessioni al database. Quando va tutto bene dice "All systems healthy".
 
 I controlli di salute girano anche in background ogni 6 ore. Connect può mandare notifiche con **On Health Issue** e **On Health Restored**. Vedi [Connect](/it/settings/connect/).
 

@@ -11,7 +11,7 @@ Przy pierwszej wizycie ABM przeprowadzi cię przez założenie loginu. Dopóki t
 
 ## 2. Wybierz, jak ABM łączy się z internetem
 
-W **Settings > General** jest sekcja **Proxy & VPN**. Jeśli chcesz korzystać z wbudowanego źródła metadanych, najpierw musisz wybrać połączenie. Zobacz [Wybór źródła metadanych](/pl/metadata/choosing-a-source/).
+W **Settings > General** jest sekcja **Proxy**. Ustaw tam proxy, jeśli ABM musi łączyć się z internetem przez proxy. Jeśli ABM łączy się bezpośrednio, pomiń ten krok.
 
 ## 3. Dodaj folder główny
 

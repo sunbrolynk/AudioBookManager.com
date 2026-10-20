@@ -3,7 +3,7 @@ title: Chapitres
 description: Compare les chapitres intégrés d'un livre avec Libex et corrige-les.
 ---
 
-:::caution[Prévu pour la prochaine version]
+:::caution[Prévu pour une version ultérieure]
 Tout ce qui est sur cette page, sauf les réglages par défaut des conversions, n'est pas encore dans une version publiée.
 :::
 

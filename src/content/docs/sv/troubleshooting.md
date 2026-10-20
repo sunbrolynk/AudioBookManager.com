@@ -46,13 +46,14 @@ Höj `MAX_REQUEST_BODY_BYTES`. En omvänd proxy kan också ha en lägre gräns o
 
 ## Metadatakällan är inte tillgänglig
 
-Att lägga till, söka, uppdatera och Discover kräver metadatakällan. Meddelandet nämner den, till exempel "The metadata source is unavailable". Orsaker: källan ligger nere eller begränsar antalet anrop, eller så blockerar din utgående anslutning den.
+Att lägga till, söka, uppdatera och Discover behöver Libex. Får ABM inget svar misslyckas en boksökning med "Libex search failed" och en sökning efter författare eller serier med "Libex could not be reached; try again shortly", i stället för att visa en tom lista. Orsaker: Libex är nere, eller så når ABM:s anslutning det inte.
 
-1. Kolla **Settings > General > Proxy & VPN** och att vägen ut fungerar.
-2. Försök igen om en minut. En källa som begränsar anrop svarar 503 med en hint om att försöka igen efter 30 sekunder.
-3. Under tiden kan du fortfarande lägga till och importera böcker för hand.
+1. Kolla [ABM:s statussida](https://status.audiobookmanager.com) och [Libex statussida](https://status.libexdb.com) för att se om det är nere för alla.
+2. Kontrollera att containern når internet och att proxyn under **Settings > General > Proxy** stämmer, om du använder en.
+3. Försök igen efter en minut.
+4. Under tiden kan du fortfarande lägga till och importera böcker för hand.
 
-Bakgrundsuppgifter som träffar ett avbrott misslyckas med orsaken och skickar en notis per avbrott.
+En bakgrundsuppgift som drabbas av ett avbrott misslyckas med orsaken. Den försöker om av sig själv, upp till sex gånger eller i sex timmar, beroende på vad som kommer först.
 
 ## En uppdatering ändrade en boks detaljer
 
@@ -72,7 +73,7 @@ Lägg till en remote path mapping, eller se till att ABM och klienten ser mappen
 
 ## Docker når inte metadatakällan eller indexerarna
 
-Kolla DNS och inställningen för utgående anslutning innan något annat. I Docker fungerar en direktanslutning bara om containern kan nå internet.
+Kolla DNS och proxyinställningen först. I Docker når ABM bara Libex och dina indexerare om containern når internet.
 
 ## Fortfarande fast
 
