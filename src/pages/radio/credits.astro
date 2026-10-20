@@ -1,0 +1,41 @@
+---
+import RadioLayout from '../../layouts/RadioLayout.astro';
+import credits from '../../data/radio-credits.json';
+import { groupByArtist, httpsUrl, licenceLabel } from '../../lib/radio.mjs';
+
+const artists = groupByArtist(credits);
+const built = new Date().toISOString().slice(0, 10);
+---
+<RadioLayout
+  title="ABM Radio credits: every track and its licence"
+  description="Every track that can play on ABM Radio, grouped by artist, with the licence it was released under and a link to where it came from."
+  path="/credits/"
+  current="credits"
+>
+  <main class="wrap page">
+    <section class="hero">
+      <p class="mono kick">ABM Radio</p>
+      <h1>Credits</h1>
+      <p class="lede">Every track that can play on ABM Radio, grouped by artist, with the licence it was released under and a link to where it came from. Thank you to every one of these artists for sharing their music.</p>
+      <p class="mono sub">{credits.length} tracks by {artists.length} artists &middot; matches what can play right now &middot; built {built}</p>
+    </section>
+    {artists.map(({ artist, tracks }) => (
+      <section class="artist" aria-labelledby={`a-${tracks[0].id}`}>
+        <h2 id={`a-${tracks[0].id}`}>{artist}</h2>
+        <ul class="tracks">
+          {tracks.map((c) => (
+            <li id={c.id}>
+              <span class="tt">{c.title}</span>
+              {c.album && <span class="al">{c.album}</span>}
+              <span class="lic">
+                {httpsUrl(c.license_url) ? <a href={httpsUrl(c.license_url)} rel="noopener">{licenceLabel(c.license)}</a> : licenceLabel(c.license)}
+                {httpsUrl(c.source_url) && <> &middot; <a href={httpsUrl(c.source_url)} rel="noopener">Source</a></>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <p class="note">If you&rsquo;re an artist and want a track taken off the air, email <a href="mailto:admin@audiobookmanager.com">admin@audiobookmanager.com</a> and I&rsquo;ll remove it. <a href="../">Back to the player</a></p>
+  </main>
+</RadioLayout>

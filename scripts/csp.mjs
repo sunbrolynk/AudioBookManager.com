@@ -22,7 +22,7 @@ for (const file of html(dist)) {
 const path = join(dist, '_headers');
 const out = readFileSync(path, 'utf8')
   .replaceAll('__SCRIPT_HASHES__', [...scripts].sort().join(' '))
-  .replace('__STYLE_HASHES__', [...styles].sort().join(' '));
+  .replaceAll('__STYLE_HASHES__', [...styles].sort().join(' '));
 if (out.includes('__')) throw new Error('a CSP placeholder was left in _headers');
 const longest = Math.max(...out.split('\n').map((l) => l.length));
 // Cloudflare Pages rejects a header line longer than 2,000 characters.

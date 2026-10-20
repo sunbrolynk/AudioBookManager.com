@@ -18,8 +18,10 @@ documentation and release notes for [AudioBook Manager](https://github.com/sunbr
 (ABM), my self-hosted audiobook manager in the style of Sonarr and Radarr.
 
 It's an [Astro](https://astro.build) site with [Starlight](https://starlight.astro.build)
-for the docs. It's fully static, with no server code, no analytics, and no
-third-party scripts or fonts, and Cloudflare Pages builds and serves it.
+for the docs. It's static, with no analytics and no third-party scripts or fonts, and
+Cloudflare Pages builds and serves it. The one piece of server code is a small
+Pages Function that serves the [ABM Radio](https://radio.audiobookmanager.com)
+pages on their own host.
 
 - Community and help: [Discord](https://discord.gg/qeJRrM6AZ) or
   [support@audiobookmanager.com](mailto:support@audiobookmanager.com)
