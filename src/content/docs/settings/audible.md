@@ -17,9 +17,9 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 |---|---|
 | Auto Sync | Sync the library on a schedule |
 | Sync on Account Add | Sync as soon as an account is connected |
-| Frequency | Daily, weekly or monthly. Weekly adds Day of Week. Monthly adds Day of Month (1-28). |
+| Frequency | Daily, weekly or monthly. Weekly adds Day of Week. Monthly adds Day of Month (1-28). Day of Week must be 0 to 6, and a value outside either range is refused with HTTP 422. |
 | Time | Hour and minute |
-| Use CRON Expression | A custom cron expression replaces the options above |
+| Use CRON Expression | A custom cron expression replaces the options above. One ABM cannot parse is refused with HTTP 400 and nothing is saved. With Auto Sync off the schedule is not checked |
 
 ## Download Settings
 

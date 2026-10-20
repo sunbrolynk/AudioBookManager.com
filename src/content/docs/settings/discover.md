@@ -14,7 +14,7 @@ Each catalog (New Releases, Coming Soon, Audible Best, Recommended) has its own 
 | Setting | Effect |
 |---|---|
 | Auto Refresh | Refresh catalogs on a schedule |
-| Frequency | Daily, weekly or monthly, with day and time |
+| Frequency | Daily, weekly or monthly, with day and time. Day of Month is 1 to 28 |
 | Refresh on Startup | Fill any empty catalog when ABM starts |
 | Use CRON Expression | Replaces the simple options |
 

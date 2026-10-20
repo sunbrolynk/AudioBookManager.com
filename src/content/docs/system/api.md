@@ -18,6 +18,7 @@ ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Sw
 - A state-changing browser request needs a matching origin. Scripts using a key are exempt.
 - Request bodies are capped at 10 MiB (`MAX_REQUEST_BODY_BYTES`). Backup restore and cover upload have larger limits. Over the cap is HTTP 413.
 - Validation errors never echo back what you sent.
+- A 500 from the security and backup settings routes says what failed in general terms and does not include the exception text. The detail goes to the log files.
 
 ## Metadata outages
 
