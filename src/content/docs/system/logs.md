@@ -7,6 +7,7 @@ description: Log files, levels, retention and rotation.
 
 ![System, Logs: log files grouped by area](../../../assets/docs/system-logs.jpg)
 
+- Open a log and turn on **Live** to follow it: the view keeps scrolling to the newest line, and scrolling up pauses that and scrolling back to the bottom resumes it. The whole file is always shown.
 - Tasks and conversions write their own log. The Tasks page links each one.
 - The main log is `app.log`. It rolls at start-up, at least hourly and at 10 MiB. Old files are kept for **Log File Retention** (30 days by default).
 - A separate security log carries one line per sign-in attempt for fail2ban and similar tools.
