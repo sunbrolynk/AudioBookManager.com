@@ -11,11 +11,7 @@ Um livro adicionado vira **Wanted** na pasta raiz e no perfil de qualidade que v
 
 ## Busca por autor e por série
 
-:::caution[Chega na próxima versão]
-Os modos de busca Author e Series ainda não estão em nenhuma versão lançada.
-:::
-
-A busca ganha dois modos que encontram os próprios autores e séries. Os modos antigos de livro passam a se chamar "Books by author" e "Books in series". Adicionar um autor ou uma série monta o catálogo dele e adiciona os livros como desejados de acordo com **Monitor**:
+A busca tem modos para Title, Author, Series, Books by author, Books in series e ASIN. Author e Series encontram autores e séries em si; Books by author e Books in series encontram livros. Adicionar um autor ou uma série monta o catálogo dele e adiciona os livros como procurados conforme **Monitor**:
 
 | Monitor | Adiciona |
 |---|---|

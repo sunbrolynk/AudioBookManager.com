@@ -1,9 +1,9 @@
 ---
 title: Ogólne
-description: Host, połączenie wychodzące, bezpieczeństwo, logowanie i kopie zapasowe.
+description: Host, bezpieczeństwo, proxy, logi i kopie zapasowe.
 ---
 
-**Settings > General** ma sekcje Host, Proxy & VPN, Security, Logging i Backups. Security ma [osobną stronę](/pl/settings/security/).
+**Settings > General** ma sekcje Host, Security, Proxy, Logging i Backups. Security ma [własną stronę](/pl/settings/security/).
 
 ## Host
 
@@ -18,7 +18,7 @@ description: Host, połączenie wychodzące, bezpieczeństwo, logowanie i kopie 
 
 W Dockerze w praktyce liczą się zmienna środowiskowa `PORT` i mapowanie portów w compose. Zobacz [Zmienne środowiskowe](/pl/configuration/).
 
-## Proxy i połączenie wychodzące
+## Proxy
 
 Jak ABM łączy się z internetem po metadane, okładki i strony Audible.
 
@@ -31,7 +31,7 @@ Jak ABM łączy się z internetem po metadane, okładki i strony Audible.
 | Bypass Addresses | `localhost,127.0.0.1` | Hosty, które omijają proxy |
 | Test Connection | | Sprawdza proxy |
 
-Strona pokazuje też twój wychodzący adres IP tak, jak widzą go usługi zewnętrzne. Następne wydanie dodaje wbudowany tunel WireGuard i jawny wybór połączenia (brak, bezpośrednie, proxy, WireGuard albo twój własny kontener VPN), którego wymaga wbudowane źródło metadanych. Trasa, która nie działa, blokuje ruch, zamiast wracać do twojego własnego adresu. Eksport kopii zapasowych i cele w LAN-ie zawsze idą bezpośrednio.
+Sekcja pokazuje też twój wychodzący adres IP tak, jak widzą go zewnętrzne usługi. Wybór połączenia, w tym wbudowany VPN, jest planowany na późniejsze wydanie.
 
 ## Logowanie
 

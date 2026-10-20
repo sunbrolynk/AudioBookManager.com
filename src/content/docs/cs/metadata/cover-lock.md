@@ -22,4 +22,4 @@ Obálku knihy můžeš vrátit na automatickou, čímž se odemkne. Potom ji obn
 ## Na co si dát pozor
 
 - Zámek platí jen pro obálku. Název, autor a všechno ostatní se dál obnovuje.
-- Obálky se stahují přes tvoje odchozí připojení. Pokud žádné není vybrané, nové obálky se nestáhnou, ale ty v mezipaměti se servírují dál.
+- Obálky se stahují přes tvou proxy, pokud sis ji nastavil v **Settings > General > Proxy**.

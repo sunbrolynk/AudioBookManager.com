@@ -11,11 +11,7 @@ Přidaná kniha se stane **Wanted** ve zvolené kořenové složce a profilu kva
 
 ## Hledání autorů a sérií
 
-:::caution[Přijde v příští verzi]
-Režimy hledání autorů a sérií zatím nejsou v žádné vydané verzi.
-:::
-
-Hledání dostane dva režimy, které najdou přímo autory a série. Starší režimy pro knihy se přejmenují na "Books by author" a "Books in series". Přidání autora nebo série vytvoří jeho katalog a přidá jeho knihy jako hledané podle **Monitor**:
+Vyhledávání má režimy Title, Author, Series, Books by author, Books in series a ASIN. Author a Series hledají samotné autory a série, Books by author a Books in series hledají knihy. Přidání autora nebo série vytvoří jeho katalog a přidá knihy jako hledané podle **Monitor**:
 
 | Monitor | Co přidá |
 |---|---|

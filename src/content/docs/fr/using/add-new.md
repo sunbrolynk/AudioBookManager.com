@@ -11,11 +11,7 @@ Un livre ajouté passe en **Wanted** dans le dossier racine et le profil de qual
 
 ## Recherche par auteur et par série
 
-:::caution[Prévu pour la prochaine version]
-Les modes de recherche Author et Series ne sont pas encore dans une version publiée.
-:::
-
-La recherche gagne deux modes qui trouvent directement les auteurs et les séries. Les anciens modes de recherche de livres sont renommés « Books by author » et « Books in series ». Ajouter un auteur ou une série construit son catalogue et ajoute ses livres comme wanted selon **Monitor** :
+La recherche a des modes pour Title, Author, Series, Books by author, Books in series et ASIN. Author et Series trouvent les auteurs et les séries eux-mêmes ; Books by author et Books in series trouvent des livres. Ajouter un auteur ou une série construit son catalogue et ajoute ses livres comme recherchés selon **Monitor** :
 
 | Monitor | Ajoute |
 |---|---|

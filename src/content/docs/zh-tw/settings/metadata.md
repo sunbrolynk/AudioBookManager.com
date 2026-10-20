@@ -28,11 +28,9 @@ description: ABM 會寫入哪些附屬檔案和音訊標籤，以及什麼時候
 
 標籤欄位，預設全部開啟：Title、Artist (Author)、Album Artist (Author)、Album (Title/Series)、Genre、Year、Comment (Description)、Narrator (Composer) 和 Cover Art。
 
-## 下一個版本推出
+## 後續版本推出
 
-這個頁面會重新整理成好幾個區塊，並新增一個 **Source** 區塊，裡面有 **Metadata Source** 選項、**Test** 和 **Status**。請看〈[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)〉。
-
-它也會新增一個 **Local Metadata Library** 區塊（選擇性啟用，目前以預覽顯示，還沒有接上功能），可以把這個資料庫下載成 SQLite，並有自己的排程備份。這些備份的選項跟 General 的備份選項一樣，預設每週 04:00 執行，保留 28 天。
+中繼資料來源的選擇，以及中繼資料庫的本機副本，預計在後續版本提供。請看〈[你的中繼資料，你說了算](/zh-tw/metadata/control/)〉。
 
 ## 要注意的地方
 

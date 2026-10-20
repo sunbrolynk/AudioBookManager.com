@@ -7,6 +7,6 @@ ABM は本、著者、シリーズ、チャプターのデータを **Libex** �
 
 Libex: [ソースコード](https://github.com/LibexHQ/Libex) · [API リファレンス](https://libexdb.com/redoc)
 
-リリース版はデフォルトで libexdb.com の公開 Libex インスタンスに問い合わせます。次のリリースでは取得元を選べるようになります。[メタデータの取得元を選ぶ](/ja/metadata/choosing-a-source/)を見てください。
+ABM は libexdb.com の公開 Libex インスタンスに問い合わせます。取得元の選択は、今後のリリースで予定しています。
 
 Libex に接続できないときは、ABM が取得元の名前を出してそう教えてくれます。その間も本の追加やインポートは手作業でできます。[トラブルシューティング](/ja/troubleshooting/#メタデータの取得元が使えない)を見てください。

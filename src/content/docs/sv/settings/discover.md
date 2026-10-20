@@ -30,4 +30,4 @@ Standardvärdena finns i appen och upprepas inte här. Öppna sidan för att se 
 
 ## Fallgropar
 
-Uppdateringar hoppas över när metadatakällan inte är redo, och det loggas en gång.
+Uppdateringar hoppas över när Libex inte går att nå, och det loggas en gång.

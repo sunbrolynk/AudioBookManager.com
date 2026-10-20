@@ -46,9 +46,5 @@ Settings è un elenco raggruppato: Library, Sources e App. Ogni riga è un link 
 
 ## Banco di importazione (Import Workbench)
 
-:::caution[In arrivo nella prossima release]
-Il layout per telefono dell'Import Workbench non è ancora in una versione rilasciata.
-:::
-
 - Una scheda di riepilogo mostra quante cartelle sono pronte. Toccala per aprire la legenda e filtrare l'elenco.
 - La barra in basso mostra quante righe sono selezionate e il pulsante Add, e ti dice perché Add è bloccato.

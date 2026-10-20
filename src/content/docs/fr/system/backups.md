@@ -13,7 +13,7 @@ Une archive chiffrée avec une copie cohérente de la base de données (`databas
 
 Choisis une sauvegarde dans la liste, ou envoie un fichier de sauvegarde (jusqu'à 500 MiB). Une copie de la base de données en service est enregistrée d'abord. Une restauration ne peut pas être annulée.
 
-Par défaut, une restauration ne remet pas les **réglages de sécurité** (mode d'authentification, identifiants, réseaux de confiance) ni la **connexion sortante**. Tes réglages actuels sont gardés et le résultat le précise. Coche l'option lors de l'envoi pour les restaurer. Comme ça, une archive envoyée ne peut jamais désactiver la connexion juste en étant restaurée.
+Par défaut, une restauration ne ramène pas les **réglages de sécurité** (mode d'authentification, identifiants, réseaux de confiance). Les actuels sont conservés et le résultat le dit. La page n'a pas d'interrupteur pour ça. Seul un appel d'API à `restore-upload` avec `restore_security_settings=true` les ramène, pour qu'une archive téléversée ne puisse jamais désactiver la connexion simplement en étant restaurée.
 
 Si la sauvegarde a été faite sur une version plus ancienne, redémarre le conteneur après la restauration pour que la migration tourne.
 

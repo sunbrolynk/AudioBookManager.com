@@ -9,9 +9,9 @@ Miltä tahansa sivulta voit lisätä kirjan kirjastoon. Recommended käyttää e
 
 ## Pidä se tuoreena
 
-Päivitysten ajastukset ja rajat löytyvät [Discover-asetuksista](/fi/settings/discover/). Jos katalogi on tyhjä, sivu voi päivittää sen puolestasi, kun metatietolähteeseen saadaan yhteys.
+Päivitysaikataulut ja rajat ovat [Discoverin asetuksissa](/fi/settings/discover/). Jos katalogi on tyhjä, sivu voi päivittää sen puolestasi, kun Libex on tavoitettavissa.
 
 ## Sudenkuopat
 
-- Katalogit riippuvat metatietolähteestä. Jos siihen ei saada yhteyttä tai ulospäin lähtevää yhteyttä ei ole valittu, päivitykset ohitetaan ja syy kerrotaan lokissa.
+- Katalogit riippuvat Libexista. Jos se ei ole tavoitettavissa, päivitykset ohitetaan ja loki kertoo syyn.
 - Discover näyttää sen, mitä Audible listaa. Se ei kerro mitään siitä, mitä indeksoijillasi on.

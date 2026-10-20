@@ -28,11 +28,9 @@ Bruker ffmpeg til å skrive tagger inn i selve lyden.
 
 Taggfelt, alle på som standard: Title, Artist (forfatter), Album Artist (forfatter), Album (tittel/serie), Genre, Year, Comment (beskrivelse), Narrator (Composer) og Cover Art.
 
-## Kommer i neste versjon
+## Kommer i en senere versjon
 
-Siden deles opp i seksjoner og får en **Source**-seksjon med valget **Metadata Source**, **Test** og **Status**. Se [Velge metadatakilde](/nb/metadata/choosing-a-source/).
-
-Den får også en **Local Metadata Library**-seksjon (du velger selv å slå den på, vist som forhåndsvisning som ikke er koblet til ennå) med nedlasting av biblioteket som SQLite og egne planlagte sikkerhetskopier. Sikkerhetskopiene følger valgene for sikkerhetskopi i General, og er som standard ukentlig kl. 04:00, beholdt i 28 dager.
+Et valg av metadatakilde og en lokal kopi av metadatabiblioteket er planlagt til en senere versjon. Se [Metadataene dine, din kontroll](/nb/metadata/control/).
 
 ## Fallgruver
 

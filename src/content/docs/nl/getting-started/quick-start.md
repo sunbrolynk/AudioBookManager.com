@@ -11,7 +11,7 @@ Bij het eerste bezoek word je door het aanmaken van een login geleid. Tot je dat
 
 ## 2. Kies hoe ABM het internet op gaat
 
-Onder **Settings > General** staat een sectie **Proxy & VPN**. Wil je de ingebouwde metadatabron gebruiken, dan moet je eerst een verbinding kiezen. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
+Onder **Settings > General** staat een sectie **Proxy**. Stel daar een proxy in als ABM via een proxy het internet op moet. Komt ABM rechtstreeks op het internet, dan sla je dit over.
 
 ## 3. Voeg een rootmap toe
 

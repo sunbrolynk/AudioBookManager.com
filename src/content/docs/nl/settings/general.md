@@ -1,9 +1,9 @@
 ---
 title: Algemeen
-description: Host, uitgaande verbinding, beveiliging, logging en back-ups.
+description: Host, beveiliging, proxy, logging en back-ups.
 ---
 
-**Settings > General** heeft secties voor Host, Proxy & VPN, Security, Logging en Backups. Security heeft [een eigen pagina](/nl/settings/security/).
+**Settings > General** heeft secties voor Host, Security, Proxy, Logging en Backups. Security heeft [een eigen pagina](/nl/settings/security/).
 
 ## Host
 
@@ -18,7 +18,7 @@ description: Host, uitgaande verbinding, beveiliging, logging en back-ups.
 
 In Docker zijn in de praktijk de omgevingsvariabele `PORT` en de poortmapping in compose wat telt. Zie [Omgevingsvariabelen](/nl/configuration/).
 
-## Proxy en uitgaande verbinding
+## Proxy
 
 Hoe ABM het internet op gaat voor metadata, covers en Audible-pagina's.
 
@@ -31,7 +31,7 @@ Hoe ABM het internet op gaat voor metadata, covers en Audible-pagina's.
 | Bypass Addresses | `localhost,127.0.0.1` | Hosts die de proxy overslaan |
 | Test Connection | | Controleert de proxy |
 
-De pagina toont ook je uitgaande IP zoals externe diensten het zien. De volgende release voegt een ingebouwde WireGuard-tunnel toe en een expliciete verbindingskeuze (geen, direct, proxy, WireGuard of je eigen VPN-container) die de ingebouwde metadatabron vereist. Een route die plat ligt, blokkeert het verkeer in plaats van terug te vallen op je eigen adres. Back-upexports en bestemmingen op je LAN gaan altijd direct.
+De sectie toont ook je uitgaande IP-adres zoals externe diensten het zien. Een keuze van verbinding, met een ingebouwde VPN, staat gepland voor een latere release.
 
 ## Logging
 

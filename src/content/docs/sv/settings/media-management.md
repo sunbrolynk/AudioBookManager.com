@@ -53,8 +53,8 @@ Hårdlänka är inte samma sak som **Use Hardlinks instead of Copy**. Den är f�
 | Enable Recycling Bin | på | Raderade bokfiler flyttas till en papperskorg i stället för att raderas |
 | Recycling Bin | tom | Var papperskorgen ligger. Tom använder ABM:s standard (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dagar) | 0 stänger av automatisk rensning |
-| Library Scan Interval | 0 (av) | Timmar mellan automatiska skanningar |
-| Watch for Changes | av | Skanna när filer läggs till, tas bort eller ändras |
+| Library Scan Interval | 24 | Timmar mellan automatiska skanningar |
+| Watch for Changes | på | Skanna när filer läggs till, tas bort eller ändras |
 | Cover Cache Workers | 4 | Hur många omslag som laddas ner samtidigt när bilder cachas, från 1 till 16 |
 
 ## Kvalitetsuppgraderingar (Quality Upgrades)

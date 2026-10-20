@@ -9,9 +9,9 @@ Fra hver side kan du tilføje en bog til biblioteket. Recommended bruger andre g
 
 ## Hold det friskt
 
-Tidsplaner og grænser for opdatering ligger i [Discover-indstillinger](/da/settings/discover/). Er et katalog tomt, kan siden opdatere det for dig, så snart metadatakilden kan nås.
+Opdateringsplaner og grænser findes i [Discover-indstillingerne](/da/settings/discover/). Er et katalog tomt, kan siden opdatere det for dig, når Libex kan nås.
 
 ## Faldgruber
 
-- Katalogerne afhænger af metadatakilden. Kan den ikke nås, eller er der ikke valgt en udgående forbindelse, bliver opdateringer sprunget over, og loggen siger hvorfor.
+- Katalogerne afhænger af Libex. Kan det ikke nås, springes opdateringer over, og loggen siger hvorfor.
 - Discover viser det, Audible viser. Det siger intet om, hvad dine indeksere har.

@@ -30,4 +30,4 @@ Wartości domyślne są w aplikacji i nie są tu powtarzane. Otwórz stronę, ż
 
 ## Pułapki
 
-Odświeżenia są pomijane, gdy źródło metadanych nie jest gotowe, i jest to logowane raz.
+Odświeżanie jest pomijane, gdy Libex jest nieosiągalny, i jest to zapisywane w logu raz.

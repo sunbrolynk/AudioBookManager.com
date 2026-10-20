@@ -19,10 +19,6 @@ A página **Audible Library** lista tudo o que foi sincronizado. Filtre por All,
 
 ## Espelhar a biblioteca da Audible no ABM
 
-:::caution[Chega na próxima versão]
-Isso ainda não está em nenhuma versão lançada.
-:::
-
 O espelhamento faz a sua biblioteca do ABM acompanhar a sua biblioteca da Audible.
 
 - Vem ligado por padrão.

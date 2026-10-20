@@ -28,11 +28,9 @@ Käyttää ffmpegiä tagien kirjoittamiseen suoraan ääneen.
 
 Tagikentät, kaikki oletuksena päällä: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) ja Cover Art.
 
-## Tulossa seuraavaan julkaisuun
+## Tulossa myöhempään julkaisuun
 
-Sivu järjestetään osioiksi, ja siihen tulee **Source**-osio, jossa on **Metadata Source** -valinta, **Test** ja **Status**. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
-
-Siihen tulee myös **Local Metadata Library** -osio (vapaaehtoinen, näytetään esikatseluna, jota ei ole vielä kytketty), josta kirjaston voi ladata SQLite-muodossa ja jolla on omat ajastetut varmuuskopionsa. Varmuuskopiot noudattavat General-sivun varmuuskopiovalintoja, ja oletuksena ne ajetaan viikoittain klo 04:00 ja säilytetään 28 päivää.
+Metatietolähteen valinta ja metatietokirjaston paikallinen kopio on suunniteltu myöhempään julkaisuun. Katso [Sinun metatietosi, sinun hallintasi](/fi/metadata/control/).
 
 ## Sudenkuopat
 

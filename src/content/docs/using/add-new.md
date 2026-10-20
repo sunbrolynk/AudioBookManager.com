@@ -11,23 +11,19 @@ An added book becomes **Wanted** in the root folder and quality profile you chos
 
 ## Author and series search
 
-:::caution[Coming in the next release]
-Author and Series search modes are not in a released version yet.
-:::
-
-The search gains two modes that find authors and series themselves. The older book modes are renamed to "Books by author" and "Books in series". Adding an author or series builds its catalog and adds its books as wanted according to **Monitor**:
+The search has modes for Title, Author, Series, Books by author, Books in series and ASIN. Author and Series find authors and series themselves; Books by author and Books in series find books. Adding an author or series builds its catalog and adds its books as wanted according to **Monitor**:
 
 | Monitor | Adds |
 |---|---|
-| All | Every book, including ones not released yet |
-| Future | Only books released from now on |
-| Missing (default) | Books you do not own |
+| All Books | Every book, including ones not released yet |
+| Future Books | Only books not released yet |
+| Missing Books (default) | Books you do not own |
 | None | The catalog only |
 
-You also pick the root folder, the quality profile, and whether books that appear later are added too. That is on by default for a series and off for an author. An author or series already in your library shows "In Library" with an **Add missing books** action.
+You also pick the root folder, the quality profile, and whether books that appear later are added too (**Monitor New Books**). That is on by default for a series and off for an author. An author or series already in your library shows "In Library" with an **Add missing books** action.
 
 The add runs as a background task with a progress toast.
 
 ## If search returns nothing
 
-A search that gets no answer from the metadata source fails with an error rather than an empty list. See [Troubleshooting](/troubleshooting/#the-metadata-source-is-unavailable).
+A search that gets no answer from Libex fails with an error rather than an empty list. See [Troubleshooting](/troubleshooting/#the-metadata-source-is-unavailable).

@@ -31,7 +31,7 @@ Välityspalvelin, joka ei lähetä välitysotsakkeita, näyttää paikalliselta 
 
 ## Salasanan vahvistus
 
-Jotkin muutokset kysyvät nykyistä salasanaasi uudelleen: Security-asetusten tallentaminen, API-avaimen näyttäminen tai uudelleenluonti sekä WireGuard-määrityksen tallentaminen tai poistaminen. Väärä salasana lasketaan tietoturvalokissa epäonnistuneeksi kirjautumiseksi. Jos salasanaa ei ole vielä asetettu, sitä ei kysytä.
+Jotkin muutokset kysyvät nykyistä salasanaasi uudelleen: Security-asetusten tallentaminen sekä API-avaimen näyttäminen tai uudelleen luominen. Väärä salasana lasketaan epäonnistuneeksi kirjautumiseksi tietoturvalokissa. Jos salasanaa ei ole vielä asetettu, mitään ei kysytä.
 
 ## API-avain
 

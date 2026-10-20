@@ -3,7 +3,11 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "Professional audiobook library management API",
-    "version": "0.17.0"
+    "version": "0.17.0",
+    "x-logo": {
+      "url": "/brand/banner-dark.svg",
+      "altText": "AudioBook Manager"
+    }
   },
   "paths": {
     "/api/books": {
@@ -317,6 +321,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -425,6 +441,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1692,6 +1720,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -1911,6 +1951,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2468,6 +2520,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2513,6 +2577,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2558,6 +2634,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2900,6 +2988,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2934,6 +3034,18 @@
         "summary": "Delete File By Path",
         "description": "Delete an untracked file living inside a configured root folder.",
         "operationId": "delete_file_by_path_api_files_delete_by_path_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2943,6 +3055,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Delete File By Path Api Files Delete By Path Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -2958,6 +3080,18 @@
         "summary": "Rename File By Path",
         "description": "Rename an untracked file living inside a configured root folder.",
         "operationId": "rename_file_by_path_api_files_rename_by_path_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -2967,6 +3101,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Rename File By Path Api Files Rename By Path Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3121,6 +3265,18 @@
         "summary": "Scan Library Folder",
         "description": "Queue a scan of a folder for audiobooks.\n\nThe scan reads every folder's tags and can take minutes on a large\nlibrary, so it runs as a background task; poll /api/tasks/{task_id}, whose\nresult names the new import session.",
         "operationId": "scan_library_folder_api_library_import_scan_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3130,6 +3286,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Scan Library Folder Api Library Import Scan Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3793,6 +3959,18 @@
         "summary": "Execute Import",
         "description": "Execute the import - queue files for background import\n\nUsed by ManualImport.tsx for importing multiple files to multiple books.\nReturns immediately with task_id for progress tracking.",
         "operationId": "execute_import_api_manual_import_execute_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3802,6 +3980,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Execute Import Api Manual Import Execute Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3817,6 +4005,18 @@
         "summary": "Execute Import To Book",
         "description": "Execute import with custom destination filename support (single book import)\n\nUsed by BookDetailManualImport.tsx for importing files to a specific book.\nSupports custom destination_filename for multi-part files.\nReturns immediately with task_id for progress tracking.",
         "operationId": "execute_import_to_book_api_manual_import_execute_to_book_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3826,6 +4026,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Execute Import To Book Api Manual Import Execute To Book Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3841,6 +4051,18 @@
         "summary": "Scan Audio Files",
         "description": "Recursively scan directory for audio files - optimized with parallel processing\n\nUsed by BookDetailManualImport.tsx to find audio files to import.",
         "operationId": "scan_audio_files_api_manual_import_scan_audio_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3850,6 +4072,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Scan Audio Files Api Manual Import Scan Audio Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3865,6 +4097,18 @@
         "summary": "Check Import Conflicts",
         "description": "Check if importing files would overwrite existing files in destination folder\n\nUsed by BookDetailManualImport.tsx before import to warn about conflicts.\nReturns lists of conflicting audio files and other files separately.",
         "operationId": "check_import_conflicts_api_manual_import_check_conflicts_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3874,6 +4118,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Check Import Conflicts Api Manual Import Check Conflicts Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3934,6 +4188,18 @@
         "summary": "Scan And Match Directory",
         "description": "Scan a directory for audiobook files and match against library\n\nUsed by ManualImport.tsx for library-level import scanning.\nUses LibraryMatcher internally for 98.7%+ matching accuracy.",
         "operationId": "scan_and_match_directory_api_manual_import_scan_and_match_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3943,6 +4209,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Scan And Match Directory Api Manual Import Scan And Match Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3980,6 +4256,18 @@
         "summary": "Create Import List",
         "description": "Create a new import list",
         "operationId": "create_import_list_api_import_lists_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "201": {
             "description": "Successful Response",
@@ -3989,6 +4277,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Create Import List Api Import Lists Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -4015,6 +4313,18 @@
             }
           }
         ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "additionalProperties": true,
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4357,7 +4667,7 @@
           "Conversions"
         ],
         "summary": "Get Conversion Queue",
-        "description": "Get conversion queue with optional status filter.\nStatus: pending, processing, completed, failed, cancelled",
+        "description": "Get conversion queue with optional status filter.\nStatus: pending, processing, paused, completed, failed, cancelled",
         "operationId": "get_conversion_queue_api_conversions_queue_get",
         "parameters": [
           {
@@ -4401,6 +4711,50 @@
         }
       }
     },
+    "/api/conversions/queue/pause": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Pause Conversion Queue",
+        "description": "Stop new conversions from starting and suspend the running ones.",
+        "operationId": "pause_conversion_queue_api_conversions_queue_pause_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionQueuePauseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/queue/resume": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Resume Conversion Queue",
+        "description": "Let queued conversions start again and continue the jobs the queue\nsuspended. A job the user paused stays paused.",
+        "operationId": "resume_conversion_queue_api_conversions_queue_resume_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionQueuePauseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/conversions/history": {
       "get": {
         "tags": [
@@ -4427,7 +4781,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConversionQueueResponse"
+                  "$ref": "#/components/schemas/ConversionHistoryResponse"
                 }
               }
             }
@@ -4518,6 +4872,18 @@
         "summary": "Create Conversion Job",
         "description": "Create a new conversion job",
         "operationId": "create_conversion_job_api_conversions_job_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -4525,6 +4891,16 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/ConversionJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -4540,15 +4916,35 @@
         "summary": "Create Bulk Conversion",
         "description": "Create multiple conversion jobs",
         "operationId": "create_bulk_conversion_api_conversions_bulk_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
                 "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Create Bulk Conversion Api Conversions Bulk Post"
+                  "$ref": "#/components/schemas/BulkConversionResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -4626,6 +5022,92 @@
                   "type": "object",
                   "additionalProperties": true,
                   "title": "Response Cancel Conversion Job Api Conversions Job  Job Id  Cancel Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/job/{job_id}/pause": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Pause Conversion Job",
+        "description": "Suspend a running job; a job already paused stays paused",
+        "operationId": "pause_conversion_job_api_conversions_job__job_id__pause_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionJobPauseResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/job/{job_id}/resume": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Resume Conversion Job",
+        "description": "Continue a paused job; a job already running stays running",
+        "operationId": "resume_conversion_job_api_conversions_job__job_id__resume_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionJobPauseResponse"
                 }
               }
             }
@@ -9251,8 +9733,25 @@
           "Queue"
         ],
         "summary": "Trigger Import",
-        "description": "Trigger immediate completed download import check.",
+        "description": "Trigger an immediate completed download import check. With `items`, only\nthose completed downloads are imported; without, every completed download is.",
         "operationId": "trigger_import_api_queue_import_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/ImportRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Data"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -9262,6 +9761,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Trigger Import Api Queue Import Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -11444,9 +11953,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/AudibleSettingsUpdate"
               }
             }
           },
@@ -11933,6 +12440,28 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/audible/mirror/preview": {
+      "get": {
+        "tags": [
+          "Audible"
+        ],
+        "summary": "Preview Audible Mirror",
+        "description": "What the next sync's mirror would take, chosen the way the mirror chooses.",
+        "operationId": "preview_audible_mirror_api_audible_mirror_preview_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MirrorPreviewResponse"
                 }
               }
             }
@@ -12825,6 +13354,18 @@
         "summary": "Create Exclusion",
         "description": "Add a new exclusion",
         "operationId": "create_exclusion_api_exclusions_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -12834,6 +13375,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Create Exclusion Api Exclusions Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -13403,6 +13954,18 @@
         "summary": "Create Folder",
         "description": "Create a new folder at the specified path.",
         "operationId": "create_folder_api_settings_create_folder_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -13412,6 +13975,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Create Folder Api Settings Create Folder Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -13487,7 +14060,7 @@
           "Settings"
         ],
         "summary": "Get System Info",
-        "description": "Get system information for conversion settings",
+        "description": "CPU, per-concurrency Auto thread counts, and disk space for the conversion settings.",
         "operationId": "get_system_info_api_settings_conversions_system_info_get",
         "responses": {
           "200": {
@@ -13974,7 +14547,7 @@
           "Settings"
         ],
         "summary": "Restore Backup Upload",
-        "description": "Restore from an uploaded backup file.\n\nThe upload is parsed with the standard multipart parser, but its default\nper-part size cap only bounds non-file fields, so the file field is\ncapped and streamed directly to disk by _CappedFileMultiPartParser\ninstead \u2014 enforced while the stream is read, never trusted from\nContent-Length, before the excess ever reaches disk. The upload lands in\na private, unpredictable scratch location \u2014 never backup_path \u2014 and is\ndecrypted and validated exactly as a backup already on disk would be.",
+        "description": "Restore from an uploaded backup file.\n\nNeeds the account password when one is set, sent as the multipart text\nfield current_password.\n\nThe upload is parsed with the standard multipart parser, but its default\nper-part size cap only bounds non-file fields, so the file field is\ncapped and streamed directly to disk by _CappedFileMultiPartParser\ninstead \u2014 enforced while the stream is read, never trusted from\nContent-Length, before the excess ever reaches disk. The upload lands in\na private, unpredictable scratch location \u2014 never backup_path \u2014 and is\ndecrypted and validated exactly as a backup already on disk would be.",
         "operationId": "restore_backup_upload_api_settings_general_backup_restore_upload_post",
         "parameters": [
           {
@@ -14040,7 +14613,7 @@
           "Settings"
         ],
         "summary": "Restore Backup",
-        "description": "Restore from a backup file.",
+        "description": "Restore from a backup file.\n\nNeeds the account password when one is set, sent as current_password in\nthe JSON body.",
         "operationId": "restore_backup_api_settings_general_backup_restore__filename__post",
         "parameters": [
           {
@@ -14071,8 +14644,35 @@
               "default": true,
               "title": "Restore Settings"
             }
+          },
+          {
+            "name": "restore_security_settings",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Restore Security Settings"
+            }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CurrentPasswordRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -14238,7 +14838,7 @@
           "Settings"
         ],
         "summary": "Save Security Settings",
-        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.",
+        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.\nChanging it signs out every other session; the caller gets a fresh token.",
         "operationId": "save_security_settings_api_settings_general_security_put",
         "requestBody": {
           "content": {
@@ -14308,6 +14908,77 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RevealedApiKey"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/general/security/suspected-proxies": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Suspected Proxies",
+        "description": "The addresses currently denied the local-network bypass as suspected proxies.",
+        "operationId": "get_suspected_proxies_api_settings_general_security_suspected_proxies_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuspectedProxies"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/general/security/clear-suspected-proxies": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Clear Suspected Proxies",
+        "description": "Forget every suspected proxy once the current password is confirmed.\n\nClearing restores the local-network bypass for those addresses, so it is\nrefused while no password exists to confirm it with.",
+        "operationId": "clear_suspected_proxies_api_settings_general_security_clear_suspected_proxies_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CurrentPasswordRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Payload"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuspectedProxies"
                 }
               }
             }
@@ -15273,7 +15944,7 @@
           "Logs"
         ],
         "summary": "Clear All Logs",
-        "description": "Clear ALL log files.",
+        "description": "Clear every log file except the security audit trail.",
         "operationId": "clear_all_logs_api_logs_clear_all_delete",
         "responses": {
           "200": {
@@ -15617,6 +16288,18 @@
         "summary": "Scan Audio Files",
         "description": "Recursively scan directory for audio files",
         "operationId": "scan_audio_files_api_filesystem_scan_audio_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "additionalProperties": true,
+                "type": "object",
+                "title": "Data"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -15626,6 +16309,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Scan Audio Files Api Filesystem Scan Audio Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -17123,13 +17816,17 @@
             "title": "Delete Encrypted After Decrypt",
             "default": true
           },
-          "auto_add_to_library": {
+          "mirror_audible_library": {
             "type": "boolean",
-            "title": "Auto Add To Library",
+            "title": "Mirror Audible Library",
             "default": true
           },
           "preferred_quality": {
             "type": "string",
+            "enum": [
+              "high",
+              "normal"
+            ],
             "title": "Preferred Quality",
             "default": "high"
           },
@@ -17158,6 +17855,107 @@
           "sync_on_account_add"
         ],
         "title": "AudibleSettingsResponse"
+      },
+      "AudibleSettingsUpdate": {
+        "properties": {
+          "auto_sync_enabled": {
+            "type": "boolean",
+            "title": "Auto Sync Enabled",
+            "default": true
+          },
+          "schedule_frequency": {
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly"
+            ],
+            "title": "Schedule Frequency",
+            "default": "daily"
+          },
+          "schedule_day_of_week": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
+            "title": "Schedule Day Of Week",
+            "default": 0
+          },
+          "schedule_day_of_month": {
+            "type": "integer",
+            "maximum": 28.0,
+            "minimum": 1.0,
+            "title": "Schedule Day Of Month",
+            "default": 1
+          },
+          "schedule_hour": {
+            "type": "integer",
+            "maximum": 23.0,
+            "minimum": 0.0,
+            "title": "Schedule Hour",
+            "default": 0
+          },
+          "schedule_minute": {
+            "type": "integer",
+            "maximum": 59.0,
+            "minimum": 0.0,
+            "title": "Schedule Minute",
+            "default": 0
+          },
+          "use_cron": {
+            "type": "boolean",
+            "title": "Use Cron",
+            "default": false
+          },
+          "cron_expression": {
+            "type": "string",
+            "maxLength": 100,
+            "title": "Cron Expression",
+            "default": "0 0 * * *"
+          },
+          "sync_on_account_add": {
+            "type": "boolean",
+            "title": "Sync On Account Add",
+            "default": true
+          },
+          "max_concurrent_downloads": {
+            "type": "integer",
+            "title": "Max Concurrent Downloads",
+            "default": 2
+          },
+          "delete_encrypted_after_decrypt": {
+            "type": "boolean",
+            "title": "Delete Encrypted After Decrypt",
+            "default": true
+          },
+          "mirror_audible_library": {
+            "type": "boolean",
+            "title": "Mirror Audible Library",
+            "default": true
+          },
+          "preferred_quality": {
+            "type": "string",
+            "enum": [
+              "high",
+              "normal"
+            ],
+            "title": "Preferred Quality",
+            "default": "high"
+          },
+          "temp_download_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Temp Download Path"
+          }
+        },
+        "type": "object",
+        "title": "AudibleSettingsUpdate",
+        "description": "Partial update: only fields the client sent are applied, so the defaults here are never stored."
       },
       "AuthCompleteRequest": {
         "properties": {
@@ -18061,11 +18859,15 @@
           },
           "schedule_day_of_week": {
             "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
             "title": "Schedule Day Of Week",
             "default": 0
           },
           "schedule_day_of_month": {
             "type": "integer",
+            "maximum": 28.0,
+            "minimum": 1.0,
             "title": "Schedule Day Of Month",
             "default": 1
           },
@@ -19430,6 +20232,92 @@
         ],
         "title": "BulkClientUpdate",
         "description": "Apply a partial change set to multiple download clients at once."
+      },
+      "BulkConversionError": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "error": {
+            "type": "string",
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "error"
+        ],
+        "title": "BulkConversionError",
+        "description": "A book a bulk conversion could not queue"
+      },
+      "BulkConversionResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "jobs_created": {
+            "type": "integer",
+            "title": "Jobs Created"
+          },
+          "job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Job Ids"
+          },
+          "skipped": {
+            "items": {
+              "$ref": "#/components/schemas/BulkConversionSkipped"
+            },
+            "type": "array",
+            "title": "Skipped"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/BulkConversionError"
+            },
+            "type": "array",
+            "title": "Errors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "jobs_created",
+          "job_ids",
+          "skipped",
+          "errors"
+        ],
+        "title": "BulkConversionResponse",
+        "description": "Response model for a bulk conversion request"
+      },
+      "BulkConversionSkipped": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "title",
+          "reason"
+        ],
+        "title": "BulkConversionSkipped",
+        "description": "A book left out of a bulk conversion, and why"
       },
       "BulkCustomMessageDelete": {
         "properties": {
@@ -21330,6 +22218,86 @@
         "title": "ConversionDryRunRequest",
         "description": "Preview a conversion over a set of books without executing; empty list is valid."
       },
+      "ConversionHistoryResponse": {
+        "properties": {
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/ConversionJobResponse"
+            },
+            "type": "array",
+            "title": "Jobs"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "processing": {
+            "type": "integer",
+            "title": "Processing"
+          },
+          "pending": {
+            "type": "integer",
+            "title": "Pending"
+          }
+        },
+        "type": "object",
+        "required": [
+          "jobs",
+          "total",
+          "processing",
+          "pending"
+        ],
+        "title": "ConversionHistoryResponse",
+        "description": "Response model for a list of conversion jobs"
+      },
+      "ConversionJobPauseResponse": {
+        "properties": {
+          "job_id": {
+            "type": "integer",
+            "title": "Job Id"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          },
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "queue",
+                  "restart"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused By"
+          }
+        },
+        "type": "object",
+        "required": [
+          "job_id",
+          "status",
+          "paused",
+          "paused_by"
+        ],
+        "title": "ConversionJobPauseResponse",
+        "description": "Response model for pausing or resuming one running conversion"
+      },
       "ConversionJobResponse": {
         "properties": {
           "id": {
@@ -21537,6 +22505,43 @@
               }
             ],
             "title": "Settings Used"
+          },
+          "paused_seconds": {
+            "type": "number",
+            "title": "Paused Seconds",
+            "default": 0.0
+          },
+          "paused_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "queue",
+                  "restart"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused By"
+          },
+          "output_kept": {
+            "type": "boolean",
+            "title": "Output Kept",
+            "default": false
+          },
+          "elapsed_seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elapsed Seconds"
           }
         },
         "type": "object",
@@ -21561,6 +22566,64 @@
         "title": "ConversionJobResponse",
         "description": "Response model for a conversion job"
       },
+      "ConversionQueuePauseResponse": {
+        "properties": {
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "unreadable_setting"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused Reason"
+          },
+          "changed_job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Changed Job Ids"
+          },
+          "failed_job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Failed Job Ids"
+          },
+          "failure_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "paused",
+          "paused_reason",
+          "changed_job_ids",
+          "failed_job_ids",
+          "failure_reason"
+        ],
+        "title": "ConversionQueuePauseResponse",
+        "description": "Response model for pausing or resuming the conversion queue"
+      },
       "ConversionQueueResponse": {
         "properties": {
           "jobs": {
@@ -21581,6 +22644,29 @@
           "pending": {
             "type": "integer",
             "title": "Pending"
+          },
+          "paused_jobs": {
+            "type": "integer",
+            "title": "Paused Jobs"
+          },
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "unreadable_setting"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused Reason"
           }
         },
         "type": "object",
@@ -21588,10 +22674,13 @@
           "jobs",
           "total",
           "processing",
-          "pending"
+          "pending",
+          "paused_jobs",
+          "paused",
+          "paused_reason"
         ],
         "title": "ConversionQueueResponse",
-        "description": "Response model for conversion queue"
+        "description": "Response model for the conversion queue"
       },
       "ConversionSettings": {
         "properties": {
@@ -21634,11 +22723,22 @@
           },
           "defaultSampleRate": {
             "type": "string",
+            "enum": [
+              "auto",
+              "22050",
+              "44100",
+              "48000"
+            ],
             "title": "Defaultsamplerate",
             "default": "auto"
           },
           "defaultChannels": {
             "type": "string",
+            "enum": [
+              "auto",
+              "mono",
+              "stereo"
+            ],
             "title": "Defaultchannels",
             "default": "auto"
           },
@@ -21649,6 +22749,7 @@
           },
           "aacProfile": {
             "type": "string",
+            "const": "lc",
             "title": "Aacprofile",
             "default": "lc"
           },
@@ -21710,7 +22811,7 @@
           "minChapterLength": {
             "type": "integer",
             "title": "Minchapterlength",
-            "default": 60
+            "default": 600
           },
           "chapterImageHandling": {
             "type": "string",
@@ -23604,6 +24705,11 @@
             "type": "boolean",
             "title": "Auto Export",
             "default": true
+          },
+          "forget_host_key": {
+            "type": "boolean",
+            "title": "Forget Host Key",
+            "default": false
           }
         },
         "type": "object",
@@ -23701,6 +24807,11 @@
             "type": "boolean",
             "title": "Auto Export",
             "default": true
+          },
+          "remote_host_key_fingerprint": {
+            "type": "string",
+            "title": "Remote Host Key Fingerprint",
+            "default": ""
           }
         },
         "type": "object",
@@ -23918,6 +25029,28 @@
         "title": "FileTagsRequest",
         "description": "POST body naming files of a session whose own tags should seed a split's rows."
       },
+      "FolderMismatchRow": {
+        "properties": {
+          "folder_title": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Folder Title"
+          },
+          "tags_title": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Tags Title"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "folder_title",
+          "tags_title"
+        ],
+        "title": "FolderMismatchRow",
+        "description": "A folder name and its files' tags naming different books."
+      },
       "FrontendErrorReport": {
         "properties": {
           "error": {
@@ -23937,27 +25070,42 @@
             "title": "Componentstack"
           },
           "url": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Url"
           },
           "userAgent": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Useragent"
           },
           "timestamp": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Timestamp"
           }
         },
         "type": "object",
-        "required": [
-          "error",
-          "url",
-          "userAgent",
-          "timestamp"
-        ],
         "title": "FrontendErrorReport",
-        "description": "Frontend error report from ErrorBoundary"
+        "description": "Frontend error report from ErrorBoundary, coerced and truncated at validation time."
       },
       "FullDiagnosticResponse": {
         "properties": {
@@ -24258,6 +25406,24 @@
         "title": "HostSettings",
         "description": "Host/network configuration settings - all fields required for PUT"
       },
+      "ImportItemKey": {
+        "properties": {
+          "download_client_id": {
+            "type": "integer",
+            "title": "Download Client Id"
+          },
+          "client_download_id": {
+            "type": "string",
+            "title": "Client Download Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "download_client_id",
+          "client_download_id"
+        ],
+        "title": "ImportItemKey"
+      },
       "ImportListOptions": {
         "properties": {
           "clean_library_level": {
@@ -24417,6 +25583,28 @@
         "type": "object",
         "title": "ImportListUpdate",
         "description": "Schema for updating an import list. All fields optional."
+      },
+      "ImportRequest": {
+        "properties": {
+          "items": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/ImportItemKey"
+                },
+                "type": "array",
+                "maxItems": 500,
+                "minItems": 1
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Items"
+          }
+        },
+        "type": "object",
+        "title": "ImportRequest"
       },
       "IndexerCreate": {
         "properties": {
@@ -25748,6 +26936,11 @@
             "title": "Releases Retention Days",
             "default": 30
           },
+          "security_log_retention_days": {
+            "type": "integer",
+            "title": "Security Log Retention Days",
+            "default": 30
+          },
           "cleanup_enabled": {
             "type": "boolean",
             "title": "Cleanup Enabled",
@@ -26169,12 +27362,12 @@
           "scanIntervalHours": {
             "type": "integer",
             "title": "Scanintervalhours",
-            "default": 0
+            "default": 24
           },
           "watchForChanges": {
             "type": "boolean",
             "title": "Watchforchanges",
-            "default": false
+            "default": true
           },
           "upgradeSweepEnabled": {
             "type": "boolean",
@@ -26302,6 +27495,45 @@
         "type": "object",
         "title": "MetadataSettings",
         "description": "Settings for automatic metadata file creation and tag writing"
+      },
+      "MirrorPreviewResponse": {
+        "properties": {
+          "count_to_add": {
+            "type": "integer",
+            "title": "Count To Add"
+          },
+          "count_to_download": {
+            "type": "integer",
+            "title": "Count To Download"
+          },
+          "capped_at": {
+            "type": "integer",
+            "title": "Capped At"
+          },
+          "in_flight_unreadable": {
+            "type": "boolean",
+            "title": "In Flight Unreadable",
+            "default": false
+          },
+          "low_disk_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Low Disk Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "count_to_add",
+          "count_to_download",
+          "capped_at"
+        ],
+        "title": "MirrorPreviewResponse"
       },
       "NotificationCreate": {
         "properties": {
@@ -27971,6 +29203,17 @@
               }
             ],
             "title": "Title"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message"
           }
         },
         "type": "object",
@@ -28963,6 +30206,16 @@
             "title": "Parse Method",
             "default": ""
           },
+          "folder_mismatch": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FolderMismatchRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "status": {
             "type": "string",
             "title": "Status",
@@ -29870,6 +31123,47 @@
         ],
         "title": "SuccessResponse",
         "description": "Generic success response"
+      },
+      "SuspectedProxies": {
+        "properties": {
+          "peers": {
+            "items": {
+              "$ref": "#/components/schemas/SuspectedProxyPeer"
+            },
+            "type": "array",
+            "title": "Peers"
+          }
+        },
+        "type": "object",
+        "required": [
+          "peers"
+        ],
+        "title": "SuspectedProxies",
+        "description": "The latched proxy addresses, least recently seen first."
+      },
+      "SuspectedProxyPeer": {
+        "properties": {
+          "peer": {
+            "type": "string",
+            "title": "Peer"
+          },
+          "signal": {
+            "type": "string",
+            "title": "Signal"
+          },
+          "first_seen": {
+            "type": "string",
+            "title": "First Seen"
+          }
+        },
+        "type": "object",
+        "required": [
+          "peer",
+          "signal",
+          "first_seen"
+        ],
+        "title": "SuspectedProxyPeer",
+        "description": "An address ABM latched as a reverse proxy that sends no forwarding headers."
       },
       "SystemStatus": {
         "properties": {

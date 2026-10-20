@@ -22,4 +22,4 @@ La copertina del libro si può reimpostare su quella automatica, e così si sblo
 ## Da tenere presente
 
 - Il blocco vale solo per la copertina. Titolo, autore e il resto continuano ad aggiornarsi.
-- Le copertine vengono scaricate tramite la tua connessione in uscita. Se non ne hai scelta una, le nuove copertine non vengono scaricate, e quelle in cache vengono comunque servite.
+- Le copertine vengono scaricate tramite il tuo proxy, se ne hai impostato uno in **Settings > General > Proxy**.

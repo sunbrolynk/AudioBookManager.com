@@ -27,11 +27,11 @@ Un'esecuzione pianificata che non ha fatto niente non scrive niente. La ripetizi
 
 ## Conservazione
 
-**Activity Log Retention** in General elimina le voci dopo 90 giorni di default. 0 le tiene. I file di log hanno una conservazione propria (30 giorni), quindi il link da una voce a un log può sopravvivere al log.
+**Activity Log Retention** in General elimina le voci dopo 90 giorni di default. Con 0 restano. I file di log hanno una loro conservazione (30 giorni).
 
 ## Vedere il log
 
-:::caution[In arrivo nella prossima release]
+:::caution[In arrivo in una release successiva]
 I link "View log" dalle voci non sono ancora in una versione rilasciata.
 :::
 

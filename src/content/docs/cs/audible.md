@@ -19,10 +19,6 @@ Stránka **Audible Library** ukazuje všechno, co se synchronizovalo. Můžeš j
 
 ## Zrcadlení knihovny Audible do ABM (Mirror Audible library to ABM)
 
-:::caution[Přijde v příští verzi]
-Tohle zatím není v žádné vydané verzi.
-:::
-
 Zrcadlení zařídí, že tvoje knihovna v ABM kopíruje tvou knihovnu na Audible.
 
 - Ve výchozím stavu je zapnuté.

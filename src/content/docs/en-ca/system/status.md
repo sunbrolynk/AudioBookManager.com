@@ -3,7 +3,7 @@ title: Status
 description: Health checks and a look at what ABM is doing.
 ---
 
-**System > Status** runs health checks and lists anything wrong: failing download clients and indexers, root folder problems and outbound connection problems. It also shows database connection pool use. When nothing is wrong it says "All systems healthy".
+**System > Status** runs health checks and lists anything wrong: failing download clients and indexers, root folder problems and an unreachable Libex. It also shows database connection pool use. When nothing is wrong it says "All systems healthy".
 
 Health checks also run every 6 hours in the background. Connect can notify on **On Health Issue** and **On Health Restored**. See [Connect](/en-ca/settings/connect/).
 

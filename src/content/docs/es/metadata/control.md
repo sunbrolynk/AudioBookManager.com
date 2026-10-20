@@ -25,7 +25,7 @@ El diálogo de edición cambia la monitorización, el perfil de calidad, la ruta
 
 ## Archivos auxiliares que lee tu reproductor
 
-ABM escribe `cover.jpg`, un `.opf`, `desc.txt` y `reader.txt` junto al audio, y una hoja de capítulos `.cue` en la próxima versión. Audiobookshelf lee el OPF, la portada y los archivos de texto, así que lo que elegiste en ABM es lo que muestra el reproductor. Consulta [Archivos auxiliares](/es/using/sidecars/).
+ABM escribe `cover.jpg`, un `.opf`, `desc.txt` y `reader.txt` junto al audio. Audiobookshelf lee el OPF, la portada y los archivos de texto, así que el reproductor muestra lo que elegiste en ABM. Consulta [Archivos sidecar](/es/using/sidecars/).
 
 ## Etiquetas escritas en el audio
 
@@ -33,7 +33,7 @@ ABM puede escribir el título, el artista, el artista del álbum, el álbum, el 
 
 ## Capítulos
 
-ABM compara los capítulos incrustados en tus archivos con los de la edición publicada, y puede escribir los capítulos publicados en los archivos sin volver a codificar. Se niega cuando la duración de tu audio indica que es otra edición. Consulta [Capítulos](/es/using/chapters/). Llega en la próxima versión.
+Comparar los capítulos incrustados en tus archivos con los de la edición publicada, y escribir los capítulos publicados en los archivos, está previsto para una versión posterior. Consulta [Capítulos](/es/using/chapters/).
 
 ## Serie y posición
 
@@ -47,8 +47,8 @@ Las etiquetas son tuyas. Las etiquetas automáticas las ponen según reglas (gé
 
 Todo lo que ABM aprende sobre un libro se queda en su propia base de datos SQLite en `/config`, incluidos los libros que quites después. Haz copia de seguridad de esa carpeta y tendrás copia del registro. Una vez que un libro está dentro, los metadatos no dependen de que se pueda llegar a la fuente.
 
-:::caution[Llega en la próxima versión]
-Está prevista una **Local Metadata Library** dedicada: una copia opcional de todo lo que ABM ha consultado alguna vez, que se conserva incluso después de que un libro salga de tu biblioteca, con sus propias copias de seguridad programadas y una descarga en SQLite. La sección de la página Metadata para esto está en el trabajo sin fusionar y marcada como vista previa, todavía sin conectar.
+:::caution[Llega en una versión posterior]
+Está prevista una **Local Metadata Library** propia: una copia opcional de todo lo que ABM ha consultado, que se conserva aunque un libro salga de tu biblioteca, con sus propias copias de seguridad programadas y una descarga en SQLite.
 :::
 
 ## Programación de actualizaciones

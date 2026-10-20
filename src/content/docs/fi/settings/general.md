@@ -1,9 +1,9 @@
 ---
 title: Yleiset
-description: Isäntä, ulospäin lähtevä yhteys, tietoturva, lokit ja varmuuskopiot.
+description: Isäntä, tietoturva, välityspalvelin, lokit ja varmuuskopiot.
 ---
 
-**Settings > General** sisältää osiot Host, Proxy & VPN, Security, Logging ja Backups. Securitylla on [oma sivunsa](/fi/settings/security/).
+**Settings > General** sisältää osiot Host, Security, Proxy, Logging ja Backups. Securityllä on [oma sivunsa](/fi/settings/security/).
 
 ## Isäntä (Host)
 
@@ -18,7 +18,7 @@ description: Isäntä, ulospäin lähtevä yhteys, tietoturva, lokit ja varmuusk
 
 Dockerissa käytännössä merkitsevät ympäristömuuttuja `PORT` ja composen porttimääritys. Katso [Ympäristömuuttujat](/fi/configuration/).
 
-## Välityspalvelin ja ulospäin lähtevä yhteys
+## Proxy
 
 Miten ABM pääsee internetiin metatietoja, kansikuvia ja Audible-sivuja varten.
 
@@ -31,7 +31,7 @@ Miten ABM pääsee internetiin metatietoja, kansikuvia ja Audible-sivuja varten.
 | Bypass Addresses | `localhost,127.0.0.1` | Koneet, jotka ohittavat välityspalvelimen |
 | Test Connection | | Tarkistaa välityspalvelimen |
 
-Sivu näyttää myös lähtevän IP-osoitteesi sellaisena kuin ulkoiset palvelut sen näkevät. Seuraava julkaisu tuo sisäänrakennetun WireGuard-tunnelin ja erillisen yhteysvalinnan (ei mitään, suora, välityspalvelin, WireGuard tai oma VPN-konttisi), jota sisäänrakennettu metatietolähde vaatii. Alhaalla oleva reitti estää liikenteen sen sijaan, että palaisi käyttämään omaa osoitettasi. Varmuuskopioiden viennit ja lähiverkon kohteet menevät aina suoraan.
+Osio näyttää myös lähtevän IP-osoitteesi sellaisena kuin ulkoiset palvelut sen näkevät. Yhteyden valinta, mukaan lukien sisäänrakennettu VPN, on suunniteltu myöhempään julkaisuun.
 
 ## Lokit (Logging)
 

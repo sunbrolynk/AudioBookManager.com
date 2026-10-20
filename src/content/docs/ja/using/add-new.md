@@ -11,11 +11,7 @@ description: 本を検索して、未入手として追加する。
 
 ## 著者とシリーズの検索
 
-:::caution[次のリリースで登場]
-Author と Series の検索モードはまだリリース版には入っていません。
-:::
-
-検索に、著者やシリーズそのものを探す2つのモードが加わります。これまでの本のモードは「Books by author」と「Books in series」に名前が変わります。著者やシリーズを追加すると、そのカタログが作られ、**Monitor** に応じて本が未入手として追加されます。
+検索には Title、Author、Series、Books by author、Books in series、ASIN のモードがあります。Author と Series は著者やシリーズそのものを探し、Books by author と Books in series は本を探します。著者やシリーズを追加すると、そのカタログが作られ、**Monitor** に応じて本が未入手として追加されます。
 
 | Monitor | 追加されるもの |
 |---|---|

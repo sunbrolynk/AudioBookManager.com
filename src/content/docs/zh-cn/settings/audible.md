@@ -23,9 +23,9 @@ description: 账号、同步计划、下载和诊断。
 
 | 设置 | 默认值 | 作用 |
 |---|---|---|
-| Auto Add to Library | 开 | 下载一本 ABM 里还没有的 Audible 书时，ABM 会先把它加进书库。关掉的话，这次下载会被拒绝。在下个版本里，它会变成 [Mirror Audible library to ABM](/zh-cn/audible/#把-audible-书库镜像到-abm) |
+| Mirror Audible library to ABM | 开 | 每次同步都会把 ABM 里还没有的 Audible 书添加进来，并下载没有文件的书，每次同步最多 25 本。打开时会显示下次同步将添加和下载多少本。见[Mirror Audible library to ABM](/zh-cn/audible/#把-audible-书库镜像到-abm) |
 | Concurrent Downloads | 2 | 1 到 5。越高越快，但可能撞上 Audible 的限流。 |
-| Preferred Quality | High Quality | High、Normal 或 Low |
+| Preferred Quality | High | High 或 Normal |
 | Delete Encrypted Files | 开 | 解密成 M4B 之后删除加密的 AAXC 文件 |
 | Temp Download Path | 空 | 留空则使用系统临时文件夹 |
 

@@ -30,10 +30,6 @@ Si le placement du résultat échoue (le dossier de la bibliothèque est plein, 
 
 ## Pause et reprise
 
-:::caution[Prévu pour la prochaine version]
-La mise en pause n'est pas encore dans une version publiée.
-:::
-
 Deux sortes de pause, et aucune n'annule quoi que ce soit :
 
 - **Pause** sur une tâche en cours suspend ses processus ffmpeg là où ils en sont. Resume reprend au même endroit.
@@ -47,6 +43,6 @@ Si tu connais Sonarr : il n'y a rien de pareil dans les arrs. Vois ça comme une
 
 ## Pièges à éviter
 
-- Concurrent Conversions multiplié par Threads Per Job ne devrait pas dépasser ton nombre de cœurs CPU.
+- Concurrent Conversions multiplié par Threads Per Job ne devrait pas dépasser ton nombre de cœurs CPU. Avec Auto, ABM répartit pour toi les cœurs restants entre les jobs qui tournent en même temps.
 - Un fichier converti a une nouvelle taille et une nouvelle date de modification, donc Audiobookshelf va le rescanner.
 - Convertir un fichier lié physiquement à un torrent en partage crée un nouveau fichier. La copie en partage garde les anciens octets.

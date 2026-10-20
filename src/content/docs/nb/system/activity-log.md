@@ -27,11 +27,11 @@ En planlagt kjøring som ikke hadde noe å gjøre, skriver ingenting. En gjentak
 
 ## Oppbevaring
 
-**Activity Log Retention** i General sletter oppføringer etter 90 dager som standard. 0 beholder dem. Loggfiler har sin egen oppbevaringstid (30 dager), så en lenke fra en oppføring til en logg kan leve lenger enn loggen.
+**Activity Log Retention** i General sletter oppføringer etter 90 dager som standard. 0 beholder dem. Loggfiler har egen oppbevaring (30 dager).
 
 ## Vis logg (View log)
 
-:::caution[Kommer i neste versjon]
+:::caution[Kommer i en senere versjon]
 View log-lenker fra oppføringer er ikke med i en utgitt versjon ennå.
 :::
 

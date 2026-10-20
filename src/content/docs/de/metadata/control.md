@@ -25,7 +25,7 @@ Der Bearbeiten-Dialog ändert Überwachung, Qualitätsprofil, Pfad und Tags und 
 
 ## Sidecars, die dein Player liest
 
-ABM schreibt `cover.jpg`, eine `.opf`, `desc.txt` und `reader.txt` neben das Audio und im nächsten Release eine `.cue`-Kapiteldatei. Audiobookshelf liest OPF, Cover und Textdateien, also zeigt der Player das, was du in ABM ausgewählt hast. Siehe [Sidecar-Dateien](/de/using/sidecars/).
+ABM schreibt `cover.jpg`, eine `.opf`, `desc.txt` und `reader.txt` neben das Audio. Audiobookshelf liest OPF, Cover und Textdateien, also zeigt der Player, was du in ABM gewählt hast. Siehe [Sidecar-Dateien](/de/using/sidecars/).
 
 ## Tags in den Audiodateien
 
@@ -33,7 +33,7 @@ ABM kann Titel, Interpret, Album-Interpret, Album, Genre, Jahr, Kommentar, Sprec
 
 ## Kapitel
 
-ABM vergleicht die in deinen Dateien eingebetteten Kapitel mit denen der veröffentlichten Ausgabe und kann die veröffentlichten Kapitel ohne Neukodierung in die Dateien schreiben. Es verweigert das, wenn die Länge deines Audios zeigt, dass es eine andere Ausgabe ist. Siehe [Kapitel](/de/using/chapters/). Kommt mit dem nächsten Release.
+Die in deinen Dateien eingebetteten Kapitel mit denen der veröffentlichten Ausgabe zu vergleichen und die veröffentlichten Kapitel in die Dateien zu schreiben, ist für ein späteres Release geplant. Siehe [Kapitel](/de/using/chapters/).
 
 ## Serie und Position
 
@@ -47,8 +47,8 @@ Tags gehören dir. Auto-Tags setzen sie nach Regeln (Genre, Sprecher, Bewertung,
 
 Alles, was ABM über ein Buch erfährt, bleibt in ABMs eigener SQLite-Datenbank in `/config`, auch bei Büchern, die du später entfernst. Sicherst du diesen Ordner, ist der Bestand gesichert. Sobald ein Buch drin ist, hängen die Metadaten nicht mehr davon ab, ob die Quelle erreichbar ist.
 
-:::caution[Kommt mit dem nächsten Release]
-Geplant ist eine eigene **Local Metadata Library**: eine optionale Kopie von allem, was ABM je abgefragt hat, die auch erhalten bleibt, wenn ein Buch deine Bibliothek verlässt, mit eigenen geplanten Backups und einem SQLite-Download. Der Abschnitt dafür auf der Seite Metadata ist in den noch nicht gemergten Änderungen schon vorhanden und als Vorschau markiert, aber noch nicht angebunden.
+:::caution[Kommt in einem späteren Release]
+Eine eigene **Local Metadata Library** ist geplant: eine optionale Kopie von allem, was ABM je nachgeschlagen hat, auch nachdem ein Buch deine Bibliothek verlassen hat, mit eigenen geplanten Backups und einem SQLite-Download.
 :::
 
 ## Zeitpläne für Aktualisierungen

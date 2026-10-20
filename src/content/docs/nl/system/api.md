@@ -21,6 +21,6 @@ ABM heeft een REST API onder `/api`. De interactieve referentie staat op `/api/d
 
 ## Metadatastoringen
 
-Een route die van de metadatabron afhangt, antwoordt met 503 (`metadata_unavailable`), 503 met `Retry-After: 30` (`metadata_declined`) of 502 (`metadata_rejected`) in de `code` van de body. Sommige lookup-routes geven bij een storing nog steeds een leeg resultaat terug.
+Een zoekopdracht op boeken die geen antwoord van Libex krijgt, geeft 502 met "Libex search failed". Een zoekopdracht op auteurs of series geeft 503 met "Libex could not be reached; try again shortly". Sommige opzoekroutes geven bij een storing nog steeds een leeg resultaat.
 
 Ken je Sonarr? De API is niet v3-compatibel. Prowlarr kan indexers naar ABM synchroniseren via de Prowlarr-koppeling.

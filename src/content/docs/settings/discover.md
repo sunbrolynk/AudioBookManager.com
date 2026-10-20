@@ -14,7 +14,7 @@ Each catalog (New Releases, Coming Soon, Audible Best, Recommended) has its own 
 | Setting | Effect |
 |---|---|
 | Auto Refresh | Refresh catalogs on a schedule |
-| Frequency | Daily, weekly or monthly, with day and time |
+| Frequency | Daily, weekly or monthly, with day and time. Day of Month is 1 to 28 |
 | Refresh on Startup | Fill any empty catalog when ABM starts |
 | Use CRON Expression | Replaces the simple options |
 
@@ -30,4 +30,4 @@ The defaults live in the app and are not repeated here. Open the page to see the
 
 ## Gotchas
 
-Refreshes are skipped when the metadata source is not ready, and logged once.
+Refreshes are skipped when Libex is not reachable, and logged once.

@@ -3,7 +3,7 @@ title: Kappaleet
 description: Vertaa kirjan upotettuja kappaleita Libexiin ja korjaa ne.
 ---
 
-:::caution[Tulossa seuraavaan julkaisuun]
+:::caution[Tulossa myöhempään julkaisuun]
 Mikään tämän sivun asioista muunnosten oletuksia lukuun ottamatta ei ole vielä missään julkaistussa versiossa.
 :::
 

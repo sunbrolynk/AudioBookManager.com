@@ -11,7 +11,7 @@ Første gang bliver du guidet igennem at oprette et login. Indtil du har gjort d
 
 ## 2. Vælg, hvordan ABM kommer på nettet
 
-Under **Settings > General** er der en sektion, der hedder **Proxy & VPN**. Vil du bruge den indbyggede metadatakilde, skal der vælges en forbindelse først. Se [Vælg en metadatakilde](/da/metadata/choosing-a-source/).
+Under **Settings > General** er der en sektion **Proxy**. Indstil en proxy der, hvis ABM skal gå gennem en for at nå internettet. Når ABM kommer direkte på nettet, kan du springe det over.
 
 ## 3. Tilføj en rodmappe
 

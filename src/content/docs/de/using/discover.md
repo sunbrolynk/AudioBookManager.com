@@ -9,9 +9,9 @@ Von jeder Seite aus kannst du ein Buch zur Bibliothek hinzufügen. Recommended n
 
 ## Aktuell halten
 
-Zeitpläne und Grenzen für die Aktualisierung findest du in den [Discover-Einstellungen](/de/settings/discover/). Ist ein Katalog leer, kann die Seite ihn für dich aktualisieren, sobald die Metadatenquelle erreichbar ist.
+Zeitpläne und Limits für die Aktualisierung findest du in den [Discover-Einstellungen](/de/settings/discover/). Ist ein Katalog leer, kann die Seite ihn für dich aktualisieren, sobald Libex erreichbar ist.
 
 ## Stolperfallen
 
-- Die Kataloge hängen von der Metadatenquelle ab. Ist sie nicht erreichbar oder keine ausgehende Verbindung ausgewählt, werden Aktualisierungen übersprungen, und im Log steht, warum.
+- Die Kataloge hängen von Libex ab. Ist es nicht erreichbar, werden Aktualisierungen übersprungen und der Grund steht im Log.
 - Discover zeigt, was Audible listet. Über das, was deine Indexer haben, sagt es nichts.

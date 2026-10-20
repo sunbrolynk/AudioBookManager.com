@@ -21,6 +21,6 @@ O ABM tem uma API REST em `/api`. A referência interativa fica em `/api/docs` (
 
 ## Quedas da fonte de metadados
 
-Uma rota que depende da fonte de metadados responde 503 (`metadata_unavailable`), 503 com `Retry-After: 30` (`metadata_declined`) ou 502 (`metadata_rejected`) no `code` do corpo. Algumas rotas de consulta ainda devolvem um resultado vazio durante uma queda.
+Uma busca de livros que não recebe resposta do Libex retorna 502 com "Libex search failed". Uma busca de autores ou séries retorna 503 com "Libex could not be reached; try again shortly". Algumas rotas de consulta ainda retornam um resultado vazio durante uma queda.
 
 Se você conhece o Sonarr: a API não é compatível com a v3. O Prowlarr pode sincronizar indexadores com o ABM pela conexão Prowlarr dele.

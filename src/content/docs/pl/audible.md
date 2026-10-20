@@ -19,10 +19,6 @@ Strona **Audible Library** pokazuje wszystko, co zostało zsynchronizowane. Moż
 
 ## Odzwierciedlanie biblioteki Audible w ABM (Mirror)
 
-:::caution[W następnym wydaniu]
-Tego jeszcze nie ma w żadnej wydanej wersji.
-:::
-
 Mirror sprawia, że twoja biblioteka ABM podąża za twoją biblioteką Audible.
 
 - Domyślnie jest włączony.

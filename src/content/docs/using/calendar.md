@@ -3,7 +3,7 @@ title: Calendar
 description: Upcoming releases and an iCal feed.
 ---
 
-**Calendar** shows release dates of the books ABM knows about, colored by status. Views are month, week, forecast, day and agenda. Week start and date formats come from [UI settings](/settings/ui/).
+**Calendar** shows release dates of the books ABM knows about, colored by status. Views are month, week, forecast, day and agenda. The week starts on **First Day of Week** and the week view's headers use **Week Column Header**, both from [UI settings](/settings/ui/); the Calendar has no start-of-week or time format option of its own. A failed load shows an error with a Retry button instead of an empty month. A book that was downloaded but has no files left shows as Missing Files, the same as in the Library, and the legend has its colour.
 
 ![The Calendar in month view: upcoming and recent releases with their covers and status](../../../assets/docs/calendar.jpg)
 

@@ -28,11 +28,9 @@ Usa ffmpeg para escribir las etiquetas dentro del propio audio.
 
 Campos de etiquetas, todos activados por defecto: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) y Cover Art.
 
-## Llega en la próxima versión
+## Llega en una versión posterior
 
-La página se reorganiza en secciones y gana una sección **Source** con la opción **Metadata Source**, **Test** y **Status**. Consulta [Elegir una fuente de metadatos](/es/metadata/choosing-a-source/).
-
-También gana una sección **Local Metadata Library** (opcional, mostrada como vista previa que todavía no está conectada) con una descarga de la biblioteca en SQLite y sus propias copias de seguridad programadas. Esas copias siguen las opciones de copia de seguridad de General y por defecto son semanales a las 04:00, conservadas 28 días.
+Una elección de fuente de metadatos y una copia local de la biblioteca de metadatos están previstas para una versión posterior. Consulta [Tus metadatos, tu control](/es/metadata/control/).
 
 ## Detalles a tener en cuenta
 

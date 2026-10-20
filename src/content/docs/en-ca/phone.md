@@ -46,9 +46,5 @@ Settings is a grouped list: Library, Sources and App. Each row is a link with th
 
 ## Import Workbench
 
-:::caution[Coming in the next release]
-The phone layout of the Import Workbench is not in a released version yet.
-:::
-
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
 - The bottom bar shows how many are selected and the Add button, and says why Add is blocked.

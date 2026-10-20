@@ -22,4 +22,4 @@ The book's cover can be reset to the automatic one, which unlocks it. After that
 ## Gotchas
 
 - Locking applies to the cover only. Title, author and the rest still refresh.
-- Covers are fetched through your outbound connection. If none is chosen, new covers are not downloaded, and cached covers are still served.
+- Covers are fetched through your proxy when you have set one under **Settings > General > Proxy**.

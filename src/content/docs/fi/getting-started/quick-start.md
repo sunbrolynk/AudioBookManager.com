@@ -11,7 +11,7 @@ Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset. Siihen asti ABM 
 
 ## 2. Valitse, miten ABM pääsee internetiin
 
-Kohdassa **Settings > General** on **Proxy & VPN** -osio. Jos aiot käyttää sisäänrakennettua metatietolähdettä, yhteys on valittava ensin. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
+Kohdassa **Settings > General** on **Proxy**-osio. Aseta siellä välityspalvelin, jos ABM:n pitää kulkea sellaisen kautta päästäkseen internetiin. Jos ABM pääsee internetiin suoraan, ohita tämä.
 
 ## 3. Lisää juurikansio
 

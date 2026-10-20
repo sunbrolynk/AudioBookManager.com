@@ -3,7 +3,7 @@ title: Tila
 description: Kuntotarkistukset ja katsaus siihen, mitä ABM tekee.
 ---
 
-**System > Status** ajaa kuntotarkistukset ja listaa kaiken, mikä on vialla: epäonnistuvat latausasiakkaat ja indeksoijat, juurikansioiden ongelmat ja ulospäin lähtevän yhteyden ongelmat. Se näyttää myös tietokannan yhteyspoolin käytön. Kun mikään ei ole vialla, siinä lukee "All systems healthy".
+**System > Status** ajaa terveystarkistukset ja listaa kaiken, mikä on vialla: epäonnistuvat latausasiakkaat ja indeksoijat, juurikansio-ongelmat ja tavoittamaton Libex. Se näyttää myös tietokannan yhteyspoolin käytön. Kun kaikki on kunnossa, näkyy "All systems healthy".
 
 Kuntotarkistukset ajetaan myös taustalla 6 tunnin välein. Connect voi ilmoittaa tapahtumista **On Health Issue** ja **On Health Restored**. Katso [Connect](/fi/settings/connect/).
 

@@ -3,7 +3,7 @@ title: API
 description: Authentication, docs pages and limits.
 ---
 
-ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Swagger) and `/api/redoc`, and the schema at `/api/openapi.json`. Set `DOCS_ENABLED=false` to remove all three. The docs pages load assets from a CDN, so they render fully only with internet access.
+ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Swagger) and `/api/redoc`, and the schema at `/api/openapi.json`. Set `DOCS_ENABLED=false` to remove all three. The docs pages are served from copies bundled in the image, so they work offline and load nothing from a third party. A source checkout needs `sh scripts/fetch_docs_assets.sh` once, or they come up blank.
 
 ## Authenticating
 
@@ -18,9 +18,10 @@ ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Sw
 - A state-changing browser request needs a matching origin. Scripts using a key are exempt.
 - Request bodies are capped at 10 MiB (`MAX_REQUEST_BODY_BYTES`). Backup restore and cover upload have larger limits. Over the cap is HTTP 413.
 - Validation errors never echo back what you sent.
+- A 500 from the security and backup settings routes says what failed in general terms and does not include the exception text. The detail goes to the log files.
 
 ## Metadata outages
 
-A route that depends on the metadata source answers 503 (`metadata_unavailable`), 503 with `Retry-After: 30` (`metadata_declined`) or 502 (`metadata_rejected`) in the body's `code`. Some lookup routes still return an empty result in an outage.
+A book search that gets no answer from Libex returns 502 with "Libex search failed". An author or series search returns 503 with "Libex could not be reached; try again shortly". Some lookup routes still return an empty result in an outage.
 
 If you know Sonarr: the API is not v3-compatible. Prowlarr can sync indexers into ABM through its Prowlarr connection.

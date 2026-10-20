@@ -13,7 +13,7 @@ Et kryptert arkiv med en konsistent kopi av databasen (`database.db`), innstilli
 
 Velg en fra lista, eller last opp en sikkerhetskopifil (opptil 500 MiB). En kopi av den aktive databasen lagres først. En gjenoppretting kan ikke angres.
 
-Som standard tar ikke en gjenoppretting med seg **sikkerhetsinnstillingene** (autentiseringsmodus, påloggingsinfo, klarerte nettverk) eller den **utgående tilkoblingen**. De du har nå, beholdes, og resultatet sier fra om det. Huk av for valget ved opplastingen hvis du vil gjenopprette dem. Det betyr at et opplastet arkiv aldri kan slå av innlogging bare ved å bli gjenopprettet.
+Som standard gjenoppretter ikke en gjenoppretting **sikkerhetsinnstillingene** (autentiseringsmodus, legitimasjon, klarerte nettverk). De nåværende beholdes, og resultatet sier fra om det. Siden har ingen bryter for dette. Bare et API-kall til `restore-upload` med `restore_security_settings=true` henter dem tilbake, slik at et opplastet arkiv aldri kan slå av pålogging bare ved å bli gjenopprettet.
 
 Hvis sikkerhetskopien ble laget på en eldre versjon, starter du containeren på nytt etter gjenopprettingen, så migreringen kjører.
 

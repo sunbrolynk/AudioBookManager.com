@@ -30,7 +30,7 @@ The app log says which it is:
 - "carries reverse-proxy headers, but ... is not in TRUSTED_PROXIES": add the proxy to `TRUSTED_PROXIES`.
 - "... is in TRUSTED_PROXIES but didn't name a client address": configure the proxy to send `X-Forwarded-For` or `X-Real-IP`.
 
-The opposite case: a proxy that sends no forwarding headers looks like a local client, so everything through it skips sign-in. Set Authentication Required to Enabled.
+The opposite case: a proxy that sends no forwarding headers looks like a local client. ABM notices, makes that address sign in and shows a Reverse Proxy warning on System > Status. Make the proxy send `X-Forwarded-For`, or set Authentication Required to Enabled. If the address isn't a proxy, clear it under Settings > General > Security. See [Security](/settings/security/#reverse-proxies).
 
 ## Changes are refused from the browser
 
@@ -46,13 +46,14 @@ Raise `MAX_REQUEST_BODY_BYTES`. A reverse proxy can also enforce a lower limit a
 
 ## The metadata source is unavailable
 
-Adds, searches, refreshes and Discover need the metadata source. The message names it, for example "The metadata source is unavailable". Causes: the source is down or rate limiting, or your outbound connection is blocking it.
+Adds, searches, refreshes and Discover need Libex. When ABM can't get an answer, a book search fails with "Libex search failed" and an author or series search with "Libex could not be reached; try again shortly", instead of showing an empty list. Causes: Libex is down, or ABM's connection can't reach it.
 
-1. Check **Settings > General > Proxy & VPN** and that the route is up.
-2. Try again after a minute. A rate-limited source answers 503 with a 30 second retry hint.
-3. You can still add and import books by hand meanwhile.
+1. Check the [ABM status page](https://status.audiobookmanager.com) and the [Libex status page](https://status.libexdb.com) to see whether it is down for everyone.
+2. Check that the container can reach the internet, and that the proxy under **Settings > General > Proxy** is right if you use one.
+3. Try again after a minute.
+4. You can still add and import books by hand meanwhile.
 
-Background tasks that hit an outage fail with the reason, and send one notification per outage.
+A background task that hits an outage fails with the reason. It is retried by itself, up to six times or for six hours, whichever comes first.
 
 ## A refresh changed a book's details
 
@@ -72,7 +73,7 @@ Add a remote path mapping, or make ABM and the client see the folder at the same
 
 ## Docker cannot reach the metadata source or indexers
 
-Check DNS and the outbound connection setting before anything else. In Docker, a direct connection only works if the container can reach the internet.
+Check DNS and the proxy setting before anything else. In Docker, ABM can only reach Libex and your indexers if the container can reach the internet.
 
 ## Still stuck
 

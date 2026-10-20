@@ -13,7 +13,7 @@ Zaszyfrowane archiwum ze spójną kopią bazy danych (`database.db`), ustawień 
 
 Wybierz kopię z listy albo wgraj plik kopii (do 500 MiB). Najpierw zapisywana jest kopia aktualnej bazy. Przywrócenia nie da się cofnąć.
 
-Domyślnie przywracanie nie przywraca **ustawień bezpieczeństwa** (tryb uwierzytelniania, dane logowania, zaufane sieci) ani **połączenia wychodzącego**. Twoje obecne zostają, a wynik to mówi. Zaznacz opcję przy wgrywaniu, żeby je przywrócić. Dzięki temu wgrane archiwum nigdy nie wyłączy logowania tylko przez to, że zostało przywrócone.
+Domyślnie przywracanie nie przywraca **ustawień bezpieczeństwa** (tryb uwierzytelniania, dane logowania, zaufane sieci). Zostają twoje obecne, a wynik o tym informuje. Strona nie ma na to przełącznika. Przywraca je tylko wywołanie API `restore-upload` z `restore_security_settings=true`, więc przesłane archiwum nigdy nie wyłączy logowania samym przywróceniem.
 
 Jeśli kopia powstała na starszej wersji, po przywróceniu zrestartuj kontener, żeby wykonała się migracja.
 

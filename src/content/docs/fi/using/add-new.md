@@ -11,11 +11,7 @@ Lisätystä kirjasta tulee **Wanted** valitsemaasi juurikansioon ja laatuprofiil
 
 ## Tekijä- ja sarjahaku
 
-:::caution[Tulossa seuraavaan julkaisuun]
-Author- ja Series-hakutilat eivät ole vielä missään julkaistussa versiossa.
-:::
-
-Hakuun tulee kaksi tilaa, jotka löytävät itse tekijät ja sarjat. Vanhat kirjatilat nimetään uudelleen nimillä "Books by author" ja "Books in series". Tekijän tai sarjan lisääminen rakentaa sen katalogin ja lisää sen kirjat haluttujen listalle **Monitor**-valinnan mukaan:
+Haussa on tilat Title, Author, Series, Books by author, Books in series ja ASIN. Author ja Series löytävät kirjailijat ja sarjat itse; Books by author ja Books in series löytävät kirjoja. Kun lisäät kirjailijan tai sarjan, sen katalogi rakennetaan ja kirjat lisätään halutuiksi **Monitor**-asetuksen mukaan:
 
 | Monitor | Lisää |
 |---|---|

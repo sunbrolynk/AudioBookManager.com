@@ -19,10 +19,6 @@ Sidan **Audible Library** listar allt som har synkats. Filtrera den på All, Not
 
 ## Spegla Audible-biblioteket till ABM (Mirror Audible library to ABM)
 
-:::caution[Kommer i nästa version]
-Det här finns inte i någon släppt version än.
-:::
-
 Spegling gör att ditt ABM-bibliotek följer ditt Audible-bibliotek.
 
 - Den är på som standard.

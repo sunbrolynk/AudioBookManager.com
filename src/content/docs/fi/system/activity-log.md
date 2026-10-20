@@ -27,11 +27,11 @@ Ajastettu ajo, joka ei tehnyt mitään, ei kirjoita mitään. Saman virheen tois
 
 ## Säilytys
 
-General-sivun **Activity Log Retention** poistaa merkinnät oletuksena 90 päivän jälkeen. 0 säilyttää ne. Lokitiedostoilla on oma säilytysaikansa (30 päivää), joten merkinnästä lokiin vievä linkki voi elää lokia pidempään.
+**Activity Log Retention** General-kohdassa poistaa merkinnät oletuksena 90 päivän jälkeen. 0 säilyttää ne. Lokitiedostoilla on oma säilytysaikansa (30 päivää).
 
 ## Lokin näyttäminen (View log)
 
-:::caution[Tulossa seuraavaan julkaisuun]
+:::caution[Tulossa myöhempään julkaisuun]
 Merkinnöistä lähtevät View log -linkit eivät ole vielä missään julkaistussa versiossa.
 :::
 

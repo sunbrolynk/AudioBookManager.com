@@ -31,7 +31,7 @@ Un proxy che non invia header di inoltro sembra un client locale. Se ne usi uno 
 
 ## Conferma della password
 
-Alcune modifiche ti richiedono la password attuale: salvare le impostazioni Security, mostrare o rigenerare la chiave API, e salvare o eliminare una configurazione WireGuard. Una password sbagliata conta come accesso fallito nel log di sicurezza. Se non hai ancora impostato una password, non te ne viene chiesta nessuna.
+Alcune modifiche ti richiedono di nuovo la password attuale: salvare le impostazioni di Security e mostrare o rigenerare la chiave API. Una password sbagliata conta come accesso fallito nel log di sicurezza. Se non è ancora impostata una password, non ne viene chiesta nessuna.
 
 ## Chiave API
 

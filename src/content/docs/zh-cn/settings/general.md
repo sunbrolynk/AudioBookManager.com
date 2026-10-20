@@ -1,9 +1,9 @@
 ---
 title: 常规
-description: 主机、出站连接、安全、日志和备份。
+description: 主机、安全、代理、日志和备份。
 ---
 
-**Settings > General** 分为 Host、Proxy & VPN、Security、Logging 和 Backups 几个部分。Security 有 [单独的页面](/zh-cn/settings/security/)。
+**Settings > General** 有 Host、Security、Proxy、Logging 和 Backups 几个部分。Security 有[单独的页面](/zh-cn/settings/security/)。
 
 ## 主机（Host）
 
@@ -18,7 +18,7 @@ description: 主机、出站连接、安全、日志和备份。
 
 在 Docker 里，真正起作用的是环境变量 `PORT` 和 compose 的端口映射。见 [环境变量](/zh-cn/configuration/)。
 
-## 代理和出站连接
+## 代理
 
 ABM 获取元数据、封面和 Audible 页面时怎么连上互联网。
 
@@ -31,7 +31,7 @@ ABM 获取元数据、封面和 Audible 页面时怎么连上互联网。
 | Bypass Addresses | `localhost,127.0.0.1` | 不走代理的主机 |
 | Test Connection | | 检查代理 |
 
-页面还会显示外部服务看到的你的出口 IP。下个版本会加入内置的 WireGuard 隧道，以及一个明确的连接选择（none、direct、proxy、WireGuard，或者你自己的 VPN 容器），内置元数据源需要先做这个选择。线路断了会直接阻断流量，而不是退回到用你自己的地址。备份导出和局域网目标总是直连。
+这一部分还会显示外部服务看到的你的出站 IP。包括内置 VPN 在内的连接选择，计划在后续版本中提供。
 
 ## 日志（Logging）
 

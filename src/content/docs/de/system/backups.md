@@ -13,7 +13,7 @@ Ein verschlüsseltes Archiv mit einer konsistenten Kopie der Datenbank (`databas
 
 Wähl eins aus der Liste oder lade eine Backup-Datei hoch (bis 500 MiB). Vorher wird eine Kopie der laufenden Datenbank gespeichert. Eine Wiederherstellung lässt sich nicht rückgängig machen.
 
-Standardmäßig bringt eine Wiederherstellung die **Sicherheitseinstellungen** (Authentifizierungsmodus, Zugangsdaten, vertrauenswürdige Netze) und die **ausgehende Verbindung** nicht zurück. Deine aktuellen bleiben erhalten, und das Ergebnis sagt das auch. Setz beim Upload das Häkchen für die Opt-in-Option, um sie mit wiederherzustellen. So kann ein hochgeladenes Archiv die Anmeldung nie einfach dadurch abschalten, dass es wiederhergestellt wird.
+Standardmäßig stellt eine Wiederherstellung die **Security-Einstellungen** (Authentifizierungsmodus, Zugangsdaten, vertrauenswürdige Netzwerke) nicht wieder her. Deine aktuellen bleiben erhalten, und das Ergebnis sagt es. Die Seite hat dafür keinen Schalter. Nur ein API-Aufruf an `restore-upload` mit `restore_security_settings=true` bringt sie zurück, damit ein hochgeladenes Archiv die Anmeldung nie allein durch das Wiederherstellen abschalten kann.
 
 Wurde das Backup mit einer älteren Version erstellt, starte den Container nach der Wiederherstellung neu, damit die Migration läuft.
 

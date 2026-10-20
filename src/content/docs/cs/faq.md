@@ -41,7 +41,7 @@ Ne. Tahle data pocházejí ze zdroje metadat a ABM je ručně neupravuje. Pod ko
 
 ## Umí ABM zapsat kapitoly, popisy a tagy tam, kde je Audiobookshelf čte?
 
-Zapisuje `cover.jpg`, `.opf`, `desc.txt` a `reader.txt` a umí zapsat tagy přímo do zvuku. Porovnání kapitol s vydanou edicí a soubory `.cue` přijdou v příští verzi. Viz [Doprovodné soubory](/cs/using/sidecars/).
+Zapisuje `cover.jpg`, soubor `.opf`, `desc.txt` a `reader.txt` a umí zapisovat značky do zvuku. Porovnávání kapitol s vydanou edicí a soubory `.cue` jsou plánované na pozdější verzi. Viz [Sidecar soubory](/cs/using/sidecars/).
 
 ## Můžu své soubory převádět?
 

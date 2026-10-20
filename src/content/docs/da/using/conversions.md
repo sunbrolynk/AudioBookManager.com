@@ -30,10 +30,6 @@ Fejler placeringen af resultatet (fx fordi biblioteksmappen er fuld), fejler job
 
 ## Pause og genoptag
 
-:::caution[Kommer i næste udgivelse]
-Pause er ikke med i en udgivet version endnu.
-:::
-
 To slags pause, og ingen af dem annullerer noget:
 
 - **Pause** på et kørende job sætter dets ffmpeg-processer i bero, hvor de er. Genoptag fortsætter fra samme sted.
@@ -47,6 +43,6 @@ Kender du Sonarr: der er intet lignende i arr-apps'ene. Tænk på det som en lil
 
 ## Faldgruber
 
-- Concurrent Conversions gange Threads Per Job bør ikke overstige antallet af kerner i din CPU.
+- Concurrent Conversions gange Threads Per Job bør ikke overstige antallet af kerner i din CPU. Med Auto deler ABM de ledige kerner mellem de job, der kører samtidig, for dig.
 - En konverteret fil har en ny størrelse og ændringstid, så Audiobookshelf scanner den igen.
 - Konverterer du en fil, der er hardlinket til en torrent, som seeder, bliver der lavet en ny fil. Den seedende kopi beholder de gamle bytes.

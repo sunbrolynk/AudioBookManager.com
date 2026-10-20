@@ -31,7 +31,7 @@ En proxy som ikke sender videresendingsheadere, ser ut som en lokal klient. Kjø
 
 ## Bekreftelse med passord
 
-Noen endringer ber om det nåværende passordet ditt igjen: lagring av Security-innstillinger, visning eller ny generering av API-nøkkelen, og lagring eller sletting av en WireGuard-konfigurasjon. Feil passord teller som en mislykket innlogging i sikkerhetsloggen. Er det ikke satt noe passord ennå, blir du ikke spurt.
+Noen endringer spør om det nåværende passordet ditt igjen: å lagre Security-innstillingene og å vise eller lage en ny API-nøkkel. Et feil passord teller som en mislykket pålogging i sikkerhetsloggen. Er det ikke satt noe passord ennå, spørres det ikke om noe.
 
 ## API-nøkkel
 

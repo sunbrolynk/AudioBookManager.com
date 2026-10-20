@@ -9,9 +9,9 @@ Da qualsiasi pagina puoi aggiungere un libro alla libreria. Recommended usa gene
 
 ## Tenerlo aggiornato
 
-Pianificazioni e limiti degli aggiornamenti stanno nelle [impostazioni di Discover](/it/settings/discover/). Se un catalogo è vuoto, la pagina può aggiornarlo per te appena la fonte dei metadati è raggiungibile.
+Pianificazioni e limiti di aggiornamento stanno nelle [impostazioni di Discover](/it/settings/discover/). Se un catalogo è vuoto, la pagina può aggiornarlo per te quando Libex è raggiungibile.
 
 ## Da tenere presente
 
-- I cataloghi dipendono dalla fonte dei metadati. Se non è raggiungibile o non hai scelto una connessione in uscita, gli aggiornamenti vengono saltati e il log dice perché.
+- I cataloghi dipendono da Libex. Se è irraggiungibile, gli aggiornamenti vengono saltati e il log dice perché.
 - Discover mostra quello che elenca Audible. Non dice niente su cosa hanno i tuoi indexer.

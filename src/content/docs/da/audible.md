@@ -19,10 +19,6 @@ Siden **Audible Library** viser alt, der er synkroniseret. Filtrér den efter Al
 
 ## Spejl Audible-biblioteket til ABM
 
-:::caution[Kommer i næste udgivelse]
-Det her er ikke med i en udgivet version endnu.
-:::
-
 Spejling får dit ABM-bibliotek til at følge dit Audible-bibliotek.
 
 - Det er slået til som standard.

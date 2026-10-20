@@ -53,8 +53,8 @@ Hardlink ist nicht dasselbe wie **Use Hardlinks instead of Copy**. Das ist für 
 | Enable Recycling Bin | an | Gelöschte Buchdateien wandern in einen Papierkorb, statt gelöscht zu werden |
 | Recycling Bin | leer | Wo der Papierkorb liegt. Leer heißt, ABMs Standard wird genutzt (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (Tage) | 0 schaltet das automatische Aufräumen ab |
-| Library Scan Interval | 0 (aus) | Stunden zwischen automatischen Scans |
-| Watch for Changes | aus | Scannt, wenn Dateien hinzugefügt, entfernt oder geändert werden |
+| Library Scan Interval | 24 | Stunden zwischen automatischen Scans |
+| Watch for Changes | an | Scannt, wenn Dateien hinzugefügt, entfernt oder geändert werden |
 | Cover Cache Workers | 4 | Wie viele Cover beim Zwischenspeichern von Artwork gleichzeitig heruntergeladen werden, von 1 bis 16 |
 
 ## Qualitäts-Upgrades (Quality Upgrades)

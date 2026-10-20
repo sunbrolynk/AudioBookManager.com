@@ -23,9 +23,9 @@ Podłączenie konta wymaga **Marketplace**, **Display Name** i **Redirect URL**,
 
 | Ustawienie | Domyślnie | Działanie |
 |---|---|---|
-| Auto Add to Library | wł. | Gdy pobierasz tytuł z Audible, którego jeszcze nie ma w ABM, ABM najpierw dodaje go do biblioteki. Przy wyłączonym takie pobieranie jest odrzucane. W następnym wydaniu zastąpi to [odzwierciedlanie biblioteki Audible w ABM](/pl/audible/#odzwierciedlanie-biblioteki-audible-w-abm-mirror) |
+| Mirror Audible library to ABM | wł. | Każda synchronizacja dodaje książki z Audible, których jeszcze nie ma w ABM, i pobiera te bez plików, do 25 na synchronizację. Po włączeniu widzisz, ile książek doda i pobierze następna synchronizacja. Zobacz [odzwierciedlanie biblioteki Audible w ABM](/pl/audible/#odzwierciedlanie-biblioteki-audible-w-abm-mirror) |
 | Concurrent Downloads | 2 | Od 1 do 5. Więcej to szybciej, ale można wpaść na limity zapytań Audible. |
-| Preferred Quality | High Quality | High, Normal albo Low |
+| Preferred Quality | High | High lub Normal |
 | Delete Encrypted Files | wł. | Usuwa zaszyfrowany plik AAXC po odszyfrowaniu do M4B |
 | Temp Download Path | puste | Puste oznacza systemowy folder tymczasowy |
 

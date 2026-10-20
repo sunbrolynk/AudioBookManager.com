@@ -46,9 +46,5 @@ Asetukset ovat ryhmitelty lista: Library, Sources ja App. Jokainen rivi on linkk
 
 ## Tuontityöpöytä (Import Workbench)
 
-:::caution[Tulossa seuraavaan julkaisuun]
-Import Workbenchin puhelinasettelu ei ole vielä missään julkaistussa versiossa.
-:::
-
 - Yhteenvetokortti näyttää, montako kansiota on valmiina. Napauta sitä avataksesi selitteen ja suodattaaksesi listan.
 - Alapalkki näyttää valittujen määrän ja Add-painikkeen, ja kertoo, miksi lisäys on estetty.

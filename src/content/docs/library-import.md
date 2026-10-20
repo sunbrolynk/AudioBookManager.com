@@ -28,9 +28,13 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 
 ## Joining, splitting and adding
 
-- Join rows that are one book split across folders. Split them again from the folder details.
+- Join rows that are one book split across folders. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
+- On a phone, hold a row for about half a second to start joining. A "Hold to join" hint sits on the first row until you dismiss it or open a row, and it doesn't come back. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest are matched as. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
+- On a phone, a folder's details have **Split into separate books** when the folder holds several files.
 - Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision".
-- Anything that would remove or replace files asks first.
+- Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
+- A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
+- On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
 - Leaving the page saves your pending edits.
 
 ## Copy, move or hardlink
@@ -49,7 +53,9 @@ A narrator, title or path cut off with an ellipsis opens in full when you tap or
 
 ## Answers other than import
 
-A row can also be answered **keep library** (decline a copy of a book the library already has) or **remove empty** (decline a folder with no audio, which still holds artwork and sidecars). These clear only what the row owns. Anything holding audio is refused. Files go to the recycle bin when one is set, and the task log lists each path removed.
+A row can also be answered **Delete these files, keep the library copy** (decline a copy of a book the library already has) or **Delete this folder and its contents** (decline a folder with no audio, which still holds artwork and sidecars). Both ask first with a "Delete these files?" dialog listing what goes, and the first has a Keep importing button to back out.
+
+They clear only what the row stands for, plus any subfolder under it with no audio, and leave every other book's folder alone. A row for a single file removes that file and the files that share its name exactly, and a loose file's row imports only files named exactly like it, so `Book.mp3` doesn't pull in `Book.part2.mp3`. Deleting a folder with no audio is refused if anything the row owns turns out to hold audio. A subfolder ABM can't read is never guessed at: the row fails, naming the folder, and nothing is removed. A row also fails if any of its files are still there afterwards. Files go to the recycle bin when one is set, and the task log lists each path removed (the first 50 per row, then a count) and each subfolder left alone with the reason.
 
 ## Cover and extra files per folder
 

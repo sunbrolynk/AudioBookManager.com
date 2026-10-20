@@ -25,7 +25,7 @@ Met het bewerkdialoogvenster pas je volgen, het kwaliteitsprofiel, het pad en ta
 
 ## Sidecars die je speler leest
 
-ABM schrijft `cover.jpg`, een `.opf`, `desc.txt` en `reader.txt` naast de audio, en in de volgende release een `.cue`-hoofdstukbestand. Audiobookshelf leest de OPF, de cover en de tekstbestanden, dus wat je in ABM kiest, is wat de speler laat zien. Zie [Sidecarbestanden](/nl/using/sidecars/).
+ABM schrijft `cover.jpg`, een `.opf`, `desc.txt` en `reader.txt` naast de audio. Audiobookshelf leest de OPF, de cover en de tekstbestanden, dus de speler toont wat je in ABM hebt gekozen. Zie [Sidecar-bestanden](/nl/using/sidecars/).
 
 ## Tags in de audio
 
@@ -33,7 +33,7 @@ ABM kan titel, artiest, albumartiest, album, genre, jaar, commentaar, verteller 
 
 ## Hoofdstukken
 
-ABM vergelijkt de hoofdstukken in je bestanden met die van de gepubliceerde editie, en kan de gepubliceerde hoofdstukken in de bestanden schrijven zonder opnieuw te encoderen. Het weigert als de lengte van je audio laat zien dat het een andere editie is. Zie [Hoofdstukken](/nl/using/chapters/). Komt in de volgende release.
+De hoofdstukken in je bestanden vergelijken met die van de gepubliceerde uitgave, en de gepubliceerde hoofdstukken in de bestanden schrijven, staat gepland voor een latere release. Zie [Hoofdstukken](/nl/using/chapters/).
 
 ## Serie en positie
 
@@ -47,8 +47,8 @@ Tags zijn van jou. Automatische tags zetten ze op basis van regels (genre, verte
 
 Alles wat ABM over een boek leert, blijft in ABM's eigen SQLite-database in `/config`, ook van boeken die je later weghaalt. Maak een back-up van die map en het archief zit erin. Zodra een boek erin staat, is de metadata niet meer afhankelijk van de bereikbaarheid van de bron.
 
-:::caution[Komt in de volgende release]
-Er staat een aparte **Local Metadata Library** op de planning: een kopie, als je ervoor kiest, van alles wat ABM ooit heeft opgezocht, die blijft bestaan als een boek je bibliotheek verlaat, met eigen geplande back-ups en een SQLite-download. De sectie hiervoor op de Metadata-pagina zit in het nog niet samengevoegde werk en is gemarkeerd als preview, nog niet aangesloten.
+:::caution[Komt in een latere release]
+Een aparte **Local Metadata Library** staat gepland: een optionele kopie van alles wat ABM ooit heeft opgezocht, bewaard ook als een boek je bibliotheek verlaat, met eigen geplande back-ups en een SQLite-download.
 :::
 
 ## Schema's voor vernieuwen

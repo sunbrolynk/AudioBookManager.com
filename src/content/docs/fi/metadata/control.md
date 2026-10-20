@@ -25,7 +25,7 @@ Muokkausikkuna muuttaa seurantaa, laatuprofiilia, polkua ja tageja, ja sillä vo
 
 ## Sivutiedostot, joita soittimesi lukee
 
-ABM kirjoittaa äänen viereen tiedostot `cover.jpg`, `.opf`, `desc.txt` ja `reader.txt`, ja seuraavassa julkaisussa myös `.cue`-kappaletaulukon. Audiobookshelf lukee OPF:n, kansikuvan ja tekstitiedostot, joten se, minkä valitsit ABM:ssä, on se, minkä soitin näyttää. Katso [Sivutiedostot](/fi/using/sidecars/).
+ABM kirjoittaa `cover.jpg`-, `.opf`-, `desc.txt`- ja `reader.txt`-tiedostot äänen viereen. Audiobookshelf lukee OPF:n, kansikuvan ja tekstitiedostot, joten soitin näyttää sen, minkä valitsit ABM:ssä. Katso [Sidecar-tiedostot](/fi/using/sidecars/).
 
 ## Ääneen kirjoitettavat tagit
 
@@ -33,7 +33,7 @@ ABM voi kirjoittaa nimen, esittäjän, albumin esittäjän, albumin, lajityypin,
 
 ## Kappaleet
 
-ABM vertaa tiedostoihisi upotettuja kappaleita julkaistun painoksen kappaleisiin ja voi kirjoittaa julkaistut kappaleet tiedostoihin koodaamatta niitä uudelleen. Se kieltäytyy, jos äänen pituus osoittaa, että kyse on eri painoksesta. Katso [Kappaleet](/fi/using/chapters/). Tulossa seuraavassa julkaisussa.
+Tiedostoihisi upotettujen lukujen vertaaminen julkaistun painoksen lukuihin ja julkaistujen lukujen kirjoittaminen tiedostoihin on suunniteltu myöhempään julkaisuun. Katso [Luvut](/fi/using/chapters/).
 
 ## Sarja ja sijainti
 
@@ -47,8 +47,8 @@ Tagit ovat sinun. Automaattiset tagit lisäävät niitä sääntöjen perusteell
 
 Kaikki, mitä ABM saa kirjasta selville, jää ABM:n omaan SQLite-tietokantaan kansioon `/config`, myös myöhemmin poistamasi kirjat. Varmuuskopioi se kansio, niin tiedot on varmuuskopioitu. Kun kirja on kerran sisällä, metatiedot eivät riipu siitä, saadaanko lähteeseen yhteys.
 
-:::caution[Tulossa seuraavaan julkaisuun]
-Suunnitteilla on erillinen **Local Metadata Library**: vapaaehtoinen kopio kaikesta, mitä ABM on koskaan hakenut, säilytettynä silloinkin, kun kirja lähtee kirjastostasi, omine ajastettuine varmuuskopioineen ja SQLite-latauksineen. Metadata-sivun osio sitä varten on mukana vielä yhdistämättömässä työssä ja merkitty esikatseluksi, eikä sitä ole vielä kytketty.
+:::caution[Tulossa myöhempään julkaisuun]
+Oma **Local Metadata Library** on suunnitteilla: valinnainen kopio kaikesta, mitä ABM on koskaan hakenut, säilytettynä vaikka kirja poistuisi kirjastostasi, omilla ajastetuilla varmuuskopioilla ja SQLite-latauksella.
 :::
 
 ## Päivitysten ajastukset

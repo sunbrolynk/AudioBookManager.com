@@ -46,9 +46,5 @@ Settings es una lista agrupada: Library, Sources y App. Cada fila es un enlace c
 
 ## Banco de importación (Import Workbench)
 
-:::caution[Llega en la próxima versión]
-La vista para móvil del Import Workbench todavía no está en ninguna versión publicada.
-:::
-
 - Una tarjeta de resumen muestra cuántas carpetas están listas. Tócala para abrir la leyenda y filtrar la lista.
 - La barra inferior muestra cuántas hay seleccionadas y el botón Add, y te dice por qué Add está bloqueado.

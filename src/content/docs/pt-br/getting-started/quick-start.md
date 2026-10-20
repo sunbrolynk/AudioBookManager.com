@@ -11,7 +11,7 @@ Na primeira visita, o ABM te guia na criação de um login. Até você fazer iss
 
 ## 2. Escolha como o ABM chega à internet
 
-Em **Settings > General** tem uma seção **Proxy & VPN**. Se você pretende usar a fonte de metadados embutida, primeiro precisa escolher uma conexão. Veja [Escolhendo uma fonte de metadados](/pt-br/metadata/choosing-a-source/).
+Em **Settings > General** tem uma seção **Proxy**. Configure um proxy ali se o ABM precisar passar por um para chegar à internet. Se o ABM sai direto para a internet, pule isso.
 
 ## 3. Adicione uma pasta raiz
 

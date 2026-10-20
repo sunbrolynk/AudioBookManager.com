@@ -46,9 +46,5 @@ Settings är en grupperad lista: Library, Sources och App. Varje rad är en län
 
 ## Importverkstaden (Import Workbench)
 
-:::caution[Kommer i nästa version]
-Mobillayouten för Import Workbench finns inte i någon släppt version än.
-:::
-
 - Ett sammanfattningskort visar hur många mappar som är redo. Tryck på det för att öppna förklaringen och filtrera listan.
 - Bottenfältet visar hur många som är markerade och knappen Add, och säger varför Add är blockerad.

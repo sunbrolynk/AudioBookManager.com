@@ -3,7 +3,7 @@ title: Capítulos
 description: Compara los capítulos incrustados de un libro con Libex y corrígelos.
 ---
 
-:::caution[Llega en la próxima versión]
+:::caution[Llega en una versión posterior]
 Todo lo de esta página, salvo los valores por defecto de las conversiones, todavía no está en ninguna versión publicada.
 :::
 

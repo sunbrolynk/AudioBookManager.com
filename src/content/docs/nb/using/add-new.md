@@ -11,11 +11,7 @@ En bok du legger til, blir **Wanted** i rotmappen og kvalitetsprofilen du valgte
 
 ## Søk etter forfatter og serie
 
-:::caution[Kommer i neste versjon]
-Søkemodusene Author og Series er ikke med i en utgitt versjon ennå.
-:::
-
-Søket får to moduser som finner selve forfatterne og seriene. De eldre bokmodusene får nye navn: "Books by author" og "Books in series". Legger du til en forfatter eller serie, bygges katalogen, og bøkene legges til som ønsket ut fra **Monitor**:
+Søket har moduser for Title, Author, Series, Books by author, Books in series og ASIN. Author og Series finner forfattere og serier selv; Books by author og Books in series finner bøker. Når du legger til en forfatter eller serie, bygges katalogen opp, og bøkene legges til som ønsket etter **Monitor**:
 
 | Monitor | Legger til |
 |---|---|

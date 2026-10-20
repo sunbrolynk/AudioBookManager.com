@@ -9,9 +9,9 @@ Z każdej strony możesz dodać książkę do biblioteki. Recommended przy każd
 
 ## Aktualność
 
-Harmonogramy odświeżania i limity są w [ustawieniach Discover](/pl/settings/discover/). Jeśli katalog jest pusty, strona może go odświeżyć za ciebie, gdy tylko źródło metadanych będzie osiągalne.
+Harmonogramy i limity odświeżania są w [ustawieniach Discover](/pl/settings/discover/). Jeśli katalog jest pusty, strona może go dla ciebie odświeżyć, gdy tylko Libex będzie osiągalny.
 
 ## Pułapki
 
-- Katalogi zależą od źródła metadanych. Jeśli jest nieosiągalne albo nie wybrano połączenia wychodzącego, odświeżenia są pomijane, a log mówi dlaczego.
+- Katalogi zależą od Libexa. Gdy jest nieosiągalny, odświeżanie jest pomijane, a log mówi dlaczego.
 - Discover pokazuje to, co wystawia Audible. Nie mówi nic o tym, co mają twoje indeksery.

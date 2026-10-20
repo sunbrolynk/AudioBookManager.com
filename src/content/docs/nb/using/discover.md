@@ -9,9 +9,9 @@ Fra hvilken som helst av sidene kan du legge en bok til i biblioteket. Recommend
 
 ## Holde det ferskt
 
-Tidsplaner og grenser for oppdatering ligger i [Discover-innstillinger](/nb/settings/discover/). Er en katalog tom, kan siden oppdatere den for deg så snart metadatakilden kan nås.
+Oppdateringsplaner og grenser finner du i [Discover-innstillingene](/nb/settings/discover/). Er en katalog tom, kan siden oppdatere den for deg når Libex kan nås.
 
 ## Fallgruver
 
-- Katalogene er avhengige av metadatakilden. Kan den ikke nås, eller er det ikke valgt noen utgående tilkobling, hoppes oppdateringer over, og loggen sier hvorfor.
+- Katalogene avhenger av Libex. Kan det ikke nås, hoppes oppdateringer over, og loggen sier hvorfor.
 - Discover viser det Audible lister opp. Den sier ingenting om hva indeksererne dine har.

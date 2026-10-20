@@ -3,7 +3,7 @@ title: Capitoli
 description: Confronta i capitoli incorporati di un libro con Libex e sistemali.
 ---
 
-:::caution[In arrivo nella prossima release]
+:::caution[In arrivo in una release successiva]
 Tutto quello che c'è in questa pagina, tranne i valori predefiniti delle conversioni, non è ancora in una versione rilasciata.
 :::
 

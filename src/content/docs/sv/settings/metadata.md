@@ -28,11 +28,9 @@ Använder ffmpeg för att skriva taggar direkt i ljudet.
 
 Taggfält, alla på som standard: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) och Cover Art.
 
-## Kommer i nästa version
+## Kommer i en senare version
 
-Sidan delas upp i sektioner och får en sektion **Source** med valet **Metadata Source**, **Test** och **Status**. Se [Välja metadatakälla](/sv/metadata/choosing-a-source/).
-
-Den får också en sektion **Local Metadata Library** (som du väljer att slå på, visas som en förhandsvisning som inte är inkopplad än) med nedladdning av biblioteket som SQLite och egna schemalagda säkerhetskopior. Säkerhetskopiorna speglar alternativen för säkerhetskopior i General och är som standard veckovis kl. 04:00, sparade i 28 dagar.
+Ett val av metadatakälla och en lokal kopia av metadatabiblioteket är planerade till en senare version. Se [Din metadata, din kontroll](/sv/metadata/control/).
 
 ## Fallgropar
 

@@ -11,7 +11,7 @@ Første gang du åpner den, blir du guidet gjennom å lage en innlogging. Til du
 
 ## 2. Velg hvordan ABM kommer seg ut på internett
 
-Under **Settings > General** finner du en **Proxy & VPN**-seksjon. Skal du bruke den innebygde metadatakilden, må du velge en tilkobling først. Se [Velge metadatakilde](/nb/metadata/choosing-a-source/).
+Under **Settings > General** finner du en **Proxy**-seksjon. Sett opp en proxy der hvis ABM må gå gjennom en for å nå internett. Når ABM kommer rett ut på nettet, kan du hoppe over dette.
 
 ## 3. Legg til en rotmappe
 

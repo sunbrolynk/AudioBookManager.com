@@ -11,11 +11,7 @@ description: 책을 검색해서 Wanted로 추가해요.
 
 ## 작가와 시리즈 검색
 
-:::caution[다음 릴리스에서 추가돼요]
-Author와 Series 검색 모드는 아직 정식 버전에 없어요.
-:::
-
-검색에 작가와 시리즈 자체를 찾는 모드 두 개가 생겨요. 기존 책 검색 모드는 "Books by author"와 "Books in series"로 이름이 바뀌어요. 작가나 시리즈를 추가하면 카탈로그를 만들고, **Monitor** 값에 따라 책을 Wanted로 추가해요:
+검색에는 Title, Author, Series, Books by author, Books in series, ASIN 모드가 있어요. Author와 Series는 저자와 시리즈 자체를 찾고, Books by author와 Books in series는 책을 찾아요. 저자나 시리즈를 추가하면 카탈로그가 만들어지고, **Monitor**에 따라 책이 원하는 책으로 추가돼요.
 
 | Monitor | 추가하는 것 |
 |---|---|

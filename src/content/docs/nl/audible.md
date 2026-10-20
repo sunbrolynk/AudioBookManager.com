@@ -19,10 +19,6 @@ De pagina **Audible Library** toont alles wat gesynchroniseerd is. Je kunt filte
 
 ## Audible-bibliotheek spiegelen naar ABM
 
-:::caution[Komt in de volgende release]
-Dit zit nog niet in een uitgebrachte versie.
-:::
-
 Met spiegelen volgt je ABM-bibliotheek je Audible-bibliotheek.
 
 - Het staat standaard aan.

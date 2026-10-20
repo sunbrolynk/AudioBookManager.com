@@ -28,11 +28,9 @@ Gebruikt ffmpeg om tags in de audio zelf te schrijven.
 
 Tagvelden, standaard allemaal aan: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) en Cover Art.
 
-## Komt in de volgende release
+## Komt in een latere release
 
-De pagina wordt in secties ingedeeld en krijgt een sectie **Source** met een keuze **Metadata Source**, **Test** en **Status**. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
-
-Er komt ook een sectie **Local Metadata Library** bij (optioneel, getoond als preview die nog niet aangesloten is) met een download van de bibliotheek als SQLite en eigen geplande back-ups. Die back-ups volgen de back-upopties uit General en staan standaard op wekelijks om 04:00, 28 dagen bewaard.
+Een keuze van metadatabron en een lokale kopie van de metadatabibliotheek staan gepland voor een latere release. Zie [Jouw metadata, jouw controle](/nl/metadata/control/).
 
 ## Valkuilen
 

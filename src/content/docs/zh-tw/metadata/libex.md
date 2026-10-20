@@ -7,6 +7,6 @@ ABM 從 **Libex** 取得書籍、作者、系列和章節資料。Libex 是一�
 
 Libex: [原始碼](https://github.com/LibexHQ/Libex) · [API 參考](https://libexdb.com/redoc)
 
-已發行的版本預設會向 libexdb.com 上的公開 Libex 執行個體查詢。下一個版本會加入來源選擇。請看〈[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)〉。
+ABM 向 libexdb.com 上的公開 Libex 執行個體查詢。資料來源的選擇預計在後續版本提供。
 
 連不到 Libex 時，ABM 會告訴你，並指出是哪個來源。你還是可以手動新增和匯入書。請看〈[疑難排解](/zh-tw/troubleshooting/#中繼資料來源無法使用)〉。

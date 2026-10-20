@@ -46,13 +46,14 @@ Content-Security-Policy-headeren tillater bare coverbilder over HTTPS. Sjekk net
 
 ## Metadatakilden er utilgjengelig
 
-Å legge til, søke, oppdatere og Discover trenger metadatakilden. Meldingen oppgir den, for eksempel "The metadata source is unavailable". Årsaker: kilden er nede eller begrenser antall forespørsler, eller den utgående tilkoblingen din blokkerer den.
+Å legge til, søke, oppdatere og Discover trenger Libex. Får ikke ABM svar, feiler et boksøk med "Libex search failed" og et søk etter forfattere eller serier med "Libex could not be reached; try again shortly", i stedet for å vise en tom liste. Årsaker: Libex er nede, eller ABMs tilkobling når det ikke.
 
-1. Sjekk **Settings > General > Proxy & VPN**, og at ruta er oppe.
-2. Prøv igjen etter et minutt. En kilde som begrenser forespørsler, svarer 503 med et hint om å prøve igjen om 30 sekunder.
-3. Du kan fortsatt legge til og importere bøker for hånd i mellomtiden.
+1. Sjekk [ABMs statusside](https://status.audiobookmanager.com) og [Libex sin statusside](https://status.libexdb.com) for å se om det er nede for alle.
+2. Sjekk at containeren kommer ut på internett, og at proxyen under **Settings > General > Proxy** stemmer, hvis du bruker en.
+3. Prøv igjen etter et minutt.
+4. I mellomtiden kan du fortsatt legge til og importere bøker for hånd.
 
-Bakgrunnsoppgaver som treffer et brudd, feiler med grunnen og sender ett varsel per brudd.
+En bakgrunnsoppgave som treffer et avbrudd, feiler med årsaken. Den prøves på nytt av seg selv, opptil seks ganger eller i seks timer, avhengig av hva som kommer først.
 
 ## En oppdatering endret detaljene til en bok
 
@@ -72,7 +73,7 @@ Legg til en remote path mapping, eller sørg for at ABM og klienten ser mappen p
 
 ## Docker når ikke metadatakilden eller indeksererne
 
-Sjekk DNS og innstillingen for utgående tilkobling før alt annet. I Docker virker en direkte tilkobling bare hvis containeren kommer seg ut på internett.
+Sjekk DNS og proxy-innstillingen først. I Docker når ABM bare Libex og indekserne dine hvis containeren kommer ut på internett.
 
 ## Står du fortsatt fast?
 

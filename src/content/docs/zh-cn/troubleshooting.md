@@ -46,13 +46,14 @@ Content-Security-Policy 响应头只允许 HTTPS 的封面图片。到浏览器�
 
 ## 元数据源不可用
 
-添加、搜索、刷新和 Discover 都依赖元数据源。提示信息会写出它的名字，比如“The metadata source is unavailable”。原因可能是：元数据源宕机或者在限流，或者你的出站连接把它挡住了。
+添加、搜索、刷新和 Discover 都需要 Libex。ABM 得不到响应时，书籍搜索会以 "Libex search failed" 失败，作者或系列搜索会以 "Libex could not be reached; try again shortly" 失败，而不是显示空列表。原因：Libex 宕机了，或者 ABM 的连接够不到它。
 
-1. 检查 **Settings > General > Proxy & VPN**，确认线路是通的。
-2. 过一分钟再试。被限流的元数据源会返回 503，并提示 30 秒后重试。
-3. 这段时间里你仍然可以手动添加和导入书。
+1. 看看 [ABM 状态页](https://status.audiobookmanager.com)和 [Libex 状态页](https://status.libexdb.com)，确认是不是对所有人都宕机了。
+2. 检查容器能不能上网；如果你用了代理，检查 **Settings > General > Proxy** 里的设置对不对。
+3. 过一分钟再试。
+4. 这期间你仍然可以手动添加和导入书籍。
 
-遇到中断的后台任务会带着原因失败，每次中断只发一条通知。
+遇到宕机的后台任务会带着原因失败。它会自动重试，最多六次或六小时，以先到的为准。
 
 ## 刷新改掉了一本书的详情
 
@@ -72,7 +73,7 @@ Content-Security-Policy 响应头只允许 HTTPS 的封面图片。到浏览器�
 
 ## Docker 连不上元数据源或索引器
 
-先检查 DNS 和出站连接设置。在 Docker 里，直连只有在容器本身能上网时才有效。
+先检查 DNS 和代理设置。在 Docker 里，只有容器能上网，ABM 才够得到 Libex 和你的索引器。
 
 ## 还是没解决
 

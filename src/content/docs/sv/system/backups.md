@@ -13,7 +13,7 @@ Ett krypterat arkiv med en konsekvent kopia av databasen (`database.db`), instä
 
 Välj en i listan, eller ladda upp en säkerhetskopia (upp till 500 MiB). En kopia av den aktiva databasen sparas först. En återställning går inte att ångra.
 
-Som standard tar en återställning inte tillbaka **säkerhetsinställningar** (autentiseringsläge, inloggningsuppgifter, betrodda nätverk) eller den **utgående anslutningen**. Dina nuvarande behålls och resultatet säger det. Kryssa i rutan vid uppladdningen om du vill återställa dem också. Det betyder att ett uppladdat arkiv aldrig kan stänga av inloggningen bara genom att återställas.
+Som standard återställer en återställning inte **säkerhetsinställningarna** (autentiseringsläge, inloggningsuppgifter, betrodda nätverk). Dina nuvarande behålls och resultatet säger det. Sidan har ingen knapp för detta. Bara ett API-anrop till `restore-upload` med `restore_security_settings=true` tar tillbaka dem, så att ett uppladdat arkiv aldrig kan stänga av inloggningen bara genom att återställas.
 
 Om säkerhetskopian gjordes på en äldre version, starta om containern efter återställningen så att migreringen körs.
 

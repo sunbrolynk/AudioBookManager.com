@@ -13,7 +13,7 @@ Salattu arkisto, jossa on yhtenäinen kopio tietokannasta (`database.db`), asetu
 
 Valitse yksi listalta tai lataa varmuuskopiotiedosto (enintään 500 MiB). Käytössä olevasta tietokannasta tallennetaan ensin kopio. Palautusta ei voi perua.
 
-Oletuksena palautus ei tuo takaisin **tietoturva-asetuksia** (tunnistautumistila, tunnukset, luotetut verkot) eikä **ulospäin lähtevää yhteyttä**. Nykyiset säilytetään, ja tulos kertoo siitä. Rastita latauksen yhteydessä vapaaehtoinen valinta, jos haluat palauttaa nekin. Näin ladattu arkisto ei voi koskaan kytkeä kirjautumista pois pelkällä palautuksella.
+Oletuksena palautus ei palauta **tietoturva-asetuksia** (todennustila, tunnukset, luotetut verkot). Nykyiset säilyvät, ja tulos kertoo siitä. Sivulla ei ole tähän kytkintä. Vain API-kutsu kohteeseen `restore-upload` arvolla `restore_security_settings=true` palauttaa ne, joten ladattu arkisto ei koskaan voi kytkeä kirjautumista pois pelkällä palautuksella.
 
 Jos varmuuskopio on tehty vanhemmalla versiolla, käynnistä kontti uudelleen palautuksen jälkeen, jotta migraatio ajetaan.
 

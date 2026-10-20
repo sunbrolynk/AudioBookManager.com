@@ -23,9 +23,9 @@ Per collegare un account servono un **Marketplace**, un **Display Name** e il **
 
 | Impostazione | Predefinito | Effetto |
 |---|---|---|
-| Auto Add to Library | attivo | Quando scarichi un titolo Audible che non è ancora in ABM, ABM prima lo aggiunge alla libreria. Se è disattivo, quel download viene rifiutato. Nella prossima release diventa [Rispecchiare la libreria Audible in ABM](/it/audible/#rispecchiare-la-libreria-audible-in-abm) |
+| Mirror Audible library to ABM | attivo | Ogni sincronizzazione aggiunge i libri Audible che non sono ancora in ABM e scarica quelli senza file, fino a 25 per sincronizzazione. Quando lo attivi vedi quanti libri aggiungerà e scaricherà la prossima. Vedi [Rispecchiare la libreria Audible in ABM](/it/audible/#rispecchiare-la-libreria-audible-in-abm) |
 | Concurrent Downloads | 2 | Da 1 a 5. Più alto è più veloce e può far scattare i limiti di richieste di Audible. |
-| Preferred Quality | High Quality | High, Normal o Low |
+| Preferred Quality | High | High o Normal |
 | Delete Encrypted Files | attivo | Rimuove il file AAXC cifrato dopo averlo decifrato in M4B |
 | Temp Download Path | vuoto | Se è vuoto usa la cartella temporanea di sistema |
 

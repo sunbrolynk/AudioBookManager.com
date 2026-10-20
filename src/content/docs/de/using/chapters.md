@@ -3,7 +3,7 @@ title: Kapitel
 description: Die eingebetteten Kapitel eines Buchs mit Libex vergleichen und korrigieren.
 ---
 
-:::caution[Kommt mit dem nächsten Release]
+:::caution[Kommt in einem späteren Release]
 Bis auf die Konvertierungs-Standards ist nichts auf dieser Seite schon in einer veröffentlichten Version drin.
 :::
 

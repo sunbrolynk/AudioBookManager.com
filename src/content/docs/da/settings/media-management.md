@@ -53,8 +53,8 @@ Hardlink er ikke det samme som **Use Hardlinks instead of Copy**. Den er til dow
 | Enable Recycling Bin | til | Slettede bogfiler flyttes til en papirkurv i stedet for at blive slettet |
 | Recycling Bin | tom | Hvor papirkurven ligger. Tom bruger ABM's standard (`/config/recycle/media`) |
 | Recycling Bin Cleanup | 7 (dage) | 0 slår automatisk oprydning fra |
-| Library Scan Interval | 0 (fra) | Timer mellem automatiske scanninger |
-| Watch for Changes | fra | Scan, når filer bliver tilføjet, fjernet eller ændret |
+| Library Scan Interval | 24 | Timer mellem automatiske scanninger |
+| Watch for Changes | til | Scan, når filer bliver tilføjet, fjernet eller ændret |
 | Cover Cache Workers | 4 | Hvor mange covers der hentes ad gangen, når billeder bliver cachet, fra 1 til 16 |
 
 ## Kvalitetsopgraderinger (Quality Upgrades)

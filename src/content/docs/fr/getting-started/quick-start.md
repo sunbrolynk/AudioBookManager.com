@@ -11,7 +11,7 @@ C'est le chemin le plus court entre un conteneur qui tourne et un livre en cours
 
 ## 2. Choisis comment ABM accède à Internet
 
-Dans **Settings > General**, il y a une section **Proxy & VPN**. Si tu comptes utiliser la source de métadonnées intégrée, il faut d'abord choisir une connexion. Voir [Choisir une source de métadonnées](/fr/metadata/choosing-a-source/).
+Dans **Settings > General**, il y a une section **Proxy**. Règle-y un proxy si ABM doit en passer par un pour accéder à Internet. Si ABM accède directement à Internet, passe cette étape.
 
 ## 3. Ajoute un dossier racine
 

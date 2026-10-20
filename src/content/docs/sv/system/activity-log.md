@@ -27,11 +27,11 @@ En schemalagd körning som inte hade något att göra skriver ingenting. En uppr
 
 ## Lagringstid
 
-**Activity Log Retention** i General raderar poster efter 90 dagar som standard. 0 behåller dem. Loggfiler har sin egen lagringstid (30 dagar), så en länk från en post till en logg kan leva längre än loggen.
+**Activity Log Retention** i General raderar poster efter 90 dagar som standard. 0 behåller dem. Loggfiler har egen lagringstid (30 dagar).
 
 ## Visa logg (View log)
 
-:::caution[Kommer i nästa version]
+:::caution[Kommer i en senare version]
 Länkar till loggen från poster finns inte i någon släppt version än.
 :::
 

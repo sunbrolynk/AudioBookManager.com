@@ -11,11 +11,7 @@ Dodana książka staje się **Wanted** w wybranym przez ciebie folderze główny
 
 ## Wyszukiwanie autorów i serii
 
-:::caution[W następnym wydaniu]
-Trybów wyszukiwania Author i Series nie ma jeszcze w żadnej wydanej wersji.
-:::
-
-Wyszukiwanie dostaje dwa tryby, które znajdują samych autorów i same serie. Starsze tryby książek zmieniają nazwy na "Books by author" i "Books in series". Dodanie autora albo serii buduje jego katalog i dodaje książki jako poszukiwane zgodnie z **Monitor**:
+Wyszukiwanie ma tryby Title, Author, Series, Books by author, Books in series i ASIN. Author i Series znajdują samych autorów i serie, a Books by author i Books in series znajdują książki. Dodanie autora lub serii buduje jego katalog i dodaje książki jako poszukiwane zgodnie z **Monitor**:
 
 | Monitor | Co dodaje |
 |---|---|

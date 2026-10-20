@@ -11,11 +11,7 @@ Un libro aggiunto diventa **Wanted** nella cartella radice e nel profilo di qual
 
 ## Ricerca per autore e per serie
 
-:::caution[In arrivo nella prossima release]
-Le modalità di ricerca Author e Series non sono ancora in una versione rilasciata.
-:::
-
-La ricerca guadagna due modalità che trovano gli autori e le serie stessi. Le vecchie modalità per libri vengono rinominate in "Books by author" e "Books in series". Aggiungere un autore o una serie costruisce il suo catalogo e aggiunge i suoi libri come wanted secondo **Monitor**:
+La ricerca ha modalità per Title, Author, Series, Books by author, Books in series e ASIN. Author e Series trovano autori e serie in sé; Books by author e Books in series trovano libri. Aggiungere un autore o una serie costruisce il suo catalogo e aggiunge i suoi libri come cercati in base a **Monitor**:
 
 | Monitor | Aggiunge |
 |---|---|

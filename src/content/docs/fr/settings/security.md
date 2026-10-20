@@ -31,7 +31,7 @@ Un proxy qui n'envoie aucun en-tête de transfert ressemble à un client local. 
 
 ## Confirmation du mot de passe
 
-Certains changements redemandent ton mot de passe actuel : enregistrer les réglages Security, afficher ou régénérer la clé d'API, et enregistrer ou supprimer une config WireGuard. Un mauvais mot de passe compte comme une connexion échouée dans le journal de sécurité. Si aucun mot de passe n'est encore défini, rien n'est demandé.
+Certaines modifications te redemandent ton mot de passe actuel : l'enregistrement des réglages Security, et l'affichage ou la régénération de la clé d'API. Un mauvais mot de passe compte comme une connexion échouée dans le journal de sécurité. Si aucun mot de passe n'est encore défini, aucun n'est demandé.
 
 ## Clé d'API
 

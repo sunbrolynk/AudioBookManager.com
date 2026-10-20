@@ -27,11 +27,11 @@ Une exécution planifiée qui n'a rien eu à faire n'écrit rien. La répétitio
 
 ## Conservation
 
-**Activity Log Retention**, dans General, supprime les entrées au bout de 90 jours par défaut. 0 les garde. Les fichiers journaux ont leur propre durée de conservation (30 jours), donc le lien d'une entrée vers un journal peut survivre au journal.
+**Activity Log Retention** dans General supprime les entrées au bout de 90 jours par défaut. 0 les garde. Les fichiers journaux ont leur propre rétention (30 jours).
 
 ## Voir le journal
 
-:::caution[Prévu pour la prochaine version]
+:::caution[Prévu pour une version ultérieure]
 Les liens « View log » depuis les entrées ne sont pas encore dans une version publiée.
 :::
 

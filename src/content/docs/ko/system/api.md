@@ -21,6 +21,6 @@ ABM에는 `/api` 아래에 REST API가 있어요. 인터랙티브 레퍼런스�
 
 ## 메타데이터 장애
 
-메타데이터 소스에 의존하는 라우트는 본문의 `code`에 503(`metadata_unavailable`), `Retry-After: 30`이 붙은 503(`metadata_declined`), 또는 502(`metadata_rejected`)로 응답해요. 일부 조회 라우트는 장애 중에도 빈 결과를 돌려줘요.
+Libex에서 응답을 받지 못한 도서 검색은 502와 "Libex search failed"를 돌려줘요. 저자나 시리즈 검색은 503과 "Libex could not be reached; try again shortly"를 돌려줘요. 일부 조회 경로는 장애 중에도 빈 결과를 돌려줘요.
 
 Sonarr를 써 봤다면: 이 API는 v3와 호환되지 않아요. Prowlarr는 Prowlarr 연결을 통해 인덱서를 ABM에 동기화할 수 있어요.
