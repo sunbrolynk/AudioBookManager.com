@@ -49,6 +49,6 @@ If you know Sonarr: there is nothing like this in the arrs. Think of it as a sma
 
 ## Gotchas
 
-- Concurrent Conversions times Threads Per Job should not exceed your CPU core count.
+- Concurrent Conversions times Threads Per Job should not exceed your CPU core count. On Auto, ABM splits the spare cores across the jobs running at once for you.
 - A converted file has a new size and modified time, so Audiobookshelf will rescan it.
 - Converting a file hardlinked to a seeding torrent creates a new file. The seeding copy keeps the old bytes.

@@ -37,7 +37,7 @@ Traefik and Caddy send forwarding headers by default. ABM uses a websocket for l
 
 - **Authentication Required: Enabled** makes everyone sign in. Safest if the proxy is public.
 - **Disabled for Local Addresses** skips sign-in for clients ABM sees as local. Through a trusted proxy that means the client the proxy names.
-- A proxy that sends no forwarding headers makes everything look local. Choose Enabled.
+- A proxy that sends no forwarding headers looks local at first. ABM notices, shows a Reverse Proxy warning on System > Status and makes that address sign in, but make the proxy send `X-Forwarded-For`, or choose Enabled.
 
 ## Sub-folder and domain
 

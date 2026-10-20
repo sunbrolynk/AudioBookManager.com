@@ -26,6 +26,6 @@ Importing puts each book in ABM's own Author/Series/Book layout under the defaul
 ## Gotchas
 
 - A book already in the library is shown as such. Decline the duplicate with the keep-library answer rather than importing it twice.
-- Declining a folder with no audio removes only what that row owns and goes to the recycle bin if enabled.
+- Answering a row with "Delete these files, keep the library copy" or "Delete this folder and its contents" removes only what that row stands for and goes to the recycle bin if enabled. Other books in the same parent folder are left alone.
 - An ASIN found in a description is a hint, not a match, unless the title also agrees.
 - After importing, refresh to pull in current metadata, and turn on sidecar writing if you want Audiobookshelf to see ABM's choices. See [Sidecar files](/using/sidecars/).
