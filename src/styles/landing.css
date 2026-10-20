@@ -29,6 +29,7 @@ section.alt { background: var(--r1-s1); }
 h2.big { font-size: 54px; margin: 10px 0 26px; }
 .lead { font-size: 20px; color: #d6d6d6; max-width: 48ch; }
 .lead p { margin: 0 0 16px; }
+.lead p.radio { margin-top: 28px; }
 
 .problem { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: start; }
 .trees { display: grid; gap: 14px; }
