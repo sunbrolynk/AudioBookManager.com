@@ -16,3 +16,10 @@
 /api-reference/*
   ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; script-src 'self' __SCRIPT_HASHES__; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests
+
+# The radio player streams audio from, and reads the now-playing feed of, the station host, and nothing
+# else on the site may. Scripts and styles stay hash-only, the same as everywhere else. The radio host
+# serves these pages from /radio/ (see functions/_middleware.js), so this is the policy it gets.
+/radio/*
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; script-src 'self' __SCRIPT_HASHES__; style-src 'self' 'unsafe-hashes' __STYLE_HASHES__; img-src 'self' data: https://stream.audiobookmanager.com; media-src https://stream.audiobookmanager.com; connect-src 'self' https://stream.audiobookmanager.com; font-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests

@@ -76,6 +76,37 @@ registered with Cloudflare and uses Cloudflare DNS, so Pages adds the record
 itself. If you add `www.audiobookmanager.com` too, send it to the apex with a
 redirect rule rather than serving the site twice.
 
+### The radio host
+
+`radio.audiobookmanager.com` is the same Pages project under a second custom
+domain. The station only allows that exact origin (CORS), so the player must be
+served from it. `functions/_middleware.js` answers on that host: `/` serves the
+built `/radio/` player and `/credits/` the built `/radio/credits/`. The built
+`/radio/...` addresses redirect there, from either host. Everything else passes
+through untouched, and `public/_routes.json` limits the function to those
+paths, so docs traffic never invokes it.
+
+1. Pages project → **Custom domains** → add `radio.audiobookmanager.com`. Pages
+   creates the DNS record itself, the same as for the apex.
+2. While the site is private, make sure the Access application covers only
+   `audiobookmanager.com`, not the radio host, or listeners hit a login.
+3. After the first deploy, check from a terminal that the radio host sends the
+   radio policy and not the main one:
+   `curl -sI https://radio.audiobookmanager.com/ | grep -i content-security`
+   must list `stream.audiobookmanager.com` under `media-src`. Then press play.
+
+`/radio/*` in `public/_headers` has its own Content-Security-Policy that allows
+media, images and `connect-src` to `stream.audiobookmanager.com` and nowhere
+else, and no other page gets that allowance. The stream host is a separate
+DNS-only record in front of AzuraCast; its CORS and rate limits live there.
+
+The credits come from the abm-radio catalog. `bash scripts/update-radio-credits.sh
+[ref]` runs that repo's `export_credits.py` (`ABM_RADIO_REPO`, default
+`~/abm-radio`, ref default `origin/dev`) and rewrites
+`src/data/radio-credits.json`. The credits page is built from that file and the
+player fetches it as `/radio/credits.json`, so a track missing from it still
+plays, with only its title and artist. Refresh it whenever tracks are approved.
+
 ### Access (only while the site is private)
 
 Before launch the site sits behind Cloudflare Access: Zero Trust → **Access →

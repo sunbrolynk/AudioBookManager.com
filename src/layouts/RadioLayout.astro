@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import '@fontsource-variable/cinzel/wght.css';
+import '@fontsource/spectral/400.css';
+import '@fontsource/spectral/400-italic.css';
+import '@fontsource/spectral/600.css';
+import '@fontsource/spectral/700.css';
+import '@fontsource-variable/jetbrains-mono';
+import '../styles/radio.css';
+import icon from '../assets/icon.png';
+
+interface Props { title: string; description: string; path: string; current?: 'credits' }
+const { title, description, path, current } = Astro.props;
+// The page lives at the root of radio.audiobookmanager.com, so its own links are relative and work there and on a preview URL.
+const home = path === '/' ? './' : '../';
+const credits = path === '/' ? 'credits/' : './';
+const site = 'https://audiobookmanager.com';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={`https://radio.audiobookmanager.com${path}`}>
+  <link rel="icon" href="/favicon.png">
+  <meta name="theme-color" content="#141519">
+  <script is:inline>
+    // Light or dark from the system, before first paint; ?theme=light|dark overrides it.
+    document.documentElement.dataset.theme = new URLSearchParams(location.search).get('theme')
+      || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  </script>
+</head>
+<body data-state="idle" data-feed="ok">
+  <header class="top">
+    <div class="w">
+      <a class="brand" href={home}><Image src={icon} alt="" width={30} height={30} />AudioBook Manager <b>Radio</b></a>
+      <nav aria-label="Main">
+        <a href={`${site}/installation/`} class="hide-s">Docs</a>
+        <a href={credits} aria-current={current === 'credits' ? 'page' : undefined}>Credits</a>
+        <a href="https://github.com/sunbrolynk/AudioBook-Manager" class="hide-s">GitHub</a>
+        <a href={credits} class="icb" aria-label="Credits and licences"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11h2v6h-2zM11 7h2v2h-2z"/></svg></a>
+      </nav>
+    </div>
+  </header>
+  <slot />
+  <footer class="foot"><p>No ads, no accounts, no tracking. Every track on air is openly licensed and credited. <a href={credits}>Credits</a> · <a href={site}>audiobookmanager.com</a></p></footer>
+  <slot name="after" />
+</body>
+</html>
