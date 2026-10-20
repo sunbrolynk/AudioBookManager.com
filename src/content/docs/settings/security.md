@@ -27,7 +27,14 @@ On a fresh install, requests are refused until setup finishes.
 
 Behind a proxy, set `TRUSTED_PROXIES` so ABM knows which forwarding headers to believe. A request that carries forwarding headers from an address not in that list is never local and must sign in. This is on purpose. See [Reverse proxy](/guides/reverse-proxy/).
 
-A proxy that sends no forwarding headers looks like a local client. If you run one, set Authentication Required to Enabled.
+A proxy that sends no forwarding headers looks like a local client, so ABM would let everyone behind it in. ABM catches this two ways:
+
+- A same-origin browser request whose origin isn't the address it reached ABM on marks that address as a proxy. It is remembered across restarts, per address (an IPv6 /64 counts as one), in a short list of recent addresses, and requests from it must sign in from then on.
+- A request addressed to a public name or IP makes just that one request sign in. It isn't remembered, so one stray request can't lock out everyone behind a shared Docker address. Names ending `.home`, `.box`, `.lan`, `.local`, `.internal`, `.localdomain` or `.home.arpa`, and ABM's own addresses, count as local.
+
+**System > Status** shows a Reverse Proxy warning with the fix (for a public name it stays for an hour), and **Settings > General > Security** has a **Detected Reverse Proxies** row where you can clear what was remembered after confirming your password. `/api/health` stays public, so the Docker healthcheck is unaffected. To fix it, add the proxy to `TRUSTED_PROXIES` and make it send `X-Forwarded-For`, or set Authentication Required to Enabled.
+
+An address in `TRUSTED_PROXIES` that sends no `X-Forwarded-For` or `X-Real-IP` is not treated as local. If you put `127.0.0.1` there and also open ABM directly on the host, that direct visit asks you to sign in.
 
 ## Password confirmation
 
@@ -45,7 +52,7 @@ A browser request that changes something is refused with `cross_origin_rejected`
 
 ## Content security policy
 
-ABM sends a Content-Security-Policy header unless `SECURITY_HEADERS_CSP_ENABLED=false`. It limits the UI to ABM's own scripts and API, and images to ABM or HTTPS. Covers served over plain HTTP are blocked, and ABM cannot be shown in an iframe either way. The API docs pages get a looser policy so they can load from a CDN.
+ABM sends a Content-Security-Policy header unless `SECURITY_HEADERS_CSP_ENABLED=false`. It limits the UI to ABM's own scripts and API, and images to ABM or HTTPS. Covers served over plain HTTP are blocked, and ABM cannot be shown in an iframe either way. The API docs pages get their own policy, and load only from ABM itself.
 
 ## Failed sign-ins
 

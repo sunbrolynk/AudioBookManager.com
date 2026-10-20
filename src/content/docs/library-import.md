@@ -53,7 +53,9 @@ A narrator, title or path cut off with an ellipsis opens in full when you tap or
 
 ## Answers other than import
 
-A row can also be answered **keep library** (decline a copy of a book the library already has) or **remove empty** (decline a folder with no audio, which still holds artwork and sidecars). Choosing keep library asks first, with a Keep importing button to back out. These clear only what the row owns. Anything holding audio is refused. Files go to the recycle bin when one is set, and the task log lists each path removed.
+A row can also be answered **Delete these files, keep the library copy** (decline a copy of a book the library already has) or **Delete this folder and its contents** (decline a folder with no audio, which still holds artwork and sidecars). Both ask first with a "Delete these files?" dialog listing what goes, and the first has a Keep importing button to back out.
+
+They clear only what the row stands for, plus any subfolder under it with no audio, and leave every other book's folder alone. A row for a single file removes that file and the files that share its name exactly, and a loose file's row imports only files named exactly like it, so `Book.mp3` doesn't pull in `Book.part2.mp3`. Deleting a folder with no audio is refused if anything the row owns turns out to hold audio. A subfolder ABM can't read is never guessed at: the row fails, naming the folder, and nothing is removed. A row also fails if any of its files are still there afterwards. Files go to the recycle bin when one is set, and the task log lists each path removed (the first 50 per row, then a count) and each subfolder left alone with the reason.
 
 ## Cover and extra files per folder
 

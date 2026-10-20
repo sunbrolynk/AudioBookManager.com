@@ -38,7 +38,7 @@ TRUSTED_PROXIES=172.20.0.5
 - A proxy on the same host needs `TRUSTED_PROXIES=127.0.0.1`.
 - Only the client the proxy names in `X-Forwarded-For` or `X-Real-IP` counts as the client.
 - Pass the original `Host` header through (nginx: `proxy_set_header Host $host;`) or send `X-Forwarded-Host`. A browser request that changes something is refused unless its origin matches the address ABM is reached at, or a domain in the CORS allowed domains.
-- A proxy that sends no forwarding headers looks like a local client. Set Authentication Required to Enabled if you run one.
+- A proxy that sends no forwarding headers is caught and made to sign in, but the fix is to send `X-Forwarded-For` (or set Authentication Required to Enabled). See [Security](/settings/security/#reverse-proxies).
 
 If sign-in is being asked for when it should not be, see [Troubleshooting](/troubleshooting/).
 

@@ -57,7 +57,7 @@ See [Logs](/system/logs/) and the [Activity Log](/system/activity-log/).
 |---|---|---|
 | Backup Folder | `/config/backups` | Where backups go |
 | Automatic Backups | off | Scheduled backups |
-| Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression. Day of Week is 0 to 6 and Day of Month is 1 to 28; anything else is refused with HTTP 422. A schedule or cron expression ABM cannot build is refused with HTTP 400 that names the field, and nothing is saved |
+| Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression. Day of Week is 0 to 6 from Sunday (a cron `0` is Sunday too) and Day of Month is 1 to 28; anything else is refused with HTTP 422. A schedule or cron expression ABM cannot build is refused with HTTP 400 that names the field, and nothing is saved |
 | Backup Retention | 28 days | 0 keeps forever |
 | Auto-Export on Backup | on | After each backup, send it to export targets marked Auto |
 | Export Targets | none | Remote destinations: SFTP, SCP, FTPS, FTP, S3 or rclone |

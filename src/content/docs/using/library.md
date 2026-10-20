@@ -34,19 +34,19 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 ## Series
 
-**Library > Series** lists every series with owned, wanted and missing-file counts, as Overview or Posters. A series page shows the whole catalog, including books you don't own. Filter it to All, In Library or Not in Library. **Add Remaining** or **Select to Add** brings the missing books in as wanted, and **Refresh Series** pulls the catalog again. **Monitor New Books** (All or None) decides whether books that come out later are added as wanted. See [Series tracking](/using/series-tracking/).
+**Library > Series** lists every series as Posters or Overview. Each shows a bar such as `3/7 Books`, coloured Downloading, Continuing (everything released is downloaded and more is coming), Complete, Missing Books or Missing Books (Unmonitored). The filter offers All, Monitored Only, Unmonitored, Missing and Wanted. A series page shows the whole catalog, including books you don't own. Filter it to All, In Library or Not in Library. **Add Remaining** or **Select to Add** brings the missing books in as wanted, and **Refresh Series** pulls the catalog again. **Monitor New Books** (All or None, chosen in the Add New dialog) decides whether books that come out later are added as wanted. See [Series tracking](/using/series-tracking/).
 
 ![The Series page: one tile per series with how many books are in the library](../../../assets/docs/series.jpg)
 
 ## Authors
 
-**Library > Authors** lists authors, as Overview or Posters. An author page shows their catalog grouped by series, with downloaded and total counts for each series, plus their quality profile, genres and rating. **Refresh Catalog** pulls it again and **Search Author** searches for their wanted books. **Monitor New Books** works the same as for a series, and an author starts at None.
+**Library > Authors** lists authors as Posters or Overview, with the same progress colours as Series. The filter offers All, Has Books and No Books. An author page shows their catalog grouped by series, with downloaded and total counts for each series, plus their quality profile, genres and rating. **Refresh Catalog** pulls it again and **Search Author** searches for their wanted books. **Monitor New Books** works the same as for a series, and an author starts at None.
 
 ![The Authors page: one tile per author](../../../assets/docs/authors.jpg)
 
 ![An author's page: bio, quality profile and every book by them, grouped by series](../../../assets/docs/author.jpg)
 
-Deleting a series or author is refused while it still has books in the library. Remove the books first.
+Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
 
 ## Quality profile inheritance
 
@@ -71,4 +71,4 @@ Books, authors and series can carry tags. Tags steer indexers, notifications, im
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. On a phone, see [Phone use](/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Deleting books shows the delete task's own progress and result, including how many it actually deleted, and refreshes the list in place. A refused or failed delete or removal (Series, Authors, Blocklist, Queue, a Library Import session) shows the server's reason in a toast. On a phone, see [Phone use](/phone/).

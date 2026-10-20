@@ -17,7 +17,7 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 |---|---|
 | Auto Sync | Sync the library on a schedule |
 | Sync on Account Add | Sync as soon as an account is connected |
-| Frequency | Daily, weekly or monthly. Weekly adds Day of Week. Monthly adds Day of Month (1-28). Day of Week must be 0 to 6, and a value outside either range is refused with HTTP 422. |
+| Frequency | Daily, weekly or monthly. Weekly adds Day of Week. Monthly adds Day of Month (1-28). Day of Week must be 0 to 6, counting from Sunday, and the job fires on the day you pick. A value outside either range is refused with HTTP 422. A numeric weekday in a cron expression works as in standard cron, so `0 3 * * 0` is Sunday. |
 | Time | Hour and minute |
 | Use CRON Expression | A custom cron expression replaces the options above. One ABM cannot parse is refused with HTTP 400 and nothing is saved. With Auto Sync off the schedule is not checked |
 
@@ -27,7 +27,7 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 |---|---|---|
 | Auto Add to Library | on | When you download an Audible title that isn't in ABM yet, ABM adds it to the library first. Off, that download is refused. In the next release this becomes [Mirror Audible library to ABM](/audible/#mirror-audible-library-to-abm) |
 | Concurrent Downloads | 2 | 1 to 5. Higher is faster and can hit Audible's rate limits. |
-| Preferred Quality | High Quality | High, Normal or Low |
+| Preferred Quality | High | High or Normal. This is the quality ABM asks Audible for on every download |
 | Delete Encrypted Files | on | Remove the encrypted AAXC file after it is decrypted to M4B |
 | Temp Download Path | empty | Empty uses the system temp folder |
 

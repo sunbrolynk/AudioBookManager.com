@@ -9,7 +9,7 @@ description: Calendar, date formats, theme and color options.
 
 | Setting | Choices |
 |---|---|
-| First Day of Week | Sunday or Monday |
+| First Day of Week | Sunday or Monday (Monday by default). The Calendar grid and week view follow it |
 | Week Column Header | `Tue 3/25`, `Tue 25/3` or `Tue Mar 25` |
 | Short Date Format | `Mar 25 2014`, `25 Mar 2014`, `03/25/2014`, `25/03/2014`, `2014-03-25` |
 | Long Date Format | Four layouts, with or without the weekday |

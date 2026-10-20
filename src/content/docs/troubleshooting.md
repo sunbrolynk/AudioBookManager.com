@@ -30,7 +30,7 @@ The app log says which it is:
 - "carries reverse-proxy headers, but ... is not in TRUSTED_PROXIES": add the proxy to `TRUSTED_PROXIES`.
 - "... is in TRUSTED_PROXIES but didn't name a client address": configure the proxy to send `X-Forwarded-For` or `X-Real-IP`.
 
-The opposite case: a proxy that sends no forwarding headers looks like a local client, so everything through it skips sign-in. Set Authentication Required to Enabled.
+The opposite case: a proxy that sends no forwarding headers looks like a local client. ABM notices, makes that address sign in and shows a Reverse Proxy warning on System > Status. Make the proxy send `X-Forwarded-For`, or set Authentication Required to Enabled. If the address isn't a proxy, clear it under Settings > General > Security. See [Security](/settings/security/#reverse-proxies).
 
 ## Changes are refused from the browser
 
