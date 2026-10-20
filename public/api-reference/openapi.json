@@ -4667,7 +4667,7 @@
           "Conversions"
         ],
         "summary": "Get Conversion Queue",
-        "description": "Get conversion queue with optional status filter.\nStatus: pending, processing, completed, failed, cancelled",
+        "description": "Get conversion queue with optional status filter.\nStatus: pending, processing, paused, completed, failed, cancelled",
         "operationId": "get_conversion_queue_api_conversions_queue_get",
         "parameters": [
           {
@@ -4711,6 +4711,50 @@
         }
       }
     },
+    "/api/conversions/queue/pause": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Pause Conversion Queue",
+        "description": "Stop new conversions from starting and suspend the running ones.",
+        "operationId": "pause_conversion_queue_api_conversions_queue_pause_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionQueuePauseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/queue/resume": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Resume Conversion Queue",
+        "description": "Let queued conversions start again and continue the jobs the queue\nsuspended. A job the user paused stays paused.",
+        "operationId": "resume_conversion_queue_api_conversions_queue_resume_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionQueuePauseResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/conversions/history": {
       "get": {
         "tags": [
@@ -4737,7 +4781,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/ConversionQueueResponse"
+                  "$ref": "#/components/schemas/ConversionHistoryResponse"
                 }
               }
             }
@@ -4890,9 +4934,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Create Bulk Conversion Api Conversions Bulk Post"
+                  "$ref": "#/components/schemas/BulkConversionResponse"
                 }
               }
             }
@@ -4980,6 +5022,92 @@
                   "type": "object",
                   "additionalProperties": true,
                   "title": "Response Cancel Conversion Job Api Conversions Job  Job Id  Cancel Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/job/{job_id}/pause": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Pause Conversion Job",
+        "description": "Suspend a running job; a job already paused stays paused",
+        "operationId": "pause_conversion_job_api_conversions_job__job_id__pause_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionJobPauseResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/job/{job_id}/resume": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Resume Conversion Job",
+        "description": "Continue a paused job; a job already running stays running",
+        "operationId": "resume_conversion_job_api_conversions_job__job_id__resume_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionJobPauseResponse"
                 }
               }
             }
@@ -20105,6 +20233,92 @@
         "title": "BulkClientUpdate",
         "description": "Apply a partial change set to multiple download clients at once."
       },
+      "BulkConversionError": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "error": {
+            "type": "string",
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "error"
+        ],
+        "title": "BulkConversionError",
+        "description": "A book a bulk conversion could not queue"
+      },
+      "BulkConversionResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "jobs_created": {
+            "type": "integer",
+            "title": "Jobs Created"
+          },
+          "job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Job Ids"
+          },
+          "skipped": {
+            "items": {
+              "$ref": "#/components/schemas/BulkConversionSkipped"
+            },
+            "type": "array",
+            "title": "Skipped"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/components/schemas/BulkConversionError"
+            },
+            "type": "array",
+            "title": "Errors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "jobs_created",
+          "job_ids",
+          "skipped",
+          "errors"
+        ],
+        "title": "BulkConversionResponse",
+        "description": "Response model for a bulk conversion request"
+      },
+      "BulkConversionSkipped": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "reason": {
+            "type": "string",
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "title",
+          "reason"
+        ],
+        "title": "BulkConversionSkipped",
+        "description": "A book left out of a bulk conversion, and why"
+      },
       "BulkCustomMessageDelete": {
         "properties": {
           "ids": {
@@ -22004,6 +22218,86 @@
         "title": "ConversionDryRunRequest",
         "description": "Preview a conversion over a set of books without executing; empty list is valid."
       },
+      "ConversionHistoryResponse": {
+        "properties": {
+          "jobs": {
+            "items": {
+              "$ref": "#/components/schemas/ConversionJobResponse"
+            },
+            "type": "array",
+            "title": "Jobs"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "processing": {
+            "type": "integer",
+            "title": "Processing"
+          },
+          "pending": {
+            "type": "integer",
+            "title": "Pending"
+          }
+        },
+        "type": "object",
+        "required": [
+          "jobs",
+          "total",
+          "processing",
+          "pending"
+        ],
+        "title": "ConversionHistoryResponse",
+        "description": "Response model for a list of conversion jobs"
+      },
+      "ConversionJobPauseResponse": {
+        "properties": {
+          "job_id": {
+            "type": "integer",
+            "title": "Job Id"
+          },
+          "status": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Status"
+          },
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "queue",
+                  "restart"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused By"
+          }
+        },
+        "type": "object",
+        "required": [
+          "job_id",
+          "status",
+          "paused",
+          "paused_by"
+        ],
+        "title": "ConversionJobPauseResponse",
+        "description": "Response model for pausing or resuming one running conversion"
+      },
       "ConversionJobResponse": {
         "properties": {
           "id": {
@@ -22211,6 +22505,43 @@
               }
             ],
             "title": "Settings Used"
+          },
+          "paused_seconds": {
+            "type": "number",
+            "title": "Paused Seconds",
+            "default": 0.0
+          },
+          "paused_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "queue",
+                  "restart"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused By"
+          },
+          "output_kept": {
+            "type": "boolean",
+            "title": "Output Kept",
+            "default": false
+          },
+          "elapsed_seconds": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Elapsed Seconds"
           }
         },
         "type": "object",
@@ -22235,6 +22566,64 @@
         "title": "ConversionJobResponse",
         "description": "Response model for a conversion job"
       },
+      "ConversionQueuePauseResponse": {
+        "properties": {
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "unreadable_setting"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused Reason"
+          },
+          "changed_job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Changed Job Ids"
+          },
+          "failed_job_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Failed Job Ids"
+          },
+          "failure_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Failure Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "paused",
+          "paused_reason",
+          "changed_job_ids",
+          "failed_job_ids",
+          "failure_reason"
+        ],
+        "title": "ConversionQueuePauseResponse",
+        "description": "Response model for pausing or resuming the conversion queue"
+      },
       "ConversionQueueResponse": {
         "properties": {
           "jobs": {
@@ -22255,6 +22644,29 @@
           "pending": {
             "type": "integer",
             "title": "Pending"
+          },
+          "paused_jobs": {
+            "type": "integer",
+            "title": "Paused Jobs"
+          },
+          "paused": {
+            "type": "boolean",
+            "title": "Paused"
+          },
+          "paused_reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "user",
+                  "unreadable_setting"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Paused Reason"
           }
         },
         "type": "object",
@@ -22262,10 +22674,13 @@
           "jobs",
           "total",
           "processing",
-          "pending"
+          "pending",
+          "paused_jobs",
+          "paused",
+          "paused_reason"
         ],
         "title": "ConversionQueueResponse",
-        "description": "Response model for conversion queue"
+        "description": "Response model for the conversion queue"
       },
       "ConversionSettings": {
         "properties": {
@@ -24614,6 +25029,28 @@
         "title": "FileTagsRequest",
         "description": "POST body naming files of a session whose own tags should seed a split's rows."
       },
+      "FolderMismatchRow": {
+        "properties": {
+          "folder_title": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Folder Title"
+          },
+          "tags_title": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Tags Title"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "folder_title",
+          "tags_title"
+        ],
+        "title": "FolderMismatchRow",
+        "description": "A folder name and its files' tags naming different books."
+      },
       "FrontendErrorReport": {
         "properties": {
           "error": {
@@ -24633,27 +25070,42 @@
             "title": "Componentstack"
           },
           "url": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Url"
           },
           "userAgent": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Useragent"
           },
           "timestamp": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Timestamp"
           }
         },
         "type": "object",
-        "required": [
-          "error",
-          "url",
-          "userAgent",
-          "timestamp"
-        ],
         "title": "FrontendErrorReport",
-        "description": "Frontend error report from ErrorBoundary"
+        "description": "Frontend error report from ErrorBoundary, coerced and truncated at validation time."
       },
       "FullDiagnosticResponse": {
         "properties": {
@@ -29753,6 +30205,16 @@
             "maxLength": 2000,
             "title": "Parse Method",
             "default": ""
+          },
+          "folder_mismatch": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FolderMismatchRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
           },
           "status": {
             "type": "string",
