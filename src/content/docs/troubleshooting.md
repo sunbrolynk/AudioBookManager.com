@@ -48,9 +48,10 @@ Raise `MAX_REQUEST_BODY_BYTES`. A reverse proxy can also enforce a lower limit a
 
 Adds, searches, refreshes and Discover need the metadata source. The message names it, for example "The metadata source is unavailable". Causes: the source is down or rate limiting, or your outbound connection is blocking it.
 
-1. Check **Settings > General > Proxy & VPN** and that the route is up.
-2. Try again after a minute. A rate-limited source answers 503 with a 30 second retry hint.
-3. You can still add and import books by hand meanwhile.
+1. Check the [ABM status page](https://status.audiobookmanager.com) and the [Libex status page](https://status.libexdb.com) to see whether it is down for everyone.
+2. Check **Settings > General > Proxy & VPN** and that the route is up.
+3. Try again after a minute. A rate-limited source answers 503 with a 30 second retry hint.
+4. You can still add and import books by hand meanwhile.
 
 Background tasks that hit an outage fail with the reason, and send one notification per outage.
 
