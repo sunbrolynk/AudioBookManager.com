@@ -72,3 +72,9 @@ test('only the /radio path itself is the radio pages: lookalike and doubled path
   assert.equal(at('https://audiobookmanager.com/radio//'), null);
   assert.deepEqual(at('https://audiobookmanager.com/radio'), { redirect: 'https://radio.audiobookmanager.com/' });
 });
+
+test('the radio brand link goes to the main site landing page', () => {
+  const layout = readFileSync(new URL('../src/layouts/RadioLayout.astro', import.meta.url), 'utf8');
+  assert.match(layout, /const site = 'https:\/\/audiobookmanager\.com'/);
+  assert.match(layout, /<a class="brand" href=\{`\$\{site\}\/`\} aria-label="AudioBook Manager home">/);
+});

@@ -33,23 +33,28 @@ const groups = [
     links: [
       { label: t.footerSource, href: 'https://github.com/sunbrolynk/AudioBook-Manager', icon: 'github' },
       { label: t.footerWebsiteSource, href: 'https://github.com/sunbrolynk/audiobookmanager.com', icon: 'github' },
-      { label: 'Discord', href: 'https://discord.gg/qeJRrM6AZ', icon: 'discord' },
-      { label: `ABM ${t.footerStatus}`, href: 'https://status.audiobookmanager.com', icon: 'information' },
-      { label: `Libex ${t.footerStatus}`, href: 'https://status.libexdb.com', icon: 'information' },
-      { label: 'ABM Radio', href: 'https://radio.audiobookmanager.com', icon: 'external' },
       { label: t.footerReleases, href: `${p}/updates/`, icon: 'notes' },
       { label: t.footerReportIssue, href: 'https://github.com/sunbrolynk/AudioBook-Manager/issues', icon: 'github' },
-      { label: t.footerSupport, href: 'https://ko-fi.com/sunbrolynk', icon: 'heart' },
-      { label: t.footerBuyMonster, href: 'https://buymeacoffee.com/sunbrolynk', icon: 'heart' },
     ],
   },
   {
-    title: t.footerContact,
+    title: t.footerCommunity,
     links: [
-      { label: t.footerMailSupport, href: 'mailto:support@audiobookmanager.com', icon: 'email' },
+      { label: 'Discord', href: 'https://discord.gg/qeJRrM6AZ', icon: 'discord' },
       { label: t.footerMailTranslate, href: 'mailto:translate@audiobookmanager.com', icon: 'email' },
+      { label: 'ABM Radio', href: 'https://radio.audiobookmanager.com', icon: 'external' },
+    ],
+  },
+  {
+    title: t.footerStatusSupport,
+    links: [
+      { label: `ABM ${t.footerStatus}`, href: 'https://status.audiobookmanager.com', icon: 'information' },
+      { label: `Libex ${t.footerStatus}`, href: 'https://status.libexdb.com', icon: 'information' },
+      { label: t.footerMailSupport, href: 'mailto:support@audiobookmanager.com', icon: 'email' },
       { label: t.footerMailPrivacy, href: 'mailto:privacy@audiobookmanager.com', icon: 'email' },
       { label: t.footerMailAdmin, href: 'mailto:admin@audiobookmanager.com', icon: 'email' },
+      { label: t.footerSupport, href: 'https://ko-fi.com/sunbrolynk', icon: 'heart' },
+      { label: t.footerBuyMonster, href: 'https://buymeacoffee.com/sunbrolynk', icon: 'heart' },
     ],
   },
   {
@@ -103,7 +108,7 @@ const groups = [
   }
   .footer-grid {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 2rem;
   }
   .footer-grid h2 {
@@ -144,6 +149,9 @@ const groups = [
     color: var(--r1-dim);
     font-size: 0.8rem;
     line-height: 1.6;
+  }
+  @media (max-width: 1100px) {
+    .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   }
   @media (max-width: 860px) {
     .footer-inner { padding-inline: 20px; }
