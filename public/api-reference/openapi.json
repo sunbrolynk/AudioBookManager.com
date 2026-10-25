@@ -19776,8 +19776,15 @@
             "title": "Monitored"
           },
           "added_date": {
-            "type": "string",
-            "format": "date-time",
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Added Date"
           },
           "file_count": {
@@ -19909,8 +19916,7 @@
           "title",
           "authors",
           "status",
-          "monitored",
-          "added_date"
+          "monitored"
         ],
         "title": "BookResponse",
         "description": "Response model for a book"
