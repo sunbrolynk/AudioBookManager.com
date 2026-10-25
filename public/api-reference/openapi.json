@@ -2,7 +2,7 @@
   "openapi": "3.1.0",
   "info": {
     "title": "Audiobook Manager API",
-    "description": "Professional audiobook library management API",
+    "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
     "version": "0.17.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
@@ -16,7 +16,7 @@
           "Books"
         ],
         "summary": "List Books",
-        "description": "List ALL books with sorting and filtering (no pagination).\n\nBuilds the response from flat SELECTs \u2014 one query for the book columns\n(+ file count, + root folder path) and one grouped query per relationship\n(authors, narrators, series, tags) keyed by book id \u2014 rather than hydrating\nfull `Book` ORM graphs, which is the dominant cost at library scale.\nRelationship rows are fetched only for the returned page (post-`limit`).\n\nSerializes with Pydantic's `model_dump_json` into a ready `Response`,\nbypassing `jsonable_encoder`'s recursive re-encode; `response_model` keeps\nthe OpenAPI schema.",
+        "description": "List all books in the library, with optional sorting and filtering. The\nlist is not paginated; use `limit` to cap how many are returned.",
         "operationId": "list_books_api_books_get",
         "parameters": [
           {
@@ -485,7 +485,7 @@
           "Books"
         ],
         "summary": "Refresh Book",
-        "description": "Refresh a single book - scan its directory for new files",
+        "description": "Refresh a single book by scanning its directory for new files.",
         "operationId": "refresh_book_api_books__book_id__refresh_post",
         "parameters": [
           {
@@ -1256,7 +1256,7 @@
           "Authors"
         ],
         "summary": "List Authors",
-        "description": "List all authors.\n\nServes the assembled list from the in-memory library cache until a write\ninvalidates it, and serializes with Pydantic's `model_dump_json` into a\nready `Response` \u2014 the same fast path the book list uses. The version is\nread before the query so a write landing mid-build stamps the entry stale.",
+        "description": "List all authors.",
         "operationId": "list_authors_api_authors_get",
         "responses": {
           "200": {
@@ -1422,7 +1422,7 @@
           "Authors"
         ],
         "summary": "Update Author Profile",
-        "description": "Set or clear an author's quality-profile inheritance. A null\n`preference_profile_id` reverts the author's books to the global\ndefault (`resolve_effective_profile` handles the fallback).",
+        "description": "Set or clear an author's quality-profile inheritance. A null\n`preference_profile_id` reverts the author's books to the global\ndefault.",
         "operationId": "update_author_profile_api_authors__author_id__profile_patch",
         "parameters": [
           {
@@ -1894,7 +1894,7 @@
           "Authors"
         ],
         "summary": "Bulk Edit Authors",
-        "description": "Apply the same edit changes across multiple authors in one request.\n\nEach author's books still get their own `bulk_edit` task \u2014 the handler\nedits one scope at a time \u2014 but validation and queuing happen in a single\natomic call instead of one HTTP round trip per author. Unknown IDs are\nskipped rather than erroring, matching the existing bulk-update pattern.",
+        "description": "Apply the same edit to multiple authors in one request. Each author's\nbooks are edited by a background task. Unknown IDs are skipped instead\nof returning an error.",
         "operationId": "bulk_edit_authors_api_authors_bulk_edit_post",
         "requestBody": {
           "content": {
@@ -1995,7 +1995,7 @@
           "Series"
         ],
         "summary": "List Series",
-        "description": "Get all series in library.\n\nServes the assembled list from the in-memory library cache until a write\ninvalidates it. The payload is plain JSON-serializable dicts, so it is\ndumped once and returned directly, bypassing `jsonable_encoder`. The\nversion is read before the query so a write mid-build stamps it stale.\n\n`response_model` is declared only for the OpenAPI schema (and the\ngenerated frontend types); returning a `Response` directly bypasses\nFastAPI's response-model validation/serialization entirely, preserving\nthe cache's pre-encoded bytes on the hot path.",
+        "description": "List all series in the library.",
         "operationId": "list_series_api_series_get",
         "responses": {
           "200": {
@@ -2231,7 +2231,7 @@
           "Series"
         ],
         "summary": "Update Series Profile",
-        "description": "Set or clear a series' quality-profile inheritance. A null\n`preference_profile_id` reverts the series' books to the global\ndefault (`resolve_effective_profile` handles the fallback).",
+        "description": "Set or clear a series' quality-profile inheritance. A null\n`preference_profile_id` reverts the series' books to the global\ndefault.",
         "operationId": "update_series_profile_api_series__series_id__profile_patch",
         "parameters": [
           {
@@ -2328,7 +2328,7 @@
           "Series"
         ],
         "summary": "Get Series Catalog",
-        "description": "Get all books in series from local catalog\nReturns books we know about (owned or not)",
+        "description": "Get all books in a series from the local catalog, including books that\nare not in the library.",
         "operationId": "get_series_catalog_api_series__series_id__catalog_get",
         "parameters": [
           {
@@ -2463,7 +2463,7 @@
           "Series"
         ],
         "summary": "Bulk Edit Series",
-        "description": "Apply the same edit changes across multiple series in one request.\n\nEach series' books still get their own `bulk_edit` task \u2014 the handler\nedits one scope at a time \u2014 but validation and queuing happen in a single\natomic call instead of one HTTP round trip per series. Unknown IDs are\nskipped rather than erroring, matching the existing bulk-update pattern.",
+        "description": "Apply the same edit to multiple series in one request. Each series'\nbooks are edited by a background task. Unknown IDs are skipped instead\nof returning an error.",
         "operationId": "bulk_edit_series_api_series_bulk_edit_post",
         "requestBody": {
           "content": {
@@ -2564,7 +2564,7 @@
           "Series"
         ],
         "summary": "Add All Series Books",
-        "description": "Add multiple books to a series at once (Add All / Add Remaining)\nMore efficient than individual adds - single catalog population",
+        "description": "Add multiple books to a series at once (Add All or Add Remaining). More\nefficient than adding them one by one.",
         "operationId": "add_all_series_books_api_series__series_id__add_all_post",
         "parameters": [
           {
@@ -2678,7 +2678,7 @@
           "Series"
         ],
         "summary": "Get Series Books By Asin",
-        "description": "Get all books in a series by series ASIN (for adding books not yet in library)\nFetches directly from Libex without requiring series to exist in local DB",
+        "description": "Get all books in a series by series ASIN, including books not yet in the\nlibrary. Fetched directly from the metadata source, so the series does\nnot need to exist locally.",
         "operationId": "get_series_books_by_asin_api_series_asin__series_asin__books_get",
         "parameters": [
           {
@@ -3755,7 +3755,7 @@
           "Library Import"
         ],
         "summary": "Confirm Library Import",
-        "description": "Confirm and import matched books into the library.\n\nEvery path, and every merged row's file, must be one the session itself\nscanned, a named library book must be one the row is linked to, any\nextra file or cover a row names must be one of its own files, and no\nfile may be imported twice; anything else is refused before a file is\ntouched. Queues a background\ntask - poll /api/tasks/{task_id} for status.",
+        "description": "Confirm and import matched books into the library. Every file must come\nfrom the session's own scan and no file may be imported twice; anything\nelse is refused before a file is touched. Queues a background task; poll\n`/api/tasks/{task_id}` for status.",
         "operationId": "confirm_library_import_api_library_import_confirm_post",
         "requestBody": {
           "content": {
@@ -3799,7 +3799,7 @@
           "Library Import"
         ],
         "summary": "Get Other Editions",
-        "description": "Other editions of the book a scanned row names, deduplicated by ASIN.\n\nSearches Libex by title (and author, if known), plus a direct lookup for\nthe row's own ASIN and its currently selected match's ASIN so both are\nguaranteed to appear even when a title search would not have surfaced\nthem. Validates, fetches, and shapes the response; every edition-identity\njudgment \u2014 evidence, grouping, the decided match and per-edition\nownership \u2014 is `book_match_service.evaluate_editions`'s.",
+        "description": "Find other editions of the book a scanned row refers to, deduplicated by\nASIN. Searches by title and author, and always includes the row's own\nASIN and its currently selected match.",
         "operationId": "get_other_editions_api_library_import_editions_post",
         "requestBody": {
           "content": {
@@ -3957,7 +3957,7 @@
           "Manual Import"
         ],
         "summary": "Execute Import",
-        "description": "Execute the import - queue files for background import\n\nUsed by ManualImport.tsx for importing multiple files to multiple books.\nReturns immediately with task_id for progress tracking.",
+        "description": "Queue files for background import across multiple books. Returns\nimmediately with a `task_id` for tracking progress.",
         "operationId": "execute_import_api_manual_import_execute_post",
         "requestBody": {
           "content": {
@@ -4003,7 +4003,7 @@
           "Manual Import"
         ],
         "summary": "Execute Import To Book",
-        "description": "Execute import with custom destination filename support (single book import)\n\nUsed by BookDetailManualImport.tsx for importing files to a specific book.\nSupports custom destination_filename for multi-part files.\nReturns immediately with task_id for progress tracking.",
+        "description": "Queue files for background import to a single book, with an optional\ncustom `destination_filename` for multi-part files. Returns immediately\nwith a `task_id` for tracking progress.",
         "operationId": "execute_import_to_book_api_manual_import_execute_to_book_post",
         "requestBody": {
           "content": {
@@ -4049,7 +4049,7 @@
           "Manual Import"
         ],
         "summary": "Scan Audio Files",
-        "description": "Recursively scan directory for audio files - optimized with parallel processing\n\nUsed by BookDetailManualImport.tsx to find audio files to import.",
+        "description": "Recursively scan a directory for audio files.",
         "operationId": "scan_audio_files_api_manual_import_scan_audio_post",
         "requestBody": {
           "content": {
@@ -4095,7 +4095,7 @@
           "Manual Import"
         ],
         "summary": "Check Import Conflicts",
-        "description": "Check if importing files would overwrite existing files in destination folder\n\nUsed by BookDetailManualImport.tsx before import to warn about conflicts.\nReturns lists of conflicting audio files and other files separately.",
+        "description": "Check whether importing files would overwrite existing files in the\ndestination folder. Returns the conflicting audio files and other files\nas separate lists.",
         "operationId": "check_import_conflicts_api_manual_import_check_conflicts_post",
         "requestBody": {
           "content": {
@@ -4141,7 +4141,7 @@
           "Manual Import"
         ],
         "summary": "Preview Parse",
-        "description": "Preview filename parsing without matching against library.\n\nUseful for testing and debugging the parser.\n\nExample: /api/manual-import/preview-parse?file_path=/mnt/books/Author/Series/Book.m4b",
+        "description": "Preview how a filename is parsed, without matching it against the\nlibrary. Example:\n/api/manual-import/preview-parse?file_path=/mnt/books/Author/Series/Book.m4b",
         "operationId": "preview_parse_api_manual_import_preview_parse_get",
         "parameters": [
           {
@@ -4186,7 +4186,7 @@
           "Manual Import"
         ],
         "summary": "Scan And Match Directory",
-        "description": "Scan a directory for audiobook files and match against library\n\nUsed by ManualImport.tsx for library-level import scanning.\nUses LibraryMatcher internally for 98.7%+ matching accuracy.",
+        "description": "Scan a directory for audiobook files and match them against the library.",
         "operationId": "scan_and_match_directory_api_manual_import_scan_and_match_post",
         "requestBody": {
           "content": {
@@ -4488,7 +4488,7 @@
           "Import Lists"
         ],
         "summary": "Test Import List",
-        "description": "Test an import list by fetching its RSS feed.\n\nRecords the outcome to import_list_health under operation='test'.\nBypasses backoff (Test IS the recovery action \u2014 user explicitly wants\nto retry now).",
+        "description": "Test an import list by fetching its RSS feed. The result is recorded in\nthe list's health history, and any backoff is bypassed so the test\nalways runs.",
         "operationId": "test_import_list_api_import_lists__list_id__test_post",
         "parameters": [
           {
@@ -4602,7 +4602,7 @@
           "Import Lists"
         ],
         "summary": "Get Import List Health Events",
-        "description": "Recent health events for an import list. Used by HealthEventsModal.\n\nQuery params:\n  limit         \u2014 max rows to return (default 50)\n  failures_only \u2014 if True, only failure rows",
+        "description": "Return recent health events for an import list. `limit` caps the rows\nreturned (default 50) and `failures_only` returns only failures.",
         "operationId": "get_import_list_health_events_api_import_lists__list_id__health_events_get",
         "parameters": [
           {
@@ -5288,7 +5288,7 @@
           "Conversions"
         ],
         "summary": "Get Books Conversion Metadata",
-        "description": "Get lightweight metadata for all books needed for filtering/pagination.\nReturns format, file count, and chapter info for each book.\nThis is a fast endpoint that reads from database only (no disk access).",
+        "description": "Get lightweight metadata for all books: format, file count and chapter\ninfo. Reads from the database only, with no disk access.",
         "operationId": "get_books_conversion_metadata_api_conversions_books_conversion_metadata_get",
         "responses": {
           "200": {
@@ -5312,7 +5312,7 @@
           "Conversions"
         ],
         "summary": "Get Book File Details",
-        "description": "Get detailed file information for a book, including chapter info.\nUsed by the Conversions page to show expandable file details.",
+        "description": "Get detailed file information for a book, including chapter info.",
         "operationId": "get_book_file_details_api_conversions_book__book_id__file_details_get",
         "parameters": [
           {
@@ -5432,7 +5432,7 @@
           "Indexers"
         ],
         "summary": "Get Indexers",
-        "description": "List all configured indexers.\n\nReturns the full list for display in the Settings \u2192 Indexers page.\napi_key, cookie, and password are never included in the response\n(handled by to_dict) \u2014 only has_api_key / has_cookie flags are.\n\nEach row includes a `health` field carrying the cached HealthSnapshot\ndict for that indexer (status, last_error_type, backoff_until, etc.),\nor null if no cache entry exists yet (brand-new indexer that hasn't\nbeen tested or searched since process start). The frontend uses this\nfor the per-indexer status circle + tooltip without requiring a\nseparate API call per indexer.",
+        "description": "List all configured indexers. The API key, cookie and password are never\nreturned; `has_api_key` and `has_cookie` show whether one is stored.\nEach indexer includes a `health` snapshot (status, last error type,\nbackoff end), or null if it has not been tested or searched yet.",
         "operationId": "get_indexers_api_indexers_get",
         "responses": {
           "200": {
@@ -5452,7 +5452,7 @@
           "Indexers"
         ],
         "summary": "Create Indexer",
-        "description": "Create a new indexer.\n\nCalled when the user fills out the Add Indexer modal and clicks Save.\nThe implementation field determines which indexer class will be used\nwhen this config is loaded for searching.",
+        "description": "Create an indexer. The `implementation` field selects the indexer type\nused when searching.",
         "operationId": "create_indexer_api_indexers_post",
         "requestBody": {
           "content": {
@@ -5496,7 +5496,7 @@
           "Indexers"
         ],
         "summary": "Update Indexer",
-        "description": "Update an existing indexer.\n\nCalled when the user edits an indexer config and clicks Save. Only\nfields present in the request are applied, so a bare `{\"enabled\": ...}`\ntoggle is safe and doesn't disturb the rest of the row.\n\napi_key/password/cookie handling: blank means \"keep current\" \u2014 the\nfrontend never receives these secrets back from the server, so only a\ntruthy value overwrites the saved one. Changing implementation or\nbase_url with a used credential left blank is refused with a 400.",
+        "description": "Update an indexer. Only fields present in the request are changed. A\nblank API key, password or cookie keeps the saved value. Changing the\nimplementation or base URL while leaving a used credential blank is\nrefused with a 400.",
         "operationId": "update_indexer_api_indexers__indexer_id__put",
         "parameters": [
           {
@@ -5682,7 +5682,7 @@
           "Indexers"
         ],
         "summary": "Test Indexer Unsaved",
-        "description": "Test an indexer config BEFORE saving it, OR test an existing\nindexer's config from inside the edit modal.\n\nCalled when the user clicks \"Test\" in the Add/Edit modal.\nWe create a temporary indexer instance from the provided config\n(without saving to DB) and run test_connection().\n\nEdit-modal credential fallback: when data.indexer_id is set,\napi_key/cookie/username/password fields fall back to the saved\nindexer's values for any field the request leaves null or empty.\nThis honors the modal's \"leave blank to keep current\" affordance\nfor sensitive fields the frontend never receives back from the\nserver. Mirrors the download-clients test endpoint pattern. A filled-in\nsecret is only tested against the saved implementation and base_url.\n\nReturns: { success, message, categories }\nThe categories are used to populate the category picker\nafter a successful Newznab/Torznab test.",
+        "description": "Test an indexer configuration before saving it, or an existing indexer\nwhen `indexer_id` is set. With `indexer_id`, a blank API key, cookie,\nusername or password falls back to the saved value, and a newly entered\nsecret is tested against the saved implementation and base URL. Returns\n`success`, `message` and, after a successful Newznab or Torznab test,\nthe available `categories`.",
         "operationId": "test_indexer_unsaved_api_indexers_test_post",
         "requestBody": {
           "content": {
@@ -5726,7 +5726,7 @@
           "Indexers"
         ],
         "summary": "Test Indexer Saved",
-        "description": "Test a saved indexer by ID.\n\nLoads the config from the database and runs test_connection().\nUsed by the \"Test\" button on existing indexer cards and by\nthe \"Test All\" button (which calls this for each indexer).",
+        "description": "Test a saved indexer by ID.",
         "operationId": "test_indexer_saved_api_indexers__indexer_id__test_post",
         "parameters": [
           {
@@ -5771,7 +5771,7 @@
           "Indexers"
         ],
         "summary": "Test All Indexers",
-        "description": "Test all enabled indexers.\n\nCalled by the \"Test All Indexers\" button in the header bar.\nReturns results for each indexer so the frontend can show\nper-card success/failure indicators.",
+        "description": "Test all enabled indexers and return the result for each.",
         "operationId": "test_all_indexers_api_indexers_test_all_post",
         "responses": {
           "200": {
@@ -5850,7 +5850,7 @@
           "Indexers"
         ],
         "summary": "Search All Indexers",
-        "description": "Search ALL enabled indexers simultaneously.\n\nThis is the main search endpoint used by the interactive\nsearch dialog on the book detail page. It queries every\nenabled indexer in parallel and merges the results.\n\nResults are sorted by: seeders (desc) for torrents,\nage (asc) for NZBs \u2014 newest first.",
+        "description": "Search all enabled indexers in parallel and merge the results. Torrents\nare sorted by seeders, highest first, and NZBs by age, newest first.",
         "operationId": "search_all_indexers_api_indexers_search_post",
         "requestBody": {
           "content": {
@@ -5952,7 +5952,7 @@
           "Prowlarr Compatibility"
         ],
         "summary": "Prowlarr System Status",
-        "description": "App identification endpoint.\n\nProwlarr calls this when testing the connection.\nWe mimic Readarr's response shape so Prowlarr accepts us.\n\nSonarr/Radarr split appName and instanceName:\n    appName       \u2014 fixed type identifier (Prowlarr matches against this\n                    to pick the right sync logic). Always \"ABM\".\n    instanceName  \u2014 user-facing display name from host settings. Lets\n                    users running multiple ABM instances disambiguate\n                    in the Prowlarr UI.\n\nbuildTime is set at container build time (see Dockerfile / publish.yml).\nFalls back to \"unknown\" when running outside a built container (dev mode,\ntests).",
+        "description": "Identify this instance to Prowlarr. Returns a Readarr-shaped status so\nProwlarr accepts the connection, with `appName` fixed to ABM and\n`instanceName` taken from the host settings. `buildTime` is \"unknown\"\noutside a built image.",
         "operationId": "prowlarr_system_status_api_v1_system_status_get",
         "responses": {
           "200": {
@@ -5976,7 +5976,7 @@
           "Prowlarr Compatibility"
         ],
         "summary": "Prowlarr List Indexers",
-        "description": "List all indexers in Prowlarr-compatible format.\n\nProwlarr calls this to discover existing indexers and determine\nwhich ones need to be added, updated, or removed during sync.",
+        "description": "List all indexers in Prowlarr-compatible format. Prowlarr uses this\nduring sync to decide which indexers to add, update or remove.",
         "operationId": "prowlarr_list_indexers_api_v1_indexer_get",
         "responses": {
           "200": {
@@ -6001,7 +6001,7 @@
           "Prowlarr Compatibility"
         ],
         "summary": "Prowlarr Add Indexer",
-        "description": "Receive an indexer from Prowlarr and create it in ABM.\n\nProwlarr sends this when syncing a new indexer. The payload\ncontains the indexer config in Prowlarr's field-based format,\nwhich we translate to ABM's flat model.\n\nIf an indexer with the same name already exists (re-sync),\nwe update it instead of creating a duplicate.",
+        "description": "Create an indexer from a Prowlarr sync. The payload uses Prowlarr's\nfield-based format. If an indexer with the same name already exists, it\nis updated instead of duplicated.",
         "operationId": "prowlarr_add_indexer_api_v1_indexer_post",
         "requestBody": {
           "content": {
@@ -6072,7 +6072,7 @@
           "Prowlarr Compatibility"
         ],
         "summary": "Prowlarr Test Indexer",
-        "description": "Test endpoint for Prowlarr connection verification.\n\nProwlarr sends a test indexer payload to verify ABM can\nreceive and process indexer data. We just return success.",
+        "description": "Accept Prowlarr's connection test. Always returns success.",
         "operationId": "prowlarr_test_indexer_api_v1_indexer_test_post",
         "requestBody": {
           "content": {
@@ -6193,7 +6193,7 @@
           "Prowlarr Compatibility"
         ],
         "summary": "Prowlarr Delete Indexer",
-        "description": "Delete an indexer via Prowlarr sync.\n\nCalled when an indexer is removed from Prowlarr or when\nFull Sync determines an indexer should no longer exist.",
+        "description": "Delete an indexer via Prowlarr sync. Prowlarr calls this when an indexer\nis removed or a full sync finds it should no longer exist.",
         "operationId": "prowlarr_delete_indexer_api_v1_indexer__indexer_id__delete",
         "parameters": [
           {
@@ -6535,7 +6535,7 @@
           "Download Clients"
         ],
         "summary": "Test Client",
-        "description": "Test a download client connection.\n\nUsed both for testing a new client config before saving (no client_id),\nand for testing an existing client from inside the edit modal (client_id\nset). When client_id is provided, password and api_key fall back to the\nsaved client's values for any field the request leaves null or empty \u2014\nthis honors the modal's \"leave blank to keep current\" affordance for\nsensitive fields the frontend never receives back from the server. A\nfilled-in secret is only tested against the saved implementation, host,\nport and TLS settings.\n\nVerifies connectivity and authentication against the client's API.\nReturns the client version on success.",
+        "description": "Test a download client connection and return the client version on\nsuccess. Works for a new, unsaved client or, when `client_id` is set, an\nexisting one. With `client_id`, a blank password or API key falls back\nto the saved value, and a newly entered secret is tested against the\nsaved implementation, host, port and TLS settings.",
         "operationId": "test_client_api_download_clients_test_post",
         "requestBody": {
           "content": {
@@ -6750,7 +6750,7 @@
           "Notifications"
         ],
         "summary": "List Implementations",
-        "description": "List every registered provider with its config schema and supported\nevents, for the Add/Edit Notification config form.",
+        "description": "List every notification provider with its configuration schema and\nsupported events.",
         "operationId": "list_implementations_api_notifications_implementations_get",
         "responses": {
           "200": {
@@ -6798,7 +6798,7 @@
           "Notifications"
         ],
         "summary": "List Custom Message Formats",
-        "description": "Available message formats and, per format, the notification\nimplementations it may target (None = any) \u2014 drives the format picker and\nformat-compatible target filtering in the editor.",
+        "description": "List the available message formats and, for each, the notification\nimplementations it can target (null means any).",
         "operationId": "list_custom_message_formats_api_notifications_custom_messages_formats_get",
         "responses": {
           "200": {
@@ -6866,7 +6866,7 @@
           "Notifications"
         ],
         "summary": "Test Message",
-        "description": "Render an unsaved custom message with sample data and live-send it via the\nchosen notification, so the author can see it on their device.",
+        "description": "Render an unsaved custom message with sample data and send it through\nthe chosen notification.",
         "operationId": "test_message_api_notifications_custom_messages_test_post",
         "requestBody": {
           "content": {
@@ -7250,7 +7250,7 @@
           "Notifications"
         ],
         "summary": "Edit Notification",
-        "description": "Update an existing notification. Blank secret config fields keep\ntheir currently-saved value (see update_notification).",
+        "description": "Update a notification. A blank secret field keeps the saved value.",
         "operationId": "edit_notification_api_notifications__notification_id__put",
         "parameters": [
           {
@@ -7436,7 +7436,7 @@
           "Notifications"
         ],
         "summary": "Test Notification Route",
-        "description": "Test a notification config before saving it, or a saved notification's\nconfig from inside the edit modal.\n\nWhen notification_id is set, any provider secret field left blank in the\nrequest falls back to the saved notification's decrypted value \u2014 the\nfrontend never receives secrets back, so this is the only way to test\nwithout re-entering every credential. A filled-in secret is only tested\nagainst the saved implementation and destination fields.",
+        "description": "Test a notification configuration before saving it, or a saved\nnotification when `notification_id` is set. With `notification_id`, a\nblank secret field falls back to the saved value, and a newly entered\nsecret is tested against the saved implementation and destination\nfields.",
         "operationId": "test_notification_route_api_notifications_test_post",
         "requestBody": {
           "content": {
@@ -7647,7 +7647,7 @@
           "Quality Profiles"
         ],
         "summary": "Get Format Vocabulary",
-        "description": "Ordered format vocabulary + structure options for the ladder editor's\n\"add rung\" dropdowns.",
+        "description": "List the available formats and structure options for building a quality\nladder, in order.",
         "operationId": "get_format_vocabulary_api_quality_profiles_formats_get",
         "responses": {
           "200": {
@@ -7714,7 +7714,7 @@
           "Quality Profiles"
         ],
         "summary": "Update Quality Profile Route",
-        "description": "Update a quality profile. Every field is replaced from the request \u2014\nthere is no partial-update variant for this resource.",
+        "description": "Update a quality profile. Every field is replaced from the request;\npartial updates are not supported.",
         "operationId": "update_quality_profile_route_api_quality_profiles__profile_id__put",
         "parameters": [
           {
@@ -7767,7 +7767,7 @@
           "Quality Profiles"
         ],
         "summary": "Delete Quality Profile Route",
-        "description": "Delete a quality profile. Refused with 409 while the profile is still\nassigned to any book, series, author, or import list \u2014 reassign those first.\nOtherwise deleting the current default promotes another profile when one\nremains, and the last unassigned profile can be removed.",
+        "description": "Delete a quality profile. Returns 409 while the profile is assigned to\nany book, series, author or import list, so reassign those first.\nDeleting the default profile promotes another one when any remain.",
         "operationId": "delete_quality_profile_route_api_quality_profiles__profile_id__delete",
         "parameters": [
           {
@@ -7921,7 +7921,7 @@
           "Release Profiles"
         ],
         "summary": "Update Release Profile Route",
-        "description": "Update a release profile. Every field is replaced from the request \u2014\nthere is no partial-update variant for this resource.",
+        "description": "Update a release profile. Every field is replaced from the request;\npartial updates are not supported.",
         "operationId": "update_release_profile_route_api_release_profiles__profile_id__put",
         "parameters": [
           {
@@ -7974,7 +7974,7 @@
           "Release Profiles"
         ],
         "summary": "Delete Release Profile Route",
-        "description": "Delete a release profile. Any profile is deletable \u2014 there is no\ndefault concept for release profiles.",
+        "description": "Delete a release profile. Any release profile can be deleted.",
         "operationId": "delete_release_profile_route_api_release_profiles__profile_id__delete",
         "parameters": [
           {
@@ -8019,7 +8019,7 @@
           "Delay Profiles"
         ],
         "summary": "Get Delay Profiles",
-        "description": "List all delay profiles \u2014 tagged by order, the default last.",
+        "description": "List all delay profiles in priority order, with the default last.",
         "operationId": "get_delay_profiles_api_delay_profiles_get",
         "responses": {
           "200": {
@@ -8478,7 +8478,7 @@
           "Covers"
         ],
         "summary": "Upload Custom Cover",
-        "description": "Set a book's cover from an uploaded image, and lock it.\n\nThe image is sent as the raw request body (the browser POSTs the File\ndirectly) \u2014 the service sniffs the real type via Pillow, so no multipart\ndependency is needed. Rejected with 400 if it isn't a valid image.",
+        "description": "Set a book's cover from an uploaded image and lock it so automatic\nupdates do not replace it. The image is sent as the raw request body.\nReturns 400 if it is not a valid image.",
         "operationId": "upload_custom_cover_api_books__book_id__cover_upload_post",
         "parameters": [
           {
@@ -8578,7 +8578,7 @@
           "Covers"
         ],
         "summary": "Embed Cover In Audio",
-        "description": "Queue a background task that embeds the book's current cover into every\naudio file (a metadata-only write \u2014 no re-encode).",
+        "description": "Queue a background task that embeds the book's current cover into every\naudio file. The audio is not re-encoded.",
         "operationId": "embed_cover_in_audio_api_books__book_id__cover_embed_post",
         "parameters": [
           {
@@ -8623,7 +8623,7 @@
           "Covers"
         ],
         "summary": "Revert Cover To Automatic",
-        "description": "Clear a user-set (locked) cover so the automatic cover applies again.\n\nUnlocks the cover, deletes the stored custom file, and **restores the\nautomatic cover URL** preserved when the custom cover was set \u2014 so the\noriginal cover reappears instantly rather than blanking until a refresh. A\ndeliberate user action \u2014 the counterpart to setting a custom cover, and the\nonly thing besides a new manual cover that unlocks one. A no-op on an\nalready-automatic book (its remote cover_url is left intact).",
+        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the original cover URL.\nDoes nothing on a book that already uses the automatic cover.",
         "operationId": "revert_cover_to_automatic_api_books__book_id__cover_revert_post",
         "parameters": [
           {
@@ -9218,7 +9218,7 @@
           "Grab"
         ],
         "summary": "Grab From Search",
-        "description": "Grab a release from interactive search results.\n\nThe frontend sends the full release data from the search results\ntable. The service picks a download client, sends the URL, and\ncaches the release as grabbed.\n\nReturns: {success, message, client_name, client_download_id}",
+        "description": "Grab a release from interactive search results. Send the full release\ndata from the search result. A download client is chosen, the release is\nsent to it and recorded as grabbed. Returns `success`, `message`,\n`client_name` and `client_download_id`.",
         "operationId": "grab_from_search_api_grab_post",
         "requestBody": {
           "content": {
@@ -9262,7 +9262,7 @@
           "Grab"
         ],
         "summary": "Grab Cached Release",
-        "description": "Grab a previously cached release by its database ID.\n\nUsed when re-grabbing from the release history or when the\nrelease was cached from RSS sync.",
+        "description": "Grab a previously cached release by its database ID, for example to grab\nagain from the release history or a release found by RSS sync.",
         "operationId": "grab_cached_release_api_grab__release_id__post",
         "parameters": [
           {
@@ -9368,7 +9368,7 @@
           "Auto Search"
         ],
         "summary": "Auto Search Library",
-        "description": "Search all wanted + monitored books in the library.\nUsed by the Library page 'Search All' button.",
+        "description": "Search all wanted and monitored books in the library.",
         "operationId": "auto_search_library_api_auto_search_library_post",
         "responses": {
           "200": {
@@ -9392,7 +9392,7 @@
           "Auto Search"
         ],
         "summary": "Auto Search Series",
-        "description": "Search wanted books in a specific series.\nUsed by the SeriesBooks 'Complete Series' button.",
+        "description": "Search wanted books in a specific series.",
         "operationId": "auto_search_series_api_auto_search_series__series_id__post",
         "parameters": [
           {
@@ -9437,7 +9437,7 @@
           "Auto Search"
         ],
         "summary": "Auto Search Author",
-        "description": "Search wanted books by a specific author.\nUsed by per-author search buttons on Authors page.",
+        "description": "Search wanted books by a specific author.",
         "operationId": "auto_search_author_api_auto_search_author__author_id__post",
         "parameters": [
           {
@@ -9482,7 +9482,7 @@
           "Auto Search"
         ],
         "summary": "Auto Search Authors",
-        "description": "Search wanted books by author.\n\nWith an author_ids body, searches wanted books across those authors; with\nno body, searches all wanted books across all authors (the 'Search All'\nbutton).",
+        "description": "Search wanted books by author. With an `author_ids` body, searches\nwanted books across those authors. With no body, searches all wanted\nbooks across all authors.",
         "operationId": "auto_search_authors_api_auto_search_authors_post",
         "requestBody": {
           "content": {
@@ -9641,7 +9641,7 @@
           "Queue"
         ],
         "summary": "Remove Queue Item",
-        "description": "Remove a queue item. By default the per-client queue_remove_action decides:\n    'dismiss' (default) \u2014 leave torrent in client, just dismiss from ABM\n    'remove'            \u2014 remove from client, preserve files\n    'remove_and_delete' \u2014 remove from client, delete files\n\nremove_from_client overrides the dismiss/remove choice: false only dismisses\nfrom ABM, true removes from the client. Files are deleted only when the\nclient's action is 'remove_and_delete'. The blocklist flag applies only\nwhen removing from the client.",
+        "description": "Remove an item from the queue. By default the client's `queue_remove_action`\nsetting decides: `dismiss` hides it in ABM and leaves it in the client,\n`remove` removes it from the client and keeps the files, and\n`remove_and_delete` removes it and deletes the files. `remove_from_client`\noverrides that choice for this request: false only dismisses it, true removes\nit from the client. Files are deleted only when the client's action is\n`remove_and_delete`, and the blocklist option applies only when removing from\nthe client.",
         "operationId": "remove_queue_item_api_queue_delete",
         "requestBody": {
           "content": {
@@ -9685,7 +9685,7 @@
           "Queue"
         ],
         "summary": "Queue Count",
-        "description": "Sidebar badge count. DB-only \u2014 no download-client polling \u2014 so it's\nsafe to call on a short interval. See get_queue_count's docstring for\nexactly what this counts versus the live GET /api/queue length.",
+        "description": "Return the item count for the sidebar queue badge. Reads ABM's own\nrecords and does not poll download clients, so it is cheap to call\noften.",
         "operationId": "queue_count_api_queue_count_get",
         "responses": {
           "200": {
@@ -9709,7 +9709,7 @@
           "Queue"
         ],
         "summary": "Queue Downloading",
-        "description": "Book ids that are in flight (grabbed and sent to a client, not yet\nimported). DB-only \u2014 no download-client polling \u2014 so the Library page can\npoll it to show a 'Downloading' status. See get_downloading_book_ids'\ndocstring for the exact predicate.",
+        "description": "Return the IDs of books that are downloading: grabbed and sent to a\nclient but not yet imported. Reads ABM's own records and does not poll\ndownload clients.",
         "operationId": "queue_downloading_api_queue_downloading_get",
         "responses": {
           "200": {
@@ -9784,7 +9784,7 @@
           "Queue"
         ],
         "summary": "Manual Import Candidates",
-        "description": "Rank library books against a queue item's parsed title, to power the\nmanual-import picker's suggestions. Suggestions only \u2014 any book can\nstill be chosen via POST /manual-import regardless of rank.",
+        "description": "Rank library books against a queue item's parsed title to suggest\nmatches for a manual import. These are suggestions only; any book can be\nchosen regardless of rank.",
         "operationId": "manual_import_candidates_api_queue_manual_import_candidates_get",
         "parameters": [
           {
@@ -9848,7 +9848,7 @@
           "Queue"
         ],
         "summary": "Manual Import",
-        "description": "Import a specific completed download against a user-chosen book.\n\nReuses the exact same import core as the automatic completed-download\npass (see import_completed_download_item) with book_id forced to the\ncaller's choice, so file placement and DB updates never diverge between\nthe automatic and manual paths.",
+        "description": "Import a completed download against a book you choose. Files are placed\nand recorded the same way as an automatic import.",
         "operationId": "manual_import_api_queue_manual_import_post",
         "requestBody": {
           "content": {
@@ -9892,7 +9892,7 @@
           "Queue"
         ],
         "summary": "Cancel Pending",
-        "description": "Cancel a pending grab (user pressed Remove on a queued item).\n\nMarks the row as 'cancelled' \u2014 does NOT delete it, so it stays in the\n'failed/cancelled history' view if/when that ships. The daily cleanup\ntask removes cancelled rows older than 7 days.",
+        "description": "Cancel a pending grab. The grab is marked cancelled rather than deleted,\nand cancelled grabs older than 7 days are cleaned up daily.",
         "operationId": "cancel_pending_api_queue_pending__grab_id__delete",
         "parameters": [
           {
@@ -9937,7 +9937,7 @@
           "Queue"
         ],
         "summary": "Retry Pending",
-        "description": "Immediately re-issue a pending grab (user pressed Retry Now). Bypasses\nthe 60s scheduler tick \u2014 the user is signaling \"try this now.\"\n\nReturns the outcome of the retry. The row's status may transition to\n'succeeded' (clients are now reachable), 'failed' (attempt cap reached),\nor stay 'pending' (still no luck \u2014 wait for the next tick or retry again).",
+        "description": "Retry a pending grab immediately instead of waiting for the next\nscheduled attempt. Returns the outcome: the grab becomes `succeeded`\nwhen a client is reachable, `failed` when the attempt limit is reached,\nor stays `pending`.",
         "operationId": "retry_pending_api_queue_pending__grab_id__retry_post",
         "parameters": [
           {
@@ -10699,7 +10699,7 @@
           "Discover"
         ],
         "summary": "Get Discover Catalog",
-        "description": "Get paginated discover catalog with server-side sorting and filtering.\n\nArgs:\n    catalog_type: One of 'new_releases', 'coming_soon', 'audible_best', 'recommended'\n    page: Page number (1-indexed)\n    page_size: Items per page (5, 10, 15, 20, 25, 50)\n    seed: Random seed for consistent ordering when sort_key is 'random'\n    sort_key: Field to sort by\n    sort_dir: Sort direction (asc/desc)\n    filters: JSON string of filter conditions",
+        "description": "Get a page of a discover catalog (`new_releases`, `coming_soon`,\n`audible_best` or `recommended`) with server-side sorting and filtering.\n`seed` keeps the order stable when `sort_key` is `random`, and `filters`\nis a JSON string of filter conditions.",
         "operationId": "get_discover_catalog_api_discover__catalog_type__get",
         "parameters": [
           {
@@ -11114,7 +11114,7 @@
           "Metadata"
         ],
         "summary": "Create Cover File",
-        "description": "Save the book's cover as cover.jpg \u2014 downloaded from its URL, or\ncopied from the stored custom cover when one is set.",
+        "description": "Save the book's cover as cover.jpg, downloaded from its URL or copied\nfrom the custom cover when one is set.",
         "operationId": "create_cover_file_api_metadata_books__book_id__create_cover_post",
         "parameters": [
           {
@@ -11753,7 +11753,7 @@
           "Audible"
         ],
         "summary": "Start Login",
-        "description": "Starts the Add Account OAuth flow, sharing the re-auth pending-login\nstore so the code_verifier/serial pair never reaches the browser.",
+        "description": "Start the Add Account OAuth flow. The login verifier stays on the server\nand is never sent to the browser.",
         "operationId": "start_login_api_audible_login_start_post",
         "requestBody": {
           "content": {
@@ -12140,7 +12140,7 @@
           "Audible"
         ],
         "summary": "Sync Audible Library",
-        "description": "Sync the Audible library from one or all accounts.\nQueues a background task - check /library/sync/progress or /api/tasks/{task_id} for status.",
+        "description": "Sync the Audible library from one or all accounts. Queues a background\ntask; check `/api/audible/library/sync/progress` or\n`/api/tasks/{task_id}` for status.",
         "operationId": "sync_audible_library_api_audible_library_sync_post",
         "parameters": [
           {
@@ -12254,7 +12254,7 @@
           "Audible"
         ],
         "summary": "Bulk Add To Library",
-        "description": "Add multiple Audible books to the ABM library.\nQueues a background task - check /api/tasks/{task_id} for status.",
+        "description": "Add multiple Audible books to the ABM library. Queues a background task;\ncheck `/api/tasks/{task_id}` for status.",
         "operationId": "bulk_add_to_library_api_audible_library_books_add_bulk_post",
         "requestBody": {
           "content": {
@@ -12462,7 +12462,7 @@
           "Audible"
         ],
         "summary": "Bulk Add And Download",
-        "description": "Add multiple books to library AND queue each one for download.\nQueues a background task - check /api/tasks/{task_id} for status.",
+        "description": "Add multiple books to the library and queue each one for download.\nQueues a background task; check `/api/tasks/{task_id}` for status.",
         "operationId": "bulk_add_and_download_api_audible_library_books_add_and_download_bulk_post",
         "requestBody": {
           "content": {
@@ -12772,7 +12772,7 @@
           "Tags"
         ],
         "summary": "Create Tag",
-        "description": "Create a tag, or return the matching existing one (case-insensitively,\nonce normalised) \u2014 idempotent, as Sonarr's tag creation is.",
+        "description": "Create a tag, or return the existing one with the same name\n(case-insensitive). Safe to call repeatedly.",
         "operationId": "create_tag_api_tags_post",
         "requestBody": {
           "content": {
@@ -12995,7 +12995,7 @@
           "Tags"
         ],
         "summary": "Repair Dangling Auto Tag References Route",
-        "description": "Strip every root_folder/tag reference in the auto-tag tables that no\nlonger resolves to a live row \u2014 data left behind by a deletion that\npredates this cleanup \u2014 deleting any rule left with nothing left to\nmatch or apply as a result, on demand rather than automatically.",
+        "description": "Remove auto-tag references to root folders or tags that no longer exist,\nand delete any rule left with nothing to match or apply. Runs only when\ncalled.",
         "operationId": "repair_dangling_auto_tag_references_route_api_tags_auto_repair_dangling_references_post",
         "responses": {
           "200": {
@@ -13637,11 +13637,11 @@
             "required": false,
             "schema": {
               "type": "boolean",
-              "description": "Also count on-disk folders not mapped to a book. This walks each root folder looking for book folders and audio files \u2014 still expensive on network storage \u2014 so it is opt-in and off for dropdown/status callers.",
+              "description": "Also count on-disk folders that are not mapped to a book. This walks each root folder and can be slow on network storage, so it is off by default.",
               "default": false,
               "title": "Include Unmapped"
             },
-            "description": "Also count on-disk folders not mapped to a book. This walks each root folder looking for book folders and audio files \u2014 still expensive on network storage \u2014 so it is opt-in and off for dropdown/status callers."
+            "description": "Also count on-disk folders that are not mapped to a book. This walks each root folder and can be slow on network storage, so it is off by default."
           }
         ],
         "responses": {
@@ -13714,7 +13714,7 @@
           "Settings"
         ],
         "summary": "Delete Root Folder",
-        "description": "Delete a root folder from ABM. Either way, ABM forgets every book\nrecorded under this path \u2014 each removed through the same row cleanup\nDELETE /api/books/{book_id} uses, so related rows never orphan and the\nactivity log keeps its trace (book_id set to NULL rather than the event\nbeing deleted). By default (delete_files=false) files on disk are never\ntouched \u2014 only the ABM records go. delete_files=true additionally\ndeletes the folder's contents from disk, scoped strictly to the\nconfigured root path.\n\nAny auto-tag rule scoped to this root folder can never match again once\nit is gone, so its root-folder conditions are deleted along with it, and\na rule left with no conditions at all is deleted too \u2014 `removed_auto_tag_rules`\nin the response names anything removed this way.",
+        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete the folder's\ncontents, limited to the configured root path. Auto-tag rules scoped to\nthis root folder are removed with it, along with any rule left with no\nconditions, and `removed_auto_tag_rules` in the response lists them.",
         "operationId": "delete_root_folder_api_settings_root_folders__folder_id__delete",
         "parameters": [
           {
@@ -13874,11 +13874,11 @@
             "required": false,
             "schema": {
               "type": "boolean",
-              "description": "Also count on-disk folders not mapped to a book. No current caller needs this on a default-folder lookup, so \u2014 as with GET /root-folders \u2014 it stays off unless asked for.",
+              "description": "Also count on-disk folders that are not mapped to a book. Off by default.",
               "default": false,
               "title": "Include Unmapped"
             },
-            "description": "Also count on-disk folders not mapped to a book. No current caller needs this on a default-folder lookup, so \u2014 as with GET /root-folders \u2014 it stays off unless asked for."
+            "description": "Also count on-disk folders that are not mapped to a book. Off by default."
           }
         ],
         "responses": {
@@ -14221,7 +14221,7 @@
           "Settings"
         ],
         "summary": "Get Host Settings",
-        "description": "Get host/network settings.\n\nDB read, defaults, exception fallback, and the back-compat shim\nfor the old 'bind_address' key all live in the library_manager\nhelper. This endpoint is the Pydantic-typed wrapper.",
+        "description": "Get host and network settings.",
         "operationId": "get_host_settings_api_settings_general_host_get",
         "responses": {
           "200": {
@@ -14598,7 +14598,7 @@
           "Settings"
         ],
         "summary": "Restore Backup Upload",
-        "description": "Restore from an uploaded backup file.\n\nNeeds the account password when one is set, sent as the multipart text\nfield current_password.\n\nThe upload is parsed with the standard multipart parser, but its default\nper-part size cap only bounds non-file fields, so the file field is\ncapped and streamed directly to disk by _CappedFileMultiPartParser\ninstead \u2014 enforced while the stream is read, never trusted from\nContent-Length, before the excess ever reaches disk. The upload lands in\na private, unpredictable scratch location \u2014 never backup_path \u2014 and is\ndecrypted and validated exactly as a backup already on disk would be.",
+        "description": "Restore from an uploaded backup file. When an account password is set,\nsend it as the multipart text field `current_password`. The upload is\nsize-capped and validated the same way as a backup already on disk.",
         "operationId": "restore_backup_upload_api_settings_general_backup_restore_upload_post",
         "parameters": [
           {
@@ -14869,7 +14869,7 @@
           "Settings"
         ],
         "summary": "Get Security Settings",
-        "description": "Get security settings. The password and the API key are never returned,\neven partially \u2014 only whether a key exists.\n\nNo saved row yet returns defaults with no API key \u2014 a key is only ever\nminted by the regenerate endpoint, never on read. A read failure raises\ninstead of returning defaults, since defaults silently re-enable the LAN\nauth bypass on the next Save.",
+        "description": "Get security settings. The password and API key are never returned, only\nwhether a key exists. With no saved settings, defaults are returned with\nno API key; a key is only created by the regenerate endpoint.",
         "operationId": "get_security_settings_api_settings_general_security_get",
         "responses": {
           "200": {
@@ -15488,7 +15488,7 @@
           "System"
         ],
         "summary": "Get Pool Stats Endpoint",
-        "description": "Current DB connection-pool state, for diagnosing reported slowness.",
+        "description": "Current database connection pool state, for diagnosing slowness.",
         "operationId": "get_pool_stats_endpoint_api_system_pool_stats_get",
         "responses": {
           "200": {
@@ -15581,7 +15581,7 @@
           "System"
         ],
         "summary": "Log Frontend Error",
-        "description": "Receive and log frontend errors.\nCalled by ErrorBoundary when React crashes.",
+        "description": "Receive and log an error reported by the web interface.",
         "operationId": "log_frontend_error_api_system_error_log_post",
         "requestBody": {
           "content": {
@@ -16019,7 +16019,7 @@
           "Authentication"
         ],
         "summary": "Setup Status",
-        "description": "Whether this is a never-configured install that must complete setup\nbefore it is usable. Public \u2014 the setup page needs this before any\ncredentials exist.",
+        "description": "Whether this install has never been configured and must complete setup.\nThis endpoint is public so the setup page can call it before any\ncredentials exist.",
         "operationId": "setup_status_api_auth_setup_status_get",
         "responses": {
           "200": {
@@ -16041,7 +16041,7 @@
           "Authentication"
         ],
         "summary": "Setup",
-        "description": "Create the initial admin account and log the caller in.\n\nOnly usable while `is_first_run()` is true. The insert uses\n`ON CONFLICT DO NOTHING` and checks the affected row count so a second\ncaller racing the first one \u2014 or an already-configured instance \u2014 is\nrejected at the database layer rather than by a check that could be\nbeaten by a concurrent request. Once security settings exist for this\ninstance (even auth_method=\"none\", a deliberate no-auth choice), this\nendpoint is permanently locked out \u2014 it must never double as a\npassword-reset path.",
+        "description": "Create the initial admin account and log the caller in. Only available\non first run. Once security settings exist, including a deliberate\nno-auth choice, the endpoint is permanently locked and cannot be used to\nreset a password.",
         "operationId": "setup_api_auth_setup_post",
         "requestBody": {
           "content": {
@@ -16083,7 +16083,7 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Authenticate user and return JWT token.\n\nFor Forms auth: Returns token in response body AND sets HttpOnly cookie.\nFor Basic auth: This endpoint still works but Basic auth is handled by browser.\n\nAlways runs an Argon2 verify \u2014 against the real stored hash when the\nsubmitted username matches, against a constant dummy hash otherwise \u2014 so\nthe response takes the same time on every failure path regardless of\nwhich credential was wrong. This prevents username enumeration via\nresponse timing.",
+        "description": "Authenticate and return a JWT. With Forms authentication the token is\nreturned in the response body and set as an HttpOnly cookie. Basic\nauthentication is handled by the browser, though this endpoint still\nworks. Failed logins take the same time whichever credential was wrong.",
         "operationId": "login_api_auth_login_post",
         "requestBody": {
           "content": {
@@ -16149,7 +16149,7 @@
           "Authentication"
         ],
         "summary": "Auth Status",
-        "description": "Get current authentication status.\n\nThis endpoint is public and returns:\n- Whether the user is authenticated\n- The auth method configured\n- Whether it is a local-network request, as decided by is_lan_request\n\nUsed by the frontend to determine if login is needed.",
+        "description": "Get the current authentication status. This endpoint is public. It\nreturns whether the caller is authenticated, the configured\nauthentication method, and whether the request came from the local\nnetwork. The web interface uses it to decide whether a login is needed.",
         "operationId": "auth_status_api_auth_status_get",
         "responses": {
           "200": {
@@ -16664,7 +16664,7 @@
           "Tasks"
         ],
         "summary": "Queue Task",
-        "description": "Queue a new background task.\n\nTask types:\n- backup_export: Export backups to remote targets\n- manual_import: Import files from manual import folder\n- library_scan: Scan library for changes",
+        "description": "Queue a new background task. Task types: `backup_export` (export backups\nto remote targets), `manual_import` (import files from the manual import\nfolder) and `library_scan` (scan the library for changes).",
         "operationId": "queue_task_api_tasks_post",
         "requestBody": {
           "required": true,
@@ -16706,7 +16706,7 @@
           "Tasks"
         ],
         "summary": "List Tasks",
-        "description": "List background tasks (paginated, newest first). Returns the page plus the\ntotal matching count so the UI can page through the full run history.",
+        "description": "List background tasks, newest first. Returns the page plus the total\nmatching count.",
         "operationId": "list_tasks_api_tasks_get",
         "parameters": [
           {
@@ -17119,7 +17119,7 @@
           "Audible Diagnostics"
         ],
         "summary": "Test Download Capability",
-        "description": "Test if downloads will work by requesting a license and decrypting the voucher.\n\nThis is the critical test that verifies the AAXC download flow:\n1. Request a content license from Audible\n2. Decrypt the voucher to extract key/iv\n\nUses a book from the library for testing.",
+        "description": "Test whether downloads will work by requesting a content license from\nAudible and decrypting the voucher to extract the key and IV. Uses a\nbook from the library.",
         "operationId": "test_download_capability_api_audible_diagnostics_test_download_capability__account_id__get",
         "parameters": [
           {
@@ -17225,7 +17225,7 @@
     "/api": {
       "get": {
         "summary": "Root",
-        "description": "API root - returns basic info and doc links",
+        "description": "API root. Returns basic info and documentation links.",
         "operationId": "root_api_get",
         "responses": {
           "200": {
@@ -18974,7 +18974,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "BackupSettings",
-        "description": "Backup configuration settings, for PUT requests."
+        "description": "Backup configuration settings to save."
       },
       "BackupSettingsResponse": {
         "properties": {
@@ -19056,7 +19056,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "BackupSettingsResponse",
-        "description": "Backup configuration settings, for GET responses."
+        "description": "Backup configuration settings."
       },
       "BookCreate": {
         "properties": {
@@ -20012,7 +20012,7 @@
           "tags"
         ],
         "title": "BookTagsSummaryResponse",
-        "description": "`total` is the number of requested ids that resolved to a real book,\nnot the number of ids sent \u2014 so a caller showing \"3 of `total` tagged\"\nstays truthful when one of the ids is stale."
+        "description": "`total` is the number of requested IDs that matched a book, not the\nnumber sent."
       },
       "BulkAddAndDownloadRequest": {
         "properties": {
@@ -21394,7 +21394,7 @@
           "name"
         ],
         "title": "ClientCreate",
-        "description": "Schema for creating a new download client."
+        "description": "Fields for creating a download client."
       },
       "ClientResponse": {
         "properties": {
@@ -21633,7 +21633,7 @@
           "health"
         ],
         "title": "ClientResponse",
-        "description": "A single download client, matching client_to_dict().\n\nEvery field below is always present in that dict \u2014 only the value is\never None \u2014 so every field is required (no default) despite several\nbeing Optional-typed, matching DownloadClient's actual column nullability."
+        "description": "A single download client. Every field is always present; unset values\nare null."
       },
       "ClientTestRequest": {
         "properties": {
@@ -21764,7 +21764,7 @@
         },
         "type": "object",
         "title": "ClientTestRequest",
-        "description": "Schema for testing a download client connection."
+        "description": "A download client configuration to test."
       },
       "ClientUpdate": {
         "properties": {
@@ -22018,7 +22018,7 @@
         },
         "type": "object",
         "title": "ClientUpdate",
-        "description": "Schema for updating a download client. All fields optional."
+        "description": "Fields to update on a download client. All fields are optional."
       },
       "ConditionTypeInfo": {
         "properties": {
@@ -23115,7 +23115,7 @@
           "count": {
             "type": "integer",
             "title": "Count",
-            "description": "The source's own result count before cross-source dedup \u2014 not how many of its results survived deduping into `results`."
+            "description": "The source's own result count before duplicates across sources are removed."
           }
         },
         "type": "object",
@@ -23485,7 +23485,7 @@
           "name"
         ],
         "title": "CustomMessagePayload",
-        "description": "Create schema for a custom message. The service layer does the deep\nvalidation (known format, format-compatible targets, length caps)."
+        "description": "Fields for creating a custom message. The format, targets and lengths\nare validated when it is saved."
       },
       "CustomMessagePreviewPayload": {
         "properties": {
@@ -23703,7 +23703,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "CustomMessageUpdatePayload",
-        "description": "Partial update \u2014 only provided fields change."
+        "description": "Partial update: only provided fields change."
       },
       "DelayProfileCreate": {
         "properties": {
@@ -23752,7 +23752,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "DelayProfileCreate",
-        "description": "Schema for creating a new delay profile."
+        "description": "Fields for creating a delay profile."
       },
       "DelayProfileReorder": {
         "properties": {
@@ -23820,7 +23820,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "DelayProfileUpdate",
-        "description": "Schema for updating a delay profile."
+        "description": "Fields to update on a delay profile."
       },
       "DiagnosticResult": {
         "properties": {
@@ -24524,7 +24524,7 @@
           "title"
         ],
         "title": "EditionsRequest",
-        "description": "A scanned row's own identity, used to search Libex and score what it finds."
+        "description": "A scanned row's identity, used to search for and score other editions."
       },
       "EditionsResponse": {
         "properties": {
@@ -24768,7 +24768,7 @@
         },
         "type": "object",
         "title": "ExportTarget",
-        "description": "A single export destination, for PUT requests.\n\nA blank remote_password or s3_secret_key keeps the secret saved under the same id."
+        "description": "A single export destination. A blank `remote_password` or\n`s3_secret_key` keeps the secret saved under the same id."
       },
       "ExportTargetResponse": {
         "properties": {
@@ -24870,7 +24870,7 @@
         },
         "type": "object",
         "title": "ExportTargetResponse",
-        "description": "A single export destination, for GET responses.\n\nremote_password and s3_secret_key are never returned; has_remote_password\n/ has_s3_secret_key tell the settings page whether one is stored."
+        "description": "A single export destination. `remote_password` and `s3_secret_key` are\nnever returned; `has_remote_password` and `has_s3_secret_key` show\nwhether one is stored."
       },
       "ExtraFileCatalogue": {
         "properties": {
@@ -25159,7 +25159,7 @@
         },
         "type": "object",
         "title": "FrontendErrorReport",
-        "description": "Frontend error report from ErrorBoundary, coerced and truncated at validation time."
+        "description": "An error reported by the web interface. Values are coerced and truncated\non receipt."
       },
       "FullDiagnosticResponse": {
         "properties": {
@@ -25226,7 +25226,7 @@
           "name"
         ],
         "title": "GenreDetail",
-        "description": "One genre or subgenre name with its Audible facet type. `type` is\nnull for a name whose facet hasn't been derived from Libex yet."
+        "description": "One genre or subgenre name with its Audible facet type. `type` is null\nwhen the name's facet type has not been determined yet."
       },
       "GrabRequest": {
         "properties": {
@@ -25408,7 +25408,7 @@
           "last_duration_ms"
         ],
         "title": "HealthSnapshotResponse",
-        "description": "Health snapshot embedded in a list-item response, matching HealthSnapshot.to_dict().\n\nEvery field is always present in the dict \u2014 only the value is ever\nNone \u2014 so every field here is required (no default) despite being\nOptional-typed, keeping the generated frontend type free of `undefined`."
+        "description": "Health snapshot for a list item. Every field is always present; unset\nvalues are null."
       },
       "HostSettings": {
         "properties": {
@@ -25458,7 +25458,7 @@
           "ssl_key_path"
         ],
         "title": "HostSettings",
-        "description": "Host/network configuration settings - all fields required for PUT"
+        "description": "Host and network settings. All fields are required when saving."
       },
       "ImportItemKey": {
         "properties": {
@@ -25636,7 +25636,7 @@
         },
         "type": "object",
         "title": "ImportListUpdate",
-        "description": "Schema for updating an import list. All fields optional."
+        "description": "Fields to update on an import list. All fields are optional."
       },
       "ImportRequest": {
         "properties": {
@@ -25897,7 +25897,7 @@
           "implementation"
         ],
         "title": "IndexerCreate",
-        "description": "Schema for creating a new indexer."
+        "description": "Fields for creating an indexer."
       },
       "IndexerListResponse": {
         "properties": {
@@ -25914,7 +25914,7 @@
           "indexers"
         ],
         "title": "IndexerListResponse",
-        "description": "The Settings \u2192 Indexers page payload."
+        "description": "The list of indexers."
       },
       "IndexerOptionsSettings": {
         "properties": {
@@ -26321,7 +26321,7 @@
           "health"
         ],
         "title": "IndexerResponse",
-        "description": "A single indexer, matching Indexer.to_dict() plus its unreadable credentials and health snapshot.\n\nEvery field below is always present in that dict \u2014 only the value is\never None \u2014 so every field is required (no default) despite most being\nOptional-typed, matching Indexer's actual column nullability. api_key and\ncookie are never returned; has_api_key / has_cookie tell the edit modal\nwhether a credential is stored so it can render its \"leave blank to keep\ncurrent\" affordance."
+        "description": "A single indexer. Every field is always present; unset values are null.\nThe API key and cookie are never returned; `has_api_key` and\n`has_cookie` show whether one is stored."
       },
       "IndexerTestRequest": {
         "properties": {
@@ -26452,7 +26452,7 @@
           "implementation"
         ],
         "title": "IndexerTestRequest",
-        "description": "Schema for testing an unsaved indexer config."
+        "description": "An indexer configuration to test, saved or not."
       },
       "IndexerUpdate": {
         "properties": {
@@ -26772,7 +26772,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "IndexerUpdate",
-        "description": "Schema for updating an indexer. All fields optional \u2014 only fields\npresent in the request are applied."
+        "description": "Fields to update on an indexer. All fields are optional; only those\npresent are applied."
       },
       "LibraryMigrateRequest": {
         "properties": {
@@ -27709,7 +27709,7 @@
           "implementation"
         ],
         "title": "NotificationCreate",
-        "description": "Schema for creating a new notification."
+        "description": "Fields for creating a notification."
       },
       "NotificationResponse": {
         "properties": {
@@ -27934,7 +27934,7 @@
           "health"
         ],
         "title": "NotificationResponse",
-        "description": "A single notification, matching Notification.to_dict().\n\nEvery field below is always present in that dict \u2014 only the value is\never None \u2014 so every field is required (no default) despite several\nbeing Optional-typed, matching Notification's actual column nullability."
+        "description": "A single notification. Every field is always present; unset values are\nnull."
       },
       "NotificationTestRequest": {
         "properties": {
@@ -27966,7 +27966,7 @@
           "implementation"
         ],
         "title": "NotificationTestRequest",
-        "description": "Schema for testing an unsaved notification config, or a saved one's\nconfig from inside the edit modal."
+        "description": "A notification configuration to test, either unsaved or, with\n`notification_id`, a saved one."
       },
       "NotificationUpdate": {
         "properties": {
@@ -28218,7 +28218,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "NotificationUpdate",
-        "description": "Schema for updating a notification. All fields optional \u2014 only fields\npresent in the request are applied."
+        "description": "Fields to update on a notification. All fields are optional; only those\npresent are applied."
       },
       "PreferredTerm": {
         "properties": {
@@ -28398,7 +28398,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "ProxySettings",
-        "description": "Proxy configuration settings, for PUT requests.\n\nproxy_password is write-only: omit it, or send it blank, to keep the\ncurrently-saved password; a non-blank value replaces it. Keeping it\nwhile changing the proxy type, hostname or port is refused."
+        "description": "Proxy configuration settings to save. `proxy_password` is write-only:\nomit it or send it blank to keep the saved password, and a non-blank\nvalue replaces it. Keeping the saved password while changing the proxy\ntype, hostname or port is refused."
       },
       "ProxySettingsResponse": {
         "properties": {
@@ -28535,7 +28535,7 @@
           "items"
         ],
         "title": "QualityLadderGroup",
-        "description": "One ladder entry: a group of one-or-more format+structure rungs that\nrank equally. A single quality is a one-item group; `name` labels a\nmulti-item group and is null/omitted for a singleton. `enabled` keeps the\nrung on the ladder (position, rank, cutoff index unchanged) while refusing\nits formats at grab time \u2014 Sonarr's un-`Allowed` quality."
+        "description": "One ladder entry: a group of one or more format and structure ranks that\nrank equally. A single quality is a one-item group. `name` labels a\nmulti-item group and is null for a single item. `enabled` keeps the\nentry on the ladder (position and rank unchanged) while refusing its\nformats at grab time."
       },
       "QualityLadderRung": {
         "properties": {
@@ -28555,7 +28555,7 @@
           "structure"
         ],
         "title": "QualityLadderRung",
-        "description": "One rung of a quality profile's ladder: a format + file-structure pair."
+        "description": "One rung of a quality profile's ladder: a format and file-structure\npair."
       },
       "QualityProfileCreate": {
         "properties": {
@@ -28605,7 +28605,7 @@
           "cutoff"
         ],
         "title": "QualityProfileCreate",
-        "description": "Schema for creating a new quality profile."
+        "description": "Fields for creating a quality profile."
       },
       "QualityProfileListResponse": {
         "properties": {
@@ -28622,7 +28622,7 @@
           "quality_profiles"
         ],
         "title": "QualityProfileListResponse",
-        "description": "The Settings \u2192 Quality Profiles page payload."
+        "description": "The list of quality profiles."
       },
       "QualityProfileResponse": {
         "properties": {
@@ -28693,7 +28693,7 @@
           "added_date"
         ],
         "title": "QualityProfileResponse",
-        "description": "A single quality profile, matching quality_profile_to_dict().\n\nEvery field below is always present in that dict \u2014 only the value is\never None \u2014 so `cutoff` and `added_date` are required (no default)\ndespite being Optional-typed, matching QualityProfile's column nullability."
+        "description": "A single quality profile. Every field is always present; unset values\nare null."
       },
       "QualityProfileUpdate": {
         "properties": {
@@ -28743,7 +28743,7 @@
           "cutoff"
         ],
         "title": "QualityProfileUpdate",
-        "description": "Schema for updating a quality profile. PUT replaces every field."
+        "description": "Fields to update on a quality profile. Every field is replaced."
       },
       "QueueItemResponse": {
         "properties": {
@@ -29041,7 +29041,7 @@
           "path_mapping_suggestion"
         ],
         "title": "QueueItemResponse",
-        "description": "One queue-page row: an active client download, a client-history\nfailure, a pending grab, or a delay-profile hold. The shape is a union\nof `_make_queue_item`, `_build_pending_grab_items`, and\n`_build_pending_hold_items`, which all share the same base key set\n(required below, some nullable) \u2014 only the fields `_build_pending_grab_items`\n/ `_build_pending_hold_items` / a Release match / a SABnzbd-NZBGet\nhistory entry add on top of that base are genuinely optional, and null\non every other row kind."
+        "description": "One queue row: an active client download, a client-history failure, a\npending grab or a delay-profile hold. Fields that do not apply to a\nrow's kind are null."
       },
       "QueuePollErrorResponse": {
         "properties": {
@@ -29111,7 +29111,7 @@
           "reconciled"
         ],
         "title": "QueueResponse",
-        "description": "The assembled Queue page: client downloads, pending grabs, and\ndelay-profile holds, matching get_queue()'s return dict."
+        "description": "The queue: client downloads, pending grabs and delay-profile holds."
       },
       "QueueStatsResponse": {
         "properties": {
@@ -29411,7 +29411,7 @@
           "message"
         ],
         "title": "RegeneratedApiKey",
-        "description": "The new API key, shown once in full; never any masked form of it."
+        "description": "The new API key. It is shown once, in full, and cannot be retrieved\nlater."
       },
       "ReleaseProfileCreate": {
         "properties": {
@@ -29485,7 +29485,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "ReleaseProfileCreate",
-        "description": "Schema for creating a new release profile."
+        "description": "Fields for creating a release profile."
       },
       "ReleaseProfileUpdate": {
         "properties": {
@@ -29559,7 +29559,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "ReleaseProfileUpdate",
-        "description": "Schema for updating a release profile. PUT replaces every field."
+        "description": "Fields to update on a release profile. Every field is replaced."
       },
       "RemoveRequest": {
         "properties": {
@@ -29955,7 +29955,7 @@
           "path"
         ],
         "title": "RowChoice",
-        "description": "One row's own choices, keyed by `path` \u2014 no scan-produced field, so\nthe pagehide/visibility beacon stays well under the keepalive body-size\nlimit. A field left out of the request is left untouched on the stored\nrow; a field sent as `null` clears it."
+        "description": "One row's choices, keyed by `path`. A field left out of the request is\nleft unchanged; a field sent as `null` clears it."
       },
       "RowExtra": {
         "properties": {
@@ -30639,7 +30639,7 @@
           "query"
         ],
         "title": "SearchRequest",
-        "description": "Schema for search requests."
+        "description": "An indexer search request."
       },
       "SecuritySettings": {
         "properties": {
@@ -30754,7 +30754,7 @@
           "cert_validation"
         ],
         "title": "SecuritySettingsUpdate",
-        "description": "Security settings for PUT requests (includes optional password).\n\nThe API key is never accepted here; only the regenerate endpoint changes it."
+        "description": "Security settings to save, including an optional password. The API key\nis never accepted here; only the regenerate endpoint changes it."
       },
       "SeriesBulkEditRequest": {
         "properties": {
@@ -31064,7 +31064,7 @@
           "complete_runtime"
         ],
         "title": "SeriesResponse",
-        "description": "Response model for a series, matching LibraryManager.get_all_series().\n\nEvery field below is always present in that dict \u2014 only the value is\never None \u2014 so every field is required (no default) despite several\nbeing Optional-typed."
+        "description": "A series. Every field is always present; unset values are null."
       },
       "SetupRequest": {
         "properties": {
