@@ -20775,6 +20775,7 @@
               "type": "integer"
             },
             "type": "array",
+            "minItems": 1,
             "title": "Book Ids"
           },
           "monitored": {
@@ -20911,6 +20912,7 @@
               "type": "integer"
             },
             "type": "array",
+            "minItems": 1,
             "title": "Book Ids"
           },
           "status": {
@@ -24035,92 +24037,63 @@
             "title": "Auto Refresh Enabled"
           },
           "schedule_frequency": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
+            "type": "string",
+            "enum": [
+              "daily",
+              "weekly",
+              "monthly"
             ],
-            "title": "Schedule Frequency"
+            "title": "Schedule Frequency",
+            "default": "weekly"
           },
           "schedule_day_of_week": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Schedule Day Of Week"
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
+            "title": "Schedule Day Of Week",
+            "default": 0
           },
           "schedule_day_of_month": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Schedule Day Of Month"
+            "type": "integer",
+            "maximum": 28.0,
+            "minimum": 1.0,
+            "title": "Schedule Day Of Month",
+            "default": 1
           },
           "schedule_hour": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Schedule Hour"
+            "type": "integer",
+            "maximum": 23.0,
+            "minimum": 0.0,
+            "title": "Schedule Hour",
+            "default": 0
           },
           "schedule_minute": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Schedule Minute"
+            "type": "integer",
+            "maximum": 59.0,
+            "minimum": 0.0,
+            "title": "Schedule Minute",
+            "default": 0
           },
           "pages_to_scrape": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Pages To Scrape"
+            "type": "integer",
+            "maximum": 50.0,
+            "minimum": 1.0,
+            "title": "Pages To Scrape",
+            "default": 10
           },
           "max_asins_per_refresh": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Max Asins Per Refresh"
+            "type": "integer",
+            "maximum": 5000.0,
+            "minimum": 100.0,
+            "title": "Max Asins Per Refresh",
+            "default": 1000
           },
           "batch_size": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Batch Size"
+            "type": "integer",
+            "maximum": 900.0,
+            "minimum": 10.0,
+            "title": "Batch Size",
+            "default": 500
           },
           "refresh_on_startup": {
             "anyOf": [
