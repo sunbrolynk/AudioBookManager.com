@@ -9641,7 +9641,7 @@
           "Queue"
         ],
         "summary": "Remove Queue Item",
-        "description": "Action depends on the per-client queue_remove_action setting:\n    'dismiss' (default) \u2014 leave torrent in client, just dismiss from ABM\n    'remove'            \u2014 remove from client, preserve files\n    'remove_and_delete' \u2014 remove from client, delete files\n\nThe blocklist flag applies only to the 'remove' and 'remove_and_delete'\npaths (it doesn't make sense to blocklist while leaving the torrent\nin the client).",
+        "description": "Remove a queue item. By default the per-client queue_remove_action decides:\n    'dismiss' (default) \u2014 leave torrent in client, just dismiss from ABM\n    'remove'            \u2014 remove from client, preserve files\n    'remove_and_delete' \u2014 remove from client, delete files\n\nremove_from_client overrides the dismiss/remove choice: false only dismisses\nfrom ABM, true removes from the client. Files are deleted only when the\nclient's action is 'remove_and_delete'. The blocklist flag applies only\nwhen removing from the client.",
         "operationId": "remove_queue_item_api_queue_delete",
         "requestBody": {
           "content": {
@@ -11652,6 +11652,57 @@
       }
     },
     "/api/audible/accounts/{account_id}": {
+      "patch": {
+        "tags": [
+          "Audible"
+        ],
+        "summary": "Set Account Active",
+        "description": "Enable or disable an Audible account. Disabling keeps the stored sign-in.",
+        "operationId": "set_account_active_api_audible_accounts__account_id__patch",
+        "parameters": [
+          {
+            "name": "account_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Account Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AccountActiveUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AccountResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
       "delete": {
         "tags": [
           "Audible"
@@ -17204,6 +17255,20 @@
   },
   "components": {
     "schemas": {
+      "AccountActiveUpdate": {
+        "properties": {
+          "is_active": {
+            "type": "boolean",
+            "title": "Is Active"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "is_active"
+        ],
+        "title": "AccountActiveUpdate"
+      },
       "AccountResponse": {
         "properties": {
           "id": {
@@ -21302,6 +21367,11 @@
           },
           "queue_remove_action": {
             "type": "string",
+            "enum": [
+              "dismiss",
+              "remove",
+              "remove_and_delete"
+            ],
             "title": "Queue Remove Action",
             "default": "dismiss"
           },
@@ -21913,7 +21983,12 @@
           "queue_remove_action": {
             "anyOf": [
               {
-                "type": "string"
+                "type": "string",
+                "enum": [
+                  "dismiss",
+                  "remove",
+                  "remove_and_delete"
+                ]
               },
               {
                 "type": "null"
@@ -28896,6 +28971,17 @@
             ],
             "title": "Match Tier"
           },
+          "queue_remove_action": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Queue Remove Action"
+          },
           "pending_grab_id": {
             "anyOf": [
               {
@@ -29509,6 +29595,22 @@
           "blocklist": {
             "type": "boolean",
             "title": "Blocklist",
+            "default": false
+          },
+          "remove_from_client": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Remove From Client"
+          },
+          "from_history": {
+            "type": "boolean",
+            "title": "From History",
             "default": false
           }
         },

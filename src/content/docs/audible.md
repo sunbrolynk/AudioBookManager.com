@@ -11,6 +11,8 @@ Add an account under **Settings > Audible**. You can connect more than one. Each
 
 If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Sign in again on the same account. It keeps its library and takes the new credentials. Do not delete the account to fix this: deleting it drops its library table and removes its device from Audible.
 
+There is no switch for this in the app yet. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` turns an account off without signing it out. A disabled account keeps its stored sign-in and its library, and syncs, downloads and the health check skip it, so it isn't reported as failing. Send `{"is_active": true}`, or sign in on it again, and it picks up where it left off.
+
 ## Sync
 
 Sync refreshes each account's library from Audible. The Audible settings page shows its progress and result, and reports a failure with the real error. It also runs on a schedule.
