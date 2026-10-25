@@ -18,8 +18,10 @@ h2{font:700 1.15rem var(--cond);letter-spacing:.06em;text-transform:uppercase;ma
 .top{border-bottom:1px solid var(--line);background:var(--bg)}
 .top .w{max-width:1400px;margin:auto;padding:0 20px;height:62px;display:flex;align-items:center;gap:26px}
 @media(min-width:900px){.top .w{padding:0 40px}}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 16px var(--cond);letter-spacing:.04em;color:var(--ink);white-space:nowrap}
-.brand img{width:30px;height:30px}.brand b{color:var(--acc-hi);font-weight:700}
+/* the wordmark is the docs bar's own: Cinzel Decorative, Manager in the site accent */
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 17px "Cinzel Decorative",var(--cond);letter-spacing:.02em;color:var(--ink);white-space:nowrap}
+.brand img{width:32px;height:32px}.brand span{color:#b07ce0}:root[data-theme=light] .brand span{color:#8b45c6}
+.brand b{font:700 .8em var(--cond);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 .top nav{margin-inline-start:auto;display:flex;gap:20px;font-size:15px}
 .top nav a{color:var(--mut);text-decoration:none}.top nav a[aria-current]{color:var(--ink)}
 @media(max-width:560px){.top nav .hide-s{display:none}.top .w{gap:10px;padding:0 14px}.brand{font-size:13.5px;gap:8px}.brand img{width:26px;height:26px}.top nav{gap:14px;font-size:14px}}

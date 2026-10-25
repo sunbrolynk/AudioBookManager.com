@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import '@fontsource-variable/cinzel/wght.css';
+import '@fontsource/cinzel-decorative/700.css';
 import '@fontsource/spectral/400.css';
 import '@fontsource/spectral/400-italic.css';
 import '@fontsource/spectral/600.css';
@@ -34,7 +35,7 @@ const site = 'https://audiobookmanager.com';
 <body data-state="idle" data-feed="ok">
   <header class="top">
     <div class="w">
-      <a class="brand" href={`${site}/`} aria-label="AudioBook Manager home"><Image src={icon} alt="" width={30} height={30} />AudioBook Manager <b>Radio</b></a>
+      <a class="brand" href={`${site}/`} aria-label="AudioBook Manager home"><Image src={icon} alt="" width={32} height={32} densities={[1, 2, 3]} />AudioBook <span>Manager</span><b>Radio</b></a>
       <nav aria-label="Main">
         <a href={`${site}/installation/`} class="hide-s">Docs</a>
         <a href={credits} aria-current={current === 'credits' ? 'page' : undefined}>Credits</a>
