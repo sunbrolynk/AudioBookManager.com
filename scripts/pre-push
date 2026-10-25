@@ -34,7 +34,7 @@ echo "Installing locked dependencies without installation scripts..."
 npm ci --ignore-scripts
 
 echo "Auditing dependencies..."
-npm audit --audit-level=moderate
+node scripts/audit-new-advisories.mjs
 
 echo "Running regression tests..."
 npm test
