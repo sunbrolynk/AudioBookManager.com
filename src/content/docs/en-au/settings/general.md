@@ -57,7 +57,7 @@ See [Logs](/en-au/system/logs/) and the [Activity Log](/en-au/system/activity-lo
 | Automatic Backups | off | Scheduled backups |
 | Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression |
 | Backup Retention | 28 days | 0 keeps forever |
-| Auto-Export on Backup | on | After each backup, send it to export targets marked Auto |
+| Auto-Export on Backup | on | After each manual or scheduled backup, send it to export targets marked Auto |
 | Export Targets | none | Remote destinations: SFTP, SCP, FTPS, FTP, S3 or rclone |
 
 See [Backups](/en-au/system/backups/).
