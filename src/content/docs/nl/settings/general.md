@@ -28,7 +28,6 @@ Hoe ABM het internet op gaat voor metadata, covers en Audible-pagina's.
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 of SOCKS5 |
 | Hostname, Port | leeg | Adres van de proxy |
 | Username, Password | leeg | Optioneel |
-| Bypass Addresses | `localhost,127.0.0.1` | Hosts die de proxy overslaan |
 | Test Connection | | Controleert de proxy |
 
 De sectie toont ook je uitgaande IP-adres zoals externe diensten het zien. Een keuze van verbinding, met een ingebouwde VPN, staat gepland voor een latere release.

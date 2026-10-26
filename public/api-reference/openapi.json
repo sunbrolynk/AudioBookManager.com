@@ -1956,9 +1956,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BulkEditChanges"
               }
             }
           }
@@ -2525,9 +2523,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BulkEditChanges"
               }
             }
           }
@@ -3708,6 +3704,59 @@
                   "type": "object",
                   "additionalProperties": true,
                   "title": "Response Update Session Choices Api Library Import Session  Session Id  Choices Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/remove-folders": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Remove Import Folders",
+        "description": "Delete the no-audio folders named, now, through the recycle bin. A folder\nthat may not be deleted is reported in its own result and does not stop the rest.",
+        "operationId": "remove_import_folders_api_library_import_session__session_id__remove_folders_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFoldersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RemoveFoldersResponse"
                 }
               }
             }
@@ -5045,7 +5094,7 @@
           "Conversions"
         ],
         "summary": "Pause Conversion Job",
-        "description": "Suspend a running job; a job already paused stays paused",
+        "description": "Suspend a running job or hold a queued one; a job already paused stays paused",
         "operationId": "pause_conversion_job_api_conversions_job__job_id__pause_post",
         "parameters": [
           {
@@ -5133,6 +5182,49 @@
         "summary": "Retry Conversion Job",
         "description": "Retry a failed job",
         "operationId": "retry_conversion_job_api_conversions_job__job_id__retry_post",
+        "parameters": [
+          {
+            "name": "job_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Job Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConversionJobResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/conversions/job/{job_id}/restart": {
+      "post": {
+        "tags": [
+          "Conversions"
+        ],
+        "summary": "Restart Conversion Job",
+        "description": "Start a job over from scratch as a new job; an active old one is cancelled",
+        "operationId": "restart_conversion_job_api_conversions_job__job_id__restart_post",
         "parameters": [
           {
             "name": "job_id",
@@ -10794,7 +10886,8 @@
             "schema": {
               "anyOf": [
                 {
-                  "type": "string"
+                  "type": "string",
+                  "maxLength": 8192
                 },
                 {
                   "type": "null"
@@ -16083,7 +16176,7 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Authenticate and return a JWT. With Forms authentication the token is\nreturned in the response body and set as an HttpOnly cookie. Basic\nauthentication is handled by the browser, though this endpoint still\nworks. Failed logins take the same time whichever credential was wrong.",
+        "description": "Authenticate and return a JWT. With Forms authentication the token is\nreturned in the response body and set as an HttpOnly cookie. With Basic\nauthentication the browser sends the credentials itself on every request,\nthough this endpoint still issues a token. Failed logins take the same\ntime whichever credential was wrong.",
         "operationId": "login_api_auth_login_post",
         "requestBody": {
           "content": {
@@ -18643,7 +18736,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
-              "write_tags": false
+              "write_tags": false,
+              "embed_cover": false
             }
           }
         },
@@ -20619,6 +20713,11 @@
             "title": "Write Tags",
             "default": false
           },
+          "embed_cover": {
+            "type": "boolean",
+            "title": "Embed Cover",
+            "default": false
+          },
           "new_path": {
             "anyOf": [
               {
@@ -22210,6 +22309,18 @@
               }
             ],
             "title": "Cover Preference"
+          },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
           }
         },
         "additionalProperties": false,
@@ -28388,11 +28499,6 @@
               }
             ],
             "title": "Proxy Password"
-          },
-          "proxy_bypass": {
-            "type": "string",
-            "title": "Proxy Bypass",
-            "default": "localhost,127.0.0.1"
           }
         },
         "additionalProperties": false,
@@ -28449,11 +28555,6 @@
             "type": "boolean",
             "title": "Has Proxy Password",
             "default": false
-          },
-          "proxy_bypass": {
-            "type": "string",
-            "title": "Proxy Bypass",
-            "default": "localhost,127.0.0.1"
           }
         },
         "additionalProperties": false,
@@ -29561,6 +29662,81 @@
         "title": "ReleaseProfileUpdate",
         "description": "Fields to update on a release profile. Every field is replaced."
       },
+      "RemoveFolderResult": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "removed": {
+            "type": "boolean",
+            "title": "Removed"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "removed"
+        ],
+        "title": "RemoveFolderResult",
+        "description": "`removed` means the folder is no longer there, whether this call took it or it was already gone."
+      },
+      "RemoveFoldersRequest": {
+        "properties": {
+          "paths": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 5000,
+            "minItems": 1,
+            "title": "Paths"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "paths"
+        ],
+        "title": "RemoveFoldersRequest"
+      },
+      "RemoveFoldersResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/RemoveFolderResult"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "removed_count": {
+            "type": "integer",
+            "title": "Removed Count"
+          },
+          "failed_count": {
+            "type": "integer",
+            "title": "Failed Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "results",
+          "removed_count",
+          "failed_count"
+        ],
+        "title": "RemoveFoldersResponse"
+      },
       "RemoveRequest": {
         "properties": {
           "download_client_id": {
@@ -29947,6 +30123,18 @@
               }
             ],
             "title": "Coverpreference"
+          },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
           }
         },
         "additionalProperties": false,
@@ -30567,6 +30755,18 @@
             ],
             "title": "Coverpreference"
           },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
+          },
           "lookupStatus": {
             "anyOf": [
               {
@@ -30698,10 +30898,21 @@
         "properties": {
           "auth_method": {
             "type": "string",
+            "enum": [
+              "none",
+              "basic",
+              "forms",
+              "external"
+            ],
             "title": "Auth Method"
           },
           "auth_required": {
             "type": "string",
+            "enum": [
+              "enabled",
+              "local_disabled",
+              "disabled"
+            ],
             "title": "Auth Required"
           },
           "username": {
@@ -30732,6 +30943,11 @@
           },
           "cert_validation": {
             "type": "string",
+            "enum": [
+              "enabled",
+              "local_disabled",
+              "disabled"
+            ],
             "title": "Cert Validation"
           },
           "local_networks": {
@@ -30776,7 +30992,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
-              "write_tags": false
+              "write_tags": false,
+              "embed_cover": false
             }
           }
         },
