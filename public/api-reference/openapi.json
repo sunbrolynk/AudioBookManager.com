@@ -14043,6 +14043,70 @@
         }
       }
     },
+    "/api/settings/recycle-bin": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Recycle Bin",
+        "description": "The configured recycle bin and whether it collides with a root folder.",
+        "operationId": "get_recycle_bin_api_settings_recycle_bin_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecycleBinStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/recycle-bin/path": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Change Recycle Bin Path",
+        "description": "Switch the recycle bin to a new folder and say what happens to the old\nbin's files. Moving them is a task and switches the bin only once it ends;\ndeleting them switches the bin first and empties the old folder in a task.",
+        "operationId": "change_recycle_bin_path_api_settings_recycle_bin_path_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecycleBinPathRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecycleBinPathResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/settings/conversions": {
       "get": {
         "tags": [
@@ -22916,31 +22980,6 @@
             "title": "Coverartmaxsize",
             "default": 1000
           },
-          "recycleBinEnabled": {
-            "type": "boolean",
-            "title": "Recyclebinenabled",
-            "default": true
-          },
-          "recycleBinPath": {
-            "type": "string",
-            "title": "Recyclebinpath",
-            "default": ""
-          },
-          "recycleBinRetention": {
-            "type": "integer",
-            "title": "Recyclebinretention",
-            "default": 7
-          },
-          "recycleBinAutoEmpty": {
-            "type": "boolean",
-            "title": "Recyclebinautoempty",
-            "default": false
-          },
-          "recycleBinAutoEmptyThreshold": {
-            "type": "integer",
-            "title": "Recyclebinautoemptythreshold",
-            "default": 10
-          },
           "defaultDeleteOriginal": {
             "type": "boolean",
             "title": "Defaultdeleteoriginal",
@@ -29367,6 +29406,140 @@
           "identity_check"
         ],
         "title": "ReauthStartResponse"
+      },
+      "RecycleBinPathRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "minLength": 1,
+            "title": "Path"
+          },
+          "old_contents": {
+            "type": "string",
+            "enum": [
+              "move",
+              "delete",
+              "leave"
+            ],
+            "title": "Old Contents"
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "old_contents"
+        ],
+        "title": "RecycleBinPathRequest",
+        "description": "What to do with the old bin's files when the bin moves to `path`."
+      },
+      "RecycleBinPathResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "task_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Task Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "task_id"
+        ],
+        "title": "RecycleBinPathResponse"
+      },
+      "RecycleBinStatus": {
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "conflict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conflict"
+          },
+          "conflict_kind": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "inside_root",
+                  "is_root",
+                  "contains_root"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conflict Kind"
+          },
+          "conflict_bin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conflict Bin"
+          },
+          "conflict_root": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conflict Root"
+          }
+        },
+        "type": "object",
+        "required": [
+          "path",
+          "enabled",
+          "conflict",
+          "conflict_kind",
+          "conflict_bin",
+          "conflict_root"
+        ],
+        "title": "RecycleBinStatus",
+        "description": "The bin as the settings page shows it. `conflict` is the health warning\nfor a bin that collides with a root folder; the other `conflict_*` fields\ndescribe that overlap. All four are null when there is no conflict."
       },
       "RefreshBooksRequest": {
         "properties": {

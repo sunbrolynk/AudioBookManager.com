@@ -12,5 +12,6 @@ description: Background work, schedules and logs.
 
 ## Gotchas
 
+- Changing the recycle bin's folder can queue **Move Recycle Bin** or **Empty Old Recycle Bin**. Only one runs at a time, and a move that fails partway can be run again. See [Recycle Bin](/settings/media-management/#recycle-bin).
 - Conversions are a separate queue. See [Conversions](/en-ca/using/conversions/).
 - The download sweeps (pending grab retry and completed download check) queue only while at least one download client is enabled, so the page does not fill with empty runs.

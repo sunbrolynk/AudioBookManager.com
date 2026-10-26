@@ -26,7 +26,7 @@ Converting a file to the format it is already in is refused, because it would ov
 
 ## After a conversion
 
-ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the conversion recycle bin when that is enabled.
+ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the `conversions` folder of the [recycle bin](/settings/media-management/#recycle-bin) when recycling is on, and are deleted for good when it is off.
 
 If placing the result fails (the library folder is full, say), the job fails and the finished output is kept in its work folder. The error names the folder. **Retry** starts the job over and discards that kept output, so it asks first. **Clear history** keeps jobs that still hold unplaced output.
 
