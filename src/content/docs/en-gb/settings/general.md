@@ -28,7 +28,6 @@ How ABM reaches the internet for metadata, covers and Audible pages.
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 or SOCKS5 |
 | Hostname, Port | empty | Proxy address |
 | Username, Password | empty | Optional |
-| Bypass Addresses | `localhost,127.0.0.1` | Hosts that skip the proxy |
 | Test Connection | | Checks the proxy |
 
 The section also shows your outgoing IP as external services see it. A choice of connection, including a built-in VPN, is planned for a later release.
