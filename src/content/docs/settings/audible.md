@@ -13,7 +13,7 @@ The page opens with a short Overview. Each sync adds and downloads your Audible 
 
 ## Accounts
 
-Connecting an account takes a **Marketplace**, a **Display Name** and the **Redirect URL** that Amazon sends back after you sign in. Each account keeps its own library. Under **Connected Accounts**, every account has an **Enabled** switch and a **Sync now** button. Turning Enabled off pauses the account without signing it out, and it shows as Disabled. Sync now syncs only that account and is greyed out while the account is disabled or a sync is running. A failed save, sign-in step or sync shows the reason in a toast. If an account needs to sign in again, sign in on the same account instead of deleting it. Deleting drops its library and removes its device from Audible.
+Connecting an account takes a **Marketplace**, a **Display Name** and the **Redirect URL** that Amazon sends back after you sign in. Each account keeps its own library. The redirect URL is checked strictly: https, the exact sign-in host, no port, no username or password. See [Signing in](/audible/#signing-in). Under **Connected Accounts**, every account has an **Enabled** switch and a **Sync now** button. Turning Enabled off pauses the account without signing it out, and it shows as Disabled. Sync now syncs only that account and is greyed out while the account is disabled or a sync is running. A failed save, sign-in step or sync shows the reason in a toast. If an account needs to sign in again, sign in on the same account instead of deleting it. Deleting drops its library and removes its device from Audible.
 
 ## Schedule
 

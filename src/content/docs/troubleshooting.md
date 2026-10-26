@@ -83,6 +83,10 @@ ABM holds attempts for that account for 48 hours, and the error shows when the h
 
 Running diagnostics during the hold sends nothing either. The download test just reports the hold.
 
+## Audible says "invalid redirect URL"
+
+ABM refuses a pasted address that isn't exactly what the browser showed after sign-in. It must be https, on the exact sign-in host, with no port and no username or password. `https://www.amazon.com:443/...` is refused. Start the sign-in again and copy the whole address bar.
+
 ## Still stuck
 
 Ask in the [ABM Discord](https://discord.gg/qeJRrM6AZ), [open an issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), or email [support@audiobookmanager.com](mailto:support@audiobookmanager.com).
