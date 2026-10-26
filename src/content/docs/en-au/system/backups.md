@@ -21,7 +21,7 @@ A backup is refused, with nothing changed, if it holds unexpected entries, is no
 
 ## Export targets
 
-SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup automatically. Rclone remote names may use letters, digits, `_`, `.` and `-`.
+SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup, manual or scheduled, as long as **Auto-Export on Backup** is on under [General](/en-au/settings/general/). A manual **Backup Now** queues the export as a task and the page toasts its result. If an export fails, the error names the target and the reason (permission denied, path not found, out of space, or a pointer to the log), never a bare "all exports failed". Rclone remote names may use letters, digits, `_`, `.` and `-`.
 
 ## Gotchas
 
