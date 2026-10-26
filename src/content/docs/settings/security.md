@@ -50,13 +50,15 @@ Send it as `X-Api-Key` or an `apikey` parameter. A key from a LAN address counts
 
 A browser request that changes something is refused with `cross_origin_rejected` unless its origin matches the address ABM is reached at, a trusted proxy's forwarded host, or a CORS allowed domain. API-key requests are not affected.
 
+With **Basic (Browser Popup)** selected, ABM checks the username and password against your account, and a wrong pair is refused. A script that changes something with Basic credentials needs to send an `Origin` header that matches, or use the API key instead.
+
 ## Content security policy
 
 ABM sends a Content-Security-Policy header unless `SECURITY_HEADERS_CSP_ENABLED=false`. It limits the UI to ABM's own scripts and API, and images to ABM or HTTPS. Covers served over plain HTTP are blocked, and ABM cannot be shown in an iframe either way. The API docs pages get their own policy, and load only from ABM itself.
 
 ## Failed sign-ins
 
-There is no lockout. Failed attempts are logged, folded per address in the Activity Log, and written line by line to the security log for tools like fail2ban.
+There is no lockout. Failed attempts are logged, folded per address in the Activity Log, and written line by line to the security log for tools like fail2ban. When too many password checks run at once, ABM answers 503 "The server is busy; try again in a moment" instead of a verdict. That is logged as an access denied line, not a failed sign-in, so it never counts against anyone.
 
 ## Secrets
 
