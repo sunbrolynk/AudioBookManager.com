@@ -25,7 +25,7 @@ Restoring the security settings (through the API) signs out every session, so yo
 
 Restoring a backup by name answers 404 if the file is not in the list. A backup that is refused or cannot be decrypted answers 400 with the reason, and the refusal is recorded in the [Activity Log](/system/activity-log/).
 
-If the backup was made on an older version, restart the container after restoring so the migration runs.
+A backup made on an older version is upgraded to the current schema as part of the restore, before it replaces the live database, so no restart is needed. A backup from a newer version, or a file that isn't an ABM database, is refused with a 400 and the live database is left untouched.
 
 A backup is refused, with nothing changed, if it holds unexpected entries, is not a valid SQLite database, or is a legacy backup from before the SQLite move.
 
