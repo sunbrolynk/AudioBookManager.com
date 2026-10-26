@@ -25,7 +25,7 @@ ABM이 메타데이터, 표지, Audible 페이지를 받으러 인터넷에 나�
 | 설정 | 기본값 | 효과 |
 |---|---|---|
 | Use Proxy | 꺼짐 | 외부 요청을 프록시로 보내요 |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4, SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5, SOCKS5H |
 | Hostname, Port | 비어 있음 | 프록시 주소 |
 | Username, Password | 비어 있음 | 선택 사항 |
 | Test Connection | | 프록시를 확인해요 |

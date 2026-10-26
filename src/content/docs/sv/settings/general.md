@@ -25,7 +25,7 @@ Hur ABM når internet för metadata, omslag och Audible-sidor.
 | Inställning | Standard | Effekt |
 |---|---|---|
 | Use Proxy | av | Skicka externa anrop via en proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 eller SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 eller SOCKS5H |
 | Hostname, Port | tom | Proxyns adress |
 | Username, Password | tom | Valfritt |
 | Test Connection | | Kollar proxyn |

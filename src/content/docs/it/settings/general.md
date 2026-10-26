@@ -25,7 +25,7 @@ Come ABM esce su internet per metadati, copertine e pagine Audible.
 | Impostazione | Predefinito | Effetto |
 |---|---|---|
 | Use Proxy | disattivo | Fa passare le richieste esterne da un proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 o SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 o SOCKS5H |
 | Hostname, Port | vuoto | Indirizzo del proxy |
 | Username, Password | vuoto | Facoltativi |
 | Test Connection | | Verifica il proxy |

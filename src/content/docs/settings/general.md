@@ -27,10 +27,12 @@ How ABM reaches the internet for metadata, covers and Audible pages.
 | Setting | Default | Effect |
 |---|---|---|
 | Use Proxy | off | Route external requests through a proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 or SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 or SOCKS5H (SOCKS5 with DNS through the proxy) |
 | Hostname, Port | empty | Proxy address |
 | Username, Password | empty | Optional |
 | Test Connection | | Test Proxy checks the proxy. It needs a hostname |
+
+SOCKS4 is not supported. If a saved proxy still uses it, switch it to SOCKS5 or another type before saving.
 
 The section also shows your outgoing IP as external services see it. A choice of connection, including a built-in VPN, is planned for a later release.
 

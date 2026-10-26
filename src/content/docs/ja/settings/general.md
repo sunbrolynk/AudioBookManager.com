@@ -25,7 +25,7 @@ ABM がメタデータ、表紙、Audible のページを取りにインター�
 | 設定 | デフォルト | 効果 |
 |---|---|---|
 | Use Proxy | オフ | 外部へのリクエストをプロキシ経由にする |
-| Proxy Type | HTTP | HTTP、HTTPS、SOCKS4、SOCKS5 |
+| Proxy Type | HTTP | HTTP、HTTPS、SOCKS5、SOCKS5H |
 | Hostname, Port | 空 | プロキシのアドレス |
 | Username, Password | 空 | 任意 |
 | Test Connection | | プロキシをチェックする |

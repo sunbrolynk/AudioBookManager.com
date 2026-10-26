@@ -25,7 +25,7 @@ ABM 連上網路取得中繼資料、封面和 Audible 頁面的方式。
 | 設定 | 預設值 | 作用 |
 |---|---|---|
 | Use Proxy | 關閉 | 讓對外請求經過代理伺服器 |
-| Proxy Type | HTTP | HTTP、HTTPS、SOCKS4 或 SOCKS5 |
+| Proxy Type | HTTP | HTTP、HTTPS、SOCKS5 或 SOCKS5H |
 | Hostname, Port | 空白 | 代理伺服器位址 |
 | Username, Password | 空白 | 選填 |
 | Test Connection | | 檢查代理伺服器 |

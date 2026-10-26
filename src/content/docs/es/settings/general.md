@@ -25,7 +25,7 @@ Cómo sale ABM a internet para los metadatos, las portadas y las páginas de Aud
 | Ajuste | Por defecto | Efecto |
 |---|---|---|
 | Use Proxy | desactivado | Envía las peticiones externas a través de un proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 o SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 o SOCKS5H |
 | Hostname, Port | vacío | Dirección del proxy |
 | Username, Password | vacío | Opcional |
 | Test Connection | | Comprueba el proxy |

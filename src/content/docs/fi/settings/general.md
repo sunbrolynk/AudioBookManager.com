@@ -25,7 +25,7 @@ Miten ABM pääsee internetiin metatietoja, kansikuvia ja Audible-sivuja varten.
 | Asetus | Oletus | Vaikutus |
 |---|---|---|
 | Use Proxy | pois | Ohjaa ulkoiset pyynnöt välityspalvelimen kautta |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 tai SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 tai SOCKS5H |
 | Hostname, Port | tyhjä | Välityspalvelimen osoite |
 | Username, Password | tyhjä | Vapaaehtoinen |
 | Test Connection | | Tarkistaa välityspalvelimen |

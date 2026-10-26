@@ -25,7 +25,7 @@ description: Хост, безпека, проксі, журнали та рез�
 | Параметр | За замовчуванням | Що робить |
 |---|---|---|
 | Use Proxy | вимкнено | Пускати зовнішні запити через проксі |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 або SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 або SOCKS5H |
 | Hostname, Port | порожньо | Адреса проксі |
 | Username, Password | порожньо | Необов'язково |
 | Test Connection | | Перевіряє проксі |
