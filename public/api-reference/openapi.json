@@ -14645,7 +14645,7 @@
           "Settings"
         ],
         "summary": "Create Backup",
-        "description": "Create a new manual backup.",
+        "description": "Create a new manual backup and queue its export to the targets that take automatic exports.\n\n\"export_task_id\" names the queued backup_export task; it is absent when no\ntarget is eligible, and \"export_error\" replaces it when queuing failed.",
         "operationId": "create_backup_api_settings_general_backup_create_post",
         "responses": {
           "200": {
