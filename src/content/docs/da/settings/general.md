@@ -28,7 +28,6 @@ Hvordan ABM kommer på nettet efter metadata, covers og Audible-sider.
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 eller SOCKS5 |
 | Hostname, Port | tom | Proxyens adresse |
 | Username, Password | tom | Valgfrit |
-| Bypass Addresses | `localhost,127.0.0.1` | Værter, der springer proxyen over |
 | Test Connection | | Tjekker proxyen |
 
 Sektionen viser også din udgående IP-adresse, som eksterne tjenester ser den. Et valg af forbindelse, med en indbygget VPN, er planlagt til en senere udgivelse.
