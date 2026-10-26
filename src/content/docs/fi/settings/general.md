@@ -28,7 +28,6 @@ Miten ABM pääsee internetiin metatietoja, kansikuvia ja Audible-sivuja varten.
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 tai SOCKS5H |
 | Hostname, Port | tyhjä | Välityspalvelimen osoite |
 | Username, Password | tyhjä | Vapaaehtoinen |
-| Bypass Addresses | `localhost,127.0.0.1` | Koneet, jotka ohittavat välityspalvelimen |
 | Test Connection | | Tarkistaa välityspalvelimen |
 
 Osio näyttää myös lähtevän IP-osoitteesi sellaisena kuin ulkoiset palvelut sen näkevät. Yhteyden valinta, mukaan lukien sisäänrakennettu VPN, on suunniteltu myöhempään julkaisuun.

@@ -28,7 +28,6 @@ ABM がメタデータ、表紙、Audible のページを取りにインター�
 | Proxy Type | HTTP | HTTP、HTTPS、SOCKS5、SOCKS5H |
 | Hostname, Port | 空 | プロキシのアドレス |
 | Username, Password | 空 | 任意 |
-| Bypass Addresses | `localhost,127.0.0.1` | プロキシを通さないホスト |
 | Test Connection | | プロキシをチェックする |
 
 このセクションには、外部のサービスから見える自分の送信元 IP も表示されます。内蔵 VPN を含む接続方法の選択は、今後のリリースで予定しています。

@@ -28,7 +28,6 @@ Cómo sale ABM a internet para los metadatos, las portadas y las páginas de Aud
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 o SOCKS5H |
 | Hostname, Port | vacío | Dirección del proxy |
 | Username, Password | vacío | Opcional |
-| Bypass Addresses | `localhost,127.0.0.1` | Hosts que no pasan por el proxy |
 | Test Connection | | Comprueba el proxy |
 
 La sección también muestra tu IP de salida tal como la ven los servicios externos. Una elección de conexión, incluida una VPN integrada, está prevista para una versión posterior.

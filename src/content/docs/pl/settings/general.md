@@ -28,7 +28,6 @@ Jak ABM łączy się z internetem po metadane, okładki i strony Audible.
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 albo SOCKS5H |
 | Hostname, Port | puste | Adres proxy |
 | Username, Password | puste | Opcjonalne |
-| Bypass Addresses | `localhost,127.0.0.1` | Hosty, które omijają proxy |
 | Test Connection | | Sprawdza proxy |
 
 Sekcja pokazuje też twój wychodzący adres IP tak, jak widzą go zewnętrzne usługi. Wybór połączenia, w tym wbudowany VPN, jest planowany na późniejsze wydanie.

@@ -26,15 +26,22 @@ Converting a file to the format it is already in is refused, because it would ov
 
 ## After a conversion
 
-ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the conversion recycle bin when that is enabled.
+ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the `conversions` folder of the [recycle bin](/settings/media-management/#recycle-bin) when recycling is on, and are deleted for good when it is off.
 
 If placing the result fails (the library folder is full, say), the job fails and the finished output is kept in its work folder. The error names the folder. **Retry** starts the job over and discards that kept output, so it asks first. **Clear history** keeps jobs that still hold unplaced output.
+
+## Restart, cancel and duplicates
+
+A book can have one queued, running or paused job for each kind of job at a time. Starting another, from a button, a bulk request or Retry, is refused with "A conversion for this book is already queued or running", and a bulk request skips that book and lists the reason. If a job can't be handed to the queue, it is marked failed with "The conversion could not be queued" instead of sitting there waiting.
+
+**Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. The toast after you start a conversion from a book has Pause, Resume and Cancel for each of its jobs.
 
 ## Pause and resume
 
 Two kinds of pause, neither of which cancels anything:
 
 - **Pause** on one running job suspends its ffmpeg processes where they are. Resume continues from the same point.
+- **Pause** on a job that is still waiting holds it in the queue, so the next job starts instead. Resume puts it back in its original place in line.
 - **Pause queue** (top of the queue, or the top bar on a phone) stops new jobs from starting and suspends every running job.
 
 A job you paused yourself stays paused when the queue resumes, and across a restart. A job running when ABM stops comes back as paused and does not start by itself. Resume continues from the last finished part for merges, splits and multi-file converts. A single-file convert starts that file again.
