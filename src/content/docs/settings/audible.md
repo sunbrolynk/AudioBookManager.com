@@ -30,13 +30,13 @@ Connecting an account takes a **Marketplace**, a **Display Name** and the **Redi
 | Setting | Default | Effect |
 |---|---|---|
 | Mirror Audible library to ABM | on | Each sync adds the Audible books that aren't in ABM yet and downloads the ones without files, up to 25 per sync. Turning it on shows how many books the next sync will add and download. See [Mirror Audible library to ABM](/audible/#mirror-audible-library-to-abm) |
-| Concurrent Downloads | 2 | 1 to 5. Higher is faster and can hit Audible's rate limits. |
+| Concurrent Downloads | 2 | 1 to 5. Higher is faster and can hit Audible's rate limits. When Audible throttles an account's download licences, ABM stops asking for that account for 48 hours. Signing the account in again lifts the hold. |
 | Preferred Quality | High | High or Normal. This is the quality ABM asks Audible for on every download |
 | Delete Encrypted Files | on | Remove the encrypted AAXC file after it is decrypted to M4B |
 | Temp Download Path | empty | Empty uses the system temp folder. Shown when advanced settings are on |
 
-Download failures are retried by themselves a few times, with a delay that widens, and an outage that outlasts that re-queues the task for up to six hours. A license denial, an unowned book or a decryption failure fails once.
+Download failures are retried by themselves a few times, with a delay that widens, and an outage that outlasts that re-queues the task for up to six hours. A license denial, an unowned book or a decryption failure fails once. A throttled licence also fails once and starts the 48-hour hold. Downloads for that account then fail straight away with the hold message, and nothing is sent to Audible, until the hold ends.
 
 ## Connection Diagnostics
 
-Pick an account and run diagnostics. It tests FFmpeg, credentials, the API connection and download capability, and shows your outgoing IP as Audible sees it.
+Pick an account and run diagnostics. It tests FFmpeg, credentials, the API connection and download capability, and shows your outgoing IP as Audible sees it. For an account on a throttle hold, the download capability test reports the hold and sends nothing to Audible.
