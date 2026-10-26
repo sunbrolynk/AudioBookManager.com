@@ -20,7 +20,7 @@ const links = [
 ---
 <header class="r1-top">
   <div class="w">
-    <a class="r1-brand" href={`${p}/`}><Image src={icon} alt="" width={32} height={32} />AudioBook <span>Manager</span></a>
+    <a class="r1-brand" href={`${p}/`}><Image src={icon} alt="" width={32} height={32} densities={[1, 2, 3]} />AudioBook <span>Manager</span></a>
     <nav aria-label={t.nav}>
       {links.map((l) => <a href={l.href} aria-current={l.key && l.key === current ? 'page' : undefined}>{l.label}</a>)}
     </nav>
