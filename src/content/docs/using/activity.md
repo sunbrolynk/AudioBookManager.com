@@ -9,7 +9,7 @@ What your download clients are working on. Row actions include **Grab now**, **I
 
 **Check for Imports** in the toolbar checks every completed download for something to import, or only the selected rows when some are selected. A row's **Import Now** imports just that row, and the result says how many of the ones you picked were not ready. A failed import, remove, retry or grab shows a toast with the server's reason.
 
-Removing a row from the queue follows **Queue Page Remove Action** in the download client's settings: dismiss from ABM only, remove from the client and keep files, or remove from the client and delete files. See [Download Clients](/settings/download-clients/).
+Removing a row, from the row, a selection, a phone action sheet or the details view, always asks first. The confirmation can also remove the download from its client, and add the release to the blocklist (only when it is removed from the client). A manual Remove ignores seed goals. When the removal also deletes the files, you type `delete` to confirm. The default for **Remove from download client** follows **Queue Page Remove Action** in the download client's settings: dismiss from ABM only, remove from the client and keep files, or remove from the client and delete files. See [Download Clients](/settings/download-clients/).
 
 ## History
 

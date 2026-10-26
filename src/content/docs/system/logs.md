@@ -20,4 +20,5 @@ Start from the failed task's log button. It shows the operation from its start l
 ## Gotchas
 
 - SQL Logging and Debug levels are verbose. Turn them off when done.
+- Deleting a log, or clearing them all, asks you to type `delete` to confirm.
 - Deleting a log leaves activity entries that link to it. They read "Log no longer kept".

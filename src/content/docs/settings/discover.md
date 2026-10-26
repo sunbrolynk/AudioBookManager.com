@@ -26,6 +26,8 @@ Each catalog (New Releases, Coming Soon, Audible Best, Recommended) has its own 
 | Max ASINs per Refresh | 100 to 5000 | Books fetched from Libex per refresh |
 | Batch Size | 10 to 900 | ASINs per Libex request. Larger is faster and may fail on some systems |
 
+A value outside these ranges, or outside the schedule ranges above, is refused with HTTP 422 and nothing is saved.
+
 The defaults live in the app and are not repeated here. Open the page to see them.
 
 ## Gotchas
