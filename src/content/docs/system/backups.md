@@ -13,7 +13,7 @@ An encrypted archive with a consistent copy of the database (`database.db`), the
 
 ## Restoring
 
-Pick one from the list, or upload a backup file (up to 500 MiB). A copy of the live database is saved first. Restoring cannot be undone.
+Pick one from the list, or upload a backup file (up to 500 MiB). A copy of the live database is saved first. Restoring cannot be undone. Deleting a backup asks you to type `delete` to confirm.
 
 A restore asks for your current password, since it replaces the whole database. Only encrypted `.backup` files restore. Unencrypted backups from versions before 0.14 are no longer accepted, so make a new backup from a current install. The whole backup is checked before anything is replaced, and one that can't be restored without sending ABM back to first-run setup is refused untouched.
 
