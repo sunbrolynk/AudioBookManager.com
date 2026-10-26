@@ -11,11 +11,11 @@ Add an account under **Settings > Audible**. You can connect more than one. Each
 
 If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Sign in again on the same account. It keeps its library and takes the new credentials. Do not delete the account to fix this: deleting it drops its library table and removes its device from Audible.
 
-There is no switch for this in the app yet. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` turns an account off without signing it out. A disabled account keeps its stored sign-in and its library, and syncs, downloads and the health check skip it, so it isn't reported as failing. Send `{"is_active": true}`, or sign in on it again, and it picks up where it left off.
+Each account has an **Enabled** switch. Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
 
 ## Sync
 
-Sync refreshes each account's library from Audible. The Audible settings page shows its progress and result, and reports a failure with the real error. It also runs on a schedule.
+Sync refreshes each account's library from Audible. Each account also has its own **Sync now** button, which syncs just that account. It is greyed out while the account is disabled or a sync is already running. The Audible settings page shows its progress and result, and reports a failure with the real error. It also runs on a schedule.
 
 A sync leaves podcasts and episodes out and removes any an earlier sync stored. A title that has left your account is marked as no longer in it instead of looking current.
 
