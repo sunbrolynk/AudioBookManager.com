@@ -43,6 +43,9 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Audit dependencies
+        env:
+          # A pull request compares with its base branch; a push compares with the commit before it.
+          AUDIT_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
         run: node scripts/audit-new-advisories.mjs
 
       - name: Run regression tests
