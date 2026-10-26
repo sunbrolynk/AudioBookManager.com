@@ -30,6 +30,12 @@ ABM refreshes the book's file records, size and quality, so a converted book sho
 
 If placing the result fails (the library folder is full, say), the job fails and the finished output is kept in its work folder. The error names the folder. **Retry** starts the job over and discards that kept output, so it asks first. **Clear history** keeps jobs that still hold unplaced output.
 
+## Restart, cancel and duplicates
+
+A book can have one queued, running or paused job for each kind of job at a time. Starting another, from a button, a bulk request or Retry, is refused with "A conversion for this book is already queued or running", and a bulk request skips that book and lists the reason. If a job can't be handed to the queue, it is marked failed with "The conversion could not be queued" instead of sitting there waiting.
+
+**Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. The toast after you start a conversion from a book has Pause, Resume and Cancel for each of its jobs.
+
 ## Pause and resume
 
 Two kinds of pause, neither of which cancels anything:
