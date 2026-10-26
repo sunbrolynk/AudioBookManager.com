@@ -25,7 +25,7 @@ Como o ABM chega à internet para buscar metadados, capas e páginas da Audible.
 | Configuração | Padrão | Efeito |
 |---|---|---|
 | Use Proxy | desligado | Passa as requisições externas por um proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 ou SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 ou SOCKS5H |
 | Hostname, Port | vazio | Endereço do proxy |
 | Username, Password | vazio | Opcional |
 | Bypass Addresses | `localhost,127.0.0.1` | Hosts que não passam pelo proxy |

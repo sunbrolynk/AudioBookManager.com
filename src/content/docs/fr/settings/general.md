@@ -25,7 +25,7 @@ La façon dont ABM accède à Internet pour les métadonnées, les couvertures e
 | Réglage | Par défaut | Effet |
 |---|---|---|
 | Use Proxy | désactivé | Fait passer les requêtes externes par un proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 ou SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 ou SOCKS5H |
 | Hostname, Port | vide | L'adresse du proxy |
 | Username, Password | vide | Facultatif |
 | Bypass Addresses | `localhost,127.0.0.1` | Les hôtes qui ne passent pas par le proxy |

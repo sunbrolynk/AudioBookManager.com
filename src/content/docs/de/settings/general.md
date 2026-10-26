@@ -25,7 +25,7 @@ Wie ABM für Metadaten, Cover und Audible-Seiten ins Internet kommt.
 | Einstellung | Standard | Wirkung |
 |---|---|---|
 | Use Proxy | aus | Externe Anfragen über einen Proxy leiten |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 oder SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 oder SOCKS5H |
 | Hostname, Port | leer | Adresse des Proxys |
 | Username, Password | leer | Optional |
 | Bypass Addresses | `localhost,127.0.0.1` | Hosts, die am Proxy vorbeigehen |

@@ -25,7 +25,7 @@ Jak ABM łączy się z internetem po metadane, okładki i strony Audible.
 | Ustawienie | Domyślnie | Działanie |
 |---|---|---|
 | Use Proxy | wył. | Kieruje zewnętrzne żądania przez proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 albo SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 albo SOCKS5H |
 | Hostname, Port | puste | Adres proxy |
 | Username, Password | puste | Opcjonalne |
 | Bypass Addresses | `localhost,127.0.0.1` | Hosty, które omijają proxy |
