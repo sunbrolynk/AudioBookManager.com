@@ -41,6 +41,7 @@ A book can have one queued, running or paused job for each kind of job at a time
 Two kinds of pause, neither of which cancels anything:
 
 - **Pause** on one running job suspends its ffmpeg processes where they are. Resume continues from the same point.
+- **Pause** on a job that is still waiting holds it in the queue, so the next job starts instead. Resume puts it back in its original place in line.
 - **Pause queue** (top of the queue, or the top bar on a phone) stops new jobs from starting and suspends every running job.
 
 A job you paused yourself stays paused when the queue resumes, and across a restart. A job running when ABM stops comes back as paused and does not start by itself. Resume continues from the last finished part for merges, splits and multi-file converts. A single-file convert starts that file again.
