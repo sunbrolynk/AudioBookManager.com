@@ -41,7 +41,7 @@
 .r1-top .btn { padding: 8px 14px; font-size: 14px; }
 @media (max-width: 1100px) { .r1-top .gh { display: none; } }
 /* Below this the links run into the language menu, so the bar keeps only the brand and controls. */
-@media (max-width: 1000px) { .r1-top nav { display: none; } }
+@media (max-width: 1100px) { .r1-top nav { display: none; } }
 @media (max-width: 860px) { .r1-top nav, .r1-top .gh { display: none; } .r1-top .w { padding: 0 20px; gap: 16px; } }
 /* On a phone the hero has its own install button, so the header keeps only the language menu. */
 @media (max-width: 560px) { .r1-top .btn { display: none; } }
