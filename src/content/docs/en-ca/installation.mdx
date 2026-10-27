@@ -29,7 +29,7 @@ The database is a SQLite file in `/config`, so there is no database service to s
        ports:
          - "${PORT:-5173}:5173"
        environment:
-         TIMEZONE: ${TIMEZONE:-UTC}
+         TZ: ${TIMEZONE:-${TZ:-UTC}}
          LOCAL_NETWORKS: ${LOCAL_NETWORKS:-}
          TRUSTED_PROXIES: ${TRUSTED_PROXIES:-}
        volumes:
