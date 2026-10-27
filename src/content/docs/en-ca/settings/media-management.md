@@ -50,12 +50,20 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 |---|---|---|
 | Unmonitor Deleted Books | off | A book deleted from disk is unmonitored |
 | Change File Date | None | Changes file dates on import and rescan |
-| Enable Recycling Bin | on | Deleted book files move to a bin instead of being deleted |
-| Recycling Bin | empty | Where the bin is. Empty uses ABM's default (`/config/recycle/media`) |
-| Recycling Bin Cleanup | 7 (days) | 0 disables automatic cleanup |
+| Enable Recycle Bin | on | Deleted book files, and the originals a conversion replaces, move to one bin instead of being deleted. Off means both are deleted for good |
+| Recycle Bin | empty | Where the bin is. Empty uses `/config/recycle`, with a `media` folder for deleted book files and a `conversions` folder for replaced conversion originals |
+| Recycle Bin Cleanup | 7 (days) | How long items stay, for both folders. 0 disables automatic cleanup |
 | Library Scan Interval | 24 (hours) | Hours between automatic scans |
 | Watch for Changes | on | Scan when files are added, removed or changed |
 | Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16 |
+
+## Recycle Bin
+
+There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one switch and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
+
+Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
+
+Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If an old bin holds a root folder, its files can only be left in place.
 
 ## Quality Upgrades
 

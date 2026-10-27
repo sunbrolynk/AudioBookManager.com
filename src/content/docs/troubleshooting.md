@@ -75,6 +75,18 @@ Add a remote path mapping, or make ABM and the client see the folder at the same
 
 Check DNS and the proxy setting before anything else. In Docker, ABM can only reach Libex and your indexers if the container can reach the internet.
 
+## Audible downloads fail with "throttled"
+
+Audible is refusing download licences for the account. This isn't an ownership problem, and the book is still yours.
+
+ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again on the Audible settings page to start fresh.
+
+Running diagnostics during the hold sends nothing either. The download test just reports the hold.
+
+## Audible says "invalid redirect URL"
+
+ABM refuses a pasted address that isn't exactly what the browser showed after sign-in. It must be https, on the exact sign-in host, with no port and no username or password. `https://www.amazon.com:443/...` is refused. Start the sign-in again and copy the whole address bar.
+
 ## Still stuck
 
 Ask in the [ABM Discord](https://discord.gg/qeJRrM6AZ), [open an issue](https://github.com/sunbrolynk/AudioBook-Manager/issues), or email [support@audiobookmanager.com](mailto:support@audiobookmanager.com).

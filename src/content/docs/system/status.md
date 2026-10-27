@@ -9,7 +9,7 @@ description: Health checks and a look at what ABM is doing.
 
 Health checks also run every 6 hours in the background. Connect can notify on **On Health Issue** and **On Health Restored**. See [Connect](/settings/connect/).
 
-A root folder that doesn't answer within 10 seconds shows as "Unresponsive: <path>" instead of hanging the page, and nested root folders are named. A **Reverse Proxy** warning appears when ABM suspects a proxy that sends no forwarding headers. See [Security](/settings/security/#reverse-proxies). **More Info** at the bottom links the home page, the Discord, the source and the metadata site.
+A root folder that doesn't answer within 10 seconds shows as "Unresponsive: <path>" instead of hanging the page, and nested root folders are named. A recycle bin that is a root folder, sits inside one or contains one is named too, with the root. See [Recycle Bin](/settings/media-management/#recycle-bin). A **Reverse Proxy** warning appears when ABM suspects a proxy that sends no forwarding headers. See [Security](/settings/security/#reverse-proxies). **More Info** at the bottom links the home page, the Discord, the source and the metadata site.
 
 If you know Sonarr: it is the same idea as System > Status plus Health on one page.
 

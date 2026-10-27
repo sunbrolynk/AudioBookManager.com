@@ -25,13 +25,13 @@ Restoring the security settings (through the API) signs out every session, so yo
 
 Restoring a backup by name answers 404 if the file is not in the list. A backup that is refused or cannot be decrypted answers 400 with the reason, and the refusal is recorded in the [Activity Log](/system/activity-log/).
 
-If the backup was made on an older version, restart the container after restoring so the migration runs.
+A backup made on an older version is upgraded to the current schema as part of the restore, before it replaces the live database, so no restart is needed. A backup from a newer version, or a file that isn't an ABM database, is refused with a 400 and the live database is left untouched.
 
 A backup is refused, with nothing changed, if it holds unexpected entries, is not a valid SQLite database, or is a legacy backup from before the SQLite move.
 
 ## Export targets
 
-SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup automatically. Rclone remote names may use letters, digits, `_`, `.` and `-`. The name stays as you type it and is checked against that rule as you go, with Connect disabled until it passes.
+SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup, manual or scheduled, as long as **Auto-Export on Backup** is on under [General](/settings/general/). A manual **Backup Now** queues the export as a task and the page toasts its result. If an export fails, the error names the target and the reason (permission denied, path not found, out of space, or a pointer to the log), never a bare "all exports failed". Rclone remote names may use letters, digits, `_`, `.` and `-`. The name stays as you type it and is checked against that rule as you go, with Connect disabled until it passes.
 
 Each export and each **Test connection** (the check mark on a saved target) writes its own log file, which the result links to, even when it fails. See [Logs](/system/logs/).
 

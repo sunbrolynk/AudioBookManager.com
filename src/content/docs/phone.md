@@ -33,7 +33,7 @@ Pull down at the top of a page to refresh it.
 
 - On Library Import's results page, the title is Match Audiobooks. It gets smaller below 390 pixels wide and wraps to two lines below 360, so it shows in full.
 - The **...** sheet has three groups. Selection holds Select all ready, Deselect unmatched and Join rows. Sort holds the sort choices. Scan holds Rescan for new folders.
-- The bar at the bottom keeps only the count of selected folders, Deselect all and Add. Joining is covered under Joining, splitting and adding in Library Import.
+- The bar at the bottom keeps the count of selected folders, Deselect all, Add and Delete. Delete asks you to type `delete` first. A row with no audio only offers Delete. Joining is covered under Joining, splitting and adding in Library Import.
 
 ## Selection
 
@@ -75,4 +75,4 @@ In Log Files, **Live** and **Refresh** are in the top bar, and with Live on the 
 
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
 - A row of status chips under it filters the list. Tap a folder to open it as its own screen.
-- The bottom bar shows how many are selected and the Add button, and says why Add is blocked.
+- The bottom bar shows how many are selected, the Add and Delete buttons, and says why Add is blocked.

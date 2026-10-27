@@ -25,10 +25,9 @@ ABM 获取元数据、封面和 Audible 页面时怎么连上互联网。
 | 设置 | 默认值 | 作用 |
 |---|---|---|
 | Use Proxy | 关 | 让对外请求走代理 |
-| Proxy Type | HTTP | HTTP、HTTPS、SOCKS4 或 SOCKS5 |
+| Proxy Type | HTTP | HTTP、HTTPS、SOCKS5 或 SOCKS5H |
 | Hostname, Port | 空 | 代理地址 |
 | Username, Password | 空 | 选填 |
-| Bypass Addresses | `localhost,127.0.0.1` | 不走代理的主机 |
 | Test Connection | | 检查代理 |
 
 这一部分还会显示外部服务看到的你的出站 IP。包括内置 VPN 在内的连接选择，计划在后续版本中提供。

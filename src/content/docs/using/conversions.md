@@ -22,19 +22,30 @@ Jobs wait in a queue and run up to **Concurrent Conversions** at a time (2 by de
 
 Output is written to a private work folder and placed in the library only when finished. Each file goes in under a temporary name and is renamed into place, so a half-written book never shows up. A free-space check runs before a job starts and again before placement. Source files are never overwritten.
 
-Converting a file to the format it is already in is refused, because it would overwrite the original.
+Converting a file to the format it is already in is refused, because it would overwrite the original. The same goes for the format it will be after queued work.
 
 ## After a conversion
 
-ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the conversion recycle bin when that is enabled.
+ABM refreshes the book's file records, size and quality, so a converted book shows its new quality. If **Delete Original** is on, the old files go to the `conversions` folder of the [recycle bin](/settings/media-management/#recycle-bin) when recycling is on, and are deleted for good when it is off.
 
 If placing the result fails (the library folder is full, say), the job fails and the finished output is kept in its work folder. The error names the folder. **Retry** starts the job over and discards that kept output, so it asks first. **Clear history** keeps jobs that still hold unplaced output.
+
+## Restart, cancel and duplicates
+
+A book never has two conversions running at once. If a book already has one queued, running or paused, a new conversion for it waits its turn instead of being refused, and runs on the files the earlier one produces. The queue shows "Waiting for the earlier conversion of this book" on it. The preview shows each book as it will be once the queued conversions finish, with a note like "After the queued convert to MP3".
+
+Only an identical request (same operation and target format) is refused, with "A conversion for this book is already queued or running" (HTTP 409). A bulk request skips that book and lists the reason. Three cases are refused with HTTP 400: merging a book that is already a single file, converting to the format the book will already be after the queued work, and picking files a queued job will replace (pick them after it finishes). If you pick only some of a book's files, only those are converted. If a job can't be handed to the queue, it is marked failed with "The conversion could not be queued" instead of sitting there waiting.
+
+Cancelling a conversion's task on the Tasks page releases that book's queue, so the jobs waiting behind it carry on.
+
+**Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. The toast after you start a conversion from a book has Pause, Resume and Cancel for each of its jobs.
 
 ## Pause and resume
 
 Two kinds of pause, neither of which cancels anything:
 
 - **Pause** on one running job suspends its ffmpeg processes where they are. Resume continues from the same point.
+- **Pause** on a job that is still waiting holds it in the queue, so the next job starts instead. Resume puts it back in its original place in line.
 - **Pause queue** (top of the queue, or the top bar on a phone) stops new jobs from starting and suspends every running job.
 
 A job you paused yourself stays paused when the queue resumes, and across a restart. A job running when ABM stops comes back as paused and does not start by itself. Resume continues from the last finished part for merges, splits and multi-file converts. A single-file convert starts that file again.

@@ -10,7 +10,7 @@ Most settings live in the web UI under **Settings**. These are set in the enviro
 | Variable | Default | What it does |
 |---|---|---|
 | `PORT` | `5173` | Web interface port. |
-| `TIMEZONE` | `UTC` | Your local timezone, for example `America/New_York`. |
+| `TIMEZONE` or `TZ` | `UTC` | Your local timezone, for example `America/New_York`. `TZ` works as is, and if both are set, `TIMEZONE` wins. A blank value counts as not set, and an invalid zone falls back to `UTC` with a warning in the log. Every time in the app follows this zone. |
 | `LOCAL_NETWORKS` | empty | Extra CIDR networks that skip sign-in. Comma-separated. |
 | `TRUSTED_PROXIES` | empty | CIDR networks of reverse proxies trusted to set `X-Forwarded-For` and `X-Real-IP`. |
 | `APP_SECRET` | auto | Encryption root for stored credentials. Generated to `/config/app_secret` on first run when unset. Set it to keep the key off the config disk. |

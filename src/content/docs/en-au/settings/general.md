@@ -25,11 +25,12 @@ How ABM reaches the internet for metadata, covers and Audible pages.
 | Setting | Default | Effect |
 |---|---|---|
 | Use Proxy | off | Route external requests through a proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 or SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 or SOCKS5H (SOCKS5 with DNS through the proxy) |
 | Hostname, Port | empty | Proxy address |
 | Username, Password | empty | Optional |
-| Bypass Addresses | `localhost,127.0.0.1` | Hosts that skip the proxy |
 | Test Connection | | Checks the proxy |
+
+SOCKS4 is not supported. If a saved proxy still uses it, switch it to SOCKS5 or another type before saving.
 
 The section also shows your outgoing IP as external services see it. A choice of connection, including a built-in VPN, is planned for a later release.
 
@@ -57,7 +58,7 @@ See [Logs](/en-au/system/logs/) and the [Activity Log](/en-au/system/activity-lo
 | Automatic Backups | off | Scheduled backups |
 | Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression |
 | Backup Retention | 28 days | 0 keeps forever |
-| Auto-Export on Backup | on | After each backup, send it to export targets marked Auto |
+| Auto-Export on Backup | on | After each manual or scheduled backup, send it to export targets marked Auto |
 | Export Targets | none | Remote destinations: SFTP, SCP, FTPS, FTP, S3 or rclone |
 
 See [Backups](/en-au/system/backups/).

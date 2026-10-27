@@ -25,10 +25,9 @@ Jak se ABM dostává na internet pro metadata, obálky a stránky Audible.
 | Nastavení | Výchozí | Co dělá |
 |---|---|---|
 | Use Proxy | vypnuto | Posílá vnější požadavky přes proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 nebo SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 nebo SOCKS5H |
 | Hostname, Port | prázdné | Adresa proxy |
 | Username, Password | prázdné | Nepovinné |
-| Bypass Addresses | `localhost,127.0.0.1` | Hostitelé, kteří proxy obejdou |
 | Test Connection | | Ověří proxy |
 
 Sekce také ukazuje tvou odchozí IP adresu tak, jak ji vidí externí služby. Výběr připojení, včetně vestavěné VPN, je plánovaný na pozdější verzi.

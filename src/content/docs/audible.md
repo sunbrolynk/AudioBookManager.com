@@ -9,6 +9,17 @@ ABM connects to one or more Audible accounts and keeps a copy of each account's 
 
 Add an account under **Settings > Audible**. You can connect more than one. Each account keeps its own library.
 
+### Signing in
+
+1. Pick the marketplace and a display name, then open the Amazon sign-in from ABM.
+2. Sign in on Amazon's page. ABM never sees your password.
+3. Amazon sends you to a page that may look blank or say the page can't be found. That's expected. The address looks like `https://www.audible.` and your marketplace's domain, then `/ap/maplanding?` and more. Copy the whole address from the browser's address bar.
+4. Paste it into ABM as the redirect URL.
+
+ABM checks the pasted address strictly. It must be https, on the exact sign-in host, with no port and no username or password in it. Something like `https://www.amazon.com:443/...` is refused as an invalid redirect URL. Copy the address exactly as the browser shows it.
+
+Accounts signed in from now on no longer hit throttled download licences. Books Audible serves without DRM are downloaded as they are, without decryption and without chapter or cover embedding.
+
 If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Sign in again on the same account. It keeps its library and takes the new credentials. Do not delete the account to fix this: deleting it drops its library table and removes its device from Audible.
 
 Each account has an **Enabled** switch. Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
@@ -19,7 +30,7 @@ Sync refreshes each account's library from Audible. Each account also has its ow
 
 A sync leaves podcasts and episodes out and removes any an earlier sync stored. A title that has left your account is marked as no longer in it instead of looking current.
 
-A download needs an account that is active, doesn't need to sign in again and still lists the book. Otherwise the download is refused with "No active, signed-in Audible account currently lists this book". A book that already has a download queued or running isn't queued again, from any button or retry: the single download answers with the existing one, and a bulk request lists it as "Already queued". Every refusal from the Audible Library page (downloads, bulk add, add and download) shows the server's reason in an error toast, and adding a book with download unticked shows an "Added" toast.
+A download needs an account that is active, doesn't need to sign in again and still lists the book. When more than one active account owns a book, one that Audible is throttling is passed over for one that isn't, unless you picked it. Otherwise the download is refused with "No active, signed-in Audible account currently lists this book". A book that already has a download queued or running isn't queued again, from any button or retry: the single download answers with the existing one, and a bulk request lists it as "Already queued". Every refusal from the Audible Library page (downloads, bulk add, add and download) shows the server's reason in an error toast, and adding a book with download unticked shows an "Added" toast.
 
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only.
 
@@ -35,6 +46,7 @@ Mirror makes your ABM library follow your Audible library.
 - A title whose download keeps failing waits longer between tries: 1 hour, then 6, then 24.
 - It also downloads titles you want that have no files yet.
 - Titles removed from Audible stay in ABM.
+- An account Audible is throttling is skipped for 48 hours, or until it signs in again.
 
 ## Settings
 

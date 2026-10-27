@@ -25,10 +25,9 @@ Hvordan ABM kommer på nettet efter metadata, covers og Audible-sider.
 | Indstilling | Standard | Virkning |
 |---|---|---|
 | Use Proxy | fra | Send eksterne requests gennem en proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4 eller SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 eller SOCKS5H |
 | Hostname, Port | tom | Proxyens adresse |
 | Username, Password | tom | Valgfrit |
-| Bypass Addresses | `localhost,127.0.0.1` | Værter, der springer proxyen over |
 | Test Connection | | Tjekker proxyen |
 
 Sektionen viser også din udgående IP-adresse, som eksterne tjenester ser den. Et valg af forbindelse, med en indbygget VPN, er planlagt til en senere udgivelse.

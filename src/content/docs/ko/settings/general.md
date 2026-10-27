@@ -25,10 +25,9 @@ ABM이 메타데이터, 표지, Audible 페이지를 받으러 인터넷에 나�
 | 설정 | 기본값 | 효과 |
 |---|---|---|
 | Use Proxy | 꺼짐 | 외부 요청을 프록시로 보내요 |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS4, SOCKS5 |
+| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5, SOCKS5H |
 | Hostname, Port | 비어 있음 | 프록시 주소 |
 | Username, Password | 비어 있음 | 선택 사항 |
-| Bypass Addresses | `localhost,127.0.0.1` | 프록시를 거치지 않는 호스트 |
 | Test Connection | | 프록시를 확인해요 |
 
 이 섹션에는 외부 서비스에 보이는 내 외부 IP도 표시돼요. 내장 VPN을 포함한 연결 선택은 이후 릴리스에서 추가할 예정이에요.

@@ -1,6 +1,6 @@
 ---
 title: Conversion settings
-description: Defaults, codec options, chapters, metadata, recycling and ffmpeg.
+description: Defaults, codec options, chapters, metadata and ffmpeg.
 ---
 
 **Settings > Conversions** sets the defaults for [Conversions](/using/conversions/). Any job can override them.
@@ -61,12 +61,7 @@ A bitrate of **Copy** skips re-encoding and every codec option.
 
 | Setting | Default | Effect |
 |---|---|---|
-| Enable Recycle Bin | on | Originals go to the bin instead of being deleted |
-| Recycle Bin Path | empty | Empty uses `/config/recycle/conversions` |
-| Retention Period | 7 days | Items older than this are deleted by the recycle cleanup task. 0 keeps them for good |
-| Auto-Empty When Bin Is Large | off | Turns on the threshold below |
-| Auto-Empty Threshold | 10 GB | After a conversion, if the bin holds more than this, the oldest items are deleted |
-| Delete Original | off | Default for each job, overridable |
+| Delete Original | off | Default for each job, overridable. Originals go to the conversions folder of the [recycle bin](/settings/media-management/#recycle-bin), or are deleted for good when recycling is off |
 | Update Library Paths | on | Book records follow the converted files |
 | Auto-Reformat on Import | off | Converts newly imported books that arrive in another format, using the defaults above |
 | Backup Original Metadata | off | Before converting, writes a JSON file to a `.metadata_backup` folder inside the book's folder. It lists each original file's name, format and size, plus the tags and chapters embedded in it |
