@@ -13,6 +13,8 @@ description: Upcoming releases and an iCal feed.
 
 The **Calendar Options** button offers: collapse multiple books releasing on the same day, color the whole event with the status color, and show author and series information.
 
+You can also build a custom filter for the calendar. See [Custom filters](/using/library/#custom-filters).
+
 ## iCal feed
 
 Subscribe from a calendar app with the feed URL (copy it, or use **Subscribe in Calendar App**). Options:

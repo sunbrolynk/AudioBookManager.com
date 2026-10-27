@@ -49,6 +49,12 @@ The same dialog opens for series and authors and applies to each of their books.
 
 Books, authors and series can carry tags. Tags steer indexers, notifications, import lists and profiles, and filter the calendar feed. See [Tags](/en-ca/settings/tags/).
 
+## Custom filters
+
+Library, Series, the Audible Library page and the Calendar let you build a custom filter from conditions. The value for Author, Narrator, Series, Publisher, Language, Genres, Tags, Keywords, Quality Profile, Format and Plans is picked from a searchable list of the values already in your library. The search ignores accents, so `Brontë` also finds `Bronte`. **Type a value…** at the bottom of the list switches that condition to free text.
+
+Monitored, Released, Upgradable and Virtual Voice are Yes or No choices. Genres, Tags, Keywords and Plans match each value on its own.
+
 ## Selection
 
 Select rows to act on several at once: monitor, search, tag, rename, delete. On a phone, see [Phone use](/en-ca/phone/).
