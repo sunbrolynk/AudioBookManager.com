@@ -22820,6 +22820,17 @@
               }
             ],
             "title": "Elapsed Seconds"
+          },
+          "waiting_for_job_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Waiting For Job Id"
           }
         },
         "type": "object",

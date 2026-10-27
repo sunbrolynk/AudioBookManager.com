@@ -20,7 +20,7 @@ Jobs wait in a queue and run up to **Concurrent Conversions** at a time (2 by de
 
 Output is written to a private work folder and placed in the library only when finished. Each file goes in under a temporary name and is renamed into place, so a half-written book never shows up. A free-space check runs before a job starts and again before placement. Source files are never overwritten.
 
-Converting a file to the format it is already in is refused, because it would overwrite the original.
+Converting a file to the format it is already in is refused, because it would overwrite the original. The same goes for the format it will be after queued work.
 
 ## After a conversion
 
