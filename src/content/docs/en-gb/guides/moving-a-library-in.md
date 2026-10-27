@@ -14,7 +14,7 @@ description: Bring an existing collection into ABM safely.
 1. **Library > Library Import**, scan the folder.
 2. Read the list. Matches show a percentage. Fix **Needs a look** and **Unmatched** rows with **Find a match**, or join rows that are one book split across folders.
 3. Check the cover and extra files per folder only if you want to override the defaults.
-4. Select the rows and add them. It stays two clicks if you accept the defaults.
+4. Select the rows and add them.
 5. Watch the task. The summary says how many files were copied instead of hardlinked and what failed.
 
 ## If your collection is already where you want it

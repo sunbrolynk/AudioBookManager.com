@@ -15,7 +15,7 @@ Library Import scans a folder of audiobooks, matches each folder to metadata, an
 2. Check the matches. Fix the ones that need it.
 3. Tick the rows you want, then add them to the library or delete them.
 
-Every option is an optional override of a default in Media Management. A plain scan then add never needs more than two clicks.
+Every option is an optional override of a default in Media Management.
 
 ## Reading the list
 
@@ -29,10 +29,10 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 ## Joining, splitting and adding
 
 - Join rows that are one book split across folders. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
-- On a phone, hold a row for about half a second to start joining. A "Hold to join" hint sits in a strip above the list until you dismiss it or open a row, and it doesn't come back. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest are matched as. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
-- On a phone, a folder's details have **Split into separate books** when the folder holds several files. A row with no audio has no Include switch there, since it can only be deleted.
-- In a row's details, **Confirm match** is the purple button at the bottom and **Delete** is the red one beside it, the same size. A row with no audio only offers Delete.
-- Tick the folders you want, then choose what to do with them. The bar at the bottom reads "Select All, Add N to Library | Delete N", and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add, so a plain scan then Add still takes two clicks.
+- On a phone, hold a row for about half a second to start joining. A "Hold to join" hint shows until you dismiss it or open a row. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest are matched as. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
+- On a phone, a folder's details have **Split into separate books** when the folder holds several files.
+- A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete.
+- Tick the folders you want, then choose what to do with them. The bar above the list has **Select All**, **Add to Library** and **Delete**, and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add.
 - Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted.
 - Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
