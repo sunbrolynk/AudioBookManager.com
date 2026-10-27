@@ -22,7 +22,7 @@ Jobs wait in a queue and run up to **Concurrent Conversions** at a time (2 by de
 
 Output is written to a private work folder and placed in the library only when finished. Each file goes in under a temporary name and is renamed into place, so a half-written book never shows up. A free-space check runs before a job starts and again before placement. Source files are never overwritten.
 
-Converting a file to the format it is already in is refused, because it would overwrite the original.
+Converting a file to the format it is already in is refused, because it would overwrite the original. The same goes for the format it will be after queued work.
 
 ## After a conversion
 
@@ -32,7 +32,11 @@ If placing the result fails (the library folder is full, say), the job fails and
 
 ## Restart, cancel and duplicates
 
-A book can have one queued, running or paused job for each kind of job at a time. Starting another, from a button, a bulk request or Retry, is refused with "A conversion for this book is already queued or running", and a bulk request skips that book and lists the reason. If a job can't be handed to the queue, it is marked failed with "The conversion could not be queued" instead of sitting there waiting.
+A book never has two conversions running at once. If a book already has one queued, running or paused, a new conversion for it waits its turn instead of being refused, and runs on the files the earlier one produces. The queue shows "Waiting for the earlier conversion of this book" on it. The preview shows each book as it will be once the queued conversions finish, with a note like "After the queued convert to MP3".
+
+Only an identical request (same operation and target format) is refused, with "A conversion for this book is already queued or running" (HTTP 409). A bulk request skips that book and lists the reason. Three cases are refused with HTTP 400: merging a book that is already a single file, converting to the format the book will already be after the queued work, and picking files a queued job will replace (pick them after it finishes). If you pick only some of a book's files, only those are converted. If a job can't be handed to the queue, it is marked failed with "The conversion could not be queued" instead of sitting there waiting.
+
+Cancelling a conversion's task on the Tasks page releases that book's queue, so the jobs waiting behind it carry on.
 
 **Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. The toast after you start a conversion from a book has Pause, Resume and Cancel for each of its jobs.
 
