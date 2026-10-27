@@ -14136,21 +14136,41 @@
         }
       }
     },
-    "/api/settings/recycle-bin": {
-      "get": {
+    "/api/settings/recycle-bin/path/check": {
+      "post": {
         "tags": [
           "Settings"
         ],
-        "summary": "Get Recycle Bin",
-        "description": "The configured recycle bin and whether it collides with a root folder.",
-        "operationId": "get_recycle_bin_api_settings_recycle_bin_get",
+        "summary": "Check Recycle Bin Path",
+        "description": "Dry run of the path change: the refusal text it would give, or null.",
+        "operationId": "check_recycle_bin_path_api_settings_recycle_bin_path_check_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RecycleBinPathRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/RecycleBinStatus"
+                  "$ref": "#/components/schemas/RecycleBinPathCheck"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -29508,6 +29528,26 @@
         ],
         "title": "ReauthStartResponse"
       },
+      "RecycleBinPathCheck": {
+        "properties": {
+          "conflict": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conflict"
+          }
+        },
+        "type": "object",
+        "required": [
+          "conflict"
+        ],
+        "title": "RecycleBinPathCheck"
+      },
       "RecycleBinPathRequest": {
         "properties": {
           "path": {
@@ -29562,85 +29602,6 @@
           "task_id"
         ],
         "title": "RecycleBinPathResponse"
-      },
-      "RecycleBinStatus": {
-        "properties": {
-          "path": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Path"
-          },
-          "enabled": {
-            "type": "boolean",
-            "title": "Enabled"
-          },
-          "conflict": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Conflict"
-          },
-          "conflict_kind": {
-            "anyOf": [
-              {
-                "type": "string",
-                "enum": [
-                  "inside_root",
-                  "is_root",
-                  "contains_root"
-                ]
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Conflict Kind"
-          },
-          "conflict_bin": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Conflict Bin"
-          },
-          "conflict_root": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Conflict Root"
-          }
-        },
-        "type": "object",
-        "required": [
-          "path",
-          "enabled",
-          "conflict",
-          "conflict_kind",
-          "conflict_bin",
-          "conflict_root"
-        ],
-        "title": "RecycleBinStatus",
-        "description": "The bin as the settings page shows it. `conflict` is the health warning\nfor a bin that collides with a root folder; the other `conflict_*` fields\ndescribe that overlap. All four are null when there is no conflict."
       },
       "RefreshBooksRequest": {
         "properties": {
