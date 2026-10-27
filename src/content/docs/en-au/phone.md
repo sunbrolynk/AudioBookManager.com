@@ -47,4 +47,4 @@ Settings is a grouped list: Library, Sources and App. Each row is a link with th
 ## Import Workbench
 
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
-- The bottom bar shows how many are selected and the Add button, and says why Add is blocked.
+- The bottom bar shows how many are selected, the Add and Delete buttons, and says why Add is blocked. Delete asks you to type `delete` first. A row with no audio only offers Delete and has no Include switch.
