@@ -3727,7 +3727,7 @@
           "Library Import"
         ],
         "summary": "Remove Import Folders",
-        "description": "Delete the no-audio folders named, now, through the recycle bin. A folder\nthat may not be deleted is reported in its own result and does not stop the rest.",
+        "description": "Delete the session's folders named, now, whatever they hold, through the recycle bin.\nA folder that may not be deleted is reported in its own result and does not stop the rest.",
         "operationId": "remove_import_folders_api_library_import_session__session_id__remove_folders_post",
         "parameters": [
           {
