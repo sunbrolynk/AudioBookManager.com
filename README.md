@@ -9,7 +9,7 @@
 <p align="center"><b>The website, docs and release notes for AudioBook Manager.</b></p>
 
 <p align="center">
-  <a href="https://github.com/sunbrolynk/audiobookmanager.com/actions/workflows/site-checks.yml"><img src="https://github.com/sunbrolynk/audiobookmanager.com/actions/workflows/site-checks.yml/badge.svg" alt="Site checks"></a>
+  <a href="https://github.com/sunbrolynk/AudioBookManager.com/actions/workflows/site-checks.yml"><img src="https://github.com/sunbrolynk/AudioBookManager.com/actions/workflows/site-checks.yml/badge.svg" alt="Site checks"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-GPLv3-8b45c6" alt="GPLv3 license"></a>
 </p>
 
