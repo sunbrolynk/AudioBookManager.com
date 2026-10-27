@@ -2,7 +2,8 @@
 
 The site is translated one whole language at a time. A language only appears in
 the language menu once every page, landing string, sidebar label and footer
-label is translated. `scripts/check-locales.mjs` fails the build otherwise.
+label is translated, along with the radio page's strings (the `radio…` keys in
+`src/ui-strings.json`). `scripts/check-locales.mjs` fails the build otherwise.
 Complete machine translations count; corrections from native speakers come
 after.
 
@@ -123,6 +124,9 @@ language. A new language needs:
 - `src/locale-names.json`: its name in each published language.
 - `scripts/announce-translation-review.py`: its English name in `LANGUAGES`, or
   its review PR won't be posted to Discord.
+- `functions/_middleware.js` and `public/_routes.json`: the code in `LOCALES`
+  and its four radio paths, so the radio host serves the language's radio page.
+  `npm test` fails until both are there.
 
 `npm run build` tells you what's missing.
 
