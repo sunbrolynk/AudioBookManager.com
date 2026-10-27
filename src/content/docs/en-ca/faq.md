@@ -17,7 +17,7 @@ No. ABM keeps everything in one SQLite file in `/config`. There is nothing else 
 
 ## Can I reach it from outside my network?
 
-Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. By default, anything from outside your local network has to sign in, and setting **Authentication Required** to **Enabled** makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set `TRUSTED_PROXIES` to the proxy's address. Stored credentials are encrypted. See the [reverse proxy guide](/en-ca/guides/reverse-proxy/) and [Configuration](/en-ca/configuration/#reverse-proxy).
+Yes, on 0.17.0 or later, but I don't recommend putting ABM on the internet, the same advice the Servarr apps give. A VPN such as WireGuard or Tailscale is the safer way in. Every API call needs the API key, from anywhere. For the web interface, a new install requires sign-in from every address, and an existing install lets your local network skip it by default. Setting **Authentication Required** to **Enabled** makes everyone sign in, your own LAN included. Behind nginx, Traefik or Caddy, set `TRUSTED_PROXIES` to the proxy's address. Stored credentials are encrypted. See the [reverse proxy guide](/en-ca/guides/reverse-proxy/) and [Configuration](/en-ca/configuration/#reverse-proxy).
 
 ## Which download clients work?
 

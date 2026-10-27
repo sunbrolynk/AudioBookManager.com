@@ -7,9 +7,14 @@ ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Sw
 
 ## Authenticating
 
+Every call under `/api` needs the API key, the way Sonarr and Radarr work. That holds when you are signed in, on your own network, and in the None and local-address modes. Those only open the web interface, and the web app fetches the key itself and sends it on every call.
+
 - **API key**: send `X-Api-Key: <key>` or `?apikey=<key>`. Find or regenerate it under **Settings > General > Security**. See [Security](/en-gb/settings/security/).
-- **Bearer token** from signing in, when Authentication is set to Forms. Under Basic, bearer tokens and session cookies are not accepted.
-- A credential you present wins over a bypass, so a keyed request from the LAN counts as an API request.
+- The live-update websocket needs the key too.
+- Login tokens do not work on the API. An `Authorization: Bearer` token from signing in is refused, and login, setup and saving the security settings no longer return `access_token`. The sign-in cookie only opens the web interface.
+- `GET /api/system/status` with your key is the quickest way to test it. A missing or wrong key is a 401.
+- Covers, backup downloads and log downloads are not under `/api` any more: `/media-cover/...`, `/backup/{file}` and `/logfile`. They open with your sign-in or with the key.
+- Under Basic, the web interface takes the Basic credentials, and `POST /api/auth/login` answers 409. The API still takes the key.
 
 ## Conventions
 
