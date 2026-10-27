@@ -15066,7 +15066,7 @@
           "Settings"
         ],
         "summary": "Save Security Settings",
-        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.\nChanging it signs out every other session; the caller gets a fresh token.",
+        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.\nChanging it, or the auth method, signs out every other session; the caller\ngets a fresh token only when the resulting method is Forms.",
         "operationId": "save_security_settings_api_settings_general_security_put",
         "requestBody": {
           "content": {
@@ -16260,7 +16260,7 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Authenticate and return a JWT. With Forms authentication the token is\nreturned in the response body and set as an HttpOnly cookie. With Basic\nauthentication the browser sends the credentials itself on every request,\nthough this endpoint still issues a token. Failed logins take the same\ntime whichever credential was wrong.",
+        "description": "Authenticate and return a JWT, also set as an HttpOnly cookie. Refused\nwith 409 under Basic authentication, where the browser sends the\ncredentials itself and session tokens are not honoured. Failed logins\ntake the same time whichever credential was wrong.",
         "operationId": "login_api_auth_login_post",
         "requestBody": {
           "content": {

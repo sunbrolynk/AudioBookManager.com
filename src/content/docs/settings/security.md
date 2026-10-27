@@ -11,7 +11,7 @@ The **Security** section of **Settings > General** controls who can use ABM and 
 |---|---|---|
 | Authentication | Forms (Login Page) | None, Basic (Browser Popup), Forms (Login Page), External (Reverse Proxy) |
 | Authentication Required | Disabled for Local Addresses | Enabled (Always), Disabled for Local Addresses, Disabled (Not Recommended) |
-| Username, New Password, Confirm New Password | | Leave the password blank to keep the current one. Setting a new password signs out every other session and closes open live connections, so a stale tab must reload and sign in again. The tab you saved from stays signed in |
+| Username, New Password, Confirm New Password | | Leave the password blank to keep the current one. Setting a new password signs out every other session and closes open live connections, so a stale tab must reload and sign in again. Changing the sign-in method does the same. The tab you saved from stays signed in under Forms |
 | Certificate Validation | Enabled | Enabled, Disabled for Local Addresses, Disabled (Not Recommended) |
 | Local Networks | empty | Extra CIDR ranges whose clients skip sign-in |
 | CORS Allowed Domains | empty | Other origins allowed to call the API from a browser. Needs a restart |
@@ -51,6 +51,8 @@ Send it as `X-Api-Key` or an `apikey` parameter. A key from a LAN address counts
 A browser request that changes something is refused with `cross_origin_rejected` unless its origin matches the address ABM is reached at, a trusted proxy's forwarded host, or a CORS allowed domain. API-key requests are not affected.
 
 With **Basic (Browser Popup)** selected, ABM checks the username and password against your account, and a wrong pair is refused. A script that changes something with Basic credentials needs to send an `Origin` header that matches, or use the API key instead.
+
+Under Basic, the `/login` page has no username or password form. It says "This server signs in through your browser" and has a **Sign in** button that brings the browser prompt back. Live updates connect straight after you sign in. Session tokens and cookies are not accepted, `POST /api/auth/login` answers 409 and `POST /api/auth/validate-token` reports invalid, so use the Basic credentials or the API key.
 
 ## Content security policy
 

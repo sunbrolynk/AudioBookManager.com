@@ -8,7 +8,7 @@ ABM has a REST API under `/api`. The interactive reference is at `/api/docs` (Sw
 ## Authenticating
 
 - **API key**: send `X-Api-Key: <key>` or `?apikey=<key>`. Find or regenerate it under **Settings > General > Security**. See [Security](/en-au/settings/security/).
-- **Bearer token** from signing in.
+- **Bearer token** from signing in, when Authentication is set to Forms. Under Basic, bearer tokens and session cookies are not accepted.
 - A credential you present wins over a bypass, so a keyed request from the LAN counts as an API request.
 
 ## Conventions
