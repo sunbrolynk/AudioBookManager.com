@@ -22,6 +22,8 @@ Every option is an optional override of a default in Media Management.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
+A delisted Audible book that never matches can be requested for Libex's database. See [Add New](/en-au/using/add-new/#a-book-libex-doesnt-have).
+
 ## Joining, splitting and adding
 
 - Join rows that are one book split across folders. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.

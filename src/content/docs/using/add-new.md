@@ -27,3 +27,7 @@ The add runs as a background task with a progress toast.
 ## If search returns nothing
 
 A search that gets no answer from Libex fails with an error rather than an empty list. See [Troubleshooting](/troubleshooting/#the-metadata-source-is-unavailable).
+
+## A book Libex doesn't have
+
+If a book was sold on Audible and has since been delisted, ABM can't find it. You can request it for Libex's database with its [Missing book (delisted from Audible)](https://github.com/LibexHQ/Libex/issues/new?template=missing-book.yml) form. To check first whether Libex already has it, open `https://libexdb.com/db/book/<ASIN>?region=<xx>`. Books that were never on Audible (no Audible ASIN) can't be added at the moment.

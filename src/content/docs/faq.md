@@ -58,3 +58,7 @@ Yes, under 768px wide. See [Phone use](/phone/).
 ## Can ABM use more than one Audible account?
 
 Yes. Each account keeps its own library. See [Audible](/audible/).
+
+## What if a book isn't in Libex?
+
+A book that was sold on Audible and has since been delisted can be requested for Libex's database. Books that were never on Audible can't be added at the moment. See [Add New](/using/add-new/#a-book-libex-doesnt-have).
