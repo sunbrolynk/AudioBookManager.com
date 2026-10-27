@@ -3,7 +3,8 @@ import locales from '../../locales.json';
 import names from '../../locale-names.json';
 import { flags } from './flags';
 
-interface Props { locale?: string }
+// The radio pages pass their own links, since they are built under /radio/ but served from the radio host's root.
+interface Props { locale?: string; href?: (code: string) => string }
 // The landing page is not a Starlight route, so it passes its own locale (none means English).
 let route: { locale?: string } = {};
 try { route = Astro.locals.starlightRoute; } catch { /* landing page: no Starlight route */ }
@@ -12,7 +13,7 @@ const here = loc ?? 'root';
 const all: Record<string, { lang: string }> = { root: { lang: 'en' }, ...locales };
 // Pages share their path across locales, so the same page is the root path under another prefix.
 const path = loc ? Astro.url.pathname.replace(new RegExp(`^/${loc}(?=/|$)`), '') || '/' : Astro.url.pathname;
-const href = (code: string) => (code === 'root' ? path : `/${code}${path}`);
+const href = Astro.props.href ?? ((code: string) => (code === 'root' ? path : `/${code}${path}`));
 // Each name is written in the language currently shown.
 const shown = all[here].lang;
 const table = (names as Record<string, Record<string, string>>)[shown] ?? {};

@@ -9,21 +9,38 @@ import '@fontsource/spectral/700.css';
 import '@fontsource-variable/jetbrains-mono';
 import '../styles/radio.css';
 import icon from '../assets/icon.png';
+import LanguageSelect from '../components/overrides/LanguageSelect.astro';
+import strings from '../ui-strings.json';
+import locales from '../locales.json';
 
-interface Props { title: string; description: string; path: string; current?: 'credits' }
-const { title, description, path, current } = Astro.props;
+interface Props { title: string; description: string; path: string; current?: 'credits'; locale?: string }
+const { title, description, path, current, locale } = Astro.props;
 // The page lives at the root of radio.audiobookmanager.com, so its own links are relative and work there and on a preview URL.
 const credits = path === '/' ? 'credits/' : './';
+const all = locales as Record<string, { lang: string }>;
+const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
+const lang = locale ? all[locale].lang : 'en';
+// Each language lives under its own prefix on the radio host, like the main site.
+const prefix = locale ? `/${locale}` : '';
 const site = 'https://audiobookmanager.com';
+const radio = 'https://radio.audiobookmanager.com';
+// Language links are relative too: up to the radio root, then into the other language's copy of this page.
+const sub = path === '/' ? '' : 'credits/';
+const root = '../'.repeat((locale ? 1 : 0) + (sub ? 1 : 0));
+const langHref = (code: string) => `${root}${code === 'root' ? '' : `${code}/`}${sub}` || './';
+// Words the player script writes after the page loads, in this page's language.
+const live = Object.fromEntries(Object.entries(t).filter(([k]) => k.startsWith('radio')));
 ---
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>{title}</title>
   <meta name="description" content={description}>
-  <link rel="canonical" href={`https://radio.audiobookmanager.com${path}`}>
+  <link rel="canonical" href={`${radio}${prefix}${path}`}>
+  <link rel="alternate" hreflang="en" href={`${radio}${path}`}>
+  {Object.entries(all).map(([code, l]) => <link rel="alternate" hreflang={l.lang} href={`${radio}/${code}${path}`}>)}
   <link rel="icon" href="/favicon.png">
   <meta name="theme-color" content="#141519">
   <script is:inline>
@@ -32,20 +49,21 @@ const site = 'https://audiobookmanager.com';
       || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
   </script>
 </head>
-<body data-state="idle" data-feed="ok">
+<body data-state="idle" data-feed="ok" data-lang={lang} data-t={JSON.stringify(live)}>
   <header class="top">
     <div class="w">
-      <a class="brand" href={`${site}/`} aria-label="AudioBook Manager home"><Image src={icon} alt="" width={32} height={32} densities={[1, 2, 3]} />AudioBook <span>Manager</span></a>
-      <nav aria-label="Main">
-        <a href={`${site}/installation/`} class="hide-s">Docs</a>
-        <a href={credits} aria-current={current === 'credits' ? 'page' : undefined}>Credits</a>
-        <a href="https://github.com/sunbrolynk/AudioBook-Manager" class="hide-s">GitHub</a>
-        <a href={credits} class="icb" aria-label="Credits and licences"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11h2v6h-2zM11 7h2v2h-2z"/></svg></a>
+      <a class="brand" href={`${site}${prefix}/`} aria-label={t.radioHome}><Image src={icon} alt="" width={32} height={32} densities={[1, 2, 3]} />AudioBook <span>Manager</span></a>
+      <nav aria-label={t.nav}>
+        <a href={`${site}${prefix}/installation/`} class="hide-s">{t.docs}</a>
+        <a href={credits} aria-current={current === 'credits' ? 'page' : undefined}>{t.radioCredits}</a>
+        <a href="https://github.com/sunbrolynk/AudioBook-Manager" class="hide-s">{t.github}</a>
+        <a href={credits} class="icb" aria-label={t.radioCreditsAria}><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M11 11h2v6h-2zM11 7h2v2h-2z"/></svg></a>
       </nav>
+      <LanguageSelect locale={locale} href={langHref} />
     </div>
   </header>
   <slot />
-  <footer class="foot"><p>No ads, no accounts, no tracking. Every track on air is openly licensed and credited. <a href={credits}>Credits</a> · <a href={site}>audiobookmanager.com</a></p></footer>
+  <footer class="foot"><p>{t.radioFoot} <a href={credits}>{t.radioCredits}</a> · <a href={`${site}${prefix}/`}>audiobookmanager.com</a></p></footer>
   <slot name="after" />
 </body>
 </html>

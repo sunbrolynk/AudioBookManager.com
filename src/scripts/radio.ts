@@ -1,6 +1,6 @@
 // The ABM Radio player: audio, reconnecting, now-playing, credits and the phone extras.
 // Everything that comes from the API or credits.json is written with textContent or a validated https URL, never as HTML.
-import { STREAM_HOST, ago, clock, creditIndex, findCredit, httpsUrl } from '../lib/radio.mjs';
+import { STREAM_HOST, ago, clock, creditIndex, fill, findCredit, httpsUrl } from '../lib/radio.mjs';
 import { createPlayer, createWatcher, type Snapshot } from '../lib/radio-player.mjs';
 
 const API = `${STREAM_HOST}/api/nowplaying/lofi`;
@@ -15,6 +15,10 @@ const all = (key: string) => document.querySelectorAll<HTMLElement>(`[data-b="${
 const put = (key: string, value: string) => all(key).forEach((e) => { e.textContent = value; });
 const str = (v: unknown) => (typeof v === 'string' ? v : '');
 const body = document.body;
+// The page's own words, put there by the layout in the page's language.
+const T: Record<string, string> = JSON.parse(body.dataset.t ?? '{}');
+const LANG = body.dataset.lang ?? 'en';
+const secs = (n: number) => new Intl.NumberFormat(LANG, { style: 'unit', unit: 'second', unitDisplay: 'short' }).format(n);
 
 // ---------- audio ----------
 const audio = new Audio();
@@ -28,27 +32,27 @@ const player = createPlayer({
   onChange: show,
 });
 
-const LIVE: Record<Snapshot['state'], string> = { idle: 'Live', playing: 'Live', stopped: 'Stopped', reconnecting: 'Reconnecting' };
+const LIVE: Record<Snapshot['state'], string> = { idle: T.radioLive, playing: T.radioLive, stopped: T.radioStopped, reconnecting: T.radioReconnectingWord };
 let countdown = 0;
 
 function show(s: Snapshot) {
   body.dataset.state = s.state;
   put('live', LIVE[s.state]);
   const on = s.state === 'playing' || s.state === 'reconnecting';
-  all('play').forEach((b) => { b.setAttribute('aria-label', on ? 'Stop' : 'Play'); b.dataset.on = on ? '1' : '0'; });
+  all('play').forEach((b) => { b.setAttribute('aria-label', on ? T.radioStop : T.radioPlay); b.dataset.on = on ? '1' : '0'; });
   if ('mediaSession' in navigator) navigator.mediaSession.playbackState = on ? 'playing' : 'none';
   window.clearInterval(countdown);
   if (s.state === 'reconnecting') {
     // The timer that reconnects is a single deadline; this only keeps the words current, so a throttled tab loses nothing.
     const words = () => {
       const left = Math.max(0, Math.ceil((s.deadline - Date.now()) / 1000));
-      put('status', `Reconnecting… next try in ${left} s`);
-      put('retry', `Reconnecting… next try in ${left} s.`);
+      put('status', fill(T.radioRetry, { s: secs(left) }));
+      put('retry', fill(T.radioRetry, { s: secs(left) }));
     };
     words();
     countdown = window.setInterval(words, 1000);
   } else {
-    put('status', { idle: 'Press play to tune in', stopped: 'Stopped. Play jumps back to live.', playing: s.live ? 'On air' : 'Tuning in…' }[s.state]);
+    put('status', { idle: T.radioIdle, stopped: T.radioStoppedLine, playing: s.live ? T.radioOnAir : T.radioTuning }[s.state]);
   }
   watcher.playing();
 }
@@ -165,7 +169,7 @@ function setHistory(items: Json[], index: Awaited<typeof credits>) {
       loadImage(str(song.art)).then((url) => cover(cv, url));
     }
   }
-  list.querySelectorAll<HTMLElement>('.w').forEach((w) => { w.textContent = ago(Number(w.dataset.at)); });
+  list.querySelectorAll<HTMLElement>('.w').forEach((w) => { w.textContent = ago(Number(w.dataset.at), undefined, LANG); });
 }
 
 async function render(data: Json) {
@@ -173,7 +177,7 @@ async function render(data: Json) {
   const online = data.is_online !== false;
   setFeed(online ? 'ok' : 'off');
   const now: Json = data.now_playing ?? {};
-  const song: Json = online ? now.song ?? {} : { title: 'Off air' };
+  const song: Json = online ? now.song ?? {} : { title: T.radioOffAir };
   const key = `${now.sh_id}|${online}`;
   if (key !== shown) {
     shown = key;
@@ -183,9 +187,9 @@ async function render(data: Json) {
   }
   timing = { elapsed: Number(now.elapsed) || 0, duration: Number(now.duration) || 0, at: performance.now() };
   const listeners = Number(data.listeners?.current) || 0;
-  put('listeners', listeners > 0 ? ` · ${listeners} listening` : '');
+  put('listeners', listeners > 0 ? ` · ${fill(T.radioListeners, { n: new Intl.NumberFormat(LANG).format(listeners) })}` : '');
   const next: Json | undefined = data.playing_next?.song;
-  put('next', online && next ? `${str(next.title)}, ${str(next.artist)}` : 'Nothing queued yet');
+  put('next', online && next ? `${str(next.title)}, ${str(next.artist)}` : T.radioNothing);
   setHistory(Array.isArray(data.song_history) ? data.song_history : [], index);
   tick();
 }
@@ -246,8 +250,8 @@ if (phone.matches) document.querySelector('.g4')?.removeAttribute('open');
 const toast = document.querySelector<HTMLElement>('.toast');
 let toastTimer = 0;
 document.querySelectorAll<HTMLElement>('.urls li').forEach((li) => li.addEventListener('click', async () => {
-  let message = 'Stream link copied';
-  try { await navigator.clipboard.writeText(li.dataset.url ?? ''); } catch { message = 'Could not copy, select the link instead'; }
+  let message = T.radioCopied;
+  try { await navigator.clipboard.writeText(li.dataset.url ?? ''); } catch { message = T.radioCopyFail; }
   if (!toast) return;
   toast.textContent = message;
   toast.classList.add('on');
