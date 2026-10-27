@@ -48,7 +48,10 @@
     "prereleaseClose": "Got it",
     "prereleaseDismiss": "Close",
     "reviewPending": "Awaiting community review",
-    "reviewHelp": "Spot a mistake? Help fix it"
+    "reviewHelp": "Spot a mistake? Help fix it",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "en-gb": {
     "features": "Features",
@@ -99,7 +102,10 @@
     "prereleaseClose": "Got it",
     "prereleaseDismiss": "Close",
     "reviewPending": "Awaiting community review",
-    "reviewHelp": "Spot a mistake? Help fix it"
+    "reviewHelp": "Spot a mistake? Help fix it",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "uk": {
     "features": "Можливості",
@@ -150,7 +156,10 @@
     "prereleaseClose": "Зрозуміло",
     "prereleaseDismiss": "Закрити",
     "reviewPending": "Чекає на перевірку спільнотою",
-    "reviewHelp": "Помітив помилку? Допоможи виправити"
+    "reviewHelp": "Помітив помилку? Допоможи виправити",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "en-ca": {
     "features": "Features",
@@ -201,7 +210,10 @@
     "prereleaseClose": "Got it",
     "prereleaseDismiss": "Close",
     "reviewPending": "Awaiting community review",
-    "reviewHelp": "Spot a mistake? Help fix it"
+    "reviewHelp": "Spot a mistake? Help fix it",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "en-au": {
     "features": "Features",
@@ -252,7 +264,10 @@
     "prereleaseClose": "Got it",
     "prereleaseDismiss": "Close",
     "reviewPending": "Awaiting community review",
-    "reviewHelp": "Spot a mistake? Help fix it"
+    "reviewHelp": "Spot a mistake? Help fix it",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "fr": {
     "features": "Fonctionnalités",
@@ -303,7 +318,10 @@
     "prereleaseClose": "Compris",
     "prereleaseDismiss": "Fermer",
     "reviewPending": "En attente de relecture par la communauté",
-    "reviewHelp": "Tu as repéré une erreur ? Aide à la corriger"
+    "reviewHelp": "Tu as repéré une erreur ? Aide à la corriger",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "de": {
     "features": "Funktionen",
@@ -354,7 +372,10 @@
     "prereleaseClose": "Alles klar",
     "prereleaseDismiss": "Schließen",
     "reviewPending": "Wartet auf Prüfung durch die Community",
-    "reviewHelp": "Fehler entdeckt? Hilf mit, ihn zu beheben"
+    "reviewHelp": "Fehler entdeckt? Hilf mit, ihn zu beheben",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "es": {
     "features": "Funciones",
@@ -405,7 +426,10 @@
     "prereleaseClose": "Entendido",
     "prereleaseDismiss": "Cerrar",
     "reviewPending": "Pendiente de revisión por la comunidad",
-    "reviewHelp": "¿Ves un error? Ayuda a corregirlo"
+    "reviewHelp": "¿Ves un error? Ayuda a corregirlo",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "it": {
     "features": "Funzionalità",
@@ -456,7 +480,10 @@
     "prereleaseClose": "Ok, capito",
     "prereleaseDismiss": "Chiudi",
     "reviewPending": "In attesa di revisione da parte della community",
-    "reviewHelp": "Hai trovato un errore? Aiuta a correggerlo"
+    "reviewHelp": "Hai trovato un errore? Aiuta a correggerlo",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "pt-br": {
     "features": "Recursos",
@@ -507,7 +534,10 @@
     "prereleaseClose": "Entendi",
     "prereleaseDismiss": "Fechar",
     "reviewPending": "Aguardando revisão da comunidade",
-    "reviewHelp": "Achou um erro? Ajude a corrigir"
+    "reviewHelp": "Achou um erro? Ajude a corrigir",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "ja": {
     "features": "機能",
@@ -558,7 +588,10 @@
     "prereleaseClose": "わかりました",
     "prereleaseDismiss": "閉じる",
     "reviewPending": "コミュニティによる確認待ち",
-    "reviewHelp": "まちがいを見つけたら、直すのを手伝ってください"
+    "reviewHelp": "まちがいを見つけたら、直すのを手伝ってください",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "nl": {
     "features": "Functies",
@@ -609,7 +642,10 @@
     "prereleaseClose": "Begrepen",
     "prereleaseDismiss": "Sluiten",
     "reviewPending": "Wacht op controle door de community",
-    "reviewHelp": "Fout gezien? Help hem te verbeteren"
+    "reviewHelp": "Fout gezien? Help hem te verbeteren",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "pl": {
     "features": "Funkcje",
@@ -660,7 +696,10 @@
     "prereleaseClose": "Jasne",
     "prereleaseDismiss": "Zamknij",
     "reviewPending": "Czeka na sprawdzenie przez społeczność",
-    "reviewHelp": "Widzisz błąd? Pomóż go poprawić"
+    "reviewHelp": "Widzisz błąd? Pomóż go poprawić",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "zh-cn": {
     "features": "功能",
@@ -711,7 +750,10 @@
     "prereleaseClose": "知道了",
     "prereleaseDismiss": "关闭",
     "reviewPending": "等待社区审校",
-    "reviewHelp": "发现错误？帮忙改一下吧"
+    "reviewHelp": "发现错误？帮忙改一下吧",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "zh-tw": {
     "features": "功能",
@@ -762,7 +804,10 @@
     "prereleaseClose": "知道了",
     "prereleaseDismiss": "關閉",
     "reviewPending": "等待社群審閱",
-    "reviewHelp": "發現錯誤？幫忙改一下吧"
+    "reviewHelp": "發現錯誤？幫忙改一下吧",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "ko": {
     "features": "기능",
@@ -813,7 +858,10 @@
     "prereleaseClose": "알겠어요",
     "prereleaseDismiss": "닫기",
     "reviewPending": "커뮤니티 검토를 기다리는 중",
-    "reviewHelp": "틀린 곳을 찾았나요? 고치는 걸 도와주세요"
+    "reviewHelp": "틀린 곳을 찾았나요? 고치는 걸 도와주세요",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "sv": {
     "features": "Funktioner",
@@ -864,7 +912,10 @@
     "prereleaseClose": "Uppfattat",
     "prereleaseDismiss": "Stäng",
     "reviewPending": "Väntar på granskning av communityn",
-    "reviewHelp": "Hittat ett fel? Hjälp till att rätta det"
+    "reviewHelp": "Hittat ett fel? Hjälp till att rätta det",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "cs": {
     "features": "Funkce",
@@ -915,7 +966,10 @@
     "prereleaseClose": "Rozumím",
     "prereleaseDismiss": "Zavřít",
     "reviewPending": "Čeká na kontrolu komunitou",
-    "reviewHelp": "Našel jsi chybu? Pomoz ji opravit"
+    "reviewHelp": "Našel jsi chybu? Pomoz ji opravit",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "da": {
     "features": "Funktioner",
@@ -966,7 +1020,10 @@
     "prereleaseClose": "Forstået",
     "prereleaseDismiss": "Luk",
     "reviewPending": "Venter på gennemsyn fra fællesskabet",
-    "reviewHelp": "Har du fundet en fejl? Hjælp med at rette den"
+    "reviewHelp": "Har du fundet en fejl? Hjælp med at rette den",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "nb": {
     "features": "Funksjoner",
@@ -1017,7 +1074,10 @@
     "prereleaseClose": "Skjønner",
     "prereleaseDismiss": "Lukk",
     "reviewPending": "Venter på gjennomgang fra fellesskapet",
-    "reviewHelp": "Fant du en feil? Hjelp til med å rette den"
+    "reviewHelp": "Fant du en feil? Hjelp til med å rette den",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   },
   "fi": {
     "features": "Ominaisuudet",
@@ -1068,6 +1128,9 @@
     "prereleaseClose": "Selvä",
     "prereleaseDismiss": "Sulje",
     "reviewPending": "Odottaa yhteisön tarkistusta",
-    "reviewHelp": "Löysitkö virheen? Auta korjaamaan se"
+    "reviewHelp": "Löysitkö virheen? Auta korjaamaan se",
+    "slidePrev": "Previous screenshot",
+    "slideNext": "Next screenshot",
+    "slideCount": "{n} of {total}"
   }
 }
