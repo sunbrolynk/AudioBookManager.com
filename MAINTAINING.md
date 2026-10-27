@@ -81,10 +81,14 @@ redirect rule rather than serving the site twice.
 `radio.audiobookmanager.com` is the same Pages project under a second custom
 domain. The station only allows that exact origin (CORS), so the player must be
 served from it. `functions/_middleware.js` answers on that host: `/` serves the
-built `/radio/` player and `/credits/` the built `/radio/credits/`. The built
-`/radio/...` addresses redirect there, from either host. Everything else passes
-through untouched, and `public/_routes.json` limits the function to those
-paths, so docs traffic never invokes it.
+built `/radio/` player and `/credits/` the built `/radio/credits/`, and each
+language has its own copy under its prefix, so `/de/` serves `/radio/de/` and
+`/de/credits/` serves `/radio/de/credits/`. The built `/radio/...` addresses
+redirect there, from either host. Everything else passes through untouched, and
+`public/_routes.json` limits the function to those paths, so docs traffic never
+invokes it (only the main site's language landing pages share a path with it).
+`LOCALES` in the middleware must match `src/locales.json`; a test checks both
+that and the route list.
 
 1. Pages project → **Custom domains** → add `radio.audiobookmanager.com`. Pages
    creates the DNS record itself, the same as for the apex.

@@ -62,15 +62,22 @@ export function clock(seconds) {
 }
 
 /**
- * "4 min ago" for a unix time in seconds.
- * @param {number} playedAt @param {number} [now]
+ * "4 min. ago" for a unix time in seconds, in the page's language.
+ * @param {number} playedAt @param {number} [now] @param {string} [lang]
  */
-export function ago(playedAt, now = Date.now() / 1000) {
+export function ago(playedAt, now = Date.now() / 1000, lang = 'en') {
+  const rtf = new Intl.RelativeTimeFormat(lang, { numeric: 'auto', style: 'short' });
   const min = Math.round((now - playedAt) / 60);
-  if (min < 1) return 'now';
-  if (min < 60) return `${min} min ago`;
-  return `${Math.round(min / 60)} h ago`;
+  if (min < 1) return rtf.format(0, 'second');
+  if (min < 60) return rtf.format(-min, 'minute');
+  return rtf.format(-Math.round(min / 60), 'hour');
 }
+
+/**
+ * A translated string with each {name} filled from vars; an unknown name stays as written.
+ * @param {string} text @param {Record<string, string | number>} vars
+ */
+export const fill = (text, vars) => text.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
 
 /**
  * Credits grouped by artist A to Z, each artist's tracks by album then title.
