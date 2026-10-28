@@ -35,6 +35,10 @@ Traefik and Caddy send forwarding headers by default. ABM uses a websocket for l
 
 Pass these paths to ABM as well as `/api`: `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. The web app gets its API key from `/initialize.json`, and covers, backups and log downloads are served from the other three.
 
+Pass the `Sec-WebSocket-Protocol` header through too.
+
+If your proxy rewrites `Host`, as nginx does by default with `proxy_pass`, live updates won't connect and the web interface can't fetch its key. Either keep `proxy_set_header Host $host;` from the example above, or add ABM's public address to **CORS Allowed Domains** in **Settings > General > Security** and restart ABM. This was already needed before 0.18.
+
 ## 3. Decide who signs in
 
 - **Authentication Required: Enabled** makes everyone sign in. Safest if the proxy is public.
