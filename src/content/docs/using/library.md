@@ -38,6 +38,8 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 ![The Series page: one tile per series with how many books are in the library](../../../assets/docs/series.jpg)
 
+![A series page: every book in the series in reading order, with which are in the library](../../../assets/docs/series-detail.jpg)
+
 ## Authors
 
 **Library > Authors** lists authors as Posters or Overview, with the same progress colours as Series. The filter offers All, Has Books and No Books. An author page shows their catalog grouped by series, with downloaded and total counts for each series, plus their quality profile, genres and rating. **Refresh Catalog** pulls it again and **Search Author** searches for their wanted books. **Monitor New Books** works the same as for a series, and an author starts at None.
