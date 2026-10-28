@@ -3937,69 +3937,6 @@
         }
       }
     },
-    "/api/library-import/session/{session_id}/cover-image": {
-      "get": {
-        "tags": [
-          "Library Import"
-        ],
-        "summary": "Get Row Cover Image",
-        "description": "A small re-encoded preview of one of a stored row's own covers.",
-        "operationId": "get_row_cover_image_api_library_import_session__session_id__cover_image_get",
-        "parameters": [
-          {
-            "name": "session_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Session Id"
-            }
-          },
-          {
-            "name": "path",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 4096,
-              "title": "Path"
-            }
-          },
-          {
-            "name": "choice",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "minLength": 1,
-              "maxLength": 4096,
-              "title": "Choice"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/manual-import/execute": {
       "post": {
         "tags": [
@@ -8470,47 +8407,6 @@
         }
       }
     },
-    "/api/books/{book_id}/cover": {
-      "get": {
-        "tags": [
-          "Covers"
-        ],
-        "summary": "Serve Custom Cover",
-        "description": "Serve a book's stored custom cover image.\n\nOnly custom (user-set) covers live on disk; automatic covers are remote URLs\nthe browser loads directly, so those never reach this endpoint. 404 when no\ncustom cover is stored.",
-        "operationId": "serve_custom_cover_api_books__book_id__cover_get",
-        "parameters": [
-          {
-            "name": "book_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "title": "Book Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/books/{book_id}/cover-search": {
       "get": {
         "tags": [
@@ -8738,65 +8634,6 @@
                   "additionalProperties": true,
                   "title": "Response Revert Cover To Automatic Api Books  Book Id  Cover Revert Post"
                 }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/media-cover/{entity_type}/{entity_id}/{filename}": {
-      "get": {
-        "tags": [
-          "MediaCover"
-        ],
-        "summary": "Serve Media Cover",
-        "description": "Serve a cached cover variant from disk, or 404 if it isn't cached.",
-        "operationId": "serve_media_cover_api_media_cover__entity_type___entity_id___filename__get",
-        "parameters": [
-          {
-            "name": "entity_type",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Entity Type"
-            }
-          },
-          {
-            "name": "entity_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "title": "Entity Id"
-            }
-          },
-          {
-            "name": "filename",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Filename"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
               }
             }
           },
@@ -14728,47 +14565,6 @@
         }
       }
     },
-    "/api/settings/general/backup/download/{filename}": {
-      "get": {
-        "tags": [
-          "Settings"
-        ],
-        "summary": "Download Backup",
-        "description": "Download a backup file.",
-        "operationId": "download_backup_api_settings_general_backup_download__filename__get",
-        "parameters": [
-          {
-            "name": "filename",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "title": "Filename"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/settings/general/backup/restore-upload": {
       "post": {
         "tags": [
@@ -15046,7 +14842,7 @@
           "Settings"
         ],
         "summary": "Get Security Settings",
-        "description": "Get security settings. The password and API key are never returned, only\nwhether a key exists. With no saved settings, defaults are returned with\nno API key; a key is only created by the regenerate endpoint.",
+        "description": "Get security settings. The password and API key are never returned, only\nwhether a key exists. With no saved settings, defaults are returned with\nno API key; a key is minted when setup completes, at startup if one is missing, or by the regenerate endpoint.",
         "operationId": "get_security_settings_api_settings_general_security_get",
         "responses": {
           "200": {
@@ -15066,7 +14862,7 @@
           "Settings"
         ],
         "summary": "Save Security Settings",
-        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.\nChanging it, or the auth method, signs out every other session; the caller\ngets a fresh token only when the resulting method is Forms.",
+        "description": "Save security settings once the current password is confirmed.\nPassword is hashed before storage. Send password only when changing it.\nChanging it, or the auth method, signs out every other session; the caller\ngets a fresh session cookie only when the resulting method is Forms.",
         "operationId": "save_security_settings_api_settings_general_security_put",
         "requestBody": {
           "content": {
@@ -15087,55 +14883,6 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Save Security Settings Api Settings General Security Put"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/settings/general/security/api-key/reveal": {
-      "post": {
-        "tags": [
-          "Settings"
-        ],
-        "summary": "Reveal Api Key",
-        "description": "Return the plaintext API key once the current password is confirmed.",
-        "operationId": "reveal_api_key_api_settings_general_security_api_key_reveal_post",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "anyOf": [
-                  {
-                    "$ref": "#/components/schemas/CurrentPasswordRequest"
-                  },
-                  {
-                    "type": "null"
-                  }
-                ],
-                "title": "Payload"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RevealedApiKey"
                 }
               }
             }
@@ -15230,7 +14977,7 @@
           "Settings"
         ],
         "summary": "Regenerate Api Key",
-        "description": "Generate a new API key once the current password is confirmed. Old key immediately invalidated.",
+        "description": "Generate a new API key once the current password is confirmed. The old key stops working at once and every open WebSocket is closed.",
         "operationId": "regenerate_api_key_api_settings_general_security_regenerate_api_key_post",
         "requestBody": {
           "content": {
@@ -16101,49 +15848,6 @@
         }
       }
     },
-    "/api/logs/download": {
-      "get": {
-        "tags": [
-          "Logs"
-        ],
-        "summary": "Download Log File",
-        "description": "Download a log file.\n\nArgs:\n    path: Relative path to the log file\n\nReturns:\n    File download response",
-        "operationId": "download_log_file_api_logs_download_get",
-        "parameters": [
-          {
-            "name": "path",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "description": "Relative path to log file",
-              "title": "Path"
-            },
-            "description": "Relative path to log file"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {}
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/logs/all": {
       "get": {
         "tags": [
@@ -16209,7 +15913,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/auth/setup": {
@@ -16251,7 +15956,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/auth/login": {
@@ -16260,7 +15966,7 @@
           "Authentication"
         ],
         "summary": "Login",
-        "description": "Authenticate and return a JWT, also set as an HttpOnly cookie. Refused\nwith 409 under Basic authentication, where the browser sends the\ncredentials itself and session tokens are not honoured. Failed logins\ntake the same time whichever credential was wrong.",
+        "description": "Authenticate and set the session as an HttpOnly cookie. Refused\nwith 409 under Basic authentication, where the browser sends the\ncredentials itself and session tokens are not honoured. Failed logins\ntake the same time whichever credential was wrong.",
         "operationId": "login_api_auth_login_post",
         "requestBody": {
           "content": {
@@ -16293,7 +15999,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api/auth/logout": {
@@ -16340,88 +16047,7 @@
             }
           }
         },
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ]
-      }
-    },
-    "/api/auth/check": {
-      "get": {
-        "tags": [
-          "Authentication"
-        ],
-        "summary": "Check Auth",
-        "description": "Simple endpoint to check if current request is authenticated.\nReturns 200 if authenticated, 401 if not.\n\nUnlike /status, this endpoint DOES require authentication\n(the middleware will block unauthenticated requests).",
-        "operationId": "check_auth_api_auth_check_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Check Auth Api Auth Check Get"
-                }
-              }
-            }
-          }
-        },
-        "security": [
-          {
-            "HTTPBearer": []
-          }
-        ]
-      }
-    },
-    "/api/auth/validate-token": {
-      "post": {
-        "tags": [
-          "Authentication"
-        ],
-        "summary": "Validate Token",
-        "description": "Validate a JWT token without logging in.\nUseful for checking if a stored token is still valid.",
-        "operationId": "validate_token_api_auth_validate_token_post",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Validate Token Api Auth Validate Token Post"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/auth/validate-api-key": {
-      "post": {
-        "tags": [
-          "Authentication"
-        ],
-        "summary": "Validate Api Key Endpoint",
-        "description": "Validate an API key.\nUseful for external integrations to verify their key works.",
-        "operationId": "validate_api_key_endpoint_api_auth_validate_api_key_post",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Validate Api Key Endpoint Api Auth Validate Api Key Post"
-                }
-              }
-            }
-          }
-        }
+        "security": []
       }
     },
     "/api/websocket/status": {
@@ -17396,7 +17022,8 @@
               }
             }
           }
-        }
+        },
+        "security": []
       }
     },
     "/api": {
@@ -27296,22 +26923,6 @@
             "type": "boolean",
             "title": "Success"
           },
-          "access_token": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Access Token"
-          },
-          "token_type": {
-            "type": "string",
-            "title": "Token Type",
-            "default": "bearer"
-          },
           "expires_in": {
             "anyOf": [
               {
@@ -29657,7 +29268,7 @@
           "message"
         ],
         "title": "RegeneratedApiKey",
-        "description": "The new API key. It is shown once, in full, and cannot be retrieved\nlater."
+        "description": "The new API key, in full. The web interface also reads the current key\nwhenever it signs in."
       },
       "ReleaseProfileCreate": {
         "properties": {
@@ -29920,20 +29531,6 @@
           "client_download_id"
         ],
         "title": "RemoveRequest"
-      },
-      "RevealedApiKey": {
-        "properties": {
-          "api_key": {
-            "type": "string",
-            "title": "Api Key"
-          }
-        },
-        "type": "object",
-        "required": [
-          "api_key"
-        ],
-        "title": "RevealedApiKey",
-        "description": "The plaintext API key, returned only after the password is confirmed."
       },
       "RootFolderCreate": {
         "properties": {
@@ -31831,9 +31428,15 @@
       }
     },
     "securitySchemes": {
-      "HTTPBearer": {
-        "type": "http",
-        "scheme": "bearer"
+      "ApiKeyHeader": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Api-Key"
+      },
+      "ApiKeyQuery": {
+        "type": "apiKey",
+        "in": "query",
+        "name": "apikey"
       }
     }
   },
@@ -31973,6 +31576,14 @@
     {
       "name": "Diagnostics",
       "description": "Tests & Settings Verification endpoints"
+    }
+  ],
+  "security": [
+    {
+      "ApiKeyHeader": []
+    },
+    {
+      "ApiKeyQuery": []
     }
   ]
 }

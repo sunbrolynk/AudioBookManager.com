@@ -1,0 +1,7 @@
+---
+import RadioHome from '../../../components/RadioHome.astro';
+import locales from '../../../locales.json';
+
+export const getStaticPaths = () => Object.keys(locales).map((locale) => ({ params: { locale } }));
+---
+<RadioHome locale={Astro.params.locale} />

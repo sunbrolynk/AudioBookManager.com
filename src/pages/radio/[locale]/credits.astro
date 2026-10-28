@@ -1,0 +1,7 @@
+---
+import RadioCredits from '../../../components/RadioCredits.astro';
+import locales from '../../../locales.json';
+
+export const getStaticPaths = () => Object.keys(locales).map((locale) => ({ params: { locale } }));
+---
+<RadioCredits locale={Astro.params.locale} />

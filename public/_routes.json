@@ -1,5 +1,27 @@
 {
   "version": 1,
-  "include": ["/", "/credits", "/credits/", "/radio", "/radio/*"],
+  "include": [
+    "/", "/credits", "/credits/", "/radio", "/radio/*",
+    "/en-gb", "/en-gb/", "/en-gb/credits", "/en-gb/credits/",
+    "/uk", "/uk/", "/uk/credits", "/uk/credits/",
+    "/en-ca", "/en-ca/", "/en-ca/credits", "/en-ca/credits/",
+    "/en-au", "/en-au/", "/en-au/credits", "/en-au/credits/",
+    "/fr", "/fr/", "/fr/credits", "/fr/credits/",
+    "/de", "/de/", "/de/credits", "/de/credits/",
+    "/es", "/es/", "/es/credits", "/es/credits/",
+    "/it", "/it/", "/it/credits", "/it/credits/",
+    "/pt-br", "/pt-br/", "/pt-br/credits", "/pt-br/credits/",
+    "/ja", "/ja/", "/ja/credits", "/ja/credits/",
+    "/nl", "/nl/", "/nl/credits", "/nl/credits/",
+    "/pl", "/pl/", "/pl/credits", "/pl/credits/",
+    "/zh-cn", "/zh-cn/", "/zh-cn/credits", "/zh-cn/credits/",
+    "/zh-tw", "/zh-tw/", "/zh-tw/credits", "/zh-tw/credits/",
+    "/ko", "/ko/", "/ko/credits", "/ko/credits/",
+    "/sv", "/sv/", "/sv/credits", "/sv/credits/",
+    "/cs", "/cs/", "/cs/credits", "/cs/credits/",
+    "/da", "/da/", "/da/credits", "/da/credits/",
+    "/nb", "/nb/", "/nb/credits", "/nb/credits/",
+    "/fi", "/fi/", "/fi/credits", "/fi/credits/"
+  ],
   "exclude": []
 }

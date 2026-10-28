@@ -1,0 +1,113 @@
+---
+import RadioLayout from '../layouts/RadioLayout.astro';
+import { STREAM_HOST, fill } from '../lib/radio.mjs';
+import strings from '../ui-strings.json';
+import { translationHtml } from '../lib/translation-html.mjs';
+
+interface Props { locale?: string }
+const { locale } = Astro.props;
+const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
+// A translation decides where its links go: "{repo}" and the like split the string around them.
+const around = (s: string) => s.split(/\{(\w+)\}/);
+
+const aac = `${STREAM_HOST}/listen/lofi/radio.aac`;
+const mp3 = `${STREAM_HOST}/listen/lofi/radio.mp3`;
+// <wbr> lets the long stream address wrap on a narrow screen without changing the text that gets copied.
+const breakable = (url: string) => url.split('/').join('/<wbr>');
+const streams = [
+  { fmt: 'AAC', url: aac, note: t.radioAacNote },
+  { fmt: 'MP3', url: mp3, note: t.radioMp3Note },
+];
+const chevron = 'M9 5l7 7-7 7';
+---
+<RadioLayout title={t.radioTitle} description={t.radioDescription} path="/" locale={locale}>
+  <main class="wrap">
+    <section class="hero he">
+      <p class="mono kick">ABM Radio</p>
+      <h1>{t.radioH1}</h1>
+      <p class="lede">{t.radioLede}</p>
+    </section>
+    <div class="np">
+      <div class="tower">
+        <div class="tframe"><i class="key" aria-hidden="true"></i>
+          <div class="glass">
+            <div class="vault" aria-hidden="true"><div class="stars s1"></div><div class="stars s2"></div><div class="moon"></div>
+              <svg class="orb" viewBox="0 0 600 220" preserveAspectRatio="xMidYMax meet"><ellipse cx="300" cy="200" rx="270" ry="70"/><ellipse cx="300" cy="200" rx="170" ry="44"/><ellipse cx="300" cy="200" rx="80" ry="22"/></svg>
+              <svg class="cl" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="25" y1="68" x2="73" y2="42" vector-effect="non-scaling-stroke"/></svg>
+              <i class="pt on" style="left:25%;top:68%"></i><i class="pt" style="left:73%;top:42%"></i>
+              <i class="mu v"></i><i class="mu h1"></i><i class="mu h2"></i>
+            </div>
+            <nav class="map" aria-label={t.radioStations}>
+              <a class="star on" aria-current="page" href="./" style="left:25%;top:68%"><b></b><span>I &middot; ABM Lofi</span></a>
+              <span class="star soon" style="left:73%;top:42%"><b></b><span>II &middot; Story Time</span><em>{t.radioLater}</em></span>
+            </nav>
+          </div>
+        </div>
+        <div class="sill" aria-hidden="true"></div>
+      </div>
+      <nav class="chips" aria-label={t.radioStations}><a class="chip on" href="./" aria-current="page">ABM Lofi</a><span class="chip soon">Story Time <em>{t.radioLater}</em></span></nav>
+      <section class="folio" aria-label={t.radioPlayer}>
+        <span class="cn tl"></span><span class="cn tr"></span><span class="cn bl"></span><span class="cn br"></span>
+        <p class="mono live"><span class="dot"></span> <span data-b="live">{t.radioLive}</span><span data-b="listeners"></span></p>
+        <div class="lead">
+          <div class="plate"><div class="cv fade" data-b="cover" role="img" aria-label={t.radioCover}></div></div>
+          <div>
+            <h2 class="title fade" data-b="title">ABM Lofi</h2>
+            <p class="artist fade"><span data-b="artist"></span><span class="al" data-b="album"></span></p>
+            <p class="credit fade" data-b="creditline" hidden><span data-b="credit"></span> &middot; <a data-b="source">{t.radioSource}</a></p>
+          </div>
+        </div>
+        <div class="bar fade" aria-hidden="true"><i data-b="progress"></i></div>
+        <p class="times mono" aria-hidden="true"><span data-b="elapsed"></span><span data-b="duration"></span></p>
+        <div class="ctl">
+          <button class="go" type="button" data-b="play" aria-label={t.radioPlay}><svg class="ic play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ic stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg></button>
+          <label class="vol"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path d="M16 8.5a5 5 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2"/></svg><span class="sr">{t.radioVolume}</span><input type="range" min="0" max="100" value="70" data-b="volume"></label>
+          <button class="mute" type="button" data-b="mute" aria-pressed="false" aria-label={t.radioMute}><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9z"/><path class="x" d="M16 9l5 6M21 9l-5 6" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+        </div>
+        <p class="notice rc"><span data-b="retry">{t.radioReconnecting}</span></p>
+        <p class="notice dn">{t.radioFeedDown}</p>
+        <p class="mono stat" data-b="status" role="status">{t.radioIdle}</p>
+        <noscript><p class="notice show">{t.radioNoscript} <audio controls preload="none"><source src={aac} type="audio/aac"><source src={mp3} type="audio/mpeg"></audio></p></noscript>
+      </section>
+    </div>
+    <section class="cols">
+      <div class="log">
+        <h2>{t.radioLog}</h2><p class="mono sub">{t.radioRecent}</p>
+        <p class="next"><span class="mono">{t.radioNext}</span> <span data-b="next">{t.radioNothing}</span></p>
+        <ul class="hist fade" data-b="history"></ul>
+      </div>
+      <div class="prose">
+        <details class="grp g1" open><summary><h2>{t.radioAboutH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
+          <div class="gb"><p>{around(t.radioAbout).map((p, i) => (i % 2 === 0 ? p : p === 'repo' ? <a href="https://github.com/sunbrolynk/ABM-Radio" rel="noopener">{t.radioRepo}</a> : <a href="credits/">{t.radioCreditsPage}</a>))}</p><p class="more"><a href="credits/">{t.radioReadCredits}</a></p></div></details>
+        <details class="grp g2" open><summary><h2>{t.radioListenH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
+          <div class="gb"><p>{t.radioListen}</p>
+            <ul class="urls">
+              {streams.map((s) => (
+                <li data-url={s.url}><i class="fmt">{s.fmt}</i><code set:html={breakable(s.url)} /> <span>{s.note}</span><button class="copy" type="button" aria-label={fill(t.radioCopy, { fmt: s.fmt })}><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 9h10v12H9zM5 3h10v4H7v8H5z"/></svg></button></li>
+              ))}
+            </ul>
+          </div></details>
+        <details class="grp g5" open><summary><h2>{t.radioSoonH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
+          <div class="gb"><p>{t.radioSoon}</p>
+            <ul class="soonlist">
+              <li set:html={translationHtml(t.radioSoonStory)} />
+              <li set:html={translationHtml(t.radioSoonKids)} />
+              <li set:html={translationHtml(t.radioSoonVelvet)} />
+            </ul></div></details>
+      </div>
+    </section>
+    <section class="cols b">
+      <div class="prose"><details class="grp g3" open><summary><h2>{t.radioArtistsH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
+        <div class="gb"><p>{around(t.radioArtists).map((p, i) => (i % 2 === 0 ? p : <a href="mailto:admin@audiobookmanager.com">admin@audiobookmanager.com</a>))}</p></div></details></div>
+      <div class="prose"><details class="grp g4" open><summary><h2>{t.radioPrivacyH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
+        <div class="gb"><p>{t.radioPrivacy}</p></div></details></div>
+    </section>
+  </main>
+  <div slot="after">
+    <div class="mini" role="region" aria-label={t.radioNowPlaying}><div class="cv fade" data-b="cover" aria-hidden="true"></div><div class="mt"><b class="t fade" data-b="title"></b><span class="a fade" data-b="artist"></span></div><button class="go" type="button" data-b="play" aria-label={t.radioPlay}><svg class="ic play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg><svg class="ic stop" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6h12v12H6z"/></svg></button></div>
+    <div class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script>
+    import '../scripts/radio';
+  </script>
+</RadioLayout>

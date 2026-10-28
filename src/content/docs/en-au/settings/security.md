@@ -21,7 +21,9 @@ The two modes of **Authentication Required** you will use:
 - **Enabled**: everyone signs in, your LAN included.
 - **Disabled for Local Addresses** (stored as `local_disabled`): a request from a local address skips sign-in. Loopback, the private ranges, link-local and IPv6 unique-local count as local. **Local Networks** adds more and never replaces them.
 
-On a fresh install, requests are refused until setup finishes.
+These settings, and the local-address bypass, decide who gets the web interface. They never open the API. Every API call needs the API key, signed in or not.
+
+On a fresh install, requests are refused until setup finishes. Setup preselects **Enabled**, so a new install requires sign-in from every address. An existing install keeps its setting.
 
 ## Reverse proxies
 
@@ -31,15 +33,19 @@ A proxy that sends no forwarding headers looks like a local client. If you run o
 
 ## Password confirmation
 
-Some changes ask for your current password again: saving Security settings, and showing or regenerating the API key. A wrong password counts as a failed sign-in in the security log. If no password is set yet, none is asked.
+Some changes ask for your current password again: saving Security settings and regenerating the API key. A wrong password counts as a failed sign-in in the security log. If no password is set yet, none is asked.
 
 ## API key
 
-The key is never displayed until you confirm your password. **Regenerate API Key** makes a new one, shows it once, and invalidates the old key immediately. The key cannot be typed in. If the stored key cannot be decrypted (the app secret changed), regenerate it.
+The key is shown on this page with no password prompt, because anyone who can open the web interface already gets it for the web app. **Regenerate API Key** still asks for your password. It makes a new key and invalidates the old one immediately, and open pages reconnect with the new key. The key cannot be typed in.
 
-Send it as `X-Api-Key` or an `apikey` parameter. A key from a LAN address counts as a key request. See [API](/en-au/system/api/).
+If the stored key cannot be decrypted (the app secret changed), ABM replaces it with a new one at startup. If you put the original `APP_SECRET` back, the original key returns on the next start, and the key you used in between stops working.
+
+Send it as `X-Api-Key` or an `apikey` parameter. Every API call needs it, including from your own network. A key that is not plain ASCII gets a 401. Rejected keys are written to the security log with the caller's address, so fail2ban can act on them. See [API](/en-au/system/api/).
 
 ## Browser writes
+
+The sign-in and first-run setup requests are refused with a 403 when they carry another site's `Origin` or `Referer`. Scripts that send neither header still work.
 
 A browser request that changes something is refused with `cross_origin_rejected` unless its origin matches the address ABM is reached at, a trusted proxy's forwarded host, or a CORS allowed domain. API-key requests are not affected.
 

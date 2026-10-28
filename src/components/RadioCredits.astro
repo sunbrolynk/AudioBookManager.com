@@ -1,0 +1,44 @@
+---
+import RadioLayout from '../layouts/RadioLayout.astro';
+import credits from '../data/radio-credits.json';
+import strings from '../ui-strings.json';
+import locales from '../locales.json';
+import { fill, groupByArtist, httpsUrl, licenceLabel } from '../lib/radio.mjs';
+
+interface Props { locale?: string }
+const { locale } = Astro.props;
+const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
+const lang = locale ? (locales as Record<string, { lang: string }>)[locale].lang : 'en';
+const artists = groupByArtist(credits);
+const count = (n: number) => new Intl.NumberFormat(lang).format(n);
+const built = new Intl.DateTimeFormat(lang, { dateStyle: 'long', timeZone: 'UTC' }).format(new Date());
+const sub = fill(t.radioCreditsSub, { tracks: count(credits.length), artists: count(artists.length), date: built });
+---
+<RadioLayout title={t.radioCreditsTitle} description={t.radioCreditsDescription} path="/credits/" current="credits" locale={locale}>
+  <main class="wrap page">
+    <section class="hero">
+      <p class="mono kick">ABM Radio</p>
+      <h1>{t.radioCredits}</h1>
+      <p class="lede">{t.radioCreditsLede}</p>
+      <p class="mono sub">{sub}</p>
+    </section>
+    {artists.map(({ artist, tracks }) => (
+      <section class="artist" aria-labelledby={`a-${tracks[0].id}`}>
+        <h2 id={`a-${tracks[0].id}`}>{artist}</h2>
+        <ul class="tracks">
+          {tracks.map((c) => (
+            <li id={c.id}>
+              <span class="tt">{c.title}</span>
+              {c.album && <span class="al">{c.album}</span>}
+              <span class="lic">
+                {httpsUrl(c.license_url) ? <a href={httpsUrl(c.license_url)} rel="noopener">{licenceLabel(c.license)}</a> : licenceLabel(c.license)}
+                {httpsUrl(c.source_url) && <> &middot; <a href={httpsUrl(c.source_url)} rel="noopener">{t.radioCreditsSource}</a></>}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+    <p class="note">{t.radioCreditsNote.split('{mail}').map((p, i) => (i === 0 ? p : <><a href="mailto:admin@audiobookmanager.com">admin@audiobookmanager.com</a>{p}</>))} <a href="../">{t.radioBack}</a></p>
+  </main>
+</RadioLayout>

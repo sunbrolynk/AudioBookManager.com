@@ -56,6 +56,11 @@ const ui = JSON.parse(readFileSync(new URL('../src/ui-strings.json', import.meta
 for (const code of codes) {
   const missing = Object.keys(ui.en).filter((k) => typeof ui[code]?.[k] !== 'string' || !ui[code][k].trim());
   if (missing.length) problems.push(`src/ui-strings.json for ${code} is missing ${missing.join(', ')}`);
+  // A {slot} the page fills (a link, a count) must survive translation, and no new one may appear.
+  const slots = (s) => [...String(s).matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(',');
+  for (const k of Object.keys(ui.en)) {
+    if (typeof ui[code]?.[k] === 'string' && slots(ui[code][k]) !== slots(ui.en[k])) problems.push(`src/ui-strings.json for ${code}: "${k}" has {${slots(ui[code][k])}} where English has {${slots(ui.en[k])}}`);
+  }
 }
 // Translated strings may carry only <b>, <em>, <code> and <br>: some are rendered as HTML, so anything else would run on the page.
 const markup = (file, value, path) => {

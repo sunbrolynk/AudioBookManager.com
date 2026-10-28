@@ -279,3 +279,7 @@ input[type=range]{accent-color:var(--want)}
 .tracks .al::before{content:none}
 @media(max-width:360px){.brand{font-size:.72rem;gap:6px}.brand img{width:22px;height:22px}.top .w{gap:6px}}
 @media(max-width:899px){:root[data-theme=light] .np .folio .notice{background:rgba(0,0,0,.5);color:var(--night)}}
+/* the language menu is the docs one; its colours come from the radio's own tokens */
+.top .lang{--sl-color-gray-2:var(--mut);--sl-color-white:var(--ink);--sl-color-bg-nav:var(--s1);--sl-color-hairline:var(--line);font-size:14px}
+/* Chinese, Japanese and Korean have no true italic, so "later" stays upright there */
+:lang(ja) :is(.star em,.chip em),:lang(zh) :is(.star em,.chip em),:lang(ko) :is(.star em,.chip em){font-style:normal}

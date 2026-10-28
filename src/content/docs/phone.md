@@ -6,7 +6,9 @@ description: How ABM behaves on screens narrower than 768px.
 Below 768px wide ABM uses phone layouts. From 768px to 1023px the sidebar shrinks to icons, and from 1024px up you get the full sidebar.
 
 ![The Dashboard on a phone](../../assets/docs/phone-dashboard.jpg)
+
 ![The Books page on a phone in poster view](../../assets/docs/phone-library.jpg)
+
 ![The Books page on a phone in overview view](../../assets/docs/phone-library-overview.jpg)
 
 ## Navigation
@@ -44,7 +46,9 @@ In selection mode, tapping a row selects it. The selection bar replaces the bott
 A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. On a series page, tapping a book you don't own opens its actions.
 
 ![A book's page on a phone](../../assets/docs/phone-book.jpg)
+
 ![A series page on a phone](../../assets/docs/phone-series-detail.jpg)
+
 ![An author's page on a phone](../../assets/docs/phone-author.jpg)
 
 ## Other pages
@@ -56,7 +60,9 @@ A book page has Search, Interactive, Import (Convert once it has files) and Refr
 - Dialogs open as sheets from the bottom of the screen.
 
 ![Discover on a phone](../../assets/docs/phone-discover.jpg)
+
 ![Wanted, Missing on a phone](../../assets/docs/phone-wanted.jpg)
+
 ![System, Tasks on a phone](../../assets/docs/phone-system-tasks.jpg)
 
 ## Settings
@@ -66,7 +72,9 @@ Settings is a grouped list: Library, Sources and App. Each row is a link with th
 In Log Files, **Live** and **Refresh** are in the top bar, and with Live on the log keeps scrolling to the newest line.
 
 ![The Profiles settings page on a phone](../../assets/docs/phone-settings-profiles.jpg)
+
 ![System, Status on a phone](../../assets/docs/phone-system-status.jpg)
+
 ![The Books page on a phone with the light theme](../../assets/docs/phone-library-light.jpg)
 
 ## Import Workbench
