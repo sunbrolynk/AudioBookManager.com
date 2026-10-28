@@ -7,7 +7,7 @@ const { locale, bar } = Astro.props;
 // A language shows this until a reviewer confirms it, which flips its "reviewed" flag in src/locales.json.
 const meta = locale ? (locales as Record<string, { reviewed?: boolean; issue?: number }>)[locale] : undefined;
 const t = (strings as Record<string, Record<string, string>>)[locale ?? 'en'];
-const href = meta ? `https://github.com/sunbrolynk/audiobookmanager.com/issues/${meta.issue}` : '';
+const href = meta ? `https://github.com/sunbrolynk/AudioBookManager.com/issues/${meta.issue}` : '';
 ---
 {meta && meta.reviewed === false && (
   <p class:list={['rv-badge', { bar }]}>

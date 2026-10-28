@@ -13,4 +13,4 @@ I'll acknowledge the report as soon as I can and work on a fix with you before
 anything is disclosed publicly.
 
 Problems in Audiobook Manager itself belong in the
-[ABM repository](https://github.com/sunbrolynk/audiobook-manager).
+[ABM repository](https://github.com/sunbrolynk/AudioBook-Manager).
