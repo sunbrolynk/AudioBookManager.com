@@ -16,7 +16,7 @@ guessing.
 ## 2. Clone, install, hooks
 
 ```sh
-git clone https://github.com/sunbrolynk/audiobookmanager.com.git
+git clone https://github.com/sunbrolynk/AudioBookManager.com.git
 cd audiobookmanager.com
 npm ci --ignore-scripts
 npx playwright install chromium

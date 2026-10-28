@@ -7,7 +7,7 @@ description: Putting ABM behind nginx, Traefik or Caddy without breaking sign-in
 Putting ABM on the internet, through a reverse proxy or a forwarded port, is not recommended, the same advice the Servarr apps give. To reach it from outside, use a VPN such as WireGuard or Tailscale instead. ABM is built to be safe behind a proxy, but there is no guarantee of security once it's public, and the risk is yours. If you do it anyway, set **Authentication Required** to **Enabled** and keep ABM up to date.
 :::
 
-Three settings matter. Get them right and sign-in, the websocket and saves all work.
+Three settings matter, plus the paths to pass. Get them right and sign-in, the websocket and saves all work.
 
 ## 1. Tell ABM who the proxy is
 
@@ -32,6 +32,12 @@ proxy_set_header Connection "upgrade";
 ```
 
 Traefik and Caddy send forwarding headers by default. ABM uses a websocket for live updates, so the proxy must pass upgrade requests.
+
+Pass these paths to ABM as well as `/api`: `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. The web app gets its API key from `/initialize.json`, and covers, backups and log downloads are served from the other three.
+
+Pass the `Sec-WebSocket-Protocol` header through too.
+
+If your proxy rewrites `Host`, as nginx does by default with `proxy_pass`, live updates won't connect and the web interface can't fetch its key. Either keep `proxy_set_header Host $host;` from the example above, or add ABM's public address to **CORS Allowed Domains** in **Settings > General > Security** and restart ABM. This was already needed before 0.18.
 
 ## 3. Decide who signs in
 

@@ -78,7 +78,7 @@ const chevron = 'M9 5l7 7-7 7';
       </div>
       <div class="prose">
         <details class="grp g1" open><summary><h2>{t.radioAboutH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
-          <div class="gb"><p>{around(t.radioAbout).map((p, i) => (i % 2 === 0 ? p : p === 'repo' ? <a href="https://github.com/sunbrolynk/abm-radio" rel="noopener">{t.radioRepo}</a> : <a href="credits/">{t.radioCreditsPage}</a>))}</p><p class="more"><a href="credits/">{t.radioReadCredits}</a></p></div></details>
+          <div class="gb"><p>{around(t.radioAbout).map((p, i) => (i % 2 === 0 ? p : p === 'repo' ? <a href="https://github.com/sunbrolynk/ABM-Radio" rel="noopener">{t.radioRepo}</a> : <a href="credits/">{t.radioCreditsPage}</a>))}</p><p class="more"><a href="credits/">{t.radioReadCredits}</a></p></div></details>
         <details class="grp g2" open><summary><h2>{t.radioListenH}</h2><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d={chevron} fill="none" stroke="currentColor" stroke-width="2.4"/></svg></summary>
           <div class="gb"><p>{t.radioListen}</p>
             <ul class="urls">

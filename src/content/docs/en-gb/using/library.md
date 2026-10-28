@@ -49,6 +49,14 @@ The same dialog opens for series and authors and applies to each of their books.
 
 Books, authors and series can carry tags. Tags steer indexers, notifications, import lists and profiles, and filter the calendar feed. See [Tags](/en-gb/settings/tags/).
 
+## Custom filters
+
+Library, Series, the Audible Library page and the Calendar let you build a custom filter from conditions. The value for Author, Narrator, Series, Publisher, Language, Genres, Tags, Keywords, Quality Profile, Format and Plans is one editable box with a list of every value already in your library. Typing narrows the list, picking an item sets it, and whatever you type is the value. Press Enter or leave the box to keep typed text even when it matches nothing. The search ignores accents, so `Brontë` also finds `Bronte`. On a phone, the sheet's search box works the same way, and tapping a row picks it.
+
+Monitored, Released, Upgradable and Virtual Voice are Yes or No choices. Genres, Tags, Keywords and Plans match each value on its own. A saved value that contains a comma still matches the way it did before.
+
+Discover's custom filters keep a plain text box, because its catalog is filtered on the server.
+
 ## Selection
 
 Select rows to act on several at once: monitor, search, tag, rename, delete. On a phone, see [Phone use](/en-gb/phone/).

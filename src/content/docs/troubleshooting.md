@@ -32,6 +32,18 @@ The app log says which it is:
 
 The opposite case: a proxy that sends no forwarding headers looks like a local client. ABM notices, makes that address sign in and shows a Reverse Proxy warning on System > Status. Make the proxy send `X-Forwarded-For`, or set Authentication Required to Enabled. If the address isn't a proxy, clear it under Settings > General > Security. See [Security](/settings/security/#reverse-proxies).
 
+## A script, app or tool gets 401 from the API
+
+Every API call needs the API key, including from your own network and when signed in. A login token or the local-address setting no longer gets a tool in. Give it the key from **Settings > General > Security**, as `X-Api-Key` or `?apikey=`, then test with `GET /api/system/status`. Prowlarr and other tools already using the key are unaffected.
+
+## A page stays blank or shows errors after updating
+
+Reload the tab. An open page from before the update does not have the API key yet. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/guides/reverse-proxy/).
+
+## My calendar subscription stopped updating
+
+The subscribe URL now carries the API key. Copy it again from the Calendar page and resubscribe. Regenerating the key also makes the old URL stop working.
+
 ## Changes are refused from the browser
 
 Make sure the proxy passes the original `Host` header, or sends `X-Forwarded-Host`. See [Configuration](/configuration/#reverse-proxy).
