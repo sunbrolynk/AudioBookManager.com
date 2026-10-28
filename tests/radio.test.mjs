@@ -1,8 +1,8 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { route } from '../functions/_middleware.js';
-import { RECONNECT_SECONDS, ago, backoff, clock, creditIndex, findCredit, groupByArtist, httpsUrl, licenceLabel } from '../src/lib/radio.mjs';
+import { LOCALES, route } from '../functions/_middleware.js';
+import { RECONNECT_SECONDS, ago, backoff, clock, creditIndex, fill, findCredit, groupByArtist, httpsUrl, licenceLabel } from '../src/lib/radio.mjs';
 
 const credits = JSON.parse(readFileSync(new URL('../src/data/radio-credits.json', import.meta.url), 'utf8'));
 const at = (u) => route(new URL(u));
@@ -17,6 +17,25 @@ test('the built address of a page redirects to the radio host, from either host'
   assert.deepEqual(at('https://audiobookmanager.com/radio/'), { redirect: 'https://radio.audiobookmanager.com/' });
   assert.deepEqual(at('https://www.audiobookmanager.com/radio/credits/'), { redirect: 'https://radio.audiobookmanager.com/credits/' });
   assert.deepEqual(at('https://radio.audiobookmanager.com/radio/'), { redirect: 'https://radio.audiobookmanager.com/' });
+});
+
+test('each language has its own copy of the pages on the radio host', () => {
+  assert.deepEqual(at('https://radio.audiobookmanager.com/de/'), { asset: '/radio/de/' });
+  assert.deepEqual(at('https://radio.audiobookmanager.com/zh-cn/credits/'), { asset: '/radio/zh-cn/credits/' });
+  assert.deepEqual(at('https://radio.audiobookmanager.com/de'), { redirect: 'https://radio.audiobookmanager.com/de/' });
+  assert.deepEqual(at('https://radio.audiobookmanager.com/pt-br/credits?x=1'), { redirect: 'https://radio.audiobookmanager.com/pt-br/credits/?x=1' });
+  assert.deepEqual(at('https://audiobookmanager.com/radio/ja/credits/'), { redirect: 'https://radio.audiobookmanager.com/ja/credits/' });
+  // A prefix that isn't one of the site's languages, and the main site's own language pages, are left alone.
+  assert.equal(at('https://radio.audiobookmanager.com/xx/'), null);
+  assert.equal(at('https://audiobookmanager.com/de/'), null);
+  assert.equal(at('https://audiobookmanager.com/de/installation/'), null);
+});
+
+test('the middleware knows every language the site has, and the Functions route list sends each one to it', () => {
+  const locales = Object.keys(JSON.parse(readFileSync(new URL('../src/locales.json', import.meta.url), 'utf8')));
+  assert.deepEqual([...LOCALES].sort(), locales.sort());
+  const routes = JSON.parse(readFileSync(new URL('../public/_routes.json', import.meta.url), 'utf8')).include;
+  for (const code of locales) for (const p of ['', '/', '/credits', '/credits/']) assert.ok(routes.includes(`/${code}${p}`), `/${code}${p}`);
 });
 
 test('everything else passes through, including previews and the credits data file', () => {
@@ -51,8 +70,12 @@ test('licences read as their deed names, times and ages as clocks', () => {
   assert.equal(licenceLabel('CC0-1.0'), 'CC0 1.0');
   assert.equal(clock(102), '1:42');
   assert.equal(clock(-3), '0:00');
-  assert.equal(ago(1000, 1000 + 4 * 60), '4 min ago');
+  assert.equal(ago(1000, 1000 + 4 * 60), '4 min. ago');
   assert.equal(ago(1000, 1010), 'now');
+  assert.equal(ago(1000, 1000 + 4 * 60, 'de'), 'vor 4 Min.');
+  assert.equal(ago(1000, 1000 + 3 * 3600, 'ja'), '3 時間前');
+  assert.equal(fill('{n} of {m}', { n: 1, m: 2 }), '1 of 2');
+  assert.equal(fill('{a} {missing}', { a: 'x' }), 'x {missing}');
 });
 
 test('credits group by artist A to Z and every track keeps a licence and an https source', () => {
@@ -73,8 +96,8 @@ test('only the /radio path itself is the radio pages: lookalike and doubled path
   assert.deepEqual(at('https://audiobookmanager.com/radio'), { redirect: 'https://radio.audiobookmanager.com/' });
 });
 
-test('the radio brand link goes to the main site landing page', () => {
+test('the radio brand link goes to the main site landing page in the same language', () => {
   const layout = readFileSync(new URL('../src/layouts/RadioLayout.astro', import.meta.url), 'utf8');
   assert.match(layout, /const site = 'https:\/\/audiobookmanager\.com'/);
-  assert.match(layout, /<a class="brand" href=\{`\$\{site\}\/`\} aria-label="AudioBook Manager home">/);
+  assert.match(layout, /<a class="brand" href=\{`\$\{site\}\$\{prefix\}\/`\} aria-label=\{t\.radioHome\}>/);
 });
