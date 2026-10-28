@@ -17,4 +17,4 @@ Subscribe from a calendar app with the feed URL (copy it, or use **Subscribe in 
 - **Show as All-Day Events**: events are all-day.
 - Tags: the feed then contains only books with at least one matching tag.
 
-The feed is served from ABM, so a calendar app outside your network needs a way to reach it and to authenticate. See [Security and sign-in](/en-gb/settings/security/).
+The feed URL carries your API key as `apikey=`, which is how a calendar app gets in without signing in. It works from outside your network when the calendar app can reach ABM. Anyone with the URL can use ABM's API, and the Calendar page warns about this: a cloud calendar such as Google holds the URL on its servers. Subscribe only from an app you trust, or keep the feed on your own network. If a URL leaks, regenerate the key under **Settings > General > Security**, then copy the subscribe URL again, because the old one stops working. See [Security and sign-in](/en-gb/settings/security/).
