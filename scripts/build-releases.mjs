@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Usage: node scripts/build-releases.mjs <CHANGELOG.md> <tag...> [--out public/releases.json] [--repo <ABM checkout>]
+// Usage: node scripts/build-releases.mjs <CHANGELOG.md> <tag...> [--out public/releases.json] [--repo <ABM checkout>] [--date YYYY-MM-DD] [--keep]
+// --keep adds the given tags to the releases already on the site instead of replacing them all.
 // Also writes one markdown file per release into src/content/releases/ for the Updates page.
 import { execFileSync } from 'node:child_process';
 import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
@@ -15,6 +16,13 @@ const ri = args.indexOf('--repo');
 if (ri !== -1) repo = args.splice(ri, 2)[1];
 const tagDate = (version) =>
   execFileSync('git', ['-C', repo, 'log', '-1', '--format=%cs', `v${version}`], { encoding: 'utf8' }).trim() || null;
+// --date dates an undated changelog section when there is no checkout to read the tag from.
+let given = null;
+const di = args.indexOf('--date');
+if (di !== -1) given = args.splice(di, 2)[1];
+const ki = args.indexOf('--keep');
+const keep = ki !== -1;
+if (keep) args.splice(ki, 1);
 const [changelog, ...tags] = args;
 if (!changelog || tags.length === 0) {
   console.error('usage: build-releases.mjs <CHANGELOG.md> <tag...> [--out file] [--repo dir]');
@@ -35,21 +43,24 @@ for (const m of text.matchAll(/^## \[(\d+\.\d+\.\d+)\][^\n]*\n([\s\S]*?)(?=^## \
 }
 
 const versions = [...new Set(tags.map((t) => t.replace(/^v/, '')))].sort(cmp);
-const releases = versions.map((version) => {
+const fresh = versions.map((version) => {
   const s = sections.get(version);
   if (!s) throw new Error(`no changelog section for ${version}`);
-  return { version, date: s.date ?? (repo ? tagDate(version) : null), notes_markdown: s.notes, url: `${REPO}/releases/tag/v${version}` };
+  return { version, date: s.date ?? (repo ? tagDate(version) : given), notes_markdown: s.notes, url: `${REPO}/releases/tag/v${version}` };
 });
+
+const dir = new URL('../src/content/releases/', import.meta.url).pathname;
+const old = keep ? JSON.parse(readFileSync(out, 'utf8')) : [];
+const releases = [...fresh, ...old.filter((o) => !fresh.some((f) => f.version === o.version))].sort((a, b) => cmp(a.version, b.version));
 
 writeFileSync(out, JSON.stringify(releases, null, 2) + '\n');
 console.log(`wrote ${releases.length} releases to ${out}`);
 
 // The collection mirrors the JSON exactly, so files for versions no longer passed are removed.
-const dir = new URL('../src/content/releases/', import.meta.url).pathname;
 mkdirSync(dir, { recursive: true });
-for (const f of readdirSync(dir)) if (f.endsWith('.md')) rmSync(dir + f);
-for (const r of releases) {
+if (!keep) for (const f of readdirSync(dir)) if (f.endsWith('.md')) rmSync(dir + f);
+for (const r of fresh) {
   const front = `---\nversion: '${r.version}'\ndate: ${r.date ? `'${r.date}'` : 'null'}\nurl: '${r.url}'\n---\n\n`;
   writeFileSync(`${dir}${r.version}.md`, front + r.notes_markdown + '\n');
 }
-console.log(`wrote ${releases.length} release pages to ${dir}`);
+console.log(`wrote ${fresh.length} release pages to ${dir}`);
