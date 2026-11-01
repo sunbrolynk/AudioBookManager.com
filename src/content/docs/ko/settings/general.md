@@ -7,6 +7,10 @@ description: 호스트, 보안, 프록시, 로그, 백업.
 
 ## 호스트 (Host)
 
+:::caution[권장하지 않아요]
+ABM을 인터넷에 공개하는 것은 권하지 않습니다. Servarr 앱들도 같은 조언을 합니다. 밖에서 접속하려면 WireGuard나 Tailscale 같은 VPN을 쓰세요. 그래도 프록시를 쓴다면 [리버스 프록시](/ko/guides/reverse-proxy/)에 정리해 두었습니다.
+:::
+
 | 설정 | 기본값 | 효과 |
 |---|---|---|
 | Bind Address | `*` | 대기할 주소. 재시작 필요 |

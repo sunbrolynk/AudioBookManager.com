@@ -7,6 +7,10 @@ description: 主机、安全、代理、日志和备份。
 
 ## 主机（Host）
 
+:::caution[不推荐]
+我不建议把 ABM 暴露到互联网上，Servarr 系列应用也是同样的建议。从外面访问请用 WireGuard 或 Tailscale 这类 VPN。如果你还是要用代理，请看[反向代理](/zh-cn/guides/reverse-proxy/)。
+:::
+
 | 设置 | 默认值 | 作用 |
 |---|---|---|
 | Bind Address | `*` | 监听的地址。需要重启 |

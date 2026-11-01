@@ -25,6 +25,10 @@ description: 驗證模式、API 金鑰、受信任的代理、區域網路和內
 
 ## 反向代理
 
+:::caution[不建議這樣做]
+我不建議把 ABM 暴露到網際網路上，Servarr 系列應用程式也是同樣的建議。從外面連線請用 WireGuard 或 Tailscale 這類 VPN。如果你還是要用代理，請看[反向代理](/zh-tw/guides/reverse-proxy/)。
+:::
+
 放在代理後面時，設定 `TRUSTED_PROXIES`，讓 ABM 知道該相信哪些轉送標頭。如果帶著轉送標頭的請求來自不在清單上的位址，它永遠不會被當成區域網路，必須登入。這是刻意的。請看〈[反向代理](/zh-tw/guides/reverse-proxy/)〉。
 
 不送任何轉送標頭的代理，看起來會像區域網路的用戶端。如果你用的是這種代理，請把 Authentication Required 設成 Enabled。

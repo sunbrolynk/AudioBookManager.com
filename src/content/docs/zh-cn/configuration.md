@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## 反向代理
 
+:::caution[不推荐]
+我不建议把 ABM 暴露到互联网上，Servarr 系列应用也是同样的建议。从外面访问请用 WireGuard 或 Tailscale 这类 VPN。如果你还是要用代理，请看[反向代理](/zh-cn/guides/reverse-proxy/)。
+:::
+
 放在 nginx、Traefik 之类的后面时，把 `TRUSTED_PROXIES` 设为代理的地址：
 
 ```

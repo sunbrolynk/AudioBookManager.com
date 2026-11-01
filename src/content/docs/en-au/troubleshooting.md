@@ -19,6 +19,10 @@ To recover:
 
 ## Everyone is asked to sign in behind a reverse proxy
 
+:::caution[Not recommended]
+I don't recommend putting ABM on the internet, the same advice the Servarr apps give. Reach it from outside through a VPN such as WireGuard or Tailscale. If you proxy it anyway, the guide is here: [Reverse proxy](/en-au/guides/reverse-proxy/).
+:::
+
 Without `TRUSTED_PROXIES`, a request that carries forwarding headers is never treated as local, so it has to sign in. This is on purpose.
 
 1. Set `TRUSTED_PROXIES` to your proxy's address, for example `172.20.0.5`. A proxy on the same host needs `127.0.0.1`.

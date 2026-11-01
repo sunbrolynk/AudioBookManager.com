@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## Omvänd proxy
 
+:::caution[Rekommenderas inte]
+Jag rekommenderar inte att ABM exponeras mot internet, samma råd som Servarr-apparna ger. Nå det utifrån via ett VPN som WireGuard eller Tailscale. Om du ändå kör det bakom en proxy finns allt i [Omvänd proxy](/sv/guides/reverse-proxy/).
+:::
+
 Bakom nginx, Traefik eller liknande sätter du `TRUSTED_PROXIES` till proxyns adress:
 
 ```

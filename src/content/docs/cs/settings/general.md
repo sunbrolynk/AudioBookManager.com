@@ -7,6 +7,10 @@ description: Hostitel, zabezpečení, proxy, logování a zálohy.
 
 ## Hostitel (Host)
 
+:::caution[Nedoporučuje se]
+Nedoporučuji vystavovat ABM do internetu, stejnou radu dávají aplikace Servarr. Zvenčí se připoj přes VPN, třeba WireGuard nebo Tailscale. Pokud přesto použiješ proxy, vše je v [Reverzní proxy](/cs/guides/reverse-proxy/).
+:::
+
 | Nastavení | Výchozí | Co dělá |
 |---|---|---|
 | Bind Address | `*` | Adresa, na které se poslouchá. Vyžaduje restart |

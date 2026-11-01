@@ -25,6 +25,10 @@ Numa instalação nova, as requisições são recusadas até a configuração in
 
 ## Proxies reversos
 
+:::caution[Não recomendado]
+Eu não recomendo expor o ABM à internet, o mesmo conselho dos apps Servarr. Para acessar de fora, use uma VPN como WireGuard ou Tailscale. Se mesmo assim você usar um proxy, o [Proxy reverso](/pt-br/guides/reverse-proxy/) explica como.
+:::
+
 Atrás de um proxy, defina `TRUSTED_PROXIES` para o ABM saber em quais cabeçalhos de encaminhamento acreditar. Uma requisição com cabeçalhos de encaminhamento vinda de um endereço fora dessa lista nunca é local e precisa fazer login. Isso é de propósito. Veja [Proxy reverso](/pt-br/guides/reverse-proxy/).
 
 Um proxy que não envia cabeçalhos de encaminhamento parece um cliente local. Se você usa um assim, coloque Authentication Required em Enabled.

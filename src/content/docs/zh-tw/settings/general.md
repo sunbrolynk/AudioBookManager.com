@@ -7,6 +7,10 @@ description: 主機、安全性、代理、記錄和備份。
 
 ## 主機（Host）
 
+:::caution[不建議這樣做]
+我不建議把 ABM 暴露到網際網路上，Servarr 系列應用程式也是同樣的建議。從外面連線請用 WireGuard 或 Tailscale 這類 VPN。如果你還是要用代理，請看[反向代理](/zh-tw/guides/reverse-proxy/)。
+:::
+
 | 設定 | 預設值 | 作用 |
 |---|---|---|
 | Bind Address | `*` | 要監聽的位址。需要重新啟動 |

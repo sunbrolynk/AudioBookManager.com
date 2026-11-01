@@ -19,6 +19,10 @@ Jak to zachránit:
 
 ## Za reverzní proxy se musí přihlašovat všichni
 
+:::caution[Nedoporučuje se]
+Nedoporučuji vystavovat ABM do internetu, stejnou radu dávají aplikace Servarr. Zvenčí se připoj přes VPN, třeba WireGuard nebo Tailscale. Pokud přesto použiješ proxy, vše je v [Reverzní proxy](/cs/guides/reverse-proxy/).
+:::
+
 Bez `TRUSTED_PROXIES` se požadavek, který nese přeposílací hlavičky, nikdy nebere jako lokální, takže se musí přihlásit. Je to tak schválně.
 
 1. Nastav `TRUSTED_PROXIES` na adresu své proxy, třeba `172.20.0.5`. Proxy na stejném stroji potřebuje `127.0.0.1`.

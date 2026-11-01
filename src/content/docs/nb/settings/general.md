@@ -7,6 +7,10 @@ description: Vert, sikkerhet, proxy, logging og sikkerhetskopier.
 
 ## Vert (Host)
 
+:::caution[Ikke anbefalt]
+Jeg anbefaler ikke å eksponere ABM mot internett, samme råd som Servarr-appene gir. Kom deg til det utenfra via et VPN som WireGuard eller Tailscale. Hvis du likevel bruker en proxy, står det i [Omvendt proxy](/nb/guides/reverse-proxy/).
+:::
+
 | Innstilling | Standard | Virkning |
 |---|---|---|
 | Bind Address | `*` | Adressen det lyttes på. Krever omstart |

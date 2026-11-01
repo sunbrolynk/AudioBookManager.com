@@ -25,6 +25,10 @@ Na świeżej instalacji żądania są odrzucane, dopóki nie skończysz konfigur
 
 ## Reverse proxy
 
+:::caution[Nie polecam]
+Nie polecam wystawiać ABM do internetu, tak samo radzą aplikacje Servarr. Z zewnątrz łącz się przez VPN, na przykład WireGuard albo Tailscale. Jeśli mimo to używasz proxy, opisuje to [Reverse proxy](/pl/guides/reverse-proxy/).
+:::
+
 Za proxy ustaw `TRUSTED_PROXIES`, żeby ABM wiedział, którym nagłówkom przekierowania wierzyć. Żądanie z nagłówkami przekierowania z adresu spoza tej listy nigdy nie jest lokalne i musi się zalogować. Tak ma być. Zobacz [Reverse proxy](/pl/guides/reverse-proxy/).
 
 Proxy, które nie wysyła nagłówków przekierowania, wygląda jak lokalny klient. Jeśli takiego używasz, ustaw Authentication Required na Enabled.

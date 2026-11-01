@@ -25,6 +25,10 @@ På en frisk installation bliver requests afvist, indtil opsætningen er færdig
 
 ## Reverse proxies
 
+:::caution[Anbefales ikke]
+Jeg anbefaler ikke at udsætte ABM for internettet, samme råd som Servarr-apps giver. Kom til det udefra via et VPN som WireGuard eller Tailscale. Hvis du alligevel bruger en proxy, står det i [Reverse proxy](/da/guides/reverse-proxy/).
+:::
+
 Bag en proxy skal du sætte `TRUSTED_PROXIES`, så ABM ved, hvilke forwarding-headers den skal tro på. En request med forwarding-headers fra en adresse, der ikke står på listen, er aldrig lokal og skal logge ind. Det er med vilje. Se [Reverse proxy](/da/guides/reverse-proxy/).
 
 En proxy, der ikke sender forwarding-headers, ligner en lokal klient. Kører du sådan en, så sæt Authentication Required til Enabled.

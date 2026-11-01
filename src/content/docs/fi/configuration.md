@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## Käänteinen välityspalvelin
 
+:::caution[Ei suositeltavaa]
+En suosittele ABM:n avaamista internetiin, samaa neuvovat Servarr-sovellukset. Pääse siihen ulkoa VPN:llä, kuten WireGuardilla tai Tailscalella. Jos käytät silti välityspalvelinta, [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/) kertoo miten.
+:::
+
 Kun ABM on nginxin, Traefikin tai vastaavan takana, aseta `TRUSTED_PROXIES` välityspalvelimen osoitteeksi:
 
 ```

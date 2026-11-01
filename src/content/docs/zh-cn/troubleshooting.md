@@ -19,6 +19,10 @@ description: 最可能遇到的问题和解决办法。
 
 ## 放在反向代理后面，所有人都被要求登录
 
+:::caution[不推荐]
+我不建议把 ABM 暴露到互联网上，Servarr 系列应用也是同样的建议。从外面访问请用 WireGuard 或 Tailscale 这类 VPN。如果你还是要用代理，请看[反向代理](/zh-cn/guides/reverse-proxy/)。
+:::
+
 没有设置 `TRUSTED_PROXIES` 时，带有转发头的请求永远不会被当成本地请求，所以必须登录。这是故意的。
 
 1. 把 `TRUSTED_PROXIES` 设为你代理的地址，比如 `172.20.0.5`。代理和 ABM 在同一台主机上时要设 `127.0.0.1`。

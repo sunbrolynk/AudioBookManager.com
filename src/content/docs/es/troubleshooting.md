@@ -19,6 +19,10 @@ Para recuperarlo:
 
 ## A todo el mundo le pide iniciar sesión detrás de un proxy inverso
 
+:::caution[No recomendado]
+No recomiendo exponer ABM a internet, el mismo consejo que dan las apps Servarr. Para entrar desde fuera, usa una VPN como WireGuard o Tailscale. Si lo pones tras un proxy de todos modos, la [Proxy inverso](/es/guides/reverse-proxy/) lo explica.
+:::
+
 Sin `TRUSTED_PROXIES`, una petición que lleva cabeceras de reenvío nunca se trata como local, así que tiene que iniciar sesión. Es a propósito.
 
 1. Pon en `TRUSTED_PROXIES` la dirección de tu proxy, por ejemplo `172.20.0.5`. Un proxy en el mismo host necesita `127.0.0.1`.

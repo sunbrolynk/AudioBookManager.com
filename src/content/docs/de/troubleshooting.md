@@ -19,6 +19,10 @@ So stellst du das wieder her:
 
 ## Hinter einem Reverse Proxy muss sich jeder anmelden
 
+:::caution[Nicht empfohlen]
+Ich empfehle nicht, ABM ins Internet zu stellen, das raten auch die Servarr-Apps. Von außen kommst du über ein VPN wie WireGuard oder Tailscale dran. Wenn du es trotzdem über einen Proxy machst, steht alles in der Anleitung [Reverse Proxy](/de/guides/reverse-proxy/).
+:::
+
 Ohne `TRUSTED_PROXIES` wird eine Anfrage mit Forwarding-Headern nie als lokal behandelt, sie muss sich also anmelden. Das ist Absicht.
 
 1. Setz `TRUSTED_PROXIES` auf die Adresse deines Proxys, zum Beispiel `172.20.0.5`. Ein Proxy auf demselben Host braucht `127.0.0.1`.
