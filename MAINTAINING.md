@@ -198,7 +198,16 @@ screenshots change, refresh these in the same pass.
 
 `node scripts/build-releases.mjs <ABM CHANGELOG.md> <tag...> [--repo <ABM checkout>]`
 writes `public/releases.json` and one file per release in
-`src/content/releases/` for the Updates page.
+`src/content/releases/` for the Updates page. `--keep` adds the tags to what is
+already there, and `--date YYYY-MM-DD` dates a section the changelog leaves
+undated.
+
+`.github/workflows/sync-releases.yml` does this every six hours: when ABM has a
+published release newer than the newest entry, `scripts/sync-releases.sh` opens
+a PR into `dev` with the new entries. It needs an `ABM_RELEASES_TOKEN` Actions
+secret (fine-grained, read-only Contents on the ABM repo) while that repo is
+private; delete the secret once it's public. Scheduled workflows run from
+`main`, so it starts after the next `dev` to `main` release.
 
 ### API reference
 

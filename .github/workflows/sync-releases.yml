@@ -1,0 +1,42 @@
+name: Sync ABM releases
+
+# Scheduled workflows run from the default branch, so this reaches the schedule when dev goes to main.
+on:
+  schedule:
+    - cron: '17 */6 * * *'
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: sync-releases
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Check out dev
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: dev
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.14.1'
+          package-manager-cache: false
+
+      # ABM_RELEASES_TOKEN is a fine-grained token with read-only Contents on the ABM repo.
+      # It can be deleted once that repo is public.
+      - name: Open a pull request for new releases
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ABM_TOKEN: ${{ secrets.ABM_RELEASES_TOKEN }}
+          ABM_REPO: sunbrolynk/AudioBook-Manager
+        run: bash scripts/sync-releases.sh
