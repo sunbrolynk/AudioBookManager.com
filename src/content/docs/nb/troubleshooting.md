@@ -19,6 +19,10 @@ Slik henter du dem tilbake:
 
 ## Alle blir bedt om å logge inn bak en omvendt proxy
 
+:::caution[Ikke anbefalt]
+Jeg anbefaler ikke å eksponere ABM mot internett, samme råd som Servarr-appene gir. Kom deg til det utenfra via et VPN som WireGuard eller Tailscale. Hvis du likevel bruker en proxy, står det i [Omvendt proxy](/nb/guides/reverse-proxy/).
+:::
+
 Uten `TRUSTED_PROXIES` blir en forespørsel med videresendingsheadere aldri behandlet som lokal, så den må logge inn. Det er med vilje.
 
 1. Sett `TRUSTED_PROXIES` til adressen til proxyen din, for eksempel `172.20.0.5`. En proxy på samme vert trenger `127.0.0.1`.

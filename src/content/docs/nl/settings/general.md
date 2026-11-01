@@ -7,6 +7,10 @@ description: Host, beveiliging, proxy, logging en back-ups.
 
 ## Host
 
+:::caution[Niet aangeraden]
+Ik raad af om ABM aan het internet bloot te stellen, hetzelfde advies als van de Servarr-apps. Kom er van buitenaf bij via een VPN zoals WireGuard of Tailscale. Doe je het toch via een proxy, dan staat het in de [Reverse proxy](/nl/guides/reverse-proxy/).
+:::
+
 | Instelling | Standaard | Wat het doet |
 |---|---|---|
 | Bind Address | `*` | Adres waarop geluisterd wordt. Vereist een herstart |

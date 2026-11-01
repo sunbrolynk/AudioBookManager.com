@@ -19,6 +19,10 @@ Jak to odzyskać:
 
 ## Za reverse proxy każdy musi się logować
 
+:::caution[Nie polecam]
+Nie polecam wystawiać ABM do internetu, tak samo radzą aplikacje Servarr. Z zewnątrz łącz się przez VPN, na przykład WireGuard albo Tailscale. Jeśli mimo to używasz proxy, opisuje to [Reverse proxy](/pl/guides/reverse-proxy/).
+:::
+
 Bez `TRUSTED_PROXIES` żądanie z nagłówkami przekierowania nigdy nie jest traktowane jako lokalne, więc musi się zalogować. Tak ma być.
 
 1. Ustaw `TRUSTED_PROXIES` na adres swojego proxy, na przykład `172.20.0.5`. Proxy na tym samym hoście potrzebuje `127.0.0.1`.

@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## 리버스 프록시
 
+:::caution[권장하지 않아요]
+ABM을 인터넷에 공개하는 것은 권하지 않습니다. Servarr 앱들도 같은 조언을 합니다. 밖에서 접속하려면 WireGuard나 Tailscale 같은 VPN을 쓰세요. 그래도 프록시를 쓴다면 [리버스 프록시](/ko/guides/reverse-proxy/)에 정리해 두었습니다.
+:::
+
 nginx, Traefik 같은 프록시 뒤에 둔다면 `TRUSTED_PROXIES`에 프록시 주소를 넣으세요:
 
 ```

@@ -25,6 +25,10 @@ description: 인증 방식, API 키, 신뢰하는 프록시, 로컬 네트워크
 
 ## 리버스 프록시
 
+:::caution[권장하지 않아요]
+ABM을 인터넷에 공개하는 것은 권하지 않습니다. Servarr 앱들도 같은 조언을 합니다. 밖에서 접속하려면 WireGuard나 Tailscale 같은 VPN을 쓰세요. 그래도 프록시를 쓴다면 [리버스 프록시](/ko/guides/reverse-proxy/)에 정리해 두었습니다.
+:::
+
 프록시 뒤에 둔다면 `TRUSTED_PROXIES`를 설정해서 ABM이 어떤 포워딩 헤더를 믿을지 알게 하세요. 이 목록에 없는 주소에서 포워딩 헤더가 붙어 온 요청은 절대 로컬로 치지 않고, 반드시 로그인해야 해요. 일부러 그렇게 만든 거예요. [리버스 프록시](/ko/guides/reverse-proxy/)를 보세요.
 
 포워딩 헤더를 안 보내는 프록시는 로컬 클라이언트처럼 보여요. 그런 프록시를 쓴다면 Authentication Required를 Enabled로 하세요.

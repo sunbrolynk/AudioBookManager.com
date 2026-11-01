@@ -25,6 +25,10 @@ Tuoreessa asennuksessa pyynnöt hylätään, kunnes käyttöönotto on valmis.
 
 ## Käänteiset välityspalvelimet
 
+:::caution[Ei suositeltavaa]
+En suosittele ABM:n avaamista internetiin, samaa neuvovat Servarr-sovellukset. Pääse siihen ulkoa VPN:llä, kuten WireGuardilla tai Tailscalella. Jos käytät silti välityspalvelinta, [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/) kertoo miten.
+:::
+
 Välityspalvelimen takana aseta `TRUSTED_PROXIES`, jotta ABM tietää, mihin välitysotsakkeisiin uskoa. Pyyntö, jossa on välitysotsakkeita osoitteesta, joka ei ole siinä listassa, ei ole koskaan paikallinen, ja sen on kirjauduttava. Tämä on tarkoituksellista. Katso [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/).
 
 Välityspalvelin, joka ei lähetä välitysotsakkeita, näyttää paikalliselta asiakkaalta. Jos käytät sellaista, aseta Authentication Required arvoon Enabled.

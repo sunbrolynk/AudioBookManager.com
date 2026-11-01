@@ -4,7 +4,7 @@ description: Mettre ABM derrière nginx, Traefik ou Caddy sans casser la connexi
 ---
 
 :::caution[Déconseillé]
-Mettre ABM sur Internet, via un reverse proxy ou un port redirigé, est déconseillé, comme le disent aussi les apps Servarr. Pour y accéder depuis l'extérieur, passe plutôt par un VPN comme WireGuard ou Tailscale. ABM est conçu pour être sûr derrière un proxy, mais rien ne garantit sa sécurité une fois qu'il est public, et le risque est pour toi. Si tu le fais quand même, règle **Authentication Required** sur **Enabled** et garde ABM à jour.
+Mettre ABM sur Internet, via un reverse proxy ou un port redirigé, est déconseillé, comme le disent aussi les apps Servarr. Pour y accéder depuis l'extérieur, passe plutôt par un VPN comme WireGuard ou Tailscale. ABM est conçu pour être sûr derrière un proxy, mais rien ne garantit sa sécurité une fois qu'il est public, et le risque est pour toi. Si tu le fais quand même, règle **Authentication Required** sur **Enabled** et garde ABM à jour. Ce guide s'adresse à celles et ceux qui le font quand même.
 :::
 
 Trois réglages comptent. Règle-les correctement et la connexion, le websocket et les enregistrements fonctionnent tous.
@@ -18,6 +18,10 @@ TRUSTED_PROXIES=172.20.0.5
 ```
 
 Un proxy sur la même machine a besoin de `127.0.0.1`. ABM fait alors confiance à l'adresse du client que ton proxy transmet dans `X-Forwarded-For` ou `X-Real-IP`. Sans ça, toute requête qui porte des en-têtes de transfert doit se connecter. C'est voulu.
+
+## Comment l'adresse du client est lue
+
+`X-Forwarded-For` est lu de droite à gauche. Chaque proxy ajoute l'adresse qu'il a vue : l'entrée la plus à gauche est donc ce que le client a envoyé lui-même, et on ne lui fait jamais confiance. ABM saute les entrées qui sont dans `TRUSTED_PROXIES` et prend la première qui n'y est pas comme étant le client. C'est pourquoi `TRUSTED_PROXIES` doit rester étroit : tout ce qui se trouve dans la plage peut ajouter une entrée à la chaîne. `X-Forwarded-Host` n'est lui aussi cru que s'il vient d'une adresse de `TRUSTED_PROXIES`.
 
 ## 2. Transmets les en-têtes
 
@@ -39,6 +43,63 @@ Traefik et Caddy envoient les en-têtes de transfert par défaut. ABM utilise un
 - **Disabled for Local Addresses** saute la connexion pour les clients qu'ABM voit comme locaux. À travers un proxy de confiance, ça veut dire le client que le proxy indique.
 - Un proxy qui n'envoie aucun en-tête de transfert fait passer tout le monde pour local. Choisis Enabled.
 
+## Exemples de configuration
+
+Chacun laisse passer tous les chemins, `/initialize.json` compris, et gère le websocket. Mets ton propre domaine et le nom de ton conteneur, et règle `TRUSTED_PROXIES` sur l'adresse du proxy.
+
+### nginx
+
+```
+server {
+    listen 443 ssl;
+    server_name abm.example.com;
+
+    location / {
+        proxy_pass http://172.20.0.2:5173;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+        proxy_read_timeout 3600s;
+    }
+}
+```
+
+### Nginx Proxy Manager
+
+```
+Scheme:               http
+Forward Hostname/IP:  audiobook-manager
+Forward Port:         5173
+Websockets Support:   on
+```
+
+### Traefik
+
+```
+labels:
+  - traefik.enable=true
+  - traefik.http.routers.abm.rule=Host(`abm.example.com`)
+  - traefik.http.routers.abm.entrypoints=websecure
+  - traefik.http.routers.abm.tls.certresolver=letsencrypt
+  - traefik.http.services.abm.loadbalancer.server.port=5173
+```
+
+Traefik passes websockets without any extra setting.
+
+### Caddy
+
+```
+abm.example.com {
+    reverse_proxy audiobook-manager:5173
+}
+```
+
+Caddy passes websockets and the original `Host` on its own.
+
 ## Sous-dossier et domaine
 
 Pour servir ABM sous `/abm`, mets **URL Base** à `/abm` dans General et redémarre. Mets ton adresse publique dans **Application URL**.
@@ -53,5 +114,9 @@ Si les gros envois échouent avec une erreur 413, vérifie la limite propre au p
 
 - « carries reverse-proxy headers, but ... is not in TRUSTED_PROXIES » : ajoute-le.
 - « ... is in TRUSTED_PROXIES but didn't name a client address » : fais en sorte que le proxy envoie `X-Forwarded-For` ou `X-Real-IP`.
+
+## Dépannage
+
+Une page blanche, ou un message « Could not load » qui dit que le reverse proxy doit laisser passer `/initialize.json` (signalé depuis la 0.19.1), veut dire que le proxy ne transmet pas `/initialize.json` à ABM. Laisse-le passer, avec les autres chemins ci-dessus. Des mises à jour en direct qui ne se connectent jamais indiquent en général que la mise à niveau websocket ou l'en-tête `Sec-WebSocket-Protocol` ne passe pas.
 
 Voir aussi [Sécurité et connexion](/fr/settings/security/).

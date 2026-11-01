@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## リバースプロキシ
 
+:::caution[おすすめしません]
+ABM をインターネットに公開することはおすすめしません。Servarr の各アプリも同じ方針です。外から使うときは、WireGuard や Tailscale などの VPN を使ってください。それでもプロキシを使うなら、[リバースプロキシ](/ja/guides/reverse-proxy/)を見てください。
+:::
+
 nginx や Traefik などの後ろに置くなら、`TRUSTED_PROXIES` にプロキシのアドレスを設定します。
 
 ```

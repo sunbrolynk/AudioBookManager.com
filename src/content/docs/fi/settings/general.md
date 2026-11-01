@@ -7,6 +7,10 @@ description: Isäntä, tietoturva, välityspalvelin, lokit ja varmuuskopiot.
 
 ## Isäntä (Host)
 
+:::caution[Ei suositeltavaa]
+En suosittele ABM:n avaamista internetiin, samaa neuvovat Servarr-sovellukset. Pääse siihen ulkoa VPN:llä, kuten WireGuardilla tai Tailscalella. Jos käytät silti välityspalvelinta, [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/) kertoo miten.
+:::
+
 | Asetus | Oletus | Vaikutus |
 |---|---|---|
 | Bind Address | `*` | Osoite, jossa kuunnellaan. Vaatii uudelleenkäynnistyksen |

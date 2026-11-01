@@ -25,6 +25,10 @@ På en ny installasjon blir forespørsler avvist til oppsettet er ferdig.
 
 ## Omvendte proxyer
 
+:::caution[Ikke anbefalt]
+Jeg anbefaler ikke å eksponere ABM mot internett, samme råd som Servarr-appene gir. Kom deg til det utenfra via et VPN som WireGuard eller Tailscale. Hvis du likevel bruker en proxy, står det i [Omvendt proxy](/nb/guides/reverse-proxy/).
+:::
+
 Bak en proxy setter du `TRUSTED_PROXIES`, så ABM vet hvilke videresendingsheadere den skal tro på. En forespørsel med videresendingsheadere fra en adresse som ikke står på den lista, er aldri lokal og må logge inn. Det er med vilje. Se [Omvendt proxy](/nb/guides/reverse-proxy/).
 
 En proxy som ikke sender videresendingsheadere, ser ut som en lokal klient. Kjører du en sånn, setter du Authentication Required til Enabled.

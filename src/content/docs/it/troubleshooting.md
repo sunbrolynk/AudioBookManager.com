@@ -19,6 +19,10 @@ Per recuperare:
 
 ## Dietro un reverse proxy viene chiesto l'accesso a tutti
 
+:::caution[Sconsigliato]
+Non consiglio di esporre ABM a internet, lo stesso consiglio che danno le app Servarr. Per accedere da fuori usa una VPN come WireGuard o Tailscale. Se lo metti comunque dietro un proxy, la [Reverse proxy](/it/guides/reverse-proxy/) spiega come.
+:::
+
 Senza `TRUSTED_PROXIES`, una richiesta con header di inoltro non viene mai trattata come locale, quindi deve fare l'accesso. È voluto.
 
 1. Imposta `TRUSTED_PROXIES` sull'indirizzo del tuo proxy, per esempio `172.20.0.5`. Un proxy sullo stesso host vuole `127.0.0.1`.

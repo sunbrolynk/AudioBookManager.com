@@ -19,6 +19,10 @@ Pour récupérer :
 
 ## Tout le monde doit se connecter derrière un reverse proxy
 
+:::caution[Déconseillé]
+Je déconseille d'exposer ABM sur internet, comme le conseillent aussi les applications Servarr. Pour y accéder de l'extérieur, passe par un VPN comme WireGuard ou Tailscale. Si tu passes quand même par un proxy, le [Reverse proxy](/fr/guides/reverse-proxy/) t'explique comment.
+:::
+
 Sans `TRUSTED_PROXIES`, une requête qui porte des en-têtes de transfert n'est jamais considérée comme locale, donc elle doit se connecter. C'est voulu.
 
 1. Mets l'adresse de ton proxy dans `TRUSTED_PROXIES`, par exemple `172.20.0.5`. Un proxy sur la même machine a besoin de `127.0.0.1`.

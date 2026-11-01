@@ -25,6 +25,10 @@ På en ny installation nekas anrop tills konfigurationen är klar.
 
 ## Omvända proxyer
 
+:::caution[Rekommenderas inte]
+Jag rekommenderar inte att ABM exponeras mot internet, samma råd som Servarr-apparna ger. Nå det utifrån via ett VPN som WireGuard eller Tailscale. Om du ändå kör det bakom en proxy finns allt i [Omvänd proxy](/sv/guides/reverse-proxy/).
+:::
+
 Bakom en proxy sätter du `TRUSTED_PROXIES` så att ABM vet vilka forwarding-headers den ska tro på. Ett anrop med forwarding-headers från en adress som inte finns i listan är aldrig lokalt och måste logga in. Det är med flit. Se [Omvänd proxy](/sv/guides/reverse-proxy/).
 
 En proxy som inte skickar några forwarding-headers ser ut som en lokal klient. Om du kör en sådan, sätt Authentication Required till Enabled.

@@ -25,6 +25,10 @@ Na čerstvé instalaci se požadavky odmítají, dokud neskončí úvodní nasta
 
 ## Reverzní proxy
 
+:::caution[Nedoporučuje se]
+Nedoporučuji vystavovat ABM do internetu, stejnou radu dávají aplikace Servarr. Zvenčí se připoj přes VPN, třeba WireGuard nebo Tailscale. Pokud přesto použiješ proxy, vše je v [Reverzní proxy](/cs/guides/reverse-proxy/).
+:::
+
 Za proxy nastav `TRUSTED_PROXIES`, aby ABM věděl, kterým přeposílacím hlavičkám věřit. Požadavek, který nese přeposílací hlavičky z adresy mimo tenhle seznam, nikdy není lokální a musí se přihlásit. Je to tak schválně. Viz [Reverzní proxy](/cs/guides/reverse-proxy/).
 
 Proxy, která neposílá žádné přeposílací hlavičky, vypadá jako lokální klient. Jestli takovou máš, nastav Authentication Required na Enabled.

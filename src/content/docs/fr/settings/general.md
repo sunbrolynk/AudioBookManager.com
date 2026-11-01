@@ -7,6 +7,10 @@ description: Hôte, sécurité, proxy, journaux et sauvegardes.
 
 ## Hôte (Host)
 
+:::caution[Déconseillé]
+Je déconseille d'exposer ABM sur internet, comme le conseillent aussi les applications Servarr. Pour y accéder de l'extérieur, passe par un VPN comme WireGuard ou Tailscale. Si tu passes quand même par un proxy, le [Reverse proxy](/fr/guides/reverse-proxy/) t'explique comment.
+:::
+
 | Réglage | Par défaut | Effet |
 |---|---|---|
 | Bind Address | `*` | L'adresse sur laquelle écouter. Nécessite un redémarrage |

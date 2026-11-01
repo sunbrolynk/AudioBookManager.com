@@ -25,6 +25,10 @@ Bij een verse installatie worden requests geweigerd tot de setup klaar is.
 
 ## Reverse proxy's
 
+:::caution[Niet aangeraden]
+Ik raad af om ABM aan het internet bloot te stellen, hetzelfde advies als van de Servarr-apps. Kom er van buitenaf bij via een VPN zoals WireGuard of Tailscale. Doe je het toch via een proxy, dan staat het in de [Reverse proxy](/nl/guides/reverse-proxy/).
+:::
+
 Draait ABM achter een proxy, zet dan `TRUSTED_PROXIES` zodat ABM weet welke forwarding-headers het kan geloven. Een request met forwarding-headers vanaf een adres dat niet in die lijst staat, is nooit lokaal en moet inloggen. Dat is expres zo. Zie [Reverse proxy](/nl/guides/reverse-proxy/).
 
 Een proxy die geen forwarding-headers meestuurt, ziet eruit als een lokale client. Draai je zo'n proxy, zet Authentication Required dan op Enabled.

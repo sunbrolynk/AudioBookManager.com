@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## Reverzní proxy
 
+:::caution[Nedoporučuje se]
+Nedoporučuji vystavovat ABM do internetu, stejnou radu dávají aplikace Servarr. Zvenčí se připoj přes VPN, třeba WireGuard nebo Tailscale. Pokud přesto použiješ proxy, vše je v [Reverzní proxy](/cs/guides/reverse-proxy/).
+:::
+
 Za nginx, Traefikem a podobně nastav `TRUSTED_PROXIES` na adresu proxy:
 
 ```

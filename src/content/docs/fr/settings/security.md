@@ -25,6 +25,10 @@ Sur une installation toute neuve, les requêtes sont refusées tant que la confi
 
 ## Reverse proxies
 
+:::caution[Déconseillé]
+Je déconseille d'exposer ABM sur internet, comme le conseillent aussi les applications Servarr. Pour y accéder de l'extérieur, passe par un VPN comme WireGuard ou Tailscale. Si tu passes quand même par un proxy, le [Reverse proxy](/fr/guides/reverse-proxy/) t'explique comment.
+:::
+
 Derrière un proxy, définis `TRUSTED_PROXIES` pour qu'ABM sache à quels en-têtes de transfert se fier. Une requête qui porte des en-têtes de transfert depuis une adresse absente de cette liste n'est jamais locale et doit se connecter. C'est voulu. Voir [Reverse proxy](/fr/guides/reverse-proxy/).
 
 Un proxy qui n'envoie aucun en-tête de transfert ressemble à un client local. Si tu en utilises un, règle Authentication Required sur Enabled.
