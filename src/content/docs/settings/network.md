@@ -7,12 +7,6 @@ description: How ABM reaches the internet, with a proxy, a WireGuard tunnel or a
 
 ![Settings, Network: proxy, WireGuard, connection, routing and public IP](../../../assets/docs/settings-network.jpg)
 
-The page has one Save. Everything on it saves together, and if any part is refused, nothing is saved. The sections run in the order you'd set them up.
-
-:::caution[Upgrading]
-After upgrading from a version without this page, ABM blocks all outgoing traffic until you choose a connection here. Metadata lookups, covers, searches and the Audible sync fail with an error that says they were blocked and points at this page. A proxy you already had is carried over as your chosen connection.
-:::
-
 ## Proxy
 
 | Setting | Default | Effect |
