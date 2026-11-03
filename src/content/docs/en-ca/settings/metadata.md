@@ -18,7 +18,7 @@ Files to create: `cover.jpg` (on), `title.opf` (on, Audiobookshelf-compatible), 
 
 ## Audio file tag writing
 
-Uses ffmpeg to write tags into the audio itself.
+Writes audio tags into the audio files themselves.
 
 | Setting | Default |
 |---|---|

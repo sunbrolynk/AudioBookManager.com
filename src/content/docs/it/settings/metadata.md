@@ -18,7 +18,7 @@ File da creare: `cover.jpg` (attivo), `title.opf` (attivo, compatibile con Audio
 
 ## Scrittura dei tag nei file audio
 
-Usa ffmpeg per scrivere i tag dentro l'audio stesso.
+Scrive i tag audio dentro i file audio stessi.
 
 | Impostazione | Predefinito |
 |---|---|

@@ -18,7 +18,7 @@ Filer som lages: `cover.jpg` (på), `title.opf` (på, kompatibel med Audiobooksh
 
 ## Skriving av tagger i lydfiler
 
-Bruker ffmpeg til å skrive tagger inn i selve lyden.
+Skriver lydtagger inn i selve lydfilene.
 
 | Innstilling | Standard |
 |---|---|

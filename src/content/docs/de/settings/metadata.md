@@ -18,7 +18,7 @@ Zu erstellende Dateien: `cover.jpg` (an), `title.opf` (an, kompatibel mit Audiob
 
 ## Tags in Audiodateien schreiben (Audio file tag writing)
 
-Schreibt die Tags mit ffmpeg direkt ins Audio.
+Schreibt die Audio-Tags direkt in die Audiodateien.
 
 | Einstellung | Standard |
 |---|---|

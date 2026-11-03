@@ -18,7 +18,7 @@ Arquivos a criar: `cover.jpg` (ligado), `title.opf` (ligado, compatível com o A
 
 ## Gravação de tags nos arquivos de áudio
 
-Usa o ffmpeg para gravar tags dentro do próprio áudio.
+Grava as tags de áudio dentro dos próprios arquivos de áudio.
 
 | Configuração | Padrão |
 |---|---|

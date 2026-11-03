@@ -18,7 +18,7 @@ Filer som skapas: `cover.jpg` (på), `title.opf` (på, kompatibel med Audiobooks
 
 ## Skriva taggar i ljudfiler (Audio file tag writing)
 
-Använder ffmpeg för att skriva taggar direkt i ljudet.
+Skriver ljudtaggar direkt i ljudfilerna.
 
 | Inställning | Standard |
 |---|---|

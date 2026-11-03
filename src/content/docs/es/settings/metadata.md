@@ -18,7 +18,7 @@ Archivos que se crean: `cover.jpg` (activado), `title.opf` (activado, compatible
 
 ## Escritura de etiquetas en los archivos de audio
 
-Usa ffmpeg para escribir las etiquetas dentro del propio audio.
+Escribe las etiquetas de audio dentro de los propios archivos de audio.
 
 | Ajuste | Por defecto |
 |---|---|

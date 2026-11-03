@@ -18,7 +18,7 @@ Luotavat tiedostot: `cover.jpg` (päällä), `title.opf` (päällä, Audiobooksh
 
 ## Tagien kirjoittaminen äänitiedostoihin
 
-Käyttää ffmpegiä tagien kirjoittamiseen suoraan ääneen.
+Kirjoittaa audiotagit suoraan äänitiedostoihin.
 
 | Asetus | Oletus |
 |---|---|

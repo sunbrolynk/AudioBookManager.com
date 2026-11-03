@@ -18,7 +18,7 @@ Soubory k vytvoření: `cover.jpg` (zapnuto), `title.opf` (zapnuto, kompatibiln�
 
 ## Zápis tagů do zvukových souborů (Audio file tag writing)
 
-Používá ffmpeg k zápisu tagů přímo do zvuku.
+Zapisuje audio tagy přímo do audio souborů.
 
 | Nastavení | Výchozí |
 |---|---|

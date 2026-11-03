@@ -18,7 +18,7 @@ Filer, der oprettes: `cover.jpg` (til), `title.opf` (til, kompatibel med Audiobo
 
 ## Skrivning af tags i lydfiler
 
-Bruger ffmpeg til at skrive tags ind i selve lyden.
+Skriver audio-tags ind i selve lydfilerne.
 
 | Indstilling | Standard |
 |---|---|

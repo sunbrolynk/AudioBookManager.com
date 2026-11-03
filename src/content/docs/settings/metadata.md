@@ -20,7 +20,7 @@ Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** 
 
 ## Audio file tag writing
 
-Uses ffmpeg to write tags into the audio itself.
+Writes audio tags into the audio files themselves.
 
 | Setting | Default |
 |---|---|

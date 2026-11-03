@@ -18,7 +18,7 @@ Pliki do utworzenia: `cover.jpg` (wł.), `title.opf` (wł., zgodny z Audiobooksh
 
 ## Zapisywanie tagów w plikach audio
 
-Używa ffmpeg, żeby wpisać tagi do samego audio.
+Zapisuje tagi audio w samych plikach audio.
 
 | Ustawienie | Domyślnie |
 |---|---|
