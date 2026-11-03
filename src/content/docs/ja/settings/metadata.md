@@ -23,8 +23,8 @@ ffmpeg を使って、音声ファイルそのものにタグを書き込みま�
 | 設定 | デフォルト |
 |---|---|
 | Write Audio Tags | オフ |
-| Write Tags on Import | タグ書き込みがオンならオン |
-| Write Tags on Refresh | オフ |
+| Write Audio Tags on Import | タグ書き込みがオンならオン |
+| Write Audio Tags on Refresh | オフ |
 
 タグの項目（全部デフォルトでオン）：Title、Artist（著者）、Album Artist（著者）、Album（タイトル／シリーズ）、Genre、Year、Comment（説明）、Narrator（Composer）、Cover Art。
 

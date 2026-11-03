@@ -56,4 +56,4 @@ ABM が本について知ったことは全部、`/config` にある ABM 自身�
 - Discover には専用のスケジュールがあります。[ディスカバーの設定](/ja/settings/discover/)を見てください。
 - Audible のライブラリには専用の同期スケジュールがあります。[Audible の設定](/ja/settings/audible/)を見てください。
 - ライブラリのスキャンは N 時間ごと、およびファイルの変更時に実行できます。[メディア管理](/ja/settings/media-management/)を見てください。
-- 更新時のサイドカーとタグの書き込みは、**Create on Refresh** と **Write Tags on Refresh** で決まります。
+- 更新時のサイドカーとタグの書き込みは、**Create on Refresh** と **Write Audio Tags on Refresh** で決まります。

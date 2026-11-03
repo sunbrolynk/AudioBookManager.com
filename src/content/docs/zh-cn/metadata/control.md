@@ -56,4 +56,4 @@ ABM 了解到的关于一本书的一切，都留在 `/config` 里 ABM 自己的
 - Discover 有自己的计划。见 [Discover 设置](/zh-cn/settings/discover/)。
 - Audible 书库有自己的同步计划。见 [Audible 设置](/zh-cn/settings/audible/)。
 - 书库扫描可以每 N 小时运行一次，也可以在文件变化时运行。见 [媒体管理](/zh-cn/settings/media-management/)。
-- 刷新时是否写入附属文件和标签，由 **Create on Refresh** 和 **Write Tags on Refresh** 控制。
+- 刷新时是否写入附属文件和标签，由 **Create on Refresh** 和 **Write Audio Tags on Refresh** 控制。

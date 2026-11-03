@@ -23,8 +23,8 @@ Bruker ffmpeg til å skrive tagger inn i selve lyden.
 | Innstilling | Standard |
 |---|---|
 | Write Audio Tags | av |
-| Write Tags on Import | på, når skriving av tagger er slått på |
-| Write Tags on Refresh | av |
+| Write Audio Tags on Import | på, når skriving av tagger er slått på |
+| Write Audio Tags on Refresh | av |
 
 Taggfelt, alle på som standard: Title, Artist (forfatter), Album Artist (forfatter), Album (tittel/serie), Genre, Year, Comment (beskrivelse), Narrator (Composer) og Cover Art.
 

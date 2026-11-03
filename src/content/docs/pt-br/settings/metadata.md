@@ -23,8 +23,8 @@ Usa o ffmpeg para gravar tags dentro do próprio áudio.
 | Configuração | Padrão |
 |---|---|
 | Write Audio Tags | desligado |
-| Write Tags on Import | ligado, quando a gravação de tags está ligada |
-| Write Tags on Refresh | desligado |
+| Write Audio Tags on Import | ligado, quando a gravação de tags está ligada |
+| Write Audio Tags on Refresh | desligado |
 
 Campos de tag, todos ligados por padrão: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) e Cover Art.
 

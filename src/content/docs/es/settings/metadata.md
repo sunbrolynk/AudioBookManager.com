@@ -23,8 +23,8 @@ Usa ffmpeg para escribir las etiquetas dentro del propio audio.
 | Ajuste | Por defecto |
 |---|---|
 | Write Audio Tags | desactivado |
-| Write Tags on Import | activado, una vez que la escritura de etiquetas está activada |
-| Write Tags on Refresh | desactivado |
+| Write Audio Tags on Import | activado, una vez que la escritura de etiquetas está activada |
+| Write Audio Tags on Refresh | desactivado |
 
 Campos de etiquetas, todos activados por defecto: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) y Cover Art.
 

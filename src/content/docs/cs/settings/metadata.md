@@ -23,8 +23,8 @@ Používá ffmpeg k zápisu tagů přímo do zvuku.
 | Nastavení | Výchozí |
 |---|---|
 | Write Audio Tags | vypnuto |
-| Write Tags on Import | zapnuto, jakmile je zápis tagů zapnutý |
-| Write Tags on Refresh | vypnuto |
+| Write Audio Tags on Import | zapnuto, jakmile je zápis tagů zapnutý |
+| Write Audio Tags on Refresh | vypnuto |
 
 Pole tagů, všechna ve výchozím stavu zapnutá: Title, Artist (autor), Album Artist (autor), Album (název/série), Genre, Year, Comment (popis), Narrator (Composer) a Cover Art.
 

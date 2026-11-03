@@ -23,8 +23,8 @@ Använder ffmpeg för att skriva taggar direkt i ljudet.
 | Inställning | Standard |
 |---|---|
 | Write Audio Tags | av |
-| Write Tags on Import | på, när taggskrivning är på |
-| Write Tags on Refresh | av |
+| Write Audio Tags on Import | på, när taggskrivning är på |
+| Write Audio Tags on Refresh | av |
 
 Taggfält, alla på som standard: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) och Cover Art.
 
