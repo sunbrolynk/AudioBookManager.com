@@ -3,6 +3,8 @@ title: Tagger
 description: Tagger og regler for automatisk tagging.
 ---
 
+Dette er ABMs tagger, ikke opplysningene som er lagret i lydfilene dine.
+
 **Settings > Tags** styrer tagger og **Auto Tagging**.
 
 ## Tagger

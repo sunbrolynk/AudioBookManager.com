@@ -3,6 +3,8 @@ title: Tagit
 description: Tagit ja automaattisen tagituksen säännöt.
 ---
 
+Nämä ovat ABM:n tageja, eivät äänitiedostoihisi tallennettuja tietoja.
+
 **Settings > Tags** hallitsee tageja ja **Auto Tagging** -toimintoa.
 
 ## Tagit
