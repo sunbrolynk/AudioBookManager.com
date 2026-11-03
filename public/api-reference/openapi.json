@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.17.0",
+    "version": "0.19.1",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -14235,7 +14235,7 @@
           "Settings"
         ],
         "summary": "Get Host Settings",
-        "description": "Get host and network settings.",
+        "description": "Get host/network settings.\n\nDB read, defaults, exception fallback, and the back-compat shim\nfor the old 'bind_address' key all live in the library_manager\nhelper. This endpoint is the Pydantic-typed wrapper.",
         "operationId": "get_host_settings_api_settings_general_host_get",
         "responses": {
           "200": {
@@ -14310,94 +14310,6 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Check Host Restart Required Api Settings General Host Restart Required Get"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/settings/general/proxy": {
-      "get": {
-        "tags": [
-          "Settings"
-        ],
-        "summary": "Get Proxy Settings",
-        "description": "Get proxy configuration settings.",
-        "operationId": "get_proxy_settings_api_settings_general_proxy_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProxySettingsResponse"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Settings"
-        ],
-        "summary": "Update Proxy Settings",
-        "description": "Update proxy configuration settings.",
-        "operationId": "update_proxy_settings_api_settings_general_proxy_put",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/ProxySettings"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Update Proxy Settings Api Settings General Proxy Put"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/settings/general/proxy/test": {
-      "post": {
-        "tags": [
-          "Settings"
-        ],
-        "summary": "Test Proxy Connection",
-        "description": "Test the proxy connection.",
-        "operationId": "test_proxy_connection_api_settings_general_proxy_test_post",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Test Proxy Connection Api Settings General Proxy Test Post"
                 }
               }
             }
@@ -15309,6 +15221,265 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/network": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Network",
+        "description": "The saved proxy, connection and routing.",
+        "operationId": "get_network_api_settings_network_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkSettings"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Save Network",
+        "description": "Save the proxy, the connection, the routing and a pasted WireGuard config together, or none of them, then apply the route once.",
+        "operationId": "save_network_api_settings_network_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NetworkSave"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NetworkSettings"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/network/proxy/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Proxy Connection",
+        "description": "Test the proxy connection: the form's values when sent, otherwise the saved settings.",
+        "operationId": "test_proxy_connection_api_settings_network_proxy_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/ProxySettings"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Form"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Test Proxy Connection Api Settings Network Proxy Test Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/network/exits": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Exits",
+        "description": "The address each kind of traffic leaves from; every scope when none is named.",
+        "operationId": "get_exits_api_settings_network_exits_get",
+        "parameters": [
+          {
+            "name": "scope",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/components/schemas/ExitScope"
+              },
+              "default": [],
+              "title": "Scope"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ExitsResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/network/wireguard": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Wireguard",
+        "description": "The saved tunnel, redacted, and how the running tunnel is doing.",
+        "operationId": "get_wireguard_api_settings_network_wireguard_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WireGuardStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Delete Wireguard",
+        "description": "Delete the saved tunnel; 409 while it is the chosen outbound connection.\n\nAnswers 204: remove() only stops an unchosen tunnel, so a failure to stop it is logged, not returned.",
+        "operationId": "delete_wireguard_api_settings_network_wireguard_delete",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/api/settings/network/wireguard/preview": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Preview Wireguard",
+        "description": "Check a pasted config and show what saving it would store; saves nothing.\n\nA refused config answers 200 with no summary and the reasons, so the panel can show them as the user types.",
+        "operationId": "preview_wireguard_api_settings_network_wireguard_preview_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/WireGuardPreviewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WireGuardPreview"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/network/wireguard/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Wireguard",
+        "description": "Bring the saved tunnel up and report its handshake and public IP.\n\nA plain def so the service's blocking wait runs on a worker thread, not the event loop.",
+        "operationId": "test_wireguard_api_settings_network_wireguard_test_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/WireGuardTestResult"
                 }
               }
             }
@@ -16779,28 +16950,6 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/api/audible/diagnostics/public-ip": {
-      "get": {
-        "tags": [
-          "Audible Diagnostics"
-        ],
-        "summary": "Get Public Ip",
-        "description": "Get the outgoing public IP address.\nUseful for verifying proxy/VPN is working.",
-        "operationId": "get_public_ip_api_audible_diagnostics_public_ip_get",
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/PublicIPResponse"
                 }
               }
             }
@@ -24366,6 +24515,18 @@
         ],
         "title": "EditionsResponse"
       },
+      "EgressConnection": {
+        "type": "string",
+        "enum": [
+          "none",
+          "direct",
+          "proxy",
+          "wireguard",
+          "own_vpn",
+          "unreadable"
+        ],
+        "title": "EgressConnection"
+      },
       "EntitySearchResponse": {
         "properties": {
           "results": {
@@ -24474,6 +24635,92 @@
         ],
         "title": "EntitySearchResult",
         "description": "An author or series from an upstream name search."
+      },
+      "ExitRow": {
+        "properties": {
+          "scope": {
+            "$ref": "#/components/schemas/ExitScope"
+          },
+          "status": {
+            "$ref": "#/components/schemas/ExitStatus"
+          },
+          "route": {
+            "type": "string",
+            "title": "Route"
+          },
+          "ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ip"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scope",
+          "status",
+          "route"
+        ],
+        "title": "ExitRow"
+      },
+      "ExitScope": {
+        "type": "string",
+        "enum": [
+          "metadata",
+          "audible",
+          "indexer",
+          "socket_services",
+          "other"
+        ],
+        "title": "ExitScope",
+        "description": "The scopes whose public IP is reported; each value is also a `Scope`."
+      },
+      "ExitStatus": {
+        "type": "string",
+        "enum": [
+          "ok",
+          "blocked",
+          "error"
+        ],
+        "title": "ExitStatus"
+      },
+      "ExitsResponse": {
+        "properties": {
+          "exits": {
+            "items": {
+              "$ref": "#/components/schemas/ExitRow"
+            },
+            "type": "array",
+            "title": "Exits"
+          },
+          "checked_at": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Checked At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "exits",
+          "checked_at"
+        ],
+        "title": "ExitsResponse"
       },
       "ExportTarget": {
         "properties": {
@@ -27381,6 +27628,79 @@
         ],
         "title": "MirrorPreviewResponse"
       },
+      "NetworkSave": {
+        "properties": {
+          "proxy": {
+            "$ref": "#/components/schemas/ProxySettings"
+          },
+          "connection": {
+            "$ref": "#/components/schemas/EgressConnection"
+          },
+          "acknowledge": {
+            "type": "boolean",
+            "title": "Acknowledge",
+            "default": false
+          },
+          "routing": {
+            "$ref": "#/components/schemas/Routing"
+          },
+          "wireguard_config_text": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Wireguard Config Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "proxy",
+          "connection",
+          "routing"
+        ],
+        "title": "NetworkSave"
+      },
+      "NetworkSettings": {
+        "properties": {
+          "proxy": {
+            "$ref": "#/components/schemas/ProxySettingsResponse"
+          },
+          "connection": {
+            "$ref": "#/components/schemas/EgressConnection"
+          },
+          "acknowledged": {
+            "type": "boolean",
+            "title": "Acknowledged"
+          },
+          "routing": {
+            "$ref": "#/components/schemas/Routing"
+          },
+          "notice": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice"
+          }
+        },
+        "type": "object",
+        "required": [
+          "proxy",
+          "connection",
+          "acknowledged",
+          "routing"
+        ],
+        "title": "NetworkSettings"
+      },
       "NotificationCreate": {
         "properties": {
           "name": {
@@ -28185,7 +28505,7 @@
         "additionalProperties": false,
         "type": "object",
         "title": "ProxySettings",
-        "description": "Proxy configuration settings to save. `proxy_password` is write-only:\nomit it or send it blank to keep the saved password, and a non-blank\nvalue replaces it. Keeping the saved password while changing the proxy\ntype, hostname or port is refused."
+        "description": "proxy_password is write-only: omit it, or send it blank, to keep the saved one.\n\nKeeping it while changing the proxy type, hostname or port is refused."
       },
       "ProxySettingsResponse": {
         "properties": {
@@ -28236,53 +28556,17 @@
             "type": "boolean",
             "title": "Has Proxy Password",
             "default": false
+          },
+          "proxy_unreadable": {
+            "type": "boolean",
+            "title": "Proxy Unreadable",
+            "default": false
           }
         },
         "additionalProperties": false,
         "type": "object",
         "title": "ProxySettingsResponse",
         "description": "proxy_password is never returned; has_proxy_password reports whether one is stored."
-      },
-      "PublicIPResponse": {
-        "properties": {
-          "success": {
-            "type": "boolean",
-            "title": "Success"
-          },
-          "ip": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Ip"
-          },
-          "proxy_enabled": {
-            "type": "boolean",
-            "title": "Proxy Enabled",
-            "default": false
-          },
-          "error": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Error"
-          }
-        },
-        "type": "object",
-        "required": [
-          "success"
-        ],
-        "title": "PublicIPResponse",
-        "description": "Response for public IP check."
       },
       "QualityLadderGroup": {
         "properties": {
@@ -29744,6 +30028,41 @@
         "type": "object",
         "title": "RootFolderUpdate",
         "description": "Request model for renaming a root folder or making it the default"
+      },
+      "Routing": {
+        "properties": {
+          "route_indexers": {
+            "type": "boolean",
+            "title": "Route Indexers"
+          },
+          "route_socket_services": {
+            "type": "boolean",
+            "title": "Route Socket Services"
+          },
+          "excluded_hosts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Excluded Hosts"
+          },
+          "lan_hosts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Lan Hosts"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "route_indexers",
+          "route_socket_services",
+          "excluded_hosts",
+          "lan_hosts"
+        ],
+        "title": "Routing"
       },
       "RowChoice": {
         "properties": {
@@ -31328,6 +31647,19 @@
         ],
         "title": "TagUpdate"
       },
+      "TunnelPhase": {
+        "type": "string",
+        "enum": [
+          "idle",
+          "starting",
+          "ready",
+          "stale",
+          "restarting",
+          "down",
+          "unavailable"
+        ],
+        "title": "TunnelPhase"
+      },
       "UpdateChoicesRequest": {
         "properties": {
           "choices": {
@@ -31425,6 +31757,269 @@
           "type"
         ],
         "title": "ValidationError"
+      },
+      "WireGuardPreview": {
+        "properties": {
+          "summary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WireGuardSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "errors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Errors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "errors"
+        ],
+        "title": "WireGuardPreview"
+      },
+      "WireGuardPreviewRequest": {
+        "properties": {
+          "config_text": {
+            "type": "string",
+            "title": "Config Text"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "config_text"
+        ],
+        "title": "WireGuardPreviewRequest"
+      },
+      "WireGuardStatus": {
+        "properties": {
+          "configured": {
+            "type": "boolean",
+            "title": "Configured"
+          },
+          "unreadable": {
+            "type": "boolean",
+            "title": "Unreadable"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/WireGuardSummary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "state": {
+            "$ref": "#/components/schemas/TunnelPhase"
+          },
+          "handshake_age_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Handshake Age S"
+          },
+          "endpoint_address": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Endpoint Address"
+          },
+          "pool_size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pool Size"
+          },
+          "pool_position": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pool Position"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "notice": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Notice"
+          }
+        },
+        "type": "object",
+        "required": [
+          "configured",
+          "unreadable",
+          "state"
+        ],
+        "title": "WireGuardStatus"
+      },
+      "WireGuardSummary": {
+        "properties": {
+          "addresses": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Addresses"
+          },
+          "dns": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Dns"
+          },
+          "endpoint_host": {
+            "type": "string",
+            "title": "Endpoint Host"
+          },
+          "endpoint_port": {
+            "type": "integer",
+            "title": "Endpoint Port"
+          },
+          "peer_public_key": {
+            "type": "string",
+            "title": "Peer Public Key"
+          },
+          "interface_public_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Interface Public Key"
+          },
+          "allowed_ips": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Allowed Ips"
+          },
+          "has_preshared_key": {
+            "type": "boolean",
+            "title": "Has Preshared Key"
+          },
+          "mtu": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mtu"
+          },
+          "persistent_keepalive": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Persistent Keepalive"
+          }
+        },
+        "type": "object",
+        "required": [
+          "addresses",
+          "dns",
+          "endpoint_host",
+          "endpoint_port",
+          "peer_public_key",
+          "allowed_ips",
+          "has_preshared_key"
+        ],
+        "title": "WireGuardSummary"
+      },
+      "WireGuardTestResult": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "handshake_age_s": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Handshake Age S"
+          },
+          "exit_ip": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Exit Ip"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message"
+        ],
+        "title": "WireGuardTestResult"
       }
     },
     "securitySchemes": {
