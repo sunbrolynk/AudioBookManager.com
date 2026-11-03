@@ -25,6 +25,10 @@ En una instalación nueva, las peticiones se rechazan hasta que termina la confi
 
 ## Proxies inversos
 
+:::caution[No recomendado]
+No recomiendo exponer ABM a internet, el mismo consejo que dan las apps Servarr. Para entrar desde fuera, usa una VPN como WireGuard o Tailscale. Si lo pones tras un proxy de todos modos, la [Proxy inverso](/es/guides/reverse-proxy/) lo explica.
+:::
+
 Detrás de un proxy, define `TRUSTED_PROXIES` para que ABM sepa de qué cabeceras de reenvío fiarse. Una petición con cabeceras de reenvío desde una dirección que no está en esa lista nunca es local y tiene que iniciar sesión. Es a propósito. Consulta [Proxy inverso](/es/guides/reverse-proxy/).
 
 Un proxy que no envía cabeceras de reenvío parece un cliente local. Si usas uno así, pon Authentication Required en Enabled.

@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## Omvendt proxy
 
+:::caution[Ikke anbefalt]
+Jeg anbefaler ikke å eksponere ABM mot internett, samme råd som Servarr-appene gir. Kom deg til det utenfra via et VPN som WireGuard eller Tailscale. Hvis du likevel bruker en proxy, står det i [Omvendt proxy](/nb/guides/reverse-proxy/).
+:::
+
 Bak nginx, Traefik eller lignende setter du `TRUSTED_PROXIES` til adressen til proxyen:
 
 ```

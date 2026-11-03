@@ -7,6 +7,10 @@ description: Host, sicurezza, proxy, log e backup.
 
 ## Host
 
+:::caution[Sconsigliato]
+Non consiglio di esporre ABM a internet, lo stesso consiglio che danno le app Servarr. Per accedere da fuori usa una VPN come WireGuard o Tailscale. Se lo metti comunque dietro un proxy, la [Reverse proxy](/it/guides/reverse-proxy/) spiega come.
+:::
+
 | Impostazione | Predefinito | Effetto |
 |---|---|---|
 | Bind Address | `*` | Indirizzo su cui ascoltare. Richiede un riavvio |

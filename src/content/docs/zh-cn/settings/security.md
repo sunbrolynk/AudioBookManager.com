@@ -25,6 +25,10 @@ description: 认证模式、API 密钥、受信任代理、本地网络和内容
 
 ## 反向代理
 
+:::caution[不推荐]
+我不建议把 ABM 暴露到互联网上，Servarr 系列应用也是同样的建议。从外面访问请用 WireGuard 或 Tailscale 这类 VPN。如果你还是要用代理，请看[反向代理](/zh-cn/guides/reverse-proxy/)。
+:::
+
 放在代理后面时，要设置 `TRUSTED_PROXIES`，让 ABM 知道该相信哪些转发头。如果带有转发头的请求来自不在这个列表里的地址，它永远不会被当成本地请求，必须登录。这是故意的。见 [反向代理](/zh-cn/guides/reverse-proxy/)。
 
 不发送任何转发头的代理看起来就像一个本地客户端。如果你用的是这种代理，请把 Authentication Required 设为 Enabled。

@@ -19,6 +19,10 @@ Palauttaminen:
 
 ## Kaikilta kysytään kirjautumista käänteisen välityspalvelimen takana
 
+:::caution[Ei suositeltavaa]
+En suosittele ABM:n avaamista internetiin, samaa neuvovat Servarr-sovellukset. Pääse siihen ulkoa VPN:llä, kuten WireGuardilla tai Tailscalella. Jos käytät silti välityspalvelinta, [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/) kertoo miten.
+:::
+
 Ilman asetusta `TRUSTED_PROXIES` välitysotsakkeita sisältävää pyyntöä ei koskaan käsitellä paikallisena, joten sen on kirjauduttava. Tämä on tarkoituksellista.
 
 1. Aseta `TRUSTED_PROXIES` välityspalvelimesi osoitteeksi, esimerkiksi `172.20.0.5`. Samalla koneella pyörivä välityspalvelin tarvitsee arvon `127.0.0.1`.

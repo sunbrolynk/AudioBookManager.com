@@ -25,6 +25,10 @@ Su un'installazione nuova, le richieste vengono rifiutate finché non finisci la
 
 ## Reverse proxy
 
+:::caution[Sconsigliato]
+Non consiglio di esporre ABM a internet, lo stesso consiglio che danno le app Servarr. Per accedere da fuori usa una VPN come WireGuard o Tailscale. Se lo metti comunque dietro un proxy, la [Reverse proxy](/it/guides/reverse-proxy/) spiega come.
+:::
+
 Dietro un proxy, imposta `TRUSTED_PROXIES` così ABM sa a quali header di inoltro credere. Una richiesta con header di inoltro che arriva da un indirizzo fuori da quell'elenco non è mai locale e deve fare l'accesso. È voluto. Vedi [Reverse proxy](/it/guides/reverse-proxy/).
 
 Un proxy che non invia header di inoltro sembra un client locale. Se ne usi uno così, imposta Authentication Required su Enabled.

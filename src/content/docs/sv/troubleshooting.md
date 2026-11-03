@@ -19,6 +19,10 @@ Så återställer du:
 
 ## Alla ombeds logga in bakom en omvänd proxy
 
+:::caution[Rekommenderas inte]
+Jag rekommenderar inte att ABM exponeras mot internet, samma råd som Servarr-apparna ger. Nå det utifrån via ett VPN som WireGuard eller Tailscale. Om du ändå kör det bakom en proxy finns allt i [Omvänd proxy](/sv/guides/reverse-proxy/).
+:::
+
 Utan `TRUSTED_PROXIES` behandlas ett anrop som har forwarding-headers aldrig som lokalt, så det måste logga in. Det är med flit.
 
 1. Sätt `TRUSTED_PROXIES` till din proxys adress, till exempel `172.20.0.5`. En proxy på samma värd behöver `127.0.0.1`.

@@ -19,6 +19,10 @@ Zo herstel je het:
 
 ## Iedereen moet inloggen achter een reverse proxy
 
+:::caution[Niet aangeraden]
+Ik raad af om ABM aan het internet bloot te stellen, hetzelfde advies als van de Servarr-apps. Kom er van buitenaf bij via een VPN zoals WireGuard of Tailscale. Doe je het toch via een proxy, dan staat het in de [Reverse proxy](/nl/guides/reverse-proxy/).
+:::
+
 Zonder `TRUSTED_PROXIES` wordt een request met forwarding-headers nooit als lokaal gezien, dus moet het inloggen. Dat is expres zo.
 
 1. Zet `TRUSTED_PROXIES` op het adres van je proxy, bijvoorbeeld `172.20.0.5`. Een proxy op dezelfde host heeft `127.0.0.1` nodig.

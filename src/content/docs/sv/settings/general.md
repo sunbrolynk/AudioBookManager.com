@@ -7,6 +7,10 @@ description: Värd, säkerhet, proxy, loggning och säkerhetskopior.
 
 ## Värd (Host)
 
+:::caution[Rekommenderas inte]
+Jag rekommenderar inte att ABM exponeras mot internet, samma råd som Servarr-apparna ger. Nå det utifrån via ett VPN som WireGuard eller Tailscale. Om du ändå kör det bakom en proxy finns allt i [Omvänd proxy](/sv/guides/reverse-proxy/).
+:::
+
 | Inställning | Standard | Effekt |
 |---|---|---|
 | Bind Address | `*` | Adressen att lyssna på. Kräver omstart |

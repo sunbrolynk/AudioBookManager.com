@@ -28,6 +28,10 @@ LOCAL_NETWORKS=203.0.113.0/24
 
 ## Reverse proxy
 
+:::caution[Not recommended]
+I don't recommend putting ABM on the internet, the same advice the Servarr apps give. Reach it from outside through a VPN such as WireGuard or Tailscale. If you proxy it anyway, the guide is here: [Reverse proxy](/en-ca/guides/reverse-proxy/).
+:::
+
 Behind nginx, Traefik or similar, set `TRUSTED_PROXIES` to the proxy's address:
 
 ```

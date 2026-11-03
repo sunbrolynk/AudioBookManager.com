@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import highlights from '../data/release-highlights.json';
 import strings from '../ui-strings.json';
+import { PRERELEASE } from '../prerelease';
 
 type Highlight = { title: string; summary: string; upgrade?: string };
 const notes = highlights as Record<string, Highlight>;
@@ -38,7 +39,7 @@ const rendered = await Promise.all(
     rendered.map((r) => (
       <section class="rel" aria-labelledby={`v${r.version}`}>
         <div class="meta">
-          <h2 id={`v${r.version}`} class="cond"><a href={r.url}>{r.version}</a></h2>
+          <h2 id={`v${r.version}`} class="cond">{PRERELEASE ? r.version : <a href={r.url}>{r.version}</a>}</h2>
           {r.date && <div class="d">{r.date}</div>}
           <div class="st" aria-hidden="true">{r.kinds.map((k) => <i class={kindClass(k)} />)}</div>
           <small>{r.counts.map(([k, n]) => `${n} ${k.toLowerCase()}`).join(' · ')}</small>

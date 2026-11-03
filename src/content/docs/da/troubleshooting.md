@@ -19,6 +19,10 @@ Sådan redder du den:
 
 ## Alle bliver bedt om at logge ind bag en reverse proxy
 
+:::caution[Anbefales ikke]
+Jeg anbefaler ikke at udsætte ABM for internettet, samme råd som Servarr-apps giver. Kom til det udefra via et VPN som WireGuard eller Tailscale. Hvis du alligevel bruger en proxy, står det i [Reverse proxy](/da/guides/reverse-proxy/).
+:::
+
 Uden `TRUSTED_PROXIES` bliver en request med forwarding-headers aldrig behandlet som lokal, så den skal logge ind. Det er med vilje.
 
 1. Sæt `TRUSTED_PROXIES` til din proxys adresse, for eksempel `172.20.0.5`. En proxy på samme vært skal have `127.0.0.1`.

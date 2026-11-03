@@ -19,6 +19,10 @@ Para recuperar:
 
 ## Todo mundo precisa fazer login atrás de um proxy reverso
 
+:::caution[Não recomendado]
+Eu não recomendo expor o ABM à internet, o mesmo conselho dos apps Servarr. Para acessar de fora, use uma VPN como WireGuard ou Tailscale. Se mesmo assim você usar um proxy, o [Proxy reverso](/pt-br/guides/reverse-proxy/) explica como.
+:::
+
 Sem `TRUSTED_PROXIES`, uma requisição com cabeçalhos de encaminhamento nunca é tratada como local, então precisa fazer login. Isso é de propósito.
 
 1. Defina `TRUSTED_PROXIES` com o endereço do seu proxy, por exemplo `172.20.0.5`. Um proxy no mesmo host precisa de `127.0.0.1`.

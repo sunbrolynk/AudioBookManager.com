@@ -27,6 +27,10 @@ On a fresh install, requests are refused until setup finishes. Setup preselects 
 
 ## Reverse proxies
 
+:::caution[Not recommended]
+I don't recommend putting ABM on the internet, the same advice the Servarr apps give. Reach it from outside through a VPN such as WireGuard or Tailscale. If you proxy it anyway, the guide is here: [Reverse proxy](/en-ca/guides/reverse-proxy/).
+:::
+
 Behind a proxy, set `TRUSTED_PROXIES` so ABM knows which forwarding headers to believe. A request that carries forwarding headers from an address not in that list is never local and must sign in. This is on purpose. See [Reverse proxy](/en-ca/guides/reverse-proxy/).
 
 A proxy that sends no forwarding headers looks like a local client. If you run one, set Authentication Required to Enabled.
