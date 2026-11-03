@@ -39,4 +39,4 @@ Download failures are retried by themselves a few times, with a delay that widen
 
 ## Connection Diagnostics
 
-Pick an account and run diagnostics. It tests FFmpeg, credentials, the API connection and download capability, and shows your outgoing IP as Audible sees it. For an account on a throttle hold, the download capability test reports the hold and sends nothing to Audible.
+Pick an account and run diagnostics. It tests FFmpeg, credentials, the API connection and download capability, and shows your outgoing IP as Audible sees it (the same Public IP check as on [Network](/settings/network/)). For an account on a throttle hold, the download capability test reports the hold and sends nothing to Audible.
