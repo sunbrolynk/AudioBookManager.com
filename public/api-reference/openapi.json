@@ -11224,7 +11224,7 @@
           "Metadata"
         ],
         "summary": "Write Audio Tags",
-        "description": "Write metadata tags to audio files",
+        "description": "Write audio tags to audio files",
         "operationId": "write_audio_tags_api_metadata_books__book_id__write_tags_post",
         "parameters": [
           {
