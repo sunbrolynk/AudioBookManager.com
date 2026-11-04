@@ -56,4 +56,4 @@ Ett eget **Local Metadata Library** är planerat: en valfri kopia av allt ABM n�
 - Discover har sitt eget schema. Se [Discover-inställningar](/sv/settings/discover/).
 - Audible-biblioteket har sitt eget synkschema. Se [Audible-inställningar](/sv/settings/audible/).
 - En biblioteksskanning kan köras var N:e timme och när filer ändras. Se [Mediehantering](/sv/settings/media-management/).
-- Skrivning av sidecars och taggar vid uppdatering styrs av **Create on Refresh** och **Write Tags on Refresh**.
+- Skrivning av sidecars och taggar vid uppdatering styrs av **Create on Refresh** och **Write Audio Tags on Refresh**.

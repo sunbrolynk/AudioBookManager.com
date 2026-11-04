@@ -56,4 +56,4 @@ Planowana jest osobna **Local Metadata Library**: opcjonalna kopia wszystkiego, 
 - Discover ma własny harmonogram. Zobacz [Ustawienia Discover](/pl/settings/discover/).
 - Biblioteka Audible ma własny harmonogram synchronizacji. Zobacz [Ustawienia Audible](/pl/settings/audible/).
 - Skanowanie biblioteki może iść co N godzin i przy zmianach plików. Zobacz [Media Management](/pl/settings/media-management/).
-- Zapisywaniem plików sidecar i tagów przy odświeżaniu sterują **Create on Refresh** i **Write Tags on Refresh**.
+- Zapisywaniem plików sidecar i tagów przy odświeżaniu sterują **Create on Refresh** i **Write Audio Tags on Refresh**.

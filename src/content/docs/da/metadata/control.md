@@ -56,4 +56,4 @@ Et dedikeret **Local Metadata Library** er planlagt: en valgfri kopi af alt, ABM
 - Discover har sin egen tidsplan. Se [Discover-indstillinger](/da/settings/discover/).
 - Audible-biblioteket har sin egen tidsplan for synkronisering. Se [Audible-indstillinger](/da/settings/audible/).
 - En biblioteksscanning kan køre hver N. time og når filer ændrer sig. Se [Media Management](/da/settings/media-management/).
-- Om der skrives sidecars og tags ved opdatering, styres af **Create on Refresh** og **Write Tags on Refresh**.
+- Om der skrives sidecars og tags ved opdatering, styres af **Create on Refresh** og **Write Audio Tags on Refresh**.

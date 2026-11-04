@@ -56,4 +56,4 @@ Oma **Local Metadata Library** on suunnitteilla: valinnainen kopio kaikesta, mit
 - Discoverilla on oma ajastuksensa. Katso [Discover-asetukset](/fi/settings/discover/).
 - Audible-kirjastolla on oma synkronointiajastuksensa. Katso [Audible-asetukset](/fi/settings/audible/).
 - Kirjaston skannaus voi ajaa N tunnin välein ja tiedostomuutosten yhteydessä. Katso [Median hallinta](/fi/settings/media-management/).
-- Sivutiedostojen ja tagien kirjoittamista päivityksen yhteydessä ohjaavat **Create on Refresh** ja **Write Tags on Refresh**.
+- Sivutiedostojen ja tagien kirjoittamista päivityksen yhteydessä ohjaavat **Create on Refresh** ja **Write Audio Tags on Refresh**.

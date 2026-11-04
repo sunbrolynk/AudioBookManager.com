@@ -18,13 +18,13 @@ Aan te maken bestanden: `cover.jpg` (aan), `title.opf` (aan, compatibel met Audi
 
 ## Tags in audiobestanden schrijven
 
-Gebruikt ffmpeg om tags in de audio zelf te schrijven.
+Schrijft audiotags in de audiobestanden zelf.
 
 | Instelling | Standaard |
 |---|---|
 | Write Audio Tags | uit |
-| Write Tags on Import | aan, zodra het schrijven van tags aanstaat |
-| Write Tags on Refresh | uit |
+| Write Audio Tags on Import | aan, zodra het schrijven van tags aanstaat |
+| Write Audio Tags on Refresh | uit |
 
 Tagvelden, standaard allemaal aan: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) en Cover Art.
 

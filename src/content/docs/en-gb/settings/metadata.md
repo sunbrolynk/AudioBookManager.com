@@ -18,13 +18,13 @@ Files to create: `cover.jpg` (on), `title.opf` (on, Audiobookshelf-compatible), 
 
 ## Audio file tag writing
 
-Uses ffmpeg to write tags into the audio itself.
+Writes audio tags into the audio files themselves.
 
 | Setting | Default |
 |---|---|
 | Write Audio Tags | off |
-| Write Tags on Import | on, once tag writing is on |
-| Write Tags on Refresh | off |
+| Write Audio Tags on Import | on, once tag writing is on |
+| Write Audio Tags on Refresh | off |
 
 Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 

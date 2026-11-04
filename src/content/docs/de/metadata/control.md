@@ -56,4 +56,4 @@ Eine eigene **Local Metadata Library** ist geplant: eine optionale Kopie von all
 - Discover hat einen eigenen Zeitplan. Siehe [Discover-Einstellungen](/de/settings/discover/).
 - Die Audible-Bibliothek hat einen eigenen Sync-Zeitplan. Siehe [Audible-Einstellungen](/de/settings/audible/).
 - Ein Bibliotheksscan kann alle N Stunden und bei Dateiänderungen laufen. Siehe [Medienverwaltung](/de/settings/media-management/).
-- Ob beim Aktualisieren Sidecars und Tags geschrieben werden, steuern **Create on Refresh** und **Write Tags on Refresh**.
+- Ob beim Aktualisieren Sidecars und Tags geschrieben werden, steuern **Create on Refresh** und **Write Audio Tags on Refresh**.

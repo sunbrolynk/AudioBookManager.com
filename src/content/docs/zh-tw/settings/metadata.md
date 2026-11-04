@@ -18,13 +18,13 @@ description: ABM 會寫入哪些附屬檔案和音訊標籤，以及什麼時候
 
 ## 寫入音訊檔標籤（Audio file tag writing）
 
-用 ffmpeg 把標籤寫進音訊檔本身。
+把音訊標籤寫進音訊檔本身。
 
 | 設定 | 預設值 |
 |---|---|
 | Write Audio Tags | 關閉 |
-| Write Tags on Import | 開啟（在標籤寫入開啟之後） |
-| Write Tags on Refresh | 關閉 |
+| Write Audio Tags on Import | 開啟（在標籤寫入開啟之後） |
+| Write Audio Tags on Refresh | 關閉 |
 
 標籤欄位，預設全部開啟：Title、Artist (Author)、Album Artist (Author)、Album (Title/Series)、Genre、Year、Comment (Description)、Narrator (Composer) 和 Cover Art。
 
