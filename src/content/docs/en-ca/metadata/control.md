@@ -56,4 +56,4 @@ A dedicated **Local Metadata Library** is planned: an opt-in copy of everything 
 - Discover has its own schedule. See [Discover settings](/en-ca/settings/discover/).
 - The Audible library has its own sync schedule. See [Audible settings](/en-ca/settings/audible/).
 - A library scan can run every N hours and on file changes. See [Media Management](/en-ca/settings/media-management/).
-- Writing sidecars and tags on refresh is controlled by **Create on Refresh** and **Write Tags on Refresh**.
+- Writing sidecars and tags on refresh is controlled by **Create on Refresh** and **Write Audio Tags on Refresh**.

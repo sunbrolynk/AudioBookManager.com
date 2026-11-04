@@ -3,6 +3,8 @@ title: Taggar
 description: Taggar och regler för automatisk taggning.
 ---
 
+Det här är ABM:s taggar, inte uppgifterna som lagras i dina ljudfiler.
+
 **Settings > Tags** hanterar taggar och **Auto Tagging**.
 
 ## Taggar

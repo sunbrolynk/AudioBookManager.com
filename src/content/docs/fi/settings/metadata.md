@@ -18,13 +18,13 @@ Luotavat tiedostot: `cover.jpg` (päällä), `title.opf` (päällä, Audiobooksh
 
 ## Tagien kirjoittaminen äänitiedostoihin
 
-Käyttää ffmpegiä tagien kirjoittamiseen suoraan ääneen.
+Kirjoittaa audiotagit suoraan äänitiedostoihin.
 
 | Asetus | Oletus |
 |---|---|
 | Write Audio Tags | pois |
-| Write Tags on Import | päällä, kun tagien kirjoitus on päällä |
-| Write Tags on Refresh | pois |
+| Write Audio Tags on Import | päällä, kun tagien kirjoitus on päällä |
+| Write Audio Tags on Refresh | pois |
 
 Tagikentät, kaikki oletuksena päällä: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) ja Cover Art.
 

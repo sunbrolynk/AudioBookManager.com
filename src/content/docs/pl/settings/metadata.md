@@ -18,13 +18,13 @@ Pliki do utworzenia: `cover.jpg` (wł.), `title.opf` (wł., zgodny z Audiobooksh
 
 ## Zapisywanie tagów w plikach audio
 
-Używa ffmpeg, żeby wpisać tagi do samego audio.
+Zapisuje tagi audio w samych plikach audio.
 
 | Ustawienie | Domyślnie |
 |---|---|
 | Write Audio Tags | wył. |
-| Write Tags on Import | wł., gdy zapisywanie tagów jest włączone |
-| Write Tags on Refresh | wył. |
+| Write Audio Tags on Import | wł., gdy zapisywanie tagów jest włączone |
+| Write Audio Tags on Refresh | wył. |
 
 Pola tagów, domyślnie wszystkie włączone: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) i Cover Art.
 

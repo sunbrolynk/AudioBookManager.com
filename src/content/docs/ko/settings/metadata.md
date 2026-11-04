@@ -18,13 +18,13 @@ description: ABM이 어떤 사이드카 파일과 오디오 태그를 언제 쓰
 
 ## 오디오 파일 태그 쓰기
 
-ffmpeg로 오디오 파일 자체에 태그를 써요.
+오디오 태그를 오디오 파일 자체에 써요.
 
 | 설정 | 기본값 |
 |---|---|
 | Write Audio Tags | 꺼짐 |
-| Write Tags on Import | 태그 쓰기를 켜면 켜짐 |
-| Write Tags on Refresh | 꺼짐 |
+| Write Audio Tags on Import | 태그 쓰기를 켜면 켜짐 |
+| Write Audio Tags on Refresh | 꺼짐 |
 
 태그 필드는 모두 기본값이 켜짐이에요: Title, Artist(Author), Album Artist(Author), Album(Title/Series), Genre, Year, Comment(Description), Narrator(Composer), Cover Art.
 

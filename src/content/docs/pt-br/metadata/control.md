@@ -56,4 +56,4 @@ Uma **Local Metadata Library** própria está prevista: uma cópia opcional de t
 - O Discover tem o próprio agendamento. Veja [Configurações do Discover](/pt-br/settings/discover/).
 - A biblioteca da Audible tem o próprio agendamento de sincronização. Veja [Configurações da Audible](/pt-br/settings/audible/).
 - Uma varredura da biblioteca pode rodar a cada N horas e quando arquivos mudam. Veja [Media Management](/pt-br/settings/media-management/).
-- A gravação de sidecars e tags na atualização é controlada por **Create on Refresh** e **Write Tags on Refresh**.
+- A gravação de sidecars e tags na atualização é controlada por **Create on Refresh** e **Write Audio Tags on Refresh**.

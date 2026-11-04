@@ -18,13 +18,13 @@ File da creare: `cover.jpg` (attivo), `title.opf` (attivo, compatibile con Audio
 
 ## Scrittura dei tag nei file audio
 
-Usa ffmpeg per scrivere i tag dentro l'audio stesso.
+Scrive i tag audio dentro i file audio stessi.
 
 | Impostazione | Predefinito |
 |---|---|
 | Write Audio Tags | disattivo |
-| Write Tags on Import | attivo, una volta attivata la scrittura dei tag |
-| Write Tags on Refresh | disattivo |
+| Write Audio Tags on Import | attivo, una volta attivata la scrittura dei tag |
+| Write Audio Tags on Refresh | disattivo |
 
 Campi dei tag, tutti attivi di default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) e Cover Art.
 

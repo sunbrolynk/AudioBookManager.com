@@ -3,6 +3,8 @@ title: Štítky
 description: Štítky a pravidla automatického štítkování.
 ---
 
+Toto jsou štítky ABM, ne údaje uložené ve vašich audio souborech.
+
 **Settings > Tags** spravuje štítky a **Auto Tagging**.
 
 ## Štítky

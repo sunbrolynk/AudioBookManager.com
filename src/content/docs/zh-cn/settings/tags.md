@@ -3,6 +3,8 @@ title: 标签
 description: 标签和自动打标签规则。
 ---
 
+这些是 ABM 的标签，不是保存在音频文件里的信息。
+
 **Settings > Tags** 管理标签和 **Auto Tagging**。
 
 ## 标签

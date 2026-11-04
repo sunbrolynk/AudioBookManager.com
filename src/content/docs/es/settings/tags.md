@@ -3,6 +3,8 @@ title: Etiquetas
 description: Etiquetas y reglas de etiquetado automático.
 ---
 
+Estas son las etiquetas de ABM, no los datos guardados en tus archivos de audio.
+
 **Settings > Tags** gestiona las etiquetas y el **Auto Tagging**.
 
 ## Etiquetas

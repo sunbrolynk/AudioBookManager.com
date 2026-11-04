@@ -56,4 +56,4 @@ ABM 對一本書知道的所有東西，都會留在 `/config` 裡 ABM 自己的
 - Discover 有自己的排程。請看〈[探索設定](/zh-tw/settings/discover/)〉。
 - Audible 書庫有自己的同步排程。請看〈[Audible 設定](/zh-tw/settings/audible/)〉。
 - 書庫掃描可以每 N 小時執行一次，也可以在檔案變動時執行。請看〈[媒體管理](/zh-tw/settings/media-management/)〉。
-- 重新整理時要不要寫入附屬檔案和標籤，由 **Create on Refresh** 和 **Write Tags on Refresh** 控制。
+- 重新整理時要不要寫入附屬檔案和標籤，由 **Create on Refresh** 和 **Write Audio Tags on Refresh** 控制。
