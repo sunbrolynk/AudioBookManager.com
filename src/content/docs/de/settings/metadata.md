@@ -5,6 +5,12 @@ description: Welche Sidecar-Dateien und Audio-Tags ABM schreibt, und wann.
 
 **Settings > Metadata** legt fest, was ABM in den Ordner eines Buchs und in seine Dateien schreibt. Wie diese Dateien genutzt werden, steht unter [Sidecar-Dateien](/de/using/sidecars/).
 
+Die Seite hat ein einziges **Save**. **Source** legt fest, woher ABM seine Metadaten bekommt, und die Abschnitte darunter bestimmen, was ABM schreibt.
+
+## Quelle (Source)
+
+**Metadata Source** ist Built-in (Standard), Hosted (libexdb.com) oder Self-hosted, das eine **Server URL** braucht. **Test** schickt eine echte Anfrage an die ausgewählte Quelle, ohne zu speichern, **Status** sagt, ob sie bereit ist, und **Connection** zeigt den Weg, über den Abfragen rausgehen, mit Link zu **Settings > Network**. Ein Wechsel gilt sofort für alle Abfragen. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/).
+
 ## Erstellen von Metadatendateien (Metadata file creation)
 
 | Einstellung | Standard | Wirkung |
@@ -28,9 +34,9 @@ Schreibt die Tags mit ffmpeg direkt ins Audio.
 
 Tag-Felder, standardmäßig alle an: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) und Cover Art.
 
-## Kommt in einem späteren Release
+## Lokaler Speicher (Local Storage)
 
-Eine Auswahl der Metadatenquelle und eine lokale Kopie der Metadaten-Bibliothek sind für ein späteres Release geplant. Siehe [Deine Metadaten, deine Kontrolle](/de/metadata/control/).
+Mit der Built-in-Quelle erscheinen die Abschnitte **Local Storage** und **Storage Backups**. Sie sind eine Vorschau und noch nicht angebunden. Siehe [Deine Metadaten, deine Entscheidung](/de/metadata/control/).
 
 ## Stolperfallen
 

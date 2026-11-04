@@ -50,7 +50,7 @@ Höj `MAX_REQUEST_BODY_BYTES`. En omvänd proxy kan också ha en lägre gräns o
 
 ## Metadatakällan är inte tillgänglig
 
-Att lägga till, söka, uppdatera och Discover behöver Libex. Får ABM inget svar misslyckas en boksökning med "Libex search failed" och en sökning efter författare eller serier med "Libex could not be reached; try again shortly", i stället för att visa en tom lista. Orsaker: Libex är nere, eller så når ABM:s anslutning det inte.
+Att lägga till, söka, uppdatera och Discover behöver metadatakällan. När ABM inte får något svar nämner felet källan och den verkliga orsaken, till exempel att VPN:en ligger nere, i stället för att visa en tom lista. Orsaker: källan ligger nere, eller ABM:s anslutning når den inte. En uppdatering, import eller synk över många poster stannar när källan inte går att nå eller vägrar ABM, med en avisering per sorts avbrott, och en enskild timeout hoppar bara över den posten.
 
 1. Kolla [ABM:s statussida](https://status.audiobookmanager.com) och [Libex statussida](https://status.libexdb.com) för att se om det är nere för alla.
 2. Kontrollera att containern når internet och att proxyn under **Settings > General > Proxy** stämmer, om du använder en.

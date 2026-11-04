@@ -5,11 +5,7 @@ description: Intégrée, hébergée, ou ton propre serveur Libex.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Prévu pour une version ultérieure]
-Le choix de la source n'est pas encore dans une version publiée. Les versions publiées utilisent l'instance publique de Libex sur libexdb.com et n'ont aucun réglage pour ça.
-:::
-
-Dans une version ultérieure, **Settings > Metadata > Source** aura un réglage **Metadata Source** avec trois choix.
+**Settings > Metadata > Source** a un réglage **Metadata Source** avec trois choix. Tant que tu n'as rien choisi, c'est Built-in.
 
 | Choix | Ce que ça veut dire |
 |---|---|
@@ -23,9 +19,17 @@ Dans une version ultérieure, **Settings > Metadata > Source** aura un réglage 
 
 Built-in parle à Audible depuis ta machine, donc il utilise **Settings > General > Proxy & VPN**. Cette page décide du chemin : un proxy, le tunnel WireGuard intégré, ton propre conteneur VPN, ou une connexion directe que tu acceptes en connaissance de cause. Si rien n'est choisi, les recherches automatiques sont bloquées et le disent. Un chemin choisi qui est en panne bloque aussi les recherches. Il ne se rabat jamais sur ta propre adresse. Direct affiche un avertissement : Audible voit ton adresse IP et les livres qu'ABM recherche.
 
+Chaque source envoie ses requêtes par la connexion choisie sous **Settings > Network** et ne bascule jamais sur une autre route. Un serveur self-hosted sur ton réseau local, et les jaquettes qu'il sert, sont joints en direct.
+
 ## Hosted et Self-hosted
 
 Avec ces deux-là, ABM interroge un serveur Libex et c'est le serveur qui parle à Audible. Une URL auto-hébergée est vérifiée avant d'être enregistrée, et une URL vide ou dangereuse est refusée. Un serveur en panne est signalé comme une source de métadonnées indisponible, avec son nom.
+
+## Quand la source est injoignable
+
+Si la source est injoignable ou refuse ABM, une actualisation, un import ou une synchro sur beaucoup d'éléments s'arrête au lieu d'échouer livre après livre, et un simple délai dépassé ne saute que cet élément. Tu reçois une notification par type de panne. Les messages d'erreur nomment la source et la vraie raison, par exemple que le VPN est coupé.
+
+Quand Libex demande à ABM de ralentir, une recherche que tu attends abandonne au bout d'environ 10 secondes, et une tâche en arrière-plan attend jusqu'à 2 minutes.
 
 ## Lequel choisir
 

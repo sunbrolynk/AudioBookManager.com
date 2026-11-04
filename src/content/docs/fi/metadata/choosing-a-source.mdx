@@ -5,11 +5,7 @@ description: Sisäänrakennettu, palveluna tarjottu tai oma Libex-palvelin.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Tulossa myöhempään julkaisuun]
-Lähteen valinta ei ole vielä missään julkaistussa versiossa. Julkaistut versiot käyttävät julkista Libex-instanssia osoitteessa libexdb.com, eikä niissä ole tälle asetusta.
-:::
-
-Myöhemmässä julkaisussa **Settings > Metadata > Source** -kohdassa on **Metadata Source** -asetus, jossa on kolme vaihtoehtoa.
+**Settings > Metadata > Source** sisältää asetuksen **Metadata Source**, jossa on kolme vaihtoehtoa. Kunnes valitset, se on Built-in.
 
 | Vaihtoehto | Mitä se tarkoittaa |
 |---|---|
@@ -23,9 +19,17 @@ Myöhemmässä julkaisussa **Settings > Metadata > Source** -kohdassa on **Metad
 
 Built-in keskustelee Audiblen kanssa omalta koneeltasi, joten se käyttää asetuksia kohdassa **Settings > General > Proxy & VPN**. Se sivu päättää reitin: välityspalvelin, sisäänrakennettu WireGuard-tunneli, oma VPN-konttisi tai suora yhteys, jonka hyväksyt tietoisesti. Jos mitään ei ole valittu, automaattiset haut estetään ja siitä kerrotaan. Myös valittu reitti, joka on alhaalla, estää haut. Se ei koskaan palaa käyttämään omaa osoitettasi. Suora yhteys näyttää varoituksen siitä, että Audible näkee IP-osoitteesi ja kirjat, joita ABM hakee.
 
+Jokainen lähde lähettää hakunsa kohdassa **Settings > Network** valitun yhteyden kautta eikä koskaan vaihda toiselle reitille. LAN-verkkosi self-hosted-palvelin ja sen tarjoamat kansikuvat tavoitetaan suoraan.
+
 ## Palveluna tarjottu ja itse ylläpidetty
 
 Näissä kahdessa ABM kysyy Libex-palvelimelta, ja palvelin keskustelee Audiblen kanssa. Itse ylläpidetyn palvelimen URL tarkistetaan ennen tallennusta, ja tyhjä tai vaarallinen URL hylätään. Alhaalla oleva palvelin raportoidaan nimeltä mainiten niin, että metatietolähde ei ole käytettävissä.
+
+## Kun lähdettä ei tavoiteta
+
+Jos lähdettä ei tavoiteta tai se hylkää ABM:n, päivitys, tuonti tai synkronointi usean kohteen yli pysähtyy sen sijaan että epäonnistuisi kirja kerrallaan, ja yksittäinen aikakatkaisu ohittaa vain sen kohteen. Saat yhden ilmoituksen katkoksen lajia kohden. Virheilmoitukset nimeävät lähteen ja todellisen syyn, esimerkiksi että VPN on alhaalla.
+
+Kun Libex pyytää ABM:ää hidastamaan, odottamasi haku luovuttaa noin 10 sekunnin kuluttua, ja taustatehtävä odottaa enintään 2 minuuttia.
 
 ## Kumman valitsisin
 

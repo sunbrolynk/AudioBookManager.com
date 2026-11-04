@@ -5,11 +5,7 @@ description: Innebygd, hostet eller din egen Libex-server.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Kommer i en senere versjon]
-Valg av kilde er ikke med i en utgitt versjon ennå. Utgitte versjoner bruker den offentlige Libex-instansen på libexdb.com og har ingen innstilling for dette.
-:::
-
-I en senere versjon har **Settings > Metadata > Source** en innstilling **Metadata Source** med tre valg.
+**Settings > Metadata > Source** har innstillingen **Metadata Source** med tre valg. Til du velger, er det Built-in.
 
 | Valg | Hva det betyr |
 |---|---|
@@ -23,9 +19,17 @@ I en senere versjon har **Settings > Metadata > Source** en innstilling **Metada
 
 Built-in snakker med Audible fra maskinen din, så den bruker **Settings > General > Proxy & VPN**. Den siden bestemmer ruta: en proxy, den innebygde WireGuard-tunnelen, din egen VPN-container eller en direkte tilkobling du bekrefter. Er ingen valgt, blir automatiske oppslag blokkert, og det står hvorfor. En valgt rute som er nede, blokkerer også oppslag. Den faller aldri tilbake til din egen adresse. Direct viser en advarsel om at Audible ser IP-adressen din og bøkene ABM slår opp.
 
+Hver kilde sender oppslagene sine gjennom forbindelsen som er valgt under **Settings > Network**, og faller aldri tilbake på en annen rute. En self-hosted-server på LAN-et ditt og omslagene den leverer nås direkte.
+
 ## Hostet og selvhostet
 
 Med disse to spør ABM en Libex-server, og serveren snakker med Audible. En selvhostet URL blir sjekket før den lagres, og en tom eller usikker en blir avvist. En server som er nede, meldes som at metadatakilden er utilgjengelig, med navnet sitt.
+
+## Når kilden ikke kan nås
+
+Hvis kilden ikke kan nås eller avviser ABM, stopper en oppdatering, import eller synk over mange elementer i stedet for å feile bok for bok, og en enkelt tidsavbrudd hopper bare over det elementet. Du får ett varsel per type avbrudd. Feilmeldinger nevner kilden og den egentlige årsaken, for eksempel at VPN-en er nede.
+
+Når Libex ber ABM sette ned tempoet, gir et søk du venter på opp etter omtrent 10 sekunder, og en bakgrunnsoppgave venter i opptil 2 minutter.
 
 ## Hva du bør velge
 

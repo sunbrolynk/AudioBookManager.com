@@ -5,6 +5,12 @@ description: Qué archivos auxiliares y etiquetas de audio escribe ABM, y cuánd
 
 **Settings > Metadata** decide qué escribe ABM en la carpeta de un libro y en sus archivos. Cómo se usan estos archivos se explica en [Archivos auxiliares](/es/using/sidecars/).
 
+La página tiene un solo **Save**. **Source** define de dónde saca ABM sus metadatos, y las secciones de debajo deciden qué escribe ABM.
+
+## Fuente (Source)
+
+**Metadata Source** es Built-in (por defecto), Hosted (libexdb.com) o Self-hosted, que pide una **Server URL**. **Test** hace una petición real a la fuente elegida sin guardar, **Status** dice si está lista, y **Connection** muestra la ruta por la que salen las consultas, con enlace a **Settings > Network**. Cambiar la fuente vale al instante para todas las consultas. Mira [Elegir una fuente de metadatos](/es/metadata/choosing-a-source/).
+
 ## Creación de archivos de metadatos
 
 | Ajuste | Por defecto | Efecto |
@@ -28,9 +34,9 @@ Usa ffmpeg para escribir las etiquetas dentro del propio audio.
 
 Campos de etiquetas, todos activados por defecto: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) y Cover Art.
 
-## Llega en una versión posterior
+## Almacenamiento local (Local Storage)
 
-Una elección de fuente de metadatos y una copia local de la biblioteca de metadatos están previstas para una versión posterior. Consulta [Tus metadatos, tu control](/es/metadata/control/).
+Con la fuente Built-in aparecen las secciones **Local Storage** y **Storage Backups**. Son una vista previa y aún no están conectadas. Mira [Tus metadatos, bajo tu control](/es/metadata/control/).
 
 ## Detalles a tener en cuenta
 

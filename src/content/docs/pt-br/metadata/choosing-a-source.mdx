@@ -5,11 +5,7 @@ description: Embutida, hospedada ou o seu próprio servidor Libex.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Chega em uma versão futura]
-A escolha da fonte ainda não está em nenhuma versão lançada. As versões lançadas usam a instância pública do Libex em libexdb.com e não têm configuração para isso.
-:::
-
-Em uma versão futura, **Settings > Metadata > Source** terá uma configuração **Metadata Source** com três opções.
+**Settings > Metadata > Source** tem a configuração **Metadata Source** com três opções. Até você escolher, é Built-in.
 
 | Opção | O que significa |
 |---|---|
@@ -23,9 +19,17 @@ Em uma versão futura, **Settings > Metadata > Source** terá uma configuração
 
 O Built-in conversa com a Audible a partir da sua máquina, então usa **Settings > General > Proxy & VPN**. Essa página decide a rota: um proxy, o túnel WireGuard embutido, o seu próprio contêiner de VPN ou uma conexão direta que você confirma estar ciente. Sem nenhuma escolhida, as consultas automáticas ficam bloqueadas e avisam disso. Uma rota escolhida que está fora do ar também bloqueia as consultas. Ela nunca volta para o seu próprio endereço. A conexão direta mostra um aviso de que a Audible vê o seu endereço IP e os livros que o ABM consulta.
 
+Toda fonte manda suas consultas pela conexão escolhida em **Settings > Network** e nunca cai para outra rota. Um servidor self-hosted na sua LAN, e as capas que ele serve, são alcançados direto.
+
 ## Hosted e Self-hosted
 
 Com essas duas, o ABM consulta um servidor Libex e é o servidor que conversa com a Audible. Uma URL self-hosted é verificada antes de ser salva, e uma vazia ou insegura é recusada. Um servidor fora do ar aparece como fonte de metadados indisponível, com o nome dele.
+
+## Quando a fonte não pode ser alcançada
+
+Se a fonte está inalcançável ou recusa o ABM, uma atualização, importação ou sincronização de muitos itens para em vez de falhar livro por livro, e um único timeout só pula aquele item. Você recebe uma notificação por tipo de queda. As mensagens de erro citam a fonte e o motivo real, por exemplo que a VPN está fora do ar.
+
+Quando o Libex pede para o ABM ir mais devagar, uma busca que você está esperando desiste depois de cerca de 10 segundos, e uma tarefa em segundo plano espera até 2 minutos.
 
 ## Qual escolher
 

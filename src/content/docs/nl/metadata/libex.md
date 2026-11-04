@@ -7,6 +7,6 @@ ABM haalt gegevens over boeken, auteurs, series en hoofdstukken op bij **Libex**
 
 Libex: [Broncode](https://github.com/LibexHQ/Libex) · [API-referentie](https://libexdb.com/redoc)
 
-ABM vraagt de openbare Libex-instantie op libexdb.com. Een keuze van bron staat gepland voor een latere release.
+Onder **Settings > Metadata** kies je de bron: Built-in, de gehoste instantie op libexdb.com of je eigen Libex-server. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
 
 Is Libex niet bereikbaar, dan meldt ABM dat, met de naam van de bron erbij. Je kunt boeken nog steeds met de hand toevoegen en importeren. Zie [Problemen oplossen](/nl/troubleshooting/#de-metadatabron-is-niet-bereikbaar).

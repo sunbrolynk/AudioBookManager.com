@@ -50,7 +50,7 @@ Content-Security-Policy-headeren tillater bare coverbilder over HTTPS. Sjekk net
 
 ## Metadatakilden er utilgjengelig
 
-Å legge til, søke, oppdatere og Discover trenger Libex. Får ikke ABM svar, feiler et boksøk med "Libex search failed" og et søk etter forfattere eller serier med "Libex could not be reached; try again shortly", i stedet for å vise en tom liste. Årsaker: Libex er nede, eller ABMs tilkobling når det ikke.
+Å legge til, søke, oppdatere og Discover trenger metadatakilden. Når ABM ikke får svar, nevner feilen kilden og den egentlige årsaken, for eksempel at VPN-en er nede, i stedet for å vise en tom liste. Årsaker: kilden er nede, eller ABMs forbindelse når den ikke. En oppdatering, import eller synk over mange elementer stopper når kilden ikke kan nås eller avviser ABM, med ett varsel per type avbrudd, og et enkelt tidsavbrudd hopper bare over det elementet.
 
 1. Sjekk [ABMs statusside](https://status.audiobookmanager.com) og [Libex sin statusside](https://status.libexdb.com) for å se om det er nede for alle.
 2. Sjekk at containeren kommer ut på internett, og at proxyen under **Settings > General > Proxy** stemmer, hvis du bruker en.

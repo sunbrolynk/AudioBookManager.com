@@ -5,6 +5,12 @@ description: ABM がどのサイドカーファイルと音声タグを、いつ
 
 **Settings > Metadata** では、ABM が本のフォルダとファイルに何を書き込むかを決めます。それらのファイルがどう使われるかは[サイドカーファイル](/ja/using/sidecars/)にあります。
 
+このページの **Save** は 1 つだけです。**Source** は ABM がメタデータをどこから取得するかを決め、その下のセクションは ABM が何を書き込むかを決めます。
+
+## 取得元 (Source)
+
+**Metadata Source** は Built-in(デフォルト)、Hosted (libexdb.com)、Self-hosted のどれかで、Self-hosted では **Server URL** が必要です。**Test** は保存せずに選んだ取得元へ実際にリクエストを送り、**Status** は準備できているかを示し、**Connection** は問い合わせが出ていく経路を表示して **Settings > Network** へのリンクになります。切り替えはすべての問い合わせにすぐ反映されます。[メタデータの取得元を選ぶ](/ja/metadata/choosing-a-source/)を見てください。
+
 ## メタデータファイルの作成
 
 | 設定 | デフォルト | 効果 |
@@ -28,9 +34,9 @@ ffmpeg を使って、音声ファイルそのものにタグを書き込みま�
 
 タグの項目（全部デフォルトでオン）：Title、Artist（著者）、Album Artist（著者）、Album（タイトル／シリーズ）、Genre、Year、Comment（説明）、Narrator（Composer）、Cover Art。
 
-## 今後のリリースで登場
+## ローカルストレージ (Local Storage)
 
-メタデータの取得元の選択と、メタデータライブラリのローカルコピーは、今後のリリースで予定しています。[メタデータは自分で決める](/ja/metadata/control/)を見てください。
+Built-in の取得元では **Local Storage** と **Storage Backups** のセクションが表示されます。これはプレビューで、まだ接続されていません。[メタデータは自分で決める](/ja/metadata/control/)を見てください。
 
 ## 注意点
 

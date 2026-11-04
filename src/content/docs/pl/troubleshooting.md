@@ -50,7 +50,7 @@ Podnieś `MAX_REQUEST_BODY_BYTES`. Reverse proxy też może mieć niższy limit 
 
 ## Źródło metadanych jest niedostępne
 
-Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują Libexa. Gdy ABM nie dostaje odpowiedzi, wyszukiwanie książek kończy się błędem "Libex search failed", a wyszukiwanie autorów lub serii błędem "Libex could not be reached; try again shortly", zamiast pokazywać pustą listę. Przyczyny: Libex nie działa albo połączenie ABM go nie dosięga.
+Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują źródła metadanych. Gdy ABM nie dostaje odpowiedzi, błąd wskazuje źródło i prawdziwy powód, na przykład że VPN nie działa, zamiast pokazywać pustą listę. Przyczyny: źródło nie działa albo połączenie ABM go nie osiąga. Odświeżanie, import lub synchronizacja wielu pozycji zatrzymuje się, gdy źródło jest nieosiągalne albo odrzuca ABM, z jednym powiadomieniem na rodzaj awarii, a pojedynczy timeout pomija tylko tę pozycję.
 
 1. Zajrzyj na [stronę statusu ABM](https://status.audiobookmanager.com) i [stronę statusu Libexa](https://status.libexdb.com), żeby sprawdzić, czy nie działa dla wszystkich.
 2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > General > Proxy** jest poprawne, jeśli z niego korzystasz.

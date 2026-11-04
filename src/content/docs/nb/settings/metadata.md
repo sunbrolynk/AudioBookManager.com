@@ -5,6 +5,12 @@ description: Hvilke sidefiler og lydtagger ABM skriver, og når.
 
 **Settings > Metadata** bestemmer hva ABM skriver i mappen til en bok og i filene. Hvordan disse filene brukes, står i [Sidefiler](/nb/using/sidecars/).
 
+Siden har én **Save**. **Source** bestemmer hvor ABM henter metadataene fra, og seksjonene under avgjør hva ABM skriver.
+
+## Kilde (Source)
+
+**Metadata Source** er Built-in (standard), Hosted (libexdb.com) eller Self-hosted, som trenger en **Server URL**. **Test** sender en ekte forespørsel til den valgte kilden uten å lagre, **Status** sier om den er klar, og **Connection** viser ruten oppslagene går ut på, med lenke til **Settings > Network**. Et bytte gjelder med en gang for alle oppslag. Se [Velge metadatakilde](/nb/metadata/choosing-a-source/).
+
 ## Oppretting av metadatafiler
 
 | Innstilling | Standard | Virkning |
@@ -28,9 +34,9 @@ Bruker ffmpeg til å skrive tagger inn i selve lyden.
 
 Taggfelt, alle på som standard: Title, Artist (forfatter), Album Artist (forfatter), Album (tittel/serie), Genre, Year, Comment (beskrivelse), Narrator (Composer) og Cover Art.
 
-## Kommer i en senere versjon
+## Lokal lagring (Local Storage)
 
-Et valg av metadatakilde og en lokal kopi av metadatabiblioteket er planlagt til en senere versjon. Se [Metadataene dine, din kontroll](/nb/metadata/control/).
+Med Built-in-kilden vises seksjonene **Local Storage** og **Storage Backups**. De er en forhåndsvisning og ikke koblet til ennå. Se [Dine metadata, din kontroll](/nb/metadata/control/).
 
 ## Fallgruver
 

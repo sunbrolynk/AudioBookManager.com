@@ -5,11 +5,7 @@ description: Eingebaut, gehostet oder dein eigener Libex-Server.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Kommt in einem späteren Release]
-Die Wahl der Quelle ist noch in keiner veröffentlichten Version drin. Veröffentlichte Versionen nutzen die öffentliche Libex-Instanz unter libexdb.com und haben dafür keine Einstellung.
-:::
-
-In einem späteren Release hat **Settings > Metadata > Source** die Einstellung **Metadata Source** mit drei Optionen.
+**Settings > Metadata > Source** hat die Einstellung **Metadata Source** mit drei Optionen. Solange du nichts auswählst, gilt Built-in.
 
 | Option | Was sie bedeutet |
 |---|---|
@@ -23,9 +19,17 @@ In einem späteren Release hat **Settings > Metadata > Source** die Einstellung 
 
 Built-in spricht von deinem Rechner aus mit Audible und nutzt deshalb **Settings > General > Proxy & VPN**. Dort wird der Weg festgelegt: ein Proxy, der eingebaute WireGuard-Tunnel, dein eigener VPN-Container oder eine direkte Verbindung, die du bewusst bestätigst. Ist nichts ausgewählt, werden automatische Abfragen blockiert, und das wird auch angezeigt. Ein ausgewählter Weg, der down ist, blockiert Abfragen ebenfalls. Es wird nie auf deine eigene Adresse zurückgefallen. Bei Direct erscheint eine Warnung, dass Audible deine IP-Adresse und die Bücher sieht, die ABM abfragt.
 
+Jede Quelle schickt ihre Abfragen über die Verbindung, die unter **Settings > Network** gewählt ist, und fällt nie auf einen anderen Weg zurück. Ein Self-hosted-Server in deinem LAN und die Cover, die er liefert, werden direkt erreicht.
+
 ## Hosted und Self-hosted
 
 Bei diesen beiden fragt ABM einen Libex-Server, und der Server spricht mit Audible. Eine Self-hosted-URL wird vor dem Speichern geprüft, eine leere oder unsichere wird abgelehnt. Ein Server, der down ist, wird als nicht erreichbare Metadatenquelle gemeldet, mit seinem Namen.
+
+## Wenn die Quelle nicht erreichbar ist
+
+Ist die Quelle nicht erreichbar oder lehnt sie ABM ab, hält ein Aktualisieren, Import oder Sync über viele Einträge an, statt bei jedem Buch zu scheitern, und ein einzelnes Timeout überspringt nur diesen Eintrag. Pro Art von Ausfall bekommst du eine Benachrichtigung. Fehlermeldungen nennen die Quelle und den wahren Grund, zum Beispiel dass das VPN down ist.
+
+Bittet Libex ABM, langsamer zu machen, gibt eine Suche, auf die du wartest, nach etwa 10 Sekunden auf, und eine Hintergrundaufgabe wartet bis zu 2 Minuten.
 
 ## Was du nehmen solltest
 

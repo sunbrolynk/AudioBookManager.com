@@ -5,6 +5,12 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 **Settings > Metadata** 决定 ABM 往书的文件夹和文件里写什么。这些文件怎么用，见 [附属文件](/zh-cn/using/sidecars/)。
 
+这个页面只有一个 **Save**。**Source** 决定 ABM 从哪里获取元数据，下面的各部分决定 ABM 写入什么。
+
+## 来源（Source）
+
+**Metadata Source** 可选 Built-in（默认）、Hosted（libexdb.com）或 Self-hosted，后者需要填 **Server URL**。**Test** 不保存，直接向所选来源发一次真实请求；**Status** 说明它是否就绪；**Connection** 显示查询所走的路线，并链接到 **Settings > Network**。切换会立刻对所有查询生效。见[选择元数据源](/zh-cn/metadata/choosing-a-source/)。
+
 ## 元数据文件生成
 
 | 设置 | 默认值 | 作用 |
@@ -28,9 +34,9 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 标签字段，默认全部开启：Title、Artist (Author)、Album Artist (Author)、Album (Title/Series)、Genre、Year、Comment (Description)、Narrator (Composer) 和 Cover Art。
 
-## 后续版本推出
+## 本地存储（Local Storage）
 
-元数据源的选择，以及元数据库的本地副本，计划在后续版本中提供。见[你的元数据，你说了算](/zh-cn/metadata/control/)。
+使用 Built-in 来源时，会显示 **Local Storage** 和 **Storage Backups** 两部分。它们只是预览，尚未接通。见[你的元数据，你说了算](/zh-cn/metadata/control/)。
 
 ## 注意事项
 

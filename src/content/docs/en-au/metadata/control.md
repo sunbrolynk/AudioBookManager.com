@@ -47,9 +47,7 @@ Tags are yours. Auto tags apply them by rules (genre, narrator, rating, runtime 
 
 Everything ABM learns about a book stays in ABM's own SQLite database in `/config`, including books you later remove. Back that folder up and the record is backed up. Metadata does not depend on the source being reachable once a book is in.
 
-:::caution[Coming in a later release]
-A dedicated **Local Metadata Library** is planned: an opt-in copy of everything ABM has ever looked up, kept even after a book leaves your library, with its own scheduled backups and a SQLite download.
-:::
+The **Local Storage** section on **Settings > Metadata**, shown with the Built-in source, is a preview of an opt-in local copy of everything ABM has looked up. It is not connected yet.
 
 ## Refresh schedules
 

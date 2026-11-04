@@ -5,6 +5,12 @@ description: Které doprovodné soubory a audio tagy ABM zapisuje a kdy.
 
 **Settings > Metadata** rozhoduje, co ABM zapisuje do složky knihy a do jejích souborů. Jak se tyhle soubory používají, popisují [Doprovodné soubory](/cs/using/sidecars/).
 
+Stránka má jedno **Save**. **Source** určuje, odkud ABM bere metadata, a sekce pod ním rozhodují, co ABM zapisuje.
+
+## Zdroj (Source)
+
+**Metadata Source** je Built-in (výchozí), Hosted (libexdb.com) nebo Self-hosted, který potřebuje **Server URL**. **Test** pošle skutečný požadavek na vybraný zdroj bez uložení, **Status** říká, jestli je připravený, a **Connection** ukazuje cestu, kudy dotazy odcházejí, s odkazem na **Settings > Network**. Přepnutí platí hned pro všechny dotazy. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
+
 ## Vytváření souborů s metadaty (Metadata file creation)
 
 | Nastavení | Výchozí | Co dělá |
@@ -28,9 +34,9 @@ Používá ffmpeg k zápisu tagů přímo do zvuku.
 
 Pole tagů, všechna ve výchozím stavu zapnutá: Title, Artist (autor), Album Artist (autor), Album (název/série), Genre, Year, Comment (popis), Narrator (Composer) a Cover Art.
 
-## Přijde v pozdější verzi
+## Místní úložiště (Local Storage)
 
-Výběr zdroje metadat a místní kopie knihovny metadat jsou plánované na pozdější verzi. Viz [Tvoje metadata, tvoje kontrola](/cs/metadata/control/).
+Se zdrojem Built-in se zobrazí sekce **Local Storage** a **Storage Backups**. Jsou to náhled a zatím nejsou připojené. Viz [Tvoje metadata, tvoje kontrola](/cs/metadata/control/).
 
 ## Na co si dát pozor
 

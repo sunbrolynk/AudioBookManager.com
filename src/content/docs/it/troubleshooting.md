@@ -50,7 +50,7 @@ Alza `MAX_REQUEST_BODY_BYTES`. Anche un reverse proxy può imporre un limite pi�
 
 ## La fonte dei metadati non è disponibile
 
-Aggiungere, cercare, aggiornare e Discover hanno bisogno di Libex. Quando ABM non riceve risposta, una ricerca di libri fallisce con "Libex search failed" e una ricerca di autori o serie con "Libex could not be reached; try again shortly", invece di mostrare un elenco vuoto. Cause: Libex è fuori uso, oppure la connessione di ABM non lo raggiunge.
+Aggiunte, ricerche, aggiornamenti e Discover hanno bisogno della fonte di metadati. Quando ABM non riceve risposta, l'errore nomina la fonte e il motivo vero, per esempio che la VPN è giù, invece di mostrare un elenco vuoto. Cause: la fonte è giù, o la connessione di ABM non la raggiunge. Un aggiornamento, un'importazione o una sincronizzazione su molti elementi si ferma quando la fonte non è raggiungibile o rifiuta ABM, con una notifica per tipo di interruzione, e un singolo timeout salta solo quell'elemento.
 
 1. Guarda la [pagina di stato di ABM](https://status.audiobookmanager.com) e la [pagina di stato di Libex](https://status.libexdb.com) per vedere se è fuori uso per tutti.
 2. Controlla che il container raggiunga internet e che il proxy in **Settings > General > Proxy** sia a posto, se ne usi uno.

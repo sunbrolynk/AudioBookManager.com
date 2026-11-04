@@ -5,11 +5,7 @@ description: Vestavěný, hostovaný nebo tvůj vlastní server Libex.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Přijde v pozdější verzi]
-Výběr zdroje zatím není v žádné vydané verzi. Vydané verze používají veřejnou instanci Libexu na libexdb.com a žádné nastavení pro to nemají.
-:::
-
-V pozdější verzi bude mít **Settings > Metadata > Source** nastavení **Metadata Source** se třemi možnostmi.
+**Settings > Metadata > Source** má nastavení **Metadata Source** se třemi možnostmi. Dokud nevybereš, je to Built-in.
 
 | Možnost | Co znamená |
 |---|---|
@@ -23,9 +19,17 @@ V pozdější verzi bude mít **Settings > Metadata > Source** nastavení **Meta
 
 Built-in mluví s Audible z tvého stroje, takže používá **Settings > General > Proxy & VPN**. Ta stránka určuje cestu: proxy, vestavěný tunel WireGuard, tvůj vlastní kontejner s VPN, nebo přímé připojení, které vědomě potvrdíš. Když není vybrané nic, automatické dotazy jsou zablokované a řeknou to. Vybraná cesta, která nefunguje, dotazy zablokuje taky. Nikdy se nepřepne zpátky na tvou vlastní adresu. Přímé připojení ukáže varování, že Audible vidí tvou IP adresu a knihy, které ABM vyhledává.
 
+Každý zdroj posílá dotazy přes připojení vybrané v **Settings > Network** a nikdy nepřepne na jinou cestu. Self-hosted server ve tvé LAN a obálky, které poskytuje, se kontaktují přímo.
+
 ## Hostovaný a vlastní server
 
 U těchhle dvou se ABM ptá serveru Libex a s Audible mluví server. Adresa vlastního serveru se před uložením ověří a prázdná nebo nebezpečná se odmítne. Server, který nefunguje, se hlásí jako nedostupný zdroj metadat i s jeho názvem.
+
+## Když se ke zdroji nejde dostat
+
+Pokud je zdroj nedostupný nebo ABM odmítá, aktualizace, import nebo synchronizace u mnoha položek se zastaví místo selhání kniha po knize a jediný timeout přeskočí jen tu položku. Dostaneš jedno upozornění na každý druh výpadku. Chybová hlášení pojmenují zdroj a skutečný důvod, například že VPN neběží.
+
+Když Libex požádá ABM o zpomalení, hledání, na které čekáš, to po zhruba 10 sekundách vzdá a úloha na pozadí čeká až 2 minuty.
 
 ## Co vybrat
 

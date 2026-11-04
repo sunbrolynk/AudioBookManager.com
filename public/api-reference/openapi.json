@@ -14229,6 +14229,132 @@
         }
       }
     },
+    "/api/settings/metadata/source": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Source",
+        "description": "The source in effect and whether it is ready.",
+        "operationId": "get_source_api_settings_metadata_source_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Save Source",
+        "description": "Save the source and switch every lookup to it.",
+        "operationId": "save_source_api_settings_metadata_source_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/source/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Source",
+        "description": "Try a source without saving it. Built-in makes a real Audible lookup.",
+        "operationId": "test_source_api_settings_metadata_source_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceTestResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Storage Status",
+        "description": "Local metadata storage state; counts are null until storage is enabled.",
+        "operationId": "get_storage_status_api_settings_metadata_storage_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageStatus"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/settings/general/host": {
       "get": {
         "tags": [
@@ -27482,6 +27608,15 @@
         "title": "MediaManagementSettings",
         "description": "Media management settings"
       },
+      "MetadataMode": {
+        "type": "string",
+        "enum": [
+          "builtin",
+          "hosted",
+          "self_hosted"
+        ],
+        "title": "MetadataMode"
+      },
       "MetadataSettings": {
         "properties": {
           "create_on_book_add": {
@@ -27588,6 +27723,188 @@
         "type": "object",
         "title": "MetadataSettings",
         "description": "Settings for automatic metadata file creation and tag writing"
+      },
+      "MetadataSourceChoice": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode"
+        ],
+        "title": "MetadataSourceChoice"
+      },
+      "MetadataSourceStatus": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode",
+            "description": "The source lookups actually use right now"
+          },
+          "ready": {
+            "type": "boolean",
+            "title": "Ready",
+            "description": "Whether that source can answer; not a reachability check"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason",
+            "description": "Why it cannot, when it cannot"
+          },
+          "route": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Route",
+            "description": "The connection Built-in leaves through"
+          },
+          "connection": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Connection",
+            "description": "The saved outbound choice, while Built-in is active"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "ready"
+        ],
+        "title": "MetadataSourceStatus"
+      },
+      "MetadataSourceTestResult": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "latency_ms": {
+            "type": "integer",
+            "title": "Latency Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "latency_ms"
+        ],
+        "title": "MetadataSourceTestResult"
+      },
+      "MetadataStorageStatus": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "size_bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Size Bytes"
+          },
+          "books": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Books"
+          },
+          "authors": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authors"
+          },
+          "series": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series"
+          },
+          "last_backup_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Backup At",
+            "description": "ISO 8601 timestamp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled"
+        ],
+        "title": "MetadataStorageStatus"
       },
       "MirrorPreviewResponse": {
         "properties": {

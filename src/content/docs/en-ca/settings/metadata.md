@@ -5,6 +5,12 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 **Settings > Metadata** decides what ABM writes into a book's folder and its files. How these files are used is on [Sidecar files](/en-ca/using/sidecars/).
 
+The page has one **Save**. **Source** sets where ABM gets its metadata, and the sections below it decide what ABM writes.
+
+## Source
+
+**Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving, **Status** says whether it is ready, and **Connection** shows the route lookups leave through and links to **Settings > Network**. Switching takes effect for every lookup at once. See [Choosing a metadata source](/en-ca/metadata/choosing-a-source/).
+
 ## Metadata file creation
 
 | Setting | Default | Effect |
@@ -28,9 +34,9 @@ Uses ffmpeg to write tags into the audio itself.
 
 Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 
-## Coming in a later release
+## Local Storage
 
-A choice of metadata source and a local copy of the metadata library are planned for a later release. See [Your metadata, your control](/en-ca/metadata/control/).
+With the Built-in source, **Local Storage** and **Storage Backups** sections are shown. They are a preview and are not connected yet. See [Your metadata, your control](/en-ca/metadata/control/).
 
 ## Gotchas
 

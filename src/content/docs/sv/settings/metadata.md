@@ -5,6 +5,12 @@ description: Vilka sidecar-filer och ljudtaggar som ABM skriver, och när.
 
 **Settings > Metadata** bestämmer vad ABM skriver i en boks mapp och i dess filer. Hur filerna används står på [Sidecar-filer](/sv/using/sidecars/).
 
+Sidan har en enda **Save**. **Source** styr var ABM hämtar sin metadata, och sektionerna under avgör vad ABM skriver.
+
+## Källa (Source)
+
+**Metadata Source** är Built-in (standard), Hosted (libexdb.com) eller Self-hosted, som kräver en **Server URL**. **Test** gör en riktig förfrågan till den valda källan utan att spara, **Status** säger om den är redo, och **Connection** visar vägen som uppslagen går ut genom, med en länk till **Settings > Network**. Ett byte gäller direkt för alla uppslag. Se [Välja metadatakälla](/sv/metadata/choosing-a-source/).
+
 ## Skapa metadatafiler (Metadata file creation)
 
 | Inställning | Standard | Effekt |
@@ -28,9 +34,9 @@ Använder ffmpeg för att skriva taggar direkt i ljudet.
 
 Taggfält, alla på som standard: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) och Cover Art.
 
-## Kommer i en senare version
+## Lokal lagring (Local Storage)
 
-Ett val av metadatakälla och en lokal kopia av metadatabiblioteket är planerade till en senare version. Se [Din metadata, din kontroll](/sv/metadata/control/).
+Med Built-in-källan visas sektionerna **Local Storage** och **Storage Backups**. De är en förhandsvisning och inte anslutna än. Se [Din metadata, din kontroll](/sv/metadata/control/).
 
 ## Fallgropar
 

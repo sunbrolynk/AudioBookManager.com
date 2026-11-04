@@ -5,6 +5,12 @@ description: Welke sidecarbestanden en audiotags ABM schrijft, en wanneer.
 
 **Settings > Metadata** bepaalt wat ABM in de map van een boek en in de bestanden zelf schrijft. Hoe die bestanden gebruikt worden, lees je bij [Sidecarbestanden](/nl/using/sidecars/).
 
+De pagina heeft één **Save**. **Source** bepaalt waar ABM zijn metadata vandaan haalt, en de secties eronder bepalen wat ABM schrijft.
+
+## Bron (Source)
+
+**Metadata Source** is Built-in (standaard), Hosted (libexdb.com) of Self-hosted, die een **Server URL** vraagt. **Test** doet een echt verzoek naar de gekozen bron zonder op te slaan, **Status** zegt of die klaar is, en **Connection** toont de route waarlangs opzoekingen vertrekken, met een link naar **Settings > Network**. Wisselen werkt meteen voor alle opzoekingen. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
+
 ## Metadatabestanden aanmaken
 
 | Instelling | Standaard | Wat het doet |
@@ -28,9 +34,9 @@ Gebruikt ffmpeg om tags in de audio zelf te schrijven.
 
 Tagvelden, standaard allemaal aan: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) en Cover Art.
 
-## Komt in een latere release
+## Lokale opslag (Local Storage)
 
-Een keuze van metadatabron en een lokale kopie van de metadatabibliotheek staan gepland voor een latere release. Zie [Jouw metadata, jouw controle](/nl/metadata/control/).
+Met de Built-in-bron verschijnen de secties **Local Storage** en **Storage Backups**. Ze zijn een voorproefje en nog niet aangesloten. Zie [Jouw metadata, jouw regie](/nl/metadata/control/).
 
 ## Valkuilen
 

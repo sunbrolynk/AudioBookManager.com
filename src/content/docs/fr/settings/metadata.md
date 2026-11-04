@@ -5,6 +5,12 @@ description: Quels fichiers annexes et quels tags audio ABM écrit, et quand.
 
 **Settings > Metadata** décide de ce qu'ABM écrit dans le dossier d'un livre et dans ses fichiers. La façon dont ces fichiers sont utilisés est expliquée dans [Fichiers annexes](/fr/using/sidecars/).
 
+La page n'a qu'un seul **Save**. **Source** définit d'où ABM tire ses métadonnées, et les sections en dessous décident de ce qu'ABM écrit.
+
+## Source
+
+**Metadata Source** vaut Built-in (par défaut), Hosted (libexdb.com) ou Self-hosted, qui demande une **Server URL**. **Test** envoie une vraie requête à la source choisie sans enregistrer, **Status** dit si elle est prête, et **Connection** montre la route par laquelle sortent les requêtes, avec un lien vers **Settings > Network**. Un changement vaut tout de suite pour toutes les requêtes. Voir [Choisir une source de métadonnées](/fr/metadata/choosing-a-source/).
+
 ## Création des fichiers de métadonnées
 
 | Réglage | Par défaut | Effet |
@@ -28,9 +34,9 @@ Utilise ffmpeg pour écrire les tags dans l'audio lui-même.
 
 Champs de tag, tous activés par défaut : Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) et Cover Art.
 
-## Prévu pour une version ultérieure
+## Stockage local (Local Storage)
 
-Un choix de source de métadonnées et une copie locale de la bibliothèque de métadonnées sont prévus pour une version ultérieure. Voir [Tes métadonnées, ton contrôle](/fr/metadata/control/).
+Avec la source Built-in, les sections **Local Storage** et **Storage Backups** s'affichent. Ce n'est qu'un aperçu, pas encore branché. Voir [Tes métadonnées, ton contrôle](/fr/metadata/control/).
 
 ## Pièges à éviter
 
