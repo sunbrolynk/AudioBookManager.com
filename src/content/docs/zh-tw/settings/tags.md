@@ -3,6 +3,8 @@ title: 標籤
 description: 標籤和自動標籤規則。
 ---
 
+這些是 ABM 的標籤，不是儲存在音訊檔案裡的資訊。
+
 **Settings > Tags** 管理標籤和 **Auto Tagging**。
 
 ## 標籤

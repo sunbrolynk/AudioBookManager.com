@@ -3,6 +3,8 @@ title: Tags
 description: Tags and auto-tagging rules.
 ---
 
+These are ABM's labels, not the details stored in your audio files.
+
 **Settings > Tags** manages tags and **Auto Tagging**.
 
 ## Tags

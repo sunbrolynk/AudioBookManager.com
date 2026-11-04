@@ -3,6 +3,8 @@ title: 태그
 description: 태그와 자동 태그 규칙이에요.
 ---
 
+여기 있는 건 ABM의 태그이지, 오디오 파일에 저장된 정보가 아니에요.
+
 **Settings > Tags**에서 태그와 **Auto Tagging**을 관리해요.
 
 ## 태그

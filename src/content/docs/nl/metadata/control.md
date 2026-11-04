@@ -54,4 +54,4 @@ De sectie **Local Storage** onder **Settings > Metadata**, zichtbaar met de Buil
 - Discover heeft een eigen schema. Zie [Discover-instellingen](/nl/settings/discover/).
 - De Audible-bibliotheek heeft een eigen sync-schema. Zie [Audible-instellingen](/nl/settings/audible/).
 - Een bibliotheekscan kan elke N uur draaien en bij bestandswijzigingen. Zie [Mediabeheer](/nl/settings/media-management/).
-- Of sidecars en tags bij een vernieuwing geschreven worden, regel je met **Create on Refresh** en **Write Tags on Refresh**.
+- Of sidecars en tags bij een vernieuwing geschreven worden, regel je met **Create on Refresh** en **Write Audio Tags on Refresh**.

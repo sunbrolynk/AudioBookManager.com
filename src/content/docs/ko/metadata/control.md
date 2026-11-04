@@ -54,4 +54,4 @@ Built-in 소스에서 보이는 **Settings > Metadata**의 **Local Storage** 섹
 - Discover는 일정이 따로 있어요. [Discover 설정](/ko/settings/discover/)을 보세요.
 - Audible 라이브러리도 동기화 일정이 따로 있어요. [Audible 설정](/ko/settings/audible/)을 보세요.
 - 라이브러리 스캔은 N시간마다, 그리고 파일이 바뀔 때 돌릴 수 있어요. [미디어 관리](/ko/settings/media-management/)를 보세요.
-- 새로 고침 때 사이드카와 태그를 쓸지는 **Create on Refresh**와 **Write Tags on Refresh**로 정해요.
+- 새로 고침 때 사이드카와 태그를 쓸지는 **Create on Refresh**와 **Write Audio Tags on Refresh**로 정해요.

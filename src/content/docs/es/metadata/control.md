@@ -54,4 +54,4 @@ La sección **Local Storage** de **Settings > Metadata**, que sale con la fuente
 - Discover tiene su propia programación. Consulta [Ajustes de Discover](/es/settings/discover/).
 - La biblioteca de Audible tiene su propia programación de sincronización. Consulta [Ajustes de Audible](/es/settings/audible/).
 - Un escaneo de la biblioteca puede ejecutarse cada N horas y cuando cambian los archivos. Consulta [Media Management](/es/settings/media-management/).
-- La escritura de archivos auxiliares y etiquetas al actualizar se controla con **Create on Refresh** y **Write Tags on Refresh**.
+- La escritura de archivos auxiliares y etiquetas al actualizar se controla con **Create on Refresh** y **Write Audio Tags on Refresh**.

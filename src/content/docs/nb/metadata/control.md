@@ -54,4 +54,4 @@ Seksjonen **Local Storage** under **Settings > Metadata**, som vises med Built-i
 - Discover har sin egen tidsplan. Se [Discover-innstillinger](/nb/settings/discover/).
 - Audible-biblioteket har sin egen synkroniseringsplan. Se [Audible-innstillinger](/nb/settings/audible/).
 - En bibliotekskanning kan kjøre hver N. time og når filer endres. Se [Mediehåndtering](/nb/settings/media-management/).
-- Skriving av sidefiler og tagger ved oppdatering styres av **Create on Refresh** og **Write Tags on Refresh**.
+- Skriving av sidefiler og tagger ved oppdatering styres av **Create on Refresh** og **Write Audio Tags on Refresh**.

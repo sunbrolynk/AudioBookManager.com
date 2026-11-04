@@ -54,4 +54,4 @@ La sezione **Local Storage** di **Settings > Metadata**, mostrata con la fonte B
 - Discover ha la sua pianificazione. Vedi [Impostazioni di Discover](/it/settings/discover/).
 - La libreria Audible ha la sua pianificazione di sincronizzazione. Vedi [Impostazioni Audible](/it/settings/audible/).
 - Una scansione della libreria può girare ogni N ore e quando cambiano i file. Vedi [Media Management](/it/settings/media-management/).
-- La scrittura di sidecar e tag durante l'aggiornamento è controllata da **Create on Refresh** e **Write Tags on Refresh**.
+- La scrittura di sidecar e tag durante l'aggiornamento è controllata da **Create on Refresh** e **Write Audio Tags on Refresh**.

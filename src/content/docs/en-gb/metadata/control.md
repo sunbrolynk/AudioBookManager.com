@@ -54,4 +54,4 @@ The **Local Storage** section on **Settings > Metadata**, shown with the Built-i
 - Discover has its own schedule. See [Discover settings](/en-gb/settings/discover/).
 - The Audible library has its own sync schedule. See [Audible settings](/en-gb/settings/audible/).
 - A library scan can run every N hours and on file changes. See [Media Management](/en-gb/settings/media-management/).
-- Writing sidecars and tags on refresh is controlled by **Create on Refresh** and **Write Tags on Refresh**.
+- Writing sidecars and tags on refresh is controlled by **Create on Refresh** and **Write Audio Tags on Refresh**.

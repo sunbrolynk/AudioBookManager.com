@@ -54,4 +54,4 @@ Sekce **Local Storage** v **Settings > Metadata**, zobrazená se zdrojem Built-i
 - Discover má vlastní plán. Viz [Nastavení Discover](/cs/settings/discover/).
 - Knihovna Audible má vlastní plán synchronizace. Viz [Nastavení Audible](/cs/settings/audible/).
 - Skenování knihovny se může spouštět každých N hodin a při změnách souborů. Viz [Správa médií](/cs/settings/media-management/).
-- Zápis doprovodných souborů a tagů při obnově řídí **Create on Refresh** a **Write Tags on Refresh**.
+- Zápis doprovodných souborů a tagů při obnově řídí **Create on Refresh** a **Write Audio Tags on Refresh**.

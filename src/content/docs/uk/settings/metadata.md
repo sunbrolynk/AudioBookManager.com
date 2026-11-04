@@ -22,13 +22,13 @@ description: Які супровідні файли та аудіотеги за
 
 ## Запис тегів в аудіофайли
 
-Використовує ffmpeg, щоб записувати теги просто в аудіо.
+Записує аудіотеги безпосередньо в аудіофайли.
 
 | Параметр | За замовчуванням |
 |---|---|
 | Write Audio Tags | вимкнено |
-| Write Tags on Import | увімкнено, щойно ввімкнено запис тегів |
-| Write Tags on Refresh | вимкнено |
+| Write Audio Tags on Import | увімкнено, щойно ввімкнено запис тегів |
+| Write Audio Tags on Refresh | вимкнено |
 
 Поля тегів, усі за замовчуванням увімкнені: Title, Artist (автор), Album Artist (автор), Album (назва/серія), Genre, Year, Comment (опис), Narrator (Composer) та Cover Art.
 

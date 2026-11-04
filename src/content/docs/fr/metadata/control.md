@@ -54,4 +54,4 @@ La section **Local Storage** de **Settings > Metadata**, affichée avec la sourc
 - Discover a son propre planning. Voir [Réglages de Discover](/fr/settings/discover/).
 - La bibliothèque Audible a son propre planning de synchronisation. Voir [Réglages Audible](/fr/settings/audible/).
 - Un scan de la bibliothèque peut tourner toutes les N heures et lors des changements de fichiers. Voir [Gestion des médias](/fr/settings/media-management/).
-- L'écriture des fichiers annexes et des tags lors d'un rafraîchissement est contrôlée par **Create on Refresh** et **Write Tags on Refresh**.
+- L'écriture des fichiers annexes et des tags lors d'un rafraîchissement est contrôlée par **Create on Refresh** et **Write Audio Tags on Refresh**.

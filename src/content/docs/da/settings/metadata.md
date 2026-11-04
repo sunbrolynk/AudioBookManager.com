@@ -22,13 +22,13 @@ Filer, der oprettes: `cover.jpg` (til), `title.opf` (til, kompatibel med Audiobo
 
 ## Skrivning af tags i lydfiler
 
-Bruger ffmpeg til at skrive tags ind i selve lyden.
+Skriver audio-tags ind i selve lydfilerne.
 
 | Indstilling | Standard |
 |---|---|
 | Write Audio Tags | fra |
-| Write Tags on Import | til, når skrivning af tags er slået til |
-| Write Tags on Refresh | fra |
+| Write Audio Tags on Import | til, når skrivning af tags er slået til |
+| Write Audio Tags on Refresh | fra |
 
 Tagfelter, alle slået til som standard: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) og Cover Art.
 
