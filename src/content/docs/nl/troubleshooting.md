@@ -53,7 +53,7 @@ Verhoog `MAX_REQUEST_BODY_BYTES`. Een reverse proxy kan ook een lagere limiet he
 Toevoegen, zoeken, vernieuwen en Discover hebben de metadatabron nodig. Krijgt ABM geen antwoord, dan noemt de fout de bron en de echte reden, bijvoorbeeld dat de VPN uit is, in plaats van een lege lijst. Oorzaken: de bron ligt eruit, of de verbinding van ABM bereikt hem niet. Een vernieuwing, import of sync over veel items stopt als de bron onbereikbaar is of ABM weigert, met één melding per soort storing, en één time-out slaat alleen dat item over.
 
 1. Kijk op de [ABM-statuspagina](https://status.audiobookmanager.com) en de [Libex-statuspagina](https://status.libexdb.com) of het voor iedereen stuk is.
-2. Controleer of de container het internet op kan, en of de proxy onder **Settings > General > Proxy** klopt als je er een gebruikt.
+2. Controleer of de container het internet op kan, en of de proxy onder **Settings > Network** klopt als je er een gebruikt.
 3. Probeer het na een minuut opnieuw.
 4. Intussen kun je boeken gewoon met de hand toevoegen en importeren.
 

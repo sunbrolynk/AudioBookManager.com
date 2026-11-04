@@ -6,6 +6,7 @@ description: Bakgrunnsarbeid, tidsplaner og logger.
 **System > Tasks** viser alt ABM gjør i bakgrunnen: bibliotekskanninger, oppdateringer, importer, søk, nedlastinger, synkroniseringer, sikkerhetskopier. Hver rad viser tilstanden (venter, kjører, fullført, feilet), fremdrift, resultat og en loggknapp.
 
 - En oppgave som ble fullført med oppføringer i feillista, vises som **Partial**. Utvid den for å se hvert element som ble hoppet over, og hvorfor.
+- En oppgave som ble ferdig med noe hoppet over, viser advarslene sine under problemene, så du ser hva som ble hoppet over og hvorfor.
 - En oppgave med et nytt forsøk på vei blir stående som ventende til forsøkene er brukt opp. Forsøksnummeret vises.
 - **Clear completed tasks older than 24 hours** rydder i lista. Gamle oppgaver ryddes også automatisk (30 dager som standard).
 - Planlagte kjøringer som ikke gjorde noe, vises her, men ikke i [Aktivitetsloggen](/nb/system/activity-log/).

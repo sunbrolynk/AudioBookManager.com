@@ -6,6 +6,7 @@ description: Trabajo en segundo plano, programaciones y registros.
 **System > Tasks** muestra todo lo que ABM hace en segundo plano: escaneos de la biblioteca, actualizaciones, importaciones, búsquedas, descargas, sincronizaciones y copias de seguridad. Cada fila muestra su estado (en espera, en curso, completada, fallida), el progreso, el resultado y un botón de registro.
 
 - Una tarea que terminó con entradas en su lista de errores aparece como **Partial**. Despliégala para ver cada elemento omitido y el motivo.
+- Una tarea que terminó con algo omitido enumera sus avisos bajo sus incidencias, así ves qué se omitió y por qué.
 - Una tarea con un reintento pendiente sigue en espera hasta que se agotan los reintentos. Se muestra el número de intento.
 - **Clear completed tasks older than 24 hours** limpia la lista. Las tareas antiguas también se limpian automáticamente (30 días por defecto).
 - Las ejecuciones programadas que no hicieron nada aparecen aquí pero no en el [registro de actividad](/es/system/activity-log/).

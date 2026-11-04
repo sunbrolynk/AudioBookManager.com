@@ -5,8 +5,6 @@ description: ABM이 어떤 사이드카 파일과 오디오 태그를 언제 쓰
 
 **Settings > Metadata**에서 ABM이 책 폴더와 파일에 무엇을 쓸지 정해요. 이 파일들이 어떻게 쓰이는지는 [사이드카 파일](/ko/using/sidecars/)에 있어요.
 
-이 페이지의 **Save**는 하나뿐입니다. **Source**는 ABM이 메타데이터를 어디서 가져올지 정하고, 그 아래 섹션들은 ABM이 무엇을 기록할지 정합니다.
-
 ## 소스 (Source)
 
 **Metadata Source**는 Built-in(기본값), Hosted (libexdb.com), Self-hosted 중 하나이며, Self-hosted는 **Server URL**이 필요합니다. **Test**는 저장하지 않고 선택한 소스에 실제 요청을 보내고, **Status**는 준비됐는지 알려 주며, **Connection**은 조회가 나가는 경로를 보여 주고 **Settings > Network**로 연결됩니다. 바꾸면 모든 조회에 바로 적용됩니다. [메타데이터 소스 고르기](/ko/metadata/choosing-a-source/)을 보세요.
@@ -42,3 +40,4 @@ Built-in 소스에서는 **Local Storage**와 **Storage Backups** 섹션이 보�
 
 - 태그 쓰기는 오디오 파일을 바꿔요. Audiobookshelf는 파일이 수정됐다고 볼 거예요.
 - 태그를 쓰는 중에 메타데이터나 표지를 못 가져오면, 실패하는 대신 경고를 돌려줘요.
+- 연결이 거부해서 표지를 넣지 못했을 때는 그냥 성공이 아니라 책 페이지와 편집 대화상자에 경고가 나와요.

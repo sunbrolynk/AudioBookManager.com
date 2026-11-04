@@ -5,8 +5,6 @@ description: Welke sidecarbestanden en audiotags ABM schrijft, en wanneer.
 
 **Settings > Metadata** bepaalt wat ABM in de map van een boek en in de bestanden zelf schrijft. Hoe die bestanden gebruikt worden, lees je bij [Sidecarbestanden](/nl/using/sidecars/).
 
-De pagina heeft één **Save**. **Source** bepaalt waar ABM zijn metadata vandaan haalt, en de secties eronder bepalen wat ABM schrijft.
-
 ## Bron (Source)
 
 **Metadata Source** is Built-in (standaard), Hosted (libexdb.com) of Self-hosted, die een **Server URL** vraagt. **Test** doet een echt verzoek naar de gekozen bron zonder op te slaan, **Status** zegt of die klaar is, en **Connection** toont de route waarlangs opzoekingen vertrekken, met een link naar **Settings > Network**. Wisselen werkt meteen voor alle opzoekingen. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ Met de Built-in-bron verschijnen de secties **Local Storage** en **Storage Backu
 
 - Tags schrijven verandert de audiobestanden. Audiobookshelf ziet ze dan als gewijzigd.
 - Kan de metadata of een cover tijdens het schrijven van tags niet opgehaald worden, dan geeft de actie waarschuwingen in plaats van te mislukken.
+- Als een cover niet kon worden ingebed omdat de verbinding hem weigerde, tonen de boekpagina en het bewerkvenster een waarschuwing in plaats van gewoon succes.

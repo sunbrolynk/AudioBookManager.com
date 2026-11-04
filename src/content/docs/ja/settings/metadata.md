@@ -5,8 +5,6 @@ description: ABM がどのサイドカーファイルと音声タグを、いつ
 
 **Settings > Metadata** では、ABM が本のフォルダとファイルに何を書き込むかを決めます。それらのファイルがどう使われるかは[サイドカーファイル](/ja/using/sidecars/)にあります。
 
-このページの **Save** は 1 つだけです。**Source** は ABM がメタデータをどこから取得するかを決め、その下のセクションは ABM が何を書き込むかを決めます。
-
 ## 取得元 (Source)
 
 **Metadata Source** は Built-in(デフォルト)、Hosted (libexdb.com)、Self-hosted のどれかで、Self-hosted では **Server URL** が必要です。**Test** は保存せずに選んだ取得元へ実際にリクエストを送り、**Status** は準備できているかを示し、**Connection** は問い合わせが出ていく経路を表示して **Settings > Network** へのリンクになります。切り替えはすべての問い合わせにすぐ反映されます。[メタデータの取得元を選ぶ](/ja/metadata/choosing-a-source/)を見てください。
@@ -42,3 +40,4 @@ Built-in の取得元では **Local Storage** と **Storage Backups** のセク�
 
 - タグを書き込むと音声ファイルが変わります。Audiobookshelf からは変更されたファイルとして見えます。
 - タグの書き込み中にメタデータや表紙を取得できなかった場合、呼び出しは失敗せずに警告を返します。
+- 接続に拒否されてカバーを埋め込めなかったときは、ただの成功ではなく、本のページと編集ダイアログに警告が表示されます。

@@ -3,7 +3,7 @@ title: Generelt
 description: Vert, sikkerhet, proxy, logging og sikkerhetskopier.
 ---
 
-**Settings > General** har seksjoner for Host, Security, Proxy, Logging og Backups. Security har [sin egen side](/nb/settings/security/).
+**Settings > General** har seksjoner for Host, Security, Logging og Backups. Security har [sin egen side](/nb/settings/security/).
 
 ## Vert (Host)
 

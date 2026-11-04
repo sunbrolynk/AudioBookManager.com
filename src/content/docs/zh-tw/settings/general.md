@@ -3,7 +3,7 @@ title: 一般
 description: 主機、安全性、代理、記錄和備份。
 ---
 
-**Settings > General** 有 Host、Security、Proxy、Logging 和 Backups 幾個區塊。Security 有[專屬頁面](/zh-tw/settings/security/)。
+**Settings > General** 有 Host、Security、Logging 和 Backups 幾個區塊。Security 有[專屬頁面](/zh-tw/settings/security/)。
 
 ## 主機（Host）
 

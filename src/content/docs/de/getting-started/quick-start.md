@@ -11,7 +11,7 @@ Beim ersten Besuch legst du einen Login an. Bis das erledigt ist, lehnt ABM Anfr
 
 ## 2. Festlegen, wie ABM ins Internet kommt
 
-Unter **Settings > General** gibt es den Abschnitt **Proxy**. Stell dort einen Proxy ein, wenn ABM über einen ins Internet muss. Kommt ABM direkt ins Internet, überspring das.
+Unter **Settings > [Network](/de/settings/network/)** legst du fest, wie ABM ins Internet kommt: ein Proxy, ein WireGuard-Tunnel oder Direct. Nichts geht raus, bis du eins gewählt hast.
 
 ## 3. Einen Root-Ordner anlegen
 

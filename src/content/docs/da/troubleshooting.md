@@ -53,7 +53,7 @@ Hæv `MAX_REQUEST_BODY_BYTES`. En reverse proxy kan også have en lavere grænse
 Tilføjelse, søgning, opdatering og Discover har brug for metadatakilden. Når ABM ikke får svar, nævner fejlen kilden og den virkelige årsag, for eksempel at VPN'en er nede, i stedet for at vise en tom liste. Årsager: kilden er nede, eller ABM's forbindelse når den ikke. En opdatering, import eller synk over mange poster stopper, når kilden ikke kan nås eller afviser ABM, med én notifikation pr. slags afbrydelse, og en enkelt timeout springer kun den post over.
 
 1. Se [ABM's statusside](https://status.audiobookmanager.com) og [Libex' statusside](https://status.libexdb.com) for at se, om det er nede for alle.
-2. Tjek, at containeren kan nå internettet, og at proxyen under **Settings > General > Proxy** er rigtig, hvis du bruger en.
+2. Tjek, at containeren kan nå internettet, og at proxyen under **Settings > Network** er rigtig, hvis du bruger en.
 3. Prøv igen efter et minut.
 4. I mellemtiden kan du stadig tilføje og importere bøger i hånden.
 

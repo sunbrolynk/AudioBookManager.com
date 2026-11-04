@@ -11,7 +11,7 @@ Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset. Siihen asti ABM 
 
 ## 2. Valitse, miten ABM pääsee internetiin
 
-Kohdassa **Settings > General** on **Proxy**-osio. Aseta siellä välityspalvelin, jos ABM:n pitää kulkea sellaisen kautta päästäkseen internetiin. Jos ABM pääsee internetiin suoraan, ohita tämä.
+Kohdassa **Settings > [Network](/fi/settings/network/)** valitset, miten ABM pääsee internetiin: välityspalvelin, WireGuard-tunneli tai Direct. Mitään ei lähde ulos, ennen kuin olet valinnut.
 
 ## 3. Lisää juurikansio
 

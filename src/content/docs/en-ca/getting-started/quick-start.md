@@ -11,7 +11,7 @@ The first visit walks you through creating a login. Until you do, ABM refuses re
 
 ## 2. Choose how ABM reaches the internet
 
-Under **Settings > General** there is a **Proxy** section. Set a proxy there if ABM has to go through one to reach the internet. Skip it if ABM can reach the internet directly.
+Under **Settings > [Network](/en-ca/settings/network/)**, choose how ABM reaches the internet: a proxy, a WireGuard tunnel or Direct. Nothing goes out until you choose one.
 
 ## 3. Add a root folder
 

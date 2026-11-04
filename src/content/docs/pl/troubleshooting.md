@@ -53,7 +53,7 @@ Podnieś `MAX_REQUEST_BODY_BYTES`. Reverse proxy też może mieć niższy limit 
 Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują źródła metadanych. Gdy ABM nie dostaje odpowiedzi, błąd wskazuje źródło i prawdziwy powód, na przykład że VPN nie działa, zamiast pokazywać pustą listę. Przyczyny: źródło nie działa albo połączenie ABM go nie osiąga. Odświeżanie, import lub synchronizacja wielu pozycji zatrzymuje się, gdy źródło jest nieosiągalne albo odrzuca ABM, z jednym powiadomieniem na rodzaj awarii, a pojedynczy timeout pomija tylko tę pozycję.
 
 1. Zajrzyj na [stronę statusu ABM](https://status.audiobookmanager.com) i [stronę statusu Libexa](https://status.libexdb.com), żeby sprawdzić, czy nie działa dla wszystkich.
-2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > General > Proxy** jest poprawne, jeśli z niego korzystasz.
+2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > Network** jest poprawne, jeśli z niego korzystasz.
 3. Spróbuj ponownie po minucie.
 4. W międzyczasie nadal możesz dodawać i importować książki ręcznie.
 

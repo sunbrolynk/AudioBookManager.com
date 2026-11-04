@@ -11,7 +11,7 @@ Första gången guidas du genom att skapa en inloggning. Tills du har gjort det 
 
 ## 2. Välj hur ABM når internet
 
-Under **Settings > General** finns sektionen **Proxy**. Ställ in en proxy där om ABM måste gå via en för att nå internet. Når ABM internet direkt hoppar du över det här.
+Under **Settings > [Network](/sv/settings/network/)** väljer du hur ABM når internet: en proxy, en WireGuard-tunnel eller Direct. Inget går ut förrän du har valt.
 
 ## 3. Lägg till en rotmapp
 

@@ -5,8 +5,6 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 **Settings > Metadata** decides what ABM writes into a book's folder and its files. How these files are used is on [Sidecar files](/en-au/using/sidecars/).
 
-The page has one **Save**. **Source** sets where ABM gets its metadata, and the sections below it decide what ABM writes.
-
 ## Source
 
 **Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving, **Status** says whether it is ready, and **Connection** shows the route lookups leave through and links to **Settings > Network**. Switching takes effect for every lookup at once. See [Choosing a metadata source](/en-au/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ With the Built-in source, **Local Storage** and **Storage Backups** sections are
 
 - Tag writing changes the audio files. Audiobookshelf will see them as modified.
 - If metadata or a cover cannot be fetched during tag writing, the call returns warnings instead of failing.
+- When a cover could not be embedded because the connection refused it, the book page and the edit dialog show a warning instead of plain success.

@@ -5,8 +5,6 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 **Settings > Metadata** 决定 ABM 往书的文件夹和文件里写什么。这些文件怎么用，见 [附属文件](/zh-cn/using/sidecars/)。
 
-这个页面只有一个 **Save**。**Source** 决定 ABM 从哪里获取元数据，下面的各部分决定 ABM 写入什么。
-
 ## 来源（Source）
 
 **Metadata Source** 可选 Built-in（默认）、Hosted（libexdb.com）或 Self-hosted，后者需要填 **Server URL**。**Test** 不保存，直接向所选来源发一次真实请求；**Status** 说明它是否就绪；**Connection** 显示查询所走的路线，并链接到 **Settings > Network**。切换会立刻对所有查询生效。见[选择元数据源](/zh-cn/metadata/choosing-a-source/)。
@@ -42,3 +40,4 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 - 写入标签会修改音频文件，Audiobookshelf 会把它们视为已修改。
 - 如果写标签时拿不到元数据或封面，调用会返回警告，而不是直接失败。
+- 因为连接拒绝而无法嵌入封面时，书籍页面和编辑对话框会显示警告，而不是单纯的成功。

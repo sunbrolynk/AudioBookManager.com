@@ -5,8 +5,6 @@ description: Jakie pliki sidecar i tagi audio ABM zapisuje, i kiedy.
 
 **Settings > Metadata** decyduje, co ABM zapisuje do folderu książki i do jej plików. Jak te pliki są używane, opisuje strona [Pliki sidecar](/pl/using/sidecars/).
 
-Strona ma jeden **Save**. **Source** określa, skąd ABM bierze metadane, a sekcje pod nim decydują, co ABM zapisuje.
-
 ## Źródło (Source)
 
 **Metadata Source** to Built-in (domyślnie), Hosted (libexdb.com) lub Self-hosted, który wymaga **Server URL**. **Test** wysyła prawdziwe zapytanie do wybranego źródła bez zapisywania, **Status** mówi, czy jest gotowe, a **Connection** pokazuje trasę, którą wychodzą zapytania, z linkiem do **Settings > Network**. Zmiana działa od razu dla wszystkich zapytań. Zobacz [Wybór źródła metadanych](/pl/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ Przy źródle Built-in widać sekcje **Local Storage** i **Storage Backups**. To
 
 - Zapisywanie tagów zmienia pliki audio. Audiobookshelf zobaczy je jako zmodyfikowane.
 - Jeśli podczas zapisywania tagów nie da się pobrać metadanych albo okładki, wywołanie zwraca ostrzeżenia zamiast kończyć się błędem.
+- Gdy nie dało się osadzić okładki, bo połączenie ją odrzuciło, strona książki i okno edycji pokazują ostrzeżenie zamiast zwykłego sukcesu.

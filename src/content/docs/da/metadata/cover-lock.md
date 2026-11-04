@@ -22,4 +22,4 @@ Bogens cover kan nulstilles til det automatiske, hvilket låser det op. Derefter
 ## Faldgruber
 
 - Låsen gælder kun coveret. Titel, forfatter og resten bliver stadig opdateret.
-- Omslag hentes via din proxy, hvis du har sat en op under **Settings > General > Proxy**.
+- Omslag hentes via din proxy, hvis du har sat en op under **Settings > Network**.

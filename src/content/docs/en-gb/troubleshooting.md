@@ -65,7 +65,7 @@ Raise `MAX_REQUEST_BODY_BYTES`. A reverse proxy can also enforce a lower limit a
 Adds, searches, refreshes and Discover need the metadata source. When ABM can't get an answer, the error names the source and the real reason, for example that the VPN is down, instead of showing an empty list. Causes: the source is down, or ABM's connection can't reach it. A refresh, import or sync over many items stops when the source can't be reached or refuses ABM, with one notification per kind of outage, and a single timeout only skips that item.
 
 1. Check the [ABM status page](https://status.audiobookmanager.com) and the [Libex status page](https://status.libexdb.com) to see whether it is down for everyone.
-2. Check that the container can reach the internet, and that the proxy under **Settings > General > Proxy** is right if you use one.
+2. Check that the container can reach the internet, and that the proxy under **Settings > Network** is right if you use one.
 3. Try again after a minute.
 4. You can still add and import books by hand meanwhile.
 

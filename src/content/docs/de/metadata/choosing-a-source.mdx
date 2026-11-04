@@ -17,7 +17,7 @@ import { Icon } from '@astrojs/starlight/components';
 
 ## Built-in und die ausgehende Verbindung
 
-Built-in spricht von deinem Rechner aus mit Audible und nutzt deshalb **Settings > General > Proxy & VPN**. Dort wird der Weg festgelegt: ein Proxy, der eingebaute WireGuard-Tunnel, dein eigener VPN-Container oder eine direkte Verbindung, die du bewusst bestätigst. Ist nichts ausgewählt, werden automatische Abfragen blockiert, und das wird auch angezeigt. Ein ausgewählter Weg, der down ist, blockiert Abfragen ebenfalls. Es wird nie auf deine eigene Adresse zurückgefallen. Bei Direct erscheint eine Warnung, dass Audible deine IP-Adresse und die Bücher sieht, die ABM abfragt.
+Built-in spricht von deinem Rechner aus mit Audible und nutzt deshalb **Settings > Network**. Dort wird der Weg festgelegt: ein Proxy, der eingebaute WireGuard-Tunnel, dein eigener VPN-Container oder eine direkte Verbindung, die du bewusst bestätigst. Ist nichts ausgewählt, werden automatische Abfragen blockiert, und das wird auch angezeigt. Ein ausgewählter Weg, der down ist, blockiert Abfragen ebenfalls. Es wird nie auf deine eigene Adresse zurückgefallen. Bei Direct erscheint eine Warnung, dass Audible deine IP-Adresse und die Bücher sieht, die ABM abfragt.
 
 Jede Quelle schickt ihre Abfragen über die Verbindung, die unter **Settings > Network** gewählt ist, und fällt nie auf einen anderen Weg zurück. Ein Self-hosted-Server in deinem LAN und die Cover, die er liefert, werden direkt erreicht.
 

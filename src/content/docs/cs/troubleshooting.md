@@ -53,7 +53,7 @@ Zvyš `MAX_REQUEST_BODY_BYTES`. Nižší limit může vynucovat i reverzní prox
 Přidávání, hledání, aktualizace a Discover potřebují zdroj metadat. Když ABM nedostane odpověď, chyba pojmenuje zdroj a skutečný důvod, například že VPN neběží, místo prázdného seznamu. Příčiny: zdroj je mimo provoz, nebo se k němu připojení ABM nedostane. Aktualizace, import nebo synchronizace u mnoha položek se zastaví, když je zdroj nedostupný nebo ABM odmítá, s jedním upozorněním na druh výpadku, a jediný timeout přeskočí jen tu položku.
 
 1. Podívej se na [stavovou stránku ABM](https://status.audiobookmanager.com) a [stavovou stránku Libexu](https://status.libexdb.com), jestli to nefunguje pro všechny.
-2. Zkontroluj, že kontejner se dostane na internet a že proxy v **Settings > General > Proxy** je správně, pokud nějakou používáš.
+2. Zkontroluj, že kontejner se dostane na internet a že proxy v **Settings > Network** je správně, pokud nějakou používáš.
 3. Za minutu to zkus znovu.
 4. Mezitím můžeš knihy pořád přidávat a importovat ručně.
 

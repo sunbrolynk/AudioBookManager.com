@@ -11,7 +11,7 @@ Første gang du åpner den, blir du guidet gjennom å lage en innlogging. Til du
 
 ## 2. Velg hvordan ABM kommer seg ut på internett
 
-Under **Settings > General** finner du en **Proxy**-seksjon. Sett opp en proxy der hvis ABM må gå gjennom en for å nå internett. Når ABM kommer rett ut på nettet, kan du hoppe over dette.
+Under **Settings > [Network](/nb/settings/network/)** velger du hvordan ABM kommer seg på internett: en proxy, en WireGuard-tunnel eller Direct. Ingenting går ut før du har valgt.
 
 ## 3. Legg til en rotmappe
 

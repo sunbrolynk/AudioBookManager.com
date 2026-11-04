@@ -5,8 +5,6 @@ description: Qué archivos auxiliares y etiquetas de audio escribe ABM, y cuánd
 
 **Settings > Metadata** decide qué escribe ABM en la carpeta de un libro y en sus archivos. Cómo se usan estos archivos se explica en [Archivos auxiliares](/es/using/sidecars/).
 
-La página tiene un solo **Save**. **Source** define de dónde saca ABM sus metadatos, y las secciones de debajo deciden qué escribe ABM.
-
 ## Fuente (Source)
 
 **Metadata Source** es Built-in (por defecto), Hosted (libexdb.com) o Self-hosted, que pide una **Server URL**. **Test** hace una petición real a la fuente elegida sin guardar, **Status** dice si está lista, y **Connection** muestra la ruta por la que salen las consultas, con enlace a **Settings > Network**. Cambiar la fuente vale al instante para todas las consultas. Mira [Elegir una fuente de metadatos](/es/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ Con la fuente Built-in aparecen las secciones **Local Storage** y **Storage Back
 
 - La escritura de etiquetas modifica los archivos de audio. Audiobookshelf los verá como modificados.
 - Si no se pueden obtener los metadatos o una portada durante la escritura de etiquetas, la llamada devuelve avisos en lugar de fallar.
+- Cuando no se pudo incrustar una portada porque la conexión la rechazó, la página del libro y el diálogo de edición muestran un aviso en vez de un éxito simple.

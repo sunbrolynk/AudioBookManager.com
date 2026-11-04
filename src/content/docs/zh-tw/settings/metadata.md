@@ -5,8 +5,6 @@ description: ABM 會寫入哪些附屬檔案和音訊標籤，以及什麼時候
 
 **Settings > Metadata** 決定 ABM 要在書的資料夾和檔案裡寫入什麼。這些檔案怎麼被使用，請看〈[附屬檔案](/zh-tw/using/sidecars/)〉。
 
-這個頁面只有一個 **Save**。**Source** 決定 ABM 從哪裡取得中繼資料，下面的各區塊決定 ABM 寫入什麼。
-
 ## 來源（Source）
 
 **Metadata Source** 可選 Built-in（預設）、Hosted（libexdb.com）或 Self-hosted，後者需要填 **Server URL**。**Test** 不儲存，直接向所選來源送出一次真實請求；**Status** 說明它是否就緒；**Connection** 顯示查詢所走的路線，並連結到 **Settings > Network**。切換會立刻對所有查詢生效。見[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)。
@@ -42,3 +40,4 @@ description: ABM 會寫入哪些附屬檔案和音訊標籤，以及什麼時候
 
 - 寫入標籤會修改音訊檔。Audiobookshelf 會把它們視為已變更。
 - 如果在寫入標籤時抓不到中繼資料或封面，呼叫會回傳警告，而不是直接失敗。
+- 因為連線拒絕而無法嵌入封面時，書籍頁面和編輯對話框會顯示警告，而不是單純的成功。

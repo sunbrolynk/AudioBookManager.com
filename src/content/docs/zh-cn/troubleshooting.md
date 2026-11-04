@@ -53,7 +53,7 @@ Content-Security-Policy 响应头只允许 HTTPS 的封面图片。到浏览器�
 添加、搜索、刷新和 Discover 都需要元数据来源。ABM 得不到回应时，错误信息会写明来源和真正的原因，比如 VPN 断了，而不是显示空列表。原因：来源宕机，或 ABM 的连接够不到它。来源连不上或拒绝 ABM 时，对大量条目的刷新、导入或同步会停下来，每种故障只发一条通知，单次超时只跳过那一个条目。
 
 1. 看看 [ABM 状态页](https://status.audiobookmanager.com)和 [Libex 状态页](https://status.libexdb.com)，确认是不是对所有人都宕机了。
-2. 检查容器能不能上网；如果你用了代理，检查 **Settings > General > Proxy** 里的设置对不对。
+2. 检查容器能不能上网；如果你用了代理，检查 **Settings > Network** 里的设置对不对。
 3. 过一分钟再试。
 4. 这期间你仍然可以手动添加和导入书籍。
 

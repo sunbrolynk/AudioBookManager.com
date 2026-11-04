@@ -5,8 +5,6 @@ description: Mitkä sivutiedostot ja äänitiedostojen tagit ABM kirjoittaa, ja 
 
 **Settings > Metadata** ratkaisee, mitä ABM kirjoittaa kirjan kansioon ja sen tiedostoihin. Näiden tiedostojen käyttö on kuvattu sivulla [Sivutiedostot](/fi/using/sidecars/).
 
-Sivulla on yksi **Save**. **Source** määrää, mistä ABM hakee metadatansa, ja sen alla olevat osiot päättävät, mitä ABM kirjoittaa.
-
 ## Lähde (Source)
 
 **Metadata Source** on Built-in (oletus), Hosted (libexdb.com) tai Self-hosted, joka vaatii **Server URL** -osoitteen. **Test** tekee oikean pyynnön valittuun lähteeseen tallentamatta, **Status** kertoo onko se valmis, ja **Connection** näyttää reitin, jota hakuja lähetetään, ja linkittää kohtaan **Settings > Network**. Vaihto tulee voimaan heti kaikkiin hakuihin. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ Built-in-lähteen kanssa näkyvät osiot **Local Storage** ja **Storage Backups*
 
 - Tagien kirjoittaminen muuttaa äänitiedostoja. Audiobookshelf näkee ne muokattuina.
 - Jos metatietoja tai kansikuvaa ei saada haettua tagien kirjoituksen aikana, kutsu palauttaa varoituksia sen sijaan, että epäonnistuisi.
+- Kun kantta ei voitu upottaa, koska yhteys hylkäsi sen, kirjan sivu ja muokkausikkuna näyttävät varoituksen pelkän onnistumisen sijaan.

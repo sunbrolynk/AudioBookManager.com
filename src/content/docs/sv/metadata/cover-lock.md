@@ -22,4 +22,4 @@ Bokens omslag kan återställas till det automatiska, vilket låser upp det. Eft
 ## Fallgropar
 
 - Låset gäller bara omslaget. Titel, författare och resten uppdateras fortfarande.
-- Omslag hämtas via din proxy om du har ställt in en under **Settings > General > Proxy**.
+- Omslag hämtas via din proxy om du har ställt in en under **Settings > Network**.

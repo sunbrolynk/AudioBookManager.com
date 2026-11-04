@@ -11,7 +11,7 @@ La primera visita te guía para crear un usuario. Hasta que lo hagas, ABM rechaz
 
 ## 2. Elige cómo sale ABM a internet
 
-En **Settings > General** hay una sección **Proxy**. Configura ahí un proxy si ABM tiene que pasar por uno para llegar a internet. Si ABM sale directamente a internet, sáltate esto.
+En **Settings > [Network](/es/settings/network/)** eliges cómo llega ABM a internet: un proxy, un túnel WireGuard o Direct. No sale nada hasta que elijas uno.
 
 ## 3. Añade una carpeta raíz
 

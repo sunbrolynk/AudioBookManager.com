@@ -5,8 +5,6 @@ description: Které doprovodné soubory a audio tagy ABM zapisuje a kdy.
 
 **Settings > Metadata** rozhoduje, co ABM zapisuje do složky knihy a do jejích souborů. Jak se tyhle soubory používají, popisují [Doprovodné soubory](/cs/using/sidecars/).
 
-Stránka má jedno **Save**. **Source** určuje, odkud ABM bere metadata, a sekce pod ním rozhodují, co ABM zapisuje.
-
 ## Zdroj (Source)
 
 **Metadata Source** je Built-in (výchozí), Hosted (libexdb.com) nebo Self-hosted, který potřebuje **Server URL**. **Test** pošle skutečný požadavek na vybraný zdroj bez uložení, **Status** říká, jestli je připravený, a **Connection** ukazuje cestu, kudy dotazy odcházejí, s odkazem na **Settings > Network**. Přepnutí platí hned pro všechny dotazy. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
@@ -42,3 +40,4 @@ Se zdrojem Built-in se zobrazí sekce **Local Storage** a **Storage Backups**. J
 
 - Zápis tagů mění zvukové soubory. Audiobookshelf je uvidí jako změněné.
 - Pokud se při zápisu tagů nepodaří načíst metadata nebo obálku, volání vrátí varování, místo aby selhalo.
+- Když se obálku nepodařilo vložit, protože ji připojení odmítlo, stránka knihy a dialog úprav ukážou varování místo prostého úspěchu.

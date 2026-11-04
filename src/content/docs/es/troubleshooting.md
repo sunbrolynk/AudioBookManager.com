@@ -53,7 +53,7 @@ Sube `MAX_REQUEST_BODY_BYTES`. Un proxy inverso también puede imponer un límit
 Añadir, buscar, actualizar y Discover necesitan la fuente de metadatos. Cuando ABM no obtiene respuesta, el error nombra la fuente y el motivo real, por ejemplo que la VPN está caída, en vez de mostrar una lista vacía. Causas: la fuente está caída, o la conexión de ABM no llega a ella. Una actualización, importación o sincronización de muchos elementos se detiene cuando no se llega a la fuente o rechaza a ABM, con una notificación por tipo de caída, y un solo timeout solo salta ese elemento.
 
 1. Mira la [página de estado de ABM](https://status.audiobookmanager.com) y la [página de estado de Libex](https://status.libexdb.com) para ver si está caído para todos.
-2. Comprueba que el contenedor tiene salida a internet y que el proxy de **Settings > General > Proxy** está bien, si usas uno.
+2. Comprueba que el contenedor tiene salida a internet y que el proxy de **Settings > Network** está bien, si usas uno.
 3. Vuelve a intentarlo pasado un minuto.
 4. Mientras tanto puedes seguir añadiendo e importando libros a mano.
 
