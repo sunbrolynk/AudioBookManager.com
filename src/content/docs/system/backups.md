@@ -29,6 +29,10 @@ A backup made on an older version is upgraded to the current schema as part of t
 
 A backup is refused, with nothing changed, if it holds unexpected entries, is not a valid SQLite database, or is a legacy backup from before the SQLite move.
 
+## Local Storage backups
+
+The library kept by [Local Storage](/metadata/control/#local-storage) has its own backups, made and restored under [Storage Backups](/settings/metadata/#storage-backups). They do not appear in this list. An ABM backup carries the Local Storage switch and its backup schedule, not the stored lookups.
+
 ## Export targets
 
 SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup, manual or scheduled, as long as **Auto-Export on Backup** is on under [General](/settings/general/). A manual **Backup Now** queues the export as a task and the page toasts its result. If an export fails, the error names the target and the reason (permission denied, path not found, out of space, or a pointer to the log), never a bare "all exports failed". Rclone remote names may use letters, digits, `_`, `.` and `-`. The name stays as you type it and is checked against that rule as you go, with Connect disabled until it passes.
