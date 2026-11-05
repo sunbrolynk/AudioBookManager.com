@@ -26,6 +26,9 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - A failed request says what could not be done in fixed wording and never includes the underlying error text, so no file paths, host names or credentials come back. The detail goes to the log files. If you match on an error message, match on the status code instead.
 - A bulk status or monitor request with an empty `book_ids` list is refused with HTTP 422.
 
+- An action that needs a background task and cannot queue it returns HTTP 503 with the detail "Could not queue the task.". When a route adds something and then queues a follow-up (add book, add an author's or series' books, Add Missing Books), the new item is still returned, with a message saying the follow-up could not be queued.
+- A PATCH with an explicit `null` clears an optional field on a book, author, series, indexer, download client, notification, import list or remote path mapping. A required field, or a flag or setting that has a default, ignores `null` the same as leaving it out.
+
 ## Metadata outages
 
 A book search that gets no answer from Libex returns 502 with "Libex search failed". An author or series search returns 503 with "Libex could not be reached; try again shortly". Some lookup routes still return an empty result in an outage.
