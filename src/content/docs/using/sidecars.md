@@ -7,7 +7,7 @@ A sidecar is a small file beside the audio. Audiobookshelf and other players rea
 
 | File | Contents | Switch |
 |---|---|---|
-| `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else | None, always written |
+| `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else. It says whether the book is explicit and whether it is abridged; a flag ABM does not know is left out, so Audiobookshelf keeps its own value. It carries no tags, so tags you set in Audiobookshelf stay | None, always written |
 | `cover.jpg` | The book's cover. Not written when the folder already has a `cover.*` | Cover image |
 | `.opf` | Metadata in OPF form. Named after the book's first audio file (for example `Dune.opf`), or `title.opf` when the book has no audio | Book info |
 | `desc.txt` | The description, without HTML. Skipped when there is none | Description |
