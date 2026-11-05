@@ -25,6 +25,7 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - Validation errors never echo back what you sent.
 - A failed request says what could not be done in fixed wording and never includes the underlying error text, so no file paths, host names or credentials come back. The detail goes to the log files. If you match on an error message, match on the status code instead.
 - A bulk status or monitor request with an empty `book_ids` list is refused with HTTP 422.
+- A request that has to queue a background task, such as a conversion create, retry, restart or single-job resume (`POST /api/conversions/job/{id}/resume`), answers HTTP 503 when the queue refuses it, so you can try again. `POST /api/tasks` answers 200 with status `skipped` when the task was deliberately not queued.
 
 ## Metadata outages
 
