@@ -37,5 +37,6 @@ Clean Library Level choices: Disabled, Log Only, Keep and Unmonitor Audiobook, R
 
 ## Gotchas
 
-- A saved RSS link or session ID is never shown again. Changing the address needs the secret re-entered.
+- A saved session ID is never shown again. A saved RSS link shows only its site, like `https://tracker.example.com/***`, because the rest of the link can carry your passkey. Leave it as it is to keep the saved link, or enter the full link to replace it. A partly edited one is refused. If the app key changes and the link can't be read, the list says so and you enter the link again.
+- RSS links are stored encrypted. After rolling back to an older ABM version, enter your RSS links again.
 - Lists fire the notifications On Import List Synced and On Import List New Items. See [Connect](/settings/connect/).
