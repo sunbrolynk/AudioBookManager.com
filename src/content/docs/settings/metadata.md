@@ -16,7 +16,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 | Create on Refresh | off | Create or update files when metadata is refreshed |
 | Overwrite Existing | off | Replace files already in the folder |
 
-Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). **Create on Refresh** shows with **Show Advanced**.
+Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). `metadata.json` and an `.nfo` are always written and have no switch. **Create on Refresh** shows with **Show Advanced**.
 
 ## Audio file tag writing
 

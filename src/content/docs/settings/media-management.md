@@ -39,7 +39,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Switch | Default | Covers |
 |---|---|---|
 | Cover art | on | Cover plus back-cover and booklet scans |
-| Book info files | on | metadata.json, .opf, .nfo, desc.txt, reader.txt |
+| Book info files | on | metadata.json, .opf, desc.txt, reader.txt. A release .nfo stays behind unless you choose it |
 | PDFs & companion docs | off | PDFs shipped with a book |
 | Chapters, transcripts & playlists | on | .cue, chapter lists, subtitles, lyrics, playlists. File names inside them are rewritten to the renamed audio. |
 | Audible originals & ebooks | off | .aax/.aaxc, vouchers, epub and similar |
