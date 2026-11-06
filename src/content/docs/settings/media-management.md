@@ -30,13 +30,13 @@ The default root folder is the one new books go to and the one that decides whet
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
 | Library Import | Copy | The default for [Library Import](/library-import/): copy, hardlink or move. Hardlink is grayed out until the default root has been checked and supports it. |
-| Import Extra Files | on | Master switch for bringing non-audio files along. Applies to Library Import, Manual Import and completed downloads |
+| Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |
 
-**Import Extra Files** brings a book's other files along with its audio. Five switches pick which kinds come along, and a file matching **Extra File Extensions** comes along even when its kind is switched off:
+**Import Extra Files** brings a book's other files along with its audio. Five options pick which kinds come along, and a file matching **Extra File Extensions** comes along even when its kind is off:
 
-| Switch | Default | Covers |
+| Option | Default | Covers |
 |---|---|---|
 | Cover art | on | Cover plus back-cover and booklet scans |
 | Book info files | on | metadata.json, .opf, desc.txt, reader.txt. A release .nfo stays behind unless you choose it |
@@ -65,7 +65,7 @@ A scan or refresh treats file extensions in any case (`Chapter 1.MP3`) and files
 
 ## Recycle Bin
 
-There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one switch and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
+There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one setting and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
 
 Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
 
