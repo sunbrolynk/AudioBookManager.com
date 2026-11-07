@@ -15,6 +15,8 @@ Each connection chooses which events fire it.
 
 On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restored, On Task Failed, On Application Update, On Grab Failed, On Import Failed, On Download Failed, On Conversion Failed, On Import List Synced, On Import List New Items, On Audible Download Done, On Audible Download Failed.
 
+On Import fires when a download completes and for Library Import of books from outside every root folder. Scans never fire it, and neither does adding books that are already in a root folder. See [Library Import](/library-import/).
+
 ## Per connection
 
 | Field | Effect |

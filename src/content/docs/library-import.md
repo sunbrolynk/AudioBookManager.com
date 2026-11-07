@@ -39,9 +39,15 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
 - Leaving the page saves your pending edits.
 
+## Where books go
+
+Books imported from a folder or drive outside every root folder are organized into the default root folder, and they send an On Import notification. Books that already sit inside a root folder and that ABM doesn't know yet are added where they are, and their files are renamed in place. Nothing is moved or copied, and no notification is sent. Scans never notify.
+
+The destination line on the page reads: "Books imported from outside your root folders are organized into this root folder and send an On Import notification. Scanning or adopting books already in a root folder renames their files in place and doesn't notify."
+
 ## Copy, move or hardlink
 
-**Settings > Media Management > Importing** sets the default for Library Import: copy (the default), move or hardlink. You can pick another for each import.
+**Settings > Media Management > Importing** sets the default for Library Import of books from outside your root folders: copy (the default), move or hardlink. You can pick another for each import.
 
 A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the default root folder to support it and to be checked first. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
 
