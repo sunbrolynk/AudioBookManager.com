@@ -3,7 +3,7 @@ title: Tasks
 description: Background work, schedules and logs.
 ---
 
-**System > Tasks** lists everything ABM does in the background: library scans, refreshes, imports, searches, downloads, syncs, backups. Each row shows its state (waiting, running, completed, failed), progress, result and a log button.
+**System > Tasks** lists everything ABM does in the background: library scans, refreshes, imports, searches, downloads, syncs, backups. Each row shows its state (waiting, running, completed, failed), progress, result and a log button. The log button shows only for a task that wrote a log. A few quick housekeeping tasks write none, so their rows have no log button. If the log file has since been deleted, opening it says the log no longer exists.
 
 ![System, Tasks: scheduled tasks with their interval and last run, and the task queue](../../../assets/docs/system-tasks.jpg)
 
