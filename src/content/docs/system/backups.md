@@ -15,6 +15,8 @@ An encrypted archive with a consistent copy of the database (`database.db`), the
 
 Pick one from the list, or upload a backup file (up to 500 MiB). A copy of the live database is saved first. Restoring cannot be undone. Deleting a backup asks you to type `delete` to confirm.
 
+If a delete is refused, the toast shows the server's reason and the backup stays in the list. Over the API a delete answers 404 for a backup that isn't there, 403 for a path outside the backup folder and 500 if the file can't be removed. A backup that fails to create answers 500.
+
 A restore asks for your current password, since it replaces the whole database. Only encrypted `.backup` files restore. Unencrypted backups from versions before 0.14 are no longer accepted, so make a new backup from a current install. The whole backup is checked before anything is replaced, and one that can't be restored without sending ABM back to first-run setup is refused untouched.
 
 Only one restore runs at a time. A second one, from another tab or a double press of Enter, is refused with "A restore is already running." (HTTP 409).
@@ -31,7 +33,7 @@ A backup is refused, with nothing changed, if it holds unexpected entries, is no
 
 ## Export targets
 
-SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup, manual or scheduled, as long as **Auto-Export on Backup** is on under [General](/settings/general/). A manual **Backup Now** queues the export as a task and the page toasts its result. If an export fails, the error names the target and the reason (permission denied, path not found, out of space, or a pointer to the log), never a bare "all exports failed". Rclone remote names may use letters, digits, `_`, `.` and `-`. The name stays as you type it and is checked against that rule as you go, with Connect disabled until it passes.
+SFTP, SCP, FTPS, FTP, S3 or an rclone remote. A target marked **Auto** receives each backup, manual or scheduled, as long as **Auto-Export on Backup** is on under [General](/settings/general/). A manual **Backup Now** queues the export as a task and the page toasts its result. If an export fails, the error names the target and the reason (permission denied, path not found, out of space, or a pointer to the log), never a bare "all exports failed". Over the API an export answers 400 when export settings or targets are missing, 404 for a backup or target that doesn't exist, and 502 when the transfer fails, with the per-target results still in the response body. Rclone remote names may use letters, digits, `_`, `.` and `-`. The name stays as you type it and is checked against that rule as you go, with Connect disabled until it passes.
 
 Each export and each **Test connection** (the check mark on a saved target) writes its own log file, which the result links to, even when it fails. See [Logs](/system/logs/).
 
@@ -41,5 +43,6 @@ ABM trusts the server's host key the first time it connects, saves it on the tar
 
 ## Gotchas
 
+- A retention prune that can't remove one old backup carries on with the rest.
 - The Docker image and your compose file are not in the backup. Keep the compose file.
 - If you set `APP_SECRET`, back that up separately. Without it, stored credentials cannot be decrypted after a restore on another host.
