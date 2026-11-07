@@ -62,7 +62,7 @@ The edit dialog on a book changes ABM's own settings for it, not its metadata:
 - **Quality Profile** (No Change when editing several)
 - **Path**, for one book (with a button to recompute it), or **Root Folder** for a selection
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt and an OPF (the checkbox reads "metadata.opf"; the file is named after the book's first audio file, for example `Dune.opf`, or `title.opf` when there is no audio)
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt and an OPF (the checkbox reads "metadata.opf"; the file is named after the book's first audio file, for example `Dune.opf`, or after the book when there is no audio)
 - **Write to Audio Files**: write metadata tags
 - **Embed cover art**: writes the cover into the audio files
 

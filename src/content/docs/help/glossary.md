@@ -39,7 +39,7 @@ description: Terms, for new users and for people coming from the arrs.
 
 **Root folder**: a directory ABM keeps books in.
 
-**Sidecar**: a small file beside the audio: cover, OPF, description, narrator, cue.
+**Sidecar**: a small file beside the audio: cover, OPF, NFO, description, narrator, cue.
 
 **Step-up password**: asking for your password again before a sensitive change.
 
