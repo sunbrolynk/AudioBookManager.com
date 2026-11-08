@@ -1,9 +1,11 @@
 ---
 title: General
-description: Host, security, proxy, logging and backups.
+description: Host, security, logging and backups.
 ---
 
-**Settings > General** has sections for Host, Security, Logging and Backups. Security has [its own page](/en-ca/settings/security/).
+**Settings > General** has sections for Host, Security, Logging and Backups. Security has [its own page](/en-ca/settings/security/). The proxy lives on [Network](/en-ca/settings/network/).
+
+![Settings, General: host, port and security](../../../../assets/docs/settings-general.jpg)
 
 ## Host
 
@@ -22,22 +24,6 @@ I don't recommend putting ABM on the internet, the same advice the Servarr apps 
 
 In Docker the environment variables `PORT` and the compose port mapping are what matter in practice. See [Environment variables](/en-ca/configuration/).
 
-## Proxy
-
-How ABM reaches the internet for metadata, covers and Audible pages.
-
-| Setting | Default | Effect |
-|---|---|---|
-| Use Proxy | off | Route external requests through a proxy |
-| Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 or SOCKS5H (SOCKS5 with DNS through the proxy) |
-| Hostname, Port | empty | Proxy address |
-| Username, Password | empty | Optional |
-| Test Connection | | Checks the proxy |
-
-SOCKS4 is not supported. If a saved proxy still uses it, switch it to SOCKS5 or another type before saving.
-
-The section also shows your outgoing IP as external services see it. A choice of connection, including a built-in VPN, is planned for a later release.
-
 ## Logging
 
 | Setting | Default |
@@ -47,6 +33,7 @@ The section also shows your outgoing IP as external services see it. A choice of
 | Log File Retention | 30 days, 0 keeps forever |
 | Activity Log Retention | 90 days, 0 keeps forever |
 | Book History Retention | 0 (keep) |
+| Security Log Retention | 30 days, 7 at least. Never Delete Security Logs keeps them forever |
 | Automatic Cleanup | on |
 | Cleanup Time | 03:00 |
 | SQL Logging | off. Very verbose |
@@ -60,9 +47,9 @@ See [Logs](/en-ca/system/logs/) and the [Activity Log](/en-ca/system/activity-lo
 |---|---|---|
 | Backup Folder | `/config/backups` | Where backups go |
 | Automatic Backups | off | Scheduled backups |
-| Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression |
+| Schedule Frequency | Daily | Daily, weekly or monthly, with day and time. Or Use Cron Expression. Day of Week is 0 to 6 from Sunday (a cron `0` is Sunday too) and Day of Month is 1 to 28; anything else is refused with HTTP 422. A schedule or cron expression ABM cannot build is refused with HTTP 400 that names the field, and nothing is saved |
 | Backup Retention | 28 days | 0 keeps forever |
 | Auto-Export on Backup | on | After each manual or scheduled backup, send it to export targets marked Auto |
-| Export Targets | none | Remote destinations: SFTP, SCP, FTPS, FTP, S3 or rclone |
+| Export Targets | none | Remote destinations: SFTP, SCP, FTPS, FTP, S3 or rclone. Deleting an rclone remote asks you to type `delete` |
 
 See [Backups](/en-ca/system/backups/).

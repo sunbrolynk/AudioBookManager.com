@@ -13,7 +13,7 @@ A field the source returns empty is left as it is.
 
 ## What you control
 
-- **A cover you chose.** It is locked. See [The cover lock](/en-au/metadata/cover-lock/).
+- **A cover you chose.** It is locked, and a refresh updates only the automatic cover behind it. See [The cover lock](/en-au/metadata/cover-lock/).
 - **Tags, auto tags, monitoring, quality profile choices and the files themselves.** A refresh does not touch them.
 - **A book whose files cannot be read.** It is left alone entirely, and the Tasks page shows why.
 

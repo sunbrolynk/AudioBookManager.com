@@ -5,11 +5,13 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 **Settings > Metadata** decides what ABM writes into a book's folder and its files. How these files are used is on [Sidecar files](/en-au/using/sidecars/).
 
+![Settings, Metadata: the Local Storage section with Enable Local Storage, its size and counts, Download a Copy, and Storage Backups](../../../../assets/docs/settings-metadata.jpg)
+
 ## Source
 
 **Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving, **Status** says whether it is ready, and **Connection** shows the route lookups leave through and links to **Settings > Network**. Switching takes effect for every lookup at once. See [Choosing a metadata source](/en-au/metadata/choosing-a-source/).
 
-## Metadata file creation
+## Metadata File Creation
 
 | Setting | Default | Effect |
 |---|---|---|
@@ -18,7 +20,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 | Create on Refresh | off | Create or update files when metadata is refreshed |
 | Overwrite Existing | off | Replace files already in the folder |
 
-Files to create: `cover.jpg` (on), `title.opf` (on, Audiobookshelf-compatible), `desc.txt` (on) and `reader.txt` (on).
+Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). **Create on Refresh** shows with **Show Advanced**.
 
 ## Audio file tag writing
 

@@ -34,7 +34,7 @@ The app log says which it is:
 - "carries reverse-proxy headers, but ... is not in TRUSTED_PROXIES": add the proxy to `TRUSTED_PROXIES`.
 - "... is in TRUSTED_PROXIES but didn't name a client address": configure the proxy to send `X-Forwarded-For` or `X-Real-IP`.
 
-The opposite case: a proxy that sends no forwarding headers looks like a local client, so everything through it skips sign-in. Set Authentication Required to Enabled.
+The opposite case: a proxy that sends no forwarding headers looks like a local client. ABM notices, makes that address sign in and shows a Reverse Proxy warning on System > Status. Make the proxy send `X-Forwarded-For`, or set Authentication Required to Enabled. If the address isn't a proxy, clear it under Settings > General > Security. See [Security](/en-ca/settings/security/#reverse-proxies).
 
 ## A script, app or tool gets 401 from the API
 
@@ -65,7 +65,7 @@ Raise `MAX_REQUEST_BODY_BYTES`. A reverse proxy can also enforce a lower limit a
 Adds, searches, refreshes and Discover need the metadata source. When ABM can't get an answer, the error names the source and the real reason, for example that the VPN is down, instead of showing an empty list. Causes: the source is down, or ABM's connection can't reach it. A refresh, import or sync over many items stops when the source can't be reached or refuses ABM, with one notification per kind of outage, and a single timeout only skips that item.
 
 1. Check the [ABM status page](https://status.audiobookmanager.com) and the [Libex status page](https://status.libexdb.com) to see whether it is down for everyone.
-2. Check that the container can reach the internet, and that the proxy under **Settings > Network** is right if you use one.
+2. Check that the container can reach the internet, and that a connection is chosen under **Settings > Network**, and that the proxy there is right if you use one.
 3. Try again after a minute.
 4. You can still add and import books by hand meanwhile.
 
@@ -89,7 +89,19 @@ Add a remote path mapping, or make ABM and the client see the folder at the same
 
 ## Docker cannot reach the metadata source or indexers
 
-Check DNS and the proxy setting before anything else. In Docker, ABM can only reach Libex and your indexers if the container can reach the internet.
+Check DNS and that a connection is chosen under **Settings > Network** before anything else. In Docker, ABM can only reach Libex and your indexers if the container can reach the internet.
+
+## Audible downloads fail with "throttled"
+
+Audible is refusing download licences for the account. This isn't an ownership problem, and the book is still yours.
+
+ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again on the Audible settings page to start fresh.
+
+Running diagnostics during the hold sends nothing either. The download test just reports the hold.
+
+## Audible says "invalid redirect URL"
+
+ABM refuses a pasted address that isn't exactly what the browser showed after sign-in. It must be https, on the exact sign-in host, with no port and no username or password. `https://www.amazon.com:443/...` is refused. Start the sign-in again and copy the whole address bar.
 
 ## Still stuck
 

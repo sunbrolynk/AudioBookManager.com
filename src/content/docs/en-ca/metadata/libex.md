@@ -9,4 +9,4 @@ Libex: [Source code](https://github.com/LibexHQ/Libex) · [API Reference](https:
 
 Under **Settings > Metadata** you choose the source: Built-in, the hosted instance at libexdb.com, or your own Libex server. See [Choosing a metadata source](/en-ca/metadata/choosing-a-source/).
 
-When Libex cannot be reached, ABM says so, naming the source. You can still add and import books by hand. See [Troubleshooting](/en-ca/troubleshooting/#the-metadata-source-is-unavailable).
+When Libex cannot be reached, ABM says so. You can still add and import books by hand. Libex uptime is on the [Libex status page](https://status.libexdb.com). See [Troubleshooting](/en-ca/troubleshooting/#the-metadata-source-is-unavailable).

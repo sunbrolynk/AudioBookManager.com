@@ -5,9 +5,13 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 **Settings > Media Management** controls where books live and how files move in. Settings marked advanced appear with **Show Advanced**.
 
+![Settings, Media Management: importing options](../../../../assets/docs/settings-media.jpg)
+
 ## Root Folders
 
-A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm.
+A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm. Removing a root also deletes any auto-tag rule condition that named it.
+
+Adding a root folder that is, contains or sits inside the [recycle bin](#recycle-bin) is refused with HTTP 400, naming the bin. Root folders can't be nested. Adding one that sits inside another root, or that contains one, is refused with HTTP 400 naming the other root. If you already have a nested pair, System > Status warns and names both paths. A book counts under, and is removed with, the most specific root that holds it, so removing the outer root leaves the inner root's books alone, and **Delete the books and their files** is refused while another root lies inside the one you're removing.
 
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
@@ -25,7 +29,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/en-ca/library-import/): copy, hardlink or move. Hardlink is greyed out until the default root has been checked and supports it. |
+| Library Import | Copy | The default for [Library Import](/en-ca/library-import/): copy, hardlink or move. Hardlink is grayed out until the default root has been checked and supports it. |
 | Import Extra Files | on | Master switch for bringing non-audio files along. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |
@@ -36,9 +40,9 @@ The default root folder is the one new books go to and the one that decides whet
 |---|---|---|
 | Cover art | on | Cover plus back-cover and booklet scans |
 | Book info files | on | metadata.json, .opf, .nfo, desc.txt, reader.txt |
-| PDFs and companion docs | off | PDFs shipped with a book |
-| Chapters, transcripts and playlists | on | .cue, chapter lists, subtitles, lyrics, playlists. File names inside them are rewritten to the renamed audio. |
-| Audible originals and ebooks | off | .aax/.aaxc, vouchers, epub and similar |
+| PDFs & companion docs | off | PDFs shipped with a book |
+| Chapters, transcripts & playlists | on | .cue, chapter lists, subtitles, lyrics, playlists. File names inside them are rewritten to the renamed audio. |
+| Audible originals & ebooks | off | .aax/.aaxc, vouchers, epub and similar |
 
 Partial downloads and executables are never imported. ABM's own `metadata.json` is always handled by ABM.
 
@@ -53,9 +57,11 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 | Enable Recycle Bin | on | Deleted book files, and the originals a conversion replaces, move to one bin instead of being deleted. Off means both are deleted for good |
 | Recycle Bin | empty | Where the bin is. Empty uses `/config/recycle`, with a `media` folder for deleted book files and a `conversions` folder for replaced conversion originals |
 | Recycle Bin Cleanup | 7 (days) | How long items stay, for both folders. 0 disables automatic cleanup |
-| Library Scan Interval | 24 (hours) | Hours between automatic scans |
-| Watch for Changes | on | Scan when files are added, removed or changed |
+| Library Scan Interval | 24 (hours) | Hours between automatic scans. Choices are Disabled, every hour, 6, 12 or 24 hours, or weekly |
+| Watch for Changes | on | Scan when files are added, removed or changed. A root folder the system can't watch, such as one past the inotify watch limit, is logged and skipped instead of stopping startup |
 | Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16 |
+
+A scan or refresh treats file extensions in any case (`Chapter 1.MP3`) and files at any depth (`Disc 1/`, `Disc 2/`) as the book's audio. A book is left alone when its files can't be read, or when its tracked files still exist somewhere other than the folder searched: nothing is changed, a single-book refresh says "Some files could not be read; book left untouched.", and a library scan counts the book as skipped. A root folder that doesn't answer within 10 seconds is treated as unusable instead of being waited on.
 
 ## Recycle Bin
 
@@ -84,5 +90,11 @@ Picking a new folder, in the folder browser or by typing a path, asks right away
 
 - If the recycle bin is enabled but its folder is unavailable, deletes that need it fail instead of deleting permanently.
 - Hardlinks only work inside one filesystem. Files that cannot be linked are copied, never moved, and counted in the import result.
+
+## File names
+
+Rename Files, Library Import, Manual Import, Audible downloads and conversions all build a book's file name in one place, so they agree: `Title - (Part 01) - (2020) - (MP3).mp3`. A one-file book has no part. A multi-file book gets `Part 01`, `Part 02` and so on in listening order, padded to the width of the file count, and the extension is lowercase. A rename where files trade names, or shift by one, goes through without losing any. A multi-part book imported under an older layout, or with an upper-case extension, shows as needing a rename the next time Rename runs.
+
+Names are cut to fit the 255-byte filename limit. The title is shortened, never the part number or the extension, and split chapter files, sidecars named after the audio and a folder's ` [ASIN]` tag get the same treatment.
 
 If you know Sonarr: this is Sonarr's Media Management without naming formats. Folder names are chosen by ABM. Bulk rename lives on Library, Series and Authors as **Rename Files**.

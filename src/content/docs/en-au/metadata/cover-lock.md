@@ -11,7 +11,7 @@ A locked cover is served from ABM's own store, not from an Audible address. That
 
 ## What it affects
 
-- Metadata refresh keeps the cover, even if Libex has a new one.
+- Metadata refresh keeps the cover you chose. A newer cover from Libex updates only the automatic cover, which comes back when you revert.
 - Writing `cover.jpg` and embedding art use the cover you chose.
 - Library Import can pick the cover per book. See [Library Import](/en-au/library-import/).
 
@@ -22,4 +22,4 @@ The book's cover can be reset to the automatic one, which unlocks it. After that
 ## Gotchas
 
 - Locking applies to the cover only. Title, author and the rest still refresh.
-- Covers are fetched through your proxy when you have set one under **Settings > Network**.
+- Covers are fetched through ABM, over the connection you chose under **Settings > Network**.
