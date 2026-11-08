@@ -40,7 +40,7 @@ Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Al
 
 **Download a Copy** saves the library as a single SQLite file.
 
-Turning it off, when it holds data, opens a dialog. You can pick any combination of two optional copies, or neither:
+Turning it off opens a dialog. You can pick any combination of two optional copies, or neither:
 
 - **Export to backup targets.** Sends the library to your export targets.
 - **Download a copy.** Saves the library as a SQLite file.
