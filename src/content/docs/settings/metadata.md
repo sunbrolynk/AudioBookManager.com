@@ -5,7 +5,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 **Settings > Metadata** decides what ABM writes into a book's folder and its files. How these files are used is on [Sidecar files](/using/sidecars/).
 
-![Settings, Metadata: which sidecar files to create and which audio tags to write](../../../assets/docs/settings-metadata.jpg)
+![Settings, Metadata: the Local Storage section with Enable Local Storage, its size and counts, Download a Copy, and Storage Backups](../../../assets/docs/settings-metadata.jpg)
 
 ## Source
 

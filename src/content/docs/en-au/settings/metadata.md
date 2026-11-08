@@ -34,7 +34,39 @@ Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Al
 
 ## Local Storage
 
-With the Built-in source, **Local Storage** and **Storage Backups** sections are shown. They are a preview and are not connected yet. See [Your metadata, your control](/en-au/metadata/control/).
+**Enable Local Storage** is off by default and is there for every metadata source. Once it is on, ABM saves every book, author and series a lookup returns, taken from the answers it receives, into a file of its own. It shows the file's size and how many books, authors and series it holds. The totals cover every region, with a breakdown by region when more than one region has data. A file that can't be opened is reported there and never stops lookups. How it is used is on [Your metadata, your control](/en-au/metadata/control/#local-storage).
+
+**Download a Copy** saves the library as a single SQLite file.
+
+Turning it off opens a dialog. You can pick any combination of two optional copies, or neither:
+
+- **Export to backup targets.** Sends the library to your export targets.
+- **Download a copy.** Saves the library as a SQLite file.
+
+Then you pick one of two choices, which is required:
+
+- **Keep the local data.** It stays, and is used again the next time you turn Local Storage on.
+- **Delete it.** Deleted Local Storage can't be recovered unless you made a copy.
+
+If the export or the download fails, nothing is deleted and Local Storage stays on.
+
+## Storage Backups
+
+Shown while Local Storage is on. These backups are separate from the ABM backups under [Backups](/en-au/system/backups/).
+
+| Setting | Default | Effect |
+|---|---|---|
+| Backup Folder | blank | Where they are kept. Blank uses the default folder inside the backup folder |
+| Automatic Backups, schedule | off, daily | Work like the schedule under [General](/en-au/settings/general/#backups) |
+| Backup Retention | 28 days | Age at which automatic backups are removed. 0 keeps them forever. Manual backups are kept |
+| Auto-Export on Backup | on | Send each backup to the export targets after it is made |
+| Export Targets | none picked | Pick the saved targets to use. With none picked, every target marked **Auto** is used |
+
+The targets are the ones saved under General > Backups. If every target you picked is deleted, the export turns off instead of going to all of them.
+
+**Backup Now** runs one straight away. The list shows each backup with **Download**, **Export**, **Restore** and **Delete**. **Restore from a file** takes a backup you uploaded. Delete always asks you to confirm. Restore asks for your account password when one is set. A restore that fails leaves the current library as it was. If a backup is already gone, or an export can't reach its target, the action reports the reason instead of failing quietly, and nothing else is touched.
+
+The Tasks page shows the job as **Local Storage Backup**. An ABM backup carries the Local Storage switch and its backup schedule, not the stored lookups, so restoring one turns Local Storage back on without bringing the library back.
 
 ## Gotchas
 
