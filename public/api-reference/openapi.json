@@ -8485,9 +8485,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Upload Custom Cover Api Books  Book Id  Cover Upload Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8540,9 +8538,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Set Custom Cover Url Api Books  Book Id  Cover Url Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8611,7 +8607,7 @@
           "Covers"
         ],
         "summary": "Revert Cover To Automatic",
-        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the original cover URL.\nDoes nothing on a book that already uses the automatic cover.",
+        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the current automatic cover URL and its cover.jpg.\nReturns 409 when no automatic cover is known.\nDoes nothing on a book that already uses the automatic cover.",
         "operationId": "revert_cover_to_automatic_api_books__book_id__cover_revert_post",
         "parameters": [
           {
@@ -8630,9 +8626,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Revert Cover To Automatic Api Books  Book Id  Cover Revert Post"
+                  "$ref": "#/components/schemas/CoverRevertResponse"
                 }
               }
             }
@@ -14401,7 +14395,7 @@
           "Settings"
         ],
         "summary": "Disable Storage",
-        "description": "Switch storage off, deleting the file unless the choice is to keep it. An export that does not reach every target leaves storage on.",
+        "description": "Switch storage off, optionally exporting first, deleting the file unless it is kept. An export that does not reach every target leaves storage on.",
         "operationId": "disable_storage_api_settings_metadata_storage_disable_post",
         "requestBody": {
           "content": {
@@ -19831,6 +19825,58 @@
             ],
             "title": "Bitrate"
           },
+          "subtitle": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subtitle"
+          },
+          "is_vvab": {
+            "type": "boolean",
+            "title": "Is Vvab",
+            "default": false
+          },
+          "plans": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Plans"
+          },
+          "explicit": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explicit"
+          },
+          "abridged": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abridged"
+          },
           "monitored": {
             "type": "boolean",
             "title": "Monitored",
@@ -20177,6 +20223,28 @@
             "type": "boolean",
             "title": "Is Vvab",
             "default": false
+          },
+          "explicit": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explicit"
+          },
+          "abridged": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abridged"
           },
           "plans": {
             "anyOf": [
@@ -23505,6 +23573,39 @@
         ],
         "title": "CoverCandidate"
       },
+      "CoverRevertResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverRevertResponse"
+      },
       "CoverSearchResponse": {
         "properties": {
           "results": {
@@ -23598,6 +23699,47 @@
           "count"
         ],
         "title": "CoverSearchSourceStatus"
+      },
+      "CoverSetResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "cover_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Url"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File",
+            "description": "Whether cover.jpg in the book folder was rewritten to match."
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "cover_url",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverSetResponse"
       },
       "CoverUrlBody": {
         "properties": {
@@ -28285,22 +28427,22 @@
       },
       "MetadataStorageDisable": {
         "properties": {
-          "action": {
-            "type": "string",
-            "enum": [
-              "export",
-              "download",
-              "discard",
-              "keep"
-            ],
-            "title": "Action",
-            "description": "export backs the library up and sends it to the export targets first; download and discard delete the file (download after the browser has saved a copy); keep leaves it for the next time storage is turned on"
+          "export": {
+            "type": "boolean",
+            "title": "Export",
+            "description": "Back the library up and send it to the export targets first; nothing is deleted if that fails"
+          },
+          "keep": {
+            "type": "boolean",
+            "title": "Keep",
+            "description": "Leave the file for the next time storage is turned on; otherwise it is deleted"
           }
         },
         "additionalProperties": false,
         "type": "object",
         "required": [
-          "action"
+          "export",
+          "keep"
         ],
         "title": "MetadataStorageDisable"
       },

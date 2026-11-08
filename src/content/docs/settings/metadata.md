@@ -40,12 +40,17 @@ Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Al
 
 **Download a Copy** saves the library as a single SQLite file.
 
-Turning it off asks what to do with the file:
+Turning it off, when it holds data, opens a dialog. You can pick any combination of two optional copies, or neither:
 
-- **Keep the file.** Storage turns off and the file stays. Turning it back on picks it up again.
-- **Export to backup targets, then delete.** The library is exported to your export targets first. If any target fails, nothing is deleted.
-- **Download a copy, then delete.**
-- **Delete without a copy.** It cannot be recovered.
+- **Export to backup targets.** Sends the library to your export targets.
+- **Download a copy.** Saves the library as a SQLite file.
+
+Then you pick one of two choices, which is required:
+
+- **Keep the local data.** It stays, and is used again the next time you turn Local Storage on.
+- **Delete it.** Deleted Local Storage can't be recovered unless you made a copy.
+
+If the export or the download fails, nothing is deleted and Local Storage stays on.
 
 ## Storage Backups
 
@@ -61,7 +66,7 @@ Shown while Local Storage is on. These backups are separate from the ABM backups
 
 The targets are the ones saved under General > Backups. If every target you picked is deleted, the export turns off instead of going to all of them.
 
-**Backup Now** runs one straight away. The list shows each backup with **Download**, **Export**, **Restore** and **Delete**. **Restore from a file** takes a backup you uploaded. Delete always asks you to confirm. Restore asks for your account password when one is set. A restore that fails leaves the current library as it was.
+**Backup Now** runs one straight away. The list shows each backup with **Download**, **Export**, **Restore** and **Delete**. **Restore from a file** takes a backup you uploaded. Delete always asks you to confirm. Restore asks for your account password when one is set. A restore that fails leaves the current library as it was. If a backup is already gone, or an export can't reach its target, the action reports the reason instead of failing quietly, and nothing else is touched.
 
 The Tasks page shows the job as **Local Storage Backup**. An ABM backup carries the Local Storage switch and its backup schedule, not the stored lookups, so restoring one turns Local Storage back on without bringing the library back.
 
