@@ -27550,6 +27550,59 @@
             "type": "integer",
             "title": "Coverbackfillworkers",
             "default": 4
+          },
+          "renameBooks": {
+            "type": "boolean",
+            "title": "Renamebooks",
+            "default": true
+          },
+          "replaceIllegalCharacters": {
+            "type": "boolean",
+            "title": "Replaceillegalcharacters",
+            "default": true
+          },
+          "colonReplacement": {
+            "type": "string",
+            "enum": [
+              "delete",
+              "dash",
+              "spaceDash",
+              "spaceDashSpace",
+              "smart",
+              "custom"
+            ],
+            "title": "Colonreplacement",
+            "default": "smart"
+          },
+          "customColonReplacement": {
+            "type": "string",
+            "title": "Customcolonreplacement",
+            "default": ""
+          },
+          "standardBookFormat": {
+            "type": "string",
+            "title": "Standardbookformat",
+            "default": "{Book Title}{ - (Part part:00)}{ - Chapter chapter:00}{ - (Book Year)}{ - (Quality Title)}"
+          },
+          "authorFolderFormat": {
+            "type": "string",
+            "title": "Authorfolderformat",
+            "default": "{Author Name}"
+          },
+          "seriesFolderFormat": {
+            "type": "string",
+            "title": "Seriesfolderformat",
+            "default": "{Series Title}"
+          },
+          "standaloneFolderFormat": {
+            "type": "string",
+            "title": "Standalonefolderformat",
+            "default": ""
+          },
+          "bookFolderFormat": {
+            "type": "string",
+            "title": "Bookfolderformat",
+            "default": "{Vol position:00 - }{Book Year - }{Book Title}{ [ASIN]}"
           }
         },
         "type": "object",

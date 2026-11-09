@@ -19,7 +19,7 @@ Wanted (Missing, Cutoff Unmet), Activity (Queue, History, Blocklist), Calendar w
 | Metadata from their own service | Libex, with covers lockable, sidecars and tags written |
 | One download folder | Same, plus Library Import for existing collections |
 | No media conversion | A conversion queue: convert, merge, split, chapters |
-| Naming formats | ABM chooses folder names. Rename Files is on lists |
+| Naming formats | Book Naming on Media Management. Rename Files is on lists |
 | Import lists of many kinds | MAM and RSS |
 
 ## Not in ABM

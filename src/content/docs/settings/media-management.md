@@ -97,4 +97,10 @@ Rename Files, Library Import, Manual Import, Audible downloads and conversions a
 
 Names are cut to fit the 255-byte filename limit. The title is shortened, never the part number or the extension, and split chapter files, sidecars named after the audio and a folder's ` [ASIN]` tag get the same treatment.
 
-If you know Sonarr: this is Sonarr's Media Management without naming formats. Folder names are chosen by ABM. Bulk rename lives on Library, Series and Authors as **Rename Files**.
+## Book Naming
+
+Book Naming sets how I name files and folders, and it is saved with the page's one Save along with the rest of Media Management. It has Rename Books, Replace Illegal Characters, Colon Replacement (with a custom option), and formats for Standard Book, Author Folder, Series Folder, Standalone Folder and Book Folder. Each format shows a live example, and a token list shows every token you can use.
+
+Library also has an **Organize** action on selected books that previews the new names before anything moves. Bulk rename stays on Library, Series and Authors as **Rename Files**.
+
+If you know Sonarr: this is Sonarr's Media Management, naming formats included.
