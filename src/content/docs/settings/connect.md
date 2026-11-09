@@ -31,7 +31,7 @@ On Import fires when a completed download is imported, when Manual Import import
 
 ## Custom messages
 
-A custom message rewrites the text for an event. Pick a **Format**, a **Cover** (Auto uses the book cover, None, or a Custom URL), write the **Title** and body, and click a variable to insert it. The default template for each event is a starting point. The preview shows the result, and you can send a test through a connection.
+A custom message rewrites the text for an event. Pick a **Format**, a **Cover** (Auto uses the book cover, None, or a Custom URL), write the **Title** and body, and click a variable to insert it. The default template for each event is a starting point. If every variable on a line of the body is empty, that line is left out, so a book with no quality won't show a bare "Quality:" line. The preview shows the result, and you can send a test through a connection.
 
 ## Gotchas
 
