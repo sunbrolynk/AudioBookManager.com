@@ -66,7 +66,14 @@ The edit dialog on a book changes ABM's own settings for it, not its metadata:
 - **Write to Audio Files**: write metadata tags
 - **Embed cover art**: writes the cover into the audio files
 
-The same dialog opens for series and authors and applies to each of their books. The write options run when you save. Values are checked before anything is queued, so a bad one is refused at once instead of failing later. Each book is saved as it goes, so one book that fails doesn't undo the others, and audio tag errors are listed per book in the task's errors on the Tasks page.
+Changing a book's **Path**, or the **Root Folder** of a selection, asks whether to move the files. **Yes, move files** moves them to the new place. **No, I'll move files myself** only points ABM at the new place, and the old folder doesn't have to exist. Neither is preselected. The new path must still sit inside a root folder.
+
+The same dialog opens for series and authors and applies to each of their books. For an author or series it also has:
+
+- **Root Folder**: the root folder new books go to (see [Media Management](/settings/media-management/#where-new-books-go)). A series can pick **Inherit from author** to use the author's. This only affects books added from now on and never moves existing ones.
+- **Move Books To**: moves the books they already have to another root folder, and asks the same move-files question.
+
+Both fields are hidden when you have only one root folder. The write options run when you save. Values are checked before anything is queued, so a bad one is refused at once instead of failing later. Each book is saved as it goes, so one book that fails doesn't undo the others, and audio tag errors are listed per book in the task's errors on the Tasks page.
 
 ## Tags
 

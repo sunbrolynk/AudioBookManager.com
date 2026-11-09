@@ -28,6 +28,7 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - A request that has to queue a background task, such as a conversion create, retry, restart or single-job resume (`POST /api/conversions/job/{id}/resume`), answers HTTP 503 when the queue refuses it, so you can try again. `POST /api/tasks` answers 200 with status `skipped` when the task was deliberately not queued.
 
 - An action that needs a background task and cannot queue it returns HTTP 503 with the detail "Could not queue the task.". When a route adds something and then queues a follow-up (add book, add an author's or series' books, Add Missing Books), the new item is still returned, with a message saying the follow-up could not be queued.
+- `POST /api/books/{id}/move`, `POST /api/books/batch/migrate` and the author and series bulk edits take `move_files`, which defaults to `false`: only the stored path changes and nothing on disk is touched. Send `"move_files": true` to move the files.
 - A PATCH with an explicit `null` clears an optional field on a book, author, series, indexer, download client, notification, import list or remote path mapping. A required field, or a flag or setting that has a default, ignores `null` the same as leaving it out.
 
 ## Metadata outages

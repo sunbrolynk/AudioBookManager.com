@@ -13,7 +13,23 @@ A root folder is a directory ABM manages books in. Add one with **Add Root Folde
 
 Adding a root folder that is, contains or sits inside the [recycle bin](#recycle-bin) is refused with HTTP 400, naming the bin. Root folders can't be nested. Adding one that sits inside another root, or that contains one, is refused with HTTP 400 naming the other root. If you already have a nested pair, System > Status warns and names both paths. A book counts under, and is removed with, the most specific root that holds it, so removing the outer root leaves the inner root's books alone, and **Delete the books and their files** is refused while another root lies inside the one you're removing.
 
-The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
+A book's root is worked out from where its folder is: ABM finds the root folder that contains the book's path (the most specific one wins). There is no root setting on a book, and changing a book's path changes its root with it. Completed downloads, Manual Import, Library Import and the Import Workbench each file a book into that book's own root. Only the Audible library mirror files into the default root.
+
+The default root folder is the fallback for new books that nothing more specific places. See [Where new books go](#where-new-books-go).
+
+### Where new books go
+
+When Monitor New Books finds a new book for an author or series, it goes to:
+
+1. the series' root folder, if the series has one;
+2. otherwise the author's root folder, if the author has one;
+3. otherwise the default root folder.
+
+An author gets a root when you add it. The Add New dialog asks, unless you have only one root folder, in which case the author takes that one. A series starts as **Inherit from author**, which means it has no root of its own, and you can pick one to override the author. Change either later in the [edit dialog](/using/library/#the-edit-dialog). That only decides where books added from now on go. It never moves a book you already have. Authors that existed before took the root most of their books are in.
+
+Removing a root folder clears it from every author and series that used it, so they fall through to the next step.
+
+Manual Import checks free space on each book's own root folder. When a batch goes to more than one root, each root's share is checked against that root, and the message names the root that is short.
 
 ## Folders
 
@@ -29,7 +45,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/library-import/): copy, hardlink or move. Hardlink is grayed out until the default root has been checked and supports it. |
+| Library Import | Copy | The default for [Library Import](/library-import/): copy, hardlink or move. Hardlink is grayed out until the root the import uses has been checked and supports it. Saving hardlink as the default doesn't check any root. |
 | Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |

@@ -3,7 +3,7 @@ title: Library Import
 description: Bring an existing collection into ABM with the Import Workbench.
 ---
 
-Library Import scans a folder of audiobooks, matches each folder to metadata, and adds the books to your library. **Library > Library Import** opens "Import audiobooks you already have", where you pick a folder to scan. Once the scan starts, ABM moves to the matching page, headed **Match Audiobooks**, where you check the matches and add the books.
+Library Import scans a folder of audiobooks, matches each folder to metadata, and adds the books to your library. **Library > Library Import** opens "Import audiobooks you already have", where you pick a folder to scan. The Root Folders list is the page: each root shows its path, free space and how many folders in it aren't in the library yet. You don't need a default root folder to import. Once the scan starts, ABM moves to the matching page, headed **Match Audiobooks**, where you check the matches and add the books.
 
 ![Library Import: the root folders and recent import sessions](../../assets/docs/library-import.jpg)
 
@@ -39,11 +39,17 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
 - Leaving the page saves your pending edits.
 
+## Which root folder the books go into
+
+- A book found inside a root folder stays in that root and is adopted in place.
+- **Choose Another Folder** with a folder outside every root offers two choices: **Add as a root folder**, which adds it and then scans it, or **Open in Import Workbench**.
+- In the Import Workbench, new books go to a root folder you pick, with the default preselected. Books that add files to a book already in your library go to that book's root. When the scan is inside a root, that root is used and there is nothing to pick.
+
 ## Copy, move or hardlink
 
 **Settings > Media Management > Importing** sets the default for Library Import: copy (the default), move or hardlink. You can pick another for each import.
 
-A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the default root folder to support it and to be checked first. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
+A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the root folder the import goes into to support it and to be checked first. Each root is judged on its own. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
 
 ## Extra files
 

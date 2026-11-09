@@ -21,7 +21,7 @@ description: Bring an existing collection into ABM safely.
 
 Adding the folder as a root folder doesn't add any books by itself. ABM's scans only check books it already knows about, so it won't pick up what's in there. The books still have to come in through Library Import: the root's **Unmapped Folders** count under **Settings > Media Management** opens Library Import for that root.
 
-Importing puts each book in ABM's own Author/Series/Book layout under the default root folder. Pick hardlink to leave the originals untouched without using more space.
+Importing puts each book in ABM's own Author/Series/Book layout under the root folder the import goes into. When the scanned folder is outside every root, you can add it as a root folder or pick the root in the Import Workbench. Pick hardlink to leave the originals untouched without using more space.
 
 ## Gotchas
 

@@ -16,7 +16,7 @@ description: Pull wanted books in from MyAnonamouse or an RSS feed.
 |---|---|
 | Name | Label |
 | Monitor | Whether books it adds are Monitored or Unmonitored |
-| Root Folder | Where they go |
+| Root Folder | Where they go. Must be one of your configured root folders; any other path is refused |
 | Quality Profile | A profile, or Inherit (use default) |
 | Tags | Applied to everything the list adds |
 
@@ -37,6 +37,7 @@ Clean Library Level choices: Disabled, Log Only, Keep and Unmonitor Audiobook, R
 
 ## Gotchas
 
+- If a list's root folder is removed later, that list's sync reports the problem and adds nothing. It never falls back to the default root.
 - A saved session ID is never shown again. A saved RSS link shows only its site, like `https://tracker.example.com/***`, because the rest of the link can carry your passkey. Leave it as it is to keep the saved link, or enter the full link to replace it. A partly edited one is refused. If the app key changes and the link can't be read, the list says so and you enter the link again.
 - RSS links are stored encrypted. After rolling back to an older ABM version, enter your RSS links again.
 - Lists fire the notifications On Import List Synced and On Import List New Items. See [Connect](/settings/connect/).

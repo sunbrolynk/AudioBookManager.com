@@ -37,7 +37,7 @@ description: Terms, for new users and for people coming from the arrs.
 
 **Remote path mapping**: translates the path your download client sees into the path ABM sees.
 
-**Root folder**: a directory ABM keeps books in.
+**Root folder**: a directory ABM keeps books in. A book's root is the one its folder sits in.
 
 **Sidecar**: a small file beside the audio: cover, OPF, NFO, description, narrator, cue.
 
