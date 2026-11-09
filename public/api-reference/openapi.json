@@ -326,9 +326,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BookUpdateRequest"
               }
             }
           }
@@ -446,9 +444,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BookMoveRequest"
               }
             }
           }
@@ -1725,9 +1721,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/CatalogRemoveRequest"
               }
             }
           }
@@ -2578,9 +2572,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/AddAllSeriesBooksRequest"
               }
             }
           }
@@ -2635,9 +2627,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/CatalogRemoveRequest"
               }
             }
           }
@@ -2989,9 +2979,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/RenameFileRequest"
               }
             }
           }
@@ -3034,9 +3022,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/FilePathRequest"
               }
             }
           },
@@ -3080,9 +3066,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/RenameFileByPathRequest"
               }
             }
           },
@@ -3265,9 +3249,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/LibraryScanRequest"
               }
             }
           },
@@ -3441,6 +3423,16 @@
         "summary": "Retry Automatic Matching",
         "description": "Retry automatic matching on pending_search and no_match items.\n\nExpects JSON body:\n{\n    \"items\": [\n        {\n            \"path\": \"/path/to/folder\",\n            \"parsed_title\": \"Book Title\",\n            \"parsed_authors\": [\"Author Name\"],\n            \"parsed_series\": \"Series Name\",\n            \"parsed_position\": \"1\",\n            \"parsed_asin\": \"B00XXXXXX\",\n            \"audio_files\": [\"file1.mp3\", \"file2.mp3\"],\n            \"file_count\": 2\n        },\n        ...\n    ]\n}\n\nReturns updated results with matches found.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryMatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3450,6 +3442,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Retry Automatic Matching Api Library Import Retry Match Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3949,9 +3951,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportFilesRequest"
               }
             }
           },
@@ -3995,9 +3995,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportFilesRequest"
               }
             }
           },
@@ -4041,9 +4039,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ScanPathRequest"
               }
             }
           },
@@ -4087,9 +4083,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportConflictsRequest"
               }
             }
           },
@@ -4178,9 +4172,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportScanRequest"
               }
             }
           },
@@ -4246,9 +4238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportListCreate"
               }
             }
           },
@@ -4304,9 +4294,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportListEdit"
               }
             }
           }
@@ -4862,9 +4850,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ConversionJobCreate"
               }
             }
           },
@@ -4906,9 +4892,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/BulkConversionCreate"
               }
             }
           },
@@ -8485,9 +8469,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Upload Custom Cover Api Books  Book Id  Cover Upload Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8540,9 +8522,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Set Custom Cover Url Api Books  Book Id  Cover Url Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8611,7 +8591,7 @@
           "Covers"
         ],
         "summary": "Revert Cover To Automatic",
-        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the original cover URL.\nDoes nothing on a book that already uses the automatic cover.",
+        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the current automatic cover URL and its cover.jpg.\nReturns 409 when no automatic cover is known.\nDoes nothing on a book that already uses the automatic cover.",
         "operationId": "revert_cover_to_automatic_api_books__book_id__cover_revert_post",
         "parameters": [
           {
@@ -8630,9 +8610,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Revert Cover To Automatic Api Books  Book Id  Cover Revert Post"
+                  "$ref": "#/components/schemas/CoverRevertResponse"
                 }
               }
             }
@@ -13339,9 +13317,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ExclusionCreate"
               }
             }
           },
@@ -13939,9 +13915,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/CreateFolderRequest"
               }
             }
           },
@@ -16317,9 +16291,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ScanPathRequest"
               }
             }
           },
@@ -17306,6 +17278,50 @@
           "message"
         ],
         "title": "ActionResponse"
+      },
+      "AddAllSeriesBooksRequest": {
+        "properties": {
+          "books": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Books"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "AddAllSeriesBooksRequest",
+        "description": "Catalog books to add to a series; each row is passed through as the catalog supplied it."
       },
       "AddBlocklistRequest": {
         "properties": {
@@ -19459,6 +19475,34 @@
         "title": "BookListResponse",
         "description": "Response model for book lists"
       },
+      "BookMoveRequest": {
+        "properties": {
+          "old_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Old Path"
+          },
+          "new_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Path"
+          }
+        },
+        "type": "object",
+        "title": "BookMoveRequest"
+      },
       "BookResponse": {
         "properties": {
           "id": {
@@ -20042,6 +20086,37 @@
         "title": "BookTagsSummaryResponse",
         "description": "`total` is the number of requested IDs that matched a book, not the\nnumber sent."
       },
+      "BookUpdateRequest": {
+        "properties": {
+          "monitored": {
+            "type": "boolean",
+            "title": "Monitored",
+            "default": false
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tags",
+            "default": []
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "BookUpdateRequest",
+        "description": "Fields to change; a field left out is not touched."
+      },
       "BulkAddAndDownloadRequest": {
         "properties": {
           "asins": {
@@ -20331,6 +20406,71 @@
         ],
         "title": "BulkClientUpdate",
         "description": "Apply a partial change set to multiple download clients at once."
+      },
+      "BulkConversionCreate": {
+        "properties": {
+          "book_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Book Ids"
+          },
+          "file_selections": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Selections"
+          },
+          "operation": {
+            "type": "string",
+            "title": "Operation"
+          },
+          "target_format": {
+            "type": "string",
+            "title": "Target Format"
+          },
+          "bitrate": {
+            "type": "string",
+            "title": "Bitrate",
+            "default": "128k"
+          },
+          "delete_original": {
+            "type": "boolean",
+            "title": "Delete Original",
+            "default": false
+          },
+          "chapter_handling": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Handling"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_ids",
+          "operation",
+          "target_format"
+        ],
+        "title": "BulkConversionCreate",
+        "description": "Request for bulk conversion"
       },
       "BulkConversionError": {
         "properties": {
@@ -21256,6 +21396,18 @@
         "type": "object",
         "title": "CatalogAddOptions",
         "description": "What adding an author or a series brings in with it. The defaults\nbuild the catalog and add no books, which Related Authors relies on."
+      },
+      "CatalogRemoveRequest": {
+        "properties": {
+          "add_to_exclusion": {
+            "type": "boolean",
+            "title": "Add To Exclusion",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "CatalogRemoveRequest",
+        "description": "Remove a catalog entry, optionally excluding it from being re-added."
       },
       "ClientCreate": {
         "properties": {
@@ -22378,6 +22530,63 @@
         "title": "ConversionHistoryResponse",
         "description": "Response model for a list of conversion jobs"
       },
+      "ConversionJobCreate": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "operation": {
+            "type": "string",
+            "title": "Operation"
+          },
+          "target_format": {
+            "type": "string",
+            "title": "Target Format"
+          },
+          "bitrate": {
+            "type": "string",
+            "title": "Bitrate",
+            "default": "128k"
+          },
+          "delete_original": {
+            "type": "boolean",
+            "title": "Delete Original",
+            "default": false
+          },
+          "chapter_handling": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Handling"
+          },
+          "scheduled_for": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduled For"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "operation",
+          "target_format"
+        ],
+        "title": "ConversionJobCreate",
+        "description": "Request model for creating a conversion job"
+      },
       "ConversionJobPauseResponse": {
         "properties": {
           "job_id": {
@@ -23064,6 +23273,39 @@
         ],
         "title": "CoverCandidate"
       },
+      "CoverRevertResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverRevertResponse"
+      },
       "CoverSearchResponse": {
         "properties": {
           "results": {
@@ -23157,6 +23399,47 @@
           "count"
         ],
         "title": "CoverSearchSourceStatus"
+      },
+      "CoverSetResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "cover_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Url"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File",
+            "description": "Whether cover.jpg in the book folder was rewritten to match."
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "cover_url",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverSetResponse"
       },
       "CoverUrlBody": {
         "properties": {
@@ -23304,6 +23587,17 @@
         ],
         "title": "CreateAuthorRequest",
         "description": "Request body for creating an author"
+      },
+      "CreateFolderRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "CreateFolderRequest"
       },
       "CreateSeriesRequest": {
         "properties": {
@@ -24710,6 +25004,45 @@
         "title": "EntitySearchResult",
         "description": "An author or series from an upstream name search."
       },
+      "ExclusionCreate": {
+        "properties": {
+          "asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asin"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          }
+        },
+        "type": "object",
+        "title": "ExclusionCreate"
+      },
       "ExitRow": {
         "properties": {
           "scope": {
@@ -25132,6 +25465,23 @@
           "rewritesAudioRefs"
         ],
         "title": "ExtraFileTypeModel"
+      },
+      "FilePathRequest": {
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          }
+        },
+        "type": "object",
+        "title": "FilePathRequest"
       },
       "FileResponse": {
         "properties": {
@@ -25589,6 +25939,31 @@
         "title": "HostSettings",
         "description": "Host and network settings. All fields are required when saving."
       },
+      "ImportConflictsRequest": {
+        "properties": {
+          "book_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Book Id"
+          },
+          "destination_filenames": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Destination Filenames",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "ImportConflictsRequest"
+      },
       "ImportItemKey": {
         "properties": {
           "download_client_id": {
@@ -25606,6 +25981,253 @@
           "client_download_id"
         ],
         "title": "ImportItemKey"
+      },
+      "ImportListCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "default": "RSS List"
+          },
+          "implementation": {
+            "type": "string",
+            "title": "Implementation",
+            "default": "RSSList"
+          },
+          "rss_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rss Url"
+          },
+          "website_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website Url"
+          },
+          "cookie": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cookie"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled",
+            "default": true
+          },
+          "enable_automatic_add": {
+            "type": "boolean",
+            "title": "Enable Automatic Add",
+            "default": true
+          },
+          "monitor": {
+            "type": "string",
+            "title": "Monitor",
+            "default": "audiobook_only"
+          },
+          "search_on_add": {
+            "type": "boolean",
+            "title": "Search On Add",
+            "default": false
+          },
+          "minimum_availability": {
+            "type": "string",
+            "title": "Minimum Availability",
+            "default": "released"
+          },
+          "root_folder": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tags",
+            "default": []
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "ImportListCreate",
+        "description": "A new import list; the feed URL and root folder are required."
+      },
+      "ImportListEdit": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "rss_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rss Url"
+          },
+          "website_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website Url"
+          },
+          "enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enabled"
+          },
+          "enable_automatic_add": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Automatic Add"
+          },
+          "monitor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Monitor"
+          },
+          "search_on_add": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Search On Add"
+          },
+          "minimum_availability": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimum Availability"
+          },
+          "root_folder": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder"
+          },
+          "tags": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tags"
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          },
+          "cookie": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cookie"
+          }
+        },
+        "type": "object",
+        "title": "ImportListEdit",
+        "description": "An import list edit: the bulk fields plus the feed cookie, which a blank value leaves as saved."
       },
       "ImportListOptions": {
         "properties": {
@@ -26926,6 +27548,42 @@
         "title": "LibraryMigrateRequest",
         "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots."
       },
+      "LibraryScanRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          },
+          "recursive": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recursive",
+            "default": true
+          },
+          "search_unmatched": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Search Unmatched",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "LibraryScanRequest",
+        "description": "A folder to scan for importable audiobooks."
+      },
       "LibraryStats": {
         "properties": {
           "total_books": {
@@ -27309,6 +27967,33 @@
         ],
         "title": "LoginStartResponse"
       },
+      "ManualImportFilesRequest": {
+        "properties": {
+          "files": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Files"
+          },
+          "source_type": {
+            "type": "string",
+            "title": "Source Type",
+            "default": "user"
+          }
+        },
+        "type": "object",
+        "title": "ManualImportFilesRequest",
+        "description": "Files to queue for import; each row goes to the task verbatim."
+      },
       "ManualImportRequest": {
         "properties": {
           "download_client_id": {
@@ -27331,6 +28016,22 @@
           "book_id"
         ],
         "title": "ManualImportRequest"
+      },
+      "ManualImportScanRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          },
+          "recursive": {
+            "type": "boolean",
+            "title": "Recursive",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "ManualImportScanRequest"
       },
       "MappingCreate": {
         "properties": {
@@ -29890,6 +30591,67 @@
         ],
         "title": "RemoveRequest"
       },
+      "RenameFileByPathRequest": {
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          },
+          "new_filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Filename"
+          }
+        },
+        "type": "object",
+        "title": "RenameFileByPathRequest"
+      },
+      "RenameFileRequest": {
+        "properties": {
+          "new_filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Filename"
+          }
+        },
+        "type": "object",
+        "title": "RenameFileRequest"
+      },
+      "RetryMatchRequest": {
+        "properties": {
+          "items": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "RetryMatchRequest",
+        "description": "Rows to search again; each row is the free-form parse a scan produced."
+      },
       "RootFolderCreate": {
         "properties": {
           "path": {
@@ -30482,6 +31244,18 @@
           "default_cover"
         ],
         "title": "RowExtrasResponse"
+      },
+      "ScanPathRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "ScanPathRequest",
+        "description": "A folder to scan."
       },
       "ScanResultRow": {
         "properties": {
