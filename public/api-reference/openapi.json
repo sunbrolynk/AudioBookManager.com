@@ -428,7 +428,7 @@
           "Books"
         ],
         "summary": "Move Book",
-        "description": "Move a book's folder to a new location and repoint its file records.\nWith `move_files` false only the book's recorded path changes: nothing on\ndisk is touched and its file records follow the new path.",
+        "description": "Move a book's folder to a new location and repoint its file records.\n`move_files` defaults to true; false only changes the book's recorded\npath: nothing on disk is touched and its file records follow the new path.",
         "operationId": "move_book_api_books__book_id__move_post",
         "parameters": [
           {
@@ -3998,7 +3998,7 @@
           "Library Import"
         ],
         "summary": "Confirm Library Import",
-        "description": "Confirm and import matched books into the library. Every file must come\nfrom the session's own scan and no file may be imported twice; anything\nelse is refused before a file is touched. Queues a background task; poll\n`/api/tasks/{task_id}` for status.",
+        "description": "Confirm and import matched books into the library. Every file must come\nfrom the session's own scan and no file may be imported twice; anything\nelse is refused before a file is touched. Queues a background task; poll\n`/api/tasks/{task_id}` for status. `destination` is the root the import\nfiles into, or null for an Automatic import with no import-wide root.",
         "operationId": "confirm_library_import_api_library_import_confirm_post",
         "requestBody": {
           "content": {
@@ -4114,6 +4114,59 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RowExtrasResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/root-preview": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Preview Roots",
+        "description": "The root each named row's new book files into: the scanned root for a\nsession inside one, otherwise the root its stored match's series or\nauthors point at, else the placement default.",
+        "operationId": "preview_roots_api_library_import_session__session_id__root_preview_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RootPreviewRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RootPreviewResponse"
                 }
               }
             }
@@ -18822,7 +18875,7 @@
               "write_opf": false,
               "write_tags": false,
               "embed_cover": false,
-              "move_files": false
+              "move_files": true
             }
           }
         },
@@ -20914,7 +20967,7 @@
           "move_files": {
             "type": "boolean",
             "title": "Move Files",
-            "default": false
+            "default": true
           }
         },
         "type": "object",
@@ -22527,6 +22580,17 @@
             ],
             "title": "Cover Preference"
           },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          },
           "confirmedAsin": {
             "anyOf": [
               {
@@ -22598,7 +22662,7 @@
           "session_id"
         ],
         "title": "ConfirmImportRequest",
-        "description": "The rows to import from one session, and how their files are placed.\nAn omitted `import_mode` uses the Media Management default. `root_folder_id`\nis needed only when the session was scanned outside every root."
+        "description": "The rows to import from one session, and how their files are placed.\nAn omitted `import_mode` uses the Media Management default. `root_folder_id`\noverrides the root for a session scanned outside every root; omitted, each\nnew book goes to its author's or series' root. A session scanned inside a\nroot always files there."
       },
       "ConversionDryRunRequest": {
         "properties": {
@@ -27288,7 +27352,7 @@
           "move_files": {
             "type": "boolean",
             "title": "Move Files",
-            "default": false
+            "default": true
           }
         },
         "type": "object",
@@ -27297,7 +27361,7 @@
           "new_root"
         ],
         "title": "LibraryMigrateRequest",
-        "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots. With `move_files` false only each book's recorded path is\nrewritten, for files already moved by hand."
+        "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots. `move_files` defaults to true; false only rewrites each\nbook's recorded path, for files already moved by hand."
       },
       "LibraryStats": {
         "properties": {
@@ -30476,6 +30540,60 @@
         "title": "RootFolderUpdate",
         "description": "Request model for renaming a root folder or making it the default"
       },
+      "RootPreviewRequest": {
+        "properties": {
+          "paths": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20000,
+            "minItems": 1,
+            "title": "Paths"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "paths"
+        ],
+        "title": "RootPreviewRequest",
+        "description": "The rows of one session to resolve a landing root for."
+      },
+      "RootPreviewResponse": {
+        "properties": {
+          "roots": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RootPreviewRoot"
+            },
+            "type": "object",
+            "title": "Roots"
+          }
+        },
+        "type": "object",
+        "required": [
+          "roots"
+        ],
+        "title": "RootPreviewResponse"
+      },
+      "RootPreviewRoot": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "path"
+        ],
+        "title": "RootPreviewRoot"
+      },
       "Routing": {
         "properties": {
           "route_indexers": {
@@ -31502,7 +31620,7 @@
               "write_opf": false,
               "write_tags": false,
               "embed_cover": false,
-              "move_files": false
+              "move_files": true
             }
           }
         },

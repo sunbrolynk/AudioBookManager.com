@@ -73,7 +73,7 @@ The same dialog opens for series and authors and applies to each of their books.
 - **Root Folder**: the root folder new books go to (see [Media Management](/settings/media-management/#where-new-books-go)). A series can pick **Inherit from author** to use the author's. This only affects books added from now on and never moves existing ones.
 - **Move Books To**: moves the books they already have to another root folder, and asks the same move-files question.
 
-Both fields are hidden when you have only one root folder. The write options run when you save. Values are checked before anything is queued, so a bad one is refused at once instead of failing later. Each book is saved as it goes, so one book that fails doesn't undo the others, and audio tag errors are listed per book in the task's errors on the Tasks page.
+The **Root Folder** field is hidden when you have only one root folder. The write options run when you save. Values are checked before anything is queued, so a bad one is refused at once instead of failing later. Each book is saved as it goes, so one book that fails doesn't undo the others, and audio tag errors are listed per book in the task's errors on the Tasks page.
 
 ## Tags
 

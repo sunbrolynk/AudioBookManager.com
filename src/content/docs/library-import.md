@@ -43,13 +43,16 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 
 - A book found inside a root folder stays in that root and is adopted in place.
 - **Choose Another Folder** with a folder outside every root offers two choices: **Add as a root folder**, which adds it and then scans it, or **Open in Import Workbench**.
-- In the Import Workbench, new books go to a root folder you pick, with the default preselected. Books that add files to a book already in your library go to that book's root. When the scan is inside a root, that root is used and there is nothing to pick.
+- In the Import Workbench, the root picker starts on **Automatic (author / series root)**. Each new book goes to its series' root folder, else its author's, else the default. You can pick one root for the whole import instead. When the scan is inside a root, that root is used and there is nothing to pick.
+- Every row shows the root it will land in, and you can change it for a single row. A row that adds files to a book already in your library shows **Stays in …** with that book's root. If working out where rows land fails, the page shows an error instead of spinning.
+- **Choose Another Folder** is disabled while root folders are loading or if they failed to load.
+- A new author takes the root its first book lands in.
 
 ## Copy, move or hardlink
 
 **Settings > Media Management > Importing** sets the default for Library Import: copy (the default), move or hardlink. You can pick another for each import.
 
-A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the root folder the import goes into to support it and to be checked first. Each root is judged on its own. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
+A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs every root folder the import lands in to support it and to be checked first. Each root is judged on its own. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
 
 ## Extra files
 
