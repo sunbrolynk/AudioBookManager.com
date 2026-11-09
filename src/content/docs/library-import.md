@@ -26,6 +26,8 @@ Every option is an optional override of a default in Media Management.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
+Names in folder names or tags that carry a role are never made into authors. A translator becomes a translator credit on the book. Other roles, such as illustrator or editor, are dropped.
+
 ## Joining, splitting and adding
 
 - Join rows that are one book split across folders. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
