@@ -8485,9 +8485,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Upload Custom Cover Api Books  Book Id  Cover Upload Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8540,9 +8538,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Set Custom Cover Url Api Books  Book Id  Cover Url Post"
+                  "$ref": "#/components/schemas/CoverSetResponse"
                 }
               }
             }
@@ -8611,7 +8607,7 @@
           "Covers"
         ],
         "summary": "Revert Cover To Automatic",
-        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the original cover URL.\nDoes nothing on a book that already uses the automatic cover.",
+        "description": "Clear a custom cover and restore the automatic one. Unlocks the cover,\ndeletes the stored custom file and brings back the current automatic cover URL and its cover.jpg.\nReturns 409 when no automatic cover is known.\nDoes nothing on a book that already uses the automatic cover.",
         "operationId": "revert_cover_to_automatic_api_books__book_id__cover_revert_post",
         "parameters": [
           {
@@ -8630,9 +8626,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Revert Cover To Automatic Api Books  Book Id  Cover Revert Post"
+                  "$ref": "#/components/schemas/CoverRevertResponse"
                 }
               }
             }
@@ -19490,6 +19484,14 @@
             ],
             "title": "Narrators"
           },
+          "translators": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Translators",
+            "default": []
+          },
           "asin": {
             "anyOf": [
               {
@@ -23064,6 +23066,39 @@
         ],
         "title": "CoverCandidate"
       },
+      "CoverRevertResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverRevertResponse"
+      },
       "CoverSearchResponse": {
         "properties": {
           "results": {
@@ -23157,6 +23192,47 @@
           "count"
         ],
         "title": "CoverSearchSourceStatus"
+      },
+      "CoverSetResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "cover_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Url"
+          },
+          "cover_locked": {
+            "type": "boolean",
+            "title": "Cover Locked"
+          },
+          "cover_file": {
+            "type": "string",
+            "enum": [
+              "written",
+              "skipped",
+              "failed"
+            ],
+            "title": "Cover File",
+            "description": "Whether cover.jpg in the book folder was rewritten to match."
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "cover_url",
+          "cover_locked",
+          "cover_file"
+        ],
+        "title": "CoverSetResponse"
       },
       "CoverUrlBody": {
         "properties": {

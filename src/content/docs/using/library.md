@@ -19,6 +19,8 @@ Each book is an overview row, a poster or a table line (the view switch is in th
 
 ![A book's page: cover, rating, runtime, authors, narrators, series, synopsis and its files](../../../assets/docs/book.jpg)
 
+A book that has translators also shows a Translators card after Narrators, on desktop and phone.
+
 ![The Files and Other files sections of a book's page, with codec, bitrate, size and format](../../../assets/docs/book-files.jpg)
 
 ![The Chapters section of a book's page, listing each chapter's title and start time](../../../assets/docs/book-chapters.jpg)

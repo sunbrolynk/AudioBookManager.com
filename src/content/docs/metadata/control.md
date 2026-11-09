@@ -7,7 +7,7 @@ ABM keeps a record of your library's metadata in its own database, and writes it
 
 ## What a refresh changes
 
-A refresh (a book's **Refresh & Scan**, an author refresh, a series refresh) asks the metadata source again and applies what comes back. Fields it overwrites when the source has a value: title, subtitle, year and release date, rating, runtime, language, publisher, description, authors, narrators, genres, and the cover.
+A refresh (a book's **Refresh & Scan**, an author refresh, a series refresh) asks the metadata source again and applies what comes back. Fields it overwrites when the source has a value: title, subtitle, year and release date, rating, runtime, language, publisher, description, authors, translators, narrators, genres, and the cover.
 
 A field the source returns empty is left as it is.
 
@@ -17,7 +17,7 @@ A field the source returns empty is left as it is.
 - **Tags, auto tags, monitoring, quality profile choices and the files themselves.** A refresh does not touch them.
 - **A book whose files cannot be read.** It is left alone entirely, and the Tasks page shows why.
 
-Book details such as the title, authors and description come from the source. ABM does not offer hand-editing of them, and none is planned. What you control is how they are kept and where they are written.
+Book details such as the title, authors and description come from the source. A name the source tags as a translator is kept as a translator credit on the book, like a narrator. Other print roles (illustrator, editor, introduction and the like) are not kept, and a role-tagged name never becomes an author. ABM does not offer hand-editing of them, and none is planned. What you control is how they are kept and where they are written.
 
 ## The edit dialog
 
