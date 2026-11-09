@@ -19485,12 +19485,18 @@
             "title": "Narrators"
           },
           "translators": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Translators",
-            "default": []
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Translators"
           },
           "asin": {
             "anyOf": [
