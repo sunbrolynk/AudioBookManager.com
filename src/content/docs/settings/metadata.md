@@ -11,7 +11,7 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 ## Source
 
-The section opens with cards for **Source**, **Status** and **Connection**. **Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving. **Status** says whether it is ready, or shows Unsaved when you have picked a source but not saved yet. **Connection** shows the route lookups leave through (Server for Hosted and Self-hosted) and links to **Settings > Network**. **Public IP** has a **Check** button that shows the address your lookups leave from. On a phone these are rows, like the Settings menu, with the source picked from a list. Switching takes effect for every lookup at once. See [Choosing a metadata source](/metadata/choosing-a-source/).
+The section opens with cards for **Source**, **Status** and **Connection**. **Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving. **Status** says whether it is ready, or shows Unsaved when you have picked a source but not saved yet. **Connection** shows the route lookups leave through (Server for Hosted and Self-hosted) and links to **Settings > Network**. **Public IP** has a **Check** button that shows the address your lookups leave from. On a phone these are rows, like the Settings menu, with the source picked from a list. Switching takes effect for every lookup at once. An install that used Hosted before shows Built-in until you pick Hosted again. See [Choosing a metadata source](/metadata/choosing-a-source/).
 
 ## Metadata File Creation
 
