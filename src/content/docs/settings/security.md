@@ -74,4 +74,4 @@ There is no lockout. Failed attempts are logged, folded per address in the Activ
 
 ## Secrets
 
-Passwords and keys that ABM stores for indexers, clients and connections are encrypted with an app secret. Set `APP_SECRET` to keep the key off the config disk. If neither exists, ABM generates `/config/app_secret`. Proxy and export-target passwords are stored as plain text.
+Passwords and keys that ABM stores for indexers, clients and connections are encrypted with an app secret. Set `APP_SECRET` to keep the key off the config disk. If neither exists, ABM generates `/config/app_secret`. The proxy password and the remote passwords and S3 secret keys of backup export targets are encrypted the same way. If a saved password can't be decrypted (the key changed, or a backup was restored onto another instance), it is never sent, and Test and Export tell you to re-enter it. An older version can't read these encrypted values, so after rolling back, re-enter the proxy and export passwords. Tracker passkeys in RSS URLs are masked in the logs.
