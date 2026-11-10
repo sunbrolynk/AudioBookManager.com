@@ -19,6 +19,7 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+      actions: write
     steps:
       - name: Check out dev
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
@@ -34,7 +35,7 @@ jobs:
 
       # ABM_RELEASES_TOKEN is a fine-grained token with read-only Contents on the ABM repo.
       # It can be deleted once that repo is public.
-      - name: Open a pull request for new releases
+      - name: Open self-merging pull requests for new releases
         env:
           GH_TOKEN: ${{ github.token }}
           ABM_TOKEN: ${{ secrets.ABM_RELEASES_TOKEN }}

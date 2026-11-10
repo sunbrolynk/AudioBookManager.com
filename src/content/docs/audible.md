@@ -22,7 +22,7 @@ Accounts signed in from now on no longer hit throttled download licences. Books 
 
 If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Sign in again on the same account. It keeps its library and takes the new credentials. Do not delete the account to fix this: deleting it drops its library table and removes its device from Audible.
 
-Each account has an **Enabled** switch. Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
+Each account has an **Enabled** checkbox (a switch on a phone). Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
 
 ## Sync
 

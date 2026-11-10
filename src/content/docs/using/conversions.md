@@ -30,6 +30,8 @@ ABM refreshes the book's file records, size and quality, so a converted book sho
 
 If placing the result fails (the library folder is full, say), the job fails and the finished output is kept in its work folder. The error names the folder. **Retry** starts the job over and discards that kept output, so it asks first. **Clear history** keeps jobs that still hold unplaced output.
 
+A conversion that finishes while a library scan is reading that book waits for the scan to move on. If the scan holds the book for more than 10 minutes, the job fails with "Book N is being scanned; gave up waiting…". Nothing in the library changes and the original files stay as they were. The finished output is kept in the job's work folder and the error names the path. Retry the job afterwards.
+
 ## Restart, cancel and duplicates
 
 A book never has two conversions running at once. If a book already has one queued, running or paused, a new conversion for it waits its turn instead of being refused, and runs on the files the earlier one produces. The queue shows "Waiting for the earlier conversion of this book" on it. The preview shows each book as it will be once the queued conversions finish, with a note like "After the queued convert to MP3".
