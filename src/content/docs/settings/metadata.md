@@ -5,11 +5,13 @@ description: Which sidecar files and audio tags ABM writes, and when.
 
 **Settings > Metadata** decides what ABM writes into a book's folder and its files. How these files are used is on [Sidecar files](/using/sidecars/).
 
-![Settings, Metadata: the Local Storage section with Enable Local Storage, its size and counts, Download a Copy, and Storage Backups](../../../assets/docs/settings-metadata.jpg)
+![Settings, Metadata: the Source section with its status and connection, and Local Storage with its counts and Download a Copy](../../../assets/docs/settings-metadata.jpg)
+
+![Settings, Metadata on a phone: Source and Local Storage as rows](../../../assets/docs/phone-settings-metadata.jpg)
 
 ## Source
 
-**Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving, **Status** says whether it is ready, and **Connection** shows the route lookups leave through and links to **Settings > Network**. Switching takes effect for every lookup at once. See [Choosing a metadata source](/metadata/choosing-a-source/).
+The section opens with cards for **Source**, **Status** and **Connection**. **Metadata Source** is Built-in (the default), Hosted (libexdb.com) or Self-hosted, which takes a **Server URL**. **Test** makes a real request to the selected source without saving. **Status** says whether it is ready, or shows Unsaved when you have picked a source but not saved yet. **Connection** shows the route lookups leave through (Server for Hosted and Self-hosted) and links to **Settings > Network**. **Public IP** has a **Check** button that shows the address your lookups leave from. On a phone these are rows, like the Settings menu, with the source picked from a list. Switching takes effect for every lookup at once. See [Choosing a metadata source](/metadata/choosing-a-source/).
 
 ## Metadata File Creation
 
@@ -36,21 +38,19 @@ Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Al
 
 ## Local Storage
 
-**Enable Local Storage** is off by default and is there for every metadata source. Once it is on, ABM saves every book, author and series a lookup returns, taken from the answers it receives, into a file of its own. It shows the file's size and how many books, authors and series it holds. The totals cover every region, with a breakdown by region when more than one region has data. A file that can't be opened is reported there and never stops lookups. How it is used is on [Your metadata, your control](/metadata/control/#local-storage).
+**Enable Local Storage** is off by default and is there for every metadata source. Once it is on, ABM saves every book, author and series a lookup returns, taken from the answers it receives, into a file of its own. It shows cards for **Books**, **Chapters** (books with chapters), **Authors**, **Series** and **Size**, and when it was last backed up. On a phone the counts sit in one **Stored lookups** row, and a count that can't be read shows a dash instead of 0. The totals cover every region, with a breakdown by region when more than one region has data. A file that can't be opened is reported there and never stops lookups. How it is used is on [Your metadata, your control](/metadata/control/#local-storage).
 
 **Download a Copy** saves the library as a single SQLite file.
 
-Turning it off opens a dialog. You can pick any combination of two optional copies, or neither:
+Turning it off opens a **Turn Off Local Storage** dialog with three optional checkboxes:
 
-- **Export to backup targets.** Sends the library to your export targets.
-- **Download a copy.** Saves the library as a SQLite file.
+- **Export to backup targets first.** Sends the library to your export targets.
+- **Download a copy first.** Saves the library as a SQLite file.
+- **Delete Local Storage.** Deleted Local Storage can't be recovered unless you made a copy.
 
-Then you pick one of two choices, which is required:
+With none ticked, **Turn Off** keeps the local data, and it is used again the next time you turn Local Storage on. Ticking Delete changes the button to **Turn Off and Delete** and asks you to type `delete` before it works.
 
-- **Keep the local data.** It stays, and is used again the next time you turn Local Storage on.
-- **Delete it.** Deleted Local Storage can't be recovered unless you made a copy.
-
-If the export or the download fails, nothing is deleted and Local Storage stays on.
+If the export or the download fails, nothing is turned off or deleted and Local Storage stays on.
 
 ## Storage Backups
 

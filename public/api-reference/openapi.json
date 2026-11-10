@@ -28360,13 +28360,12 @@
           "connection": {
             "anyOf": [
               {
-                "type": "string"
+                "$ref": "#/components/schemas/EgressConnection"
               },
               {
                 "type": "null"
               }
             ],
-            "title": "Connection",
             "description": "The saved outbound choice, while Built-in is active"
           },
           "self_hosted_url": {

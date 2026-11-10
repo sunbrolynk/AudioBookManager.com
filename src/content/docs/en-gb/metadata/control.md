@@ -61,7 +61,7 @@ Local Storage is an opt-in copy of everything ABM has looked up, kept in a file 
 
 **Repeat lookups.** ABM reuses a source's last answer to the same lookup for 300 seconds. A repeat within that time is not recorded again and gets no saved rows.
 
-**Turning it off** lets you export it to your backup targets and download a copy first, in any combination, then asks whether to keep the local data or delete it. If a copy fails, nothing is deleted and Local Storage stays on.
+**Turning it off** lets you export it to your backup targets and download a copy first, in any combination, and keeps the data unless you tick Delete, which also asks you to type `delete`. If a copy fails, nothing is turned off or deleted and Local Storage stays on.
 
 **Backup and restore.** Local Storage has its own backups, on a schedule or by **Backup Now**, kept apart from the ABM backups and never shown in their list. They can be exported to your backup targets, downloaded, restored from the list or from an uploaded file, and deleted. Restoring asks for your password when one is set, and a restore that fails leaves the current library in place. See [Storage Backups](/en-gb/settings/metadata/#storage-backups).
 
