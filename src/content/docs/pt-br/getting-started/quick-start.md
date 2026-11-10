@@ -11,7 +11,7 @@ Na primeira visita, o ABM te guia na criação de um login. Até você fazer iss
 
 ## 2. Escolha como o ABM chega à internet
 
-Em **Settings > General** tem uma seção **Proxy**. Configure um proxy ali se o ABM precisar passar por um para chegar à internet. Se o ABM sai direto para a internet, pule isso.
+Em **Settings > [Network](/pt-br/settings/network/)** você escolhe como o ABM chega à internet: um proxy, um túnel WireGuard ou Direct. Nada sai até você escolher um.
 
 ## 3. Adicione uma pasta raiz
 

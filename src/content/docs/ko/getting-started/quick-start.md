@@ -11,7 +11,7 @@ description: 새로 설치한 상태에서 첫 모니터링 책까지 가는 길
 
 ## 2. ABM이 인터넷에 나가는 방법 고르기
 
-**Settings > General**에 **Proxy** 섹션이 있어요. ABM이 인터넷에 나가려면 프록시를 거쳐야 한다면 거기서 설정하세요. ABM이 바로 인터넷에 연결된다면 건너뛰어도 돼요.
+**Settings > [Network](/ko/settings/network/)**에서 ABM이 인터넷에 나가는 방법(프록시, WireGuard 터널, Direct)을 고르세요. 고르기 전에는 아무것도 나가지 않아요.
 
 ## 3. 루트 폴더 추가하기
 

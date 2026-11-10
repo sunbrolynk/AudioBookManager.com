@@ -5,11 +5,7 @@ description: 内置、托管，或者你自己的 Libex 服务器。
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[后续版本推出]
-元数据源的选择还没有出现在已发布的版本里。已发布的版本使用 libexdb.com 上的公共 Libex 实例，也没有这个设置项。
-:::
-
-在后续版本中，**Settings > Metadata > Source** 会有一个 **Metadata Source** 设置，有三个选项。
+**Settings > Metadata > Source** 有一个 **Metadata Source** 设置，共三个选项。在你选择之前，它是 Built-in。
 
 | 选项 | 含义 |
 |---|---|
@@ -21,11 +17,19 @@ import { Icon } from '@astrojs/starlight/components';
 
 ## 内置模式和出站连接
 
-内置模式是从你的机器直接和 Audible 通信的，所以它使用 **Settings > General > Proxy & VPN**。那个页面决定走哪条线路：代理、内置的 WireGuard 隧道、你自己的 VPN 容器，或者你确认过的直连。一个都没选时，自动查询会被阻止，并提示原因。选中的线路断了，查询同样会被阻止，绝不会退回到用你自己的地址。选直连时会显示警告：Audible 能看到你的 IP 地址，以及 ABM 查询了哪些书。
+内置模式是从你的机器直接和 Audible 通信的，所以它使用 **Settings > Network**。那个页面决定走哪条线路：代理、内置的 WireGuard 隧道、你自己的 VPN 容器，或者你确认过的直连。一个都没选时，自动查询会被阻止，并提示原因。选中的线路断了，查询同样会被阻止，绝不会退回到用你自己的地址。选直连时会显示警告：Audible 能看到你的 IP 地址，以及 ABM 查询了哪些书。
+
+每个来源都通过 **Settings > Network** 里选定的连接发送查询，绝不会改走别的路线。你局域网里的 self-hosted 服务器，以及它提供的封面，是直接连接的。
 
 ## 托管和自托管
 
 这两种模式下，ABM 向一个 Libex 服务器查询，由服务器去和 Audible 通信。自托管的 URL 在保存前会先检查，空的或不安全的地址会被拒绝。服务器宕机时，会报告为元数据源不可用，并写出它的名字。
+
+## 来源连不上时
+
+如果来源连不上，或拒绝了 ABM，对大量条目的刷新、导入或同步会停下来，而不是一本接一本地失败；单次超时只会跳过那一个条目。每种故障你只会收到一条通知。错误信息会写明来源和真正的原因，比如 VPN 断了。
+
+当 Libex 要求 ABM 放慢速度时，你正在等的搜索大约 10 秒后放弃，后台任务最多等 2 分钟。
 
 ## 选哪个
 

@@ -11,7 +11,7 @@ description: 從剛裝好到第一本被監控的書。
 
 ## 2. 選擇 ABM 連上網路的方式
 
-**Settings > General** 裡有一個 **Proxy** 區塊。如果 ABM 得透過代理才能上網，就在那裡設定代理。如果 ABM 能直接上網，跳過這一步就好。
+在 **Settings > [Network](/zh-tw/settings/network/)** 裡選擇 ABM 如何連上網際網路：代理、WireGuard 通道或 Direct。選好之前，什麼都不會送出去。
 
 ## 3. 新增根資料夾
 

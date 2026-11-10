@@ -11,7 +11,7 @@ Przy pierwszej wizycie ABM przeprowadzi cię przez założenie loginu. Dopóki t
 
 ## 2. Wybierz, jak ABM łączy się z internetem
 
-W **Settings > General** jest sekcja **Proxy**. Ustaw tam proxy, jeśli ABM musi łączyć się z internetem przez proxy. Jeśli ABM łączy się bezpośrednio, pomiń ten krok.
+W **Settings > [Network](/pl/settings/network/)** wybierasz, jak ABM łączy się z internetem: proxy, tunel WireGuard albo Direct. Nic nie wychodzi, dopóki nie wybierzesz.
 
 ## 3. Dodaj folder główny
 

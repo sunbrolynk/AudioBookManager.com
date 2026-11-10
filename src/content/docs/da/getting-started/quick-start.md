@@ -11,7 +11,7 @@ Første gang bliver du guidet igennem at oprette et login. Indtil du har gjort d
 
 ## 2. Vælg, hvordan ABM kommer på nettet
 
-Under **Settings > General** er der en sektion **Proxy**. Indstil en proxy der, hvis ABM skal gå gennem en for at nå internettet. Når ABM kommer direkte på nettet, kan du springe det over.
+Under **Settings > [Network](/da/settings/network/)** vælger du, hvordan ABM når internettet: en proxy, en WireGuard-tunnel eller Direct. Intet går ud, før du har valgt.
 
 ## 3. Tilføj en rodmappe
 

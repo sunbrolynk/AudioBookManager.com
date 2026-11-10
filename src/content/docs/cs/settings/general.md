@@ -3,7 +3,7 @@ title: Obecné
 description: Hostitel, zabezpečení, proxy, logování a zálohy.
 ---
 
-**Settings > General** má sekce Host, Security, Proxy, Logging a Backups. Security má [vlastní stránku](/cs/settings/security/).
+**Settings > General** má sekce Host, Security, Logging a Backups. Security má [vlastní stránku](/cs/settings/security/).
 
 ## Hostitel (Host)
 

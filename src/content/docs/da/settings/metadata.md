@@ -5,6 +5,10 @@ description: Hvilke sidecar-filer og lydtags ABM skriver, og hvornår.
 
 **Settings > Metadata** afgør, hvad ABM skriver i en bogs mappe og dens filer. Hvordan filerne bliver brugt, står under [Sidecar-filer](/da/using/sidecars/).
 
+## Kilde (Source)
+
+**Metadata Source** er Built-in (standard), Hosted (libexdb.com) eller Self-hosted, som kræver en **Server URL**. **Test** sender en rigtig forespørgsel til den valgte kilde uden at gemme, **Status** siger, om den er klar, og **Connection** viser ruten, opslagene forlader ABM på, med et link til **Settings > Network**. Et skift gælder med det samme for alle opslag. Se [Vælg en metadatakilde](/da/metadata/choosing-a-source/).
+
 ## Oprettelse af metadatafiler
 
 | Indstilling | Standard | Virkning |
@@ -28,11 +32,12 @@ Skriver audio-tags ind i selve lydfilerne.
 
 Tagfelter, alle slået til som standard: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) og Cover Art.
 
-## Kommer i en senere udgivelse
+## Lokal lagring (Local Storage)
 
-Et valg af metadatakilde og en lokal kopi af metadatabiblioteket er planlagt til en senere udgivelse. Se [Dine metadata, din kontrol](/da/metadata/control/).
+Med Built-in-kilden vises sektionerne **Local Storage** og **Storage Backups**. De er en forhåndsvisning og endnu ikke koblet til. Se [Dine metadata, din kontrol](/da/metadata/control/).
 
 ## Faldgruber
 
 - Skrivning af tags ændrer lydfilerne. Audiobookshelf vil se dem som ændrede.
 - Kan metadata eller et cover ikke hentes under skrivning af tags, returnerer kaldet advarsler i stedet for at fejle.
+- Når et cover ikke kunne indlejres, fordi forbindelsen afviste det, viser bogsiden og redigeringsdialogen en advarsel i stedet for almindelig succes.

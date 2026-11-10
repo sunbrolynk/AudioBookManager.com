@@ -22,4 +22,4 @@ Das Cover eines Buchs lässt sich auf das automatische zurücksetzen, womit es e
 ## Stolperfallen
 
 - Die Sperre gilt nur für das Cover. Titel, Autor und der Rest werden weiter aktualisiert.
-- Cover werden über deinen Proxy geholt, wenn du unter **Settings > General > Proxy** einen eingestellt hast.
+- Cover werden über deinen Proxy geholt, wenn du unter **Settings > Network** einen eingestellt hast.

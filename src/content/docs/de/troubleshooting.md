@@ -50,10 +50,10 @@ Erhöh `MAX_REQUEST_BODY_BYTES`. Auch ein Reverse Proxy kann ein niedrigeres Lim
 
 ## Die Metadatenquelle ist nicht erreichbar
 
-Hinzufügen, Suchen, Aktualisieren und Discover brauchen Libex. Bekommt ABM keine Antwort, schlägt eine Buchsuche mit "Libex search failed" fehl und eine Autoren- oder Serien-Suche mit "Libex could not be reached; try again shortly", statt eine leere Liste zu zeigen. Ursachen: Libex ist down, oder die Verbindung von ABM erreicht es nicht.
+Hinzufügen, Suchen, Aktualisieren und Discover brauchen die Metadatenquelle. Bekommt ABM keine Antwort, nennt die Fehlermeldung die Quelle und den wahren Grund, zum Beispiel dass das VPN down ist, statt eine leere Liste zu zeigen. Ursachen: Die Quelle ist down, oder die Verbindung von ABM erreicht sie nicht. Ein Aktualisieren, Import oder Sync über viele Einträge hält an, wenn die Quelle nicht erreichbar ist oder ABM ablehnt, mit einer Benachrichtigung pro Art von Ausfall, und ein einzelnes Timeout überspringt nur diesen Eintrag.
 
 1. Schau auf die [ABM-Statusseite](https://status.audiobookmanager.com) und die [Libex-Statusseite](https://status.libexdb.com), ob es für alle down ist.
-2. Prüf, ob der Container ins Internet kommt, und ob der Proxy unter **Settings > General > Proxy** stimmt, falls du einen nutzt.
+2. Prüf, ob der Container ins Internet kommt, und ob der Proxy unter **Settings > Network** stimmt, falls du einen nutzt.
 3. Versuch es nach einer Minute noch mal.
 4. In der Zwischenzeit kannst du Bücher weiter von Hand hinzufügen und importieren.
 

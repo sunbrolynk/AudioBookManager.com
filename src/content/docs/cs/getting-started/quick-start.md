@@ -11,7 +11,7 @@ Při první návštěvě tě ABM provede vytvořením přihlášení. Dokud to n
 
 ## 2. Vyber, jak se ABM dostane na internet
 
-V **Settings > General** je sekce **Proxy**. Nastav tam proxy, pokud ABM musí na internet přes proxy. Pokud se ABM na internet dostane přímo, tohle přeskoč.
+V **Settings > [Network](/cs/settings/network/)** vyber, jak se ABM dostane na internet: proxy, tunel WireGuard nebo Direct. Dokud nějaké nevybereš, nic ven nejde.
 
 ## 3. Přidej kořenovou složku
 

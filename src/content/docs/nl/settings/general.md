@@ -3,7 +3,7 @@ title: Algemeen
 description: Host, beveiliging, proxy, logging en back-ups.
 ---
 
-**Settings > General** heeft secties voor Host, Security, Proxy, Logging en Backups. Security heeft [een eigen pagina](/nl/settings/security/).
+**Settings > General** heeft secties voor Host, Security, Logging en Backups. Security heeft [een eigen pagina](/nl/settings/security/).
 
 ## Host
 

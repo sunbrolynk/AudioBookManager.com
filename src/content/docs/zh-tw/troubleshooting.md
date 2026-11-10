@@ -50,10 +50,10 @@ Content-Security-Policy 標頭只允許 HTTPS 的封面圖片。到瀏覽器主�
 
 ## 中繼資料來源無法使用
 
-新增、搜尋、重新整理和 Discover 都需要 Libex。ABM 得不到回應時，書籍搜尋會以 "Libex search failed" 失敗，作者或系列搜尋會以 "Libex could not be reached; try again shortly" 失敗，而不是顯示空白清單。原因：Libex 掛了，或是 ABM 的連線碰不到它。
+新增、搜尋、重新整理和 Discover 都需要中繼資料來源。ABM 得不到回應時，錯誤訊息會寫明來源和真正的原因，例如 VPN 斷了，而不是顯示空清單。原因：來源當機，或 ABM 的連線連不到它。來源連不上或拒絕 ABM 時，對大量項目的重新整理、匯入或同步會停下來，每種故障只發一則通知，單次逾時只跳過那一個項目。
 
 1. 看看 [ABM 狀態頁](https://status.audiobookmanager.com)和 [Libex 狀態頁](https://status.libexdb.com)，確認是不是對所有人都掛了。
-2. 檢查容器能不能上網；如果你有用代理，檢查 **Settings > General > Proxy** 裡的設定對不對。
+2. 檢查容器能不能上網；如果你有用代理，檢查 **Settings > Network** 裡的設定對不對。
 3. 過一分鐘再試。
 4. 這段期間你還是可以手動新增和匯入書籍。
 

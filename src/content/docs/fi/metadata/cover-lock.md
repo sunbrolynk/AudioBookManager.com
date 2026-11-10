@@ -22,4 +22,4 @@ Kirjan kansikuvan voi palauttaa automaattiseksi, mik채 purkaa lukituksen. Sen j�
 ## Sudenkuopat
 
 - Lukitus koskee vain kansikuvaa. Nimi, tekij채 ja muut p채ivittyv채t edelleen.
-- Kansikuvat haetaan v채lityspalvelimesi kautta, jos olet asettanut sellaisen kohdassa **Settings > General > Proxy**.
+- Kansikuvat haetaan v채lityspalvelimesi kautta, jos olet asettanut sellaisen kohdassa **Settings > Network**.

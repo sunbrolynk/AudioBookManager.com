@@ -5,6 +5,10 @@ description: Mitkä sivutiedostot ja äänitiedostojen tagit ABM kirjoittaa, ja 
 
 **Settings > Metadata** ratkaisee, mitä ABM kirjoittaa kirjan kansioon ja sen tiedostoihin. Näiden tiedostojen käyttö on kuvattu sivulla [Sivutiedostot](/fi/using/sidecars/).
 
+## Lähde (Source)
+
+**Metadata Source** on Built-in (oletus), Hosted (libexdb.com) tai Self-hosted, joka vaatii **Server URL** -osoitteen. **Test** tekee oikean pyynnön valittuun lähteeseen tallentamatta, **Status** kertoo onko se valmis, ja **Connection** näyttää reitin, jota hakuja lähetetään, ja linkittää kohtaan **Settings > Network**. Vaihto tulee voimaan heti kaikkiin hakuihin. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
+
 ## Metatietotiedostojen luonti
 
 | Asetus | Oletus | Vaikutus |
@@ -28,11 +32,12 @@ Kirjoittaa audiotagit suoraan äänitiedostoihin.
 
 Tagikentät, kaikki oletuksena päällä: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) ja Cover Art.
 
-## Tulossa myöhempään julkaisuun
+## Paikallinen tallennus (Local Storage)
 
-Metatietolähteen valinta ja metatietokirjaston paikallinen kopio on suunniteltu myöhempään julkaisuun. Katso [Sinun metatietosi, sinun hallintasi](/fi/metadata/control/).
+Built-in-lähteen kanssa näkyvät osiot **Local Storage** ja **Storage Backups**. Ne ovat esikatselu eivätkä ole vielä kytkettyinä. Katso [Metatietosi, sinun hallinnassasi](/fi/metadata/control/).
 
 ## Sudenkuopat
 
 - Tagien kirjoittaminen muuttaa äänitiedostoja. Audiobookshelf näkee ne muokattuina.
 - Jos metatietoja tai kansikuvaa ei saada haettua tagien kirjoituksen aikana, kutsu palauttaa varoituksia sen sijaan, että epäonnistuisi.
+- Kun kantta ei voitu upottaa, koska yhteys hylkäsi sen, kirjan sivu ja muokkausikkuna näyttävät varoituksen pelkän onnistumisen sijaan.

@@ -11,7 +11,7 @@ C'est le chemin le plus court entre un conteneur qui tourne et un livre en cours
 
 ## 2. Choisis comment ABM accède à Internet
 
-Dans **Settings > General**, il y a une section **Proxy**. Règle-y un proxy si ABM doit en passer par un pour accéder à Internet. Si ABM accède directement à Internet, passe cette étape.
+Sous **Settings > [Network](/fr/settings/network/)**, choisis comment ABM accède à Internet : un proxy, un tunnel WireGuard ou Direct. Rien ne sort tant que tu n'en as pas choisi un.
 
 ## 3. Ajoute un dossier racine
 

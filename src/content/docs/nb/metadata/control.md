@@ -47,9 +47,7 @@ Taggene er dine. Automatiske tagger setter dem etter regler (sjanger, oppleser, 
 
 Alt ABM lærer om en bok, blir værende i ABMs egen SQLite-database i `/config`, også bøker du fjerner senere. Ta sikkerhetskopi av den mappen, så er oversikten sikret. Metadataene er ikke avhengige av at kilden er tilgjengelig når en bok først er inne.
 
-:::caution[Kommer i en senere versjon]
-Et eget **Local Metadata Library** er planlagt: en valgfri kopi av alt ABM noensinne har slått opp, beholdt selv etter at en bok har forlatt biblioteket ditt, med egne planlagte sikkerhetskopier og en SQLite-nedlasting.
-:::
+Seksjonen **Local Storage** under **Settings > Metadata**, som vises med Built-in-kilden, er en forhåndsvisning av en valgfri lokal kopi av alt ABM har slått opp. Den er ikke koblet til ennå.
 
 ## Tidsplaner for oppdatering
 

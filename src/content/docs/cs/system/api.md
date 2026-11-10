@@ -21,6 +21,6 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 
 ## Výpadky metadat
 
-Vyhledávání knih, které nedostane odpověď od Libexu, vrátí 502 s "Libex search failed". Vyhledávání autorů nebo sérií vrátí 503 s "Libex could not be reached; try again shortly". Některé vyhledávací cesty při výpadku pořád vracejí prázdný výsledek.
+Požadavek, který potřebuje zdroj metadat a nedostane odpověď, selže s `detail`, který pojmenuje zdroj a důvod, nikdy s prázdným výsledkem. Hledání, na které čekáš, se po zhruba 10 sekundách vzdá, když Libex omezuje rychlost.
 
 Pokud znáš Sonarr: API není kompatibilní s v3. Prowlarr umí do ABM synchronizovat indexery přes své připojení Prowlarr.

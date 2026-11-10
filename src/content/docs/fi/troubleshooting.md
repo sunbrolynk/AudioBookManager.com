@@ -50,10 +50,10 @@ Nosta arvoa `MAX_REQUEST_BODY_BYTES`. Myös käänteinen välityspalvelin voi pa
 
 ## Metatietolähde ei ole käytettävissä
 
-Lisääminen, haku, päivitys ja Discover tarvitsevat Libexin. Jos ABM ei saa vastausta, kirjahaku epäonnistuu viestillä "Libex search failed" ja kirjailija- tai sarjahaku viestillä "Libex could not be reached; try again shortly" tyhjän listan näyttämisen sijaan. Syyt: Libex on alhaalla, tai ABM:n yhteys ei yllä siihen.
+Lisääminen, haku, päivitys ja Discover tarvitsevat metadatalähteen. Kun ABM ei saa vastausta, virhe nimeää lähteen ja todellisen syyn, esimerkiksi että VPN on alhaalla, tyhjän listan sijaan. Syitä: lähde on alhaalla tai ABM:n yhteys ei yllä siihen. Päivitys, tuonti tai synkronointi usean kohteen yli pysähtyy, kun lähdettä ei tavoiteta tai se hylkää ABM:n, yhdellä ilmoituksella katkoksen lajia kohden, ja yksittäinen aikakatkaisu ohittaa vain sen kohteen.
 
 1. Katso [ABM:n tilasivu](https://status.audiobookmanager.com) ja [Libexin tilasivu](https://status.libexdb.com), onko se alhaalla kaikilla.
-2. Tarkista, että kontti pääsee internetiin ja että **Settings > General > Proxy** -kohdan välityspalvelin on oikein, jos käytät sellaista.
+2. Tarkista, että kontti pääsee internetiin ja että **Settings > Network** -kohdan välityspalvelin on oikein, jos käytät sellaista.
 3. Yritä uudelleen minuutin kuluttua.
 4. Sillä välin voit yhä lisätä ja tuoda kirjoja käsin.
 

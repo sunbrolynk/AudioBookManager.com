@@ -11,7 +11,7 @@ Bij het eerste bezoek word je door het aanmaken van een login geleid. Tot je dat
 
 ## 2. Kies hoe ABM het internet op gaat
 
-Onder **Settings > General** staat een sectie **Proxy**. Stel daar een proxy in als ABM via een proxy het internet op moet. Komt ABM rechtstreeks op het internet, dan sla je dit over.
+Onder **Settings > [Network](/nl/settings/network/)** kies je hoe ABM het internet bereikt: een proxy, een WireGuard-tunnel of Direct. Er gaat niets naar buiten tot je er een kiest.
 
 ## 3. Voeg een rootmap toe
 

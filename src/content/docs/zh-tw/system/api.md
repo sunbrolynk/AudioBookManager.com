@@ -21,6 +21,6 @@ ABM 在 `/api` 底下有一套 REST API。互動式參考在 `/api/docs`（Swagg
 
 ## 中繼資料服務中斷
 
-書籍搜尋得不到 Libex 的回應時，會回傳 502 和 "Libex search failed"。作者或系列搜尋會回傳 503 和 "Libex could not be reached; try again shortly"。有些查詢路由在服務中斷時仍會回傳空結果。
+需要中繼資料來源卻得不到回應的請求，會以帶有 `detail` 的錯誤失敗，其中寫明來源和原因，絕不會回傳空結果。Libex 限速時，你正在等的搜尋大約 10 秒後放棄。
 
 如果你熟悉 Sonarr：這套 API 跟 v3 不相容。Prowlarr 可以透過它的 Prowlarr 連線，把索引器同步到 ABM。

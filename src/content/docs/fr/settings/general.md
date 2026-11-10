@@ -3,7 +3,7 @@ title: Général
 description: Hôte, sécurité, proxy, journaux et sauvegardes.
 ---
 
-**Settings > General** a des sections pour Host, Security, Proxy, Logging et Backups. Security a [sa propre page](/fr/settings/security/).
+**Settings > General** a des sections pour Host, Security, Logging et Backups. Security a [sa propre page](/fr/settings/security/).
 
 ## Hôte (Host)
 

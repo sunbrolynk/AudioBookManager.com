@@ -22,4 +22,4 @@ Coveret til boka kan tilbakestilles til det automatiske, og da blir det låst op
 ## Fallgruver
 
 - Låsen gjelder bare coveret. Tittel, forfatter og resten blir fortsatt oppdatert.
-- Omslag hentes via proxyen din hvis du har satt opp en under **Settings > General > Proxy**.
+- Omslag hentes via proxyen din hvis du har satt opp en under **Settings > Network**.

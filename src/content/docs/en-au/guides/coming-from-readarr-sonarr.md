@@ -15,7 +15,7 @@ Wanted (Missing, Cutoff Unmet), Activity (Queue, History, Blocklist), Calendar w
 |---|---|
 | Resolution-based qualities | A ladder of audio formats, single or multi-file |
 | Custom formats | Release profiles with Must Contain, Must Not Contain, Preferred |
-| An item is an episode, movie or book | A book, with series and position tracked as catalogues |
+| An item is an episode, film or book | A book, with series and position tracked as catalogues |
 | Metadata from their own service | Libex, with covers lockable, sidecars and tags written |
 | One download folder | Same, plus Library Import for existing collections |
 | No media conversion | A conversion queue: convert, merge, split, chapters |

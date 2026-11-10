@@ -5,11 +5,7 @@ description: Built-in, hosted, or your own Libex server.
 
 import { Icon } from '@astrojs/starlight/components';
 
-:::caution[Coming in a later release]
-The source choice is not in a released version yet. Released versions use the public Libex instance at libexdb.com and have no setting for this.
-:::
-
-In a later release, **Settings > Metadata > Source** has a **Metadata Source** setting with three choices.
+**Settings > Metadata > Source** has a **Metadata Source** setting with three choices. Until you choose, it is Built-in, including on an install that used Hosted before, so pick Hosted again to go back.
 
 | Choice | What it means |
 |---|---|
@@ -23,9 +19,17 @@ In a later release, **Settings > Metadata > Source** has a **Metadata Source** s
 
 Built-in talks to Audible from your machine, so it uses **Settings > Network**. That page decides the route: a proxy, the built-in WireGuard tunnel, your own VPN container, or a direct connection you acknowledge. With none chosen, automated lookups are blocked and say so. A chosen route that is down blocks lookups too. It never falls back to your own address. Direct shows a warning that Audible sees your IP address and the books ABM looks up.
 
+Every source sends its lookups through the connection chosen under **Settings > Network** and never falls back to another route. A self-hosted server on your LAN, and the covers it serves, are reached directly.
+
 ## Hosted and self-hosted
 
 With these two, ABM asks a Libex server and the server talks to Audible. A self-hosted URL is checked before it is saved, and an empty or unsafe one is refused. A server that is down is reported as the metadata source being unavailable, with its name.
+
+## When the source can't be reached
+
+If the source is unreachable or refuses ABM, a refresh, import or sync over many items stops instead of failing every book, and a single timeout only skips that item. You get one notification per kind of outage. Error messages name the source and the real reason, for example that the VPN is down.
+
+When Libex asks ABM to slow down, a search you are waiting on gives up after about 10 seconds, and a background task waits up to 2 minutes.
 
 ## Which to pick
 
