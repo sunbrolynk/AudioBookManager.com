@@ -25,7 +25,7 @@ The edit dialog changes monitoring, quality profile, path and tags, and lets you
 
 ## Sidecars your player reads
 
-ABM writes `cover.jpg`, an `.opf`, `desc.txt` and `reader.txt` beside the audio. Audiobookshelf reads the OPF, cover and text files, so what you chose in ABM is what the player shows. See [Sidecar files](/using/sidecars/).
+ABM writes `metadata.json`, an `.nfo`, `cover.jpg`, an `.opf`, `desc.txt` and `reader.txt` beside the audio. Audiobookshelf reads the OPF, cover and text files, so what you chose in ABM is what the player shows. See [Sidecar files](/using/sidecars/).
 
 ## Tags written into the audio
 

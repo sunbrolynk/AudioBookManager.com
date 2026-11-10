@@ -22,7 +22,7 @@ Accounts signed in from now on no longer hit throttled download licences. Books 
 
 If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Sign in again on the same account. It keeps its library and takes the new credentials. Do not delete the account to fix this: deleting it drops its library table and removes its device from Audible.
 
-Each account has an **Enabled** switch. Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
+Each account has an **Enabled** checkbox (a switch on a phone). Turn it off to pause an account without signing it out. A disabled account shows as Disabled instead of needing to sign in again, keeps its stored sign-in and its library, and syncs, downloads and the health check skip it. Turn it back on, or sign in on it again, and it picks up where it left off. Through the API, `PATCH /api/audible/accounts/{account_id}` with `{"is_active": false}` does the same.
 
 ## Sync
 
@@ -30,7 +30,7 @@ Sync refreshes each account's library from Audible. Each account also has its ow
 
 A sync leaves podcasts and episodes out and removes any an earlier sync stored. A title that has left your account is marked as no longer in it instead of looking current.
 
-A download needs an account that is active, doesn't need to sign in again and still lists the book. When more than one active account owns a book, one that Audible is throttling is passed over for one that isn't, unless you picked it. Otherwise the download is refused with "No active, signed-in Audible account currently lists this book". A book that already has a download queued or running isn't queued again, from any button or retry: the single download answers with the existing one, and a bulk request lists it as "Already queued". Every refusal from the Audible Library page (downloads, bulk add, add and download) shows the server's reason in an error toast, and adding a book with download unticked shows an "Added" toast.
+A download needs an account that is active, doesn't need to sign in again and still lists the book. When more than one active account owns a book, one that Audible is throttling is passed over for one that isn't, unless you picked it. Otherwise the download is refused with "No active, signed-in Audible account currently lists this book". A book that already has a download queued or running isn't queued again, from any button or retry: the single download answers with the existing one, and a bulk request lists it as "Already queued". A single Add & Download whose download cannot be queued still adds the book. It succeeds with no task and the message "Added to the library, but the download could not be queued", and the page warns you. A bulk download lists a book that cannot be queued as skipped with the reason "Could not be queued". Every refusal from the Audible Library page (downloads, bulk add, add and download) shows the server's reason in an error toast, and adding a book with download unticked shows an "Added" toast.
 
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only, or build a custom filter (see [Custom filters](/using/library/#custom-filters)).
 

@@ -76,6 +76,6 @@ A row can also be answered **Delete these files, keep the library copy** to decl
 
 ## Cover and extra files per folder
 
-The inspector shows the folder's own cover beside the matched edition's, each with its pixel size. One click picks the other. Below it, **Extra files** lists every other file under the name of the Media Management switch it follows. A dot marks a choice that differs from the settings, and **Apply this cover and these file choices to the N other selected** copies one folder's choices to the rest. A row that adds files to a book already in the library has no picker.
+The inspector shows the folder's own cover beside the matched edition's, each with its pixel size. One click picks the other. Below it, **Extra files** lists every other file under the name of the Media Management setting it follows. A dot marks a choice that differs from the settings, and **Apply this cover and these file choices to the N other selected** copies one folder's choices to the rest. A row that adds files to a book already in the library has no picker.
 
 See also [Moving a library in](/en-au/guides/moving-a-library-in/) and [Media Management](/en-au/settings/media-management/).
