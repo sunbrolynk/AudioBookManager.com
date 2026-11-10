@@ -14203,6 +14203,521 @@
         }
       }
     },
+    "/api/settings/metadata/source": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Source",
+        "description": "The source in effect and whether it is ready.",
+        "operationId": "get_source_api_settings_metadata_source_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Save Source",
+        "description": "Save the source and switch every lookup to it.",
+        "operationId": "save_source_api_settings_metadata_source_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/source/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Source",
+        "description": "Try a source without saving it. Built-in makes a real Audible lookup.",
+        "operationId": "test_source_api_settings_metadata_source_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceTestResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Storage Status",
+        "description": "Local metadata storage state; counts are null while it is off or unreadable.",
+        "operationId": "get_storage_status_api_settings_metadata_storage_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Enable Storage",
+        "description": "Switch storage on and open it. Turning it off goes through its own confirmed route.",
+        "operationId": "enable_storage_api_settings_metadata_storage_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStorageChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/disable": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Disable Storage",
+        "description": "Switch storage off, optionally exporting first, deleting the file unless it is kept. An export that does not reach every target leaves storage on.",
+        "operationId": "disable_storage_api_settings_metadata_storage_disable_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStorageDisable"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageDisabled"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Backup Settings",
+        "description": "The Local Storage backup settings, with the folder backups are written to.",
+        "operationId": "get_backup_settings_api_settings_metadata_storage_backup_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStoreBackupSettings"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Update Backup Settings",
+        "description": "Save the Local Storage backup settings and apply the schedule.",
+        "operationId": "update_backup_settings_api_settings_metadata_storage_backup_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStoreBackupSettings"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Update Backup Settings Api Settings Metadata Storage Backup Put"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/list": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "List Backups",
+        "description": "The Local Storage backups, newest first.",
+        "operationId": "list_backups_api_settings_metadata_storage_backup_list_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  "type": "array",
+                  "title": "Response List Backups Api Settings Metadata Storage Backup List Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/create": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Create Backup",
+        "description": "Queue a manual backup of the Local Storage; it also goes to the picked export targets.",
+        "operationId": "create_backup_api_settings_metadata_storage_backup_create_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Create Backup Api Settings Metadata Storage Backup Create Post"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/{filename}": {
+      "delete": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Delete Backup",
+        "description": "Delete a Local Storage backup.",
+        "operationId": "delete_backup_api_settings_metadata_storage_backup__filename__delete",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Delete Backup Api Settings Metadata Storage Backup  Filename  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/export/{filename}": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Export Backup",
+        "description": "Export a Local Storage backup to one export target, or to every target that takes automatic exports.",
+        "operationId": "export_backup_api_settings_metadata_storage_backup_export__filename__post",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          },
+          {
+            "name": "target_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Target Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Export Backup Api Settings Metadata Storage Backup Export  Filename  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/restore/{filename}": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Restore Backup",
+        "description": "Replace the Local Storage with a backup in the backup folder. Needs the account password when one is set.",
+        "operationId": "restore_backup_api_settings_metadata_storage_backup_restore__filename__post",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CurrentPasswordRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Restore Backup Api Settings Metadata Storage Backup Restore  Filename  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/restore-upload": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Restore Backup Upload",
+        "description": "Replace the Local Storage with an uploaded backup file. When an account password is set, send it as the multipart text field `current_password`.",
+        "operationId": "restore_backup_upload_api_settings_metadata_storage_backup_restore_upload_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Restore Backup Upload Api Settings Metadata Storage Backup Restore Upload Post"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/settings/general/host": {
       "get": {
         "tags": [
@@ -24674,6 +25189,16 @@
               }
             ],
             "title": "Group Key"
+          },
+          "local_storage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LocalStorageMarker"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -25007,6 +25532,16 @@
               }
             ],
             "title": "Library Monitor New Books"
+          },
+          "local_storage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LocalStorageMarker"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -27637,6 +28172,29 @@
         "title": "LibraryStats",
         "description": "Library statistics"
       },
+      "LocalStorageMarker": {
+        "properties": {
+          "stored_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stored At"
+          },
+          "likely_delisted": {
+            "type": "boolean",
+            "title": "Likely Delisted",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "LocalStorageMarker",
+        "description": "Marks a lookup result answered from Local Storage because the source could not give it."
+      },
       "LogContentResponse": {
         "properties": {
           "path": {
@@ -28271,6 +28829,15 @@
         "title": "MediaManagementSettings",
         "description": "Media management settings"
       },
+      "MetadataMode": {
+        "type": "string",
+        "enum": [
+          "builtin",
+          "hosted",
+          "self_hosted"
+        ],
+        "title": "MetadataMode"
+      },
       "MetadataSettings": {
         "properties": {
           "create_on_book_add": {
@@ -28377,6 +28944,352 @@
         "type": "object",
         "title": "MetadataSettings",
         "description": "Settings for automatic metadata file creation and tag writing"
+      },
+      "MetadataSourceChoice": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode"
+        ],
+        "title": "MetadataSourceChoice"
+      },
+      "MetadataSourceStatus": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode",
+            "description": "The source lookups actually use right now"
+          },
+          "ready": {
+            "type": "boolean",
+            "title": "Ready",
+            "description": "Whether that source can answer; not a reachability check"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason",
+            "description": "Why it cannot, when it cannot"
+          },
+          "route": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Route",
+            "description": "The connection Built-in leaves through"
+          },
+          "connection": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EgressConnection"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The saved outbound choice, while Built-in is active"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "ready"
+        ],
+        "title": "MetadataSourceStatus"
+      },
+      "MetadataSourceTestResult": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "latency_ms": {
+            "type": "integer",
+            "title": "Latency Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "latency_ms"
+        ],
+        "title": "MetadataSourceTestResult"
+      },
+      "MetadataStorageChoice": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "enabled"
+        ],
+        "title": "MetadataStorageChoice"
+      },
+      "MetadataStorageDisable": {
+        "properties": {
+          "export": {
+            "type": "boolean",
+            "title": "Export",
+            "description": "Back the library up and send it to the export targets first; nothing is deleted if that fails"
+          },
+          "keep": {
+            "type": "boolean",
+            "title": "Keep",
+            "description": "Leave the file for the next time storage is turned on; otherwise it is deleted"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "export",
+          "keep"
+        ],
+        "title": "MetadataStorageDisable"
+      },
+      "MetadataStorageDisabled": {
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "title": "Deleted"
+          }
+        },
+        "type": "object",
+        "required": [
+          "deleted"
+        ],
+        "title": "MetadataStorageDisabled"
+      },
+      "MetadataStorageStatus": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "off",
+              "ready",
+              "error"
+            ],
+            "title": "State"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "Why storage is not working, when it is not"
+          },
+          "size_bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Size Bytes"
+          },
+          "books": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Books"
+          },
+          "authors": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authors"
+          },
+          "series": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series"
+          },
+          "by_region": {
+            "items": {
+              "$ref": "#/components/schemas/RegionCounts"
+            },
+            "type": "array",
+            "title": "By Region",
+            "description": "Counts per marketplace; empty while off or unreadable"
+          },
+          "last_backup_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Backup At",
+            "description": "ISO 8601 timestamp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled",
+          "state"
+        ],
+        "title": "MetadataStorageStatus"
+      },
+      "MetadataStoreBackupSettings": {
+        "properties": {
+          "backup_folder": {
+            "type": "string",
+            "title": "Backup Folder",
+            "description": "Blank keeps the default folder inside the backup folder",
+            "default": ""
+          },
+          "backup_retention_days": {
+            "type": "integer",
+            "title": "Backup Retention Days",
+            "default": 28
+          },
+          "auto_backup_enabled": {
+            "type": "boolean",
+            "title": "Auto Backup Enabled",
+            "default": false
+          },
+          "schedule_frequency": {
+            "type": "string",
+            "title": "Schedule Frequency",
+            "default": "daily"
+          },
+          "schedule_hour": {
+            "type": "integer",
+            "title": "Schedule Hour",
+            "default": 3
+          },
+          "schedule_minute": {
+            "type": "integer",
+            "title": "Schedule Minute",
+            "default": 0
+          },
+          "schedule_day_of_week": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
+            "title": "Schedule Day Of Week",
+            "default": 0
+          },
+          "schedule_day_of_month": {
+            "type": "integer",
+            "maximum": 28.0,
+            "minimum": 1.0,
+            "title": "Schedule Day Of Month",
+            "default": 1
+          },
+          "use_cron": {
+            "type": "boolean",
+            "title": "Use Cron",
+            "default": false
+          },
+          "cron_expression": {
+            "type": "string",
+            "title": "Cron Expression",
+            "default": ""
+          },
+          "next_scheduled_run": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Scheduled Run"
+          },
+          "remote_export_on_backup": {
+            "type": "boolean",
+            "title": "Remote Export On Backup",
+            "default": true
+          },
+          "export_target_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Export Target Ids",
+            "description": "Targets to export to; empty means every target that takes automatic exports"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "MetadataStoreBackupSettings",
+        "description": "Backup settings for the local metadata store; export targets are the ones saved under General > Backups."
       },
       "MirrorPreviewResponse": {
         "properties": {
@@ -30342,6 +31255,39 @@
         ],
         "title": "RegeneratedApiKey",
         "description": "The new API key, in full. The web interface also reads the current key\nwhenever it signs in."
+      },
+      "RegionCounts": {
+        "properties": {
+          "region": {
+            "type": "string",
+            "title": "Region"
+          },
+          "books": {
+            "type": "integer",
+            "title": "Books"
+          },
+          "books_with_chapters": {
+            "type": "integer",
+            "title": "Books With Chapters"
+          },
+          "series": {
+            "type": "integer",
+            "title": "Series"
+          },
+          "authors": {
+            "type": "integer",
+            "title": "Authors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "region",
+          "books",
+          "books_with_chapters",
+          "series",
+          "authors"
+        ],
+        "title": "RegionCounts"
       },
       "ReleaseProfileCreate": {
         "properties": {
