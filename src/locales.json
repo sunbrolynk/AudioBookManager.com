@@ -110,7 +110,7 @@
   "nb": {
     "label": "Norsk bokmål",
     "lang": "nb",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 77
   },
   "fi": {
