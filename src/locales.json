@@ -86,7 +86,7 @@
   "ko": {
     "label": "한국어",
     "lang": "ko",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 66
   },
   "sv": {
