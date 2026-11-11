@@ -20,7 +20,7 @@
   "en-au": {
     "label": "English (Australia)",
     "lang": "en-AU",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 28
   },
   "fr": {
