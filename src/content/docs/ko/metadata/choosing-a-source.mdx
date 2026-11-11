@@ -17,11 +17,13 @@ import { Icon } from '@astrojs/starlight/components';
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="GitHub의 Libex"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM이 공개 Libex 인스턴스에 물어봐요. |
 | Self-hosted | ABM이 내가 지정한 Libex 서버에 물어봐요. **Server URL**을 넣으세요. 예: `http://192.168.1.20:8000`. |
 
+[설정 마법사](/ko/getting-started/first-run-setup/)의 Metadata 단계에서도 같은 세 가지를 고를 수 있고, 직접 호스팅하는 서버용 **Test**도 같아요.
+
 **Test**는 저장하지 않고 선택한 소스를 확인해요. **Status**는 준비됐는지 알려 줘요. 다른 소스를 고르면 저장할 때까지 **Status**에 "Not in use yet - save to switch"가 나와요.
 
 ## Built-in과 외부 연결
 
-Built-in은 내 서버에서 Audible과 직접 통신하기 때문에 **Settings > General > Proxy & VPN**을 써요. 이 페이지에서 경로를 정해요: 프록시, 내장 WireGuard 터널, 내 VPN 컨테이너, 또는 내가 확인하고 고른 직접 연결. 아무것도 고르지 않으면 자동 조회가 막히고 그렇다고 알려 줘요. 고른 경로가 끊겨도 조회가 막혀요. 내 주소로 몰래 돌아가는 일은 절대 없어요. 직접 연결을 고르면 Audible이 내 IP 주소와 ABM이 조회하는 책을 본다는 경고가 나와요.
+Built-in은 내 서버에서 Audible과 직접 통신하기 때문에 **Settings > Network**을 써요. 이 페이지에서 경로를 정해요: 프록시, 내장 WireGuard 터널, 내 VPN 컨테이너, 또는 내가 확인하고 고른 직접 연결. 아무것도 고르지 않으면 자동 조회가 막히고 그렇다고 알려 줘요. 고른 경로가 끊겨도 조회가 막혀요. 내 주소로 몰래 돌아가는 일은 절대 없어요. 직접 연결을 고르면 Audible이 내 IP 주소와 ABM이 조회하는 책을 본다는 경고가 나와요.
 
 ## Hosted와 Self-hosted
 

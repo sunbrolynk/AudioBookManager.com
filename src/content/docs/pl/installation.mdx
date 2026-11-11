@@ -52,7 +52,7 @@ Baza danych to plik SQLite w `/config`, więc nie musisz stawiać żadnej usług
    docker compose up -d
    ```
 
-4. **Otwórz.** Wejdź na `http://your-server:5173`. Przy pierwszej wizycie ABM przeprowadzi cię przez ustawienie logowania.
+4. **Otwórz.** Wejdź na `http://your-server:5173`. Pierwsza wizyta otwiera kreator konfiguracji, który tworzy twój login i resztę tego, czego ABM potrzebuje. Zobacz [Pierwsza konfiguracja](/pl/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Jeśli twój klient pobierania działa we własnym kontenerze, jego folder pobra
 
 ## Pierwsze uruchomienie
 
-Ustaw strefę czasową przez `TIMEZONE` w pliku compose. Potem w **Settings** dodaj folder główny w **Media Management**, indekser w **Indexers** i klienta pobierania w **Download Clients**. Zmienne środowiskowe i reverse proxy opisuje strona [Konfiguracja](/pl/configuration/).
+Ustaw strefę czasową przez `TIMEZONE` w pliku compose. Potem otwórz ABM i przejdź przez kreator konfiguracji. Tworzy twój login, ustawia, jak ABM łączy się z internetem i gdzie szuka książek, oraz dodaje folder główny. Klienta pobierania i indekser możesz dodać tam od razu albo później w **Settings > Download Clients** i **Settings > Indexers**. Kreator opisano w [Pierwsza konfiguracja](/pl/getting-started/first-run-setup/). Zmienne środowiskowe i reverse proxy opisano w [Konfiguracja](/pl/configuration/).
 
 ## Budowanie ze źródeł
 

@@ -21,7 +21,7 @@ De twee modi van **Authentication Required** die je gaat gebruiken:
 - **Enabled**: iedereen logt in, ook op je LAN.
 - **Disabled for Local Addresses** (opgeslagen als `local_disabled`): een request vanaf een lokaal adres hoeft niet in te loggen. Loopback, de private ranges, link-local en IPv6 unique-local tellen als lokaal. **Local Networks** voegt er meer toe en vervangt ze nooit.
 
-Bij een verse installatie worden requests geweigerd tot de setup klaar is.
+Bij een verse installatie worden requests geweigerd tot het account is aangemaakt in de [installatiewizard](/nl/getting-started/first-run-setup/). De stap Account daarvan vinkt **Enabled** vooraf aan, dus een nieuwe installatie eist inloggen vanaf elk adres. Een bestaande installatie behoudt haar instelling.
 
 ## Reverse proxy's
 

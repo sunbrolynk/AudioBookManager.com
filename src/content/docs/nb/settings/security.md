@@ -21,7 +21,7 @@ De to modusene for **Authentication Required** du kommer til å bruke:
 - **Enabled**: alle logger inn, også på LAN-et ditt.
 - **Disabled for Local Addresses** (lagret som `local_disabled`): en forespørsel fra en lokal adresse slipper innlogging. Loopback, de private områdene, link-local og IPv6 unique-local regnes som lokale. **Local Networks** legger til flere og erstatter dem aldri.
 
-På en ny installasjon blir forespørsler avvist til oppsettet er ferdig.
+På en ny installasjon blir forespørsler avvist til kontoen er opprettet i [oppsettsveiviseren](/nb/getting-started/first-run-setup/). Steget Account der forhåndsvelger **Enabled**, så en ny installasjon krever innlogging fra alle adresser. En eksisterende installasjon beholder innstillingen sin.
 
 ## Omvendte proxyer
 

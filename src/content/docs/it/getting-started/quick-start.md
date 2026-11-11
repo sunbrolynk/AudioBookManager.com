@@ -7,11 +7,11 @@ Questa è la strada più breve da un container avviato a un libro che viene cerc
 
 ## 1. Accedi
 
-Alla prima visita ABM ti guida nella creazione di un login. Finché non lo fai, rifiuta le richieste. Come si comporta l'accesso dopo è spiegato in [Sicurezza e accesso](/it/settings/security/).
+La prima visita apre la procedura guidata, e il suo primo passo crea il tuo login. Finché non lo fai, ABM rifiuta le richieste. La procedura guidata copre anche i passi da 2 a 4 qui sotto, e [Prima configurazione](/it/getting-started/first-run-setup/) descrive ciascuno dei suoi passi. Come funziona l'accesso dopo è spiegato in [Sicurezza e accesso](/it/settings/security/).
 
 ## 2. Scegli come ABM esce su internet
 
-In **Settings > General** c'è una sezione **Proxy**. Imposta lì un proxy se ABM deve passare da uno per arrivare a internet. Se ABM esce direttamente su internet, salta questo passaggio.
+Nella procedura guidata è il passo Network. Più avanti si trova in **Settings > [Network](/it/settings/network/)**. Scegli come ABM raggiunge internet: un proxy, un tunnel WireGuard, il tuo container VPN o Direct. Non esce niente finché non ne scegli uno.
 
 ## 3. Aggiungi una cartella radice
 

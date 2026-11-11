@@ -21,7 +21,7 @@ De två lägena för **Authentication Required** som du kommer att använda:
 - **Enabled**: alla loggar in, även på ditt LAN.
 - **Disabled for Local Addresses** (sparas som `local_disabled`): ett anrop från en lokal adress slipper logga in. Loopback, de privata intervallen, link-local och IPv6 unique-local räknas som lokala. **Local Networks** lägger till fler och ersätter dem aldrig.
 
-På en ny installation nekas anrop tills konfigurationen är klar.
+På en ny installation nekas anrop tills kontot har skapats i [installationsguiden](/sv/getting-started/first-run-setup/). Dess steg Account förväljer **Enabled**, så en ny installation kräver inloggning från alla adresser. En befintlig installation behåller sin inställning.
 
 ## Omvända proxyer
 

@@ -21,7 +21,7 @@ Dwa tryby **Authentication Required**, z których będziesz korzystać:
 - **Enabled**: logują się wszyscy, łącznie z twoim LAN-em.
 - **Disabled for Local Addresses** (zapisywane jako `local_disabled`): żądanie z adresu lokalnego pomija logowanie. Za lokalne uznawane są loopback, zakresy prywatne, link-local i IPv6 unique-local. **Local Networks** dodaje kolejne i nigdy ich nie zastępuje.
 
-Na świeżej instalacji żądania są odrzucane, dopóki nie skończysz konfiguracji.
+Na świeżej instalacji żądania są odrzucane, dopóki konto nie zostanie utworzone w [kreatorze konfiguracji](/pl/getting-started/first-run-setup/). Jego krok Account wstępnie wybiera **Enabled**, więc nowa instalacja wymaga logowania z każdego adresu. Istniejąca instalacja zachowuje swoje ustawienie.
 
 ## Reverse proxy
 

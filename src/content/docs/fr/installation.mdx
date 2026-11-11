@@ -52,7 +52,7 @@ La base de données est un fichier SQLite dans `/config`, donc il n'y a aucun se
    docker compose up -d
    ```
 
-4. **Ouvre-le.** Va sur `http://your-server:5173`. À la première visite, l'app te guide pour créer un identifiant.
+4. **Ouvre-le.** Va sur `http://your-server:5173`. La première visite ouvre un assistant de configuration qui crée ton identifiant et le reste de ce dont ABM a besoin. Voir [Première configuration](/fr/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Si ton client de téléchargement tourne dans son propre conteneur, son dossier 
 
 ## Premier lancement
 
-Règle ton fuseau horaire avec `TIMEZONE` dans le fichier compose. Ensuite, dans **Settings**, ajoute un dossier racine dans **Media Management**, un indexeur dans **Indexers** et un client de téléchargement dans **Download Clients**. Les variables d'environnement et les reverse proxies sont expliqués dans [Configuration](/fr/configuration/).
+Règle ton fuseau horaire avec `TIMEZONE` dans le fichier compose. Ouvre ensuite ABM et suis l'assistant de configuration. Il crée ton identifiant, règle la façon dont ABM accède à Internet et où il cherche les livres, et ajoute un dossier racine. Tu peux aussi y ajouter un client de téléchargement et un indexeur, ou le faire plus tard dans **Settings > Download Clients** et **Settings > Indexers**. L'assistant est décrit dans [Première configuration](/fr/getting-started/first-run-setup/). Les variables d'environnement et les reverse proxies sont expliqués dans [Configuration](/fr/configuration/).
 
 ## Compiler depuis les sources
 

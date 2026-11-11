@@ -7,11 +7,11 @@ This is the shortest path from a running container to a book being searched for.
 
 ## 1. Sign in
 
-The first visit walks you through creating a login. Until you do, ABM refuses requests. How sign-in behaves afterwards is covered in [Security and sign-in](/settings/security/).
+The first visit opens the setup wizard, and its first step creates your login. Until you do, ABM refuses requests. The wizard also covers steps 2 to 4 below, and [First-run setup](/getting-started/first-run-setup/) describes each of its steps. How sign-in behaves afterwards is covered in [Security and sign-in](/settings/security/).
 
 ## 2. Choose how ABM reaches the internet
 
-Under **Settings > [Network](/settings/network/)**, choose how ABM reaches the internet: a proxy, a WireGuard tunnel or Direct. Nothing goes out until you choose one.
+In the wizard this is the Network step. Later it is under **Settings > [Network](/settings/network/)**. Choose how ABM reaches the internet: a proxy, a WireGuard tunnel, your own VPN container or Direct. Nothing goes out until you choose one.
 
 ## 3. Add a root folder
 

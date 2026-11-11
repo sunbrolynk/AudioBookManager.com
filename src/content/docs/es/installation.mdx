@@ -52,7 +52,7 @@ La base de datos es un archivo SQLite en `/config`, así que no hay ningún serv
    docker compose up -d
    ```
 
-4. **Ábrelo.** Ve a `http://your-server:5173`. La primera visita te guía para crear un usuario.
+4. **Ábrelo.** Ve a `http://your-server:5173`. La primera visita abre un asistente de configuración que crea tu usuario y el resto de lo que ABM necesita. Consulta [Configuración inicial](/es/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Si tu cliente de descarga va en su propio contenedor, su carpeta de descargas ti
 
 ## Primer arranque
 
-Define tu zona horaria con `TIMEZONE` en el archivo compose. Después, en **Settings**, añade una carpeta raíz en **Media Management**, un indexador en **Indexers** y un cliente de descarga en **Download Clients**. Las variables de entorno y los proxies inversos se explican en [Configuración](/es/configuration/).
+Define tu zona horaria con `TIMEZONE` en el archivo compose. Después abre ABM y sigue el asistente de configuración. Crea tu usuario, define cómo sale ABM a internet y dónde busca los libros, y añade una carpeta raíz. También puedes añadir ahí un cliente de descargas y un indexador, o hacerlo más tarde en **Settings > Download Clients** y **Settings > Indexers**. El asistente se explica en [Configuración inicial](/es/getting-started/first-run-setup/). Las variables de entorno y los proxies inversos se explican en [Configuración](/es/configuration/).
 
 ## Compilar desde el código fuente
 

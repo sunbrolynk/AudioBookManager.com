@@ -7,11 +7,11 @@ Dette er den korteste veien fra en kjørende container til en bok det søkes ett
 
 ## 1. Logg inn
 
-Første gang du åpner den, blir du guidet gjennom å lage en innlogging. Til du har gjort det, avviser ABM forespørsler. Hvordan innlogging fungerer etterpå, står i [Sikkerhet og innlogging](/nb/settings/security/).
+Første gang åpnes oppsettsveiviseren, og det første steget oppretter innloggingen din. Inntil du har gjort det, avviser ABM forespørsler. Veiviseren dekker også steg 2 til 4 nedenfor, og [Førstegangsoppsett](/nb/getting-started/first-run-setup/) beskriver hvert av stegene. Hvordan innlogging fungerer etterpå, står under [Sikkerhet og innlogging](/nb/settings/security/).
 
 ## 2. Velg hvordan ABM kommer seg ut på internett
 
-Under **Settings > General** finner du en **Proxy**-seksjon. Sett opp en proxy der hvis ABM må gå gjennom en for å nå internett. Når ABM kommer rett ut på nettet, kan du hoppe over dette.
+I veiviseren er dette steget Network. Senere finner du det under **Settings > [Network](/nb/settings/network/)**. Velg hvordan ABM kommer seg på nett: en proxy, en WireGuard-tunnel, din egen VPN-container eller Direct. Ingenting går ut før du har valgt en.
 
 ## 3. Legg til en rotmappe
 

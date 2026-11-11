@@ -7,11 +7,11 @@ Este é o caminho mais curto entre um contêiner rodando e um livro sendo procur
 
 ## 1. Faça login
 
-Na primeira visita, o ABM te guia na criação de um login. Até você fazer isso, ele recusa as requisições. Como o login funciona depois disso está em [Segurança e login](/pt-br/settings/security/).
+A primeira visita abre o assistente de configuração, e o primeiro passo dele cria o seu login. Até você fazer isso, o ABM recusa as requisições. O assistente também cobre os passos 2 a 4 abaixo, e [Primeira configuração](/pt-br/getting-started/first-run-setup/) descreve cada um dos passos dele. Como o login funciona depois está em [Segurança e login](/pt-br/settings/security/).
 
 ## 2. Escolha como o ABM chega à internet
 
-Em **Settings > General** tem uma seção **Proxy**. Configure um proxy ali se o ABM precisar passar por um para chegar à internet. Se o ABM sai direto para a internet, pule isso.
+No assistente, este é o passo Network. Depois, fica em **Settings > [Network](/pt-br/settings/network/)**. Escolha como o ABM acessa a internet: um proxy, um túnel WireGuard, o seu próprio contêiner de VPN ou Direct. Nada sai até você escolher uma.
 
 ## 3. Adicione uma pasta raiz
 

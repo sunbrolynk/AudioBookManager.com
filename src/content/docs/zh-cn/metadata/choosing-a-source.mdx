@@ -17,11 +17,13 @@ import { Icon } from '@astrojs/starlight/components';
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="GitHub 上的 Libex"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM 向公共 Libex 实例查询。 |
 | Self-hosted | ABM 向你指定的 Libex 服务器查询。填写它的 **Server URL**，比如 `http://192.168.1.20:8000`。 |
 
+[设置向导](/zh-cn/getting-started/first-run-setup/)的 Metadata 步骤提供同样的三个选项，自托管服务器也有同样的 **Test**。
+
 **Test** 会检查选中的元数据源，但不保存。**Status** 显示它是否就绪。你换了一个元数据源之后，**Status** 会显示 “Not in use yet - save to switch”，直到你保存为止。
 
 ## 内置模式和出站连接
 
-内置模式是从你的机器直接和 Audible 通信的，所以它使用 **Settings > General > Proxy & VPN**。那个页面决定走哪条线路：代理、内置的 WireGuard 隧道、你自己的 VPN 容器，或者你确认过的直连。一个都没选时，自动查询会被阻止，并提示原因。选中的线路断了，查询同样会被阻止，绝不会退回到用你自己的地址。选直连时会显示警告：Audible 能看到你的 IP 地址，以及 ABM 查询了哪些书。
+内置模式是从你的机器直接和 Audible 通信的，所以它使用 **Settings > Network**。那个页面决定走哪条线路：代理、内置的 WireGuard 隧道、你自己的 VPN 容器，或者你确认过的直连。一个都没选时，自动查询会被阻止，并提示原因。选中的线路断了，查询同样会被阻止，绝不会退回到用你自己的地址。选直连时会显示警告：Audible 能看到你的 IP 地址，以及 ABM 查询了哪些书。
 
 ## 托管和自托管
 

@@ -17,11 +17,13 @@ import { Icon } from '@astrojs/starlight/components';
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="GitHub の Libex"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM が公開 Libex インスタンスに問い合わせます。 |
 | Self-hosted | ABM が指定した Libex サーバーに問い合わせます。**Server URL** を入力します（例：`http://192.168.1.20:8000`）。 |
 
+[セットアップウィザード](/ja/getting-started/first-run-setup/)の Metadata ステップでも、同じ 3 つから選べます。セルフホストのサーバー用の **Test** も同じです。
+
 **Test** は選んだ取得元を保存せずにチェックします。**Status** は準備ができているかどうかを表示します。別の取得元を選ぶと、保存するまで **Status** に「Not in use yet - save to switch」と表示されます。
 
 ## 内蔵と外向きの接続
 
-Built-in は自分のマシンから Audible と通信するので、**Settings > General > Proxy & VPN** を使います。経路はそのページで決めます。プロキシ、内蔵の WireGuard トンネル、自分の VPN コンテナ、または承知のうえでの直接接続です。何も選んでいないと自動の問い合わせはブロックされ、その旨が表示されます。選んだ経路が落ちている場合もブロックされます。自分のアドレスにフォールバックすることはありません。Direct を選ぶと、Audible から自分の IP アドレスと ABM が調べた本が見える、という警告が出ます。
+Built-in は自分のマシンから Audible と通信するので、**Settings > Network** を使います。経路はそのページで決めます。プロキシ、内蔵の WireGuard トンネル、自分の VPN コンテナ、または承知のうえでの直接接続です。何も選んでいないと自動の問い合わせはブロックされ、その旨が表示されます。選んだ経路が落ちている場合もブロックされます。自分のアドレスにフォールバックすることはありません。Direct を選ぶと、Audible から自分の IP アドレスと ABM が調べた本が見える、という警告が出ます。
 
 ## ホスト型とセルフホスト
 

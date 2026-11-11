@@ -7,11 +7,11 @@ Este es el camino más corto desde un contenedor en marcha hasta un libro que se
 
 ## 1. Inicia sesión
 
-La primera visita te guía para crear un usuario. Hasta que lo hagas, ABM rechaza las peticiones. Cómo funciona el inicio de sesión después se explica en [Seguridad e inicio de sesión](/es/settings/security/).
+La primera visita abre el asistente de configuración, y su primer paso crea tu usuario. Hasta que lo hagas, ABM rechaza las peticiones. El asistente también cubre los pasos 2 a 4 de abajo, y [Configuración inicial](/es/getting-started/first-run-setup/) describe cada uno de sus pasos. Cómo funciona el inicio de sesión después se explica en [Seguridad e inicio de sesión](/es/settings/security/).
 
 ## 2. Elige cómo sale ABM a internet
 
-En **Settings > General** hay una sección **Proxy**. Configura ahí un proxy si ABM tiene que pasar por uno para llegar a internet. Si ABM sale directamente a internet, sáltate esto.
+En el asistente es el paso Network. Más adelante está en **Settings > [Network](/es/settings/network/)**. Elige cómo sale ABM a internet: un proxy, un túnel WireGuard, tu propio contenedor de VPN o Direct. No sale nada hasta que elijas una.
 
 ## 3. Añade una carpeta raíz
 

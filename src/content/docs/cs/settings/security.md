@@ -21,7 +21,7 @@ Dva režimy **Authentication Required**, které budeš používat:
 - **Enabled**: přihlašuje se každý, včetně tvé LAN.
 - **Disabled for Local Addresses** (uložené jako `local_disabled`): požadavek z lokální adresy se přihlašovat nemusí. Za lokální se počítá loopback, privátní rozsahy, link-local a IPv6 unique-local. **Local Networks** přidává další a nikdy je nenahrazuje.
 
-Na čerstvé instalaci se požadavky odmítají, dokud neskončí úvodní nastavení.
+Na čerstvé instalaci se požadavky odmítají, dokud se v [průvodci nastavením](/cs/getting-started/first-run-setup/) nevytvoří účet. Jeho krok Account předvybere **Enabled**, takže nová instalace vyžaduje přihlášení z každé adresy. Existující instalace si nastavení ponechá.
 
 ## Reverzní proxy
 

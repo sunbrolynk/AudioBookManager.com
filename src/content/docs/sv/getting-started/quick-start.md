@@ -7,11 +7,11 @@ Det här är den kortaste vägen från en container som är igång till en bok s
 
 ## 1. Logga in
 
-Första gången guidas du genom att skapa en inloggning. Tills du har gjort det vägrar ABM alla anrop. Hur inloggningen fungerar efter det står i [Säkerhet och inloggning](/sv/settings/security/).
+Första gången öppnas installationsguiden, och dess första steg skapar din inloggning. Tills du har gjort det nekar ABM anrop. Guiden täcker också steg 2 till 4 nedan, och [Första konfigurationen](/sv/getting-started/first-run-setup/) beskriver vart och ett av stegen. Hur inloggningen fungerar efteråt står under [Säkerhet och inloggning](/sv/settings/security/).
 
 ## 2. Välj hur ABM når internet
 
-Under **Settings > General** finns sektionen **Proxy**. Ställ in en proxy där om ABM måste gå via en för att nå internet. Når ABM internet direkt hoppar du över det här.
+I guiden är det här steget Network. Senare finns det under **Settings > [Network](/sv/settings/network/)**. Välj hur ABM kommer ut på internet: en proxy, en WireGuard-tunnel, din egen VPN-container eller Direct. Inget går ut förrän du har valt en.
 
 ## 3. Lägg till en rotmapp
 

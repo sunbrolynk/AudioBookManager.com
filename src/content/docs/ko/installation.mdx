@@ -52,7 +52,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
    docker compose up -d
    ```
 
-4. **열기.** `http://your-server:5173`로 들어가세요. 처음 접속하면 로그인 설정을 차근차근 안내해 줘요.
+4. **열기.** `http://your-server:5173`으로 들어가세요. 처음 접속하면 설정 마법사가 열려서 로그인과 ABM에 필요한 나머지를 안내해 줘요. [처음 설정](/ko/getting-started/first-run-setup/)를 보세요.
 
 </Steps>
 
@@ -62,7 +62,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 
 ## 처음 실행
 
-compose 파일의 `TIMEZONE`으로 시간대를 정하세요. 그다음 **Settings**에서 **Media Management**에 루트 폴더를, **Indexers**에 인덱서를, **Download Clients**에 다운로드 클라이언트를 추가하세요. 환경 변수와 리버스 프록시는 [환경 변수](/ko/configuration/)에서 다뤄요.
+compose 파일의 `TIMEZONE`으로 시간대를 정하세요. 그다음 ABM을 열고 설정 마법사를 따라가세요. 로그인을 만들고, ABM이 인터넷에 나가는 방법과 책을 찾아볼 곳을 정하고, 루트 폴더를 추가해요. 다운로드 클라이언트와 인덱서도 거기서 추가할 수 있고, 나중에 **Settings > Download Clients**와 **Settings > Indexers**에서 해도 돼요. 마법사는 [처음 설정](/ko/getting-started/first-run-setup/)에서 설명해요. 환경 변수와 리버스 프록시는 [환경 변수](/ko/configuration/)에서 설명해요.
 
 ## 소스에서 빌드하기
 

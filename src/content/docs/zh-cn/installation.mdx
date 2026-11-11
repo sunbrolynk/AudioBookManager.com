@@ -52,7 +52,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
    docker compose up -d
    ```
 
-4. **打开。** 访问 `http://your-server:5173`。第一次打开时会引导你设置登录账号。
+4. **打开。** 访问 `http://your-server:5173`。第一次打开时会出现设置向导，帮你创建登录账号以及 ABM 需要的其余设置。见[首次设置](/zh-cn/getting-started/first-run-setup/)。
 
 </Steps>
 
@@ -62,7 +62,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 
 ## 首次运行
 
-在 compose 文件里用 `TIMEZONE` 设置你的时区。然后在 **Settings** 里：到 **Media Management** 添加一个根文件夹，到 **Indexers** 添加一个索引器，到 **Download Clients** 添加一个下载客户端。环境变量和反向代理的说明见 [配置](/zh-cn/configuration/)。
+在 compose 文件里用 `TIMEZONE` 设置你的时区。然后打开 ABM，跟着设置向导走。它会创建你的登录账号，设置 ABM 如何连上互联网以及到哪里查书，并添加一个根文件夹。下载客户端和索引器也可以在那里添加，或者以后到 **Settings > Download Clients** 和 **Settings > Indexers** 里添加。向导在[首次设置](/zh-cn/getting-started/first-run-setup/)里有介绍。环境变量和反向代理在[配置](/zh-cn/configuration/)里有说明。
 
 ## 从源码构建
 

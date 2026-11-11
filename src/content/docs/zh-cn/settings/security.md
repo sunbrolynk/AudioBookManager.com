@@ -21,7 +21,7 @@ description: 认证模式、API 密钥、受信任代理、本地网络和内容
 - **Enabled**：所有人都要登录，包括你的局域网。
 - **Disabled for Local Addresses**（存储为 `local_disabled`）：来自本地地址的请求免登录。回环地址、私有网段、链路本地地址和 IPv6 唯一本地地址都算本地。**Local Networks** 只会追加网段，永远不会替换这些。
 
-全新安装时，在完成初始设置之前，所有请求都会被拒绝。
+全新安装时，在[设置向导](/zh-cn/getting-started/first-run-setup/)里创建账号之前，所有请求都会被拒绝。向导的 Account 步骤会预先选中 **Enabled**，所以新安装从任何地址访问都需要登录。已有的安装保持原来的设置。
 
 ## 反向代理
 

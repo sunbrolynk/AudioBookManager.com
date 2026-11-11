@@ -52,7 +52,7 @@ Tietokanta on SQLite-tiedosto kansiossa `/config`, joten erillistä tietokantapa
    docker compose up -d
    ```
 
-4. **Avaa se.** Mene osoitteeseen `http://your-server:5173`. Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset.
+4. **Avaa se.** Mene osoitteeseen `http://your-server:5173`. Ensimmäisellä käynnillä avautuu käyttöönottoavustaja, joka luo tunnuksesi ja kaiken muun, mitä ABM tarvitsee. Katso [Ensimmäinen käyttöönotto](/fi/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Jos latausasiakkaasi pyörii omassa kontissaan, sen latauskansion on oltava sama
 
 ## Ensimmäinen käynnistys
 
-Aseta aikavyöhykkeesi compose-tiedostossa muuttujalla `TIMEZONE`. Lisää sitten kohdassa **Settings** juurikansio osioon **Media Management**, indeksoija osioon **Indexers** ja latausasiakas osioon **Download Clients**. Ympäristömuuttujat ja käänteiset välityspalvelimet käydään läpi sivulla [Ympäristömuuttujat](/fi/configuration/).
+Aseta aikavyöhykkeesi compose-tiedostossa muuttujalla `TIMEZONE`. Avaa sitten ABM ja seuraa käyttöönottoavustajaa. Se luo tunnuksesi, asettaa, miten ABM pääsee internetiin ja mistä se hakee kirjat, ja lisää juurikansion. Voit lisätä siellä myös lataustyökalun ja indexerin, tai tehdä sen myöhemmin kohdissa **Settings > Download Clients** ja **Settings > Indexers**. Avustaja on kuvattu sivulla [Ensimmäinen käyttöönotto](/fi/getting-started/first-run-setup/). Ympäristömuuttujat ja käänteiset välityspalvelimet selitetään sivulla [Ympäristömuuttujat](/fi/configuration/).
 
 ## Kääntäminen lähdekoodista
 

@@ -21,7 +21,7 @@ Les deux modes d'**Authentication Required** que tu vas utiliser :
 - **Enabled** : tout le monde se connecte, ton LAN compris.
 - **Disabled for Local Addresses** (enregistré comme `local_disabled`) : une requête qui vient d'une adresse locale saute la connexion. Le loopback, les plages privées, le link-local et l'IPv6 unique-local comptent comme locaux. **Local Networks** en ajoute d'autres et ne les remplace jamais.
 
-Sur une installation toute neuve, les requêtes sont refusées tant que la configuration initiale n'est pas terminée.
+Sur une installation toute neuve, les requêtes sont refusées tant que le compte n'est pas créé dans l'[assistant de configuration](/fr/getting-started/first-run-setup/). Son étape Account présélectionne **Enabled**, donc une nouvelle installation exige la connexion depuis toutes les adresses. Une installation existante garde son réglage.
 
 ## Reverse proxies
 

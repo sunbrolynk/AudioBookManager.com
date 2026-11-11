@@ -21,7 +21,7 @@ Le due modalità di **Authentication Required** che userai:
 - **Enabled**: accedono tutti, anche dalla tua LAN.
 - **Disabled for Local Addresses** (salvata come `local_disabled`): una richiesta da un indirizzo locale salta l'accesso. Loopback, gli intervalli privati, link-local e IPv6 unique-local contano come locali. **Local Networks** ne aggiunge altri e non li sostituisce mai.
 
-Su un'installazione nuova, le richieste vengono rifiutate finché non finisci la configurazione iniziale.
+Su un'installazione nuova, le richieste vengono rifiutate finché l'account non è creato nella [procedura guidata](/it/getting-started/first-run-setup/). Il suo passo Account preseleziona **Enabled**, quindi una nuova installazione richiede l'accesso da qualsiasi indirizzo. Un'installazione esistente mantiene la sua impostazione.
 
 ## Reverse proxy
 
