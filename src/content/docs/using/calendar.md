@@ -9,6 +9,10 @@ description: Upcoming releases and an iCal feed.
 
 ![The Calendar on a phone, as an agenda list](../../../assets/docs/phone-calendar.jpg)
 
+## Coming soon and recent
+
+Coming soon covers today through the next N days, counting today as the first day, and recent mirrors it looking back. Books come from your library and from the series and author catalogs, and only monitored books are listed. Each book appears once, even when it shows up in more than one of them. Editions of the same title by the same first author releasing on the same date are collapsed into one row: the copy in your library wins, then the edition in your preferred language. A book with no title or no author is never merged with another. No book is hidden because of its language.
+
 ## Options
 
 The **Calendar Options** button offers: collapse multiple books releasing on the same day, color the whole event with the status color, and show author and series information.
