@@ -9,6 +9,8 @@ description: Säkerhetskopiera, exportera och återställ ABM.
 
 Ett krypterat arkiv med en konsekvent kopia av databasen (`database.db`), inställningarna (`settings.json`) och ett manifest. Ta också med `/config` i dina egna säkerhetskopior för omslagen och filen med apphemligheten.
 
+Audiobookshelf-API-nyckeln ingår i säkerhetskopian, krypterad. Den går inte att dekryptera under en annan `APP_SECRET`, så ange den igen om du återställer med en annan.
+
 ## Återställa
 
 Välj en i listan, eller ladda upp en säkerhetskopia (upp till 500 MiB). En kopia av den aktiva databasen sparas först. En återställning går inte att ångra.

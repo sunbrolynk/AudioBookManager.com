@@ -11,6 +11,8 @@ description: Back up, export and restore ABM.
 
 An encrypted archive with a consistent copy of the database (`database.db`), the settings (`settings.json`) and a manifest. Also include `/config` in your own backups for the covers and the app secret file.
 
+The Audiobookshelf API key is part of the backup, stored encrypted. It won't decrypt under a different `APP_SECRET`, so enter it again if you restore with another one.
+
 ## Restoring
 
 Pick one from the list, or upload a backup file (up to 500 MiB). A copy of the live database is saved first. Restoring cannot be undone. Deleting a backup asks you to type `delete` to confirm.

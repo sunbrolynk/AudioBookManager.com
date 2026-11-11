@@ -9,6 +9,8 @@ description: Haz copias de seguridad de ABM, expórtalas y restáuralas.
 
 Un archivo cifrado con una copia coherente de la base de datos (`database.db`), los ajustes (`settings.json`) y un manifiesto. Incluye también `/config` en tus propias copias de seguridad por las portadas y el archivo del secreto de la aplicación.
 
+La clave de API de Audiobookshelf forma parte de la copia de seguridad, cifrada. No se descifra con un `APP_SECRET` distinto, así que vuelve a introducirla si restauras con otro.
+
 ## Restaurar
 
 Elige una de la lista o sube un archivo de copia de seguridad (hasta 500 MiB). Antes se guarda una copia de la base de datos actual. La restauración no se puede deshacer.

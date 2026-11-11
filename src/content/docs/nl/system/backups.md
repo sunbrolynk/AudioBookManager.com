@@ -9,6 +9,8 @@ description: Back-ups maken, exporteren en terugzetten.
 
 Een versleuteld archief met een consistente kopie van de database (`database.db`), de instellingen (`settings.json`) en een manifest. Neem `/config` ook mee in je eigen back-ups, voor de covers en het bestand met het app-secret.
 
+De Audiobookshelf-API-sleutel zit versleuteld in de back-up. Onder een andere `APP_SECRET` is hij niet te ontsleutelen, dus voer hem opnieuw in als je met een andere herstelt.
+
 ## Terugzetten
 
 Kies er een uit de lijst, of upload een back-upbestand (tot 500 MiB). Er wordt eerst een kopie van de live database opgeslagen. Terugzetten kun je niet ongedaan maken.

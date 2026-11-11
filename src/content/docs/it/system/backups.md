@@ -9,6 +9,8 @@ description: Fare il backup, esportare e ripristinare ABM.
 
 Un archivio cifrato con una copia coerente del database (`database.db`), le impostazioni (`settings.json`) e un manifest. Includi anche `/config` nei tuoi backup, per le copertine e il file della chiave segreta.
 
+La chiave API di Audiobookshelf fa parte del backup, cifrata. Non si decifra con un `APP_SECRET` diverso, quindi inseriscila di nuovo se ripristini con un altro.
+
 ## Ripristinare
 
 Scegline uno dall'elenco, oppure carica un file di backup (fino a 500 MiB). Prima viene salvata una copia del database attuale. Il ripristino non si può annullare.

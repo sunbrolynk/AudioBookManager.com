@@ -9,6 +9,8 @@ description: Sauvegarder, exporter et restaurer ABM.
 
 Une archive chiffrée avec une copie cohérente de la base de données (`database.db`), des réglages (`settings.json`) et un manifeste. Mets aussi `/config` dans tes propres sauvegardes, pour les couvertures et le fichier du secret de l'app.
 
+La clé API Audiobookshelf fait partie de la sauvegarde, chiffrée. Elle ne se déchiffre pas avec un `APP_SECRET` différent : saisis-la de nouveau si tu restaures avec un autre.
+
 ## Restaurer
 
 Choisis une sauvegarde dans la liste, ou envoie un fichier de sauvegarde (jusqu'à 500 MiB). Une copie de la base de données en service est enregistrée d'abord. Une restauration ne peut pas être annulée.
