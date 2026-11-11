@@ -11,7 +11,7 @@ Det nedlastingsklientene dine jobber med. Handlingene på en rad er blant annet 
 
 ## Historikk (History)
 
-Hentinger, importer, feil og oppgraderinger. En henting som feilet, sier hvilke klienter som ble prøvd.
+Hentinger, importer, feil og oppgraderinger. En henting som feilet, sier hvilke klienter som ble prøvd. En nedlasting som mislykkes i klienten får sin egen rad med klientens årsak.
 
 ## Blokkeringsliste (Blocklist)
 

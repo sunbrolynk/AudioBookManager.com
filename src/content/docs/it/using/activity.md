@@ -11,7 +11,7 @@ Rimuovere una riga dalla coda segue **Queue Page Remove Action** nelle impostazi
 
 ## Cronologia (History)
 
-Grab, importazioni, errori e upgrade. Un grab fallito dice quali client sono stati provati.
+Grab, importazioni, errori e upgrade. Un grab fallito dice quali client sono stati provati. Un download che fallisce nel client ha una riga tutta sua con il motivo del client.
 
 ## Lista di blocco (Blocklist)
 

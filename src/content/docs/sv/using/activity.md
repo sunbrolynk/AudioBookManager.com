@@ -11,7 +11,7 @@ Att ta bort en rad från kön följer **Queue Page Remove Action** i nedladdning
 
 ## Historik (History)
 
-Hämtningar, importer, misslyckanden och uppgraderingar. En misslyckad hämtning säger vilka klienter som prövades.
+Hämtningar, importer, misslyckanden och uppgraderingar. En misslyckad hämtning säger vilka klienter som prövades. En nedladdning som misslyckas i klienten får en egen rad med klientens orsak.
 
 ## Blocklista (Blocklist)
 

@@ -11,7 +11,7 @@ Was beim Entfernen einer Zeile aus der Warteschlange passiert, richtet sich nach
 
 ## Verlauf (History)
 
-Grabs, Importe, Fehlschläge und Upgrades. Bei einem fehlgeschlagenen Grab steht dabei, welche Clients probiert wurden.
+Grabs, Importe, Fehlschläge und Upgrades. Bei einem fehlgeschlagenen Grab steht dabei, welche Clients probiert wurden. Ein Download, der im Client fehlschlägt, bekommt eine eigene Zeile mit dem Grund des Clients.
 
 ## Blocklist
 

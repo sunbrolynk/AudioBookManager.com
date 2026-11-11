@@ -11,7 +11,7 @@ Remover uma linha da fila segue a configuração **Queue Page Remove Action** do
 
 ## Histórico (History)
 
-Downloads iniciados, importações, falhas e upgrades. Um download que falhou diz quais clientes foram tentados.
+Downloads iniciados, importações, falhas e upgrades. Um download que falhou diz quais clientes foram tentados. Um download que falha no cliente ganha uma linha própria com o motivo do cliente.
 
 ## Blocklist
 

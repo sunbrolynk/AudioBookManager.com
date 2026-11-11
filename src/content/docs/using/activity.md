@@ -17,7 +17,7 @@ Removing a row, from the row, a selection, a phone action sheet or the details v
 
 ## History
 
-Grabs, imports, failures and upgrades. A failed grab says which clients were tried.
+Grabs, imports, failures and upgrades. A failed grab says which clients were tried. A download that fails in the client gets its own row with the client's reason.
 
 ![Activity, History: grabs and imports with the book, author, series and date](../../../assets/docs/activity-history.jpg)
 

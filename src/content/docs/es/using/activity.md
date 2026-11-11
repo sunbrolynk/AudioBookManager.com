@@ -11,7 +11,7 @@ Quitar una fila de la cola sigue lo que diga **Queue Page Remove Action** en los
 
 ## Historial (History)
 
-Descargas, importaciones, fallos y mejoras. Una descarga fallida dice qué clientes se probaron.
+Descargas, importaciones, fallos y mejoras. Una descarga fallida dice qué clientes se probaron. Una descarga que falla en el cliente recibe su propia fila con el motivo del cliente.
 
 ## Lista de bloqueo (Blocklist)
 

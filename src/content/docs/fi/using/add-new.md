@@ -22,7 +22,7 @@ Haussa on tilat Title, Author, Series, Books by author, Books in series ja ASIN.
 
 Valitset myös juurikansion, laatuprofiilin ja sen, lisätäänkö myöhemmin ilmestyvät kirjat. Sarjalle se on oletuksena päällä ja tekijälle pois. Kirjastossasi jo oleva tekijä tai sarja näyttää merkinnän "In Library" ja toiminnon **Add missing books**.
 
-Lisäys ajetaan taustatehtävänä, ja sen edistymisestä kertoo ponnahdusilmoitus.
+Lisäys ajetaan taustatehtävänä, ja sen edistymisestä kertoo ponnahdusilmoitus. Jos kirja, tekijä tai sarja tallennetaan mutta sen jälkeinen catalog fill ei käynnisty, varoitus tallennetaan [ilmoituskelloon](/fi/system/notifications/). Add all tekee saman, kun jotkin kirjat epäonnistuvat, syineen.
 
 ## Jos haku ei palauta mitään
 

@@ -22,7 +22,7 @@ Die Suche hat Modi für Title, Author, Series, Books by author, Books in series 
 
 Außerdem wählst du den Root-Ordner, das Qualitätsprofil und ob später erscheinende Bücher auch hinzugefügt werden. Bei einer Serie ist das standardmäßig an, bei einem Autor aus. Ein Autor oder eine Serie, die schon in deiner Bibliothek ist, zeigt "In Library" mit der Aktion **Add missing books**.
 
-Das Hinzufügen läuft als Hintergrundaufgabe mit einer Fortschrittsmeldung.
+Das Hinzufügen läuft als Hintergrundaufgabe mit einer Fortschrittsmeldung. Wird ein Buch, ein Autor oder eine Serie gespeichert, startet aber der anschließende Catalog-Fill nicht, wird eine Warnung in der [Benachrichtigungsglocke](/de/system/notifications/) aufgezeichnet. Add all macht dasselbe, wenn einige Bücher fehlschlagen, samt Gründen.
 
 ## Wenn die Suche nichts findet
 

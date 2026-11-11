@@ -11,7 +11,7 @@ Removing a row from the queue follows **Queue Page Remove Action** in the downlo
 
 ## History
 
-Grabs, imports, failures and upgrades. A failed grab says which clients were tried.
+Grabs, imports, failures and upgrades. A failed grab says which clients were tried. A download that fails in the client gets its own row with the client's reason.
 
 ## Blocklist
 

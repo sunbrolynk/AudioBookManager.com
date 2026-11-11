@@ -11,7 +11,7 @@ Retirer une ligne de la file suit le réglage **Queue Page Remove Action** du cl
 
 ## Historique (History)
 
-Les récupérations, imports, échecs et mises à niveau. Une récupération qui a échoué indique quels clients ont été essayés.
+Les récupérations, imports, échecs et mises à niveau. Une récupération qui a échoué indique quels clients ont été essayés. Un téléchargement qui échoue dans le client a sa propre ligne avec la raison du client.
 
 ## Liste de blocage (Blocklist)
 

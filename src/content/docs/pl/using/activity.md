@@ -11,7 +11,7 @@ Usunięcie wiersza z kolejki działa według **Queue Page Remove Action** w usta
 
 ## Historia (History)
 
-Pobrania, importy, błędy i ulepszenia. Nieudane pobranie mówi, których klientów próbowano.
+Pobrania, importy, błędy i ulepszenia. Nieudane pobranie mówi, których klientów próbowano. Pobieranie, które kończy się błędem w kliencie, dostaje własny wiersz z powodem podanym przez klienta.
 
 ## Czarna lista (Blocklist)
 

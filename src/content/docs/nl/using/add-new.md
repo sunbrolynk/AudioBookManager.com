@@ -22,7 +22,7 @@ De zoekfunctie heeft modi voor Title, Author, Series, Books by author, Books in 
 
 Je kiest ook de rootmap, het kwaliteitsprofiel, en of boeken die later verschijnen ook worden toegevoegd. Dat staat standaard aan voor een serie en uit voor een auteur. Een auteur of serie die al in je bibliotheek staat, toont "In Library" met een actie **Add missing books**.
 
-Het toevoegen draait als achtergrondtaak met een voortgangsmelding.
+Het toevoegen draait als achtergrondtaak met een voortgangsmelding. Als een boek, auteur of serie wordt opgeslagen maar de catalog fill erna niet start, wordt een waarschuwing vastgelegd in de [meldingenbel](/nl/system/notifications/). Add all doet hetzelfde als sommige boeken mislukken, met de redenen.
 
 ## Als zoeken niks oplevert
 

@@ -11,7 +11,7 @@ Odebrání řádku z fronty se řídí volbou **Queue Page Remove Action** v nas
 
 ## Historie (History)
 
-Stažení, importy, selhání a vylepšení. U neúspěšného stažení je vidět, které klienty ABM zkoušel.
+Stažení, importy, selhání a vylepšení. U neúspěšného stažení je vidět, které klienty ABM zkoušel. Stahování, které selže v klientovi, dostane vlastní řádek s důvodem od klienta.
 
 ## Blocklist
 

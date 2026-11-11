@@ -22,7 +22,7 @@ The search has modes for Title, Author, Series, Books by author, Books in series
 
 You also pick the root folder, the quality profile, and whether books that appear later are added too. That is on by default for a series and off for an author. An author or series already in your library shows "In Library" with an **Add missing books** action.
 
-The add runs as a background task with a progress toast.
+The add runs as a background task with a progress toast. If a book, author or series is saved but its follow-up catalog fill doesn't start, a warning is recorded in the [notification bell](/en-ca/system/notifications/). Add all does the same when some books fail, with the reasons.
 
 ## If search returns nothing
 

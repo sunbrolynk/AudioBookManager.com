@@ -11,7 +11,7 @@ Når du fjerner en række fra køen, følger det **Queue Page Remove Action** i 
 
 ## Historik (History)
 
-Hentninger, importer, fejl og opgraderinger. En mislykket hentning fortæller, hvilke klienter der blev prøvet.
+Hentninger, importer, fejl og opgraderinger. En mislykket hentning fortæller, hvilke klienter der blev prøvet. En download, der mislykkes i klienten, får sin egen række med klientens årsag.
 
 ## Blokeringsliste (Blocklist)
 

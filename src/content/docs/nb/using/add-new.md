@@ -22,7 +22,7 @@ Søket har moduser for Title, Author, Series, Books by author, Books in series o
 
 Du velger også rotmappe, kvalitetsprofil, og om bøker som dukker opp senere, også skal legges til. Det er på som standard for en serie og av for en forfatter. En forfatter eller serie som allerede er i biblioteket ditt, viser "In Library" med handlingen **Add missing books**.
 
-Selve tilleggingen kjører som en bakgrunnsoppgave med en fremdriftsmelding.
+Selve tilleggingen kjører som en bakgrunnsoppgave med en fremdriftsmelding. Hvis en bok, forfatter eller serie lagres, men den påfølgende catalog fill ikke starter, registreres en advarsel i [varselklokken](/nb/system/notifications/). Add all gjør det samme når noen bøker mislykkes, med årsakene.
 
 ## Hvis søket ikke gir noe
 

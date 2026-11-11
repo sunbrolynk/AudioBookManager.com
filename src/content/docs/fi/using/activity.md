@@ -11,7 +11,7 @@ Rivin poistaminen jonosta noudattaa latausasiakkaan asetusta **Queue Page Remove
 
 ## Historia (History)
 
-Nappaukset, tuonnit, epäonnistumiset ja parannukset. Epäonnistunut nappaus kertoo, mitä asiakkaita kokeiltiin.
+Nappaukset, tuonnit, epäonnistumiset ja parannukset. Epäonnistunut nappaus kertoo, mitä asiakkaita kokeiltiin. Lataus, joka epäonnistuu clientissa, saa oman rivinsä clientin ilmoittamalla syyllä.
 
 ## Estolista (Blocklist)
 

@@ -11,7 +11,7 @@ Een rij uit de wachtrij verwijderen volgt **Queue Page Remove Action** in de ins
 
 ## Geschiedenis (History)
 
-Grabs, imports, mislukkingen en upgrades. Bij een mislukte grab staat welke clients er geprobeerd zijn.
+Grabs, imports, mislukkingen en upgrades. Bij een mislukte grab staat welke clients er geprobeerd zijn. Een download die in de client mislukt, krijgt een eigen rij met de reden van de client.
 
 ## Blokkeerlijst (Blocklist)
 
