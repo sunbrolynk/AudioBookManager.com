@@ -15,6 +15,8 @@ ABM 可以连接一个或多个 Audible 账号，并在 **Audible Library** 页�
 
 同步会从 Audible 刷新每个账号的书库。Audible 设置页会显示同步进度和结果，失败时会给出真实的错误信息。它也会按计划自动运行。
 
+Audible Library 页面上的每次拒绝（下载、批量添加、添加并下载、sync)都会在页面上以一行显示原因，并同时记录在[通知铃铛](/zh-cn/system/notifications/)里。从对话框添加的书也会记录在那里，因为对话框会关闭。
+
 **Audible Library** 页面列出所有已同步的内容。可以筛选为 All、Not in Library、Downloaded、Wanted 或 Downloadable Only。
 
 ## 把 Audible 书库镜像到 ABM

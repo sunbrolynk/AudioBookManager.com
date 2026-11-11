@@ -45,6 +45,7 @@ ABM 获取元数据、封面和 Audible 页面时怎么连上互联网。
 | Log File Retention | 30 天，0 表示永久保留 |
 | Activity Log Retention | 90 天，0 表示永久保留 |
 | Book History Retention | 0（保留） |
+| Notifications Retention | 30 天，0 表示永久保留。仍需处理的通知会保留 |
 | Automatic Cleanup | 开 |
 | Cleanup Time | 03:00 |
 | SQL Logging | 关。日志量非常大 |

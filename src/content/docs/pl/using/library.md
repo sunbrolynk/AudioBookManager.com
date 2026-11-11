@@ -51,4 +51,4 @@ Książki, autorzy i serie mogą mieć tagi. Tagi sterują indekserami, powiadom
 
 ## Zaznaczanie
 
-Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Na telefonie zobacz [Na telefonie](/pl/phone/).
+Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Na telefonie zobacz [Na telefonie](/pl/phone/). Akcje w Library pokazują wynik jako linię na stronie. Usuwanie książek działa jako zadanie, a jego wynik, razem z liczbą faktycznie usuniętych, jest zapisywany w [dzwonku powiadomień](/pl/system/notifications/).

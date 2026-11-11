@@ -45,6 +45,7 @@ De sectie toont ook je uitgaande IP-adres zoals externe diensten het zien. Een k
 | Log File Retention | 30 dagen, 0 bewaart voor altijd |
 | Activity Log Retention | 90 dagen, 0 bewaart voor altijd |
 | Book History Retention | 0 (bewaren) |
+| Notifications Retention | 30 dagen, 0 bewaart altijd. Meldingen die nog aandacht nodig hebben blijven bewaard |
 | Automatic Cleanup | aan |
 | Cleanup Time | 03:00 |
 | SQL Logging | uit. Heel uitgebreid |

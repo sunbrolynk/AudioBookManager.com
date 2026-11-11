@@ -15,6 +15,8 @@ Jos kirjautuminen lakkaa toimimasta, tili ilmoittaa tarvitsevansa uuden kirjautu
 
 Synkronointi päivittää kunkin tilin kirjaston Audiblesta. Audible-asetussivu näyttää sen edistymisen ja tuloksen, ja jos jokin menee pieleen, se näyttää todellisen virheen. Synkronointi ajetaan myös ajastetusti.
 
+Jokainen kielto Audible Library -sivulta (lataukset, joukkolisäys, lisää ja lataa, sync) näyttää syyn rivinä sivulla ja tallennetaan myös [ilmoituskelloon](/fi/system/notifications/). Dialogista lisätty kirja tallennetaan myös sinne, koska dialogi sulkeutuu.
+
 **Audible Library** -sivu listaa kaiken synkronoidun. Voit suodattaa sen valinnoilla All, Not in Library, Downloaded, Wanted tai Downloadable Only.
 
 ## Audible-kirjaston peilaus ABM:ään (Mirror Audible library to ABM)

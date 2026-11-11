@@ -47,6 +47,7 @@ The section also shows your outgoing IP as external services see it. A choice of
 | Log File Retention | 30 days, 0 keeps forever |
 | Activity Log Retention | 90 days, 0 keeps forever |
 | Book History Retention | 0 (keep) |
+| Notifications Retention | 30 days, 0 keeps forever. Notifications that still need attention are kept |
 | Automatic Cleanup | on |
 | Cleanup Time | 03:00 |
 | SQL Logging | off. Very verbose |

@@ -15,6 +15,8 @@ Jeśli logowanie przestanie działać, konto pokaże, że trzeba zalogować się
 
 Synchronizacja odświeża bibliotekę każdego konta z Audible. Strona ustawień Audible pokazuje jej postęp i wynik, a błąd zgłasza z prawdziwym komunikatem. Synchronizacja działa też według harmonogramu.
 
+Każde odrzucenie ze strony Audible Library (pobierania, zbiorcze dodawanie, dodaj i pobierz, sync) pokazuje powód jako linię na stronie i jest też zapisywane w [dzwonku powiadomień](/pl/system/notifications/). Książka dodana z okna dialogowego jest tam zapisywana również, bo okno się zamyka.
+
 Strona **Audible Library** pokazuje wszystko, co zostało zsynchronizowane. Możesz ją filtrować: All, Not in Library, Downloaded, Wanted albo Downloadable Only.
 
 ## Odzwierciedlanie biblioteki Audible w ABM (Mirror)

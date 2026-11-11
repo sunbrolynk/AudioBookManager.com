@@ -15,6 +15,8 @@ Se un accesso smette di funzionare, l'account ti segnala che deve accedere di nu
 
 La sincronizzazione aggiorna da Audible la libreria di ogni account. La pagina delle impostazioni Audible ne mostra l'avanzamento e il risultato, e in caso di errore riporta l'errore vero. Gira anche in automatico secondo una pianificazione.
 
+Ogni rifiuto dalla pagina Audible Library (download, aggiunta in blocco, aggiunta e download, sync) mostra il motivo come riga nella pagina e viene registrato anche nella [campanella delle notifiche](/it/system/notifications/). Anche un libro aggiunto dalla finestra viene registrato lì, perché la finestra si chiude.
+
 La pagina **Audible Library** elenca tutto ciò che è stato sincronizzato. Puoi filtrarla per All, Not in Library, Downloaded, Wanted o Downloadable Only.
 
 ## Rispecchiare la libreria Audible in ABM

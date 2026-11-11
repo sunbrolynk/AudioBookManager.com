@@ -15,6 +15,8 @@ Si une connexion ne marche plus, le compte indique qu'il doit se reconnecter, da
 
 La synchronisation rafraîchit la bibliothèque de chaque compte depuis Audible. La page des réglages Audible montre sa progression et son résultat, et signale un échec avec la vraie erreur. Elle tourne aussi selon un planning.
 
+Chaque refus depuis la page Audible Library (téléchargements, ajout en masse, ajout et téléchargement, sync) montre la raison sous forme de ligne sur la page et est aussi enregistré dans la [cloche de notifications](/fr/system/notifications/). Un livre ajouté depuis la boîte de dialogue y est enregistré aussi, parce que la boîte se ferme.
+
 La page **Audible Library** liste tout ce qui a été synchronisé. Filtre-la sur All, Not in Library, Downloaded, Wanted ou Downloadable Only.
 
 ## Faire un miroir de la bibliothèque Audible dans ABM

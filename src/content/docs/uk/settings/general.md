@@ -45,6 +45,7 @@ description: Хост, безпека, проксі, журнали та рез�
 | Log File Retention | 30 днів, 0 зберігає назавжди |
 | Activity Log Retention | 90 днів, 0 зберігає назавжди |
 | Book History Retention | 0 (зберігати) |
+| Notifications Retention | 30 днів, 0 зберігає назавжди. Сповіщення, що ще потребують уваги, зберігаються |
 | Automatic Cleanup | увімкнено |
 | Cleanup Time | 03:00 |
 | SQL Logging | вимкнено. Дуже балакуче |

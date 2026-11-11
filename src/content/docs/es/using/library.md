@@ -51,4 +51,4 @@ Los libros, los autores y las series pueden llevar etiquetas. Las etiquetas diri
 
 ## Selección
 
-Selecciona filas para actuar sobre varias a la vez: monitorizar, buscar, etiquetar, renombrar, borrar. En el móvil, consulta [Uso en el móvil](/es/phone/).
+Selecciona filas para actuar sobre varias a la vez: monitorizar, buscar, etiquetar, renombrar, borrar. En el móvil, consulta [Uso en el móvil](/es/phone/). Las acciones de Library muestran un resultado como línea en la página. Borrar libros se ejecuta como tarea y su resultado, con cuántos borró de verdad, se registra en la [campana de notificaciones](/es/system/notifications/).

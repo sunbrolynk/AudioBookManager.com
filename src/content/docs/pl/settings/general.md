@@ -45,6 +45,7 @@ Sekcja pokazuje też twój wychodzący adres IP tak, jak widzą go zewnętrzne u
 | Log File Retention | 30 dni, 0 trzyma na zawsze |
 | Activity Log Retention | 90 dni, 0 trzyma na zawsze |
 | Book History Retention | 0 (trzyma) |
+| Notifications Retention | 30 dni, 0 zachowuje na zawsze. Powiadomienia, które nadal wymagają uwagi, są zachowywane |
 | Automatic Cleanup | wł. |
 | Cleanup Time | 03:00 |
 | SQL Logging | wył. Bardzo gadatliwe |

@@ -45,6 +45,7 @@ Sektionen visar också din utgående IP-adress så som externa tjänster ser den
 | Log File Retention | 30 dagar, 0 sparar för alltid |
 | Activity Log Retention | 90 dagar, 0 sparar för alltid |
 | Book History Retention | 0 (spara) |
+| Notifications Retention | 30 dagar, 0 behåller för alltid. Aviseringar som fortfarande behöver uppmärksamhet behålls |
 | Automatic Cleanup | på |
 | Cleanup Time | 03:00 |
 | SQL Logging | av. Väldigt pratig |

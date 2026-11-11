@@ -40,7 +40,7 @@ Only an identical request (same operation and target format) is refused, with "A
 
 Cancelling a conversion's task on the Tasks page releases that book's queue, so the jobs waiting behind it carry on.
 
-**Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. The toast after you start a conversion from a book has Pause, Resume and Cancel for each of its jobs.
+**Cancel** stops a waiting, running or paused job. **Restart** starts a job over from scratch as a new job with the same settings. It works on a waiting, running, paused or cancelled job, from its row on the Conversions page or the phone sheet, and it asks first because the old job is cancelled and its unfinished output is discarded. The old job stays in History. A failed job has **Retry**, and a finished one can't be restarted. After you start a conversion from a book, each of its jobs has Pause, Resume and Cancel on the Conversions page.
 
 ## Pause and resume
 

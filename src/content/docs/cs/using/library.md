@@ -51,4 +51,4 @@ Knihy, autoři i série můžou mít štítky. Štítky řídí indexery, oznám
 
 ## Výběr
 
-Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Na telefonu viz [Používání na telefonu](/cs/phone/).
+Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Na telefonu viz [Používání na telefonu](/cs/phone/). Akce v Library ukazují výsledek jako řádek na stránce. Mazání knih běží jako úloha a její výsledek, včetně toho, kolik se skutečně smazalo, se zaznamená do [zvonku oznámení](/cs/system/notifications/).

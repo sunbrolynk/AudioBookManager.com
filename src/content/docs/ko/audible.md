@@ -15,6 +15,8 @@ ABM은 Audible 계정 하나 이상에 연결해서, 계정마다 라이브러�
 
 동기화는 계정마다 Audible에서 라이브러리를 새로 받아 와요. Audible 설정 페이지에서 진행 상황과 결과를 볼 수 있고, 실패하면 실제 오류를 그대로 보여 줘요. 일정에 맞춰 자동으로 돌기도 해요.
 
+Audible Library 페이지에서의 모든 거부(다운로드, 일괄 추가, 추가 후 다운로드, sync)는 이유를 페이지에 한 줄로 보여 주고 [알림 종](/ko/system/notifications/)에도 기록돼요. 대화상자에서 추가한 책은 대화상자가 닫히기 때문에 그곳에도 기록돼요.
+
 **Audible Library** 페이지에는 동기화된 모든 게 나와요. All, Not in Library, Downloaded, Wanted, Downloadable Only로 필터링할 수 있어요.
 
 ## Audible 라이브러리를 ABM에 미러링하기

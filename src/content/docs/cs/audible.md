@@ -15,6 +15,8 @@ Když přihlášení přestane fungovat, účet ti v nastavení i na stránce st
 
 Synchronizace obnoví knihovnu každého účtu z Audible. Stránka nastavení Audible ukazuje její průběh a výsledek, a když selže, vypíše skutečnou chybu. Spouští se i podle plánu.
 
+Každé odmítnutí ze stránky Audible Library (stahování, hromadné přidání, přidat a stáhnout, sync) ukáže důvod jako řádek na stránce a zaznamená se také do [zvonku oznámení](/cs/system/notifications/). Kniha přidaná z dialogu se tam zaznamená také, protože se dialog zavře.
+
 Stránka **Audible Library** ukazuje všechno, co se synchronizovalo. Můžeš ji filtrovat na All, Not in Library, Downloaded, Wanted nebo Downloadable Only.
 
 ## Zrcadlení knihovny Audible do ABM (Mirror Audible library to ABM)

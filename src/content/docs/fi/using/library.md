@@ -51,4 +51,4 @@ Kirjoilla, tekijöillä ja sarjoilla voi olla tageja. Tagit ohjaavat indeksoijia
 
 ## Valinta
 
-Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Puhelimella katso [Puhelimella käyttö](/fi/phone/).
+Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Puhelimella katso [Puhelimella käyttö](/fi/phone/). Library-toiminnot näyttävät tuloksen rivinä sivulla. Kirjojen poisto ajetaan tehtävänä, ja sen tulos, mukaan lukien kuinka monta todella poistettiin, tallennetaan [ilmoituskelloon](/fi/system/notifications/).

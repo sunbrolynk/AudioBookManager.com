@@ -15,6 +15,8 @@ Om en inloggning slutar fungera säger kontot att det behöver logga in igen, b�
 
 Synken uppdaterar varje kontos bibliotek från Audible. Inställningssidan för Audible visar förlopp och resultat, och rapporterar ett fel med det faktiska felmeddelandet. Den körs också enligt ett schema.
 
+Varje avslag från sidan Audible Library (nedladdningar, massläggning, lägg till och ladda ned, sync) visar orsaken som en rad på sidan och registreras också i [aviseringsklockan](/sv/system/notifications/). En bok som läggs till från dialogen registreras också där, eftersom dialogen stängs.
+
 Sidan **Audible Library** listar allt som har synkats. Filtrera den på All, Not in Library, Downloaded, Wanted eller Downloadable Only.
 
 ## Spegla Audible-biblioteket till ABM (Mirror Audible library to ABM)

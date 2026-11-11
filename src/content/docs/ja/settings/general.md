@@ -45,6 +45,7 @@ ABM がメタデータ、表紙、Audible のページを取りにインター�
 | Log File Retention | 30日。0 でずっと残す |
 | Activity Log Retention | 90日。0 でずっと残す |
 | Book History Retention | 0（残す） |
+| Notifications Retention | 30 日、0 でずっと保持。まだ対応が必要な通知は保持されます |
 | Automatic Cleanup | オン |
 | Cleanup Time | 03:00 |
 | SQL Logging | オフ。出力がとても多い |

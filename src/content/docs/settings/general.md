@@ -33,6 +33,7 @@ In Docker the environment variables `PORT` and the compose port mapping are what
 | Log File Retention | 30 days, 0 keeps forever |
 | Activity Log Retention | 90 days, 0 keeps forever |
 | Book History Retention | 0 (keep) |
+| Notifications Retention | 30 days, 0 keeps forever. Notifications that still need attention are kept |
 | Security Log Retention | 30 days, 7 at least. Never Delete Security Logs keeps them forever |
 | Automatic Cleanup | on |
 | Cleanup Time | 03:00 |

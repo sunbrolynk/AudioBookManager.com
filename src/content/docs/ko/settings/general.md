@@ -45,6 +45,7 @@ ABM이 메타데이터, 표지, Audible 페이지를 받으러 인터넷에 나�
 | Log File Retention | 30일, 0이면 영구 보관 |
 | Activity Log Retention | 90일, 0이면 영구 보관 |
 | Book History Retention | 0(보관) |
+| Notifications Retention | 30일, 0이면 영원히 보관. 아직 확인이 필요한 알림은 보관돼요 |
 | Automatic Cleanup | 켜짐 |
 | Cleanup Time | 03:00 |
 | SQL Logging | 꺼짐. 내용이 아주 많아요 |

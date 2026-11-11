@@ -51,4 +51,4 @@ Böcker, författare och serier kan ha taggar. Taggar styr indexerare, notiser, 
 
 ## Markering
 
-Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. På mobilen, se [Använda mobilen](/sv/phone/).
+Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. På mobilen, se [Använda mobilen](/sv/phone/). Åtgärder i Library visar ett resultat som en rad på sidan. Att ta bort böcker körs som en uppgift och resultatet, med hur många som faktiskt togs bort, registreras i [aviseringsklockan](/sv/system/notifications/).

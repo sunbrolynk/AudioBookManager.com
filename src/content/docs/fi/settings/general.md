@@ -45,6 +45,7 @@ Osio näyttää myös lähtevän IP-osoitteesi sellaisena kuin ulkoiset palvelut
 | Log File Retention | 30 päivää, 0 säilyttää ikuisesti |
 | Activity Log Retention | 90 päivää, 0 säilyttää ikuisesti |
 | Book History Retention | 0 (säilytä) |
+| Notifications Retention | 30 päivää, 0 säilyttää ikuisesti. Ilmoitukset, jotka tarvitsevat vielä huomiota, säilytetään |
 | Automatic Cleanup | päällä |
 | Cleanup Time | 03:00 |
 | SQL Logging | pois. Hyvin runsassanainen |

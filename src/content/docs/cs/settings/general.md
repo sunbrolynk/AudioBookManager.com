@@ -45,6 +45,7 @@ Sekce také ukazuje tvou odchozí IP adresu tak, jak ji vidí externí služby. 
 | Log File Retention | 30 dní, 0 uchovává navždy |
 | Activity Log Retention | 90 dní, 0 uchovává navždy |
 | Book History Retention | 0 (uchovávat) |
+| Notifications Retention | 30 dní, 0 uchová navždy. Oznámení, která stále potřebují pozornost, se uchovají |
 | Automatic Cleanup | zapnuto |
 | Cleanup Time | 03:00 |
 | SQL Logging | vypnuto. Hodně ukecané |

@@ -51,4 +51,4 @@ Les livres, les auteurs et les séries peuvent porter des tags. Les tags oriente
 
 ## Sélection
 
-Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Sur téléphone, voir [Sur téléphone](/fr/phone/).
+Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Sur téléphone, voir [Sur téléphone](/fr/phone/). Les actions de Library montrent un résultat sous forme de ligne sur la page. La suppression de livres tourne comme une tâche dont le résultat, avec le nombre de livres réellement supprimés, est enregistré dans la [cloche de notifications](/fr/system/notifications/).

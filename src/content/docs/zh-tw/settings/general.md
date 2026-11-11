@@ -45,6 +45,7 @@ ABM 連上網路取得中繼資料、封面和 Audible 頁面的方式。
 | Log File Retention | 30 天，0 代表永久保留 |
 | Activity Log Retention | 90 天，0 代表永久保留 |
 | Book History Retention | 0（保留） |
+| Notifications Retention | 30 天，0 表示永久保留。仍需處理的通知會保留 |
 | Automatic Cleanup | 開啟 |
 | Cleanup Time | 03:00 |
 | SQL Logging | 關閉。非常冗長 |

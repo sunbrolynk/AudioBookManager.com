@@ -51,4 +51,4 @@ Bøger, forfattere og serier kan have tags. Tags styrer indeksere, notifikatione
 
 ## Markering
 
-Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. På en telefon, se [Brug på telefonen](/da/phone/).
+Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. På en telefon, se [Brug på telefonen](/da/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletning af bøger kører som en opgave, og resultatet, med hvor mange der faktisk blev slettet, registreres i [notifikationsklokken](/da/system/notifications/).

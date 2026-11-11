@@ -59,4 +59,4 @@ Discover's custom filters keep a plain text box, because its catalog is filtered
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. On a phone, see [Phone use](/en-au/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Library actions show a result line on the page. Deleting books runs as a task. Its result, including how many it actually deleted, is recorded in the [notification bell](/en-au/system/notifications/). On a phone, see [Phone use](/en-au/phone/).

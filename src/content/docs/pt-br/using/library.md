@@ -51,4 +51,4 @@ Livros, autores e séries podem ter tags. As tags orientam indexadores, notifica
 
 ## Seleção
 
-Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. No celular, veja [Uso no celular](/pt-br/phone/).
+Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. No celular, veja [Uso no celular](/pt-br/phone/). As ações de Library mostram um resultado como linha na página. Excluir livros roda como tarefa, e o resultado dela, com quantos foram realmente excluídos, é registrado no [sino de notificações](/pt-br/system/notifications/).

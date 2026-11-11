@@ -45,6 +45,7 @@ A seção também mostra o seu IP de saída como os serviços externos o veem. U
 | Log File Retention | 30 dias, 0 mantém para sempre |
 | Activity Log Retention | 90 dias, 0 mantém para sempre |
 | Book History Retention | 0 (manter) |
+| Notifications Retention | 30 dias, 0 mantém para sempre. As notificações que ainda precisam de atenção são mantidas |
 | Automatic Cleanup | ligado |
 | Cleanup Time | 03:00 |
 | SQL Logging | desligado. Muito verboso |
