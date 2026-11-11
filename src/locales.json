@@ -92,7 +92,7 @@
   "sv": {
     "label": "Svenska",
     "lang": "sv",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 69
   },
   "cs": {
