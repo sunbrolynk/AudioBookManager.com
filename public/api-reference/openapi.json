@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.2",
+    "version": "0.21.3",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -28422,23 +28422,33 @@
           },
           "log_retention_days": {
             "type": "integer",
+            "maximum": 365.0,
+            "minimum": 0.0,
             "title": "Log Retention Days"
           },
           "activity_retention_days": {
             "type": "integer",
+            "maximum": 365.0,
+            "minimum": 0.0,
             "title": "Activity Retention Days"
           },
           "history_retention_days": {
             "type": "integer",
+            "maximum": 365.0,
+            "minimum": 0.0,
             "title": "History Retention Days"
           },
           "releases_retention_days": {
             "type": "integer",
+            "maximum": 365.0,
+            "minimum": 0.0,
             "title": "Releases Retention Days",
             "default": 30
           },
           "security_log_retention_days": {
             "type": "integer",
+            "maximum": 365.0,
+            "minimum": 0.0,
             "title": "Security Log Retention Days",
             "default": 30
           },
@@ -28470,8 +28480,7 @@
           "activity_retention_days",
           "history_retention_days"
         ],
-        "title": "LoggingSettings",
-        "description": "Logging configuration settings"
+        "title": "LoggingSettings"
       },
       "LoginCompleteRequest": {
         "properties": {
