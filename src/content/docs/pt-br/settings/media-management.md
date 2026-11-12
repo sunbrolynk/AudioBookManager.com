@@ -83,6 +83,8 @@ Book Naming define como eu nomeio arquivos e pastas. Ele é salvo com o único S
 
 Library, Series e Authors também têm uma ação **Organize** nos livros selecionados, e a página de um livro também. Ela abre primeiro uma prévia de cada mudança, e nada se move até você confirmar. Depois o Organize move e renomeia: move a pasta de cada livro para onde as configurações de nomes a colocam e renomeia seus arquivos. Roda como uma tarefa que você pode acompanhar, cancelar e, depois de uma reinicialização, retomar de onde parou. Só um Organize roda por vez. Não há desfazer, então confira bem a prévia. A renomeação em massa continua em Library, Series e Authors como **Rename Files**.
 
+Se um Organize for interrompido, a próxima execução continua de onde parou. Um livro que a execução interrompida já tinha movido ou renomeado no disco é encontrado no novo local e seus registros são atualizados, então nada é movido duas vezes. A prévia mostra esse livro como já movido ou já renomeado, e o resultado o conta como reconciliado (reconciled). Um livro só é reconciliado quando consigo provar que a pasta é dele: os arquivos precisam bater com o que tenho registrado e nenhum outro livro pode reivindicar a pasta. Caso contrário, o livro é ignorado, com o motivo. Continua não havendo desfazer.
+
 A prévia lista só os livros que mudariam. Marque **Show all selected books** para ver os outros também. Ela carrega em páginas, então use **Load more** para continuar numa seleção grande. O título da prévia conta quantos livros vão mudar e quantos serão ignorados.
 
 Na página de um livro cuja pasta não está onde as configurações de nomes a colocariam, aparece um aviso, com a pasta para onde ele iria e um botão Organize.

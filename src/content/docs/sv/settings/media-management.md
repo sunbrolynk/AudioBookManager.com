@@ -83,6 +83,8 @@ Book Naming styr hur jag namnger filer och mappar. Det sparas med sidans enda Sa
 
 Library, Series och Authors har också en åtgärd **Organize** för de markerade böckerna, och det har en boksida också. Den öppnar först en förhandsvisning av varje ändring, och inget flyttas förrän du bekräftar. Sedan flyttar och döper Organize om: den flyttar varje boks mapp dit namninställningarna lägger den och döper om filerna. Den körs som en uppgift som du kan följa, avbryta och, efter en omstart, återuppta där den slutade. Bara en Organize körs åt gången. Det går inte att ångra, så kolla förhandsvisningen noga. Massomdöpning finns kvar i Library, Series och Authors som **Rename Files**.
 
+Om en Organize avbryts fortsätter nästa körning där den slutade. En bok som den avbrutna körningen redan hade flyttat eller döpt om på disken hittas på sin nya plats och dess poster uppdateras, så ingenting flyttas två gånger. Förhandsvisningen visar en sådan bok som redan flyttad eller redan omdöpt, och resultatet räknar den som avstämd (reconciled). En bok stäms bara av när jag kan bevisa att mappen är bokens: dess filer måste stämma med det jag har sparat och ingen annan bok får göra anspråk på mappen. Annars hoppas boken över, med orsak. Det går fortfarande inte att ångra.
+
 Förhandsvisningen listar bara de böcker som skulle ändras. Bocka i **Show all selected books** för att se resten också. Den laddas i sidor, så använd **Load more** för att fortsätta genom ett stort urval. Förhandsvisningens rubrik räknar hur många böcker som ändras och hur många som hoppas över.
 
 På sidan för en bok vars mapp inte ligger där namninställningarna skulle lägga den står det, med mappen den skulle hamna i och en Organize-knapp.

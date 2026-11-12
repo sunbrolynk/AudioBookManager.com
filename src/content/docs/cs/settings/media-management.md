@@ -83,6 +83,8 @@ Book Naming určuje, jak pojmenovávám soubory a složky. Ukládá se jedním S
 
 Library, Series a Authors mají také akci **Organize** pro vybrané knihy, stejně jako stránka jedné knihy. Nejdřív otevře náhled každé změny a nic se nepřesune, dokud nepotvrdíš. Organize pak přesouvá a přejmenovává: přesune složku každé knihy tam, kam ji řadí nastavení pojmenování, a přejmenuje její soubory. Běží jako úloha, kterou můžeš sledovat, zrušit a po restartu obnovit tam, kde skončila. Najednou běží jen jeden Organize. Zpět to vzít nejde, takže si náhled pořádně projdi. Hromadné přejmenování zůstává v Library, Series a Authors jako **Rename Files**.
 
+Pokud je Organize přerušen, další běh pokračuje tam, kde skončil. Kniha, kterou přerušený běh už na disku přesunul nebo přejmenoval, se najde na novém místě a její záznamy se aktualizují, takže se nic nepřesouvá dvakrát. Náhled takovou knihu ukáže jako už přesunutou nebo už přejmenovanou a výsledek ji započítá jako srovnanou (reconciled). Kniha se srovná, jen když dokážu, že složka je její: její soubory musí odpovídat tomu, co mám zaznamenané, a složku si nesmí nárokovat žádná jiná kniha. Jinak se kniha přeskočí s uvedením důvodu. Zpět to stále vzít nejde.
+
 Náhled uvádí jen knihy, které by se změnily. Zaškrtni **Show all selected books**, aby se ukázaly i ostatní. Načítá se po stránkách, takže ve velkém výběru pokračuj přes **Load more**. Nadpis náhledu počítá, kolik knih se změní a kolik se jich přeskočí.
 
 Na stránce knihy, jejíž složka není tam, kam by ji dalo nastavení pojmenování, je to napsané, je tam složka, kam by přešla, a tlačítko Organize.

@@ -91,6 +91,8 @@ Book Naming sets how I name files and folders, and it is saved with the page's o
 
 Library, Series and Authors also have an **Organize** action on the selected books, and so does a book's own page. It opens a preview of every change first, and nothing moves until you confirm it. Organize then moves and renames: it moves each book's folder to where the naming settings put it and renames its files. It runs as a task you can follow, cancel and, after a restart, resume where it stopped. Only one Organize runs at a time. There is no undo, so check the preview. Bulk rename stays on Library, Series and Authors as **Rename Files**.
 
+If an Organize is interrupted, the next run resumes where it stopped. A book the interrupted run had already moved or renamed on disk is found at its new location and its records are updated, so nothing is moved twice. The preview shows such a book as already moved or already renamed, and the result counts it as reconciled. A book is only reconciled when I can prove the folder is that book's: its files must match what I have recorded and no other book may claim the folder. Otherwise the book is skipped, with the reason. There is still no undo.
+
 The preview lists only the books that would change. Tick **Show all selected books** to see the rest too. It loads in pages, so use **Load more** to keep going through a big selection. The preview's title counts how many books will change and how many will be skipped.
 
 On a book's page, a book whose folder isn't where the naming settings would put it says so, shows the folder it would go to, and has an Organize button.

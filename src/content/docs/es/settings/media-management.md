@@ -83,6 +83,8 @@ Book Naming define cómo nombro los archivos y las carpetas. Se guarda con el ú
 
 Library, Series y Authors también tienen una acción **Organize** sobre los libros seleccionados, y la página de un libro también. Primero abre una vista previa de cada cambio, y no se mueve nada hasta que lo confirmes. Después Organize mueve y renombra: mueve la carpeta de cada libro a donde la ponen los ajustes de nombres y renombra sus archivos. Funciona como una tarea que puedes seguir, cancelar y, tras un reinicio, reanudar donde se quedó. Solo se ejecuta un Organize a la vez. No hay deshacer, así que revisa bien la vista previa. El renombrado masivo sigue en Library, Series y Authors como **Rename Files**.
 
+Si un Organize se interrumpe, la siguiente ejecución continúa donde se quedó. Un libro que la ejecución interrumpida ya había movido o renombrado en el disco se encuentra en su nueva ubicación y se actualizan sus registros, así que nada se mueve dos veces. La vista previa muestra ese libro como ya movido o ya renombrado, y el resultado lo cuenta como reconciliado (reconciled). Un libro solo se reconcilia cuando puedo demostrar que la carpeta es suya: sus archivos deben coincidir con lo que tengo registrado y ningún otro libro puede reclamar la carpeta. Si no, el libro se omite, con el motivo. Sigue sin haber deshacer.
+
 La vista previa solo lista los libros que cambiarían. Marca **Show all selected books** para ver también el resto. Se carga por páginas, así que usa **Load more** para seguir en una selección grande. El título de la vista previa cuenta cuántos libros cambiarán y cuántos se omitirán.
 
 En la página de un libro cuya carpeta no está donde la pondrían los ajustes de nombres, se avisa, se muestra la carpeta a la que iría y hay un botón Organize.

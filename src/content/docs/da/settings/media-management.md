@@ -83,6 +83,8 @@ Book Naming bestemmer, hvordan jeg navngiver filer og mapper. Det gemmes med sid
 
 Library, Series og Authors har også en handling **Organize** på de markerede bøger, og det har en bogs egen side også. Den åbner først en forhåndsvisning af hver ændring, og intet flyttes, før du bekræfter. Så flytter og omdøber Organize: den flytter hver bogs mappe derhen, hvor navneindstillingerne vil have den, og omdøber filerne. Den kører som en opgave, du kan følge, annullere og efter en genstart genoptage, hvor den slap. Der kører kun én Organize ad gangen. Der er ingen fortryd, så tjek forhåndsvisningen. Masseomdøbning ligger stadig på Library, Series og Authors som **Rename Files**.
 
+Hvis en Organize afbrydes, fortsætter næste kørsel, hvor den slap. En bog, som den afbrudte kørsel allerede havde flyttet eller omdøbt på disken, bliver fundet på sin nye placering, og dens poster opdateres, så intet flyttes to gange. Forhåndsvisningen viser sådan en bog som allerede flyttet eller allerede omdøbt, og resultatet tæller den som afstemt (reconciled). En bog afstemmes kun, når jeg kan bevise, at mappen er bogens: dens filer skal passe til det, jeg har gemt, og ingen anden bog må gøre krav på mappen. Ellers springes bogen over, med årsag. Der er stadig ingen fortryd.
+
 Forhåndsvisningen viser kun de bøger, der ville ændre sig. Sæt hak i **Show all selected books** for også at se resten. Den indlæses i sider, så brug **Load more** for at fortsætte gennem en stor markering. Forhåndsvisningens titel tæller, hvor mange bøger der ændres, og hvor mange der springes over.
 
 På siden for en bog, hvis mappe ikke ligger der, hvor navneindstillingerne ville lægge den, står det, med den mappe den ville flyttes til, og en Organize-knap.

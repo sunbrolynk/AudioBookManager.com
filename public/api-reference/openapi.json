@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.1",
+    "version": "0.21.2",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -26408,6 +26408,12 @@
               }
             ],
             "title": "Blocked Reason"
+          },
+          "recovered": {
+            "type": "boolean",
+            "title": "Recovered",
+            "description": "An interrupted run already renamed the file; organizing records its name and renames nothing",
+            "default": false
           }
         },
         "type": "object",
@@ -26573,6 +26579,12 @@
             "title": "Left Behind Count",
             "description": "How many files stay in the current folder in total",
             "default": 0
+          },
+          "recovered": {
+            "type": "boolean",
+            "title": "Recovered",
+            "description": "An interrupted run already moved the folder to the target; organizing records where it is and moves nothing",
+            "default": false
           }
         },
         "type": "object",
