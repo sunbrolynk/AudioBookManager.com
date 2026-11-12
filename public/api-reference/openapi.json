@@ -11016,51 +11016,6 @@
         }
       }
     },
-    "/api/metadata/books/{book_id}/create-cover": {
-      "post": {
-        "tags": [
-          "Metadata"
-        ],
-        "summary": "Create Cover File",
-        "description": "Save the book's cover as cover.jpg, downloaded from its URL or copied\nfrom the custom cover when one is set.",
-        "operationId": "create_cover_file_api_metadata_books__book_id__create_cover_post",
-        "parameters": [
-          {
-            "name": "book_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "title": "Book Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Create Cover File Api Metadata Books  Book Id  Create Cover Post"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/metadata/books/{book_id}/create-reader": {
       "post": {
         "tags": [
@@ -11151,6 +11106,51 @@
         }
       }
     },
+    "/api/metadata/books/{book_id}/create-cover": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Cover File",
+        "description": "Save the book's cover as cover.jpg, downloaded from its URL or copied\nfrom the custom cover when one is set.",
+        "operationId": "create_cover_file_api_metadata_books__book_id__create_cover_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Cover File Api Metadata Books  Book Id  Create Cover Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/metadata/books/{book_id}/create-opf": {
       "post": {
         "tags": [
@@ -11179,6 +11179,96 @@
                   "type": "object",
                   "additionalProperties": true,
                   "title": "Response Create Opf File Api Metadata Books  Book Id  Create Opf Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/books/{book_id}/create-metadata-json": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Metadata Json File",
+        "description": "Create Audiobookshelf's metadata.json",
+        "operationId": "create_metadata_json_file_api_metadata_books__book_id__create_metadata_json_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Metadata Json File Api Metadata Books  Book Id  Create Metadata Json Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/books/{book_id}/create-nfo": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Nfo File",
+        "description": "Create the .nfo metadata file",
+        "operationId": "create_nfo_file_api_metadata_books__book_id__create_nfo_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Nfo File Api Metadata Books  Book Id  Create Nfo Post"
                 }
               }
             }
@@ -19127,6 +19217,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
+              "write_metadata_json": false,
+              "write_nfo": false,
               "write_tags": false,
               "embed_cover": false
             }
@@ -21295,6 +21387,16 @@
           "write_opf": {
             "type": "boolean",
             "title": "Write Opf",
+            "default": false
+          },
+          "write_metadata_json": {
+            "type": "boolean",
+            "title": "Write Metadata Json",
+            "default": false
+          },
+          "write_nfo": {
+            "type": "boolean",
+            "title": "Write Nfo",
             "default": false
           },
           "write_tags": {
@@ -28869,7 +28971,7 @@
           "write_audio_tags": {
             "type": "boolean",
             "title": "Write Audio Tags",
-            "default": false
+            "default": true
           },
           "write_tags_on_import": {
             "type": "boolean",
@@ -32847,6 +32949,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
+              "write_metadata_json": false,
+              "write_nfo": false,
               "write_tags": false,
               "embed_cover": false
             }
