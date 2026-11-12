@@ -88,10 +88,13 @@ export function serve(dist) {
     const file = fileFor(dist, req.url);
     try {
       if (!file) throw new Error('outside dist');
-      res.writeHead(200, { 'content-type': TYPES[extname(file)] ?? 'application/octet-stream' });
-      res.end(await readFile(file));
-    } catch {
-      res.writeHead(404).end();
+      const body = await readFile(file);
+      res.writeHead(200, { 'content-type': TYPES[extname(file)] ?? 'application/octet-stream' }).end(body);
+    } catch (error) {
+      if (res.headersSent) return;
+      // The real host redirects a directory URL to its trailing-slash form.
+      if (error.code === 'EISDIR') res.writeHead(308, { location: `${req.url}/` }).end();
+      else res.writeHead(404).end();
     }
   });
   return new Promise((resolve) => server.listen(0, '127.0.0.1', () => resolve(server)));

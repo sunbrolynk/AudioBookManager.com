@@ -44,8 +44,8 @@ jobs:
 
       - name: Audit dependencies
         env:
-          # A pull request compares with its base branch; a push compares with the commit before it.
-          AUDIT_BASE: ${{ github.event_name == 'pull_request' && format('origin/{0}', github.base_ref) || github.event.before }}
+          # A pull request compares with its base branch, a push with the commit before it, a manual run with main.
+          AUDIT_BASE: ${{ github.event_name == 'push' && github.event.before || format('origin/{0}', github.base_ref || 'main') }}
         run: node scripts/audit-new-advisories.mjs
 
       - name: Run regression tests

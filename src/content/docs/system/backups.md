@@ -45,4 +45,4 @@ ABM trusts the server's host key the first time it connects, saves it on the tar
 
 - A retention prune that can't remove one old backup carries on with the rest.
 - The Docker image and your compose file are not in the backup. Keep the compose file.
-- If you set `APP_SECRET`, back that up separately. Without it, stored credentials cannot be decrypted after a restore on another host.
+- Keep the app key backed up alongside your backups: your `APP_SECRET`, or the `/config/app_secret` file if you didn't set one. Without it, stored credentials, including export target passwords and S3 secret keys, cannot be decrypted after a restore on another host, and Test and Export ask you to re-enter them.
