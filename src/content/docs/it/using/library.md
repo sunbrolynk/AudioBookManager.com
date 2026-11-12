@@ -48,7 +48,7 @@ La finestra di modifica di un libro cambia le impostazioni di ABM per quel libro
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, un OPF, un NFO e metadata.json. L'OPF e l'NFO hanno il nome del primo file audio del libro (per esempio `Dune.opf`), o del libro se non c'è audio
 - **Write to Audio Files**: **Write audio tags** e **Embed cover art**, che scrive la copertina nei file audio
 
-La stessa finestra si apre per serie e autori e si applica a ognuno dei loro libri. Le opzioni di scrittura partono quando salvi. Per ogni libro si scrivono prima i file della cartella, poi i tag, poi la copertina incorporata. Un file per cui il libro non ha niente (nessuna descrizione, nessun narratore, nessuna copertina) viene saltato e non conta come errore. Con un libro o una selezione di libri vedi un avviso al salvataggio. Con una serie o un autore viene saltato in silenzio.
+La stessa finestra si apre per serie e autori e si applica a ognuno dei loro libri. Le opzioni di scrittura partono quando salvi. Per ogni libro si scrivono prima i file della cartella, poi i tag, poi la copertina incorporata. Un file per cui il libro non ha niente (nessuna descrizione, nessun narratore, nessuna copertina) viene saltato e non conta come errore. Con un libro o una selezione di libri vedi un avviso al salvataggio. Con una serie o un autore viene saltato in silenzio. Con una serie o un autore, il registro dell'attività elenca ogni scrittura di file saltata o fallita.
 
 ## Tag
 

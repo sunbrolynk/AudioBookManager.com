@@ -48,7 +48,7 @@ La fenêtre de modification d'un livre change les réglages propres à ABM pour 
 - **Write to Directories** : cover.jpg, desc.txt, reader.txt, un OPF, un NFO et metadata.json. L'OPF et le NFO portent le nom du premier fichier audio du livre (par exemple `Dune.opf`), ou celui du livre s'il n'y a pas d'audio
 - **Write to Audio Files** : **Write audio tags** et **Embed cover art**, qui écrit la pochette dans les fichiers audio
 
-La même fenêtre s'ouvre pour les séries et les auteurs et s'applique à chacun de leurs livres. Les options d'écriture tournent quand tu enregistres. Pour chaque livre, les fichiers du dossier sont écrits d'abord, puis les tags, puis la pochette intégrée. Un fichier pour lequel le livre n'a rien à écrire (pas de description, pas de narrateur, pas de pochette) est ignoré et non traité comme une erreur. Pour un livre ou une sélection de livres, tu vois un avertissement à l'enregistrement. Pour une série ou un auteur, il est ignoré sans bruit.
+La même fenêtre s'ouvre pour les séries et les auteurs et s'applique à chacun de leurs livres. Les options d'écriture tournent quand tu enregistres. Pour chaque livre, les fichiers du dossier sont écrits d'abord, puis les tags, puis la pochette intégrée. Un fichier pour lequel le livre n'a rien à écrire (pas de description, pas de narrateur, pas de pochette) est ignoré et non traité comme une erreur. Pour un livre ou une sélection de livres, tu vois un avertissement à l'enregistrement. Pour une série ou un auteur, il est ignoré sans bruit. Pour une série ou un auteur, le journal de la tâche liste chaque écriture de fichier ignorée ou échouée.
 
 ## Tags
 

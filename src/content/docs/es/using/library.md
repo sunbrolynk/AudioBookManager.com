@@ -48,7 +48,7 @@ El diálogo de edición de un libro cambia los ajustes propios de ABM para ese l
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, un OPF, un NFO y metadata.json. El OPF y el NFO se llaman como el primer archivo de audio del libro (por ejemplo `Dune.opf`), o como el libro si no hay audio
 - **Write to Audio Files**: **Write audio tags** y **Embed cover art**, que escribe la portada en los archivos de audio
 
-El mismo diálogo se abre para series y autores y se aplica a cada uno de sus libros. Las opciones de escritura se ejecutan al guardar. Por cada libro se escriben primero los archivos de la carpeta, luego las etiquetas y después la portada incrustada. Un archivo para el que el libro no tiene nada (sin descripción, sin narrador, sin portada) se omite y no se trata como error. Con un libro o una selección de libros verás un aviso al guardar. Con una serie o un autor se omite sin avisar.
+El mismo diálogo se abre para series y autores y se aplica a cada uno de sus libros. Las opciones de escritura se ejecutan al guardar. Por cada libro se escriben primero los archivos de la carpeta, luego las etiquetas y después la portada incrustada. Un archivo para el que el libro no tiene nada (sin descripción, sin narrador, sin portada) se omite y no se trata como error. Con un libro o una selección de libros verás un aviso al guardar. Con una serie o un autor se omite sin avisar. Con una serie o un autor, el registro de la tarea lista cada escritura de archivo omitida o fallida.
 
 ## Etiquetas
 

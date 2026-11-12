@@ -48,7 +48,7 @@ Dialog úprav u knihy mění vlastní nastavení ABM pro ni, ne její metadata:
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO a metadata.json. OPF a NFO se jmenují podle prvního zvukového souboru knihy (například `Dune.opf`), nebo podle knihy, když zvuk chybí
 - **Write to Audio Files**: **Write audio tags** a **Embed cover art**, což zapíše obálku do zvukových souborů
 
-Stejný dialog se otevře i pro série a autory a platí pro každou jejich knihu. Volby zápisu se provedou při uložení. U každé knihy se nejdřív zapíší soubory ve složce, pak tagy, pak vložená obálka. Soubor, pro který kniha nemá nic (žádný popis, žádný vypravěč, žádná obálka), se přeskočí a nepočítá se jako chyba. U jedné knihy nebo výběru knih uvidíš při uložení varování. U série nebo autora se přeskočí potichu.
+Stejný dialog se otevře i pro série a autory a platí pro každou jejich knihu. Volby zápisu se provedou při uložení. U každé knihy se nejdřív zapíší soubory ve složce, pak tagy, pak vložená obálka. Soubor, pro který kniha nemá nic (žádný popis, žádný vypravěč, žádná obálka), se přeskočí a nepočítá se jako chyba. U jedné knihy nebo výběru knih uvidíš při uložení varování. U série nebo autora se přeskočí potichu. U série nebo autora protokol úlohy uvádí každý přeskočený nebo neúspěšný zápis souboru.
 
 ## Štítky
 

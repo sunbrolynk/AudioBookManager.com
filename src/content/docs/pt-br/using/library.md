@@ -48,7 +48,7 @@ O diálogo de edição de um livro muda as configurações do próprio ABM para 
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, um OPF, um NFO e metadata.json. O OPF e o NFO têm o nome do primeiro arquivo de áudio do livro (por exemplo `Dune.opf`), ou o nome do livro se não houver áudio
 - **Write to Audio Files**: **Write audio tags** e **Embed cover art**, que grava a capa nos arquivos de áudio
 
-O mesmo diálogo abre para séries e autores e vale para cada um dos livros deles. As opções de gravação rodam quando você salva. Para cada livro, os arquivos da pasta são gravados primeiro, depois as tags, depois a capa incorporada. Um arquivo para o qual o livro não tem nada (sem descrição, sem narrador, sem capa) é pulado e não conta como erro. Com um livro ou uma seleção de livros, você vê um aviso ao salvar. Com uma série ou um autor, ele é pulado em silêncio.
+O mesmo diálogo abre para séries e autores e vale para cada um dos livros deles. As opções de gravação rodam quando você salva. Para cada livro, os arquivos da pasta são gravados primeiro, depois as tags, depois a capa incorporada. Um arquivo para o qual o livro não tem nada (sem descrição, sem narrador, sem capa) é pulado e não conta como erro. Com um livro ou uma seleção de livros, você vê um aviso ao salvar. Com uma série ou um autor, ele é pulado em silêncio. Com uma série ou um autor, o registro da tarefa lista cada gravação de arquivo pulada ou com falha.
 
 ## Tags
 

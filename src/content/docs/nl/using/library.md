@@ -48,7 +48,7 @@ Het bewerkdialoogvenster van een boek past ABM's eigen instellingen voor dat boe
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, een OPF, een NFO en metadata.json. De OPF en NFO heten naar het eerste audiobestand van het boek (bijvoorbeeld `Dune.opf`), of naar het boek als er geen audio is
 - **Write to Audio Files**: **Write audio tags** en **Embed cover art**, dat de cover in de audiobestanden schrijft
 
-Hetzelfde dialoogvenster opent voor series en auteurs en geldt dan voor al hun boeken. De schrijfopties draaien als je opslaat. Per boek worden eerst de mapbestanden geschreven, dan de tags, dan de ingesloten cover. Een bestand waar het boek niets voor heeft (geen beschrijving, geen verteller, geen cover) wordt overgeslagen en telt niet als fout. Bij één boek of een selectie boeken zie je bij het opslaan een waarschuwing. Bij een serie of een auteur wordt het stil overgeslagen.
+Hetzelfde dialoogvenster opent voor series en auteurs en geldt dan voor al hun boeken. De schrijfopties draaien als je opslaat. Per boek worden eerst de mapbestanden geschreven, dan de tags, dan de ingesloten cover. Een bestand waar het boek niets voor heeft (geen beschrijving, geen verteller, geen cover) wordt overgeslagen en telt niet als fout. Bij één boek of een selectie boeken zie je bij het opslaan een waarschuwing. Bij een serie of een auteur wordt het stil overgeslagen. Bij een serie of een auteur noemt het logboek van de taak elke overgeslagen of mislukte bestandsschrijving.
 
 ## Tags
 

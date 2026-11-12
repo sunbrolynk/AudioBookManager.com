@@ -48,7 +48,7 @@ Okno edycji książki zmienia własne ustawienia ABM dla niej, a nie jej metadan
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO i metadata.json. OPF i NFO nazywają się tak jak pierwszy plik audio książki (na przykład `Dune.opf`), a bez dźwięku tak jak książka
 - **Write to Audio Files**: **Write audio tags** i **Embed cover art**, czyli zapis okładki w plikach audio
 
-To samo okno otwiera się dla serii i autorów i działa na każdą z ich książek. Opcje zapisu wykonują się przy zapisywaniu. Dla każdej książki najpierw zapisują się pliki w folderze, potem tagi, potem osadzona okładka. Plik, do którego książka nie ma nic (brak opisu, brak lektora, brak okładki), jest pomijany i nie liczy się jako błąd. Przy jednej książce lub wyborze książek zobaczysz przy zapisie ostrzeżenie. Przy serii lub autorze plik jest pomijany po cichu.
+To samo okno otwiera się dla serii i autorów i działa na każdą z ich książek. Opcje zapisu wykonują się przy zapisywaniu. Dla każdej książki najpierw zapisują się pliki w folderze, potem tagi, potem osadzona okładka. Plik, do którego książka nie ma nic (brak opisu, brak lektora, brak okładki), jest pomijany i nie liczy się jako błąd. Przy jednej książce lub wyborze książek zobaczysz przy zapisie ostrzeżenie. Przy serii lub autorze plik jest pomijany po cichu. Przy serii lub autorze dziennik zadania wymienia każdy pominięty lub nieudany zapis pliku.
 
 ## Tagi
 

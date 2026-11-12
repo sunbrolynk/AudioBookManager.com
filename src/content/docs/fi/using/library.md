@@ -48,7 +48,7 @@ Kirjan muokkausikkuna muuttaa ABM:n omia asetuksia kirjalle, ei sen metatietoja:
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO ja metadata.json. OPF ja NFO nimetään kirjan ensimmäisen äänitiedoston mukaan (esimerkiksi `Dune.opf`) tai kirjan mukaan, jos ääntä ei ole
 - **Write to Audio Files**: **Write audio tags** ja **Embed cover art**, joka kirjoittaa kansikuvan äänitiedostoihin
 
-Sama ikkuna avautuu sarjoille ja tekijöille, ja se koskee niiden jokaista kirjaa. Kirjoitusvalinnat ajetaan, kun tallennat. Jokaiselle kirjalle kirjoitetaan ensin kansiotiedostot, sitten tagit, sitten upotettu kansikuva. Tiedosto, johon kirjalla ei ole mitään kirjoitettavaa (ei kuvausta, ei lukijaa, ei kansikuvaa), ohitetaan eikä sitä pidetä virheenä. Yhdellä kirjalla tai kirjavalinnalla näet tallennettaessa varoituksen. Sarjalla tai kirjailijalla se ohitetaan hiljaa.
+Sama ikkuna avautuu sarjoille ja tekijöille, ja se koskee niiden jokaista kirjaa. Kirjoitusvalinnat ajetaan, kun tallennat. Jokaiselle kirjalle kirjoitetaan ensin kansiotiedostot, sitten tagit, sitten upotettu kansikuva. Tiedosto, johon kirjalla ei ole mitään kirjoitettavaa (ei kuvausta, ei lukijaa, ei kansikuvaa), ohitetaan eikä sitä pidetä virheenä. Yhdellä kirjalla tai kirjavalinnalla näet tallennettaessa varoituksen. Sarjalla tai kirjailijalla se ohitetaan hiljaa. Sarjalla tai kirjailijalla tehtävän loki listaa jokaisen ohitetun tai epäonnistuneen tiedostokirjoituksen.
 
 ## Tagit
 

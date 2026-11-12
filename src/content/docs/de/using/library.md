@@ -48,7 +48,7 @@ Der Bearbeiten-Dialog eines Buchs ändert ABMs eigene Einstellungen dafür, nich
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, eine OPF, eine NFO und metadata.json. OPF und NFO heißen wie die erste Audiodatei des Buchs (zum Beispiel `Dune.opf`), oder wie das Buch, wenn es kein Audio gibt
 - **Write to Audio Files**: **Write audio tags** und **Embed cover art**, das das Cover in die Audiodateien schreibt
 
-Derselbe Dialog öffnet sich bei Serien und Autoren und gilt dann für jedes ihrer Bücher. Die Schreiboptionen laufen beim Speichern. Pro Buch werden zuerst die Ordnerdateien geschrieben, dann die Tags, dann das eingebettete Cover. Eine Datei, für die das Buch nichts hat (keine Beschreibung, kein Sprecher, kein Cover), wird übersprungen und nicht als Fehler gewertet. Bei einem Buch oder einer Auswahl von Büchern siehst du beim Speichern eine Warnung. Bei einer Serie oder einem Autor wird sie still übersprungen.
+Derselbe Dialog öffnet sich bei Serien und Autoren und gilt dann für jedes ihrer Bücher. Die Schreiboptionen laufen beim Speichern. Pro Buch werden zuerst die Ordnerdateien geschrieben, dann die Tags, dann das eingebettete Cover. Eine Datei, für die das Buch nichts hat (keine Beschreibung, kein Sprecher, kein Cover), wird übersprungen und nicht als Fehler gewertet. Bei einem Buch oder einer Auswahl von Büchern siehst du beim Speichern eine Warnung. Bei einer Serie oder einem Autor wird sie still übersprungen. Bei einer Serie oder einem Autor listet das Protokoll der Aufgabe jede übersprungene oder fehlgeschlagene Dateischreibung auf.
 
 ## Tags
 

@@ -48,7 +48,7 @@ Redigeringsdialogen på en bok endrer ABMs egne innstillinger for den, ikke meta
 - **Write to Directories**: cover.jpg, desc.txt, reader.txt, en OPF, en NFO og metadata.json. OPF og NFO er oppkalt etter bokens første lydfil (for eksempel `Dune.opf`), eller etter boken hvis det ikke er lyd
 - **Write to Audio Files**: **Write audio tags** og **Embed cover art**, som skriver omslaget inn i lydfilene
 
-Den samme dialogen åpnes for serier og forfattere og gjelder hver av bøkene deres. Skrivevalgene kjører når du lagrer. For hver bok skrives først mappefilene, så taggene, så det innebygde omslaget. En fil boken ikke har noe til (ingen beskrivelse, ingen forteller, inget omslag) hoppes over og regnes ikke som en feil. For én bok eller et utvalg av bøker ser du en advarsel når du lagrer. For en serie eller en forfatter hoppes den stille over.
+Den samme dialogen åpnes for serier og forfattere og gjelder hver av bøkene deres. Skrivevalgene kjører når du lagrer. For hver bok skrives først mappefilene, så taggene, så det innebygde omslaget. En fil boken ikke har noe til (ingen beskrivelse, ingen forteller, inget omslag) hoppes over og regnes ikke som en feil. For én bok eller et utvalg av bøker ser du en advarsel når du lagrer. For en serie eller en forfatter hoppes den stille over. For en serie eller en forfatter viser oppgavens logg hver overhoppede eller mislykkede filskriving.
 
 ## Tagger
 
