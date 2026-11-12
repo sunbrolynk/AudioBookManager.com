@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.1",
+    "version": "0.21.2",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -17999,6 +17999,13 @@
             "type": "boolean",
             "title": "Has Api Key"
           },
+          "unreadable_credentials": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unreadable Credentials"
+          },
           "verify_tls": {
             "type": "boolean",
             "title": "Verify Tls"
@@ -18042,6 +18049,7 @@
           "enabled",
           "url",
           "has_api_key",
+          "unreadable_credentials",
           "verify_tls",
           "libraries",
           "status"

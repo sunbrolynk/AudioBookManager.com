@@ -20,7 +20,7 @@ ABM se k ABS vždy připojuje přímo. Nikdy nejde přes VPN nebo proxy, které 
 
 ## Klíč API
 
-Klíč se ukládá zašifrovaný a už se nikdy nezobrazí. Při ukládání nebo testu nech pole prázdné, aby se zachoval uložený klíč. Uložený klíč se posílá jen na adresu, pro kterou byl uložen, takže když změníš adresu, Verify TLS nebo balíček CA, zadej klíč znovu. Pokud ABM uložený klíč už nepřečte (šifrovací klíč se ztratil nebo změnil), stránka ti řekne, ať ho zadáš znovu, i když je připojení vypnuté.
+Klíč se ukládá zašifrovaný a už se nikdy nezobrazí. Při ukládání nebo testu nech pole prázdné, aby se zachoval uložený klíč. Uložený klíč se posílá jen na adresu, pro kterou byl uložen, takže když změníš adresu, Verify TLS nebo balíček CA, zadej klíč znovu. Pokud ABM uložený klíč už nepřečte (šifrovací klíč se ztratil nebo změnil), tato stránka ukáže stejné upozornění jako ostatní stránky nastavení a řekne ti, ať ho zadáš znovu, i když je připojení vypnuté.
 
 ## Co se kontroluje
 
@@ -35,7 +35,7 @@ Klíč se ukládá zašifrovaný a už se nikdy nezobrazí. Při ukládání neb
 
 Sekce Status ukazuje výsledek poslední kontroly (Not connected, OK, Warning nebo Error), verzi serveru, uživatele, kterému klíč patří, kdy ABM naposledy kontroloval, a samotné kontroly. Neúspěšná kontrola ukáže svůj důvod a úspěšné se počítají.
 
-[System > Status](/system/status/) má také řádek Audiobookshelf, když je připojení zapnuté. Obnovuje se při uložení a pravidelnou kontrolou stavu, která běží každých 6 hodin, takže to není živé měření při každém otevření stránky. Uložený klíč, který ABM už nepřečte, se ukáže jako chyba, dokud ho nezadáš znovu. Dosud nezkontrolované připojení se ukáže jako varování. Vypnuté připojení tam mlčí.
+[System > Status](/system/status/) má také řádek Audiobookshelf, když je připojení zapnuté. Obnovuje se při uložení a pravidelnou kontrolou stavu, která běží každých 6 hodin, takže to není živé měření při každém otevření stránky. Vypnuté připojení tam mlčí, i když je jeho uložený klíč nečitelný. Při zapnutém připojení se uložený klíč, který ABM už nepřečte, ukáže jako chyba, dokud ho nezadáš znovu, a dosud nezkontrolované připojení se ukáže jako varování.
 
 ## Co ABM odstraňuje
 

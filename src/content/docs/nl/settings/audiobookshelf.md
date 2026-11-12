@@ -20,7 +20,7 @@ ABM verbindt altijd rechtstreeks met ABS. Het gaat nooit via de VPN of proxy die
 
 ## De API-sleutel
 
-De sleutel wordt versleuteld opgeslagen en nooit meer getoond. Laat het veld leeg bij opslaan of testen om de opgeslagen sleutel te houden. Een opgeslagen sleutel gaat alleen naar het adres waarvoor hij is opgeslagen, dus als je het adres, Verify TLS of de CA-bundel wijzigt, voer je de sleutel opnieuw in. Kan ABM de opgeslagen sleutel niet meer lezen (de versleutelingssleutel is kwijt of gewijzigd), dan zegt de pagina dat je hem opnieuw moet invoeren, ook als de verbinding uit staat.
+De sleutel wordt versleuteld opgeslagen en nooit meer getoond. Laat het veld leeg bij opslaan of testen om de opgeslagen sleutel te houden. Een opgeslagen sleutel gaat alleen naar het adres waarvoor hij is opgeslagen, dus als je het adres, Verify TLS of de CA-bundel wijzigt, voer je de sleutel opnieuw in. Kan ABM de opgeslagen sleutel niet meer lezen (de versleutelingssleutel is kwijt of gewijzigd), dan toont deze pagina dezelfde melding als de andere instellingenpagina's en zegt dat je hem opnieuw moet invoeren, ook als de verbinding uit staat.
 
 ## Wat er wordt gecontroleerd
 
@@ -35,7 +35,7 @@ De sleutel wordt versleuteld opgeslagen en nooit meer getoond. Laat het veld lee
 
 Het onderdeel Status toont het resultaat van de laatste controle (Not connected, OK, Warning of Error), de serverversie, de gebruiker bij wie de sleutel hoort, wanneer ABM voor het laatst controleerde en de controles zelf. Een mislukte controle toont zijn reden, en de geslaagde worden geteld.
 
-[System > Status](/system/status/) heeft ook een rij Audiobookshelf als een verbinding aan staat. Die wordt vernieuwd bij het opslaan en door de periodieke gezondheidscontrole, die elke 6 uur draait, dus het is geen live meting bij elke keer dat je de pagina opent. Een opgeslagen sleutel die ABM niet meer kan lezen, verschijnt als fout tot je hem opnieuw invoert. Een verbinding die nog niet is gecontroleerd, verschijnt als waarschuwing. Een uitgeschakelde verbinding blijft daar stil.
+[System > Status](/system/status/) heeft ook een rij Audiobookshelf als een verbinding aan staat. Die wordt vernieuwd bij het opslaan en door de periodieke gezondheidscontrole, die elke 6 uur draait, dus het is geen live meting bij elke keer dat je de pagina opent. Een uitgeschakelde verbinding blijft daar stil, ook als de opgeslagen sleutel onleesbaar is. Bij een ingeschakelde verbinding verschijnt een opgeslagen sleutel die ABM niet meer kan lezen als fout tot je hem opnieuw invoert, en een verbinding die nog niet is gecontroleerd verschijnt als waarschuwing.
 
 ## Wat ABM verwijdert
 

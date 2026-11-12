@@ -20,7 +20,7 @@ ABM verbindet sich immer direkt mit ABS. Es läuft nie über das VPN oder den Pr
 
 ## Der API-Key
 
-Der Key wird verschlüsselt gespeichert und nie wieder angezeigt. Lass das Feld beim Speichern oder Testen leer, um den gespeicherten Key zu behalten. Ein gespeicherter Key geht nur an die Adresse, für die er gespeichert wurde. Wenn du die Adresse, Verify TLS oder das CA-Bundle änderst, gib den Key neu ein. Kann ABM den gespeicherten Key nicht mehr lesen (der Verschlüsselungsschlüssel ging verloren oder wurde geändert), sagt dir die Seite, dass du ihn neu eingeben sollst, auch bei ausgeschalteter Verbindung.
+Der Key wird verschlüsselt gespeichert und nie wieder angezeigt. Lass das Feld beim Speichern oder Testen leer, um den gespeicherten Key zu behalten. Ein gespeicherter Key geht nur an die Adresse, für die er gespeichert wurde. Wenn du die Adresse, Verify TLS oder das CA-Bundle änderst, gib den Key neu ein. Kann ABM den gespeicherten Key nicht mehr lesen (der Verschlüsselungsschlüssel ging verloren oder wurde geändert), zeigt diese Seite dieselbe Meldung wie die anderen Einstellungsseiten und sagt dir, dass du ihn neu eingeben sollst, auch bei ausgeschalteter Verbindung.
 
 ## Was geprüft wird
 
@@ -35,7 +35,7 @@ Der Key wird verschlüsselt gespeichert und nie wieder angezeigt. Lass das Feld 
 
 Der Bereich Status zeigt das Ergebnis der letzten Prüfung (Not connected, OK, Warning oder Error), die Server-Version, den Benutzer, zu dem der Key gehört, wann ABM zuletzt geprüft hat, und die Prüfungen selbst. Eine durchgefallene Prüfung zeigt ihren Grund, die bestandenen werden gezählt.
 
-[System > Status](/system/status/) hat bei eingeschalteter Verbindung ebenfalls eine Zeile Audiobookshelf. Sie wird beim Speichern aktualisiert und vom regelmäßigen Health-Check, der alle 6 Stunden läuft. Es ist also keine Live-Abfrage bei jedem Öffnen der Seite. Ein gespeicherter Key, den ABM nicht mehr lesen kann, erscheint als Fehler, bis du ihn neu eingibst. Eine Verbindung, die noch nicht geprüft wurde, erscheint als Warnung. Eine ausgeschaltete Verbindung bleibt dort still.
+[System > Status](/system/status/) hat bei eingeschalteter Verbindung ebenfalls eine Zeile Audiobookshelf. Sie wird beim Speichern aktualisiert und vom regelmäßigen Health-Check, der alle 6 Stunden läuft. Es ist also keine Live-Abfrage bei jedem Öffnen der Seite. Eine ausgeschaltete Verbindung bleibt dort still, auch wenn ihr gespeicherter Key nicht lesbar ist. Bei eingeschalteter Verbindung erscheint ein gespeicherter Key, den ABM nicht mehr lesen kann, als Fehler, bis du ihn neu eingibst, und eine Verbindung, die noch nicht geprüft wurde, erscheint als Warnung.
 
 ## Was ABM entfernt
 

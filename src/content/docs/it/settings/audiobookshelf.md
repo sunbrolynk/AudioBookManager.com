@@ -20,7 +20,7 @@ ABM si collega sempre direttamente ad ABS. Non passa mai dalla VPN o dal proxy s
 
 ## La chiave API
 
-La chiave è salvata cifrata e non viene più mostrata. Lasciala vuota quando salvi o testi per mantenere quella salvata. Una chiave salvata viene inviata solo all'indirizzo per cui è stata salvata, quindi se cambi l'indirizzo, Verify TLS o il bundle CA, inseriscila di nuovo. Se ABM non riesce più a leggere la chiave salvata (la chiave di cifratura è andata persa o è cambiata), la pagina ti dice di inserirla di nuovo, anche a connessione disattivata.
+La chiave è salvata cifrata e non viene più mostrata. Lasciala vuota quando salvi o testi per mantenere quella salvata. Una chiave salvata viene inviata solo all'indirizzo per cui è stata salvata, quindi se cambi l'indirizzo, Verify TLS o il bundle CA, inseriscila di nuovo. Se ABM non riesce più a leggere la chiave salvata (la chiave di cifratura è andata persa o è cambiata), questa pagina mostra lo stesso avviso delle altre pagine delle impostazioni e ti dice di inserirla di nuovo, anche a connessione disattivata.
 
 ## Cosa viene controllato
 
@@ -35,7 +35,7 @@ La chiave è salvata cifrata e non viene più mostrata. Lasciala vuota quando sa
 
 La sezione Status mostra l'esito dell'ultimo controllo (Not connected, OK, Warning o Error), la versione del server, l'utente a cui appartiene la chiave, quando ABM ha controllato l'ultima volta e i controlli stessi. Un controllo fallito mostra il suo motivo e quelli superati vengono contati.
 
-[System > Status](/system/status/) ha anche una riga Audiobookshelf quando una connessione è attiva. Si aggiorna al salvataggio e con il controllo di salute periodico, che gira ogni 6 ore, quindi non è una sonda in tempo reale a ogni apertura della pagina. Una chiave salvata che ABM non riesce più a leggere compare come errore finché non la inserisci di nuovo. Una connessione non ancora controllata compare come avviso. Una connessione disattivata lì resta silenziosa.
+[System > Status](/system/status/) ha anche una riga Audiobookshelf quando una connessione è attiva. Si aggiorna al salvataggio e con il controllo di salute periodico, che gira ogni 6 ore, quindi non è una sonda in tempo reale a ogni apertura della pagina. Una connessione disattivata lì resta silenziosa, anche se la sua chiave salvata non è leggibile. A connessione attiva, una chiave salvata che ABM non riesce più a leggere compare come errore finché non la inserisci di nuovo, e una connessione non ancora controllata compare come avviso.
 
 ## Cosa rimuove ABM
 

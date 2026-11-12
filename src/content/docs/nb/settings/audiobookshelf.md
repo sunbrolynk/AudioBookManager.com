@@ -20,7 +20,7 @@ ABM kobler alltid direkte til ABS. Den går aldri gjennom VPN-en eller proxyen d
 
 ## API-nøkkelen
 
-Nøkkelen lagres kryptert og vises aldri igjen. La feltet stå tomt når du lagrer eller tester for å beholde den lagrede nøkkelen. En lagret nøkkel sendes bare til adressen den ble lagret for, så endrer du adressen, Verify TLS eller CA-pakken, må du skrive inn nøkkelen på nytt. Kan ABM ikke lenger lese den lagrede nøkkelen (krypteringsnøkkelen gikk tapt eller ble endret), sier siden at du må skrive den inn på nytt, også når tilkoblingen er avslått.
+Nøkkelen lagres kryptert og vises aldri igjen. La feltet stå tomt når du lagrer eller tester for å beholde den lagrede nøkkelen. En lagret nøkkel sendes bare til adressen den ble lagret for, så endrer du adressen, Verify TLS eller CA-pakken, må du skrive inn nøkkelen på nytt. Kan ABM ikke lenger lese den lagrede nøkkelen (krypteringsnøkkelen gikk tapt eller ble endret), viser denne siden den samme meldingen som de andre innstillingssidene og sier at du må skrive den inn på nytt, også når tilkoblingen er avslått.
 
 ## Hva som sjekkes
 
@@ -35,7 +35,7 @@ Nøkkelen lagres kryptert og vises aldri igjen. La feltet stå tomt når du lagr
 
 Delen Status viser resultatet av siste sjekk (Not connected, OK, Warning eller Error), serverversjonen, brukeren nøkkelen tilhører, når ABM sist sjekket, og selve sjekkene. En sjekk som feilet viser årsaken sin, og de beståtte telles.
 
-[System > Status](/system/status/) har også en rad Audiobookshelf når en tilkobling er på. Den oppdateres når du lagrer og av den periodiske helsesjekken, som kjører hver 6. time, så det er ikke en live-måling hver gang du åpner siden. En lagret nøkkel ABM ikke lenger kan lese, vises som en feil til du skriver den inn på nytt. En tilkobling som ikke er sjekket ennå, vises som en advarsel. En avslått tilkobling er stille der.
+[System > Status](/system/status/) har også en rad Audiobookshelf når en tilkobling er på. Den oppdateres når du lagrer og av den periodiske helsesjekken, som kjører hver 6. time, så det er ikke en live-måling hver gang du åpner siden. En avslått tilkobling er stille der, selv om den lagrede nøkkelen ikke kan leses. Med tilkoblingen på vises en lagret nøkkel ABM ikke lenger kan lese, som en feil til du skriver den inn på nytt, og en tilkobling som ikke er sjekket ennå, vises som en advarsel.
 
 ## Hva ABM fjerner
 

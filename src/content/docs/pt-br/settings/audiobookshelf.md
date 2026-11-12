@@ -20,7 +20,7 @@ O ABM sempre se conecta ao ABS diretamente. Nunca passa pela VPN ou pelo proxy q
 
 ## A chave de API
 
-A chave é guardada criptografada e nunca mais é mostrada. Deixe em branco ao salvar ou testar para manter a salva. Uma chave salva só é enviada ao endereço para o qual foi salva, então se você mudar o endereço, o Verify TLS ou o pacote CA, informe a chave de novo. Se o ABM não consegue mais ler a chave salva (a chave de criptografia foi perdida ou mudou), a página diz para você informá-la de novo, mesmo com a conexão desligada.
+A chave é guardada criptografada e nunca mais é mostrada. Deixe em branco ao salvar ou testar para manter a salva. Uma chave salva só é enviada ao endereço para o qual foi salva, então se você mudar o endereço, o Verify TLS ou o pacote CA, informe a chave de novo. Se o ABM não consegue mais ler a chave salva (a chave de criptografia foi perdida ou mudou), esta página mostra o mesmo aviso das outras páginas de configurações e diz para você informá-la de novo, mesmo com a conexão desligada.
 
 ## O que é verificado
 
@@ -35,7 +35,7 @@ A chave é guardada criptografada e nunca mais é mostrada. Deixe em branco ao s
 
 A seção Status mostra o resultado da última verificação (Not connected, OK, Warning ou Error), a versão do servidor, o usuário dono da chave, quando o ABM verificou pela última vez e as próprias verificações. Uma verificação que falhou mostra o motivo, e as aprovadas são contadas.
 
-[System > Status](/system/status/) também tem uma linha Audiobookshelf quando uma conexão está ligada. Ela é atualizada ao salvar e pela verificação de saúde periódica, que roda a cada 6 horas, então não é uma sondagem ao vivo toda vez que você abre a página. Uma chave salva que o ABM não consegue mais ler aparece como erro até você informá-la de novo. Uma conexão ainda não verificada aparece como aviso. Uma conexão desligada fica quieta ali.
+[System > Status](/system/status/) também tem uma linha Audiobookshelf quando uma conexão está ligada. Ela é atualizada ao salvar e pela verificação de saúde periódica, que roda a cada 6 horas, então não é uma sondagem ao vivo toda vez que você abre a página. Uma conexão desligada fica quieta ali, mesmo que a chave salva não possa ser lida. Com a conexão ligada, uma chave salva que o ABM não consegue mais ler aparece como erro até você informá-la de novo, e uma conexão ainda não verificada aparece como aviso.
 
 ## O que o ABM remove
 

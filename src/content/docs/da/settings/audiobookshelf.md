@@ -20,7 +20,7 @@ ABM forbinder altid direkte til ABS. Den går aldrig gennem den VPN eller proxy,
 
 ## API-nøglen
 
-Nøglen gemmes krypteret og vises aldrig igen. Lad feltet stå tomt, når du gemmer eller tester, for at beholde den gemte nøgle. En gemt nøgle sendes kun til den adresse, den blev gemt for, så ændrer du adressen, Verify TLS eller CA-pakken, skal du indtaste nøglen igen. Kan ABM ikke længere læse den gemte nøgle (krypteringsnøglen er mistet eller ændret), siger siden, at du skal indtaste den igen, selv når forbindelsen er slået fra.
+Nøglen gemmes krypteret og vises aldrig igen. Lad feltet stå tomt, når du gemmer eller tester, for at beholde den gemte nøgle. En gemt nøgle sendes kun til den adresse, den blev gemt for, så ændrer du adressen, Verify TLS eller CA-pakken, skal du indtaste nøglen igen. Kan ABM ikke længere læse den gemte nøgle (krypteringsnøglen er mistet eller ændret), viser denne side den samme besked som de andre indstillingssider og siger, at du skal indtaste den igen, selv når forbindelsen er slået fra.
 
 ## Hvad der tjekkes
 
@@ -35,7 +35,7 @@ Nøglen gemmes krypteret og vises aldrig igen. Lad feltet stå tomt, når du gem
 
 Afsnittet Status viser resultatet af det seneste tjek (Not connected, OK, Warning eller Error), serverversionen, den bruger nøglen tilhører, hvornår ABM sidst tjekkede, og selve tjekkene. Et tjek, der fejlede, viser sin årsag, og de beståede tælles.
 
-[System > Status](/system/status/) har også en række Audiobookshelf, når en forbindelse er slået til. Den opdateres, når du gemmer, og af det periodiske helbredstjek, der kører hver 6. time, så det er ikke en live-måling, hver gang du åbner siden. En gemt nøgle, ABM ikke længere kan læse, vises som en fejl, indtil du indtaster den igen. En forbindelse, der endnu ikke er tjekket, vises som en advarsel. En forbindelse, der er slået fra, er tavs dér.
+[System > Status](/system/status/) har også en række Audiobookshelf, når en forbindelse er slået til. Den opdateres, når du gemmer, og af det periodiske helbredstjek, der kører hver 6. time, så det er ikke en live-måling, hver gang du åbner siden. En forbindelse, der er slået fra, er tavs dér, selv hvis dens gemte nøgle ikke kan læses. Med forbindelsen slået til vises en gemt nøgle, ABM ikke længere kan læse, som en fejl, indtil du indtaster den igen, og en forbindelse, der endnu ikke er tjekket, vises som en advarsel.
 
 ## Hvad ABM fjerner
 

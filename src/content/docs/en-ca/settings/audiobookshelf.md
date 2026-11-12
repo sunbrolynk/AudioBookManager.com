@@ -20,7 +20,7 @@ ABM always connects to ABS directly. It never goes through the VPN or proxy you 
 
 ## The API key
 
-The key is stored encrypted and is never shown again. Leave it blank when you save or test to keep the saved one. A saved key is only sent to the address it was saved for, so if you change the address, Verify TLS or the CA bundle, enter the key again. If ABM can no longer read the saved key (the encryption key was lost or changed), the page tells you to enter it again, even while the connection is turned off.
+The key is stored encrypted and is never shown again. Leave it blank when you save or test to keep the saved one. A saved key is only sent to the address it was saved for, so if you change the address, Verify TLS or the CA bundle, enter the key again. If ABM can no longer read the saved key (the encryption key was lost or changed), this page shows the same notice as the other settings pages and asks you to enter it again, even while the connection is turned off.
 
 ## What gets checked
 
@@ -35,7 +35,7 @@ The key is stored encrypted and is never shown again. Leave it blank when you sa
 
 The Status section shows the state of the last check (Not connected, OK, Warning or Error), the server version, the user the key belongs to, when ABM last checked, and the checks themselves. A failed check shows its reason, and the passed ones are counted.
 
-[System > Status](/system/status/) also has an Audiobookshelf row when a connection is turned on. It is refreshed when you save and by the periodic health check, which runs every 6 hours, so it is not a live probe each time you open the page. A saved key that ABM can no longer read shows as an error until you enter it again. A connection that has not been checked yet shows as a warning. A connection that is turned off stays quiet there.
+[System > Status](/system/status/) also has an Audiobookshelf row when a connection is turned on. It is refreshed when you save and by the periodic health check, which runs every 6 hours, so it is not a live probe each time you open the page. A connection that is turned off stays quiet there, even if its saved key cannot be read. With the connection turned on, a saved key that ABM can no longer read shows as an error until you enter it again, and a connection that has not been checked yet shows as a warning.
 
 ## What ABM removes
 

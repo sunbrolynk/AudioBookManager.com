@@ -20,7 +20,7 @@ ABM se connecte toujours directement à ABS. Il ne passe jamais par le VPN ou le
 
 ## La clé API
 
-La clé est stockée chiffrée et n'est plus jamais affichée. Laisse le champ vide à l'enregistrement ou au test pour garder la clé enregistrée. Une clé enregistrée n'est envoyée qu'à l'adresse pour laquelle elle a été enregistrée : si tu changes l'adresse, Verify TLS ou le bundle CA, saisis de nouveau la clé. Si ABM ne peut plus lire la clé enregistrée (la clé de chiffrement a été perdue ou changée), la page te dit de la saisir de nouveau, même quand la connexion est désactivée.
+La clé est stockée chiffrée et n'est plus jamais affichée. Laisse le champ vide à l'enregistrement ou au test pour garder la clé enregistrée. Une clé enregistrée n'est envoyée qu'à l'adresse pour laquelle elle a été enregistrée : si tu changes l'adresse, Verify TLS ou le bundle CA, saisis de nouveau la clé. Si ABM ne peut plus lire la clé enregistrée (la clé de chiffrement a été perdue ou changée), cette page affiche la même notice que les autres pages de réglages et te dit de la saisir de nouveau, même quand la connexion est désactivée.
 
 ## Ce qui est vérifié
 
@@ -35,7 +35,7 @@ La clé est stockée chiffrée et n'est plus jamais affichée. Laisse le champ v
 
 La section Status affiche l'état de la dernière vérification (Not connected, OK, Warning ou Error), la version du serveur, l'utilisateur auquel appartient la clé, le moment de la dernière vérification et les vérifications elles-mêmes. Une vérification échouée affiche sa raison, et celles réussies sont comptées.
 
-[System > Status](/system/status/) a aussi une ligne Audiobookshelf quand une connexion est activée. Elle est actualisée à l'enregistrement et par le contrôle de santé périodique, toutes les 6 heures : ce n'est donc pas une sonde en direct à chaque ouverture de la page. Une clé enregistrée qu'ABM ne peut plus lire apparaît comme une erreur jusqu'à ce que tu la saisisses de nouveau. Une connexion pas encore vérifiée apparaît comme un avertissement. Une connexion désactivée reste silencieuse à cet endroit.
+[System > Status](/system/status/) a aussi une ligne Audiobookshelf quand une connexion est activée. Elle est actualisée à l'enregistrement et par le contrôle de santé périodique, toutes les 6 heures : ce n'est donc pas une sonde en direct à chaque ouverture de la page. Une connexion désactivée reste silencieuse à cet endroit, même si sa clé enregistrée est illisible. Quand la connexion est activée, une clé enregistrée qu'ABM ne peut plus lire apparaît comme une erreur jusqu'à ce que tu la saisisses de nouveau, et une connexion pas encore vérifiée apparaît comme un avertissement.
 
 ## Ce qu'ABM supprime
 

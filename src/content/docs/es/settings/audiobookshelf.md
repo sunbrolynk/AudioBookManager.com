@@ -20,7 +20,7 @@ ABM siempre se conecta a ABS directamente. Nunca pasa por la VPN o el proxy que 
 
 ## La clave de API
 
-La clave se guarda cifrada y no se vuelve a mostrar. Déjala en blanco al guardar o probar para conservar la guardada. Una clave guardada solo se envía a la dirección para la que se guardó, así que si cambias la dirección, Verify TLS o el paquete CA, vuelve a introducirla. Si ABM ya no puede leer la clave guardada (la clave de cifrado se perdió o cambió), la página te dice que la introduzcas de nuevo, incluso con la conexión desactivada.
+La clave se guarda cifrada y no se vuelve a mostrar. Déjala en blanco al guardar o probar para conservar la guardada. Una clave guardada solo se envía a la dirección para la que se guardó, así que si cambias la dirección, Verify TLS o el paquete CA, vuelve a introducirla. Si ABM ya no puede leer la clave guardada (la clave de cifrado se perdió o cambió), esta página muestra el mismo aviso que las demás páginas de ajustes y te dice que la introduzcas de nuevo, incluso con la conexión desactivada.
 
 ## Qué se comprueba
 
@@ -35,7 +35,7 @@ La clave se guarda cifrada y no se vuelve a mostrar. Déjala en blanco al guarda
 
 La sección Status muestra el resultado de la última comprobación (Not connected, OK, Warning o Error), la versión del servidor, el usuario al que pertenece la clave, cuándo comprobó ABM por última vez y las comprobaciones en sí. Una comprobación fallida muestra su motivo, y las superadas se cuentan.
 
-[System > Status](/system/status/) también tiene una fila de Audiobookshelf cuando hay una conexión activada. Se actualiza al guardar y con la comprobación de salud periódica, que corre cada 6 horas, así que no es una sonda en vivo cada vez que abres la página. Una clave guardada que ABM ya no puede leer aparece como error hasta que la introduces de nuevo. Una conexión aún sin comprobar aparece como advertencia. Una conexión desactivada se queda callada ahí.
+[System > Status](/system/status/) también tiene una fila de Audiobookshelf cuando hay una conexión activada. Se actualiza al guardar y con la comprobación de salud periódica, que corre cada 6 horas, así que no es una sonda en vivo cada vez que abres la página. Una conexión desactivada se queda callada ahí, aunque su clave guardada no se pueda leer. Con la conexión activada, una clave guardada que ABM ya no puede leer aparece como error hasta que la introduces de nuevo, y una conexión aún sin comprobar aparece como advertencia.
 
 ## Qué elimina ABM
 

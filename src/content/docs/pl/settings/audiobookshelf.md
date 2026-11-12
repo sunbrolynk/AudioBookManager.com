@@ -20,7 +20,7 @@ ABM zawsze łączy się z ABS bezpośrednio. Nigdy nie idzie przez VPN ani proxy
 
 ## Klucz API
 
-Klucz jest przechowywany zaszyfrowany i nigdy więcej nie jest pokazywany. Zostaw pole puste przy zapisie lub teście, aby zachować zapisany klucz. Zapisany klucz jest wysyłany tylko pod adres, dla którego go zapisano, więc jeśli zmienisz adres, Verify TLS lub pakiet CA, wpisz klucz ponownie. Jeśli ABM nie może już odczytać zapisanego klucza (klucz szyfrowania zginął lub się zmienił), strona każe wpisać go ponownie, nawet gdy połączenie jest wyłączone.
+Klucz jest przechowywany zaszyfrowany i nigdy więcej nie jest pokazywany. Zostaw pole puste przy zapisie lub teście, aby zachować zapisany klucz. Zapisany klucz jest wysyłany tylko pod adres, dla którego go zapisano, więc jeśli zmienisz adres, Verify TLS lub pakiet CA, wpisz klucz ponownie. Jeśli ABM nie może już odczytać zapisanego klucza (klucz szyfrowania zginął lub się zmienił), ta strona pokazuje to samo powiadomienie co inne strony ustawień i każe wpisać go ponownie, nawet gdy połączenie jest wyłączone.
 
 ## Co jest sprawdzane
 
@@ -35,7 +35,7 @@ Klucz jest przechowywany zaszyfrowany i nigdy więcej nie jest pokazywany. Zosta
 
 Sekcja Status pokazuje wynik ostatniego sprawdzenia (Not connected, OK, Warning lub Error), wersję serwera, użytkownika, do którego należy klucz, kiedy ABM sprawdzał ostatnio, oraz same sprawdzenia. Nieudane sprawdzenie pokazuje swój powód, a udane są zliczane.
 
-[System > Status](/system/status/) ma też wiersz Audiobookshelf, gdy połączenie jest włączone. Odświeża się przy zapisie i przy okresowej kontroli stanu, która działa co 6 godzin, więc to nie jest sondowanie na żywo przy każdym otwarciu strony. Zapisany klucz, którego ABM już nie może odczytać, pokazuje się jako błąd, dopóki nie wpiszesz go ponownie. Połączenie jeszcze niesprawdzone pokazuje się jako ostrzeżenie. Wyłączone połączenie milczy tam.
+[System > Status](/system/status/) ma też wiersz Audiobookshelf, gdy połączenie jest włączone. Odświeża się przy zapisie i przy okresowej kontroli stanu, która działa co 6 godzin, więc to nie jest sondowanie na żywo przy każdym otwarciu strony. Wyłączone połączenie milczy tam, nawet jeśli jego zapisany klucz jest nieczytelny. Przy włączonym połączeniu zapisany klucz, którego ABM już nie może odczytać, pokazuje się jako błąd, dopóki nie wpiszesz go ponownie, a połączenie jeszcze niesprawdzone pokazuje się jako ostrzeżenie.
 
 ## Co usuwa ABM
 

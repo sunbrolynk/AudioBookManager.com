@@ -20,7 +20,7 @@ ABM yhdistää ABS:ään aina suoraan. Se ei koskaan kulje kohdassa [Network](/s
 
 ## API-avain
 
-Avain tallennetaan salattuna eikä sitä näytetä enää koskaan. Jätä kenttä tyhjäksi tallentaessasi tai testatessasi, niin tallennettu avain säilyy. Tallennettu avain lähetetään vain osoitteeseen, jota varten se tallennettiin, joten jos vaihdat osoitteen, Verify TLS:n tai CA-paketin, anna avain uudelleen. Jos ABM ei enää pysty lukemaan tallennettua avainta (salausavain hävisi tai vaihtui), sivu kehottaa antamaan sen uudelleen, vaikka yhteys olisi pois päältä.
+Avain tallennetaan salattuna eikä sitä näytetä enää koskaan. Jätä kenttä tyhjäksi tallentaessasi tai testatessasi, niin tallennettu avain säilyy. Tallennettu avain lähetetään vain osoitteeseen, jota varten se tallennettiin, joten jos vaihdat osoitteen, Verify TLS:n tai CA-paketin, anna avain uudelleen. Jos ABM ei enää pysty lukemaan tallennettua avainta (salausavain hävisi tai vaihtui), tämä sivu näyttää saman ilmoituksen kuin muut asetussivut ja kehottaa antamaan sen uudelleen, vaikka yhteys olisi pois päältä.
 
 ## Mitä tarkistetaan
 
@@ -35,7 +35,7 @@ Avain tallennetaan salattuna eikä sitä näytetä enää koskaan. Jätä kentt�
 
 Status-osio näyttää viimeisimmän tarkistuksen tuloksen (Not connected, OK, Warning tai Error), palvelimen version, käyttäjän, jolle avain kuuluu, milloin ABM tarkisti viimeksi, ja itse tarkistukset. Epäonnistunut tarkistus näyttää syynsä, ja läpäistyt lasketaan.
 
-[System > Status](/system/status/) -sivulla on myös Audiobookshelf-rivi, kun yhteys on päällä. Se päivittyy tallennettaessa ja jaksoittaisella kuntotarkistuksella, joka ajetaan 6 tunnin välein, joten se ei ole reaaliaikainen mittaus joka kerta, kun avaat sivun. Tallennettu avain, jota ABM ei enää voi lukea, näkyy virheenä, kunnes annat sen uudelleen. Vielä tarkistamaton yhteys näkyy varoituksena. Pois päältä oleva yhteys pysyy siellä hiljaa.
+[System > Status](/system/status/) -sivulla on myös Audiobookshelf-rivi, kun yhteys on päällä. Se päivittyy tallennettaessa ja jaksoittaisella kuntotarkistuksella, joka ajetaan 6 tunnin välein, joten se ei ole reaaliaikainen mittaus joka kerta, kun avaat sivun. Pois päältä oleva yhteys pysyy siellä hiljaa, vaikka sen tallennettua avainta ei voisi lukea. Kun yhteys on päällä, tallennettu avain, jota ABM ei enää voi lukea, näkyy virheenä, kunnes annat sen uudelleen, ja vielä tarkistamaton yhteys näkyy varoituksena.
 
 ## Mitä ABM poistaa
 

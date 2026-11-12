@@ -20,7 +20,7 @@ ABM ansluter alltid direkt till ABS. Det går aldrig via det VPN eller den proxy
 
 ## API-nyckeln
 
-Nyckeln sparas krypterad och visas aldrig igen. Lämna den tom när du sparar eller testar för att behålla den sparade. En sparad nyckel skickas bara till adressen den sparades för, så ändrar du adressen, Verify TLS eller CA-paketet, ange nyckeln igen. Kan ABM inte längre läsa den sparade nyckeln (krypteringsnyckeln försvann eller ändrades) säger sidan att du ska ange den igen, även när anslutningen är avstängd.
+Nyckeln sparas krypterad och visas aldrig igen. Lämna den tom när du sparar eller testar för att behålla den sparade. En sparad nyckel skickas bara till adressen den sparades för, så ändrar du adressen, Verify TLS eller CA-paketet, ange nyckeln igen. Kan ABM inte längre läsa den sparade nyckeln (krypteringsnyckeln försvann eller ändrades) visar den här sidan samma meddelande som de andra inställningssidorna och säger att du ska ange den igen, även när anslutningen är avstängd.
 
 ## Vad som kontrolleras
 
@@ -35,7 +35,7 @@ Nyckeln sparas krypterad och visas aldrig igen. Lämna den tom när du sparar el
 
 Avsnittet Status visar resultatet av den senaste kontrollen (Not connected, OK, Warning eller Error), serverversionen, användaren nyckeln tillhör, när ABM senast kontrollerade och själva kontrollerna. En misslyckad kontroll visar sin orsak, och de godkända räknas.
 
-[System > Status](/system/status/) har också en rad Audiobookshelf när en anslutning är på. Den uppdateras när du sparar och av den periodiska hälsokontrollen, som körs var 6:e timme, så det är ingen liveprobe varje gång du öppnar sidan. En sparad nyckel som ABM inte längre kan läsa visas som ett fel tills du anger den igen. En anslutning som inte kontrollerats ännu visas som en varning. En avstängd anslutning är tyst där.
+[System > Status](/system/status/) har också en rad Audiobookshelf när en anslutning är på. Den uppdateras när du sparar och av den periodiska hälsokontrollen, som körs var 6:e timme, så det är ingen liveprobe varje gång du öppnar sidan. En avstängd anslutning är tyst där, även om dess sparade nyckel inte går att läsa. Med anslutningen på visas en sparad nyckel som ABM inte längre kan läsa som ett fel tills du anger den igen, och en anslutning som inte kontrollerats ännu visas som en varning.
 
 ## Vad ABM tar bort
 
