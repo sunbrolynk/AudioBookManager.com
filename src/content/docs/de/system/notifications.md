@@ -33,7 +33,7 @@ Eine Benachrichtigung kann von einer Hintergrundaufgabe, einem Download oder ein
 
 ## Ergebnisse am Bedienelement
 
-Aktionen auf Library, Book Detail, Calendar, Authors und Series sowie die Cover-Aktionen zeigen ihr Ergebnis als kurze Zeile an dem Bedienelement, das du benutzt hast. Eine einfache Erfolgszeile verschwindet nach ein paar Sekunden von selbst. Ein Fehler oder eine Warnung bleibt bis zu deiner nächsten Aktion an diesem Bedienelement. Fehler werden außerdem in der Glocke aufgezeichnet, sodass du sie auch nach dem Verschwinden der Zeile findest.
+Aktionen auf Library, Book Detail, Calendar, Authors und Series sowie die Cover-Aktionen zeigen ihr Ergebnis als kurze Zeile an dem Bedienelement, das du benutzt hast. Eine einfache Erfolgszeile verschwindet nach ein paar Sekunden von selbst. Ein Fehler oder eine Warnung bleibt bis zu deiner nächsten Aktion an diesem Bedienelement. Fehler werden außerdem in den Benachrichtigungen aufgezeichnet, sodass du sie auch nach dem Verschwinden der Zeile findest.
 
 Ein Buch, ein Autor oder eine Serie, die gespeichert wird, deren Catalog-Fill aber nicht startet, zeichnet die Warnung „Catalog fill not started“ auf. Ein Add all, bei dem einige Bücher fehlschlagen, zeichnet „Some books were not added“ mit den Gründen auf.
 
@@ -43,4 +43,4 @@ Alte Benachrichtigungen entfernt die tägliche Log-Bereinigung, standardmäßig 
 
 ## Der Unterschied zum Aktivitätsprotokoll
 
-Benachrichtigungen sagen dir, was los ist, und du kannst sie leeren. Das [Aktivitätsprotokoll](/de/system/activity-log/) ist die dauerhafte Aufzeichnung dessen, was passiert ist, und das Leeren der Glocke berührt es nicht.
+Benachrichtigungen sagen dir, was los ist, und du kannst sie leeren. Das [Aktivitätsprotokoll](/de/system/activity-log/) ist die dauerhafte Aufzeichnung dessen, was passiert ist, und das Leeren der Benachrichtigungen berührt es nicht.

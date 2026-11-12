@@ -15,7 +15,7 @@ If a sign-in stops working, the account says it needs to sign in again, in Setti
 
 Sync refreshes each account's library from Audible. The Audible settings page shows its progress and result, and reports a failure with the real error. It also runs on a schedule.
 
-Every refusal from the Audible Library page (downloads, bulk add, add and download, sync) shows its reason as a line on the page and is also recorded in the [notification bell](/en-ca/system/notifications/). A book added from the dialog is recorded there too, because the dialog closes.
+Every refusal from the Audible Library page (downloads, bulk add, add and download, sync) shows its reason as a line on the page and is also recorded in the [Notification Center](/en-ca/system/notifications/). A book added from the dialog is recorded there too, because the dialog closes.
 
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only, or build a custom filter (see [Custom filters](/en-ca/using/library/#custom-filters)).
 

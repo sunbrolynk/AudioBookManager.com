@@ -33,7 +33,7 @@ En notifikation kan komme fra en baggrundsopgave, en download eller en konverter
 
 ## Resultater ved kontrollen
 
-Handlinger på Library, Book Detail, Calendar, Authors og Series og cover-handlingerne viser deres resultat som en kort linje ved den kontrol, du brugte. En almindelig succeslinje forsvinder af sig selv efter et par sekunder. En fejl eller en advarsel bliver, til din næste handling på den kontrol. Fejl registreres også i klokken, så du kan finde dem, efter linjen er væk.
+Handlinger på Library, Book Detail, Calendar, Authors og Series og cover-handlingerne viser deres resultat som en kort linje ved den kontrol, du brugte. En almindelig succeslinje forsvinder af sig selv efter et par sekunder. En fejl eller en advarsel bliver, til din næste handling på den kontrol. Fejl registreres også i Notifikationer, så du kan finde dem, efter linjen er væk.
 
 En bog, forfatter eller serie, der gemmes, men hvis catalog fill ikke starter, registrerer advarslen "Catalog fill not started". En add all, hvor nogle bøger mislykkes, registrerer "Some books were not added" med årsagerne.
 
@@ -43,4 +43,4 @@ Gamle notifikationer fjernes af den daglige logoprydning, som standard efter **3
 
 ## Forskellen fra aktivitetsloggen
 
-Notifikationer er det, du får at vide, og du kan rydde dem. [Aktivitetsloggen](/da/system/activity-log/) er den permanente registrering af, hvad der er sket, og at rydde klokken rører den ikke.
+Notifikationer er det, du får at vide, og du kan rydde dem. [Aktivitetsloggen](/da/system/activity-log/) er den permanente registrering af, hvad der er sket, og at rydde Notifikationer rører den ikke.

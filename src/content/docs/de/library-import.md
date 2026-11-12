@@ -13,6 +13,8 @@ Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ord
 
 Jede Option ist eine optionale Abweichung von einem Standard aus Media Management. Ein einfacher Scan mit anschließendem Hinzufügen braucht nie mehr als zwei Klicks.
 
+Ein Import, der mit einigen fehlgeschlagenen Büchern endet, wird in den [Benachrichtigungen](/de/system/notifications/) als Warnung „Import finished with problems“ aufgezeichnet. Ein Import, bei dem sich nichts importieren ließ, wird als fehlgeschlagene Aufgabe aufgezeichnet. Dasselbe gilt für einen manuellen Import aus der Warteschlange.
+
 ## Die Liste lesen
 
 - Die Übersicht zeigt, wie viele Ordner gefunden und wie viele zugeordnet wurden. Filtern kannst du nach All, Matched, Needs attention, Unmatched, In library oder Failed lookup. Der Filter bleibt in der Seitenadresse erhalten.

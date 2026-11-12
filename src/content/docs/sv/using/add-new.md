@@ -22,7 +22,7 @@ Sökningen har lägen för Title, Author, Series, Books by author, Books in seri
 
 Du väljer också rotmapp, kvalitetsprofil och om böcker som dyker upp senare också ska läggas till. Det är på som standard för en serie och av för en författare. En författare eller serie som redan finns i ditt bibliotek visar "In Library" med åtgärden **Add missing books**.
 
-Tillägget körs som en bakgrundsuppgift med en förloppsnotis. Om en bok, författare eller serie sparas men den efterföljande catalog fill inte startar registreras en varning i [aviseringsklockan](/sv/system/notifications/). Add all gör detsamma när några böcker misslyckas, med orsakerna.
+Tillägget körs som en bakgrundsuppgift med en förloppsnotis. Om en bok, författare eller serie sparas men den efterföljande catalog fill inte startar registreras en varning i [Aviseringar](/sv/system/notifications/). Add all gör detsamma när några böcker misslyckas, med orsakerna.
 
 ## Om sökningen inte ger något
 

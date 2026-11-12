@@ -22,7 +22,7 @@ Søgningen har tilstande for Title, Author, Series, Books by author, Books in se
 
 Du vælger også rodmappen, kvalitetsprofilen, og om bøger, der dukker op senere, også skal tilføjes. Det er slået til som standard for en serie og fra for en forfatter. En forfatter eller serie, der allerede er i dit bibliotek, viser "In Library" med handlingen **Add missing books**.
 
-Tilføjelsen kører som en baggrundsopgave med en toast, der viser fremskridtet. Hvis en bog, forfatter eller serie gemmes, men den efterfølgende catalog fill ikke starter, registreres en advarsel i [notifikationsklokken](/da/system/notifications/). Add all gør det samme, når nogle bøger mislykkes, med årsagerne.
+Tilføjelsen kører som en baggrundsopgave med en toast, der viser fremskridtet. Hvis en bog, forfatter eller serie gemmes, men den efterfølgende catalog fill ikke starter, registreres en advarsel i [Notifikationer](/da/system/notifications/). Add all gør det samme, når nogle bøger mislykkes, med årsagerne.
 
 ## Hvis søgningen ikke giver noget
 

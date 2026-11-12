@@ -13,6 +13,8 @@ description: 用匯入工作台（Import Workbench）把現有收藏帶進 ABM�
 
 每個選項都只是選擇性地覆寫 Media Management 裡的預設值。單純掃描再加入，永遠不會超過兩下。
 
+有部分書籍失敗而結束的匯入，會作為警告「Import finished with problems」記錄在[通知](/zh-tw/system/notifications/)裡。一本都沒能匯入的匯入，會記錄為失敗的任務。從 Queue 發起的手動匯入也一樣。
+
 ## 看懂清單
 
 - 摘要會顯示找到幾個資料夾、對上了幾個。可以依 All、Matched、Needs attention、Unmatched、In library 或 Failed lookup 篩選清單。篩選條件會記在頁面網址裡。

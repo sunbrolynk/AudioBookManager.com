@@ -13,6 +13,8 @@ Library Import scanne un dossier de livres audio, fait correspondre chaque dossi
 
 Chaque option est un remplacement facultatif d'une valeur par défaut de Media Management. Un simple scan suivi d'un ajout ne demande jamais plus de deux clics.
 
+Un import qui se termine avec certains livres en échec est enregistré dans [Notifications](/fr/system/notifications/) comme un avertissement, « Import finished with problems ». Un import où rien n'a pu être importé est enregistré comme une tâche échouée. Il en va de même pour un import manuel depuis la Queue.
+
 ## Lire la liste
 
 - Le résumé montre combien de dossiers ont été trouvés et combien ont une correspondance. Filtre la liste par All, Matched, Needs attention, Unmatched, In library ou Failed lookup. Le filtre est gardé dans l'adresse de la page.

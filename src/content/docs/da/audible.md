@@ -15,7 +15,7 @@ Holder et login op med at virke, viser kontoen, at den skal logges ind igen, bå
 
 Synkronisering opdaterer hver kontos bibliotek fra Audible. Audible-indstillingssiden viser fremskridt og resultat og melder en fejl med den rigtige fejlbesked. Den kører også efter en tidsplan.
 
-Hver afvisning fra siden Audible Library (downloads, masse-tilføjelse, tilføj og download, sync) viser årsagen som en linje på siden og registreres også i [notifikationsklokken](/da/system/notifications/). En bog tilføjet fra dialogen registreres også der, fordi dialogen lukker.
+Hver afvisning fra siden Audible Library (downloads, masse-tilføjelse, tilføj og download, sync) viser årsagen som en linje på siden og registreres også i [Notifikationer](/da/system/notifications/). En bog tilføjet fra dialogen registreres også der, fordi dialogen lukker.
 
 Siden **Audible Library** viser alt, der er synkroniseret. Filtrér den efter All, Not in Library, Downloaded, Wanted eller Downloadable Only.
 

@@ -13,6 +13,8 @@ Library Import naskenuje složku s audioknihami, ke každé složce najde metada
 
 Každá volba je jen nepovinné přepsání výchozího nastavení z Media Management. Obyčejné naskenování a přidání tak nikdy nepotřebuje víc než dvě kliknutí.
 
+Import, který skončí s některými knihami neúspěšně, se zaznamená do [Oznámení](/cs/system/notifications/) jako varování „Import finished with problems“. Import, při kterém se nepodařilo nic importovat, se zaznamená jako neúspěšná úloha. Totéž platí pro ruční import z Queue.
+
 ## Jak číst seznam
 
 - Souhrn ukazuje, kolik složek se našlo a kolik z nich má shodu. Seznam můžeš filtrovat na All, Matched, Needs attention, Unmatched, In library nebo Failed lookup. Filtr se drží v adrese stránky.

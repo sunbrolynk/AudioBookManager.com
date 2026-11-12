@@ -33,7 +33,7 @@ En avisering kan komma från en bakgrundsuppgift, en nedladdning eller en konver
 
 ## Resultat vid kontrollen
 
-Åtgärder på Library, Book Detail, Calendar, Authors och Series och omslagsåtgärderna visar sitt resultat som en kort rad vid kontrollen du använde. En vanlig lyckad rad försvinner av sig själv efter ett par sekunder. Ett fel eller en varning blir kvar till din nästa åtgärd på den kontrollen. Fel registreras också i klockan, så du hittar dem när raden är borta.
+Åtgärder på Library, Book Detail, Calendar, Authors och Series och omslagsåtgärderna visar sitt resultat som en kort rad vid kontrollen du använde. En vanlig lyckad rad försvinner av sig själv efter ett par sekunder. Ett fel eller en varning blir kvar till din nästa åtgärd på den kontrollen. Fel registreras också i Aviseringar, så du hittar dem när raden är borta.
 
 En bok, författare eller serie som sparas men vars catalog fill inte startar registrerar varningen "Catalog fill not started". En add all där några böcker misslyckas registrerar "Some books were not added" med orsakerna.
 
@@ -43,4 +43,4 @@ Gamla aviseringar tas bort av den dagliga logrensningen, som standard efter **30
 
 ## Skillnaden mot Activity Log
 
-Aviseringar är det du får veta, och du kan rensa dem. [Activity Log](/sv/system/activity-log/) är den permanenta uppteckningen av vad som hänt, och att rensa klockan rör den inte.
+Aviseringar är det du får veta, och du kan rensa dem. [Activity Log](/sv/system/activity-log/) är den permanenta uppteckningen av vad som hänt, och att rensa Aviseringar rör den inte.

@@ -33,7 +33,7 @@ Una notifica può arrivare da un task in background, da un download o da una con
 
 ## Risultati sul controllo
 
-Le azioni su Library, Book Detail, Calendar, Authors e Series e le azioni sulle copertine mostrano il risultato come una breve riga sul controllo che hai usato. Una semplice riga di successo sparisce da sola dopo un paio di secondi. Un errore o un avviso resta fino alla tua prossima azione su quel controllo. Gli errori vengono registrati anche nella campanella, così li ritrovi anche dopo che la riga è sparita.
+Le azioni su Library, Book Detail, Calendar, Authors e Series e le azioni sulle copertine mostrano il risultato come una breve riga sul controllo che hai usato. Una semplice riga di successo sparisce da sola dopo un paio di secondi. Un errore o un avviso resta fino alla tua prossima azione su quel controllo. Gli errori vengono registrati anche nelle Notifiche, così li ritrovi anche dopo che la riga è sparita.
 
 Un libro, un autore o una serie salvati il cui catalog fill non parte registra l'avviso «Catalog fill not started». Un add all in cui alcuni libri falliscono registra «Some books were not added» con i motivi.
 
@@ -43,4 +43,4 @@ Le vecchie notifiche vengono rimosse dalla pulizia giornaliera dei log, per impo
 
 ## Differenza dal Registro attività
 
-Le notifiche sono ciò che ti viene detto, e puoi svuotarle. Il [Registro attività](/it/system/activity-log/) è la traccia permanente di ciò che è successo, e svuotare la campanella non lo tocca.
+Le notifiche sono ciò che ti viene detto, e puoi svuotarle. Il [Registro attività](/it/system/activity-log/) è la traccia permanente di ciò che è successo, e svuotare le Notifiche non lo tocca.

@@ -22,7 +22,7 @@ Wyszukiwanie ma tryby Title, Author, Series, Books by author, Books in series i 
 
 Wybierasz też folder główny, profil jakości i to, czy książki, które pojawią się później, też mają być dodawane. Dla serii jest to domyślnie włączone, a dla autora wyłączone. Autor albo seria, które już są w twojej bibliotece, pokazują "In Library" z akcją **Add missing books**.
 
-Dodawanie idzie jako zadanie w tle z powiadomieniem o postępie. Jeśli książka, autor lub seria zostaną zapisane, ale następujący po tym catalog fill się nie uruchomi, ostrzeżenie zostanie zapisane w [dzwonku powiadomień](/pl/system/notifications/). Add all robi to samo, gdy część książek zawiedzie, wraz z powodami.
+Dodawanie idzie jako zadanie w tle z powiadomieniem o postępie. Jeśli książka, autor lub seria zostaną zapisane, ale następujący po tym catalog fill się nie uruchomi, ostrzeżenie zostanie zapisane w [Powiadomieniach](/pl/system/notifications/). Add all robi to samo, gdy część książek zawiedzie, wraz z powodami.
 
 ## Jeśli wyszukiwanie nic nie zwraca
 

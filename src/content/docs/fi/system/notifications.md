@@ -33,7 +33,7 @@ Ilmoitus voi tulla taustatehtävästä, latauksesta tai muunnoksesta tai jostaki
 
 ## Tulokset painikkeen kohdalla
 
-Toiminnot sivuilla Library, Book Detail, Calendar, Authors ja Series sekä kansitoiminnot näyttävät tuloksensa lyhyenä rivinä käyttämäsi painikkeen kohdalla. Pelkkä onnistumisrivi poistuu itsestään parin sekunnin kuluttua. Virhe tai varoitus pysyy seuraavaan toimintoosi saakka kyseisellä painikkeella. Virheet tallennetaan myös kelloon, joten löydät ne vielä rivin poistuttua.
+Toiminnot sivuilla Library, Book Detail, Calendar, Authors ja Series sekä kansitoiminnot näyttävät tuloksensa lyhyenä rivinä käyttämäsi painikkeen kohdalla. Pelkkä onnistumisrivi poistuu itsestään parin sekunnin kuluttua. Virhe tai varoitus pysyy seuraavaan toimintoosi saakka kyseisellä painikkeella. Virheet tallennetaan myös Ilmoituksiin, joten löydät ne vielä rivin poistuttua.
 
 Kirja, tekijä tai sarja, joka tallennetaan mutta jonka catalog fill ei käynnisty, tallentaa varoituksen "Catalog fill not started". Add all, jossa jotkin kirjat epäonnistuvat, tallentaa "Some books were not added" syineen.
 
@@ -43,4 +43,4 @@ Vanhat ilmoitukset poistaa päivittäinen lokien siivous, oletuksena **30 päiv�
 
 ## Ero Activity Logiin
 
-Ilmoitukset ovat se, mitä sinulle kerrotaan, ja voit tyhjentää ne. [Activity Log](/fi/system/activity-log/) on pysyvä tallenne tapahtuneesta, eikä kellon tyhjentäminen koske siihen.
+Ilmoitukset ovat se, mitä sinulle kerrotaan, ja voit tyhjentää ne. [Activity Log](/fi/system/activity-log/) on pysyvä tallenne tapahtuneesta, eikä Ilmoitusten tyhjentäminen koske siihen.

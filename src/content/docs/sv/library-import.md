@@ -13,6 +13,8 @@ Library Import skannar en mapp med ljudböcker, matchar varje mapp mot metadata 
 
 Varje alternativ är en valfri åsidosättning av en standard i Media Management. En vanlig skanning följt av tillägg behöver aldrig mer än två klick.
 
+En import som slutar med några böcker som misslyckats registreras i [Aviseringar](/sv/system/notifications/) som en varning, "Import finished with problems". En import där ingenting kunde importeras registreras som en misslyckad uppgift. Samma sak gäller en manuell import från Queue.
+
 ## Läsa listan
 
 - Sammanfattningen visar hur många mappar som hittades och hur många som matchades. Filtrera listan på All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filtret sparas i sidans adress.

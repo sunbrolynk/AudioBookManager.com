@@ -15,7 +15,7 @@ ABM は1つ以上の Audible アカウントに接続して、アカウントご
 
 同期では、各アカウントのライブラリを Audible から更新します。Audible の設定ページに進捗と結果が表示され、失敗したときは実際のエラーが出ます。同期はスケジュールでも実行されます。
 
-Audible Library ページでの拒否(ダウンロード、一括追加、追加してダウンロード、sync)は、すべて理由をページ上の 1 行で表示し、[通知ベル](/ja/system/notifications/)にも記録されます。ダイアログから追加した本は、ダイアログが閉じるので、そこにも記録されます。
+Audible Library ページでの拒否(ダウンロード、一括追加、追加してダウンロード、sync)は、すべて理由をページ上の 1 行で表示し、[通知](/ja/system/notifications/)にも記録されます。ダイアログから追加した本は、ダイアログが閉じるので、そこにも記録されます。
 
 **Audible Library** ページには同期したものが全部並びます。All、Not in Library、Downloaded、Wanted、Downloadable Only で絞り込めます。
 

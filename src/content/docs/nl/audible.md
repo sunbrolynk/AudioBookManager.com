@@ -15,7 +15,7 @@ Werkt inloggen niet meer, dan meldt het account dat je opnieuw moet inloggen, in
 
 Een sync haalt de bibliotheek van elk account opnieuw op bij Audible. De Audible-instellingenpagina toont de voortgang en het resultaat, en meldt een mislukking met de echte foutmelding. De sync draait ook volgens een schema.
 
-Elke weigering vanaf de pagina Audible Library (downloads, bulk toevoegen, toevoegen en downloaden, sync) toont de reden als regel op de pagina en wordt ook vastgelegd in de [meldingenbel](/nl/system/notifications/). Een boek dat je via het dialoogvenster toevoegt, wordt daar ook vastgelegd, omdat het venster sluit.
+Elke weigering vanaf de pagina Audible Library (downloads, bulk toevoegen, toevoegen en downloaden, sync) toont de reden als regel op de pagina en wordt ook vastgelegd in [Meldingen](/nl/system/notifications/). Een boek dat je via het dialoogvenster toevoegt, wordt daar ook vastgelegd, omdat het venster sluit.
 
 De pagina **Audible Library** toont alles wat gesynchroniseerd is. Je kunt filteren op All, Not in Library, Downloaded, Wanted of Downloadable Only.
 

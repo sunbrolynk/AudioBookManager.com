@@ -33,7 +33,7 @@ Een melding kan komen van een achtergrondtaak, een download of een conversie, of
 
 ## Resultaten bij het bedieningselement
 
-Acties op Library, Book Detail, Calendar, Authors en Series en de omslagacties tonen hun resultaat als een korte regel bij het element dat je gebruikte. Een gewone succesregel verdwijnt na een paar seconden vanzelf. Een fout of waarschuwing blijft tot je volgende actie op dat element. Fouten worden ook in de bel vastgelegd, zodat je ze kunt terugvinden als de regel weg is.
+Acties op Library, Book Detail, Calendar, Authors en Series en de omslagacties tonen hun resultaat als een korte regel bij het element dat je gebruikte. Een gewone succesregel verdwijnt na een paar seconden vanzelf. Een fout of waarschuwing blijft tot je volgende actie op dat element. Fouten worden ook in Meldingen vastgelegd, zodat je ze kunt terugvinden als de regel weg is.
 
 Een boek, auteur of serie die wordt opgeslagen maar waarvan de catalog fill niet start, legt de waarschuwing "Catalog fill not started" vast. Een add all waarbij sommige boeken mislukken, legt "Some books were not added" vast met de redenen.
 
@@ -43,4 +43,4 @@ Oude meldingen worden verwijderd door de dagelijkse logopruiming, standaard na *
 
 ## Verschil met het Activity Log
 
-Meldingen zijn wat je te horen krijgt, en je kunt ze wissen. Het [Activity Log](/nl/system/activity-log/) is de blijvende vastlegging van wat er is gebeurd, en het wissen van de bel raakt het niet.
+Meldingen zijn wat je te horen krijgt, en je kunt ze wissen. Het [Activity Log](/nl/system/activity-log/) is de blijvende vastlegging van wat er is gebeurd, en het wissen van Meldingen raakt het niet.

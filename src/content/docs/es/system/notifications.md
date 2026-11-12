@@ -33,7 +33,7 @@ Una notificación puede venir de una tarea en segundo plano, una descarga o una 
 
 ## Resultados en el control
 
-Las acciones en Library, Book Detail, Calendar, Authors y Series y las acciones de portada muestran su resultado como una línea corta en el control que usaste. Una línea de éxito simple se borra sola al cabo de un par de segundos. Un fallo o un aviso se queda hasta tu siguiente acción en ese control. Los fallos también se registran en la campana, así que puedes encontrarlos cuando la línea ya no esté.
+Las acciones en Library, Book Detail, Calendar, Authors y Series y las acciones de portada muestran su resultado como una línea corta en el control que usaste. Una línea de éxito simple se borra sola al cabo de un par de segundos. Un fallo o un aviso se queda hasta tu siguiente acción en ese control. Los fallos también se registran en Notificaciones, así que puedes encontrarlos cuando la línea ya no esté.
 
 Un libro, autor o serie que se guarda pero cuyo catalog fill no arranca registra el aviso «Catalog fill not started». Un add all en el que fallan algunos libros registra «Some books were not added» con los motivos.
 
@@ -43,4 +43,4 @@ Las notificaciones antiguas las quita la limpieza diaria de logs, por defecto a 
 
 ## En qué se diferencia del registro de actividad
 
-Las notificaciones son lo que se te cuenta, y puedes borrarlas. El [registro de actividad](/es/system/activity-log/) es el registro permanente de lo que ha pasado, y vaciar la campana no lo toca.
+Las notificaciones son lo que se te cuenta, y puedes borrarlas. El [registro de actividad](/es/system/activity-log/) es el registro permanente de lo que ha pasado, y vaciar Notificaciones no lo toca.

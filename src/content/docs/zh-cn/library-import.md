@@ -13,6 +13,8 @@ description: 用 Import Workbench 把现有收藏导入 ABM。
 
 每个选项都只是对 Media Management 里默认值的可选覆盖。普通的“扫描然后添加”永远不会超过两次点击。
 
+有部分书籍失败而结束的导入，会作为警告“Import finished with problems”记录在[通知](/zh-cn/system/notifications/)里。一本都没能导入的导入，会记录为失败的任务。从 Queue 发起的手动导入也一样。
+
 ## 怎么看列表
 
 - 摘要显示找到了多少个文件夹、匹配上了多少个。可以按 All、Matched、Needs attention、Unmatched、In library 或 Failed lookup 筛选列表，筛选条件会保留在页面地址里。

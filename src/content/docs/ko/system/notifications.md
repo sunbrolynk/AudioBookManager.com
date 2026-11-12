@@ -33,7 +33,7 @@ description: 헤더의 종과 그 아래 패널입니다.
 
 ## 컨트롤 옆에 나오는 결과
 
-Library, Book Detail, Calendar, Authors, Series에서의 작업과 표지 작업은 사용한 컨트롤 옆에 짧은 한 줄로 결과를 보여 줘요. 단순한 성공 줄은 몇 초 뒤에 저절로 사라져요. 실패나 경고는 그 컨트롤에서 다음 작업을 할 때까지 남아요. 실패는 종에도 기록되니, 줄이 사라진 뒤에도 찾을 수 있어요.
+Library, Book Detail, Calendar, Authors, Series에서의 작업과 표지 작업은 사용한 컨트롤 옆에 짧은 한 줄로 결과를 보여 줘요. 단순한 성공 줄은 몇 초 뒤에 저절로 사라져요. 실패나 경고는 그 컨트롤에서 다음 작업을 할 때까지 남아요. 실패는 알림에도 기록되니, 줄이 사라진 뒤에도 찾을 수 있어요.
 
 저장은 됐지만 catalog fill이 시작되지 않은 책, 저자, 시리즈는 "Catalog fill not started" 경고를 기록해요. 일부 책이 실패한 Add all은 이유와 함께 "Some books were not added"를 기록해요.
 
@@ -43,4 +43,4 @@ Library, Book Detail, Calendar, Authors, Series에서의 작업과 표지 작업
 
 ## 활동 로그와의 차이
 
-알림은 너에게 알려 주는 것이고, 지울 수 있어요. [활동 로그](/ko/system/activity-log/)는 일어난 일의 영구 기록이고, 종을 비워도 영향이 없어요.
+알림은 너에게 알려 주는 것이고, 지울 수 있어요. [활동 로그](/ko/system/activity-log/)는 일어난 일의 영구 기록이고, 알림을 비워도 영향이 없어요.

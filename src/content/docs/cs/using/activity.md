@@ -5,7 +5,7 @@ description: Fronta, historie a blocklist.
 
 ## Fronta (Queue)
 
-Na čem tvoji klienti pro stahování zrovna pracují. Akce u řádku zahrnují **Grab now**, **Import Now**, **Manual Import** a **Retry Now** a k tomu **Configure remote path mapping**, když dokončené stahování leží na cestě, kterou ABM nevidí.
+Na čem tvoji klienti pro stahování zrovna pracují. Akce u řádku zahrnují **Grab now**, **Import Now**, **Manual Import** a **Retry Now** a k tomu **Configure remote path mapping**, když dokončené stahování leží na cestě, kterou ABM nevidí. V okně Manual Import ukáže neúspěšné skenování, příprava nebo import důvod jako řádek v okně.
 
 Odebrání řádku z fronty se řídí volbou **Queue Page Remove Action** v nastavení klienta pro stahování: zahodit jen z ABM, odebrat z klienta a soubory nechat, nebo odebrat z klienta i se soubory. Viz [Klienti pro stahování](/cs/settings/download-clients/).
 

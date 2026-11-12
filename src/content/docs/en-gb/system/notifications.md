@@ -33,7 +33,7 @@ A notification can come from a background task, a download or a conversion, or f
 
 ## Results at the control
 
-Actions on Library, Book Detail, Calendar, Authors, Series and the cover actions show their result as a short line at the control you used. A plain success line clears itself after a couple of seconds. A failure or a warning stays until your next action on that control. Failures are also recorded in the bell, so you can still find them after the line is gone.
+Actions on Library, Book Detail, Calendar, Authors, Series and the cover actions show their result as a short line at the control you used. A plain success line clears itself after a couple of seconds. A failure or a warning stays until your next action on that control. Failures are also recorded in the Notification Center, so you can still find them after the line is gone.
 
 A book, author or series that is saved but whose catalog fill does not start records the warning "Catalog fill not started". An add-all where some books fail records "Some books were not added" with the reasons.
 
@@ -43,4 +43,4 @@ Old notifications are removed by the daily log cleanup, after **30 days** by def
 
 ## How it differs from the Activity Log
 
-Notifications are what you get told, and you can clear them. The [Activity Log](/en-gb/system/activity-log/) is the permanent record of what happened, and clearing the bell does not touch it.
+Notifications are what you get told, and you can clear them. The [Activity Log](/en-gb/system/activity-log/) is the permanent record of what happened, and clearing the Notification Center does not touch it.

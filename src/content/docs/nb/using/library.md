@@ -51,4 +51,4 @@ Bøker, forfattere og serier kan ha tagger. Tagger styrer indekserere, varsler, 
 
 ## Utvalg
 
-Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. På telefon, se [Bruk på telefon](/nb/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletting av bøker kjører som en oppgave, og resultatet, med hvor mange som faktisk ble slettet, registreres i [varselklokken](/nb/system/notifications/).
+Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. På telefon, se [Bruk på telefon](/nb/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletting av bøker kjører som en oppgave, og resultatet, med hvor mange som faktisk ble slettet, registreres i [Varsler](/nb/system/notifications/). I en Library Import-økt viser en avvist eller mislykket fjerning av en mappe årsaken som en linje på siden og registreres også i [Varsler](/nb/system/notifications/).

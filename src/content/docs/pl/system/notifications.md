@@ -33,7 +33,7 @@ Powiadomienie może pochodzić z zadania w tle, pobierania lub konwersji albo z 
 
 ## Wyniki przy kontrolce
 
-Akcje na Library, Book Detail, Calendar, Authors i Series oraz akcje okładek pokazują wynik jako krótką linię przy użytej kontrolce. Zwykła linia sukcesu znika sama po kilku sekundach. Błąd lub ostrzeżenie zostaje do twojej następnej akcji na tej kontrolce. Błędy są też zapisywane w dzwonku, więc znajdziesz je, gdy linia zniknie.
+Akcje na Library, Book Detail, Calendar, Authors i Series oraz akcje okładek pokazują wynik jako krótką linię przy użytej kontrolce. Zwykła linia sukcesu znika sama po kilku sekundach. Błąd lub ostrzeżenie zostaje do twojej następnej akcji na tej kontrolce. Błędy są też zapisywane w Powiadomieniach, więc znajdziesz je, gdy linia zniknie.
 
 Książka, autor lub seria, które zostały zapisane, ale ich catalog fill się nie uruchomił, zapisują ostrzeżenie "Catalog fill not started". Add all, w którym część książek zawiodła, zapisuje "Some books were not added" wraz z powodami.
 
@@ -43,4 +43,4 @@ Stare powiadomienia usuwa codzienne czyszczenie logów, domyślnie po **30 dniac
 
 ## Czym różni się od Activity Log
 
-Powiadomienia to to, co ci się mówi, i możesz je wyczyścić. [Activity Log](/pl/system/activity-log/) to stały zapis tego, co się stało, a czyszczenie dzwonka go nie dotyka.
+Powiadomienia to to, co ci się mówi, i możesz je wyczyścić. [Activity Log](/pl/system/activity-log/) to stały zapis tego, co się stało, a czyszczenie Powiadomień go nie dotyka.

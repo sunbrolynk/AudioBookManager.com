@@ -5,7 +5,7 @@ description: 队列、历史和黑名单。
 
 ## 队列
 
-你的下载客户端正在处理的东西。每一行的操作包括 **Grab now**、**Import Now**、**Manual Import** 和 **Retry Now**；当下载完成但所在路径 ABM 看不到时，还会有 **Configure remote path mapping**。
+你的下载客户端正在处理的东西。每一行的操作包括 **Grab now**、**Import Now**、**Manual Import** 和 **Retry Now**；当下载完成但所在路径 ABM 看不到时，还会有 **Configure remote path mapping**。在 Manual Import 窗口里，扫描、暂存或导入失败时，会在窗口中以一行显示原因。
 
 从队列里删除一行时，遵循下载客户端设置里的 **Queue Page Remove Action**：只从 ABM 里移除、从客户端删除但保留文件，或者从客户端删除并删掉文件。见 [下载客户端](/zh-cn/settings/download-clients/)。
 

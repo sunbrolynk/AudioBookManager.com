@@ -66,6 +66,8 @@ Delete refuses:
 - a symlink
 - a folder that is, sits inside, or contains a library book's folder
 
+An import that finishes with some books failed is recorded in the [Notification Center](/system/notifications/) as a warning, "Import finished with problems". An import where nothing could be imported is recorded as a failed task. The same applies to a manual import from the Queue.
+
 It also refuses while any import is running, and an import can't start while folders are being deleted. A subfolder ABM can't read is never guessed at: the row fails, naming the folder, and nothing is removed. A row also fails if any of its files are still there afterwards. Deleting leaves every other book's folder alone. A row for a single file removes that file and the files that share its name exactly, so `Book.mp3` doesn't take `Book.part2.mp3` with it.
 
 A folder with no audio is deleted the same way as any other: tick it and choose Delete.

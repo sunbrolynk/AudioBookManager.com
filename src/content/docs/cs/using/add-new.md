@@ -22,7 +22,7 @@ Vyhledávání má režimy Title, Author, Series, Books by author, Books in seri
 
 Vybíráš taky kořenovou složku, profil kvality a jestli se mají přidávat i knihy, které se objeví později. U série je to ve výchozím stavu zapnuté a u autora vypnuté. Autor nebo série, které už v knihovně máš, ukazují "In Library" s akcí **Add missing books**.
 
-Přidání běží jako úloha na pozadí s oznámením o průběhu. Pokud se kniha, autor nebo série uloží, ale následný catalog fill se nespustí, zaznamená se varování do [zvonku oznámení](/cs/system/notifications/). Add all dělá totéž, když některé knihy selžou, s důvody.
+Přidání běží jako úloha na pozadí s oznámením o průběhu. Pokud se kniha, autor nebo série uloží, ale následný catalog fill se nespustí, zaznamená se varování do [Oznámení](/cs/system/notifications/). Add all dělá totéž, když některé knihy selžou, s důvody.
 
 ## Když hledání nic nevrátí
 

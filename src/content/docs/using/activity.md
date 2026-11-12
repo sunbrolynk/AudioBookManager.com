@@ -7,7 +7,7 @@ description: The queue, history and blocklist.
 
 What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see.
 
-**Check for Imports** in the toolbar checks every completed download for something to import, or only the selected rows when some are selected. A row's **Import Now** imports just that row, and the result says how many of the ones you picked were not ready. A failed import, remove, retry or grab shows a toast with the server's reason.
+**Check for Imports** in the toolbar checks every completed download for something to import, or only the selected rows when some are selected. A row's **Import Now** imports just that row, and the result says how many of the ones you picked were not ready. A failed remove, retry or grab shows a toast with the server's reason. In the manual import window, a failed scan, stage or import shows its reason as a line in the window.
 
 While a library scan is reading a book, **Manual Import** to that book is refused because it is being scanned. Try again in a moment. **Check for Imports** and the automatic import leave that download for the next pass and don't count it as a failure.
 

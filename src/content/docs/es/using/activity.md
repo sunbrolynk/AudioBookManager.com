@@ -5,7 +5,7 @@ description: La cola, el historial y la lista de bloqueo.
 
 ## Cola (Queue)
 
-Lo que tienen entre manos tus clientes de descarga. Las acciones de fila incluyen **Grab now**, **Import Now**, **Manual Import** y **Retry Now**, y **Configure remote path mapping** cuando una descarga terminada está en una ruta que ABM no ve.
+Lo que tienen entre manos tus clientes de descarga. Las acciones de fila incluyen **Grab now**, **Import Now**, **Manual Import** y **Retry Now**, y **Configure remote path mapping** cuando una descarga terminada está en una ruta que ABM no ve. En la ventana de Manual Import, un escaneo, una preparación o una importación fallidos muestran el motivo como una línea en la ventana.
 
 Quitar una fila de la cola sigue lo que diga **Queue Page Remove Action** en los ajustes del cliente de descarga: descartarla solo en ABM, quitarla del cliente y conservar los archivos, o quitarla del cliente y borrar los archivos. Consulta [Clientes de descarga](/es/settings/download-clients/).
 

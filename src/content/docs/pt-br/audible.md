@@ -15,7 +15,7 @@ Se um login parar de funcionar, a conta avisa que precisa entrar de novo, nas co
 
 A sincronização atualiza a biblioteca de cada conta a partir da Audible. A página de configurações da Audible mostra o progresso e o resultado, e quando algo falha ela mostra o erro real. Ela também roda num agendamento.
 
-Toda recusa na página Audible Library (downloads, adição em massa, adicionar e baixar, sync) mostra o motivo como uma linha na página e também é registrada no [sino de notificações](/pt-br/system/notifications/). Um livro adicionado pelo diálogo também é registrado lá, porque o diálogo fecha.
+Toda recusa na página Audible Library (downloads, adição em massa, adicionar e baixar, sync) mostra o motivo como uma linha na página e também é registrada em [Notificações](/pt-br/system/notifications/). Um livro adicionado pelo diálogo também é registrado lá, porque o diálogo fecha.
 
 A página **Audible Library** lista tudo o que foi sincronizado. Filtre por All, Not in Library, Downloaded, Wanted ou Downloadable Only.
 

@@ -13,6 +13,8 @@ Library Import scans a folder of audiobooks, matches each folder to metadata, an
 
 Every option is an optional override of a default in Media Management.
 
+An import that finishes with some books failed is recorded in the [Notification Center](/en-ca/system/notifications/) as a warning, "Import finished with problems". An import where nothing could be imported is recorded as a failed task. The same applies to a manual import from the Queue.
+
 ## Reading the list
 
 - The summary line shows how many folders were found and how many are ready. The header bar has **Sort** (Folder name, Status, Title, Author, Series, Files) and **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Each filter shows its count, and the counts match the summary line. A match you have confirmed is called Ready. Sort and filter are remembered on this device. They are not kept in the page address, so a link with `?sort=` or `?filter=` in it doesn't carry them over.

@@ -13,6 +13,8 @@ Library Import는 오디오북 폴더를 스캔하고, 폴더마다 메타데이
 
 모든 옵션은 Media Management 기본값을 선택적으로 덮어쓰는 거예요. 그냥 스캔하고 추가하는 데는 클릭 두 번이면 충분해요.
 
+일부 책이 실패한 채 끝난 가져오기는 "Import finished with problems"라는 경고로 [알림](/ko/system/notifications/)에 기록돼요. 아무것도 가져오지 못한 가져오기는 실패한 작업으로 기록돼요. Queue에서 한 수동 가져오기도 마찬가지예요.
+
 ## 목록 읽는 법
 
 - 요약에 찾은 폴더 수와 매칭된 수가 나와요. All, Matched, Needs attention, Unmatched, In library, Failed lookup으로 목록을 거를 수 있어요. 필터는 페이지 주소에 남아요.

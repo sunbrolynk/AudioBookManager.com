@@ -33,7 +33,7 @@ description: 页眉里的铃铛和它下面的面板。
 
 ## 控件处的结果
 
-Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面操作，会在你用的控件旁以简短的一行显示结果。单纯的成功提示几秒后会自己消失。失败或警告会保留到你在该控件上的下一次操作。失败也会记录在铃铛里，所以提示消失后你仍能找到。
+Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面操作，会在你用的控件旁以简短的一行显示结果。单纯的成功提示几秒后会自己消失。失败或警告会保留到你在该控件上的下一次操作。失败也会记录在通知里，所以提示消失后你仍能找到。
 
 已保存但 catalog fill 没有启动的书、作者或系列，会记录警告 "Catalog fill not started"。部分书失败的 Add all 会记录 "Some books were not added"，并附上原因。
 
@@ -43,4 +43,4 @@ Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面�
 
 ## 与活动日志的区别
 
-通知是告诉你的事，你可以清空它们。[活动日志](/zh-cn/system/activity-log/)是发生过的事的永久记录，清空铃铛不会影响它。
+通知是告诉你的事，你可以清空它们。[活动日志](/zh-cn/system/activity-log/)是发生过的事的永久记录，清空通知不会影响它。

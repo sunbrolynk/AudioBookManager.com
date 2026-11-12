@@ -13,6 +13,8 @@ O Library Import varre uma pasta de audiolivros, associa cada pasta a metadados 
 
 Toda opção é uma substituição opcional de um padrão definido em Media Management. Uma varredura simples seguida de adicionar nunca precisa de mais de dois cliques.
 
+Uma importação que termina com alguns livros com falha é registrada em [Notificações](/pt-br/system/notifications/) como um aviso, "Import finished with problems". Uma importação em que nada pôde ser importado é registrada como uma tarefa com falha. O mesmo vale para uma importação manual feita pela Queue.
+
 ## Lendo a lista
 
 - O resumo mostra quantas pastas foram encontradas e quantas tiveram correspondência. Filtre a lista por All, Matched, Needs attention, Unmatched, In library ou Failed lookup. O filtro fica guardado no endereço da página.

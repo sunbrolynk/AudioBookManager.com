@@ -13,6 +13,8 @@ Library Import scant een map met luisterboeken, koppelt elke map aan metadata en
 
 Elke optie is een optionele afwijking van een standaard in Media Management. Gewoon scannen en toevoegen kost nooit meer dan twee klikken.
 
+Een import die eindigt met enkele mislukte boeken wordt vastgelegd in [Meldingen](/nl/system/notifications/) als waarschuwing, "Import finished with problems". Een import waarbij niets kon worden geïmporteerd, wordt vastgelegd als mislukte taak. Hetzelfde geldt voor een handmatige import vanuit de Queue.
+
 ## De lijst lezen
 
 - De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er gematcht zijn. Filter de lijst op All, Matched, Needs attention, Unmatched, In library of Failed lookup. Het filter blijft bewaard in het paginaadres.

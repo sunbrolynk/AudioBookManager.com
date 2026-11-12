@@ -13,6 +13,8 @@ Library Import skanner en mappe med lydbøker, finner metadata som passer til hv
 
 Hvert valg er en valgfri overstyring av en standard i Media Management. En vanlig skanning og så legg til trenger aldri mer enn to klikk.
 
+En import som slutter med noen bøker som feilet, registreres i [Varsler](/nb/system/notifications/) som en advarsel, "Import finished with problems". En import der ingenting kunne importeres, registreres som en mislykket oppgave. Det samme gjelder en manuell import fra Queue.
+
 ## Lese lista
 
 - Sammendraget viser hvor mange mapper som ble funnet, og hvor mange som fikk treff. Filtrer lista på All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filteret blir lagret i adressen til siden.

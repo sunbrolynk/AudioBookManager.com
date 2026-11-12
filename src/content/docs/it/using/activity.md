@@ -5,7 +5,7 @@ description: La coda, la cronologia e la blocklist.
 
 ## Coda (Queue)
 
-Quello su cui stanno lavorando i tuoi client di download. Tra le azioni di riga ci sono **Grab now**, **Import Now**, **Manual Import** e **Retry Now**, e **Configure remote path mapping** quando un download finito sta in un percorso che ABM non vede.
+Quello su cui stanno lavorando i tuoi client di download. Tra le azioni di riga ci sono **Grab now**, **Import Now**, **Manual Import** e **Retry Now**, e **Configure remote path mapping** quando un download finito sta in un percorso che ABM non vede. Nella finestra Manual Import, una scansione, una preparazione o un'importazione fallita mostra il motivo come riga nella finestra.
 
 Rimuovere una riga dalla coda segue **Queue Page Remove Action** nelle impostazioni del client di download: toglierla solo da ABM, rimuoverla dal client tenendo i file, oppure rimuoverla dal client eliminando i file. Vedi [Client di download](/it/settings/download-clients/).
 

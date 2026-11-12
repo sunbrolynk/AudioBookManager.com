@@ -5,7 +5,7 @@ description: La file d'attente, l'historique et la liste de blocage.
 
 ## File d'attente (Queue)
 
-Ce sur quoi tes clients de téléchargement travaillent. Les actions par ligne comprennent **Grab now**, **Import Now**, **Manual Import** et **Retry Now**, ainsi que **Configure remote path mapping** quand un téléchargement terminé se trouve dans un chemin qu'ABM ne voit pas.
+Ce sur quoi tes clients de téléchargement travaillent. Les actions par ligne comprennent **Grab now**, **Import Now**, **Manual Import** et **Retry Now**, ainsi que **Configure remote path mapping** quand un téléchargement terminé se trouve dans un chemin qu'ABM ne voit pas. Dans la fenêtre Manual Import, un scan, une préparation ou un import qui échoue affiche son motif sous forme de ligne dans la fenêtre.
 
 Retirer une ligne de la file suit le réglage **Queue Page Remove Action** du client de téléchargement : l'ignorer dans ABM seulement, la retirer du client en gardant les fichiers, ou la retirer du client en supprimant les fichiers. Voir [Clients de téléchargement](/fr/settings/download-clients/).
 

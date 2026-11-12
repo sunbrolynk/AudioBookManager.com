@@ -33,7 +33,7 @@ Et varsel kan komme fra en bakgrunnsoppgave, en nedlasting eller en konvertering
 
 ## Resultater ved kontrollen
 
-Handlinger på Library, Book Detail, Calendar, Authors og Series og cover-handlingene viser resultatet som en kort linje ved kontrollen du brukte. En vanlig suksesslinje forsvinner av seg selv etter et par sekunder. En feil eller en advarsel blir stående til din neste handling på den kontrollen. Feil registreres også i klokken, så du finner dem etter at linjen er borte.
+Handlinger på Library, Book Detail, Calendar, Authors og Series og cover-handlingene viser resultatet som en kort linje ved kontrollen du brukte. En vanlig suksesslinje forsvinner av seg selv etter et par sekunder. En feil eller en advarsel blir stående til din neste handling på den kontrollen. Feil registreres også i Varsler, så du finner dem etter at linjen er borte.
 
 En bok, forfatter eller serie som lagres, men der catalog fill ikke starter, registrerer advarselen "Catalog fill not started". En add all der noen bøker mislykkes, registrerer "Some books were not added" med årsakene.
 
@@ -43,4 +43,4 @@ Gamle varsler fjernes av den daglige logg-oppryddingen, som standard etter **30 
 
 ## Forskjellen fra aktivitetsloggen
 
-Varsler er det du får beskjed om, og du kan tømme dem. [Aktivitetsloggen](/nb/system/activity-log/) er den permanente oversikten over hva som har skjedd, og å tømme klokken rører den ikke.
+Varsler er det du får beskjed om, og du kan tømme dem. [Aktivitetsloggen](/nb/system/activity-log/) er den permanente oversikten over hva som har skjedd, og å tømme Varsler rører den ikke.

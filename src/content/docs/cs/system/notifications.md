@@ -33,7 +33,7 @@ Oznámení může přijít z úlohy na pozadí, ze stahování nebo z konverze, 
 
 ## Výsledky u ovládacího prvku
 
-Akce na Library, Book Detail, Calendar, Authors a Series a akce s obálkami ukazují výsledek jako krátký řádek u prvku, který jsi použil. Prostý řádek o úspěchu zmizí sám po pár sekundách. Chyba nebo varování zůstane do tvé další akce na tom prvku. Chyby se zaznamenávají i do zvonku, takže je najdeš, i když řádek zmizí.
+Akce na Library, Book Detail, Calendar, Authors a Series a akce s obálkami ukazují výsledek jako krátký řádek u prvku, který jsi použil. Prostý řádek o úspěchu zmizí sám po pár sekundách. Chyba nebo varování zůstane do tvé další akce na tom prvku. Chyby se zaznamenávají i do Oznámení, takže je najdeš, i když řádek zmizí.
 
 Kniha, autor nebo série, které se uloží, ale jejich catalog fill se nespustí, zaznamenají varování "Catalog fill not started". Add all, kde některé knihy selžou, zaznamená "Some books were not added" s důvody.
 
@@ -43,4 +43,4 @@ Stará oznámení odstraňuje denní úklid logů, ve výchozím stavu po **30 d
 
 ## Čím se liší od Activity Log
 
-Oznámení jsou to, co ti ABM říká, a můžeš je vyčistit. [Activity Log](/cs/system/activity-log/) je trvalý záznam toho, co se stalo, a vyčištění zvonku se ho nedotkne.
+Oznámení jsou to, co ti ABM říká, a můžeš je vyčistit. [Activity Log](/cs/system/activity-log/) je trvalý záznam toho, co se stalo, a vyčištění Oznámení se ho nedotkne.

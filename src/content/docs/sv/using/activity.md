@@ -5,7 +5,7 @@ description: Kön, historiken och blocklistan.
 
 ## Kö (Queue)
 
-Vad dina nedladdningsklienter jobbar med. Radåtgärderna är bland annat **Grab now**, **Import Now**, **Manual Import** och **Retry Now**, och **Configure remote path mapping** när en färdig nedladdning ligger på en sökväg som ABM inte kan se.
+Vad dina nedladdningsklienter jobbar med. Radåtgärderna är bland annat **Grab now**, **Import Now**, **Manual Import** och **Retry Now**, och **Configure remote path mapping** när en färdig nedladdning ligger på en sökväg som ABM inte kan se. I Manual Import-fönstret visar en misslyckad skanning, förberedelse eller import orsaken som en rad i fönstret.
 
 Att ta bort en rad från kön följer **Queue Page Remove Action** i nedladdningsklientens inställningar: avfärda bara i ABM, ta bort från klienten och behåll filerna, eller ta bort från klienten och radera filerna. Se [Nedladdningsklienter](/sv/settings/download-clients/).
 

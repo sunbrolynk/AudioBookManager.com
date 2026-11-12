@@ -5,7 +5,7 @@ description: De wachtrij, de geschiedenis en de blocklist.
 
 ## Wachtrij (Queue)
 
-Waar je downloadclients mee bezig zijn. Acties per rij zijn onder meer **Grab now**, **Import Now**, **Manual Import** en **Retry Now**, en **Configure remote path mapping** als een afgeronde download op een pad staat dat ABM niet kan zien.
+Waar je downloadclients mee bezig zijn. Acties per rij zijn onder meer **Grab now**, **Import Now**, **Manual Import** en **Retry Now**, en **Configure remote path mapping** als een afgeronde download op een pad staat dat ABM niet kan zien. In het Manual Import-venster toont een mislukte scan, voorbereiding of import de reden als regel in het venster.
 
 Een rij uit de wachtrij verwijderen volgt **Queue Page Remove Action** in de instellingen van de downloadclient: alleen uit ABM wegzetten, uit de client verwijderen en de bestanden houden, of uit de client verwijderen inclusief bestanden. Zie [Downloadclients](/nl/settings/download-clients/).
 

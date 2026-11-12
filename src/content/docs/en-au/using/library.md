@@ -59,4 +59,4 @@ Discover's custom filters keep a plain text box, because its catalog is filtered
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. Library actions show a result line on the page. Deleting books runs as a task. Its result, including how many it actually deleted, is recorded in the [notification bell](/en-au/system/notifications/). On a phone, see [Phone use](/en-au/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Library actions show a result line on the page. Deleting books runs as a task. Its result, including how many it actually deleted, is recorded in the [Notification Center](/en-au/system/notifications/). On a phone, see [Phone use](/en-au/phone/). On a Library Import session, a refused or failed folder removal shows its reason as a line on the page and in the [Notification Center](/en-au/system/notifications/).

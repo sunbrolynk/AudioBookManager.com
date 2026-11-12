@@ -13,6 +13,8 @@ Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen
 
 Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle. Pelkkä skannaus ja lisäys ei koskaan vaadi kahta klikkausta enempää.
 
+Tuonti, joka päättyy niin, että joitakin kirjoja ei saatu tuotua, tallennetaan [Ilmoituksiin](/fi/system/notifications/) varoituksena, "Import finished with problems". Tuonti, jossa mitään ei saatu tuotua, tallennetaan epäonnistuneena tehtävänä. Sama pätee Queuesta tehtyyn manuaaliseen tuontiin.
+
 ## Listan lukeminen
 
 - Yhteenveto näyttää, montako kansiota löytyi ja montako täsmättiin. Suodata lista valinnoilla All, Matched, Needs attention, Unmatched, In library tai Failed lookup. Suodatin säilyy sivun osoitteessa.

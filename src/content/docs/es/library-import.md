@@ -13,6 +13,8 @@ Library Import escanea una carpeta de audiolibros, empareja cada carpeta con sus
 
 Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management. Un escaneo normal seguido de añadir nunca necesita más de dos clics.
 
+Una importación que termina con algunos libros fallidos se registra en [Notificaciones](/es/system/notifications/) como un aviso, "Import finished with problems". Una importación en la que no se pudo importar nada se registra como una tarea fallida. Lo mismo vale para una importación manual desde la Queue.
+
 ## Cómo leer la lista
 
 - El resumen muestra cuántas carpetas se encontraron y cuántas coinciden. Filtra la lista por All, Matched, Needs attention, Unmatched, In library o Failed lookup. El filtro se guarda en la dirección de la página.

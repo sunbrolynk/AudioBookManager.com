@@ -5,7 +5,7 @@ description: The queue, history and blocklist.
 
 ## Queue
 
-What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see.
+What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see. In the manual import window, a failed scan, stage or import shows its reason as a line in the window.
 
 Removing a row from the queue follows **Queue Page Remove Action** in the download client's settings: dismiss from ABM only, remove from the client and keep files, or remove from the client and delete files. See [Download Clients](/en-gb/settings/download-clients/).
 

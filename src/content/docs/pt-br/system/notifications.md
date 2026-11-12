@@ -33,7 +33,7 @@ Uma notificação pode vir de uma tarefa em segundo plano, de um download ou de 
 
 ## Resultados no controle
 
-As ações em Library, Book Detail, Calendar, Authors e Series e as ações de capa mostram o resultado como uma linha curta no controle que você usou. Uma linha de sucesso simples some sozinha depois de alguns segundos. Uma falha ou um aviso fica até a sua próxima ação nesse controle. As falhas também são registradas no sino, então você ainda as encontra depois que a linha some.
+As ações em Library, Book Detail, Calendar, Authors e Series e as ações de capa mostram o resultado como uma linha curta no controle que você usou. Uma linha de sucesso simples some sozinha depois de alguns segundos. Uma falha ou um aviso fica até a sua próxima ação nesse controle. As falhas também são registradas em Notificações, então você ainda as encontra depois que a linha some.
 
 Um livro, autor ou série que é salvo mas cujo catalog fill não começa registra o aviso "Catalog fill not started". Um add all em que alguns livros falham registra "Some books were not added" com os motivos.
 
@@ -43,4 +43,4 @@ As notificações antigas são removidas pela limpeza diária de logs, por padr�
 
 ## Como difere do Log de atividades
 
-As notificações são o que te contam, e você pode limpá-las. O [Log de atividades](/pt-br/system/activity-log/) é o registro permanente do que aconteceu, e limpar o sino não mexe nele.
+As notificações são o que te contam, e você pode limpá-las. O [Log de atividades](/pt-br/system/activity-log/) é o registro permanente do que aconteceu, e limpar Notificações não mexe nele.

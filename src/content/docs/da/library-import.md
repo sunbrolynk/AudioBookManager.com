@@ -13,6 +13,8 @@ Biblioteksimport scanner en mappe med lydbøger, matcher hver mappe med metadata
 
 Hver mulighed er en valgfri tilsidesættelse af en standard i Media Management. En helt almindelig scanning og tilføjelse kræver aldrig mere end to klik.
 
+En import, der slutter med nogle bøger mislykkede, registreres i [Notifikationer](/da/system/notifications/) som en advarsel, "Import finished with problems". En import, hvor intet kunne importeres, registreres som en mislykket opgave. Det samme gælder en manuel import fra Queue.
+
 ## Sådan læser du listen
 
 - Oversigten viser, hvor mange mapper der blev fundet, og hvor mange der blev matchet. Filtrér listen efter All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filteret bliver gemt i sidens adresse.

@@ -22,7 +22,7 @@ La búsqueda tiene modos para Title, Author, Series, Books by author, Books in s
 
 También eliges la carpeta raíz, el perfil de calidad y si los libros que aparezcan más adelante se añaden también. Eso viene activado por defecto para una serie y desactivado para un autor. Un autor o una serie que ya está en tu biblioteca muestra "In Library" con una acción **Add missing books**.
 
-El añadido se ejecuta como tarea en segundo plano con un aviso de progreso. Si un libro, autor o serie se guarda pero su catalog fill posterior no arranca, se registra un aviso en la [campana de notificaciones](/es/system/notifications/). Add all hace lo mismo cuando fallan algunos libros, con los motivos.
+El añadido se ejecuta como tarea en segundo plano con un aviso de progreso. Si un libro, autor o serie se guarda pero su catalog fill posterior no arranca, se registra un aviso en [Notificaciones](/es/system/notifications/). Add all hace lo mismo cuando fallan algunos libros, con los motivos.
 
 ## Si la búsqueda no devuelve nada
 

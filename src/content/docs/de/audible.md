@@ -15,7 +15,7 @@ Wenn eine Anmeldung nicht mehr funktioniert, zeigt das Konto in den Einstellunge
 
 Der Sync aktualisiert die Bibliothek jedes Kontos von Audible. Die Audible-Einstellungsseite zeigt Fortschritt und Ergebnis an und meldet einen Fehlschlag mit dem echten Fehler. Er läuft außerdem nach Zeitplan.
 
-Jede Ablehnung auf der Seite Audible Library (Downloads, Bulk-Hinzufügen, Hinzufügen und Herunterladen, Sync) zeigt den Grund als Zeile auf der Seite und wird auch in der [Benachrichtigungsglocke](/de/system/notifications/) aufgezeichnet. Ein Buch, das du aus dem Dialog hinzufügst, wird dort ebenfalls aufgezeichnet, weil sich der Dialog schließt.
+Jede Ablehnung auf der Seite Audible Library (Downloads, Bulk-Hinzufügen, Hinzufügen und Herunterladen, Sync) zeigt den Grund als Zeile auf der Seite und wird auch in den [Benachrichtigungen](/de/system/notifications/) aufgezeichnet. Ein Buch, das du aus dem Dialog hinzufügst, wird dort ebenfalls aufgezeichnet, weil sich der Dialog schließt.
 
 Die Seite **Audible Library** listet alles auf, was synchronisiert wurde. Du kannst nach All, Not in Library, Downloaded, Wanted oder Downloadable Only filtern.
 

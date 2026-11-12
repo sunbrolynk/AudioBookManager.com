@@ -51,4 +51,4 @@ Libri, autori e serie possono avere tag. I tag guidano indexer, notifiche, liste
 
 ## Selezione
 
-Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Per il telefono, vedi [Usarlo dal telefono](/it/phone/). Le azioni di Library mostrano un risultato come riga nella pagina. L'eliminazione di libri gira come task e il suo risultato, con quanti ne ha eliminati davvero, viene registrato nella [campanella delle notifiche](/it/system/notifications/).
+Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Per il telefono, vedi [Usarlo dal telefono](/it/phone/). Le azioni di Library mostrano un risultato come riga nella pagina. L'eliminazione di libri gira come task e il suo risultato, con quanti ne ha eliminati davvero, viene registrato nelle [Notifiche](/it/system/notifications/). In una sessione di Library Import, la rimozione di una cartella rifiutata o fallita mostra il motivo come riga nella pagina e viene registrata anche nelle [Notifiche](/it/system/notifications/).

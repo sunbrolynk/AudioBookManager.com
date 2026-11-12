@@ -33,7 +33,7 @@ description: 標頭裡的鈴鐺和它下面的面板。
 
 ## 控制項處的結果
 
-Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面操作，會在你用的控制項旁以簡短的一行顯示結果。單純的成功提示幾秒後會自己消失。失敗或警告會保留到你在該控制項上的下一次操作。失敗也會記錄在鈴鐺裡，所以提示消失後你仍能找到。
+Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面操作，會在你用的控制項旁以簡短的一行顯示結果。單純的成功提示幾秒後會自己消失。失敗或警告會保留到你在該控制項上的下一次操作。失敗也會記錄在通知裡，所以提示消失後你仍能找到。
 
 已儲存但 catalog fill 沒有啟動的書、作者或系列，會記錄警告 "Catalog fill not started"。部分書失敗的 Add all 會記錄 "Some books were not added"，並附上原因。
 
@@ -43,4 +43,4 @@ Library、Book Detail、Calendar、Authors 和 Series 上的操作以及封面�
 
 ## 與活動記錄的差別
 
-通知是告訴你的事，你可以清空它們。[活動記錄](/zh-tw/system/activity-log/)是發生過的事的永久紀錄，清空鈴鐺不會影響它。
+通知是告訴你的事，你可以清空它們。[活動記錄](/zh-tw/system/activity-log/)是發生過的事的永久紀錄，清空通知不會影響它。

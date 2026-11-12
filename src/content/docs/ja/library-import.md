@@ -13,6 +13,8 @@ Library Import はオーディオブックのフォルダをスキャンし、�
 
 どのオプションも、Media Management にあるデフォルトを必要なときだけ上書きするものです。普通にスキャンして追加するだけなら、2クリック以上かかることはありません。
 
+一部の本が失敗した状態で終わったインポートは、警告「Import finished with problems」として[通知](/ja/system/notifications/)に記録されます。何もインポートできなかったインポートは、失敗したタスクとして記録されます。Queue からの手動インポートも同じです。
+
 ## 一覧の読み方
 
 - サマリーには、見つかったフォルダの数とマッチした数が表示されます。一覧は All、Matched、Needs attention、Unmatched、In library、Failed lookup で絞り込めます。絞り込みはページのアドレスに保存されます。

@@ -51,4 +51,4 @@ Bücher, Autoren und Serien können Tags tragen. Tags steuern Indexer, Benachric
 
 ## Auswahl
 
-Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Fürs Handy siehe [Nutzung am Handy](/de/phone/). Ergebnisse von Library-Aktionen erscheinen als Zeile auf der Seite. Das Löschen von Büchern läuft als Aufgabe, ihr Ergebnis samt der Zahl tatsächlich gelöschter Bücher steht in der [Benachrichtigungsglocke](/de/system/notifications/).
+Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Fürs Handy siehe [Nutzung am Handy](/de/phone/). Ergebnisse von Library-Aktionen erscheinen als Zeile auf der Seite. Das Löschen von Büchern läuft als Aufgabe, ihr Ergebnis samt der Zahl tatsächlich gelöschter Bücher steht in den [Benachrichtigungen](/de/system/notifications/). Bei einer Library-Import-Sitzung zeigt eine abgelehnte oder fehlgeschlagene Ordnerentfernung den Grund als Zeile auf der Seite und wird auch in den [Benachrichtigungen](/de/system/notifications/) aufgezeichnet.

@@ -13,6 +13,8 @@ Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do met
 
 Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management. Zwykłe skanowanie i dodanie nigdy nie potrzebuje więcej niż dwóch kliknięć.
 
+Import, który kończy się z niektórymi książkami nieudanymi, jest zapisywany w [Powiadomieniach](/pl/system/notifications/) jako ostrzeżenie „Import finished with problems”. Import, w którym nic nie udało się zaimportować, jest zapisywany jako nieudane zadanie. To samo dotyczy ręcznego importu z Queue.
+
 ## Jak czytać listę
 
 - Podsumowanie pokazuje, ile folderów znaleziono i ile się dopasowało. Listę możesz filtrować: All, Matched, Needs attention, Unmatched, In library albo Failed lookup. Filtr jest zapisywany w adresie strony.

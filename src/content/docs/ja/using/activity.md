@@ -5,7 +5,7 @@ description: キュー、履歴、ブロックリスト。
 
 ## キュー
 
-ダウンロードクライアントが今処理しているものです。行のアクションには **Grab now**、**Import Now**、**Manual Import**、**Retry Now** があり、完了したダウンロードが ABM から見えないパスにある場合は **Configure remote path mapping** も出ます。
+ダウンロードクライアントが今処理しているものです。行のアクションには **Grab now**、**Import Now**、**Manual Import**、**Retry Now** があり、完了したダウンロードが ABM から見えないパスにある場合は **Configure remote path mapping** も出ます。Manual Import のウィンドウでは、スキャン、ステージ、インポートが失敗すると、理由がウィンドウ内の 1 行で表示されます。
 
 キューから行を削除したときの動きは、ダウンロードクライアントの設定の **Queue Page Remove Action** に従います。ABM から消すだけ、クライアントから削除してファイルは残す、クライアントから削除してファイルも消す、のどれかです。[ダウンロードクライアント](/ja/settings/download-clients/)を見てください。
 

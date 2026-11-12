@@ -51,4 +51,4 @@ Boeken, auteurs en series kunnen tags hebben. Tags sturen indexers, meldingen, i
 
 ## Selecteren
 
-Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Voor de telefoon, zie [Op je telefoon](/nl/phone/). Acties op Library tonen een resultaatregel op de pagina. Boeken verwijderen draait als taak en het resultaat, met hoeveel er echt zijn verwijderd, wordt vastgelegd in de [meldingenbel](/nl/system/notifications/).
+Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Voor de telefoon, zie [Op je telefoon](/nl/phone/). Acties op Library tonen een resultaatregel op de pagina. Boeken verwijderen draait als taak en het resultaat, met hoeveel er echt zijn verwijderd, wordt vastgelegd in [Meldingen](/nl/system/notifications/). In een Library Import-sessie toont een geweigerde of mislukte mapverwijdering de reden als regel op de pagina en wordt die ook vastgelegd in [Meldingen](/nl/system/notifications/).

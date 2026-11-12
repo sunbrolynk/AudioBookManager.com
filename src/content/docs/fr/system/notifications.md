@@ -33,7 +33,7 @@ Une notification peut venir d'une tâche en arrière-plan, d'un téléchargement
 
 ## Résultats sur la commande
 
-Les actions sur Library, Book Detail, Calendar, Authors et Series, ainsi que les actions de couverture, montrent leur résultat sous forme de courte ligne sur la commande utilisée. Une simple ligne de réussite s'efface toute seule au bout de quelques secondes. Un échec ou un avertissement reste jusqu'à ta prochaine action sur cette commande. Les échecs sont aussi enregistrés dans la cloche, tu peux donc les retrouver une fois la ligne disparue.
+Les actions sur Library, Book Detail, Calendar, Authors et Series, ainsi que les actions de couverture, montrent leur résultat sous forme de courte ligne sur la commande utilisée. Une simple ligne de réussite s'efface toute seule au bout de quelques secondes. Un échec ou un avertissement reste jusqu'à ta prochaine action sur cette commande. Les échecs sont aussi enregistrés dans Notifications, tu peux donc les retrouver une fois la ligne disparue.
 
 Un livre, un auteur ou une série enregistrés dont le catalog fill ne démarre pas enregistre l'avertissement « Catalog fill not started ». Un add all où certains livres échouent enregistre « Some books were not added » avec les raisons.
 
@@ -43,4 +43,4 @@ Les anciennes notifications sont supprimées par le nettoyage quotidien des jour
 
 ## Différence avec le journal d'activité
 
-Les notifications sont ce qu'on te dit, et tu peux les effacer. Le [journal d'activité](/fr/system/activity-log/) est la trace permanente de ce qui s'est passé, et vider la cloche n'y touche pas.
+Les notifications sont ce qu'on te dit, et tu peux les effacer. Le [journal d'activité](/fr/system/activity-log/) est la trace permanente de ce qui s'est passé, et vider Notifications n'y touche pas.

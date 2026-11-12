@@ -5,7 +5,7 @@ description: Køen, historikken og blokeringslisten.
 
 ## Kø (Queue)
 
-Det, dine downloadklienter arbejder på. Handlingerne på en række omfatter **Grab now**, **Import Now**, **Manual Import** og **Retry Now**, og **Configure remote path mapping**, når en færdig download ligger på en sti, ABM ikke kan se.
+Det, dine downloadklienter arbejder på. Handlingerne på en række omfatter **Grab now**, **Import Now**, **Manual Import** og **Retry Now**, og **Configure remote path mapping**, når en færdig download ligger på en sti, ABM ikke kan se. I Manual Import-vinduet viser en mislykket scanning, klargøring eller import årsagen som en linje i vinduet.
 
 Når du fjerner en række fra køen, følger det **Queue Page Remove Action** i downloadklientens indstillinger: afvis kun i ABM, fjern fra klienten og behold filerne, eller fjern fra klienten og slet filerne. Se [Downloadklienter](/da/settings/download-clients/).
 
