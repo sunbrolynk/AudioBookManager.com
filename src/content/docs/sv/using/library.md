@@ -51,4 +51,4 @@ Böcker, författare och serier kan ha taggar. Taggar styr indexerare, notiser, 
 
 ## Markering
 
-Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. På mobilen, se [Använda mobilen](/sv/phone/).
+Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. Organize visar först en förhandsvisning av varje flytt och omdöpning, se [Book Naming](/sv/settings/media-management/#book-naming). På mobilen, se [Använda mobilen](/sv/phone/).

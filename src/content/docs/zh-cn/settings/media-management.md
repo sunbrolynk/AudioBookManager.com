@@ -77,4 +77,20 @@ description: 根文件夹、导入、额外文件、回收站、扫描、升级�
 - 如果开启了回收站但它的文件夹不可用，需要用到回收站的删除操作会失败，而不是直接永久删除。
 - 硬链接只能在同一个文件系统内使用。无法链接的文件会被复制，绝不会被移动，并计入导入结果。
 
-如果你用过 Sonarr：这就是没有命名格式的 Sonarr Media Management。文件夹名由 ABM 决定。批量重命名在 Library、Series 和 Authors 里，叫 **Rename Files**。
+## Book Naming
+
+Book Naming 决定我怎样给文件和文件夹命名。它和 Media Management 的其他设置一起，用页面上唯一的 Save 保存。它有 Rename Books、Replace Illegal Characters、Colon Replacement（带自定义选项），以及 Standard Book、Author Folder、Series Folder、Standalone Folder 和 Book Folder 的格式。每个格式都有实时示例，令牌列表会显示所有可用的令牌。
+
+Library、Series 和 Authors 里也有针对所选书籍的 **Organize** 操作，单本书的页面也有。它会先打开每项更改的预览，你确认之前什么都不会移动。随后 Organize 会移动并重命名：把每本书的文件夹移到命名设置指定的位置，并重命名它的文件。它作为任务运行，你可以查看进度、取消，重启后还能从停下的地方继续。同一时间只会运行一个 Organize。没有撤销，所以请仔细看预览。批量重命名仍然在 Library、Series 和 Authors 里，叫 **Rename Files**。
+
+预览只列出会发生变化的书。勾选 **Show all selected books** 可以看到其余的书。它分页加载，所以选得多时用 **Load more** 继续往下看。预览标题会统计有多少本会变化、多少本会被跳过。
+
+在文件夹不在命名设置所指位置的书的页面上，会有提示，显示它将移到的文件夹，并带有 Organize 按钮。
+
+如果一本书的新文件夹会位于它当前所在的文件夹里面，Organize 会在那里建子文件夹，只把这本书自己的文件移进去：音频，加上我为它保存的封面、章节和其他附属文件。文件夹里的其他内容留在原处。预览会显示“Moves into a subfolder”并列出留下的内容，结果对话框会列出原地保留的文件。如果移动中途失败，已移动的文件会被放回去。从编辑对话框把一本书的文件夹移到它自己的子文件夹里，也是同样的做法。
+
+Library Import 遵循同样的命名设置，包括添加已经位于根文件夹里的书，或把文件移进我已有的书时。Rename Books 关闭时，每个文件保留它原来的名字。如果某个文件的名字会与同批的另一个文件，或书文件夹里已有的文件冲突（不区分大小写），就改用格式生成的名字，导入会记下哪些文件这样处理了。Rename Books 开启时，名字会相同的文件按位置编号，所以 Manual Import 不会漏掉任何一个。
+
+默认布局是 `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`。单本书没有系列文件夹，也没有卷号：`Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`。没有位置的系列书同样以年份开头。未知的年份会被省略，绝不会写成 `(Unknown)`。
+
+如果你用过 Sonarr：这就是带命名格式的 Sonarr Media Management。

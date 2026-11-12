@@ -51,4 +51,4 @@ Les livres, les auteurs et les séries peuvent porter des tags. Les tags oriente
 
 ## Sélection
 
-Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Sur téléphone, voir [Sur téléphone](/fr/phone/).
+Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Organize montre d'abord un aperçu de chaque déplacement et renommage, voir [Book Naming](/fr/settings/media-management/#book-naming). Sur téléphone, voir [Sur téléphone](/fr/phone/).

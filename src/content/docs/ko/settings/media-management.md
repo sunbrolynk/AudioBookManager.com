@@ -77,4 +77,20 @@ description: 루트 폴더, 가져오기, 추가 파일, 휴지통, 스캔, 업�
 - 휴지통을 켰는데 그 폴더를 쓸 수 없으면, 휴지통이 필요한 삭제는 영구 삭제하는 대신 실패해요.
 - 하드링크는 같은 파일 시스템 안에서만 돼요. 링크할 수 없는 파일은 복사하고(절대 이동하지 않아요), 가져오기 결과에 그 수가 나와요.
 
-Sonarr를 써 봤다면: 이름 형식 지정이 빠진 Sonarr의 Media Management예요. 폴더 이름은 ABM이 정해요. 일괄 이름 바꾸기는 Library, Series, Authors에 **Rename Files**로 있어요.
+## Book Naming
+
+Book Naming은 파일과 폴더에 이름을 붙이는 방식을 정해요. 페이지의 Save 하나로 나머지 Media Management 설정과 함께 저장돼요. Rename Books, Replace Illegal Characters, Colon Replacement(직접 지정 옵션 포함), 그리고 Standard Book, Author Folder, Series Folder, Standalone Folder, Book Folder 형식이 있어요. 각 형식은 실시간 예시를 보여 주고, 토큰 목록에는 쓸 수 있는 토큰이 전부 나와요.
+
+Library, Series, Authors에서 선택한 책에 **Organize** 작업을 쓸 수 있고, 책 페이지에도 있어요. 먼저 모든 변경의 미리보기가 열리고, 확인하기 전에는 아무것도 움직이지 않아요. 그다음 Organize가 이동하고 이름을 바꿔요. 각 책의 폴더를 이름 설정이 정한 위치로 옮기고 파일 이름을 바꿔요. 지켜보고, 취소하고, 재시작 뒤에 멈춘 곳부터 이어 갈 수 있는 작업으로 실행돼요. Organize는 한 번에 하나만 돌아요. 되돌리기는 없으니 미리보기를 잘 확인하세요. 일괄 이름 바꾸기는 그대로 Library, Series, Authors의 **Rename Files**에 있어요.
+
+미리보기에는 바뀔 책만 나와요. **Show all selected books**를 체크하면 나머지도 볼 수 있어요. 페이지 단위로 불러오니, 큰 선택에서는 **Load more**로 계속 넘기세요. 미리보기 제목에는 바뀔 책 수와 건너뛸 책 수가 나와요.
+
+폴더가 이름 설정이 정한 위치에 있지 않은 책은 책 페이지에 그렇게 표시되고, 옮겨질 폴더와 Organize 버튼이 나와요.
+
+책의 새 폴더가 지금 폴더 안에 놓이게 되면, Organize는 거기에 하위 폴더를 만들고 그 책 자신의 파일만 옮겨요. 오디오와, 제가 그 책을 위해 보관하는 표지, 챕터, 그 밖의 사이드카 파일이에요. 폴더의 나머지는 그대로 있어요. 미리보기에는 "Moves into a subfolder"라고 나오고 남는 파일이 나열되며, 결과 창에는 제자리에 남은 파일이 나열돼요. 이동이 도중에 실패하면 이미 옮긴 파일은 되돌려져요. 편집 창에서 책 폴더를 자기 자신의 하위 폴더로 옮길 때도 똑같이 동작해요.
+
+Library Import도 같은 이름 설정을 따라요. 이미 루트 폴더에 있는 책을 추가할 때나, 이미 있는 책으로 파일을 옮길 때도 마찬가지예요. Rename Books가 꺼져 있으면 각 파일은 들어온 이름 그대로 남아요. 같은 묶음의 다른 파일이나 책 폴더에 이미 있는 파일과 이름이 겹치는 파일(대소문자 무시)은 대신 형식에서 만든 이름을 받고, 가져오기에 어떤 파일이 그랬는지 기록돼요. Rename Books가 켜져 있으면 이름이 같아질 파일은 위치 순으로 번호가 붙어서, Manual Import가 하나도 건너뛰지 않아요.
+
+기본 레이아웃은 `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`예요. 단권 책에는 시리즈 폴더도 권 번호도 없어요. `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`가 돼요. 위치가 없는 시리즈 책도 연도로 시작해요. 연도를 모르면 생략하고, `(Unknown)`이라고 쓰지 않아요.
+
+Sonarr를 써 봤다면: 이름 형식까지 들어 있는 Sonarr의 Media Management예요.

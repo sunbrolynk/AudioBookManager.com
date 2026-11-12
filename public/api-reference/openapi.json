@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.2",
+    "version": "0.21.1",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -1164,6 +1164,93 @@
                 }
               }
             }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/books/organize-preview": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Organize Preview",
+        "description": "One page of what organizing the selection would do, by keyset cursor.",
+        "operationId": "organize_preview_api_books_organize_preview_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrganizePreviewRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizePreviewResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/books/organize": {
+      "post": {
+        "tags": [
+          "Books"
+        ],
+        "summary": "Organize Books",
+        "description": "Queue the organize task for the selection.",
+        "operationId": "organize_books_api_books_organize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrganizeRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/OrganizeResponse"
+                }
+              }
+            }
+          },
+          "409": {
+            "description": "An organize task is already queued or running; `task_id` names it."
           },
           "422": {
             "description": "Validation Error",
@@ -3989,7 +4076,7 @@
           "Manual Import"
         ],
         "summary": "Execute Import To Book",
-        "description": "Queue files for background import to a single book, with an optional\ncustom `destination_filename` for multi-part files. Returns immediately\nwith a `task_id` for tracking progress.",
+        "description": "Queue files for background import to a single book. Destination names\nare computed when the task runs. Returns immediately with a `task_id`.",
         "operationId": "execute_import_to_book_api_manual_import_execute_to_book_post",
         "requestBody": {
           "content": {
@@ -4077,7 +4164,7 @@
           "Manual Import"
         ],
         "summary": "Check Import Conflicts",
-        "description": "Check whether importing files would overwrite existing files in the\ndestination folder. Returns the conflicting audio files and other files\nas separate lists.",
+        "description": "Check whether importing `source_paths` would overwrite existing files in\nthe destination folder. Returns the names the import will give each file,\nand the conflicting audio files and other files as separate lists.",
         "operationId": "check_import_conflicts_api_manual_import_check_conflicts_post",
         "requestBody": {
           "content": {
@@ -4095,9 +4182,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "additionalProperties": true,
-                  "type": "object",
-                  "title": "Response Check Import Conflicts Api Manual Import Check Conflicts Post"
+                  "$ref": "#/components/schemas/ImportConflictsResponse"
                 }
               }
             }
@@ -13841,6 +13926,144 @@
         }
       }
     },
+    "/api/settings/media-management/naming-examples": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Naming Examples",
+        "description": "Examples for the naming values as typed, saved or not. A format that can't render comes back as an error.",
+        "operationId": "get_naming_examples_api_settings_media_management_naming_examples_get",
+        "parameters": [
+          {
+            "name": "renameBooks",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Renamebooks"
+            }
+          },
+          {
+            "name": "replaceIllegalCharacters",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "title": "Replaceillegalcharacters"
+            }
+          },
+          {
+            "name": "colonReplacement",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                "delete",
+                "dash",
+                "spaceDash",
+                "spaceDashSpace",
+                "smart",
+                "custom"
+              ],
+              "type": "string",
+              "default": "smart",
+              "title": "Colonreplacement"
+            }
+          },
+          {
+            "name": "customColonReplacement",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 16,
+              "default": "",
+              "title": "Customcolonreplacement"
+            }
+          },
+          {
+            "name": "standardBookFormat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "default": "{Book Title}{ - (Part part:00)}{ - (Book Year)}{ - (Quality Title)}",
+              "title": "Standardbookformat"
+            }
+          },
+          {
+            "name": "authorFolderFormat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "default": "{Author Name}",
+              "title": "Authorfolderformat"
+            }
+          },
+          {
+            "name": "seriesFolderFormat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "default": "{Series Title}",
+              "title": "Seriesfolderformat"
+            }
+          },
+          {
+            "name": "standaloneFolderFormat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "default": "",
+              "title": "Standalonefolderformat"
+            }
+          },
+          {
+            "name": "bookFolderFormat",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "maxLength": 1024,
+              "default": "{Vol position:00 - }{Book Year - }{Book Title}{ [ASIN]}",
+              "title": "Bookfolderformat"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NamingExamples"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/settings/media-management": {
       "get": {
         "tags": [
@@ -17944,13 +18167,28 @@
         ],
         "title": "AddBlocklistRequest"
       },
+      "AllSelection": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "const": "all",
+            "title": "Scope"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scope"
+        ],
+        "title": "AllSelection"
+      },
       "ApplyAutoTagsRequest": {
         "properties": {
           "book_ids": {
             "anyOf": [
               {
                 "items": {
-                  "type": "integer"
+                  "type": "integer",
+                  "exclusiveMinimum": 0.0
                 },
                 "type": "array"
               },
@@ -18787,7 +19025,8 @@
         "properties": {
           "author_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "title": "Author Ids",
@@ -18802,7 +19041,8 @@
         "properties": {
           "author_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -19107,11 +19347,32 @@
         "title": "AuthorResponse",
         "description": "Response model for an author"
       },
+      "AuthorSelection": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "const": "author",
+            "title": "Scope"
+          },
+          "author_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Author Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scope",
+          "author_id"
+        ],
+        "title": "AuthorSelection"
+      },
       "AuthorsBulkEditRequest": {
         "properties": {
           "ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -19939,7 +20200,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "title": "Book Ids",
@@ -19954,7 +20216,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -20017,6 +20280,87 @@
         },
         "type": "object",
         "title": "BookMoveRequest"
+      },
+      "BookNaming": {
+        "properties": {
+          "expected_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Expected Path"
+          },
+          "matches": {
+            "type": "boolean",
+            "title": "Matches",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "BookNaming",
+        "description": "Where the naming settings would put a book's folder, compared with where it is."
+      },
+      "BookPlanOut": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "root": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error"
+          },
+          "folder": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FolderPlanOut"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/FilePlanOut"
+            },
+            "type": "array",
+            "title": "Files",
+            "default": []
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "title"
+        ],
+        "title": "BookPlanOut"
       },
       "BookResponse": {
         "properties": {
@@ -20482,6 +20826,16 @@
             ],
             "title": "Upgradable"
           },
+          "naming": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/BookNaming"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "audible_account_ids": {
             "anyOf": [
               {
@@ -20727,7 +21081,8 @@
         "properties": {
           "author_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -20823,7 +21178,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -20852,7 +21208,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -20926,7 +21283,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "title": "Book Ids"
@@ -21119,7 +21477,8 @@
         "properties": {
           "author_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -21147,7 +21506,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -21191,7 +21551,8 @@
         "properties": {
           "series_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -21460,7 +21821,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -21568,7 +21930,8 @@
         "properties": {
           "series_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -21597,7 +21960,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -22977,7 +23341,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "title": "Book Ids",
@@ -24584,7 +24949,6 @@
               "type": "integer"
             },
             "type": "array",
-            "maxItems": 100,
             "title": "Tags",
             "default": []
           }
@@ -24601,7 +24965,6 @@
               "type": "integer"
             },
             "type": "array",
-            "maxItems": 1000,
             "title": "Ordered Ids"
           }
         },
@@ -24652,7 +25015,6 @@
               "type": "integer"
             },
             "type": "array",
-            "maxItems": 100,
             "title": "Tags",
             "default": []
           }
@@ -26018,6 +26380,45 @@
         "type": "object",
         "title": "FilePathRequest"
       },
+      "FilePlanOut": {
+        "properties": {
+          "file_id": {
+            "type": "integer",
+            "title": "File Id"
+          },
+          "current_name": {
+            "type": "string",
+            "title": "Current Name"
+          },
+          "new_name": {
+            "type": "string",
+            "title": "New Name"
+          },
+          "needs_rename": {
+            "type": "boolean",
+            "title": "Needs Rename"
+          },
+          "blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blocked Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "file_id",
+          "current_name",
+          "new_name",
+          "needs_rename"
+        ],
+        "title": "FilePlanOut"
+      },
       "FileResponse": {
         "properties": {
           "id": {
@@ -26118,6 +26519,69 @@
         ],
         "title": "FolderMismatchRow",
         "description": "A folder name and its files' tags naming different books."
+      },
+      "FolderPlanOut": {
+        "properties": {
+          "current": {
+            "type": "string",
+            "title": "Current"
+          },
+          "target": {
+            "type": "string",
+            "title": "Target"
+          },
+          "needs_move": {
+            "type": "boolean",
+            "title": "Needs Move"
+          },
+          "blocked_reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blocked Reason"
+          },
+          "shares_with": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Shares With",
+            "default": []
+          },
+          "nested": {
+            "type": "boolean",
+            "title": "Nested",
+            "description": "The book's files move into a new subfolder of its current folder instead of the folder moving",
+            "default": false
+          },
+          "left_behind": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Left Behind",
+            "description": "Files that stay in the current folder, relative to it (first 20)",
+            "default": []
+          },
+          "left_behind_count": {
+            "type": "integer",
+            "title": "Left Behind Count",
+            "description": "How many files stay in the current folder in total",
+            "default": 0
+          }
+        },
+        "type": "object",
+        "required": [
+          "current",
+          "target",
+          "needs_move"
+        ],
+        "title": "FolderPlanOut"
       },
       "FrontendErrorReport": {
         "properties": {
@@ -26474,6 +26938,30 @@
         "title": "HostSettings",
         "description": "Host and network settings. All fields are required when saving."
       },
+      "IdsSelection": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "const": "ids",
+            "title": "Scope"
+          },
+          "book_ids": {
+            "items": {
+              "type": "integer",
+              "exclusiveMinimum": 0.0
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Book Ids"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scope",
+          "book_ids"
+        ],
+        "title": "IdsSelection"
+      },
       "ImportConflictsRequest": {
         "properties": {
           "book_id": {
@@ -26487,17 +26975,98 @@
             ],
             "title": "Book Id"
           },
-          "destination_filenames": {
+          "source_paths": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Destination Filenames",
+            "title": "Source Paths",
             "default": []
           }
         },
         "type": "object",
         "title": "ImportConflictsRequest"
+      },
+      "ImportConflictsResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "dest_folder": {
+            "type": "string",
+            "title": "Dest Folder"
+          },
+          "folder_exists": {
+            "type": "boolean",
+            "title": "Folder Exists"
+          },
+          "existing_audio_files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Existing Audio Files"
+          },
+          "existing_other_files": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Existing Other Files"
+          },
+          "audio_conflicts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Audio Conflicts"
+          },
+          "other_conflicts": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Other Conflicts"
+          },
+          "has_audio_conflicts": {
+            "type": "boolean",
+            "title": "Has Audio Conflicts"
+          },
+          "has_other_conflicts": {
+            "type": "boolean",
+            "title": "Has Other Conflicts"
+          },
+          "destination_filenames": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Destination Filenames"
+          },
+          "clashed": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Clashed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "dest_folder",
+          "folder_exists",
+          "existing_audio_files",
+          "existing_other_files",
+          "audio_conflicts",
+          "other_conflicts",
+          "has_audio_conflicts",
+          "has_other_conflicts",
+          "destination_filenames",
+          "clashed"
+        ],
+        "title": "ImportConflictsResponse"
       },
       "ImportItemKey": {
         "properties": {
@@ -28064,7 +28633,8 @@
         "properties": {
           "book_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -28683,6 +29253,65 @@
       },
       "MediaManagementSettings": {
         "properties": {
+          "renameBooks": {
+            "type": "boolean",
+            "title": "Renamebooks",
+            "default": true
+          },
+          "replaceIllegalCharacters": {
+            "type": "boolean",
+            "title": "Replaceillegalcharacters",
+            "default": true
+          },
+          "colonReplacement": {
+            "type": "string",
+            "enum": [
+              "delete",
+              "dash",
+              "spaceDash",
+              "spaceDashSpace",
+              "smart",
+              "custom"
+            ],
+            "title": "Colonreplacement",
+            "default": "smart"
+          },
+          "customColonReplacement": {
+            "type": "string",
+            "maxLength": 16,
+            "title": "Customcolonreplacement",
+            "default": ""
+          },
+          "standardBookFormat": {
+            "type": "string",
+            "maxLength": 1024,
+            "title": "Standardbookformat",
+            "default": "{Book Title}{ - (Part part:00)}{ - (Book Year)}{ - (Quality Title)}"
+          },
+          "authorFolderFormat": {
+            "type": "string",
+            "maxLength": 1024,
+            "title": "Authorfolderformat",
+            "default": "{Author Name}"
+          },
+          "seriesFolderFormat": {
+            "type": "string",
+            "maxLength": 1024,
+            "title": "Seriesfolderformat",
+            "default": "{Series Title}"
+          },
+          "standaloneFolderFormat": {
+            "type": "string",
+            "maxLength": 1024,
+            "title": "Standalonefolderformat",
+            "default": ""
+          },
+          "bookFolderFormat": {
+            "type": "string",
+            "maxLength": 1024,
+            "title": "Bookfolderformat",
+            "default": "{Vol position:00 - }{Book Year - }{Book Title}{ [ASIN]}"
+          },
           "createEmptyBookFolders": {
             "type": "boolean",
             "title": "Createemptybookfolders",
@@ -28809,59 +29438,6 @@
             "type": "integer",
             "title": "Coverbackfillworkers",
             "default": 4
-          },
-          "renameBooks": {
-            "type": "boolean",
-            "title": "Renamebooks",
-            "default": true
-          },
-          "replaceIllegalCharacters": {
-            "type": "boolean",
-            "title": "Replaceillegalcharacters",
-            "default": true
-          },
-          "colonReplacement": {
-            "type": "string",
-            "enum": [
-              "delete",
-              "dash",
-              "spaceDash",
-              "spaceDashSpace",
-              "smart",
-              "custom"
-            ],
-            "title": "Colonreplacement",
-            "default": "smart"
-          },
-          "customColonReplacement": {
-            "type": "string",
-            "title": "Customcolonreplacement",
-            "default": ""
-          },
-          "standardBookFormat": {
-            "type": "string",
-            "title": "Standardbookformat",
-            "default": "{Book Title}{ - (Part part:00)}{ - Chapter chapter:00}{ - (Book Year)}{ - (Quality Title)}"
-          },
-          "authorFolderFormat": {
-            "type": "string",
-            "title": "Authorfolderformat",
-            "default": "{Author Name}"
-          },
-          "seriesFolderFormat": {
-            "type": "string",
-            "title": "Seriesfolderformat",
-            "default": "{Series Title}"
-          },
-          "standaloneFolderFormat": {
-            "type": "string",
-            "title": "Standalonefolderformat",
-            "default": ""
-          },
-          "bookFolderFormat": {
-            "type": "string",
-            "title": "Bookfolderformat",
-            "default": "{Vol position:00 - }{Book Year - }{Book Title}{ [ASIN]}"
           }
         },
         "type": "object",
@@ -29368,6 +29944,116 @@
           "capped_at"
         ],
         "title": "MirrorPreviewResponse"
+      },
+      "NamingExamples": {
+        "properties": {
+          "singleFileExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Singlefileexample"
+          },
+          "multiFileExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Multifileexample"
+          },
+          "authorFolderExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authorfolderexample"
+          },
+          "seriesFolderExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seriesfolderexample"
+          },
+          "standaloneFolderExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Standalonefolderexample"
+          },
+          "bookFolderExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bookfolderexample"
+          },
+          "seriesBookPathExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Seriesbookpathexample"
+          },
+          "standaloneBookPathExample": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Standalonebookpathexample"
+          },
+          "errors": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Errors",
+            "default": {}
+          },
+          "colonExamples": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object",
+            "title": "Colonexamples",
+            "default": {}
+          }
+        },
+        "type": "object",
+        "title": "NamingExamples"
       },
       "NetworkSave": {
         "properties": {
@@ -30072,6 +30758,184 @@
         "type": "object",
         "title": "NotificationUpdate",
         "description": "Fields to update on a notification. All fields are optional; only those\npresent are applied."
+      },
+      "OrganizePreviewRequest": {
+        "properties": {
+          "selection": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/IdsSelection"
+              },
+              {
+                "$ref": "#/components/schemas/AllSelection"
+              },
+              {
+                "$ref": "#/components/schemas/AuthorSelection"
+              },
+              {
+                "$ref": "#/components/schemas/SeriesSelection"
+              }
+            ],
+            "title": "Selection",
+            "discriminator": {
+              "propertyName": "scope",
+              "mapping": {
+                "all": "#/components/schemas/AllSelection",
+                "author": "#/components/schemas/AuthorSelection",
+                "ids": "#/components/schemas/IdsSelection",
+                "series": "#/components/schemas/SeriesSelection"
+              }
+            }
+          },
+          "limit": {
+            "type": "integer",
+            "maximum": 500.0,
+            "minimum": 1.0,
+            "title": "Limit",
+            "default": 100
+          },
+          "cursor": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cursor"
+          },
+          "only_changes": {
+            "type": "boolean",
+            "title": "Only Changes",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "selection"
+        ],
+        "title": "OrganizePreviewRequest"
+      },
+      "OrganizePreviewResponse": {
+        "properties": {
+          "books": {
+            "items": {
+              "$ref": "#/components/schemas/BookPlanOut"
+            },
+            "type": "array",
+            "title": "Books"
+          },
+          "next_cursor": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Cursor",
+            "description": "Resume point; null only when the selection is exhausted, so with only_changes a page may be short or empty yet have a cursor."
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "needs_change": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Needs Change"
+          },
+          "blocked": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Blocked"
+          },
+          "unchanged": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unchanged"
+          },
+          "needs_change_pending": {
+            "type": "boolean",
+            "title": "Needs Change Pending",
+            "default": false
+          }
+        },
+        "type": "object",
+        "required": [
+          "books",
+          "total"
+        ],
+        "title": "OrganizePreviewResponse"
+      },
+      "OrganizeRequest": {
+        "properties": {
+          "selection": {
+            "oneOf": [
+              {
+                "$ref": "#/components/schemas/IdsSelection"
+              },
+              {
+                "$ref": "#/components/schemas/AllSelection"
+              },
+              {
+                "$ref": "#/components/schemas/AuthorSelection"
+              },
+              {
+                "$ref": "#/components/schemas/SeriesSelection"
+              }
+            ],
+            "title": "Selection",
+            "discriminator": {
+              "propertyName": "scope",
+              "mapping": {
+                "all": "#/components/schemas/AllSelection",
+                "author": "#/components/schemas/AuthorSelection",
+                "ids": "#/components/schemas/IdsSelection",
+                "series": "#/components/schemas/SeriesSelection"
+              }
+            }
+          }
+        },
+        "type": "object",
+        "required": [
+          "selection"
+        ],
+        "title": "OrganizeRequest"
+      },
+      "OrganizeResponse": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "title": "Task Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id"
+        ],
+        "title": "OrganizeResponse"
       },
       "PreferredTerm": {
         "properties": {
@@ -31256,7 +32120,8 @@
             "anyOf": [
               {
                 "items": {
-                  "type": "integer"
+                  "type": "integer",
+                  "exclusiveMinimum": 0.0
                 },
                 "type": "array"
               },
@@ -31392,7 +32257,6 @@
               "type": "integer"
             },
             "type": "array",
-            "maxItems": 100,
             "title": "Tags",
             "default": []
           }
@@ -31466,7 +32330,6 @@
               "type": "integer"
             },
             "type": "array",
-            "maxItems": 100,
             "title": "Tags",
             "default": []
           }
@@ -32884,7 +33747,8 @@
         "properties": {
           "ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -32916,7 +33780,8 @@
         "properties": {
           "series_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "title": "Series Ids",
@@ -32931,7 +33796,8 @@
         "properties": {
           "series_ids": {
             "items": {
-              "type": "integer"
+              "type": "integer",
+              "exclusiveMinimum": 0.0
             },
             "type": "array",
             "minItems": 1,
@@ -33190,6 +34056,26 @@
         ],
         "title": "SeriesResponse",
         "description": "A series. Every field is always present; unset values are null."
+      },
+      "SeriesSelection": {
+        "properties": {
+          "scope": {
+            "type": "string",
+            "const": "series",
+            "title": "Scope"
+          },
+          "series_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Series Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "scope",
+          "series_id"
+        ],
+        "title": "SeriesSelection"
       },
       "SetupRequest": {
         "properties": {

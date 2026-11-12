@@ -77,4 +77,20 @@ El enlace duro de aquí no es lo mismo que **Use Hardlinks instead of Copy**. Es
 - Si la papelera de reciclaje está activada pero su carpeta no está disponible, los borrados que la necesitan fallan en lugar de borrar para siempre.
 - Los enlaces duros solo funcionan dentro de un mismo sistema de archivos. Los archivos que no se pueden enlazar se copian, nunca se mueven, y se cuentan en el resultado de la importación.
 
-Si conoces Sonarr: esto es el Media Management de Sonarr sin formatos de nombres. Los nombres de las carpetas los elige ABM. El renombrado masivo está en Library, Series y Authors como **Rename Files**.
+## Book Naming
+
+Book Naming define cómo nombro los archivos y las carpetas. Se guarda con el único Save de la página, junto con el resto de Media Management. Tiene Rename Books, Replace Illegal Characters, Colon Replacement (con opción personalizada) y formatos para Standard Book, Author Folder, Series Folder, Standalone Folder y Book Folder. Cada formato muestra un ejemplo en vivo, y una lista de tokens muestra todos los que puedes usar.
+
+Library, Series y Authors también tienen una acción **Organize** sobre los libros seleccionados, y la página de un libro también. Primero abre una vista previa de cada cambio, y no se mueve nada hasta que lo confirmes. Después Organize mueve y renombra: mueve la carpeta de cada libro a donde la ponen los ajustes de nombres y renombra sus archivos. Funciona como una tarea que puedes seguir, cancelar y, tras un reinicio, reanudar donde se quedó. Solo se ejecuta un Organize a la vez. No hay deshacer, así que revisa bien la vista previa. El renombrado masivo sigue en Library, Series y Authors como **Rename Files**.
+
+La vista previa solo lista los libros que cambiarían. Marca **Show all selected books** para ver también el resto. Se carga por páginas, así que usa **Load more** para seguir en una selección grande. El título de la vista previa cuenta cuántos libros cambiarán y cuántos se omitirán.
+
+En la página de un libro cuya carpeta no está donde la pondrían los ajustes de nombres, se avisa, se muestra la carpeta a la que iría y hay un botón Organize.
+
+Cuando la nueva carpeta de un libro quedaría dentro de la carpeta en la que está ahora, Organize crea ahí la subcarpeta y mueve solo los archivos propios del libro: su audio, más la portada, los capítulos y otros archivos auxiliares que guardo para él. Todo lo demás de la carpeta se queda donde estaba. La vista previa dice «Moves into a subfolder» y lista lo que se queda, y el cuadro de resultado lista los archivos que se dejaron en su sitio. Si un movimiento falla a medias, los archivos ya movidos se devuelven. Mover la carpeta de un libro a una subcarpeta de sí misma desde su diálogo de edición funciona igual.
+
+Library Import sigue los mismos ajustes de nombres, también cuando añade un libro que ya está en una carpeta raíz o mueve archivos a un libro que ya tengo. Con Rename Books desactivado, cada archivo conserva el nombre con el que llegó. Un archivo cuyo nombre chocaría con otro del lote, o con uno que ya está en la carpeta del libro (sin distinguir mayúsculas), toma en su lugar el nombre del formato, y la importación anota en qué archivos lo hizo. Con Rename Books activado, los archivos que tendrían el mismo nombre se numeran por posición, así Manual Import nunca se salta ninguno.
+
+La disposición por defecto es `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Un libro suelto no tiene carpeta de serie ni volumen: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Un libro de serie sin posición también empieza por el año. Un año desconocido se omite, nunca se escribe `(Unknown)`.
+
+Si conoces Sonarr: esto es el Media Management de Sonarr, formatos de nombres incluidos.

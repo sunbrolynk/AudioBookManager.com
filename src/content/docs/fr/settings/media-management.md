@@ -77,4 +77,20 @@ Le lien physique de Library Import, ce n'est pas la même chose que **Use Hardli
 - Si la corbeille est activée mais que son dossier n'est pas disponible, les suppressions qui en ont besoin échouent au lieu de supprimer définitivement.
 - Les liens physiques ne fonctionnent qu'à l'intérieur d'un même système de fichiers. Les fichiers qui ne peuvent pas être liés sont copiés, jamais déplacés, et comptés dans le résultat de l'import.
 
-Si tu connais Sonarr : c'est le Media Management de Sonarr sans les formats de nommage. Les noms des dossiers sont choisis par ABM. Le renommage en masse se trouve dans Library, Series et Authors sous le nom **Rename Files**.
+## Book Naming
+
+Book Naming règle la façon dont je nomme les fichiers et les dossiers. Il s'enregistre avec l'unique Save de la page, comme le reste de Media Management. Il comprend Rename Books, Replace Illegal Characters, Colon Replacement (avec une option personnalisée) et des formats pour Standard Book, Author Folder, Series Folder, Standalone Folder et Book Folder. Chaque format affiche un exemple en direct, et une liste de tokens montre tous ceux que tu peux utiliser.
+
+Library, Series et Authors ont aussi une action **Organize** sur les livres sélectionnés, tout comme la page d'un livre. Elle ouvre d'abord un aperçu de chaque changement, et rien ne bouge tant que tu n'as pas confirmé. Organize déplace et renomme ensuite : il déplace le dossier de chaque livre là où les réglages de nommage le placent et renomme ses fichiers. Il tourne comme une tâche que tu peux suivre, annuler et, après un redémarrage, reprendre là où elle s'était arrêtée. Un seul Organize tourne à la fois. Il n'y a pas d'annulation possible, alors vérifie bien l'aperçu. Le renommage en masse reste dans Library, Series et Authors sous le nom **Rename Files**.
+
+L'aperçu liste uniquement les livres qui changeraient. Coche **Show all selected books** pour voir aussi les autres. Il se charge par pages : utilise **Load more** pour continuer dans une grande sélection. Le titre de l'aperçu compte combien de livres vont changer et combien seront ignorés.
+
+Sur la page d'un livre dont le dossier n'est pas là où les réglages de nommage le mettraient, un message le signale, montre le dossier où il irait et propose un bouton Organize.
+
+Quand le nouveau dossier d'un livre se trouve à l'intérieur de son dossier actuel, Organize y crée le sous-dossier et n'y déplace que les propres fichiers du livre : son audio, plus la jaquette, les chapitres et les autres fichiers annexes que je garde pour lui. Tout le reste du dossier reste où il était. L'aperçu indique « Moves into a subfolder » et liste ce qui reste, et la boîte de résultat liste les fichiers laissés sur place. Si un déplacement échoue en cours de route, les fichiers déjà déplacés sont remis en place. Déplacer le dossier d'un livre dans un sous-dossier de lui-même depuis sa fenêtre de modification fonctionne de la même façon.
+
+Library Import suit les mêmes réglages de nommage, y compris quand il ajoute un livre qui se trouve déjà dans un dossier racine ou qu'il déplace des fichiers dans un livre que j'ai déjà. Avec Rename Books désactivé, chaque fichier garde le nom avec lequel il est arrivé. Un fichier dont le nom entrerait en conflit avec un autre fichier du lot, ou avec un fichier déjà présent dans le dossier du livre (sans tenir compte de la casse), prend à la place le nom issu du format, et l'import indique pour quels fichiers il l'a fait. Avec Rename Books activé, les fichiers qui auraient le même nom sont numérotés selon leur position, si bien que Manual Import n'en ignore jamais un.
+
+La disposition par défaut est `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Un livre isolé n'a ni dossier de série ni tome : `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Un livre de série sans position commence aussi par l'année. Une année inconnue est omise, jamais écrite `(Unknown)`.
+
+Si tu connais Sonarr : c'est le Media Management de Sonarr, formats de nommage compris.

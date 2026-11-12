@@ -51,4 +51,4 @@ Knihy, autoři i série můžou mít štítky. Štítky řídí indexery, oznám
 
 ## Výběr
 
-Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Na telefonu viz [Používání na telefonu](/cs/phone/).
+Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Organize nejdřív ukáže náhled každého přesunu a přejmenování, viz [Book Naming](/cs/settings/media-management/#book-naming). Na telefonu viz [Používání na telefonu](/cs/phone/).

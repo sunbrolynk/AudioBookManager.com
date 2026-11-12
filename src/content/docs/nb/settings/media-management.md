@@ -77,4 +77,20 @@ Hardlenke er ikke det samme som **Use Hardlinks instead of Copy**. Den er for ne
 - Hvis papirkurven er slått på, men mappen ikke er tilgjengelig, feiler slettinger som trenger den, i stedet for å slette permanent.
 - Hardlenker virker bare innenfor ett filsystem. Filer som ikke kan lenkes, blir kopiert, aldri flyttet, og telles i importresultatet.
 
-Kan du Sonarr: dette er Media Management fra Sonarr uten navneformater. Mappenavn velges av ABM. Masseomdøping ligger på Library, Series og Authors som **Rename Files**.
+## Book Naming
+
+Book Naming styrer hvordan jeg navngir filer og mapper. Det lagres med sidens ene Save sammen med resten av Media Management. Det har Rename Books, Replace Illegal Characters, Colon Replacement (med et eget valg) og formater for Standard Book, Author Folder, Series Folder, Standalone Folder og Book Folder. Hvert format viser et live-eksempel, og en tokenliste viser alle tokens du kan bruke.
+
+Library, Series og Authors har også en handling **Organize** på de valgte bøkene, og det har en boks egen side også. Den åpner først en forhåndsvisning av hver endring, og ingenting flyttes før du bekrefter. Deretter flytter og døper Organize om: den flytter hver boks mappe dit navneinnstillingene vil ha den og døper om filene. Den kjører som en oppgave du kan følge, avbryte og, etter en omstart, gjenoppta der den stoppet. Bare én Organize kjører om gangen. Det finnes ingen angre, så sjekk forhåndsvisningen. Masseomdøping ligger fortsatt på Library, Series og Authors som **Rename Files**.
+
+Forhåndsvisningen viser bare bøkene som ville endret seg. Huk av **Show all selected books** for å se resten også. Den lastes i sider, så bruk **Load more** for å gå videre i et stort utvalg. Tittelen på forhåndsvisningen teller hvor mange bøker som endres og hvor mange som hoppes over.
+
+På siden til en bok hvis mappe ikke ligger der navneinnstillingene ville lagt den, står det, med mappen den ville havnet i og en Organize-knapp.
+
+Når en boks nye mappe ville ligget inni mappen den ligger i nå, lager Organize undermappen der og flytter bare bokens egne filer inn i den: lyden, pluss omslag, kapitler og andre sidefiler jeg har for den. Alt annet i mappen blir liggende. Forhåndsvisningen sier "Moves into a subfolder" og lister hva som blir, og resultatvinduet lister filene som ble liggende. Hvis en flytting feiler halvveis, legges filene som allerede er flyttet tilbake. Å flytte en boks mappe inn i en undermappe av seg selv fra redigeringsvinduet fungerer på samme måte.
+
+Library Import følger de samme navneinnstillingene, også når den legger til en bok som allerede ligger i en rotmappe eller flytter filer inn i en bok jeg allerede har. Med Rename Books av beholder hver fil navnet den kom med. En fil hvis navn ville kollidert med en annen fil i partiet, eller med en som allerede ligger i bokens mappe (store og små bokstaver ignoreres), får i stedet navnet fra formatet, og importen noterer hvilke filer den gjorde det for. Med Rename Books på nummereres filer som ville fått samme navn etter posisjon, så Manual Import aldri hopper over noen.
+
+Standardoppsettet er `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. En frittstående bok har ingen seriemappe og ingen bindnummer: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. En seriebok uten posisjon begynner også med året. Et ukjent år utelates og skrives aldri som `(Unknown)`.
+
+Kan du Sonarr: dette er Media Management fra Sonarr, med navneformater.

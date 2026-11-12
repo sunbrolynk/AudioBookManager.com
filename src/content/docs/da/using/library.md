@@ -51,4 +51,4 @@ Bøger, forfattere og serier kan have tags. Tags styrer indeksere, notifikatione
 
 ## Markering
 
-Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. På en telefon, se [Brug på telefonen](/da/phone/).
+Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. Organize viser først en forhåndsvisning af hver flytning og omdøbning, se [Book Naming](/da/settings/media-management/#book-naming). På en telefon, se [Brug på telefonen](/da/phone/).

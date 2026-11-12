@@ -77,4 +77,20 @@ Hardlink tady není totéž co **Use Hardlinks instead of Copy**. To druhé je p
 - Když je koš zapnutý, ale jeho složka není dostupná, mazání, které ho potřebuje, selže, místo aby smazalo natrvalo.
 - Hardlinky fungují jen v rámci jednoho souborového systému. Soubory, které propojit nejde, se zkopírují, nikdy nepřesunou, a započítají se do výsledku importu.
 
-Pokud znáš Sonarr: tohle je Media Management ze Sonarru bez formátů pojmenování. Názvy složek volí ABM. Hromadné přejmenování najdeš v Library, Series a Authors jako **Rename Files**.
+## Book Naming
+
+Book Naming určuje, jak pojmenovávám soubory a složky. Ukládá se jedním Save na stránce spolu se zbytkem Media Management. Má Rename Books, Replace Illegal Characters, Colon Replacement (s vlastní volbou) a formáty pro Standard Book, Author Folder, Series Folder, Standalone Folder a Book Folder. Každý formát ukazuje živý příklad a seznam tokenů ukazuje všechny tokeny, které můžeš použít.
+
+Library, Series a Authors mají také akci **Organize** pro vybrané knihy, stejně jako stránka jedné knihy. Nejdřív otevře náhled každé změny a nic se nepřesune, dokud nepotvrdíš. Organize pak přesouvá a přejmenovává: přesune složku každé knihy tam, kam ji řadí nastavení pojmenování, a přejmenuje její soubory. Běží jako úloha, kterou můžeš sledovat, zrušit a po restartu obnovit tam, kde skončila. Najednou běží jen jeden Organize. Zpět to vzít nejde, takže si náhled pořádně projdi. Hromadné přejmenování zůstává v Library, Series a Authors jako **Rename Files**.
+
+Náhled uvádí jen knihy, které by se změnily. Zaškrtni **Show all selected books**, aby se ukázaly i ostatní. Načítá se po stránkách, takže ve velkém výběru pokračuj přes **Load more**. Nadpis náhledu počítá, kolik knih se změní a kolik se jich přeskočí.
+
+Na stránce knihy, jejíž složka není tam, kam by ji dalo nastavení pojmenování, je to napsané, je tam složka, kam by přešla, a tlačítko Organize.
+
+Když by nová složka knihy ležela uvnitř složky, ve které je teď, Organize tam vytvoří podsložku a přesune do ní jen vlastní soubory knihy: audio plus obálku, kapitoly a další doprovodné soubory, které k ní držím. Všechno ostatní ve složce zůstane, kde bylo. Náhled říká "Moves into a subfolder" a vypíše, co zůstane, a okno s výsledkem vypíše soubory ponechané na místě. Pokud přesun v půlce selže, už přesunuté soubory se vrátí. Přesunout složku knihy z jejího okna úprav do podsložky sebe sama funguje stejně.
+
+Library Import se řídí stejným nastavením pojmenování, i když přidává knihu, která už leží v kořenové složce, nebo přesouvá soubory do knihy, kterou už mám. Když je Rename Books vypnuté, každý soubor si ponechá jméno, s jakým přišel. Soubor, jehož jméno by se srazilo s jiným souborem v dávce nebo s tím, který už je ve složce knihy (velikost písmen se nerozlišuje), dostane místo toho jméno z formátu a import poznamená, u kterých souborů to udělal. Když je Rename Books zapnuté, soubory, které by dostaly stejné jméno, se očíslují podle pořadí, takže Manual Import nikdy žádný nepřeskočí.
+
+Výchozí rozvržení je `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Samostatná kniha nemá složku série ani díl: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Kniha ze série bez pozice také začíná rokem. Neznámý rok se vynechá a nikdy se nezapíše jako `(Unknown)`.
+
+Pokud znáš Sonarr: tohle je Media Management ze Sonarru včetně formátů pojmenování.

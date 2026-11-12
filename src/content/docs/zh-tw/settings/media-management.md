@@ -77,4 +77,20 @@ description: 根資料夾、匯入、額外檔案、資源回收、掃描、升�
 - 如果啟用了資源回收筒、但它的資料夾無法使用，需要用到回收筒的刪除會失敗，而不是直接永久刪除。
 - 硬連結只能在同一個檔案系統裡使用。無法建立連結的檔案會改用複製，絕對不會被移動，並會算進匯入結果裡。
 
-如果你熟悉 Sonarr：這就是 Sonarr 的 Media Management，只是沒有命名格式。資料夾名稱由 ABM 決定。批次重新命名在 Library、Series 和 Authors 頁面上，叫做 **Rename Files**。
+## Book Naming
+
+Book Naming 決定我怎麼替檔案和資料夾命名。它和 Media Management 的其他設定一起，用頁面上唯一的 Save 儲存。它有 Rename Books、Replace Illegal Characters、Colon Replacement（附自訂選項），以及 Standard Book、Author Folder、Series Folder、Standalone Folder 和 Book Folder 的格式。每個格式都有即時範例，權杖清單會列出所有可用的權杖。
+
+Library、Series 和 Authors 裡也有針對所選書籍的 **Organize** 操作，單本書的頁面也有。它會先開啟每項變更的預覽，你確認之前什麼都不會移動。接著 Organize 會移動並重新命名：把每本書的資料夾移到命名設定指定的位置，並重新命名它的檔案。它以工作的形式執行，你可以追蹤進度、取消，重新啟動後還能從停下的地方繼續。同一時間只會執行一個 Organize。沒有復原，所以請仔細看預覽。批次重新命名仍然在 Library、Series 和 Authors 裡，叫做 **Rename Files**。
+
+預覽只列出會變更的書。勾選 **Show all selected books** 就能看到其餘的書。它是分頁載入的，所以選取很多時用 **Load more** 繼續往下看。預覽標題會統計有多少本會變更、多少本會被略過。
+
+在資料夾不在命名設定所指位置的書的頁面上，會有提示，顯示它將移到的資料夾，並附上 Organize 按鈕。
+
+如果一本書的新資料夾會位於它目前所在的資料夾裡面，Organize 會在那裡建立子資料夾，只把這本書自己的檔案移進去：音訊，加上我為它保存的封面、章節和其他附屬檔案。資料夾裡的其他內容留在原處。預覽會顯示「Moves into a subfolder」並列出留下的內容，結果對話框會列出原地保留的檔案。如果移動中途失敗，已移動的檔案會被放回去。從編輯對話框把一本書的資料夾移到它自己的子資料夾裡，做法也一樣。
+
+Library Import 遵循同樣的命名設定，包括加入已經位於根資料夾裡的書，或把檔案移進我已有的書時。Rename Books 關閉時，每個檔案保留原本的名稱。如果某個檔案的名稱會與同一批的另一個檔案，或書的資料夾裡已有的檔案衝突（不分大小寫），就改用格式產生的名稱，匯入會記下哪些檔案這樣處理了。Rename Books 開啟時，名稱會相同的檔案按位置編號，所以 Manual Import 不會漏掉任何一個。
+
+預設版面是 `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`。單本書沒有系列資料夾，也沒有卷號：`Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`。沒有位置的系列書同樣以年份開頭。未知的年份會被省略，絕不會寫成 `(Unknown)`。
+
+如果你熟悉 Sonarr：這就是 Sonarr 的 Media Management，連命名格式也包含在內。

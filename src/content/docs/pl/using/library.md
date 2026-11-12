@@ -51,4 +51,4 @@ Książki, autorzy i serie mogą mieć tagi. Tagi sterują indekserami, powiadom
 
 ## Zaznaczanie
 
-Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Na telefonie zobacz [Na telefonie](/pl/phone/).
+Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Organize najpierw pokazuje podgląd każdego przeniesienia i zmiany nazwy, zobacz [Book Naming](/pl/settings/media-management/#book-naming). Na telefonie zobacz [Na telefonie](/pl/phone/).

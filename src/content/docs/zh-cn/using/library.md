@@ -51,4 +51,4 @@ description: 书、作者和系列，以及 ABM 怎么追踪它们的状态。
 
 ## 多选
 
-选中多行就能一次处理多个：监控、搜索、打标签、重命名、删除。手机上的用法见 [手机使用](/zh-cn/phone/)。
+选中多行就能一次处理多个：监控、搜索、打标签、重命名、删除。Organize 会先预览每一次移动和重命名，见 [Book Naming](/zh-cn/settings/media-management/#book-naming)。手机上的用法见 [手机使用](/zh-cn/phone/)。

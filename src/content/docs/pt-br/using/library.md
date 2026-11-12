@@ -51,4 +51,4 @@ Livros, autores e séries podem ter tags. As tags orientam indexadores, notifica
 
 ## Seleção
 
-Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. No celular, veja [Uso no celular](/pt-br/phone/).
+Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. O Organize mostra antes uma prévia de cada movimentação e renomeação, veja [Book Naming](/pt-br/settings/media-management/#book-naming). No celular, veja [Uso no celular](/pt-br/phone/).

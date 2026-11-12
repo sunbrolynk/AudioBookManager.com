@@ -77,4 +77,20 @@ Kovalinkitys ei ole sama asia kuin **Use Hardlinks instead of Copy**. Se on lata
 - Jos roskakori on käytössä mutta sen kansio ei ole saatavilla, sitä tarvitsevat poistot epäonnistuvat sen sijaan, että poistaisivat pysyvästi.
 - Kovalinkit toimivat vain yhden tiedostojärjestelmän sisällä. Tiedostot, joita ei voi linkittää, kopioidaan eikä niitä koskaan siirretä, ja ne lasketaan tuonnin tulokseen.
 
-Jos tunnet Sonarrin: tämä on Sonarrin Media Management ilman nimeämismuotoja. ABM valitsee kansioiden nimet. Massauudelleennimeäminen löytyy Library-, Series- ja Authors-sivuilta nimellä **Rename Files**.
+## Book Naming
+
+Book Naming määrittää, miten nimeän tiedostot ja kansiot. Se tallentuu sivun yhdellä Save-painikkeella yhdessä muun Media Managementin kanssa. Siinä on Rename Books, Replace Illegal Characters, Colon Replacement (oma vaihtoehto mukana) sekä muodot kohdille Standard Book, Author Folder, Series Folder, Standalone Folder ja Book Folder. Jokainen muoto näyttää esimerkin livenä, ja tokenlista näyttää kaikki käytettävissä olevat tokenit.
+
+Library-, Series- ja Authors-sivuilla on myös **Organize**-toiminto valituille kirjoille, samoin kirjan omalla sivulla. Se avaa ensin esikatselun jokaisesta muutoksesta, eikä mitään siirry ennen kuin vahvistat. Organize siirtää ja nimeää sitten uudelleen: se siirtää jokaisen kirjan kansion sinne, minne nimeämisasetukset sen sijoittavat, ja nimeää tiedostot uudelleen. Se ajetaan tehtävänä, jota voit seurata, perua ja uudelleenkäynnistyksen jälkeen jatkaa siitä, mihin se jäi. Vain yksi Organize on käynnissä kerrallaan. Kumoamista ei ole, joten tarkista esikatselu. Massauudelleennimeäminen on edelleen Library-, Series- ja Authors-sivuilla nimellä **Rename Files**.
+
+Esikatselu listaa vain kirjat, jotka muuttuisivat. Valitse **Show all selected books**, niin näet myös loput. Se latautuu sivuittain, joten käytä **Load more** -toimintoa jatkaaksesi isossa valinnassa. Esikatselun otsikko laskee, montako kirjaa muuttuu ja montako ohitetaan.
+
+Kirjan sivulla kerrotaan, jos sen kansio ei ole siellä, minne nimeämisasetukset sen sijoittaisivat. Sivu näyttää kansion, johon kirja siirtyisi, ja siinä on Organize-painike.
+
+Jos kirjan uusi kansio olisi sen nykyisen kansion sisällä, Organize luo alikansion sinne ja siirtää siihen vain kirjan omat tiedostot: äänen sekä kannen, luvut ja muut sivutiedostot, joita pidän sitä varten. Kaikki muu kansiossa jää paikalleen. Esikatselu sanoo "Moves into a subfolder" ja listaa, mitä jää, ja tulosikkuna listaa paikalleen jätetyt tiedostot. Jos siirto epäonnistuu kesken, jo siirretyt tiedostot palautetaan. Kirjan kansion siirtäminen oman alikansionsa sisään muokkausikkunasta toimii samoin.
+
+Library Import noudattaa samoja nimeämisasetuksia, myös kun se lisää kirjan, joka on jo juurikansiossa, tai siirtää tiedostoja kirjaan, joka minulla jo on. Kun Rename Books on pois päältä, jokainen tiedosto säilyttää nimen, jolla se tuli. Tiedosto, jonka nimi osuisi yhteen erän toisen tiedoston tai kirjan kansiossa jo olevan kanssa (kirjainkoolla ei ole väliä), saa sen sijaan nimen muodosta, ja tuonti merkitsee, mille tiedostoille niin tehtiin. Kun Rename Books on päällä, samannimiseksi tulevat tiedostot numeroidaan sijainnin mukaan, joten Manual Import ei koskaan ohita yhtäkään.
+
+Oletusasettelu on `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Yksittäisellä kirjalla ei ole sarjakansiota eikä osanumeroa: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Myös sarjan kirja ilman paikkaa alkaa vuodella. Tuntematon vuosi jätetään pois, eikä sitä koskaan kirjoiteta muodossa `(Unknown)`.
+
+Jos tunnet Sonarrin: tämä on Sonarrin Media Management nimeämismuotoineen.

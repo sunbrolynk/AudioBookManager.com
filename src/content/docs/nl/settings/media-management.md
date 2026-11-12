@@ -77,4 +77,20 @@ Hardlinken is niet hetzelfde als **Use Hardlinks instead of Copy**. Die is voor 
 - Staat de prullenbak aan maar is de map niet beschikbaar, dan mislukken verwijderacties die hem nodig hebben, in plaats van dat er definitief verwijderd wordt.
 - Hardlinks werken alleen binnen één bestandssysteem. Bestanden die niet gelinkt kunnen worden, worden gekopieerd, nooit verplaatst, en geteld in het importresultaat.
 
-Ken je Sonarr? Dit is Media Management uit Sonarr zonder naamgevingsformaten. Mapnamen kiest ABM. Bulk hernoemen zit op Library, Series en Authors als **Rename Files**.
+## Book Naming
+
+Book Naming bepaalt hoe ik bestanden en mappen een naam geef. Het wordt bewaard met de ene Save van de pagina, samen met de rest van Media Management. Het heeft Rename Books, Replace Illegal Characters, Colon Replacement (met een eigen optie) en formaten voor Standard Book, Author Folder, Series Folder, Standalone Folder en Book Folder. Elk formaat toont een live voorbeeld, en een tokenlijst toont alle tokens die je kunt gebruiken.
+
+Library, Series en Authors hebben ook een actie **Organize** op de geselecteerde boeken, en de pagina van een boek ook. Eerst opent een voorbeeld van elke wijziging, en er verplaatst niets voordat je bevestigt. Organize verplaatst en hernoemt dan: het zet de map van elk boek waar de naamgevingsinstellingen die willen hebben en hernoemt de bestanden. Het draait als taak die je kunt volgen, annuleren en na een herstart kunt hervatten waar die gebleven was. Er draait maar één Organize tegelijk. Ongedaan maken kan niet, dus kijk het voorbeeld goed na. Bulk hernoemen blijft op Library, Series en Authors als **Rename Files**.
+
+Het voorbeeld toont alleen de boeken die zouden veranderen. Vink **Show all selected books** aan om de rest ook te zien. Het laadt in pagina's, dus gebruik **Load more** om door een grote selectie te gaan. De titel van het voorbeeld telt hoeveel boeken veranderen en hoeveel worden overgeslagen.
+
+Op de pagina van een boek waarvan de map niet staat waar de naamgevingsinstellingen die zouden zetten, staat dat vermeld, met de map waar het heen zou gaan en een Organize-knop.
+
+Als de nieuwe map van een boek binnen de map zou komen waar het nu in staat, maakt Organize daar de submap en verplaatst alleen de eigen bestanden van het boek erheen: de audio, plus de cover, hoofdstukken en andere sidecar-bestanden die ik voor het boek bewaar. Al het andere in de map blijft staan. Het voorbeeld zegt "Moves into a subfolder" en toont wat blijft staan, en het resultaatvenster toont de bestanden die zijn blijven staan. Mislukt een verplaatsing halverwege, dan worden de al verplaatste bestanden teruggezet. De map van een boek via het bewerkvenster in een submap van zichzelf verplaatsen werkt hetzelfde.
+
+Library Import volgt dezelfde naamgevingsinstellingen, ook als het een boek toevoegt dat al in een rootmap staat of bestanden verplaatst naar een boek dat ik al heb. Met Rename Books uit houdt elk bestand de naam waarmee het kwam. Een bestand waarvan de naam zou botsen met een ander bestand in de batch, of met een bestand dat al in de map van het boek staat (hoofdletters genegeerd), krijgt in plaats daarvan de naam uit het formaat, en de import noteert bij welke bestanden dat gebeurde. Met Rename Books aan worden bestanden die dezelfde naam zouden krijgen op positie genummerd, zodat Manual Import er nooit een overslaat.
+
+De standaardindeling is `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Een los boek heeft geen seriemap en geen deel: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Ook een serieboek zonder positie begint met het jaar. Een onbekend jaar wordt weggelaten en nooit als `(Unknown)` geschreven.
+
+Ken je Sonarr? Dit is Media Management uit Sonarr, inclusief naamgevingsformaten.

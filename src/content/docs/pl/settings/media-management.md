@@ -77,4 +77,20 @@ Hardlink to nie to samo co **Use Hardlinks instead of Copy**. Tamto dotyczy pobr
 - Jeśli kosz jest włączony, ale jego folder jest niedostępny, usuwanie, które go potrzebuje, kończy się błędem, zamiast kasować na stałe.
 - Hardlinki działają tylko w obrębie jednego systemu plików. Pliki, których nie da się podlinkować, są kopiowane, nigdy przenoszone, i liczone w wyniku importu.
 
-Jeśli znasz Sonarra: to Media Management z Sonarra bez formatów nazw. Nazwy folderów wybiera ABM. Masowa zmiana nazw jest w Library, Series i Authors jako **Rename Files**.
+## Book Naming
+
+Book Naming określa, jak nazywam pliki i foldery. Zapisuje się jednym Save na stronie razem z resztą Media Management. Ma Rename Books, Replace Illegal Characters, Colon Replacement (z opcją własną) oraz formaty dla Standard Book, Author Folder, Series Folder, Standalone Folder i Book Folder. Każdy format pokazuje przykład na żywo, a lista tokenów pokazuje wszystkie tokeny, których możesz użyć.
+
+Library, Series i Authors mają też akcję **Organize** dla zaznaczonych książek, podobnie jak strona pojedynczej książki. Najpierw otwiera podgląd każdej zmiany i nic się nie przenosi, dopóki nie potwierdzisz. Potem Organize przenosi i zmienia nazwy: przenosi folder każdej książki tam, gdzie ustawienia nazw go umieszczają, i zmienia nazwy jej plików. Działa jako zadanie, które możesz śledzić, anulować i po restarcie wznowić od miejsca, w którym stanęło. Naraz działa tylko jeden Organize. Nie ma cofania, więc sprawdź podgląd. Masowa zmiana nazw zostaje w Library, Series i Authors jako **Rename Files**.
+
+Podgląd pokazuje tylko książki, które by się zmieniły. Zaznacz **Show all selected books**, żeby zobaczyć też resztę. Ładuje się stronami, więc użyj **Load more**, żeby iść dalej przez duże zaznaczenie. Tytuł podglądu liczy, ile książek się zmieni, a ile zostanie pominiętych.
+
+Na stronie książki, której folder nie leży tam, gdzie umieściłyby go ustawienia nazw, jest o tym informacja, folder, do którego by trafiła, i przycisk Organize.
+
+Gdy nowy folder książki leżałby wewnątrz folderu, w którym jest teraz, Organize tworzy tam podfolder i przenosi do niego tylko własne pliki książki: audio oraz okładkę, rozdziały i inne pliki towarzyszące, które dla niej trzymam. Wszystko inne w folderze zostaje, gdzie było. Podgląd mówi "Moves into a subfolder" i wypisuje, co zostaje, a okno wyniku wypisuje pliki zostawione na miejscu. Jeśli przeniesienie się nie powiedzie w połowie, już przeniesione pliki wracają. Przeniesienie folderu książki do podfolderu jej samej z okna edycji działa tak samo.
+
+Library Import stosuje te same ustawienia nazw, także gdy dodaje książkę, która już leży w folderze głównym, albo przenosi pliki do książki, którą już mam. Przy wyłączonym Rename Books każdy plik zachowuje nazwę, z jaką przyszedł. Plik, którego nazwa zderzyłaby się z innym plikiem w partii albo z plikiem już będącym w folderze książki (wielkość liter bez znaczenia), dostaje zamiast tego nazwę z formatu, a import notuje, którym plikom to zrobił. Przy włączonym Rename Books pliki, które dostałyby tę samą nazwę, są numerowane według pozycji, więc Manual Import nigdy żadnego nie pominie.
+
+Domyślny układ to `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Książka samodzielna nie ma folderu serii ani tomu: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Książka z serii bez pozycji też zaczyna się od roku. Nieznany rok jest pomijany i nigdy zapisywany jako `(Unknown)`.
+
+Jeśli znasz Sonarra: to Media Management z Sonarra wraz z formatami nazw.

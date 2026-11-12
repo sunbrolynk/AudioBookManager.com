@@ -51,4 +51,4 @@ Libri, autori e serie possono avere tag. I tag guidano indexer, notifiche, liste
 
 ## Selezione
 
-Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Per il telefono, vedi [Usarlo dal telefono](/it/phone/).
+Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Organize mostra prima un'anteprima di ogni spostamento e rinomina, vedi [Book Naming](/it/settings/media-management/#book-naming). Per il telefono, vedi [Usarlo dal telefono](/it/phone/).

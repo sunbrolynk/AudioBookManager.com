@@ -51,4 +51,4 @@ Bøker, forfattere og serier kan ha tagger. Tagger styrer indekserere, varsler, 
 
 ## Utvalg
 
-Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. På telefon, se [Bruk på telefon](/nb/phone/).
+Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. Organize viser først en forhåndsvisning av hver flytting og omdøping, se [Book Naming](/nb/settings/media-management/#book-naming). På telefon, se [Bruk på telefon](/nb/phone/).

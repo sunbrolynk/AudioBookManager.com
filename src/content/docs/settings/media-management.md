@@ -103,6 +103,16 @@ Names are cut to fit the 255-byte filename limit. The title is shortened, never 
 
 Book Naming sets how I name files and folders, and it is saved with the page's one Save along with the rest of Media Management. It has Rename Books, Replace Illegal Characters, Colon Replacement (with a custom option), and formats for Standard Book, Author Folder, Series Folder, Standalone Folder and Book Folder. Each format shows a live example, and a token list shows every token you can use.
 
-Library also has an **Organize** action on selected books that previews the new names before anything moves. Bulk rename stays on Library, Series and Authors as **Rename Files**.
+Library, Series and Authors also have an **Organize** action on the selected books, and so does a book's own page. It opens a preview of every change first, and nothing moves until you confirm it. Organize then moves and renames: it moves each book's folder to where the naming settings put it and renames its files. It runs as a task you can follow, cancel and, after a restart, resume where it stopped. Only one Organize runs at a time. There is no undo, so check the preview. Bulk rename stays on Library, Series and Authors as **Rename Files**.
+
+The preview lists only the books that would change. Tick **Show all selected books** to see the rest too. It loads in pages, so use **Load more** to keep going through a big selection. The preview's title counts how many books will change and how many will be skipped.
+
+On a book's page, a book whose folder isn't where the naming settings would put it says so, shows the folder it would go to, and has an Organize button.
+
+When a book's new folder would sit inside the folder it is in now, Organize makes the subfolder there and moves only that book's own files into it: its audio, plus the cover, chapter and other sidecar files I keep for it. Anything else in the folder stays where it was. The preview says "Moves into a subfolder" and lists what stays, and the result dialog lists the files left where they were. If a move fails partway, the files already moved are put back. Moving a book's folder from its edit dialog into a subfolder of itself works the same way.
+
+Library Import follows the same naming settings, including when it adds a book that already sits in a root folder or moves files into a book I already have. With Rename Books off, each file keeps the name it came with. A file whose name would clash with another file in the batch, or with one already in the book's folder (case ignored), takes the name from the format instead, and the import notes which files it did that for. With Rename Books on, files that would get the same name are numbered by position, so Manual Import never skips one.
+
+The default layout is `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A standalone book has no series folder or volume: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A series book with no position also starts with the year. A year that isn't known is left out, never written as `(Unknown)`.
 
 If you know Sonarr: this is Sonarr's Media Management, naming formats included.

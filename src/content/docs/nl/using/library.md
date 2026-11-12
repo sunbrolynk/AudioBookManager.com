@@ -51,4 +51,4 @@ Boeken, auteurs en series kunnen tags hebben. Tags sturen indexers, meldingen, i
 
 ## Selecteren
 
-Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Voor de telefoon, zie [Op je telefoon](/nl/phone/).
+Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Organize toont eerst een voorbeeld van elke verplaatsing en hernoeming, zie [Book Naming](/nl/settings/media-management/#book-naming). Voor de telefoon, zie [Op je telefoon](/nl/phone/).

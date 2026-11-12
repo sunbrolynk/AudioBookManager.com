@@ -59,4 +59,4 @@ Discover's custom filters keep a plain text box, because its catalog is filtered
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. On a phone, see [Phone use](/en-au/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Organize previews every move and rename first; see [Book Naming](/en-au/settings/media-management/#book-naming). On a phone, see [Phone use](/en-au/phone/).

@@ -51,4 +51,4 @@ Kirjoilla, tekijöillä ja sarjoilla voi olla tageja. Tagit ohjaavat indeksoijia
 
 ## Valinta
 
-Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Puhelimella katso [Puhelimella käyttö](/fi/phone/).
+Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Organize näyttää ensin esikatselun jokaisesta siirrosta ja uudelleennimeämisestä, katso [Book Naming](/fi/settings/media-management/#book-naming). Puhelimella katso [Puhelimella käyttö](/fi/phone/).

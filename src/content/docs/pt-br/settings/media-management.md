@@ -77,4 +77,20 @@ O hardlink aqui não é a mesma coisa que **Use Hardlinks instead of Copy**. Aqu
 - Se a lixeira estiver ativada mas a pasta dela não estiver disponível, as exclusões que dependem dela falham em vez de apagar de vez.
 - Hardlinks só funcionam dentro de um mesmo sistema de arquivos. Arquivos que não dá para linkar são copiados, nunca movidos, e entram na contagem do resultado da importação.
 
-Se você conhece o Sonarr: é o Media Management do Sonarr sem os formatos de nome. Os nomes das pastas são escolhidos pelo ABM. A renomeação em massa fica em Library, Series e Authors como **Rename Files**.
+## Book Naming
+
+Book Naming define como eu nomeio arquivos e pastas. Ele é salvo com o único Save da página, junto com o resto de Media Management. Tem Rename Books, Replace Illegal Characters, Colon Replacement (com uma opção personalizada) e formatos para Standard Book, Author Folder, Series Folder, Standalone Folder e Book Folder. Cada formato mostra um exemplo ao vivo, e uma lista de tokens mostra todos os que você pode usar.
+
+Library, Series e Authors também têm uma ação **Organize** nos livros selecionados, e a página de um livro também. Ela abre primeiro uma prévia de cada mudança, e nada se move até você confirmar. Depois o Organize move e renomeia: move a pasta de cada livro para onde as configurações de nomes a colocam e renomeia seus arquivos. Roda como uma tarefa que você pode acompanhar, cancelar e, depois de uma reinicialização, retomar de onde parou. Só um Organize roda por vez. Não há desfazer, então confira bem a prévia. A renomeação em massa continua em Library, Series e Authors como **Rename Files**.
+
+A prévia lista só os livros que mudariam. Marque **Show all selected books** para ver os outros também. Ela carrega em páginas, então use **Load more** para continuar numa seleção grande. O título da prévia conta quantos livros vão mudar e quantos serão ignorados.
+
+Na página de um livro cuja pasta não está onde as configurações de nomes a colocariam, aparece um aviso, com a pasta para onde ele iria e um botão Organize.
+
+Quando a nova pasta de um livro ficaria dentro da pasta em que ele está agora, o Organize cria a subpasta ali e move para ela só os arquivos do próprio livro: o áudio, mais a capa, os capítulos e outros arquivos auxiliares que guardo para ele. O resto da pasta fica onde estava. A prévia diz "Moves into a subfolder" e lista o que fica, e a janela de resultado lista os arquivos deixados no lugar. Se uma movimentação falhar no meio, os arquivos já movidos voltam. Mover a pasta de um livro para uma subpasta dela mesma pela janela de edição funciona do mesmo jeito.
+
+O Library Import segue as mesmas configurações de nomes, inclusive ao adicionar um livro que já está numa pasta raiz ou ao mover arquivos para um livro que eu já tenho. Com Rename Books desligado, cada arquivo mantém o nome com que veio. Um arquivo cujo nome colidiria com outro do lote, ou com um que já está na pasta do livro (sem diferenciar maiúsculas), recebe o nome do formato, e a importação anota quais arquivos tiveram isso. Com Rename Books ligado, arquivos que ficariam com o mesmo nome são numerados pela posição, e assim o Manual Import nunca pula nenhum.
+
+O layout padrão é `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Um livro avulso não tem pasta de série nem volume: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Um livro de série sem posição também começa pelo ano. Um ano desconhecido é omitido, nunca escrito como `(Unknown)`.
+
+Se você conhece o Sonarr: é o Media Management do Sonarr, com os formatos de nome incluídos.

@@ -77,4 +77,20 @@ Hardlink non è la stessa cosa di **Use Hardlinks instead of Copy**. Quella vale
 - Se il cestino è attivo ma la sua cartella non è disponibile, le eliminazioni che ne hanno bisogno falliscono invece di cancellare per sempre.
 - Gli hardlink funzionano solo dentro un unico filesystem. I file che non si possono collegare vengono copiati, mai spostati, e contati nel risultato dell'importazione.
 
-Se conosci Sonarr: è il Media Management di Sonarr senza i formati di nomenclatura. I nomi delle cartelle li sceglie ABM. La rinomina in blocco sta in Library, Series e Authors come **Rename Files**.
+## Book Naming
+
+Book Naming imposta come chiamo file e cartelle. Si salva con l'unico Save della pagina, insieme al resto di Media Management. Ha Rename Books, Replace Illegal Characters, Colon Replacement (con un'opzione personalizzata) e i formati per Standard Book, Author Folder, Series Folder, Standalone Folder e Book Folder. Ogni formato mostra un esempio dal vivo, e un elenco di token mostra tutti quelli che puoi usare.
+
+Library, Series e Authors hanno anche un'azione **Organize** sui libri selezionati, e così la pagina di un singolo libro. Prima apre un'anteprima di ogni modifica, e non si sposta nulla finché non confermi. Poi Organize sposta e rinomina: sposta la cartella di ogni libro dove la mettono le impostazioni di nomenclatura e rinomina i suoi file. Gira come un'attività che puoi seguire, annullare e, dopo un riavvio, riprendere da dove si era fermata. Un solo Organize alla volta. Non c'è un annulla, quindi controlla bene l'anteprima. La rinomina in blocco resta in Library, Series e Authors come **Rename Files**.
+
+L'anteprima elenca solo i libri che cambierebbero. Spunta **Show all selected books** per vedere anche gli altri. Si carica a pagine, quindi usa **Load more** per proseguire in una selezione grande. Il titolo dell'anteprima conta quanti libri cambieranno e quanti saranno saltati.
+
+Nella pagina di un libro la cui cartella non è dove la metterebbero le impostazioni di nomenclatura, un avviso lo dice, mostra la cartella in cui andrebbe e c'è un pulsante Organize.
+
+Quando la nuova cartella di un libro starebbe dentro la cartella in cui si trova ora, Organize crea lì la sottocartella e ci sposta solo i file del libro: il suo audio, più copertina, capitoli e gli altri file collegati che tengo per lui. Tutto il resto della cartella resta dov'era. L'anteprima dice «Moves into a subfolder» ed elenca ciò che resta, e la finestra del risultato elenca i file lasciati al loro posto. Se uno spostamento fallisce a metà, i file già spostati vengono rimessi a posto. Spostare la cartella di un libro in una sua sottocartella dalla finestra di modifica funziona allo stesso modo.
+
+Library Import segue le stesse impostazioni di nomenclatura, anche quando aggiunge un libro che si trova già in una cartella radice o sposta file in un libro che ho già. Con Rename Books disattivato, ogni file tiene il nome con cui è arrivato. Un file il cui nome andrebbe in conflitto con un altro file del lotto, o con uno già nella cartella del libro (maiuscole ignorate), prende invece il nome dal formato, e l'importazione annota per quali file l'ha fatto. Con Rename Books attivato, i file che avrebbero lo stesso nome vengono numerati per posizione, così Manual Import non ne salta mai nessuno.
+
+La struttura predefinita è `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Un libro singolo non ha cartella di serie né volume: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. Anche un libro di serie senza posizione inizia con l'anno. Un anno sconosciuto viene omesso, mai scritto come `(Unknown)`.
+
+Se conosci Sonarr: è il Media Management di Sonarr, formati di nomenclatura inclusi.

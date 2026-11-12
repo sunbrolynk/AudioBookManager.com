@@ -51,4 +51,4 @@ Los libros, los autores y las series pueden llevar etiquetas. Las etiquetas diri
 
 ## Selección
 
-Selecciona filas para actuar sobre varias a la vez: monitorizar, buscar, etiquetar, renombrar, borrar. En el móvil, consulta [Uso en el móvil](/es/phone/).
+Selecciona filas para actuar sobre varias a la vez: monitorizar, buscar, etiquetar, renombrar, borrar. Organize muestra antes una vista previa de cada movimiento y renombrado, consulta [Book Naming](/es/settings/media-management/#book-naming). En el móvil, consulta [Uso en el móvil](/es/phone/).

@@ -51,4 +51,4 @@ Bücher, Autoren und Serien können Tags tragen. Tags steuern Indexer, Benachric
 
 ## Auswahl
 
-Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Fürs Handy siehe [Nutzung am Handy](/de/phone/).
+Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Organize zeigt vorher jede Verschiebung und Umbenennung in einer Vorschau, siehe [Book Naming](/de/settings/media-management/#book-naming). Fürs Handy siehe [Nutzung am Handy](/de/phone/).

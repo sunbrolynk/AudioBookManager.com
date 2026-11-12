@@ -51,4 +51,4 @@ description: 書、作者和系列，以及 ABM 怎麼追蹤它們的狀態。
 
 ## 選取
 
-選取多列就能一次對好幾個項目動作：監控、搜尋、加標籤、重新命名、刪除。手機上的用法請看〈[在手機上使用](/zh-tw/phone/)〉。
+選取多列就能一次對好幾個項目動作：監控、搜尋、加標籤、重新命名、刪除。Organize 會先預覽每一次移動和重新命名，請看〈[Book Naming](/zh-tw/settings/media-management/#book-naming)〉。手機上的用法請看〈[在手機上使用](/zh-tw/phone/)〉。
