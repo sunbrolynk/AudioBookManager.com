@@ -37,7 +37,7 @@ A book page has Search, Interactive, Import (Convert once it has files) and Refr
 
 - Calendar is a day-by-day list. The view picker sets the period. Agenda is not offered.
 - Conversions has Queue and History tabs.
-- Dashboard cards stack in one column.
+- The Dashboard shows the totals in a grid, with New, Wanted and Coming tabs below it and a short summary of series completion and your most-heard narrator.
 - Dialogs open as sheets from the bottom of the screen.
 
 ## Settings

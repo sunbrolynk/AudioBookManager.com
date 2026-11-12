@@ -37,7 +37,7 @@ Eine Buchseite hat oben Search, Interactive, Import (Convert, sobald es Dateien 
 
 - Calendar ist eine Liste Tag für Tag. Die Ansichtsauswahl legt den Zeitraum fest. Agenda gibt es hier nicht.
 - Conversions hat die Tabs Queue und History.
-- Die Dashboard-Karten stehen in einer Spalte untereinander.
+- Das Dashboard zeigt die Summen in einem Raster, darunter die Tabs New, Wanted und Coming und eine kurze Zusammenfassung zu Serien und deinem meistgehörten Sprecher.
 - Dialoge öffnen sich als Menüs vom unteren Bildschirmrand.
 
 ## Einstellungen

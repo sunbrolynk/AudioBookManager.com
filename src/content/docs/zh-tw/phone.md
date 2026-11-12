@@ -37,7 +37,7 @@ description: ABM 在寬度小於 768px 的螢幕上會怎麼呈現。
 
 - Calendar 是一天一天排下去的清單。用檢視選擇器設定時間範圍。沒有 Agenda 檢視。
 - Conversions 有 Queue 和 History 兩個分頁。
-- Dashboard 的卡片會疊成一欄。
+- Dashboard 把總數排成格狀，下面是 New、Wanted、Coming 三個分頁，以及系列完成情況和你聽得最多的朗讀者的簡短摘要。
 - 對話框會從螢幕底部以選單的方式滑出來。
 
 ## 設定

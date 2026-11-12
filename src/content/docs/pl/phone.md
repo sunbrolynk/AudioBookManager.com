@@ -37,7 +37,7 @@ Strona książki ma na górze Search, Interactive, Import (Convert, kiedy ma ju�
 
 - Calendar to lista dzień po dniu. Wybór widoku ustala okres. Widoku Agenda nie ma.
 - Conversions ma karty Queue i History.
-- Karty na Dashboard układają się w jedną kolumnę.
+- Dashboard pokazuje sumy w siatce, pod nią karty New, Wanted i Coming oraz krótkie podsumowanie serii i lektora, którego słuchasz najczęściej.
 - Okna dialogowe otwierają się jako arkusze od dołu ekranu.
 
 ## Ustawienia

@@ -56,7 +56,7 @@ A book page has Search, Interactive, Import (Convert once it has files) and Refr
 - Calendar is a day-by-day list. The view picker sets the period. Agenda is not offered.
 - Conversions has Queue and History tabs. Pause queue is an icon in the top bar beside the plus button. Tap a job for its progress and source files, and a failed job has Retry on its row.
 - Add New opens a sheet with the book's cover. When the book is in a series, **Add whole series** adds every book in it.
-- Dashboard cards stack in one column.
+- The Dashboard shows the totals in a grid, with New, Wanted and Coming tabs below it and a short summary of series completion and your most-heard narrator.
 - Dialogs open as sheets from the bottom of the screen.
 
 ![Discover on a phone](../../assets/docs/phone-discover.jpg)

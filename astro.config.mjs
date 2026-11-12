@@ -40,7 +40,7 @@ export default defineConfig({
       },
       sidebar: [
         { label: 'Getting started', translations: sidebarLabels['Getting started'], items: ['installation', 'getting-started/quick-start'] },
-        { label: 'Using ABM', translations: sidebarLabels['Using ABM'], items: ['using/library', 'using/add-new', 'library-import', 'using/series-tracking', 'using/wanted', 'using/activity', 'using/calendar', 'using/discover', 'audible', 'using/conversions', 'using/sidecars', 'phone'] },
+        { label: 'Using ABM', translations: sidebarLabels['Using ABM'], items: ['using/dashboard', 'using/library', 'using/add-new', 'library-import', 'using/series-tracking', 'using/wanted', 'using/activity', 'using/calendar', 'using/discover', 'audible', 'using/conversions', 'using/sidecars', 'phone'] },
         { label: 'Metadata & Libex', translations: sidebarLabels['Metadata & Libex'], items: ['metadata/libex', 'metadata/control', 'metadata/cover-lock'] },
         { label: 'Settings', translations: sidebarLabels['Settings'], items: ['settings/media-management', 'settings/audible', 'settings/conversions', 'settings/discover', 'settings/profiles', 'settings/indexers', 'settings/download-clients', 'settings/import-lists', 'settings/connect', 'settings/metadata', 'settings/tags', 'settings/network', 'settings/general', 'settings/security', 'settings/ui', 'configuration'] },
         { label: 'System', translations: sidebarLabels['System'], items: ['system/status', 'system/tasks', 'system/activity-log', 'system/logs', 'system/backups', 'system/calibration', 'system/api', { label: 'API reference', translations: sidebarLabels['API reference'], link: '/api-reference/' }] },

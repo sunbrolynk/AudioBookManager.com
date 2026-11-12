@@ -43,4 +43,4 @@ A book you add is wanted until a file for it is imported. Wanted books appear un
 
 **Activity > Queue** shows what is downloading. **Activity > History** shows what was grabbed and imported. When something goes wrong, [Troubleshooting](/troubleshooting/) and the [Tasks](/system/tasks/) page are the places to look.
 
-![The Dashboard: library totals, recent activity and recently added books](../../../assets/docs/dashboard.jpg)
+![The Dashboard: library totals, new books, coming soon, missing books and series completion](../../../assets/docs/dashboard.jpg)

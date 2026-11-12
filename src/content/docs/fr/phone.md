@@ -37,7 +37,7 @@ Une page de livre a Search, Interactive, Import (Convert une fois qu'il a des fi
 
 - Calendar est une liste jour par jour. Le sélecteur de vue définit la période. Agenda n'est pas proposé.
 - Conversions a les onglets Queue et History.
-- Les cartes du Dashboard s'empilent sur une seule colonne.
+- Le Dashboard affiche les totaux dans une grille, avec dessous les onglets New, Wanted et Coming et un court résumé de la complétion des séries et du narrateur que tu écoutes le plus.
 - Les boîtes de dialogue s'ouvrent comme des panneaux depuis le bas de l'écran.
 
 ## Réglages

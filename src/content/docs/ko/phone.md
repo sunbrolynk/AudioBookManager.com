@@ -37,7 +37,7 @@ description: 폭이 768px보다 좁은 화면에서 ABM이 어떻게 동작하�
 
 - Calendar는 날짜별 목록이에요. 보기 선택기로 기간을 정해요. Agenda는 없어요.
 - Conversions에는 Queue와 History 탭이 있어요.
-- Dashboard 카드는 한 열로 세로로 쌓여요.
+- Dashboard는 합계를 격자로 보여 주고, 그 아래에 New, Wanted, Coming 탭과 시리즈 완성도 및 가장 많이 들은 내레이터를 짧게 요약한 부분이 있어요.
 - 대화 상자는 화면 아래에서 올라오는 시트로 열려요.
 
 ## 설정

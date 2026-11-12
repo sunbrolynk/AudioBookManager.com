@@ -37,7 +37,7 @@ description: 幅 768px 未満の画面での ABM の動き。
 
 - Calendar は日ごとの一覧です。表示の選択で期間を決めます。Agenda はありません。
 - Conversions には Queue と History のタブがあります。
-- Dashboard のカードは1列に縦に並びます。
+- Dashboard は合計をグリッドで表示し、その下に New、Wanted、Coming のタブと、シリーズの完成状況とよく聴くナレーターの短いまとめが続きます。
 - ダイアログは画面の下からシートとして開きます。
 
 ## 設定

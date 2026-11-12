@@ -37,7 +37,7 @@ La página de un libro tiene arriba Search, Interactive, Import (Convert cuando 
 
 - Calendar es una lista día a día. El selector de vista define el periodo. Agenda no está disponible.
 - Conversions tiene las pestañas Queue y History.
-- Las tarjetas del Dashboard se apilan en una sola columna.
+- El Dashboard muestra las cifras en una cuadrícula, con las pestañas New, Wanted y Coming debajo y un resumen corto de series completas y del narrador que más escuchas.
 - Los diálogos se abren como hojas desde la parte de abajo de la pantalla.
 
 ## Ajustes
