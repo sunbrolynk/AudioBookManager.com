@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.0",
+    "version": "0.21.2",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3171,7 +3171,7 @@
           "Library"
         ],
         "summary": "Get Recent Books",
-        "description": "Newest imported books, or newest monitored books still wanted.",
+        "description": "Newest imported books, or newest books on the Missing list.",
         "operationId": "get_recent_books_api_library_recent_get",
         "parameters": [
           {
