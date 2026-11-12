@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.19.1",
+    "version": "0.21.2",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -326,9 +326,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BookUpdateRequest"
               }
             }
           }
@@ -446,9 +444,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/BookMoveRequest"
               }
             }
           }
@@ -1725,9 +1721,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/CatalogRemoveRequest"
               }
             }
           }
@@ -2578,9 +2572,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/AddAllSeriesBooksRequest"
               }
             }
           }
@@ -2635,9 +2627,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/CatalogRemoveRequest"
               }
             }
           }
@@ -2989,9 +2979,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/RenameFileRequest"
               }
             }
           }
@@ -3034,9 +3022,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/FilePathRequest"
               }
             }
           },
@@ -3080,9 +3066,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/RenameFileByPathRequest"
               }
             }
           },
@@ -3265,9 +3249,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/LibraryScanRequest"
               }
             }
           },
@@ -3441,6 +3423,16 @@
         "summary": "Retry Automatic Matching",
         "description": "Retry automatic matching on pending_search and no_match items.\n\nExpects JSON body:\n{\n    \"items\": [\n        {\n            \"path\": \"/path/to/folder\",\n            \"parsed_title\": \"Book Title\",\n            \"parsed_authors\": [\"Author Name\"],\n            \"parsed_series\": \"Series Name\",\n            \"parsed_position\": \"1\",\n            \"parsed_asin\": \"B00XXXXXX\",\n            \"audio_files\": [\"file1.mp3\", \"file2.mp3\"],\n            \"file_count\": 2\n        },\n        ...\n    ]\n}\n\nReturns updated results with matches found.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RetryMatchRequest"
+              }
+            }
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -3450,6 +3442,16 @@
                   "additionalProperties": true,
                   "type": "object",
                   "title": "Response Retry Automatic Matching Api Library Import Retry Match Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
                 }
               }
             }
@@ -3949,9 +3951,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportFilesRequest"
               }
             }
           },
@@ -3995,9 +3995,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportFilesRequest"
               }
             }
           },
@@ -4041,9 +4039,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ScanPathRequest"
               }
             }
           },
@@ -4087,9 +4083,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportConflictsRequest"
               }
             }
           },
@@ -4178,9 +4172,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ManualImportScanRequest"
               }
             }
           },
@@ -4246,9 +4238,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportListCreate"
               }
             }
           },
@@ -4304,9 +4294,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "additionalProperties": true,
-                "title": "Data"
+                "$ref": "#/components/schemas/ImportListEdit"
               }
             }
           }
@@ -4862,9 +4850,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ConversionJobCreate"
               }
             }
           },
@@ -4906,9 +4892,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/BulkConversionCreate"
               }
             }
           },
@@ -13333,9 +13317,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ExclusionCreate"
               }
             }
           },
@@ -13933,9 +13915,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/CreateFolderRequest"
               }
             }
           },
@@ -14216,6 +14196,521 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/source": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Source",
+        "description": "The source in effect and whether it is ready.",
+        "operationId": "get_source_api_settings_metadata_source_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Save Source",
+        "description": "Save the source and switch every lookup to it.",
+        "operationId": "save_source_api_settings_metadata_source_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/source/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Source",
+        "description": "Try a source without saving it. Built-in makes a real Audible lookup.",
+        "operationId": "test_source_api_settings_metadata_source_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataSourceChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataSourceTestResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Storage Status",
+        "description": "Local metadata storage state; counts are null while it is off or unreadable.",
+        "operationId": "get_storage_status_api_settings_metadata_storage_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageStatus"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Enable Storage",
+        "description": "Switch storage on and open it. Turning it off goes through its own confirmed route.",
+        "operationId": "enable_storage_api_settings_metadata_storage_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStorageChoice"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageStatus"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/disable": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Disable Storage",
+        "description": "Switch storage off, optionally exporting first, deleting the file unless it is kept. An export that does not reach every target leaves storage on.",
+        "operationId": "disable_storage_api_settings_metadata_storage_disable_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStorageDisable"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStorageDisabled"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Backup Settings",
+        "description": "The Local Storage backup settings, with the folder backups are written to.",
+        "operationId": "get_backup_settings_api_settings_metadata_storage_backup_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/MetadataStoreBackupSettings"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Update Backup Settings",
+        "description": "Save the Local Storage backup settings and apply the schedule.",
+        "operationId": "update_backup_settings_api_settings_metadata_storage_backup_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MetadataStoreBackupSettings"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Update Backup Settings Api Settings Metadata Storage Backup Put"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/list": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "List Backups",
+        "description": "The Local Storage backups, newest first.",
+        "operationId": "list_backups_api_settings_metadata_storage_backup_list_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "items": {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  "type": "array",
+                  "title": "Response List Backups Api Settings Metadata Storage Backup List Get"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/create": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Create Backup",
+        "description": "Queue a manual backup of the Local Storage; it also goes to the picked export targets.",
+        "operationId": "create_backup_api_settings_metadata_storage_backup_create_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Create Backup Api Settings Metadata Storage Backup Create Post"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/{filename}": {
+      "delete": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Delete Backup",
+        "description": "Delete a Local Storage backup.",
+        "operationId": "delete_backup_api_settings_metadata_storage_backup__filename__delete",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Delete Backup Api Settings Metadata Storage Backup  Filename  Delete"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/export/{filename}": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Export Backup",
+        "description": "Export a Local Storage backup to one export target, or to every target that takes automatic exports.",
+        "operationId": "export_backup_api_settings_metadata_storage_backup_export__filename__post",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          },
+          {
+            "name": "target_id",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Target Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Export Backup Api Settings Metadata Storage Backup Export  Filename  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/restore/{filename}": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Restore Backup",
+        "description": "Replace the Local Storage with a backup in the backup folder. Needs the account password when one is set.",
+        "operationId": "restore_backup_api_settings_metadata_storage_backup_restore__filename__post",
+        "parameters": [
+          {
+            "name": "filename",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Filename"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/CurrentPasswordRequest"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Restore Backup Api Settings Metadata Storage Backup Restore  Filename  Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/settings/metadata/storage/backup/restore-upload": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Restore Backup Upload",
+        "description": "Replace the Local Storage with an uploaded backup file. When an account password is set, send it as the multipart text field `current_password`.",
+        "operationId": "restore_backup_upload_api_settings_metadata_storage_backup_restore_upload_post",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "additionalProperties": true,
+                  "type": "object",
+                  "title": "Response Restore Backup Upload Api Settings Metadata Storage Backup Restore Upload Post"
                 }
               }
             }
@@ -16311,9 +16806,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "additionalProperties": true,
-                "type": "object",
-                "title": "Data"
+                "$ref": "#/components/schemas/ScanPathRequest"
               }
             }
           },
@@ -17300,6 +17793,50 @@
           "message"
         ],
         "title": "ActionResponse"
+      },
+      "AddAllSeriesBooksRequest": {
+        "properties": {
+          "books": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Books"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "AddAllSeriesBooksRequest",
+        "description": "Catalog books to add to a series; each row is passed through as the catalog supplied it."
       },
       "AddBlocklistRequest": {
         "properties": {
@@ -19453,6 +19990,34 @@
         "title": "BookListResponse",
         "description": "Response model for book lists"
       },
+      "BookMoveRequest": {
+        "properties": {
+          "old_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Old Path"
+          },
+          "new_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Path"
+          }
+        },
+        "type": "object",
+        "title": "BookMoveRequest"
+      },
       "BookResponse": {
         "properties": {
           "id": {
@@ -20036,6 +20601,37 @@
         "title": "BookTagsSummaryResponse",
         "description": "`total` is the number of requested IDs that matched a book, not the\nnumber sent."
       },
+      "BookUpdateRequest": {
+        "properties": {
+          "monitored": {
+            "type": "boolean",
+            "title": "Monitored",
+            "default": false
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tags",
+            "default": []
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "BookUpdateRequest",
+        "description": "Fields to change; a field left out is not touched."
+      },
       "BulkAddAndDownloadRequest": {
         "properties": {
           "asins": {
@@ -20325,6 +20921,71 @@
         ],
         "title": "BulkClientUpdate",
         "description": "Apply a partial change set to multiple download clients at once."
+      },
+      "BulkConversionCreate": {
+        "properties": {
+          "book_ids": {
+            "items": {
+              "type": "integer"
+            },
+            "type": "array",
+            "title": "Book Ids"
+          },
+          "file_selections": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "File Selections"
+          },
+          "operation": {
+            "type": "string",
+            "title": "Operation"
+          },
+          "target_format": {
+            "type": "string",
+            "title": "Target Format"
+          },
+          "bitrate": {
+            "type": "string",
+            "title": "Bitrate",
+            "default": "128k"
+          },
+          "delete_original": {
+            "type": "boolean",
+            "title": "Delete Original",
+            "default": false
+          },
+          "chapter_handling": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Handling"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_ids",
+          "operation",
+          "target_format"
+        ],
+        "title": "BulkConversionCreate",
+        "description": "Request for bulk conversion"
       },
       "BulkConversionError": {
         "properties": {
@@ -21250,6 +21911,18 @@
         "type": "object",
         "title": "CatalogAddOptions",
         "description": "What adding an author or a series brings in with it. The defaults\nbuild the catalog and add no books, which Related Authors relies on."
+      },
+      "CatalogRemoveRequest": {
+        "properties": {
+          "add_to_exclusion": {
+            "type": "boolean",
+            "title": "Add To Exclusion",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "CatalogRemoveRequest",
+        "description": "Remove a catalog entry, optionally excluding it from being re-added."
       },
       "ClientCreate": {
         "properties": {
@@ -22372,6 +23045,63 @@
         "title": "ConversionHistoryResponse",
         "description": "Response model for a list of conversion jobs"
       },
+      "ConversionJobCreate": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "operation": {
+            "type": "string",
+            "title": "Operation"
+          },
+          "target_format": {
+            "type": "string",
+            "title": "Target Format"
+          },
+          "bitrate": {
+            "type": "string",
+            "title": "Bitrate",
+            "default": "128k"
+          },
+          "delete_original": {
+            "type": "boolean",
+            "title": "Delete Original",
+            "default": false
+          },
+          "chapter_handling": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Chapter Handling"
+          },
+          "scheduled_for": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Scheduled For"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "operation",
+          "target_format"
+        ],
+        "title": "ConversionJobCreate",
+        "description": "Request model for creating a conversion job"
+      },
       "ConversionJobPauseResponse": {
         "properties": {
           "job_id": {
@@ -23372,6 +24102,17 @@
         ],
         "title": "CreateAuthorRequest",
         "description": "Request body for creating an author"
+      },
+      "CreateFolderRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "CreateFolderRequest"
       },
       "CreateSeriesRequest": {
         "properties": {
@@ -24434,6 +25175,16 @@
               }
             ],
             "title": "Group Key"
+          },
+          "local_storage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LocalStorageMarker"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -24767,6 +25518,16 @@
               }
             ],
             "title": "Library Monitor New Books"
+          },
+          "local_storage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LocalStorageMarker"
+              },
+              {
+                "type": "null"
+              }
+            ]
           }
         },
         "type": "object",
@@ -24777,6 +25538,45 @@
         ],
         "title": "EntitySearchResult",
         "description": "An author or series from an upstream name search."
+      },
+      "ExclusionCreate": {
+        "properties": {
+          "asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asin"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "year": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Year"
+          }
+        },
+        "type": "object",
+        "title": "ExclusionCreate"
       },
       "ExitRow": {
         "properties": {
@@ -25200,6 +26000,23 @@
           "rewritesAudioRefs"
         ],
         "title": "ExtraFileTypeModel"
+      },
+      "FilePathRequest": {
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          }
+        },
+        "type": "object",
+        "title": "FilePathRequest"
       },
       "FileResponse": {
         "properties": {
@@ -25657,6 +26474,31 @@
         "title": "HostSettings",
         "description": "Host and network settings. All fields are required when saving."
       },
+      "ImportConflictsRequest": {
+        "properties": {
+          "book_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Book Id"
+          },
+          "destination_filenames": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Destination Filenames",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "ImportConflictsRequest"
+      },
       "ImportItemKey": {
         "properties": {
           "download_client_id": {
@@ -25674,6 +26516,253 @@
           "client_download_id"
         ],
         "title": "ImportItemKey"
+      },
+      "ImportListCreate": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "default": "RSS List"
+          },
+          "implementation": {
+            "type": "string",
+            "title": "Implementation",
+            "default": "RSSList"
+          },
+          "rss_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rss Url"
+          },
+          "website_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website Url"
+          },
+          "cookie": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cookie"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled",
+            "default": true
+          },
+          "enable_automatic_add": {
+            "type": "boolean",
+            "title": "Enable Automatic Add",
+            "default": true
+          },
+          "monitor": {
+            "type": "string",
+            "title": "Monitor",
+            "default": "audiobook_only"
+          },
+          "search_on_add": {
+            "type": "boolean",
+            "title": "Search On Add",
+            "default": false
+          },
+          "minimum_availability": {
+            "type": "string",
+            "title": "Minimum Availability",
+            "default": "released"
+          },
+          "root_folder": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder"
+          },
+          "tags": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Tags",
+            "default": []
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          }
+        },
+        "type": "object",
+        "title": "ImportListCreate",
+        "description": "A new import list; the feed URL and root folder are required."
+      },
+      "ImportListEdit": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "rss_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rss Url"
+          },
+          "website_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Website Url"
+          },
+          "enabled": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enabled"
+          },
+          "enable_automatic_add": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Enable Automatic Add"
+          },
+          "monitor": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Monitor"
+          },
+          "search_on_add": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Search On Add"
+          },
+          "minimum_availability": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Minimum Availability"
+          },
+          "root_folder": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder"
+          },
+          "tags": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Tags"
+          },
+          "preference_profile_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preference Profile Id"
+          },
+          "cookie": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cookie"
+          }
+        },
+        "type": "object",
+        "title": "ImportListEdit",
+        "description": "An import list edit: the bulk fields plus the feed cookie, which a blank value leaves as saved."
       },
       "ImportListOptions": {
         "properties": {
@@ -26994,6 +28083,42 @@
         "title": "LibraryMigrateRequest",
         "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots."
       },
+      "LibraryScanRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          },
+          "recursive": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Recursive",
+            "default": true
+          },
+          "search_unmatched": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Search Unmatched",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "LibraryScanRequest",
+        "description": "A folder to scan for importable audiobooks."
+      },
       "LibraryStats": {
         "properties": {
           "total_books": {
@@ -27032,6 +28157,29 @@
         ],
         "title": "LibraryStats",
         "description": "Library statistics"
+      },
+      "LocalStorageMarker": {
+        "properties": {
+          "stored_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Stored At"
+          },
+          "likely_delisted": {
+            "type": "boolean",
+            "title": "Likely Delisted",
+            "default": false
+          }
+        },
+        "type": "object",
+        "title": "LocalStorageMarker",
+        "description": "Marks a lookup result answered from Local Storage because the source could not give it."
       },
       "LogContentResponse": {
         "properties": {
@@ -27377,6 +28525,33 @@
         ],
         "title": "LoginStartResponse"
       },
+      "ManualImportFilesRequest": {
+        "properties": {
+          "files": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Files"
+          },
+          "source_type": {
+            "type": "string",
+            "title": "Source Type",
+            "default": "user"
+          }
+        },
+        "type": "object",
+        "title": "ManualImportFilesRequest",
+        "description": "Files to queue for import; each row goes to the task verbatim."
+      },
       "ManualImportRequest": {
         "properties": {
           "download_client_id": {
@@ -27399,6 +28574,22 @@
           "book_id"
         ],
         "title": "ManualImportRequest"
+      },
+      "ManualImportScanRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          },
+          "recursive": {
+            "type": "boolean",
+            "title": "Recursive",
+            "default": true
+          }
+        },
+        "type": "object",
+        "title": "ManualImportScanRequest"
       },
       "MappingCreate": {
         "properties": {
@@ -27624,6 +28815,15 @@
         "title": "MediaManagementSettings",
         "description": "Media management settings"
       },
+      "MetadataMode": {
+        "type": "string",
+        "enum": [
+          "builtin",
+          "hosted",
+          "self_hosted"
+        ],
+        "title": "MetadataMode"
+      },
       "MetadataSettings": {
         "properties": {
           "create_on_book_add": {
@@ -27730,6 +28930,352 @@
         "type": "object",
         "title": "MetadataSettings",
         "description": "Settings for automatic metadata file creation and tag writing"
+      },
+      "MetadataSourceChoice": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "mode"
+        ],
+        "title": "MetadataSourceChoice"
+      },
+      "MetadataSourceStatus": {
+        "properties": {
+          "mode": {
+            "$ref": "#/components/schemas/MetadataMode",
+            "description": "The source lookups actually use right now"
+          },
+          "ready": {
+            "type": "boolean",
+            "title": "Ready",
+            "description": "Whether that source can answer; not a reachability check"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason",
+            "description": "Why it cannot, when it cannot"
+          },
+          "route": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Route",
+            "description": "The connection Built-in leaves through"
+          },
+          "connection": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/EgressConnection"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "description": "The saved outbound choice, while Built-in is active"
+          },
+          "self_hosted_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Self Hosted Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mode",
+          "ready"
+        ],
+        "title": "MetadataSourceStatus"
+      },
+      "MetadataSourceTestResult": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message"
+          },
+          "latency_ms": {
+            "type": "integer",
+            "title": "Latency Ms"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "message",
+          "latency_ms"
+        ],
+        "title": "MetadataSourceTestResult"
+      },
+      "MetadataStorageChoice": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "enabled"
+        ],
+        "title": "MetadataStorageChoice"
+      },
+      "MetadataStorageDisable": {
+        "properties": {
+          "export": {
+            "type": "boolean",
+            "title": "Export",
+            "description": "Back the library up and send it to the export targets first; nothing is deleted if that fails"
+          },
+          "keep": {
+            "type": "boolean",
+            "title": "Keep",
+            "description": "Leave the file for the next time storage is turned on; otherwise it is deleted"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "export",
+          "keep"
+        ],
+        "title": "MetadataStorageDisable"
+      },
+      "MetadataStorageDisabled": {
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "title": "Deleted"
+          }
+        },
+        "type": "object",
+        "required": [
+          "deleted"
+        ],
+        "title": "MetadataStorageDisabled"
+      },
+      "MetadataStorageStatus": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "state": {
+            "type": "string",
+            "enum": [
+              "off",
+              "ready",
+              "error"
+            ],
+            "title": "State"
+          },
+          "error": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Error",
+            "description": "Why storage is not working, when it is not"
+          },
+          "size_bytes": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Size Bytes"
+          },
+          "books": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Books"
+          },
+          "authors": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Authors"
+          },
+          "series": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series"
+          },
+          "by_region": {
+            "items": {
+              "$ref": "#/components/schemas/RegionCounts"
+            },
+            "type": "array",
+            "title": "By Region",
+            "description": "Counts per marketplace; empty while off or unreadable"
+          },
+          "last_backup_at": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Backup At",
+            "description": "ISO 8601 timestamp"
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled",
+          "state"
+        ],
+        "title": "MetadataStorageStatus"
+      },
+      "MetadataStoreBackupSettings": {
+        "properties": {
+          "backup_folder": {
+            "type": "string",
+            "title": "Backup Folder",
+            "description": "Blank keeps the default folder inside the backup folder",
+            "default": ""
+          },
+          "backup_retention_days": {
+            "type": "integer",
+            "title": "Backup Retention Days",
+            "default": 28
+          },
+          "auto_backup_enabled": {
+            "type": "boolean",
+            "title": "Auto Backup Enabled",
+            "default": false
+          },
+          "schedule_frequency": {
+            "type": "string",
+            "title": "Schedule Frequency",
+            "default": "daily"
+          },
+          "schedule_hour": {
+            "type": "integer",
+            "title": "Schedule Hour",
+            "default": 3
+          },
+          "schedule_minute": {
+            "type": "integer",
+            "title": "Schedule Minute",
+            "default": 0
+          },
+          "schedule_day_of_week": {
+            "type": "integer",
+            "maximum": 6.0,
+            "minimum": 0.0,
+            "title": "Schedule Day Of Week",
+            "default": 0
+          },
+          "schedule_day_of_month": {
+            "type": "integer",
+            "maximum": 28.0,
+            "minimum": 1.0,
+            "title": "Schedule Day Of Month",
+            "default": 1
+          },
+          "use_cron": {
+            "type": "boolean",
+            "title": "Use Cron",
+            "default": false
+          },
+          "cron_expression": {
+            "type": "string",
+            "title": "Cron Expression",
+            "default": ""
+          },
+          "next_scheduled_run": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Next Scheduled Run"
+          },
+          "remote_export_on_backup": {
+            "type": "boolean",
+            "title": "Remote Export On Backup",
+            "default": true
+          },
+          "export_target_ids": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Export Target Ids",
+            "description": "Targets to export to; empty means every target that takes automatic exports"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "title": "MetadataStoreBackupSettings",
+        "description": "Backup settings for the local metadata store; export targets are the ones saved under General > Backups."
       },
       "MirrorPreviewResponse": {
         "properties": {
@@ -29696,6 +31242,39 @@
         "title": "RegeneratedApiKey",
         "description": "The new API key, in full. The web interface also reads the current key\nwhenever it signs in."
       },
+      "RegionCounts": {
+        "properties": {
+          "region": {
+            "type": "string",
+            "title": "Region"
+          },
+          "books": {
+            "type": "integer",
+            "title": "Books"
+          },
+          "books_with_chapters": {
+            "type": "integer",
+            "title": "Books With Chapters"
+          },
+          "series": {
+            "type": "integer",
+            "title": "Series"
+          },
+          "authors": {
+            "type": "integer",
+            "title": "Authors"
+          }
+        },
+        "type": "object",
+        "required": [
+          "region",
+          "books",
+          "books_with_chapters",
+          "series",
+          "authors"
+        ],
+        "title": "RegionCounts"
+      },
       "ReleaseProfileCreate": {
         "properties": {
           "name": {
@@ -29957,6 +31536,67 @@
           "client_download_id"
         ],
         "title": "RemoveRequest"
+      },
+      "RenameFileByPathRequest": {
+        "properties": {
+          "path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Path"
+          },
+          "new_filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Filename"
+          }
+        },
+        "type": "object",
+        "title": "RenameFileByPathRequest"
+      },
+      "RenameFileRequest": {
+        "properties": {
+          "new_filename": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "New Filename"
+          }
+        },
+        "type": "object",
+        "title": "RenameFileRequest"
+      },
+      "RetryMatchRequest": {
+        "properties": {
+          "items": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Items",
+            "default": []
+          }
+        },
+        "type": "object",
+        "title": "RetryMatchRequest",
+        "description": "Rows to search again; each row is the free-form parse a scan produced."
       },
       "RootFolderCreate": {
         "properties": {
@@ -30550,6 +32190,18 @@
           "default_cover"
         ],
         "title": "RowExtrasResponse"
+      },
+      "ScanPathRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "title": "Path",
+            "default": ""
+          }
+        },
+        "type": "object",
+        "title": "ScanPathRequest",
+        "description": "A folder to scan."
       },
       "ScanResultRow": {
         "properties": {
