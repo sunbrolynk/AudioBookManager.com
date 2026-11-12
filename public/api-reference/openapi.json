@@ -17831,7 +17831,14 @@
             "title": "Severity"
           },
           "message": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Message"
           }
         },
@@ -17839,8 +17846,7 @@
         "required": [
           "key",
           "ok",
-          "severity",
-          "message"
+          "severity"
         ],
         "title": "AbsCheck"
       },
