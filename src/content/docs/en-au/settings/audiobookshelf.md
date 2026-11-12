@@ -22,7 +22,7 @@ The API key belongs to an ABS user. ABM checks that user when you save or test.
 
 ## How ABM reaches ABS
 
-ABM always connects to ABS directly. It never goes through the VPN or proxy you chose on [Network](/settings/network/). The server URL is checked before it is saved, and an unsafe one is refused.
+ABM always connects to ABS directly. It never goes through the VPN or proxy you chose on [Network](/settings/network/). The server URL is checked before it is saved, and an unsafe one is refused. An address that points back at the machine ABM runs on, a link-local address and a cloud metadata address are refused, and so is a name that resolves to one. Your own LAN addresses are fine.
 
 ## The API key
 
@@ -38,7 +38,7 @@ Certificates are verified by default. If your server uses a certificate from you
 
 ## System Status
 
-When a connection is turned on, [System > Status](/system/status/) has an AudioBookShelf row with the result of the last check. It is refreshed when you save and by the periodic health check, which runs every 6 hours, so it is not a live probe each time you open the page.
+When a connection is turned on, [System > Status](/system/status/) has an AudioBookShelf row with the result of the last check. It is refreshed when you save and by the periodic health check, which runs every 6 hours, so it is not a live probe each time you open the page. A saved key that ABM can no longer read (the encryption key was lost or changed) shows as an error until you enter it again. A connection that has not been checked yet shows as a warning.
 
 ## What ABM removes
 

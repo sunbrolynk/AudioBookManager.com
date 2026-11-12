@@ -22,7 +22,7 @@ API 金鑰屬於某個 ABS 使用者。儲存或測試時，ABM 會檢查這個�
 
 ## ABM 如何連到 ABS
 
-ABM 一律直接連線 ABS，從不經過你在 [Network](/settings/network/) 裡選的 VPN 或代理。伺服器網址在儲存前會被檢查，不安全的網址會被拒絕。
+ABM 一律直接連線 ABS，從不經過你在 [Network](/settings/network/) 裡選的 VPN 或代理。伺服器網址在儲存前會被檢查，不安全的網址會被拒絕。指回 ABM 所在機器的位址、連結本地位址和雲端中繼資料位址都會被拒絕，解析到其中任何一個的名稱也一樣。你自己的區域網路位址沒問題。
 
 ## API 金鑰
 
@@ -38,7 +38,7 @@ ABM 一律直接連線 ABS，從不經過你在 [Network](/settings/network/) �
 
 ## System Status
 
-連線開啟後，[System > Status](/system/status/) 會有一列 AudioBookShelf，顯示上次檢查的結果。它在儲存時重新整理，也由每 6 小時執行一次的定期健康檢查重新整理，所以不是每次開啟頁面都即時探測。
+連線開啟後，[System > Status](/system/status/) 會有一列 AudioBookShelf，顯示上次檢查的結果。它在儲存時重新整理，也由每 6 小時執行一次的定期健康檢查重新整理，所以不是每次開啟頁面都即時探測。ABM 無法再讀取已儲存的金鑰（加密金鑰遺失或改變了）時，會顯示為錯誤，直到你重新輸入。還沒檢查過的連線會顯示為警告。
 
 ## ABM 會刪除什麼
 

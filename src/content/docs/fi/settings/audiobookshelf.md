@@ -22,7 +22,7 @@ API-avain kuuluu ABS-käyttäjälle. ABM tarkistaa tämän käyttäjän, kun tal
 
 ## Miten ABM tavoittaa ABS:n
 
-ABM yhdistää ABS:ään aina suoraan. Se ei koskaan kulje [Network](/settings/network/)-sivulla valitsemasi VPN:n tai välityspalvelimen kautta. Palvelimen URL tarkistetaan ennen tallennusta, ja turvaton hylätään.
+ABM yhdistää ABS:ään aina suoraan. Se ei koskaan kulje [Network](/settings/network/)-sivulla valitsemasi VPN:n tai välityspalvelimen kautta. Palvelimen URL tarkistetaan ennen tallennusta, ja turvaton hylätään. Osoite, joka osoittaa takaisin koneelle, jolla ABM toimii, link-local-osoite ja pilven metadataosoite hylätään, samoin nimi, joka muuntuu jommaksikummaksi. Omat LAN-osoitteesi ovat kunnossa.
 
 ## API-avain
 
@@ -38,7 +38,7 @@ Varmenteet vahvistetaan oletuksena. Jos palvelimesi käyttää oman varmentajasi
 
 ## System Status
 
-Kun yhteys on päällä, [System > Status](/system/status/)-sivulla on AudioBookShelf-rivi viimeisen tarkistuksen tuloksella. Se päivittyy tallennettaessa ja jaksoittaisessa kuntotarkistuksessa, joka ajetaan 6 tunnin välein, joten se ei ole reaaliaikainen kysely joka kerta, kun avaat sivun.
+Kun yhteys on päällä, [System > Status](/system/status/)-sivulla on AudioBookShelf-rivi viimeisen tarkistuksen tuloksella. Se päivittyy tallennettaessa ja jaksoittaisessa kuntotarkistuksessa, joka ajetaan 6 tunnin välein, joten se ei ole reaaliaikainen kysely joka kerta, kun avaat sivun. Tallennettu avain, jota ABM ei enää pysty lukemaan (salausavain katosi tai vaihtui), näkyy virheenä, kunnes syötät sen uudelleen. Yhteys, jota ei ole vielä tarkistettu, näkyy varoituksena.
 
 ## Mitä ABM poistaa
 

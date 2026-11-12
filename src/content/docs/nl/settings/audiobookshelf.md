@@ -22,7 +22,7 @@ De API-sleutel hoort bij een ABS-gebruiker. ABM controleert die gebruiker als je
 
 ## Hoe ABM ABS bereikt
 
-ABM verbindt altijd rechtstreeks met ABS. Het gaat nooit via de VPN of proxy die je bij [Network](/settings/network/) hebt gekozen. De server-URL wordt gecontroleerd voordat hij wordt opgeslagen, en een onveilige wordt geweigerd.
+ABM verbindt altijd rechtstreeks met ABS. Het gaat nooit via de VPN of proxy die je bij [Network](/settings/network/) hebt gekozen. De server-URL wordt gecontroleerd voordat hij wordt opgeslagen, en een onveilige wordt geweigerd. Een adres dat terugwijst naar de machine waarop ABM draait, een link-local-adres en een adres voor cloudmetadata worden geweigerd, net als een naam die naar een van die adressen wordt omgezet. Je eigen LAN-adressen zijn prima.
 
 ## De API-sleutel
 
@@ -38,7 +38,7 @@ Certificaten worden standaard gecontroleerd. Gebruikt je server een certificaat 
 
 ## System Status
 
-Als een verbinding aanstaat, heeft [System > Status](/system/status/) een rij AudioBookShelf met de uitkomst van de laatste controle. Die wordt ververst bij het opslaan en door de periodieke gezondheidscontrole, die elke 6 uur draait. Het is dus geen live controle bij elke keer dat je de pagina opent.
+Als een verbinding aanstaat, heeft [System > Status](/system/status/) een rij AudioBookShelf met de uitkomst van de laatste controle. Die wordt ververst bij het opslaan en door de periodieke gezondheidscontrole, die elke 6 uur draait. Het is dus geen live controle bij elke keer dat je de pagina opent. Een opgeslagen sleutel die ABM niet meer kan lezen (de versleutelingssleutel is kwijt of veranderd) verschijnt als fout totdat je hem opnieuw invoert. Een verbinding die nog niet is gecontroleerd, verschijnt als waarschuwing.
 
 ## Wat ABM verwijdert
 

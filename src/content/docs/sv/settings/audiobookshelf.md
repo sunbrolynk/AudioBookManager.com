@@ -22,7 +22,7 @@ API-nyckeln tillhör en ABS-användare. ABM kontrollerar den användaren när du
 
 ## Hur ABM når ABS
 
-ABM ansluter alltid direkt till ABS. Det går aldrig via det VPN eller den proxy du valde under [Network](/settings/network/). Serverns URL kontrolleras innan den sparas, och en osäker nekas.
+ABM ansluter alltid direkt till ABS. Det går aldrig via det VPN eller den proxy du valde under [Network](/settings/network/). Serverns URL kontrolleras innan den sparas, och en osäker nekas. En adress som pekar tillbaka på maskinen ABM körs på, en link-local-adress och en adress till molnmetadata avvisas, och det gäller även ett namn som slås upp till någon av dem. Dina egna LAN-adresser går bra.
 
 ## API-nyckeln
 
@@ -38,7 +38,7 @@ Certifikat verifieras som standard. Om din server använder ett certifikat från
 
 ## System Status
 
-När en anslutning är påslagen har [System > Status](/system/status/) en rad AudioBookShelf med resultatet av den senaste kontrollen. Den uppdateras när du sparar och av den periodiska hälsokontrollen, som körs var 6:e timme, så det är ingen liveavläsning varje gång du öppnar sidan.
+När en anslutning är påslagen har [System > Status](/system/status/) en rad AudioBookShelf med resultatet av den senaste kontrollen. Den uppdateras när du sparar och av den periodiska hälsokontrollen, som körs var 6:e timme, så det är ingen liveavläsning varje gång du öppnar sidan. En sparad nyckel som ABM inte längre kan läsa (krypteringsnyckeln försvann eller ändrades) visas som ett fel tills du skriver in den igen. En anslutning som inte har kontrollerats ännu visas som en varning.
 
 ## Vad ABM tar bort
 

@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Omat viestit
 
-Oma viesti kirjoittaa tapahtuman tekstin uudelleen. Valitse **Format** ja **Cover** (Auto käyttää kirjan kansikuvaa, lisäksi None tai Custom URL), kirjoita **Title** ja leipäteksti ja klikkaa muuttujaa lisätäksesi sen. Kunkin tapahtuman oletuspohja on lähtökohta. Esikatselu näyttää tuloksen, ja voit lähettää testin jonkin yhteyden kautta.
+Oma viesti kirjoittaa tapahtuman tekstin uudelleen. Valitse **Format** ja **Cover** (Auto käyttää kirjan kansikuvaa, lisäksi None tai Custom URL), kirjoita **Title** ja leipäteksti ja klikkaa muuttujaa lisätäksesi sen. Kunkin tapahtuman oletuspohja on lähtökohta. Esikatselu näyttää tuloksen, ja voit lähettää testin jonkin yhteyden kautta. Oman kansikuvan URL-osoitteen on oltava julkinen osoite; LAN-verkkosi osoite hylätään.
 
 ## Sudenkuopat
 

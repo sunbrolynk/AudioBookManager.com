@@ -22,7 +22,7 @@ Klíč API patří uživateli ABS. ABM tohoto uživatele ověří při uložení
 
 ## Jak ABM dosáhne na ABS
 
-ABM se k ABS připojuje vždy přímo. Nikdy nejde přes VPN ani proxy, které sis vybral v [Network](/settings/network/). Adresa serveru se před uložením kontroluje a nebezpečná se odmítne.
+ABM se k ABS připojuje vždy přímo. Nikdy nejde přes VPN ani proxy, které sis vybral v [Network](/settings/network/). Adresa serveru se před uložením kontroluje a nebezpečná se odmítne. Adresa, která ukazuje zpět na stroj, na kterém ABM běží, adresa link-local a adresa cloudových metadat se odmítnou, stejně jako název, který se na některou z nich přeloží. Adresy z tvé vlastní sítě LAN jsou v pořádku.
 
 ## Klíč API
 
@@ -38,7 +38,7 @@ Certifikáty se ověřují ve výchozím stavu. Pokud tvůj server používá ce
 
 ## System Status
 
-Když je připojení zapnuté, [System > Status](/system/status/) má řádek AudioBookShelf s výsledkem poslední kontroly. Obnovuje se při uložení a pravidelnou kontrolou stavu, která běží každých 6 hodin, takže to není živé dotazování při každém otevření stránky.
+Když je připojení zapnuté, [System > Status](/system/status/) má řádek AudioBookShelf s výsledkem poslední kontroly. Obnovuje se při uložení a pravidelnou kontrolou stavu, která běží každých 6 hodin, takže to není živé dotazování při každém otevření stránky. Uložený klíč, který ABM už nepřečte (šifrovací klíč se ztratil nebo změnil), se ukáže jako chyba, dokud ho nezadáš znovu. Připojení, které ještě nebylo zkontrolováno, se ukáže jako varování.
 
 ## Co ABM odstraňuje
 

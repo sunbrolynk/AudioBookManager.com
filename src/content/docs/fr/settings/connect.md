@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Messages personnalisés
 
-Un message personnalisé réécrit le texte d'un événement. Choisis un **Format**, une **Cover** (Auto utilise la couverture du livre, None, ou une Custom URL), écris le **Title** et le corps, et clique sur une variable pour l'insérer. Le modèle par défaut de chaque événement sert de point de départ. L'aperçu montre le résultat, et tu peux envoyer un test via une connexion.
+Un message personnalisé réécrit le texte d'un événement. Choisis un **Format**, une **Cover** (Auto utilise la couverture du livre, None, ou une Custom URL), écris le **Title** et le corps, et clique sur une variable pour l'insérer. Le modèle par défaut de chaque événement sert de point de départ. L'aperçu montre le résultat, et tu peux envoyer un test via une connexion. L'URL d'une jaquette personnalisée doit être une adresse publique ; une adresse de ton LAN est refusée.
 
 ## Pièges à éviter
 

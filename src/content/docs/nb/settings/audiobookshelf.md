@@ -22,7 +22,7 @@ API-nøkkelen tilhører en ABS-bruker. ABM sjekker den brukeren når du lagrer e
 
 ## Slik når ABM ABS
 
-ABM kobler alltid direkte til ABS. Det går aldri via VPN-en eller proxyen du valgte under [Network](/settings/network/). Serverens URL sjekkes før den lagres, og en usikker avvises.
+ABM kobler alltid direkte til ABS. Det går aldri via VPN-en eller proxyen du valgte under [Network](/settings/network/). Serverens URL sjekkes før den lagres, og en usikker avvises. En adresse som peker tilbake på maskinen ABM kjører på, en link-local-adresse og en adresse til skymetadata avvises, og det samme gjelder et navn som løses opp til en av dem. Dine egne LAN-adresser er greie.
 
 ## API-nøkkelen
 
@@ -38,7 +38,7 @@ Sertifikater bekreftes som standard. Bruker serveren din et sertifikat fra din e
 
 ## System Status
 
-Når en tilkobling er påslått, har [System > Status](/system/status/) en rad AudioBookShelf med resultatet av den siste sjekken. Den oppdateres når du lagrer og av den periodiske helsesjekken, som kjører hver 6. time, så det er ikke en live-sjekk hver gang du åpner siden.
+Når en tilkobling er påslått, har [System > Status](/system/status/) en rad AudioBookShelf med resultatet av den siste sjekken. Den oppdateres når du lagrer og av den periodiske helsesjekken, som kjører hver 6. time, så det er ikke en live-sjekk hver gang du åpner siden. En lagret nøkkel som ABM ikke lenger kan lese (krypteringsnøkkelen gikk tapt eller ble endret), vises som en feil til du skriver den inn på nytt. En tilkobling som ikke er sjekket ennå, vises som en advarsel.
 
 ## Hva ABM fjerner
 

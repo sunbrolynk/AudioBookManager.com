@@ -22,7 +22,7 @@ La clé API appartient à un utilisateur ABS. ABM vérifie cet utilisateur quand
 
 ## Comment ABM joint ABS
 
-ABM se connecte toujours directement à ABS. Il ne passe jamais par le VPN ou le proxy que tu as choisi dans [Network](/settings/network/). L'URL du serveur est vérifiée avant l'enregistrement, et une URL dangereuse est refusée.
+ABM se connecte toujours directement à ABS. Il ne passe jamais par le VPN ou le proxy que tu as choisi dans [Network](/settings/network/). L'URL du serveur est vérifiée avant l'enregistrement, et une URL dangereuse est refusée. Une adresse qui pointe vers la machine sur laquelle tourne ABM, une adresse link-local et une adresse de métadonnées cloud sont refusées, tout comme un nom qui se résout vers l'une d'elles. Tes propres adresses LAN sont acceptées.
 
 ## La clé API
 
@@ -38,7 +38,7 @@ Les certificats sont vérifiés par défaut. Si ton serveur utilise un certifica
 
 ## System Status
 
-Quand une connexion est activée, [System > Status](/system/status/) affiche une ligne AudioBookShelf avec le résultat de la dernière vérification. Elle est mise à jour à l'enregistrement et par la vérification de santé périodique, toutes les 6 heures. Ce n'est donc pas un sondage en direct à chaque ouverture de la page.
+Quand une connexion est activée, [System > Status](/system/status/) affiche une ligne AudioBookShelf avec le résultat de la dernière vérification. Elle est mise à jour à l'enregistrement et par la vérification de santé périodique, toutes les 6 heures. Ce n'est donc pas un sondage en direct à chaque ouverture de la page. Une clé enregistrée qu'ABM ne peut plus lire (la clé de chiffrement a été perdue ou changée) apparaît comme une erreur jusqu'à ce que tu la saisisses de nouveau. Une connexion qui n'a pas encore été vérifiée apparaît comme un avertissement.
 
 ## Ce qu'ABM supprime
 

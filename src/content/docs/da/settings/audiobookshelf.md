@@ -22,7 +22,7 @@ API-nøglen tilhører en ABS-bruger. ABM tjekker den bruger, når du gemmer elle
 
 ## Sådan når ABM ABS
 
-ABM forbinder altid direkte til ABS. Det går aldrig gennem den VPN eller proxy, du valgte under [Network](/settings/network/). Serverens URL tjekkes, før den gemmes, og en usikker afvises.
+ABM forbinder altid direkte til ABS. Det går aldrig gennem den VPN eller proxy, du valgte under [Network](/settings/network/). Serverens URL tjekkes, før den gemmes, og en usikker afvises. En adresse, der peger tilbage på den maskine, ABM kører på, en link-local-adresse og en adresse til cloud-metadata afvises, og det samme gælder et navn, der oversættes til en af dem. Dine egne LAN-adresser er fine.
 
 ## API-nøglen
 
@@ -38,7 +38,7 @@ Certifikater bekræftes som standard. Bruger din server et certifikat fra din eg
 
 ## System Status
 
-Når en forbindelse er slået til, har [System > Status](/system/status/) en række AudioBookShelf med resultatet af det seneste tjek. Den opdateres, når du gemmer, og af det periodiske sundhedstjek, der kører hver 6. time, så det er ikke et live-tjek, hver gang du åbner siden.
+Når en forbindelse er slået til, har [System > Status](/system/status/) en række AudioBookShelf med resultatet af det seneste tjek. Den opdateres, når du gemmer, og af det periodiske sundhedstjek, der kører hver 6. time, så det er ikke et live-tjek, hver gang du åbner siden. En gemt nøgle, som ABM ikke længere kan læse (krypteringsnøglen er gået tabt eller ændret), vises som en fejl, indtil du indtaster den igen. En forbindelse, der endnu ikke er tjekket, vises som en advarsel.
 
 ## Hvad ABM fjerner
 

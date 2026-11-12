@@ -22,7 +22,7 @@ Klucz API należy do użytkownika ABS. ABM sprawdza tego użytkownika przy zapis
 
 ## Jak ABM łączy się z ABS
 
-ABM zawsze łączy się z ABS bezpośrednio. Nigdy nie idzie przez VPN ani proxy wybrane w [Network](/settings/network/). Adres URL serwera jest sprawdzany przed zapisem, a niebezpieczny zostanie odrzucony.
+ABM zawsze łączy się z ABS bezpośrednio. Nigdy nie idzie przez VPN ani proxy wybrane w [Network](/settings/network/). Adres URL serwera jest sprawdzany przed zapisem, a niebezpieczny zostanie odrzucony. Adres wskazujący z powrotem na maszynę, na której działa ABM, adres link-local i adres metadanych chmury są odrzucane, podobnie jak nazwa, która się na któryś z nich rozwiązuje. Twoje własne adresy LAN są w porządku.
 
 ## Klucz API
 
@@ -38,7 +38,7 @@ Certyfikaty są domyślnie weryfikowane. Jeśli serwer używa certyfikatu z twoj
 
 ## System Status
 
-Gdy połączenie jest włączone, [System > Status](/system/status/) ma wiersz AudioBookShelf z wynikiem ostatniego sprawdzenia. Odświeża się przy zapisie i przy okresowej kontroli stanu, która działa co 6 godzin, więc to nie jest sprawdzenie na żywo przy każdym otwarciu strony.
+Gdy połączenie jest włączone, [System > Status](/system/status/) ma wiersz AudioBookShelf z wynikiem ostatniego sprawdzenia. Odświeża się przy zapisie i przy okresowej kontroli stanu, która działa co 6 godzin, więc to nie jest sprawdzenie na żywo przy każdym otwarciu strony. Zapisany klucz, którego ABM już nie może odczytać (klucz szyfrowania zginął lub się zmienił), pokazuje się jako błąd, dopóki nie wpiszesz go ponownie. Połączenie, które nie zostało jeszcze sprawdzone, pokazuje się jako ostrzeżenie.
 
 ## Co usuwa ABM
 

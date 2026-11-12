@@ -22,7 +22,7 @@ La chiave API appartiene a un utente ABS. ABM controlla quell'utente quando salv
 
 ## Come ABM raggiunge ABS
 
-ABM si collega sempre direttamente ad ABS. Non passa mai dalla VPN o dal proxy che hai scelto in [Network](/settings/network/). L'URL del server viene controllato prima del salvataggio, e uno non sicuro viene rifiutato.
+ABM si collega sempre direttamente ad ABS. Non passa mai dalla VPN o dal proxy che hai scelto in [Network](/settings/network/). L'URL del server viene controllato prima del salvataggio, e uno non sicuro viene rifiutato. Vengono rifiutati un indirizzo che punta alla macchina su cui gira ABM, un indirizzo link-local e un indirizzo dei metadati cloud, così come un nome che si risolve in uno di essi. I tuoi indirizzi LAN vanno bene.
 
 ## La chiave API
 
@@ -38,7 +38,7 @@ I certificati vengono verificati per impostazione predefinita. Se il tuo server 
 
 ## System Status
 
-Quando una connessione è attiva, [System > Status](/system/status/) mostra una riga AudioBookShelf con il risultato dell'ultimo controllo. Si aggiorna al salvataggio e con il controllo di integrità periodico, che gira ogni 6 ore, quindi non è un controllo in tempo reale a ogni apertura della pagina.
+Quando una connessione è attiva, [System > Status](/system/status/) mostra una riga AudioBookShelf con il risultato dell'ultimo controllo. Si aggiorna al salvataggio e con il controllo di integrità periodico, che gira ogni 6 ore, quindi non è un controllo in tempo reale a ogni apertura della pagina. Una chiave salvata che ABM non riesce più a leggere (la chiave di cifratura è andata persa o è cambiata) compare come errore finché non la reinserisci. Una connessione non ancora controllata compare come avviso.
 
 ## Cosa rimuove ABM
 

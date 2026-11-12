@@ -22,7 +22,7 @@ Der API-Key gehört zu einem ABS-Benutzer. ABM prüft diesen Benutzer beim Speic
 
 ## Wie ABM ABS erreicht
 
-ABM verbindet sich immer direkt mit ABS. Es läuft nie über das VPN oder den Proxy, den du unter [Network](/settings/network/) gewählt hast. Die Server-URL wird vor dem Speichern geprüft, und eine unsichere wird abgelehnt.
+ABM verbindet sich immer direkt mit ABS. Es läuft nie über das VPN oder den Proxy, den du unter [Network](/settings/network/) gewählt hast. Die Server-URL wird vor dem Speichern geprüft, und eine unsichere wird abgelehnt. Eine Adresse, die zurück auf den Rechner zeigt, auf dem ABM läuft, eine Link-Local-Adresse und eine Cloud-Metadaten-Adresse werden abgelehnt, ebenso ein Name, der zu einer davon aufgelöst wird. Deine eigenen LAN-Adressen sind in Ordnung.
 
 ## Der API-Key
 
@@ -38,7 +38,7 @@ Zertifikate werden standardmäßig geprüft. Wenn dein Server ein Zertifikat von
 
 ## System Status
 
-Ist eine Verbindung eingeschaltet, zeigt [System > Status](/system/status/) eine Zeile AudioBookShelf mit dem Ergebnis der letzten Prüfung. Sie wird beim Speichern aktualisiert und vom regelmäßigen Health-Check, der alle 6 Stunden läuft. Es ist also keine Live-Abfrage bei jedem Öffnen der Seite.
+Ist eine Verbindung eingeschaltet, zeigt [System > Status](/system/status/) eine Zeile AudioBookShelf mit dem Ergebnis der letzten Prüfung. Sie wird beim Speichern aktualisiert und vom regelmäßigen Health-Check, der alle 6 Stunden läuft. Es ist also keine Live-Abfrage bei jedem Öffnen der Seite. Ein gespeicherter Key, den ABM nicht mehr lesen kann (der Verschlüsselungsschlüssel ging verloren oder wurde geändert), erscheint als Fehler, bis du ihn neu eingibst. Eine Verbindung, die noch nicht geprüft wurde, erscheint als Warnung.
 
 ## Was ABM entfernt
 

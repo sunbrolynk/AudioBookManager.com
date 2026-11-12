@@ -22,7 +22,7 @@ API 密钥属于某个 ABS 用户。保存或测试时，ABM 会检查这个用�
 
 ## ABM 如何连到 ABS
 
-ABM 始终直接连接 ABS，从不经过你在 [Network](/settings/network/) 里选的 VPN 或代理。服务器地址在保存前会被检查，不安全的地址会被拒绝。
+ABM 始终直接连接 ABS，从不经过你在 [Network](/settings/network/) 里选的 VPN 或代理。服务器地址在保存前会被检查，不安全的地址会被拒绝。指回 ABM 所在机器的地址、链路本地地址和云元数据地址都会被拒绝，解析到其中任何一个的名称也一样。你自己的局域网地址没问题。
 
 ## API 密钥
 
@@ -38,7 +38,7 @@ ABM 始终直接连接 ABS，从不经过你在 [Network](/settings/network/) �
 
 ## System Status
 
-连接开启后，[System > Status](/system/status/) 会有一行 AudioBookShelf，显示上次检查的结果。它在保存时刷新，也由每 6 小时运行一次的定期健康检查刷新，所以不是每次打开页面都实时探测。
+连接开启后，[System > Status](/system/status/) 会有一行 AudioBookShelf，显示上次检查的结果。它在保存时刷新，也由每 6 小时运行一次的定期健康检查刷新，所以不是每次打开页面都实时探测。ABM 不再能读取已保存的密钥（加密密钥丢失或改变了）时，会显示为错误，直到你重新输入。还没检查过的连接会显示为警告。
 
 ## ABM 会删除什么
 

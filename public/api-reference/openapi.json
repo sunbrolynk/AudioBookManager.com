@@ -17847,11 +17847,25 @@
       "AbsLibrary": {
         "properties": {
           "id": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Id"
           },
           "name": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Name"
           },
           "folders": {
@@ -17864,8 +17878,6 @@
         },
         "type": "object",
         "required": [
-          "id",
-          "name",
           "folders"
         ],
         "title": "AbsLibrary"
@@ -17873,19 +17885,29 @@
       "AbsLibraryFolder": {
         "properties": {
           "id": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Id"
           },
           "full_path": {
-            "type": "string",
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
             "title": "Full Path"
           }
         },
         "type": "object",
-        "required": [
-          "id",
-          "full_path"
-        ],
         "title": "AbsLibraryFolder"
       },
       "AbsLibraryPairing": {
