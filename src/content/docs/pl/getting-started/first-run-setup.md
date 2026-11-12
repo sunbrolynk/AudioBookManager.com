@@ -31,7 +31,7 @@ To te same ustawienia co w [Bezpieczeństwo i logowanie](/pl/settings/security/)
 
 ## 2. Sieć (Network)
 
-Network to główny wyłącznik. Nic, co wysyła ABM, nie opuści twojego komputera, dopóki nie wybierzesz tu trasy, więc kroki Metadata i Audible od niego zależą. Tego kroku nie można pominąć, a **Continue** pozostaje wyłączony, dopóki trasa nie jest kompletna.
+Network to główny wyłącznik. Nic, co wysyła ABM, nie opuści twojego komputera, dopóki nie wybierzesz tu trasy, więc kroki Metadata i Audible od niego zależą. **Continue** pozostaje wyłączony, dopóki trasa nie jest kompletna. Krok można pominąć tylko wtedy, gdy nie da się wczytać jego ustawień: wtedy pokazuje błąd z przyciskami **Retry**, **Back** i **Skip for now**. Dopóki nie wybierzesz trasy, ABM blokuje wszystko, co wysyła, a krok Finish pokazuje Network jako oczekujący.
 
 | Wybór | Co dajesz ABM |
 |---|---|
@@ -54,7 +54,7 @@ Wybierz, gdzie ABM szuka książek. To idzie przed twoimi folderami, bo pierwsze
 
 Jest też pole **Local Storage**. Prowadzi stały, szyfrowany, lokalny zapis każdej książki, którą ABM wyszukuje, dodaje, importuje lub widzi w Discover, i działa ze wszystkimi trzema źródłami. Po włączeniu można je wyłączyć tylko w **Settings > Metadata**.
 
-**Continue** zapisuje źródło i włącza Local Storage, jeśli je zaznaczyłeś. Jeśli wybrane źródło nie może jeszcze wyjść do sieci, na przykład Built-in bez wybranej trasy, krok mówi dlaczego. Zobacz [Wybór źródła metadanych](/pl/metadata/choosing-a-source/).
+**Continue** zapisuje źródło i włącza Local Storage, jeśli je zaznaczyłeś. Jeśli wybrane źródło nie może jeszcze wyjść do sieci, na przykład Built-in bez wybranej trasy, krok mówi dlaczego. Zobacz [Wybór źródła metadanych](/pl/metadata/choosing-a-source/). Jeśli nie da się wczytać ustawień kroku, pokazuje on błąd z przyciskami **Retry**, **Back** i **Skip for now**, a źródło możesz ustawić później w **Settings > Metadata**.
 
 ## 4. Audible (opcjonalnie)
 
@@ -78,6 +78,6 @@ Wybierz typ indeksera lub gotowy wzór, wypełnij go, potem **Test** i **Save**,
 
 ## 8. Koniec (Finish)
 
-Podsumowanie wymienia każdy krok i to, co ustawiono: twoją trasę Network (oraz Public IP, jeśli ją sprawdzono), źródło metadanych, konto Audible, folder główny oraz dodanego klienta i indekser. Każdy krok odłożony na później wyświetla się jako oczekujący. Jeśli nic nie czeka, podsumowanie mówi, że wszystkie ogniwa się świecą. **Go to Library** zamyka kreatora.
+Podsumowanie wymienia każdy krok i to, co ustawiono: twoją trasę Network (oraz Public IP, jeśli ją sprawdzono), źródło metadanych, konto Audible, folder główny oraz dodanego klienta i indekser. Każdy krok odłożony na później wyświetla się jako oczekujący. Jeśli ABM nie może odczytać stanu kroku, na przykład gdy nie wczytuje się lista klientów pobierania, ten wiersz pokazuje **Could not check** i pojawia się przycisk **Retry**. Jeśli nic nie czeka, podsumowanie mówi, że wszystkie ogniwa się świecą. **Go to Library** zamyka kreatora.
 
 Wszystko, co pominąłeś, jest w **Settings**, kiedy tylko zechcesz. Sensowne następne rzeczy to profil jakości i twoje książki: zobacz [Szybki start](/pl/getting-started/quick-start/).

@@ -31,7 +31,7 @@ Das sind dieselben Einstellungen wie unter [Sicherheit und Anmeldung](/de/settin
 
 ## 2. Netzwerk (Network)
 
-Network ist der Hauptschalter. Nichts, was ABM sendet, verlässt deinen Rechner, bis du hier eine Route wählst. Deshalb hängen die Schritte Metadata und Audible davon ab. Dieser Schritt lässt sich nicht überspringen, und **Continue** bleibt aus, bis die Route vollständig ist.
+Network ist der Hauptschalter. Nichts, was ABM sendet, verlässt deinen Rechner, bis du hier eine Route wählst. Deshalb hängen die Schritte Metadata und Audible davon ab. **Continue** bleibt aus, bis die Route vollständig ist. Der Schritt lässt sich nur überspringen, wenn sich seine Einstellungen nicht laden lassen: Dann zeigt er den Fehler mit **Retry**, **Back** und **Skip for now**. Solange keine Route gewählt ist, blockiert ABM alles, was es sendet, und der Schritt Finish zeigt Network als offen.
 
 | Auswahl | Was du ABM gibst |
 |---|---|
@@ -54,7 +54,7 @@ Wähle, wo ABM Bücher nachschlägt. Das kommt vor deinen Ordnern, weil der erst
 
 Dazu gibt es das Kontrollkästchen **Local Storage**. Es führt eine dauerhafte, verschlüsselte, lokale Aufzeichnung jedes Buchs, das ABM nachschlägt, sucht, hinzufügt, importiert oder in Discover sieht, und es funktioniert mit allen drei Quellen. Ist es einmal an, lässt es sich nur noch unter **Settings > Metadata** ausschalten.
 
-**Continue** speichert die Quelle und schaltet Local Storage ein, wenn du es angehakt hast. Kann die gewählte Quelle noch nicht nach draußen, zum Beispiel Built-in ohne gewählte Route, sagt der Schritt, warum. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/).
+**Continue** speichert die Quelle und schaltet Local Storage ein, wenn du es angehakt hast. Kann die gewählte Quelle noch nicht nach draußen, zum Beispiel Built-in ohne gewählte Route, sagt der Schritt, warum. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/). Lassen sich die Einstellungen des Schritts nicht laden, zeigt er den Fehler mit **Retry**, **Back** und **Skip for now**, und du kannst die Quelle später unter **Settings > Metadata** festlegen.
 
 ## 4. Audible (optional)
 
@@ -78,6 +78,6 @@ Wähl einen Indexer-Typ oder ein Preset, füll ihn aus und drück **Test** und *
 
 ## 8. Abschluss (Finish)
 
-Eine Zusammenfassung listet jeden Schritt mit dem, was eingestellt wurde: deine Network-Route (und die Public IP, falls sie geprüft wurde), die Metadatenquelle, das Audible-Konto, den Root-Ordner sowie den Client und den Indexer, die du hinzugefügt hast. Jeder Schritt, den du auf später verschoben hast, steht als offen da. Ist nichts offen, sagt die Zusammenfassung, dass jedes Glied leuchtet. **Go to Library** schließt den Assistenten.
+Eine Zusammenfassung listet jeden Schritt mit dem, was eingestellt wurde: deine Network-Route (und die Public IP, falls sie geprüft wurde), die Metadatenquelle, das Audible-Konto, den Root-Ordner sowie den Client und den Indexer, die du hinzugefügt hast. Jeder Schritt, den du auf später verschoben hast, steht als offen da. Kann ABM den Stand eines Schritts nicht zurücklesen, zum Beispiel weil die Liste der Download-Clients nicht lädt, zeigt diese Zeile **Could not check**, und ein **Retry**-Button erscheint. Ist nichts offen, sagt die Zusammenfassung, dass jedes Glied leuchtet. **Go to Library** schließt den Assistenten.
 
 Alles, was du übersprungen hast, findest du in **Settings**, wann immer du es willst. Als Nächstes bieten sich ein Qualitätsprofil und deine Bücher an: siehe [Schnellstart](/de/getting-started/quick-start/).

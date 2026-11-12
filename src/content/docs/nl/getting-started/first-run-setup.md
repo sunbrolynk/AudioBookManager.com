@@ -31,7 +31,7 @@ Dit zijn dezelfde instellingen als op [Beveiliging en inloggen](/nl/settings/sec
 
 ## 2. Netwerk (Network)
 
-Network is de hoofdschakelaar. Niets wat ABM verstuurt verlaat je machine totdat je hier een route kiest, dus de stappen Metadata en Audible hangen ervan af. Deze stap kun je niet overslaan, en **Continue** blijft uit tot de route compleet is.
+Network is de hoofdschakelaar. Niets wat ABM verstuurt verlaat je machine totdat je hier een route kiest, dus de stappen Metadata en Audible hangen ervan af. **Continue** blijft uit tot de route compleet is. De stap kun je alleen overslaan als de instellingen niet laden: dan toont hij de fout met **Retry**, **Back** en **Skip for now**. Zolang er geen route is gekozen, blokkeert ABM alles wat het verstuurt, en de stap Finish toont Network als wachtend.
 
 | Keuze | Wat je ABM geeft |
 |---|---|
@@ -54,7 +54,7 @@ Kies waar ABM boeken opzoekt. Dit komt vóór je mappen, omdat de eerste mapscan
 
 Er is ook een vakje **Local Storage**. Dat bewaart een permanent, versleuteld, lokaal overzicht van elk boek dat ABM opzoekt, zoekt, toevoegt, importeert of in Discover ziet, en het werkt met alle drie de bronnen. Als het eenmaal aan staat, kun je het alleen nog uitzetten in **Settings > Metadata**.
 
-**Continue** slaat de bron op en zet Local Storage aan als je het hebt aangevinkt. Kan de gekozen bron nog niet naar buiten, bijvoorbeeld Built-in zonder gekozen route, dan zegt de stap waarom. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/).
+**Continue** slaat de bron op en zet Local Storage aan als je het hebt aangevinkt. Kan de gekozen bron nog niet naar buiten, bijvoorbeeld Built-in zonder gekozen route, dan zegt de stap waarom. Zie [Een metadatabron kiezen](/nl/metadata/choosing-a-source/). Laden de instellingen van de stap niet, dan toont hij de fout met **Retry**, **Back** en **Skip for now**, en kun je de bron later instellen onder **Settings > Metadata**.
 
 ## 4. Audible (optioneel)
 
@@ -78,6 +78,6 @@ Kies een indexertype of preset, vul hem in en druk op **Test** en **Save**, net 
 
 ## 8. Afronden (Finish)
 
-Een overzicht toont elke stap met wat is ingesteld: je Network-route (en het Public IP, als dat is gecontroleerd), de metadatabron, het Audible-account, de rootmap, en de client en indexer die je hebt toegevoegd. Elke stap die je voor later hebt laten liggen staat als wachtend. Wacht er niets, dan zegt het overzicht dat elke schakel brandt. **Go to Library** sluit de wizard.
+Een overzicht toont elke stap met wat is ingesteld: je Network-route (en het Public IP, als dat is gecontroleerd), de metadatabron, het Audible-account, de rootmap, en de client en indexer die je hebt toegevoegd. Elke stap die je voor later hebt laten liggen staat als wachtend. Kan ABM de status van een stap niet terugkijken, bijvoorbeeld omdat de lijst met downloadclients niet laadt, dan toont die rij **Could not check** en verschijnt er een **Retry**-knop. Wacht er niets, dan zegt het overzicht dat elke schakel brandt. **Go to Library** sluit de wizard.
 
 Alles wat je hebt overgeslagen staat in **Settings** wanneer je het wilt. Handige volgende dingen zijn een kwaliteitsprofiel en je boeken: zie [Snel aan de slag](/nl/getting-started/quick-start/).

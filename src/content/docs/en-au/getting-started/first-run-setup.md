@@ -31,7 +31,7 @@ These are the same settings as on [Security and sign-in](/en-au/settings/securit
 
 ## 2. Network
 
-Network is the master switch. Nothing ABM sends leaves your machine until you choose a route here, so the Metadata and Audible steps depend on it. This step can't be skipped, and **Continue** stays off until the route is complete.
+Network is the master switch. Nothing ABM sends leaves your machine until you choose a route here, so the Metadata and Audible steps depend on it. **Continue** stays off until the route is complete. The step can only be skipped if its settings fail to load: it then shows the error with **Retry**, **Back** and **Skip for now**. Until a route is chosen, ABM keeps blocking everything it sends, and the Finish step shows Network as waiting.
 
 | Choice | What you give ABM |
 |---|---|
@@ -54,7 +54,7 @@ Choose where ABM looks books up. This comes before your folders because the firs
 
 There is also a **Local Storage** checkbox. It keeps a permanent, encrypted, local record of every book ABM looks up, searches, adds, imports or sees in Discover, and it works with all three sources. Once it is on, it can only be turned off in **Settings > Metadata**.
 
-**Continue** saves the source, and turns Local Storage on if you ticked it. If the chosen source can't reach out yet, for example Built-in with no route chosen, the step says why. See [Choosing a metadata source](/en-au/metadata/choosing-a-source/).
+**Continue** saves the source, and turns Local Storage on if you ticked it. If the chosen source can't reach out yet, for example Built-in with no route chosen, the step says why. See [Choosing a metadata source](/en-au/metadata/choosing-a-source/). If the step's settings fail to load, it shows the error with **Retry**, **Back** and **Skip for now**, and you can set the source later under **Settings > Metadata**.
 
 ## 4. Audible (optional)
 
@@ -78,6 +78,6 @@ Choose an indexer type or preset, fill it in, then **Test** and **Save**, the sa
 
 ## 8. Finish
 
-A summary lists each step with what was set: your Network route (and the Public IP, if it was checked), the metadata source, the Audible account, the root folder, and the client and indexer you added. Every step you left for later shows as waiting. If nothing is waiting, the summary says every link is lit. **Go to Library** closes the wizard.
+A summary lists each step with what was set: your Network route (and the Public IP, if it was checked), the metadata source, the Audible account, the root folder, and the client and indexer you added. Every step you left for later shows as waiting. If ABM can't read a step's state back, for example the list of download clients fails to load, that row shows **Could not check** and a **Retry** button appears. If nothing is waiting, the summary says every link is lit. **Go to Library** closes the wizard.
 
 Anything you skipped is in **Settings** whenever you want it. The next sensible things are a quality profile and your books: see [Quick start](/en-au/getting-started/quick-start/).

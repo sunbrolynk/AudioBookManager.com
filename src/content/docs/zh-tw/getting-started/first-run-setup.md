@@ -31,7 +31,7 @@ description: 全新安裝時的設定精靈，一步一步來。
 
 ## 2. 網路（Network）
 
-Network 是總開關。在你這裡選好路徑之前，ABM 送出的任何東西都不會離開你的機器，所以 Metadata 和 Audible 這兩步依賴它。這一步不能略過，路徑沒填完整之前 **Continue** 一直是關閉的。
+Network 是總開關。在你這裡選好路徑之前，ABM 送出的任何東西都不會離開你的機器，所以 Metadata 和 Audible 這兩步依賴它。路徑沒填完整之前 **Continue** 一直是關閉的。只有這一步的設定載入失敗時才能略過：這時它會顯示錯誤，並提供 **Retry**、**Back** 和 **Skip for now**。在選好路徑之前，ABM 會一直擋住它要送出的所有東西，Finish 這一步會把 Network 顯示為等待中。
 
 | 選項 | 你要給 ABM 什麼 |
 |---|---|
@@ -54,7 +54,7 @@ Network 是總開關。在你這裡選好路徑之前，ABM 送出的任何東�
 
 還有一個 **Local Storage** 核取方塊。它會為 ABM 查詢、搜尋、新增、匯入或在 Discover 裡看到的每一本書，保留一份永久、加密的本機紀錄，三種來源都適用。一旦開啟，只能在 **Settings > Metadata** 裡關閉。
 
-**Continue** 會儲存來源，如果你勾選了，還會開啟 Local Storage。如果所選的來源暫時還不能連出去，例如沒有選路徑的 Built-in，這一步會說明原因。請見[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)。
+**Continue** 會儲存來源，如果你勾選了，還會開啟 Local Storage。如果所選的來源暫時還不能連出去，例如沒有選路徑的 Built-in，這一步會說明原因。請見[選擇中繼資料來源](/zh-tw/metadata/choosing-a-source/)。如果這一步的設定載入失敗，它會顯示錯誤，並提供 **Retry**、**Back** 和 **Skip for now**，來源可以之後在 **Settings > Metadata** 再設。
 
 ## 4. Audible（選填）
 
@@ -78,6 +78,6 @@ Network 是總開關。在你這裡選好路徑之前，ABM 送出的任何東�
 
 ## 8. 完成（Finish）
 
-摘要會逐步列出各項設定的結果：你的 Network 路徑（如果檢查過，還有 Public IP）、中繼資料來源、Audible 帳號、根資料夾，以及你新增的用戶端和索引器。你留到之後的步驟會顯示為等待中。如果沒有任何等待項，摘要會說每個環節都亮了。**Go to Library** 會關閉精靈。
+摘要會逐步列出各項設定的結果：你的 Network 路徑（如果檢查過，還有 Public IP）、中繼資料來源、Audible 帳號、根資料夾，以及你新增的用戶端和索引器。你留到之後的步驟會顯示為等待中。如果 ABM 讀不回某一步的狀態，例如下載用戶端清單載入失敗，那一行會顯示 **Could not check**，並出現一個 **Retry** 按鈕。如果沒有任何等待項，摘要會說每個環節都亮了。**Go to Library** 會關閉精靈。
 
 你略過的內容隨時都能在 **Settings** 裡找到。接下來合理的事情是品質設定檔和你的書：請見[快速開始](/zh-tw/getting-started/quick-start/)。

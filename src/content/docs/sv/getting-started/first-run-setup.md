@@ -31,7 +31,7 @@ Det är samma inställningar som på [Säkerhet och inloggning](/sv/settings/sec
 
 ## 2. Nätverk (Network)
 
-Network är huvudbrytaren. Inget ABM skickar lämnar din maskin förrän du har valt en route här, så stegen Metadata och Audible beror på den. Det här steget går inte att hoppa över, och **Continue** förblir av tills routen är komplett.
+Network är huvudbrytaren. Inget ABM skickar lämnar din maskin förrän du har valt en route här, så stegen Metadata och Audible beror på den. **Continue** förblir av tills routen är komplett. Steget går bara att hoppa över om dess inställningar inte går att läsa in: då visar det felet med **Retry**, **Back** och **Skip for now**. Tills en route är vald blockerar ABM allt det skickar, och steget Finish visar Network som väntande.
 
 | Val | Vad du ger ABM |
 |---|---|
@@ -54,7 +54,7 @@ Välj var ABM slår upp böcker. Det kommer före dina mappar, eftersom den för
 
 Det finns också en **Local Storage**-ruta. Den sparar en permanent, krypterad, lokal logg över varje bok ABM slår upp, söker efter, lägger till, importerar eller ser i Discover, och den fungerar med alla tre källorna. När den väl är på kan den bara stängas av i **Settings > Metadata**.
 
-**Continue** sparar källan och slår på Local Storage om du kryssade i den. Om den valda källan inte kan nå ut än, till exempel Built-in utan vald route, säger steget varför. Se [Välja metadatakälla](/sv/metadata/choosing-a-source/).
+**Continue** sparar källan och slår på Local Storage om du kryssade i den. Om den valda källan inte kan nå ut än, till exempel Built-in utan vald route, säger steget varför. Se [Välja metadatakälla](/sv/metadata/choosing-a-source/). Om stegets inställningar inte går att läsa in visar det felet med **Retry**, **Back** och **Skip for now**, och du kan ställa in källan senare under **Settings > Metadata**.
 
 ## 4. Audible (valfritt)
 
@@ -78,6 +78,6 @@ Välj en indexertyp eller en förinställning, fyll i den och tryck på **Test**
 
 ## 8. Klart (Finish)
 
-En sammanfattning listar varje steg med det som ställdes in: din Network-route (och Public IP, om den kontrollerades), metadatakällan, Audible-kontot, rotmappen samt klienten och indexern du lade till. Varje steg du lät vänta till senare visas som väntande. Om inget väntar säger sammanfattningen att varje länk lyser. **Go to Library** stänger guiden.
+En sammanfattning listar varje steg med det som ställdes in: din Network-route (och Public IP, om den kontrollerades), metadatakällan, Audible-kontot, rotmappen samt klienten och indexern du lade till. Varje steg du lät vänta till senare visas som väntande. Om ABM inte kan läsa tillbaka ett stegs tillstånd, till exempel för att listan över nedladdningsklienter inte går att läsa in, visar raden **Could not check** och en **Retry**-knapp dyker upp. Om inget väntar säger sammanfattningen att varje länk lyser. **Go to Library** stänger guiden.
 
 Allt du hoppade över finns i **Settings** när du vill ha det. De nästa vettiga sakerna är en kvalitetsprofil och dina böcker: se [Snabbstart](/sv/getting-started/quick-start/).

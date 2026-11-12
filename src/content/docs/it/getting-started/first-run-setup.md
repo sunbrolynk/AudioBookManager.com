@@ -31,7 +31,7 @@ Sono le stesse impostazioni di [Sicurezza e accesso](/it/settings/security/). L'
 
 ## 2. Rete (Network)
 
-Network è l'interruttore generale. Niente di ciò che ABM invia esce dalla tua macchina finché non scegli qui un percorso, quindi i passi Metadata e Audible dipendono da questo. Questo passo non si può saltare, e **Continue** resta disattivato finché il percorso non è completo.
+Network è l'interruttore generale. Niente di ciò che ABM invia esce dalla tua macchina finché non scegli qui un percorso, quindi i passi Metadata e Audible dipendono da questo. **Continue** resta disattivato finché il percorso non è completo. Il passo si può saltare solo se le sue impostazioni non si caricano: allora mostra l'errore con **Retry**, **Back** e **Skip for now**. Finché non scegli un percorso, ABM continua a bloccare tutto ciò che invia, e il passo Finish mostra Network come in attesa.
 
 | Scelta | Cosa dai ad ABM |
 |---|---|
@@ -54,7 +54,7 @@ Scegli dove ABM cerca i libri. Viene prima delle tue cartelle perché la prima s
 
 C'è anche una casella **Local Storage**. Tiene un registro locale, permanente e cifrato di ogni libro che ABM cerca, ricerca, aggiunge, importa o vede in Discover, e funziona con tutte e tre le fonti. Una volta attiva, si può disattivare solo in **Settings > Metadata**.
 
-**Continue** salva la fonte e attiva Local Storage se l'hai spuntata. Se la fonte scelta non può ancora uscire, per esempio Built-in senza un percorso scelto, il passo ne spiega il motivo. Vedi [Scegliere una fonte di metadati](/it/metadata/choosing-a-source/).
+**Continue** salva la fonte e attiva Local Storage se l'hai spuntata. Se la fonte scelta non può ancora uscire, per esempio Built-in senza un percorso scelto, il passo ne spiega il motivo. Vedi [Scegliere una fonte di metadati](/it/metadata/choosing-a-source/). Se le impostazioni del passo non si caricano, mostra l'errore con **Retry**, **Back** e **Skip for now**, e puoi impostare la fonte più tardi in **Settings > Metadata**.
 
 ## 4. Audible (facoltativo)
 
@@ -78,6 +78,6 @@ Scegli un tipo di indexer o un preset, compilalo, poi **Test** e **Save**, come 
 
 ## 8. Fine (Finish)
 
-Un riepilogo elenca ogni passo con ciò che è stato impostato: il tuo percorso Network (e la Public IP, se è stata controllata), la fonte dei metadati, l'account Audible, la cartella radice, e il client e l'indexer che hai aggiunto. Ogni passo che hai lasciato per dopo risulta in attesa. Se non c'è nulla in attesa, il riepilogo dice che ogni anello è acceso. **Go to Library** chiude la procedura guidata.
+Un riepilogo elenca ogni passo con ciò che è stato impostato: il tuo percorso Network (e la Public IP, se è stata controllata), la fonte dei metadati, l'account Audible, la cartella radice, e il client e l'indexer che hai aggiunto. Ogni passo che hai lasciato per dopo risulta in attesa. Se ABM non riesce a rileggere lo stato di un passo, per esempio perché l'elenco dei client di download non si carica, quella riga mostra **Could not check** e compare un pulsante **Retry**. Se non c'è nulla in attesa, il riepilogo dice che ogni anello è acceso. **Go to Library** chiude la procedura guidata.
 
 Tutto ciò che hai saltato è in **Settings** quando vuoi. Le prossime cose sensate sono un profilo di qualità e i tuoi libri: vedi [Avvio rapido](/it/getting-started/quick-start/).

@@ -31,7 +31,7 @@ Nämä ovat samat asetukset kuin sivulla [Tietoturva ja kirjautuminen](/fi/setti
 
 ## 2. Verkko (Network)
 
-Network on pääkytkin. Mikään ABMin lähettämä ei poistu koneeltasi, ennen kuin valitset tässä reitin, joten vaiheet Metadata ja Audible riippuvat siitä. Tätä vaihetta ei voi ohittaa, ja **Continue** pysyy pois päältä, kunnes reitti on täydellinen.
+Network on pääkytkin. Mikään ABMin lähettämä ei poistu koneeltasi, ennen kuin valitset tässä reitin, joten vaiheet Metadata ja Audible riippuvat siitä. **Continue** pysyy pois päältä, kunnes reitti on täydellinen. Vaiheen voi ohittaa vain, jos sen asetuksia ei saada ladattua: silloin se näyttää virheen ja painikkeet **Retry**, **Back** ja **Skip for now**. Kunnes reitti on valittu, ABM estää kaiken lähettämisen, ja Finish-vaihe näyttää Networkin odottavana.
 
 | Valinta | Mitä annat ABMille |
 |---|---|
@@ -54,7 +54,7 @@ Valitse, mistä ABM hakee kirjat. Tämä tulee ennen kansioitasi, koska ensimmä
 
 Mukana on myös **Local Storage** -valintaruutu. Se pitää pysyvää, salattua, paikallista kirjaa jokaisesta kirjasta, jonka ABM hakee, etsii, lisää, tuo tai näkee Discoverissa, ja se toimii kaikkien kolmen lähteen kanssa. Kun se on kerran päällä, sen voi sammuttaa vain kohdassa **Settings > Metadata**.
 
-**Continue** tallentaa lähteen ja kytkee Local Storagen päälle, jos rastitit sen. Jos valittu lähde ei pääse vielä ulos, esimerkiksi Built-in ilman valittua reittiä, vaihe kertoo syyn. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
+**Continue** tallentaa lähteen ja kytkee Local Storagen päälle, jos rastitit sen. Jos valittu lähde ei pääse vielä ulos, esimerkiksi Built-in ilman valittua reittiä, vaihe kertoo syyn. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/). Jos vaiheen asetuksia ei saada ladattua, se näyttää virheen ja painikkeet **Retry**, **Back** ja **Skip for now**, ja voit asettaa lähteen myöhemmin kohdassa **Settings > Metadata**.
 
 ## 4. Audible (valinnainen)
 
@@ -78,6 +78,6 @@ Valitse indexerin tyyppi tai esiasetus, täytä se ja paina **Test** ja **Save**
 
 ## 8. Valmis (Finish)
 
-Yhteenveto listaa jokaisen vaiheen ja sen, mitä asetettiin: Network-reittisi (ja Public IP, jos se tarkistettiin), metadatalähteen, Audible-tilin, juurikansion sekä lisäämäsi työkalun ja indexerin. Jokainen vaihe, jonka jätit myöhemmäksi, näkyy odottavana. Jos mikään ei odota, yhteenveto sanoo, että jokainen lenkki palaa. **Go to Library** sulkee avustajan.
+Yhteenveto listaa jokaisen vaiheen ja sen, mitä asetettiin: Network-reittisi (ja Public IP, jos se tarkistettiin), metadatalähteen, Audible-tilin, juurikansion sekä lisäämäsi työkalun ja indexerin. Jokainen vaihe, jonka jätit myöhemmäksi, näkyy odottavana. Jos ABM ei pysty lukemaan vaiheen tilaa takaisin, esimerkiksi koska latausohjelmien luettelo ei lataudu, rivillä lukee **Could not check** ja näkyviin tulee **Retry**-painike. Jos mikään ei odota, yhteenveto sanoo, että jokainen lenkki palaa. **Go to Library** sulkee avustajan.
 
 Kaikki ohittamasi löytyy kohdasta **Settings**, kun haluat sen. Seuraavat järkevät asiat ovat laatuprofiili ja kirjasi: katso [Pika-aloitus](/fi/getting-started/quick-start/).

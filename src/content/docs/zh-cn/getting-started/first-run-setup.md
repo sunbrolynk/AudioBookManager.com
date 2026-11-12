@@ -31,7 +31,7 @@ description: 新安装时的设置向导，一步一步来。
 
 ## 2. 网络（Network）
 
-Network 是总开关。在你这里选好路径之前，ABM 发出的任何东西都不会离开你的机器，所以 Metadata 和 Audible 这两步依赖它。这一步不能跳过，路径没填完整之前 **Continue** 一直是关闭的。
+Network 是总开关。在你这里选好路径之前，ABM 发出的任何东西都不会离开你的机器，所以 Metadata 和 Audible 这两步依赖它。路径没填完整之前 **Continue** 一直是关闭的。只有这一步的设置加载失败时才能跳过：这时它会显示错误，并给出 **Retry**、**Back** 和 **Skip for now**。在选好路径之前，ABM 会一直拦住它要发出的所有东西，Finish 这一步会把 Network 显示为等待中。
 
 | 选项 | 你要给 ABM 什么 |
 |---|---|
@@ -54,7 +54,7 @@ Network 是总开关。在你这里选好路径之前，ABM 发出的任何东�
 
 还有一个 **Local Storage** 复选框。它会为 ABM 查询、搜索、添加、导入或在 Discover 里看到的每一本书，保留一份永久、加密的本地记录，三种来源都适用。一旦打开，只能在 **Settings > Metadata** 里关闭。
 
-**Continue** 会保存来源，如果你勾选了，还会打开 Local Storage。如果所选的来源暂时还不能联网，比如没有选路径的 Built-in，这一步会说明原因。见[选择元数据源](/zh-cn/metadata/choosing-a-source/)。
+**Continue** 会保存来源，如果你勾选了，还会打开 Local Storage。如果所选的来源暂时还不能联网，比如没有选路径的 Built-in，这一步会说明原因。见[选择元数据源](/zh-cn/metadata/choosing-a-source/)。如果这一步的设置加载失败，它会显示错误，并给出 **Retry**、**Back** 和 **Skip for now**，来源可以以后在 **Settings > Metadata** 里再设。
 
 ## 4. Audible（可选）
 
@@ -78,6 +78,6 @@ Network 是总开关。在你这里选好路径之前，ABM 发出的任何东�
 
 ## 8. 完成（Finish）
 
-总结会逐步列出各项设置的结果：你的 Network 路径（如果检查过，还有 Public IP）、元数据来源、Audible 账号、根文件夹，以及你添加的客户端和索引器。你留到以后的步骤会显示为等待中。如果没有任何等待项，总结会说每个环节都亮了。**Go to Library** 会关闭向导。
+总结会逐步列出各项设置的结果：你的 Network 路径（如果检查过，还有 Public IP）、元数据来源、Audible 账号、根文件夹，以及你添加的客户端和索引器。你留到以后的步骤会显示为等待中。如果 ABM 读不回某一步的状态，比如下载客户端列表加载失败，那一行会显示 **Could not check**，并出现一个 **Retry** 按钮。如果没有任何等待项，总结会说每个环节都亮了。**Go to Library** 会关闭向导。
 
 你跳过的内容随时都能在 **Settings** 里找到。接下来合理的事情是质量配置和你的书：见[快速上手](/zh-cn/getting-started/quick-start/)。

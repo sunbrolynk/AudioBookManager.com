@@ -31,7 +31,7 @@ Son los mismos ajustes que en [Seguridad e inicio de sesión](/es/settings/secur
 
 ## 2. Red (Network)
 
-Network es el interruptor general. Nada de lo que ABM envía sale de tu equipo hasta que eliges una ruta aquí, así que los pasos Metadata y Audible dependen de él. Este paso no se puede saltar, y **Continue** sigue desactivado hasta que la ruta está completa.
+Network es el interruptor general. Nada de lo que ABM envía sale de tu equipo hasta que eliges una ruta aquí, así que los pasos Metadata y Audible dependen de él. **Continue** sigue desactivado hasta que la ruta está completa. El paso solo se puede saltar si sus ajustes no se cargan: entonces muestra el error con **Retry**, **Back** y **Skip for now**. Mientras no haya una ruta elegida, ABM sigue bloqueando todo lo que envía, y el paso Finish muestra Network como pendiente.
 
 | Opción | Qué le das a ABM |
 |---|---|
@@ -54,7 +54,7 @@ Elige dónde busca ABM los libros. Va antes que tus carpetas porque el primer es
 
 También hay una casilla **Local Storage**. Guarda un registro local, permanente y cifrado de cada libro que ABM consulta, busca, añade, importa o ve en Discover, y funciona con las tres fuentes. Una vez activada, solo se puede desactivar en **Settings > Metadata**.
 
-**Continue** guarda la fuente y activa Local Storage si la marcaste. Si la fuente elegida todavía no puede salir, por ejemplo Built-in sin ruta elegida, el paso dice por qué. Consulta [Elegir una fuente de metadatos](/es/metadata/choosing-a-source/).
+**Continue** guarda la fuente y activa Local Storage si la marcaste. Si la fuente elegida todavía no puede salir, por ejemplo Built-in sin ruta elegida, el paso dice por qué. Consulta [Elegir una fuente de metadatos](/es/metadata/choosing-a-source/). Si los ajustes del paso no se cargan, muestra el error con **Retry**, **Back** y **Skip for now**, y puedes configurar la fuente más tarde en **Settings > Metadata**.
 
 ## 4. Audible (opcional)
 
@@ -78,6 +78,6 @@ Elige un tipo de indexador o un preajuste, rellénalo y pulsa **Test** y **Save*
 
 ## 8. Final (Finish)
 
-Un resumen lista cada paso con lo que se configuró: tu ruta de Network (y la Public IP, si se comprobó), la fuente de metadatos, la cuenta de Audible, la carpeta raíz, y el cliente y el indexador que añadiste. Cada paso que dejaste para más tarde aparece como pendiente. Si no queda nada pendiente, el resumen dice que todos los eslabones están encendidos. **Go to Library** cierra el asistente.
+Un resumen lista cada paso con lo que se configuró: tu ruta de Network (y la Public IP, si se comprobó), la fuente de metadatos, la cuenta de Audible, la carpeta raíz, y el cliente y el indexador que añadiste. Cada paso que dejaste para más tarde aparece como pendiente. Si ABM no puede volver a leer el estado de un paso, por ejemplo porque la lista de clientes de descarga no se carga, esa fila muestra **Could not check** y aparece un botón **Retry**. Si no queda nada pendiente, el resumen dice que todos los eslabones están encendidos. **Go to Library** cierra el asistente.
 
 Todo lo que te saltaste está en **Settings** cuando lo quieras. Lo siguiente que tiene sentido es un perfil de calidad y tus libros: consulta [Inicio rápido](/es/getting-started/quick-start/).

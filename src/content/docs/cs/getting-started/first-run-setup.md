@@ -31,7 +31,7 @@ Jsou to stejná nastavení jako na stránce [Zabezpečení a přihlášení](/cs
 
 ## 2. Síť (Network)
 
-Network je hlavní vypínač. Nic, co ABM odesílá, neopustí tvůj počítač, dokud tady nezvolíš trasu, takže kroky Metadata a Audible na něm závisejí. Tento krok nejde přeskočit a **Continue** zůstává vypnuté, dokud trasa není kompletní.
+Network je hlavní vypínač. Nic, co ABM odesílá, neopustí tvůj počítač, dokud tady nezvolíš trasu, takže kroky Metadata a Audible na něm závisejí. **Continue** zůstává vypnuté, dokud trasa není kompletní. Krok jde přeskočit jen tehdy, když se jeho nastavení nepodaří načíst: pak ukáže chybu s tlačítky **Retry**, **Back** a **Skip for now**. Dokud trasu nezvolíš, ABM dál blokuje všechno, co odesílá, a krok Finish ukazuje Network jako čekající.
 
 | Volba | Co dáš ABM |
 |---|---|
@@ -54,7 +54,7 @@ Vyber, kde ABM hledá knihy. Přichází před tvými složkami, protože první
 
 Je tu také políčko **Local Storage**. Uchovává trvalý, šifrovaný, místní záznam každé knihy, kterou ABM vyhledá, hledá, přidá, naimportuje nebo uvidí v Discover, a funguje se všemi třemi zdroji. Jakmile je zapnuté, lze ho vypnout jen v **Settings > Metadata**.
 
-**Continue** uloží zdroj a zapne Local Storage, pokud jsi ho zaškrtl. Když zvolený zdroj ještě nemůže ven, například Built-in bez zvolené trasy, krok řekne proč. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/).
+**Continue** uloží zdroj a zapne Local Storage, pokud jsi ho zaškrtl. Když zvolený zdroj ještě nemůže ven, například Built-in bez zvolené trasy, krok řekne proč. Viz [Výběr zdroje metadat](/cs/metadata/choosing-a-source/). Když se nastavení tohoto kroku nepodaří načíst, ukáže chybu s tlačítky **Retry**, **Back** a **Skip for now** a zdroj můžeš nastavit později v **Settings > Metadata**.
 
 ## 4. Audible (volitelné)
 
@@ -78,6 +78,6 @@ Vyber typ indexeru nebo předvolbu, vyplň ji a stiskni **Test** a **Save**, ste
 
 ## 8. Hotovo (Finish)
 
-Shrnutí vypíše každý krok s tím, co se nastavilo: tvou trasu Network (a Public IP, pokud se kontrolovala), zdroj metadat, účet Audible, kořenovou složku a klienta s indexerem, které jsi přidal. Každý krok odložený na později je označený jako čekající. Pokud nic nečeká, shrnutí řekne, že svítí každý článek. **Go to Library** průvodce zavře.
+Shrnutí vypíše každý krok s tím, co se nastavilo: tvou trasu Network (a Public IP, pokud se kontrolovala), zdroj metadat, účet Audible, kořenovou složku a klienta s indexerem, které jsi přidal. Každý krok odložený na později je označený jako čekající. Pokud ABM nedokáže zpětně přečíst stav některého kroku, například se nenačte seznam klientů pro stahování, řádek ukáže **Could not check** a objeví se tlačítko **Retry**. Pokud nic nečeká, shrnutí řekne, že svítí každý článek. **Go to Library** průvodce zavře.
 
 Všechno, co jsi přeskočil, najdeš v **Settings**, kdykoli to budeš chtít. Dál dává smysl kvalitní profil a tvé knihy: viz [Rychlý start](/cs/getting-started/quick-start/).
