@@ -16,6 +16,10 @@ Each book is an overview row, a poster or a table line (the view switch is in th
 
 Open a book for its detail page: files, metadata, history, the quality ABM measured, and actions such as Refresh & Scan and the edit dialog (see below). See [Sidecar files](/en-gb/using/sidecars/).
 
+The detail page can also write a single file (OPF, NFO or metadata.json), the audio tags, the cover embed, or **Write All**. On a phone these are in the Actions sheet under **Write to folder and files**.
+
+When a page's toolbar is too narrow on a desktop, the buttons that don't fit move into a **More** menu at the end of their group. Sort, filter and view controls always stay on the bar.
+
 If you know Sonarr: a book is an episode, a series is a season-and-show in one, and an author is a way to group both. The difference is that one book can belong to several series, and ABM uses the primary one (the lowest position) when it needs to pick.
 
 ## Series
@@ -40,10 +44,11 @@ The edit dialog on a book changes ABM's own settings for it, not its metadata:
 - **Quality Profile** (No Change when editing several)
 - **Path**, for one book (with a button to recompute it), or **Root Folder** for a selection
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt and an OPF (the checkbox reads "metadata.opf"; the file is named after the book's first audio file, for example `Dune.opf`, or `title.opf` when there is no audio)
-- **Write to Audio Files**: write metadata tags
+- **Audiobookshelf**: the **Write All** box ticks every box below, so one save writes every file Audiobookshelf reads
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, an OPF, an NFO and metadata.json. The OPF and NFO are named after the book's first audio file (for example `Dune.opf`), or after the book when there is no audio
+- **Write to Audio Files**: **Write audio tags** and **Embed cover art**, which writes the cover into the audio files
 
-The same dialog opens for series and authors and applies to each of their books. The write options run when you save.
+The same dialog opens for series and authors and applies to each of their books. The write options run when you save. For each book the folder files are written first, then the tags, then the cover embed. A file the book has nothing to put in (no description, no narrator, no cover) is skipped, not treated as an error. For one book or a selection of books you see it as a warning when you save. For a series or an author it is skipped quietly.
 
 ## Tags
 

@@ -16,6 +16,10 @@ Jedes Buch ist eine Übersichtszeile, ein Poster oder eine Tabellenzeile (der An
 
 Öffne ein Buch für seine Detailseite: Dateien, Metadaten, Verlauf, die Qualität, die ABM gemessen hat, und Aktionen wie Refresh & Scan und der Bearbeiten-Dialog (siehe unten). Siehe [Sidecar-Dateien](/de/using/sidecars/).
 
+Auf der Detailseite kannst du auch einzelne Dateien schreiben (OPF, NFO oder metadata.json), die Audio-Tags, das eingebettete Cover oder **Write All**. Auf dem Handy findest du das im Actions-Blatt unter **Write to folder and files**.
+
+Ist die Werkzeugleiste einer Seite am Desktop zu schmal, wandern die Buttons, die nicht mehr passen, ans Ende ihrer Gruppe in ein **More**-Menü. Sortieren, Filtern und die Ansicht bleiben immer in der Leiste.
+
 Wenn du Sonarr kennst: Ein Buch ist eine Episode, eine Serie ist Staffel und Show in einem, und ein Autor ist eine Möglichkeit, beides zu gruppieren. Der Unterschied: Ein Buch kann zu mehreren Serien gehören, und ABM nimmt die primäre (die mit der niedrigsten Position), wenn es sich entscheiden muss.
 
 ## Serien
@@ -40,10 +44,11 @@ Der Bearbeiten-Dialog eines Buchs ändert ABMs eigene Einstellungen dafür, nich
 - **Quality Profile** (No Change, wenn du mehrere bearbeitest)
 - **Path** bei einem Buch (mit einem Button, um ihn neu zu berechnen), oder **Root Folder** bei einer Auswahl
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt und eine OPF (an der Checkbox steht "metadata.opf"; die Datei heißt wie die erste Audiodatei des Buchs, zum Beispiel `Dune.opf`, oder `title.opf`, wenn es kein Audio gibt)
-- **Write to Audio Files**: Metadaten-Tags schreiben
+- **Audiobookshelf**: Das Kästchen **Write All** setzt jeden Haken darunter, damit ein Speichern alle Dateien schreibt, die Audiobookshelf liest
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, eine OPF, eine NFO und metadata.json. OPF und NFO heißen wie die erste Audiodatei des Buchs (zum Beispiel `Dune.opf`), oder wie das Buch, wenn es kein Audio gibt
+- **Write to Audio Files**: **Write audio tags** und **Embed cover art**, das das Cover in die Audiodateien schreibt
 
-Derselbe Dialog öffnet sich bei Serien und Autoren und gilt dann für jedes ihrer Bücher. Die Schreiboptionen laufen beim Speichern.
+Derselbe Dialog öffnet sich bei Serien und Autoren und gilt dann für jedes ihrer Bücher. Die Schreiboptionen laufen beim Speichern. Pro Buch werden zuerst die Ordnerdateien geschrieben, dann die Tags, dann das eingebettete Cover. Eine Datei, für die das Buch nichts hat (keine Beschreibung, kein Sprecher, kein Cover), wird übersprungen und nicht als Fehler gewertet. Bei einem Buch oder einer Auswahl von Büchern siehst du beim Speichern eine Warnung. Bei einer Serie oder einem Autor wird sie still übersprungen.
 
 ## Tags
 

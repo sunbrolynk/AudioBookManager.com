@@ -18,11 +18,11 @@ Luotavat tiedostot: `cover.jpg` (päällä), `title.opf` (päällä, Audiobooksh
 
 ## Tagien kirjoittaminen äänitiedostoihin
 
-Kirjoittaa audiotagit suoraan äänitiedostoihin.
+Kirjoittaa audiotagit suoraan äänitiedostoihin. Tagien kirjoitus on oletuksena päällä, joten tuonti kirjoittaa tagit, ellet kytke sitä pois.
 
 | Asetus | Oletus |
 |---|---|
-| Write Audio Tags | pois |
+| Write Audio Tags | päällä |
 | Write Audio Tags on Import | päällä, kun tagien kirjoitus on päällä |
 | Write Audio Tags on Refresh | pois |
 

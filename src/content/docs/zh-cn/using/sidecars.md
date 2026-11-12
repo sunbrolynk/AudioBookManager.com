@@ -21,7 +21,7 @@ description: ABM 在书旁边写入的 metadata.json、封面、OPF、简介和�
 
 另外四个在 **Settings > Metadata > Files to Create** 下各有一个开关，默认都是开的。只有对应的触发条件也开着时才会写：**Create on Book Add**（关）、**Create on Import**（开，涵盖下载、书库导入和 Audible 下载）和 **Create on Refresh**（关）。**Overwrite Existing** 默认关闭，所以已经存在的文件会保持不变。书的文件夹存在之前，什么都不会写。
 
-编辑对话框里的 **Write to Directories** 也会写这四个文件，针对一本书，或者选中的一批系列和作者。见 [元数据设置](/zh-cn/settings/metadata/)。
+编辑对话框里的 **Write to Directories** 会写这四个，勾选后还会写 `.nfo` 和 `metadata.json`，对象可以是一本书，或选中的系列和作者。**Write All** 会勾选所有框，包括标签和嵌入封面。书的详情页也可以一次只写一个文件。如果一本书没有内容可放进某个文件（没有简介、没有朗读者、没有封面），ABM 会告诉你没有可写的内容并继续，而不是显示错误。见 [元数据设置](/zh-cn/settings/metadata/)。
 
 ## 封面比较特殊
 

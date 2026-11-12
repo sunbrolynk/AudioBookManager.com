@@ -16,6 +16,10 @@ Chaque livre est une ligne d'aperçu, une affiche ou une ligne de tableau (le s�
 
 Ouvre un livre pour voir sa page de détail : fichiers, métadonnées, historique, la qualité mesurée par ABM, et des actions comme Refresh & Scan et la fenêtre de modification (voir plus bas). Voir [Fichiers annexes](/fr/using/sidecars/).
 
+La page de détail peut aussi écrire un seul fichier (OPF, NFO ou metadata.json), les tags audio, la pochette intégrée ou **Write All**. Sur téléphone, tout ça se trouve dans la feuille Actions, sous **Write to folder and files**.
+
+Quand la barre d'outils d'une page est trop étroite sur ordinateur, les boutons qui ne tiennent plus passent dans un menu **More** à la fin de leur groupe. Le tri, le filtre et l'affichage restent toujours dans la barre.
+
 Si tu connais Sonarr : un livre, c'est un épisode, une série, c'est une saison et une série télé en un, et un auteur sert à regrouper les deux. La différence, c'est qu'un livre peut appartenir à plusieurs séries, et ABM utilise la principale (celle avec la position la plus basse) quand il doit en choisir une.
 
 ## Séries
@@ -40,10 +44,11 @@ La fenêtre de modification d'un livre change les réglages propres à ABM pour 
 - **Quality Profile** (No Change quand tu en modifies plusieurs)
 - **Path**, pour un seul livre (avec un bouton pour le recalculer), ou **Root Folder** pour une sélection
 - **Tags**
-- **Write to Directories** : cover.jpg, desc.txt, reader.txt et un OPF (la case affiche « metadata.opf » ; le fichier est nommé d'après le premier fichier audio du livre, par exemple `Dune.opf`, ou `title.opf` quand il n'y a pas d'audio)
-- **Write to Audio Files** : écrit les tags de métadonnées
+- **Audiobookshelf** : la case **Write All** coche toutes les cases ci-dessous, pour qu'un seul enregistrement écrive tous les fichiers qu'Audiobookshelf lit
+- **Write to Directories** : cover.jpg, desc.txt, reader.txt, un OPF, un NFO et metadata.json. L'OPF et le NFO portent le nom du premier fichier audio du livre (par exemple `Dune.opf`), ou celui du livre s'il n'y a pas d'audio
+- **Write to Audio Files** : **Write audio tags** et **Embed cover art**, qui écrit la pochette dans les fichiers audio
 
-La même fenêtre s'ouvre pour les séries et les auteurs et s'applique à chacun de leurs livres. Les options d'écriture tournent quand tu enregistres.
+La même fenêtre s'ouvre pour les séries et les auteurs et s'applique à chacun de leurs livres. Les options d'écriture tournent quand tu enregistres. Pour chaque livre, les fichiers du dossier sont écrits d'abord, puis les tags, puis la pochette intégrée. Un fichier pour lequel le livre n'a rien à écrire (pas de description, pas de narrateur, pas de pochette) est ignoré et non traité comme une erreur. Pour un livre ou une sélection de livres, tu vois un avertissement à l'enregistrement. Pour une série ou un auteur, il est ignoré sans bruit.
 
 ## Tags
 

@@ -16,6 +16,10 @@ Hver bog er en oversigtsrække, en plakat eller en tabellinje (visningsskiftet l
 
 Åbn en bog for at se dens detaljeside: filer, metadata, historik, den kvalitet, ABM har målt, og handlinger som Refresh & Scan og redigeringsdialogen (se nedenfor). Se [Sidecar-filer](/da/using/sidecars/).
 
+Detaljesiden kan også skrive en enkelt fil (OPF, NFO eller metadata.json), lydtags, det indlejrede omslag eller **Write All**. På en telefon ligger de i Actions-arket under **Write to folder and files**.
+
+Når en sides værktøjslinje er for smal på en computer, flytter knapperne, der ikke kan være der, ind i en **More**-menu i enden af deres gruppe. Sortering, filter og visning bliver altid på linjen.
+
 Kender du Sonarr: en bog er en episode, en serie er sæson og serie i ét, og en forfatter er en måde at gruppere begge på. Forskellen er, at én bog kan høre til flere serier, og ABM bruger den primære (den laveste position), når den skal vælge.
 
 ## Serier
@@ -40,10 +44,11 @@ Redigeringsdialogen på en bog ændrer ABM's egne indstillinger for den, ikke de
 - **Quality Profile** (No Change, når du redigerer flere)
 - **Path** for én bog (med en knap til at beregne den igen), eller **Root Folder** for en markering
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt og en OPF (afkrydsningsfeltet hedder "metadata.opf"; filen er opkaldt efter bogens første lydfil, fx `Dune.opf`, eller `title.opf`, når der ikke er nogen lyd)
-- **Write to Audio Files**: skriv metadata-tags
+- **Audiobookshelf**: feltet **Write All** sætter kryds i alle felter herunder, så en enkelt gemning skriver alle filer, som Audiobookshelf læser
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, en OPF, en NFO og metadata.json. OPF og NFO er opkaldt efter bogens første lydfil (for eksempel `Dune.opf`), eller efter bogen, hvis der ikke er lyd
+- **Write to Audio Files**: **Write audio tags** og **Embed cover art**, som skriver omslaget ind i lydfilerne
 
-Den samme dialog åbner for serier og forfattere og gælder for hver af deres bøger. Skrivemulighederne kører, når du gemmer.
+Den samme dialog åbner for serier og forfattere og gælder for hver af deres bøger. Skrivemulighederne kører, når du gemmer. For hver bog skrives først mappefilerne, så tags, så det indlejrede omslag. En fil, som bogen intet har til (ingen beskrivelse, ingen oplæser, intet omslag), springes over og tæller ikke som en fejl. For én bog eller et udvalg af bøger ser du en advarsel, når du gemmer. For en serie eller en forfatter springes den stille over.
 
 ## Tags
 

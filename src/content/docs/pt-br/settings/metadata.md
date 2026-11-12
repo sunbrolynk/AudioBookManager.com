@@ -18,11 +18,11 @@ Arquivos a criar: `cover.jpg` (ligado), `title.opf` (ligado, compatível com o A
 
 ## Gravação de tags nos arquivos de áudio
 
-Grava as tags de áudio dentro dos próprios arquivos de áudio.
+Grava as tags de áudio dentro dos próprios arquivos de áudio. A gravação de tags vem ligada por padrão, então uma importação grava as tags, a menos que você a desligue.
 
 | Configuração | Padrão |
 |---|---|
-| Write Audio Tags | desligado |
+| Write Audio Tags | ligado |
 | Write Audio Tags on Import | ligado, quando a gravação de tags está ligada |
 | Write Audio Tags on Refresh | desligado |
 

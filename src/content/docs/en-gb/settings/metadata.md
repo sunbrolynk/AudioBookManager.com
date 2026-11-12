@@ -18,11 +18,11 @@ Files to create: `cover.jpg` (on), `title.opf` (on, Audiobookshelf-compatible), 
 
 ## Audio file tag writing
 
-Writes audio tags into the audio files themselves.
+Writes audio tags into the audio files themselves. Tag writing is on by default, so an import writes the tags unless you turn it off.
 
 | Setting | Default |
 |---|---|
-| Write Audio Tags | off |
+| Write Audio Tags | on |
 | Write Audio Tags on Import | on, once tag writing is on |
 | Write Audio Tags on Refresh | off |
 

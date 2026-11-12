@@ -18,11 +18,11 @@ Fichiers à créer : `cover.jpg` (activé), `title.opf` (activé, compatible Aud
 
 ## Écriture des tags dans les fichiers audio
 
-Écrit les tags audio dans les fichiers audio eux-mêmes.
+Écrit les tags audio dans les fichiers audio eux-mêmes. L'écriture des tags est activée par défaut : un import écrit donc les tags, sauf si tu la désactives.
 
 | Réglage | Par défaut |
 |---|---|
-| Write Audio Tags | désactivé |
+| Write Audio Tags | activé |
 | Write Audio Tags on Import | activé, une fois l'écriture des tags activée |
 | Write Audio Tags on Refresh | désactivé |
 

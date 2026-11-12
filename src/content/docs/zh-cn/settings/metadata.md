@@ -18,11 +18,11 @@ description: ABM 会写哪些附属文件和音频标签，以及什么时候写
 
 ## 音频文件标签写入
 
-把音频标签写进音频文件本身。
+把音频标签写进音频文件本身。写入标签默认是开的，所以导入时会写入标签，除非你把它关掉。
 
 | 设置 | 默认值 |
 |---|---|
-| Write Audio Tags | 关 |
+| Write Audio Tags | 开 |
 | Write Audio Tags on Import | 开（前提是标签写入已打开） |
 | Write Audio Tags on Refresh | 关 |
 

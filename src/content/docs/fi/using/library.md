@@ -16,6 +16,10 @@ Jokainen kirja on yleiskatsausrivi, juliste tai taulukon rivi (näkymän vaihto 
 
 Avaa kirja nähdäksesi sen tietosivun: tiedostot, metatiedot, historia, ABM:n mittaama laatu sekä toiminnot, kuten Refresh & Scan ja muokkausikkuna (katso alta). Katso [Sivutiedostot](/fi/using/sidecars/).
 
+Tietosivulta voi kirjoittaa myös yksittäisen tiedoston (OPF, NFO tai metadata.json), äänitagit, upotetun kansikuvan tai **Write All**. Puhelimessa ne ovat Actions-arkissa kohdassa **Write to folder and files**.
+
+Kun sivun työkalupalkki on tietokoneella liian kapea, palkkiin mahtumattomat painikkeet siirtyvät ryhmänsä lopussa olevaan **More**-valikkoon. Lajittelu, suodatus ja näkymä pysyvät aina palkissa.
+
 Jos tunnet Sonarrin: kirja on jakso, sarja on kausi ja ohjelma yhdessä, ja tekijä on tapa ryhmitellä molempia. Erona on se, että yksi kirja voi kuulua useaan sarjaan, ja ABM käyttää ensisijaista (pienin sijainti), kun sen täytyy valita.
 
 ## Sarjat
@@ -40,10 +44,11 @@ Kirjan muokkausikkuna muuttaa ABM:n omia asetuksia kirjalle, ei sen metatietoja:
 - **Quality Profile** (No Change, kun muokkaat useita)
 - **Path** yhdelle kirjalle (painikkeella, joka laskee sen uudelleen), tai **Root Folder** valinnalle
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt ja OPF (valintaruudussa lukee "metadata.opf"; tiedosto nimetään kirjan ensimmäisen äänitiedoston mukaan, esimerkiksi `Dune.opf`, tai `title.opf`, kun ääntä ei ole)
-- **Write to Audio Files**: kirjoita metatietotagit
+- **Audiobookshelf**: **Write All** -ruutu valitsee kaikki alla olevat ruudut, joten yksi tallennus kirjoittaa kaikki tiedostot, joita Audiobookshelf lukee
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO ja metadata.json. OPF ja NFO nimetään kirjan ensimmäisen äänitiedoston mukaan (esimerkiksi `Dune.opf`) tai kirjan mukaan, jos ääntä ei ole
+- **Write to Audio Files**: **Write audio tags** ja **Embed cover art**, joka kirjoittaa kansikuvan äänitiedostoihin
 
-Sama ikkuna avautuu sarjoille ja tekijöille, ja se koskee niiden jokaista kirjaa. Kirjoitusvalinnat ajetaan, kun tallennat.
+Sama ikkuna avautuu sarjoille ja tekijöille, ja se koskee niiden jokaista kirjaa. Kirjoitusvalinnat ajetaan, kun tallennat. Jokaiselle kirjalle kirjoitetaan ensin kansiotiedostot, sitten tagit, sitten upotettu kansikuva. Tiedosto, johon kirjalla ei ole mitään kirjoitettavaa (ei kuvausta, ei lukijaa, ei kansikuvaa), ohitetaan eikä sitä pidetä virheenä. Yhdellä kirjalla tai kirjavalinnalla näet tallennettaessa varoituksen. Sarjalla tai kirjailijalla se ohitetaan hiljaa.
 
 ## Tagit
 

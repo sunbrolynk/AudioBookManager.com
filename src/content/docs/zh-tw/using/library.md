@@ -16,6 +16,10 @@ description: 書、作者和系列，以及 ABM 怎麼追蹤它們的狀態。
 
 打開一本書就能看到它的詳細資料頁：檔案、中繼資料、歷史、ABM 測得的品質，以及 Refresh & Scan 和編輯對話框（見下方）等動作。請看〈[附屬檔案](/zh-tw/using/sidecars/)〉。
 
+詳細頁面也可以單獨寫一個檔案（OPF、NFO 或 metadata.json）、音訊標籤、內嵌封面，或是 **Write All**。在手機上，這些都在 Actions 面板的 **Write to folder and files** 底下。
+
+在電腦上，頁面的工具列太窄時，放不下的按鈕會移到所屬群組尾端的 **More** 選單裡。排序、篩選和檢視控制項一律留在工具列上。
+
 如果你熟悉 Sonarr：一本書就是一集，一個系列就是把一季和一部劇合在一起，作者則是把兩者分組的一種方式。不同的是，一本書可以屬於好幾個系列，當 ABM 需要選一個時，會用主要系列（集數最小的那個）。
 
 ## 系列
@@ -40,10 +44,11 @@ description: 書、作者和系列，以及 ABM 怎麼追蹤它們的狀態。
 - **Quality Profile**（同時編輯好幾本時會顯示 No Change）
 - **Path**，用於單本書（有一個重新計算路徑的按鈕）；選取多本時則是 **Root Folder**
 - **Tags**
-- **Write to Directories**：cover.jpg、desc.txt、reader.txt 和一個 OPF（核取方塊上寫的是「metadata.opf」；檔案會以書的第一個音訊檔命名，例如 `Dune.opf`，沒有音訊時則是 `title.opf`）
-- **Write to Audio Files**：寫入中繼資料標籤
+- **Audiobookshelf**：**Write All** 核取方塊會勾選下面所有的方塊，所以儲存一次就會寫入 Audiobookshelf 讀取的所有檔案
+- **Write to Directories**：cover.jpg、desc.txt、reader.txt、OPF、NFO 和 metadata.json。OPF 和 NFO 以書的第一個音訊檔命名（例如 `Dune.opf`），沒有音訊時以書名命名
+- **Write to Audio Files**：**Write audio tags** 和 **Embed cover art**（把封面寫入音訊檔）
 
-同一個對話框也可以對系列和作者打開，並套用到它們的每一本書。寫入選項會在你儲存時執行。
+同一個對話框也可以對系列和作者打開，並套用到它們的每一本書。寫入選項會在你儲存時執行。每本書會先寫入資料夾裡的檔案，再寫標籤，最後內嵌封面。書裡沒有內容可寫的檔案（沒有簡介、沒有朗讀者、沒有封面）會被略過，不算錯誤。對一本書或一組書，儲存時你會看到一則警告。對系列或作者，則會默默略過。
 
 ## 標籤
 

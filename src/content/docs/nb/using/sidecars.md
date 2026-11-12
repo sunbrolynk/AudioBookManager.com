@@ -21,7 +21,7 @@ Sammen med mappestrukturen er dette filene Audiobookshelf leser for detaljene ti
 
 De fire andre har hver sin bryter under **Settings > Metadata > Files to Create**, alle på som standard. De skrives bare når den tilhørende utløseren også er på: **Create on Book Add** (av), **Create on Import** (på, som dekker nedlastinger, Library Import og Audible-nedlastinger) og **Create on Refresh** (av). **Overwrite Existing** er av, så en fil som allerede ligger der, blir værende. Ingenting skrives før mappen til boka finnes.
 
-**Write to Directories** i redigeringsdialogen skriver også de fire, for én bok eller et utvalg av serier og forfattere. Se [Metadatainnstillinger](/nb/settings/metadata/).
+**Write to Directories** i redigeringsdialogen skriver de fire, og også `.nfo` og `metadata.json` når du huker dem av, for én bok eller et utvalg av serier og forfattere. **Write All** huker av alle boksene, også tagger og innebygd omslag. Detaljsiden til en bok kan også skrive én fil om gangen. Har en bok ingenting til en fil (ingen beskrivelse, ingen forteller, inget omslag), sier ABM at det ikke er noe å skrive, og går videre i stedet for å vise en feil. Se [Metadatainnstillinger](/nb/settings/metadata/).
 
 ## Coveret er spesielt
 

@@ -21,7 +21,7 @@ Avec l'organisation des dossiers, ce sont les fichiers qu'Audiobookshelf lit pou
 
 Les quatre autres ont chacun un interrupteur dans **Settings > Metadata > Files to Create**, tous activés par défaut. Ils ne sont écrits que si le déclencheur correspondant est activé lui aussi : **Create on Book Add** (désactivé), **Create on Import** (activé, ce qui couvre les téléchargements, Library Import et les téléchargements Audible) et **Create on Refresh** (désactivé). **Overwrite Existing** est désactivé, donc un fichier déjà présent reste tel quel. Rien n'est écrit tant que le dossier du livre n'existe pas.
 
-**Write to Directories**, dans la fenêtre de modification, écrit aussi les quatre, pour un livre ou pour une sélection de séries et d'auteurs. Voir [Réglages des métadonnées](/fr/settings/metadata/).
+**Write to Directories** dans la boîte de modification écrit les quatre, et aussi le `.nfo` et `metadata.json` quand tu les coches, pour un livre ou une sélection de séries et d'auteurs. **Write All** coche toutes les cases, tags et pochette intégrée compris. La page de détail d'un livre peut aussi écrire un fichier à la fois. Si un livre n'a rien à mettre dans un fichier (pas de description, pas de narrateur, pas de pochette), ABM indique qu'il n'y a rien à écrire et continue au lieu d'afficher une erreur. Voir [Réglages des métadonnées](/fr/settings/metadata/).
 
 ## La couverture est à part
 

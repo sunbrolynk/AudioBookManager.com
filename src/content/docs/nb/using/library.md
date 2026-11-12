@@ -16,6 +16,10 @@ Hver bok er en oversiktsrad, en plakat eller en tabellinje (visningsbryteren lig
 
 Åpne en bok for å se detaljsiden: filer, metadata, historikk, kvaliteten ABM målte, og handlinger som Refresh & Scan og redigeringsdialogen (se under). Se [Sidefiler](/nb/using/sidecars/).
 
+Detaljsiden kan også skrive én enkelt fil (OPF, NFO eller metadata.json), lydtaggene, det innebygde omslaget eller **Write All**. På mobil ligger de i Actions-arket under **Write to folder and files**.
+
+Når verktøylinjen på en side er for smal på en datamaskin, flyttes knappene som ikke får plass til en **More**-meny på slutten av gruppen. Sortering, filter og visning blir alltid værende på linjen.
+
 Kan du Sonarr: en bok er en episode, en serie er sesong og serie i ett, og en forfatter er en måte å gruppere begge på. Forskjellen er at én bok kan høre til flere serier, og ABM bruker hovedserien (den laveste plasseringen) når den må velge.
 
 ## Serier
@@ -40,10 +44,11 @@ Redigeringsdialogen på en bok endrer ABMs egne innstillinger for den, ikke meta
 - **Quality Profile** (No Change når du redigerer flere)
 - **Path**, for én bok (med en knapp som regner den ut på nytt), eller **Root Folder** for et utvalg
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt og en OPF (avkrysningsboksen heter "metadata.opf"; fila får navn etter den første lydfila i boka, for eksempel `Dune.opf`, eller `title.opf` når det ikke finnes lyd)
-- **Write to Audio Files**: skriv metadatatagger
+- **Audiobookshelf**: boksen **Write All** huker av alle boksene under, så én lagring skriver alle filene Audiobookshelf leser
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, en OPF, en NFO og metadata.json. OPF og NFO er oppkalt etter bokens første lydfil (for eksempel `Dune.opf`), eller etter boken hvis det ikke er lyd
+- **Write to Audio Files**: **Write audio tags** og **Embed cover art**, som skriver omslaget inn i lydfilene
 
-Den samme dialogen åpnes for serier og forfattere og gjelder hver av bøkene deres. Skrivevalgene kjører når du lagrer.
+Den samme dialogen åpnes for serier og forfattere og gjelder hver av bøkene deres. Skrivevalgene kjører når du lagrer. For hver bok skrives først mappefilene, så taggene, så det innebygde omslaget. En fil boken ikke har noe til (ingen beskrivelse, ingen forteller, inget omslag) hoppes over og regnes ikke som en feil. For én bok eller et utvalg av bøker ser du en advarsel når du lagrer. For en serie eller en forfatter hoppes den stille over.
 
 ## Tagger
 

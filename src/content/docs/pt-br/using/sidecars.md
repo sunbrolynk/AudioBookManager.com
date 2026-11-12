@@ -21,7 +21,7 @@ O `metadata.json` é gravado toda vez que um livro é adicionado, importado ou a
 
 Os outros quatro têm cada um o seu interruptor em **Settings > Metadata > Files to Create**, todos ligados por padrão. Eles só são gravados quando o gatilho correspondente também está ligado: **Create on Book Add** (desligado), **Create on Import** (ligado, o que cobre downloads, Library Import e downloads da Audible) e **Create on Refresh** (desligado). **Overwrite Existing** vem desligado, então um arquivo que já está lá fica. Nada é gravado enquanto a pasta do livro não existe.
 
-O **Write to Directories** do diálogo de edição também grava os quatro, para um livro ou uma seleção de séries e autores. Veja [Configurações de metadados](/pt-br/settings/metadata/).
+O **Write to Directories** da caixa de edição grava os quatro, e também o `.nfo` e o `metadata.json` quando você os marca, para um livro ou uma seleção de séries e autores. **Write All** marca todas as caixas, inclusive tags e capa incorporada. A página de detalhes de um livro também pode gravar um arquivo por vez. Se um livro não tem nada para um arquivo (sem descrição, sem narrador, sem capa), o ABM avisa que não há nada para gravar e segue em frente, em vez de mostrar um erro. Veja [Configurações de metadados](/pt-br/settings/metadata/).
 
 ## A capa é especial
 

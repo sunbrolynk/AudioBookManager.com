@@ -21,7 +21,7 @@ Razem z układem folderów to są pliki, z których Audiobookshelf czyta szczeg�
 
 Pozostałe cztery mają każdy swój przełącznik w **Settings > Metadata > Files to Create**, domyślnie wszystkie włączone. Są zapisywane tylko wtedy, gdy włączony jest też odpowiedni wyzwalacz: **Create on Book Add** (wył.), **Create on Import** (wł., obejmuje pobrania, import biblioteki i pobrania z Audible) oraz **Create on Refresh** (wył.). **Overwrite Existing** jest wyłączone, więc plik, który już istnieje, zostaje. Nic nie jest zapisywane, dopóki folder książki nie istnieje.
 
-Przycisk **Write to Directories** w oknie edycji też zapisuje te cztery, dla jednej książki albo dla zaznaczenia serii i autorów. Zobacz [Ustawienia metadanych](/pl/settings/metadata/).
+**Write to Directories** w oknie edycji zapisuje te cztery, a także `.nfo` i `metadata.json`, gdy je zaznaczysz, dla jednej książki albo wyboru serii i autorów. **Write All** zaznacza wszystkie pola, także tagi i osadzoną okładkę. Strona szczegółów książki potrafi też zapisać jeden plik na raz. Jeśli książka nie ma nic do pliku (brak opisu, brak lektora, brak okładki), ABM mówi, że nie ma czego zapisać, i idzie dalej zamiast pokazywać błąd. Zobacz [Ustawienia metadanych](/pl/settings/metadata/).
 
 ## Okładka to osobna sprawa
 

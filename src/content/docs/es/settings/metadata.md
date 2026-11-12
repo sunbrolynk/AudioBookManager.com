@@ -18,11 +18,11 @@ Archivos que se crean: `cover.jpg` (activado), `title.opf` (activado, compatible
 
 ## Escritura de etiquetas en los archivos de audio
 
-Escribe las etiquetas de audio dentro de los propios archivos de audio.
+Escribe las etiquetas de audio dentro de los propios archivos de audio. La escritura de etiquetas viene activada por defecto, así que una importación escribe las etiquetas salvo que la desactives.
 
 | Ajuste | Por defecto |
 |---|---|
-| Write Audio Tags | desactivado |
+| Write Audio Tags | activado |
 | Write Audio Tags on Import | activado, una vez que la escritura de etiquetas está activada |
 | Write Audio Tags on Refresh | desactivado |
 

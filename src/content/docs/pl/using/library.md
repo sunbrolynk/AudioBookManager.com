@@ -16,6 +16,10 @@ Każda książka to wiersz przeglądu (Overview), plakat albo linia tabeli (prze
 
 Otwórz książkę, żeby zobaczyć jej stronę ze szczegółami: pliki, metadane, historię, jakość zmierzoną przez ABM i akcje takie jak Refresh & Scan oraz okno edycji (zobacz niżej). Zobacz [Pliki sidecar](/pl/using/sidecars/).
 
+Strona szczegółów potrafi też zapisać pojedynczy plik (OPF, NFO lub metadata.json), tagi audio, osadzoną okładkę albo **Write All**. Na telefonie znajdziesz to w arkuszu Actions, w **Write to folder and files**.
+
+Gdy pasek narzędzi strony jest na komputerze za wąski, przyciski, które się nie mieszczą, trafiają do menu **More** na końcu swojej grupy. Sortowanie, filtr i widok zawsze zostają na pasku.
+
 Jeśli znasz Sonarra: książka to odcinek, seria to sezon i serial w jednym, a autor to sposób na pogrupowanie obu. Różnica jest taka, że jedna książka może należeć do kilku serii, a ABM, gdy musi wybrać, używa głównej (tej z najniższą pozycją).
 
 ## Serie
@@ -40,10 +44,11 @@ Okno edycji książki zmienia własne ustawienia ABM dla niej, a nie jej metadan
 - **Quality Profile** (No Change przy edycji kilku naraz)
 - **Path** dla jednej książki (z przyciskiem do ponownego wyliczenia) albo **Root Folder** dla zaznaczenia
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt i OPF (pole wyboru ma etykietę "metadata.opf"; plik dostaje nazwę od pierwszego pliku audio książki, na przykład `Dune.opf`, albo `title.opf`, gdy nie ma audio)
-- **Write to Audio Files**: zapisz tagi metadanych
+- **Audiobookshelf**: pole **Write All** zaznacza wszystkie pola poniżej, więc jeden zapis tworzy każdy plik, który czyta Audiobookshelf
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO i metadata.json. OPF i NFO nazywają się tak jak pierwszy plik audio książki (na przykład `Dune.opf`), a bez dźwięku tak jak książka
+- **Write to Audio Files**: **Write audio tags** i **Embed cover art**, czyli zapis okładki w plikach audio
 
-To samo okno otwiera się dla serii i autorów i działa na każdą z ich książek. Opcje zapisu wykonują się przy zapisywaniu.
+To samo okno otwiera się dla serii i autorów i działa na każdą z ich książek. Opcje zapisu wykonują się przy zapisywaniu. Dla każdej książki najpierw zapisują się pliki w folderze, potem tagi, potem osadzona okładka. Plik, do którego książka nie ma nic (brak opisu, brak lektora, brak okładki), jest pomijany i nie liczy się jako błąd. Przy jednej książce lub wyborze książek zobaczysz przy zapisie ostrzeżenie. Przy serii lub autorze plik jest pomijany po cichu.
 
 ## Tagi
 

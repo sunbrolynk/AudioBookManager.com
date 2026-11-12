@@ -16,6 +16,10 @@ Cada libro es una fila de resumen (Overview), un póster o una línea de tabla (
 
 Abre un libro para ver su página de detalle: archivos, metadatos, historial, la calidad que midió ABM y acciones como Refresh & Scan y el diálogo de edición (ver más abajo). Consulta [Archivos auxiliares](/es/using/sidecars/).
 
+La página de detalle también puede escribir un solo archivo (OPF, NFO o metadata.json), las etiquetas de audio, la portada incrustada o **Write All**. En el móvil están en la hoja Actions, en **Write to folder and files**.
+
+Cuando la barra de herramientas de una página es demasiado estrecha en el escritorio, los botones que no caben pasan a un menú **More** al final de su grupo. Ordenar, filtrar y las vistas siempre se quedan en la barra.
+
 Si conoces Sonarr: un libro es un episodio, una serie es temporada y programa a la vez, y un autor es una forma de agrupar ambos. La diferencia es que un libro puede pertenecer a varias series, y ABM usa la principal (la de menor posición) cuando tiene que elegir.
 
 ## Series
@@ -40,10 +44,11 @@ El diálogo de edición de un libro cambia los ajustes propios de ABM para ese l
 - **Quality Profile** (No Change al editar varios)
 - **Path**, para un libro (con un botón para recalcularla), o **Root Folder** para una selección
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt y un OPF (la casilla dice "metadata.opf"; el archivo toma el nombre del primer archivo de audio del libro, por ejemplo `Dune.opf`, o `title.opf` cuando no hay audio)
-- **Write to Audio Files**: escribe las etiquetas de metadatos
+- **Audiobookshelf**: la casilla **Write All** marca todas las casillas de abajo, así que un solo guardado escribe todos los archivos que lee Audiobookshelf
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, un OPF, un NFO y metadata.json. El OPF y el NFO se llaman como el primer archivo de audio del libro (por ejemplo `Dune.opf`), o como el libro si no hay audio
+- **Write to Audio Files**: **Write audio tags** y **Embed cover art**, que escribe la portada en los archivos de audio
 
-El mismo diálogo se abre para series y autores y se aplica a cada uno de sus libros. Las opciones de escritura se ejecutan al guardar.
+El mismo diálogo se abre para series y autores y se aplica a cada uno de sus libros. Las opciones de escritura se ejecutan al guardar. Por cada libro se escriben primero los archivos de la carpeta, luego las etiquetas y después la portada incrustada. Un archivo para el que el libro no tiene nada (sin descripción, sin narrador, sin portada) se omite y no se trata como error. Con un libro o una selección de libros verás un aviso al guardar. Con una serie o un autor se omite sin avisar.
 
 ## Etiquetas
 

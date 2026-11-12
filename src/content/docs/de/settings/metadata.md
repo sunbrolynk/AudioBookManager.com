@@ -18,11 +18,11 @@ Zu erstellende Dateien: `cover.jpg` (an), `title.opf` (an, kompatibel mit Audiob
 
 ## Tags in Audiodateien schreiben (Audio file tag writing)
 
-Schreibt die Audio-Tags direkt in die Audiodateien.
+Schreibt die Audio-Tags direkt in die Audiodateien. Das Schreiben von Tags ist standardmäßig an, ein Import schreibt die Tags also, solange du es nicht ausschaltest.
 
 | Einstellung | Standard |
 |---|---|
-| Write Audio Tags | aus |
+| Write Audio Tags | an |
 | Write Audio Tags on Import | an, sobald das Schreiben von Tags an ist |
 | Write Audio Tags on Refresh | aus |
 

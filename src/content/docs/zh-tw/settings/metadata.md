@@ -18,11 +18,11 @@ description: ABM 會寫入哪些附屬檔案和音訊標籤，以及什麼時候
 
 ## 寫入音訊檔標籤（Audio file tag writing）
 
-把音訊標籤寫進音訊檔本身。
+把音訊標籤寫進音訊檔本身。寫入標籤預設是開的，所以匯入時會寫入標籤，除非你把它關掉。
 
 | 設定 | 預設值 |
 |---|---|
-| Write Audio Tags | 關閉 |
+| Write Audio Tags | 開啟 |
 | Write Audio Tags on Import | 開啟（在標籤寫入開啟之後） |
 | Write Audio Tags on Refresh | 關閉 |
 

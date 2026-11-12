@@ -21,7 +21,7 @@ Zusammen mit der Ordnerstruktur sind das die Dateien, aus denen Audiobookshelf d
 
 Die anderen vier haben jeweils einen Schalter unter **Settings > Metadata > Files to Create**, standardmäßig alle an. Geschrieben werden sie nur, wenn auch der passende Auslöser an ist: **Create on Book Add** (aus), **Create on Import** (an, das gilt für Downloads, den Bibliotheksimport und Audible-Downloads) und **Create on Refresh** (aus). **Overwrite Existing** ist aus, eine schon vorhandene Datei bleibt also. Solange der Ordner des Buchs nicht existiert, wird nichts geschrieben.
 
-**Write to Directories** im Bearbeiten-Dialog schreibt die vier ebenfalls, für ein Buch oder eine Auswahl an Serien und Autoren. Siehe [Metadaten-Einstellungen](/de/settings/metadata/).
+**Write to Directories** im Bearbeiten-Dialog schreibt die vier, und auch die `.nfo` und `metadata.json`, wenn du sie ankreuzt, für ein Buch oder eine Auswahl an Serien und Autoren. **Write All** setzt jeden Haken, auch Tags und eingebettetes Cover. Die Detailseite eines Buchs kann auch eine einzelne Datei schreiben. Hat ein Buch nichts für eine Datei (keine Beschreibung, kein Sprecher, kein Cover), sagt ABM, dass es nichts zu schreiben gibt, und macht weiter, statt einen Fehler zu zeigen. Siehe [Metadaten-Einstellungen](/de/settings/metadata/).
 
 ## Das Cover ist ein Sonderfall
 

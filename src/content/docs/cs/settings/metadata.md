@@ -18,11 +18,11 @@ Soubory k vytvoření: `cover.jpg` (zapnuto), `title.opf` (zapnuto, kompatibiln�
 
 ## Zápis tagů do zvukových souborů (Audio file tag writing)
 
-Zapisuje audio tagy přímo do audio souborů.
+Zapisuje audio tagy přímo do audio souborů. Zápis tagů je ve výchozím stavu zapnutý, takže import tagy zapíše, pokud ho nevypneš.
 
 | Nastavení | Výchozí |
 |---|---|
-| Write Audio Tags | vypnuto |
+| Write Audio Tags | zapnuto |
 | Write Audio Tags on Import | zapnuto, jakmile je zápis tagů zapnutý |
 | Write Audio Tags on Refresh | vypnuto |
 

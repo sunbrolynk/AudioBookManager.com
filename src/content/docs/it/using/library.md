@@ -16,6 +16,10 @@ Ogni libro è una riga in vista Overview, un poster o una riga di tabella (il se
 
 Apri un libro per la sua pagina di dettaglio: file, metadati, cronologia, la qualità misurata da ABM, e azioni come Refresh & Scan e la finestra di modifica (vedi sotto). Vedi [File sidecar](/it/using/sidecars/).
 
+La pagina di dettaglio può anche scrivere un singolo file (OPF, NFO o metadata.json), i tag audio, la copertina incorporata o **Write All**. Sul telefono si trovano nel foglio Actions, sotto **Write to folder and files**.
+
+Quando la barra degli strumenti di una pagina è troppo stretta sul desktop, i pulsanti che non ci stanno passano in un menu **More** in fondo al loro gruppo. Ordinamento, filtro e vista restano sempre nella barra.
+
 Se conosci Sonarr: un libro è un episodio, una serie è stagione e show insieme, e un autore è un modo per raggrupparli entrambi. La differenza è che un libro può appartenere a più serie, e ABM usa quella principale (la posizione più bassa) quando deve sceglierne una.
 
 ## Serie
@@ -40,10 +44,11 @@ La finestra di modifica di un libro cambia le impostazioni di ABM per quel libro
 - **Quality Profile** (No Change quando ne modifichi più di uno)
 - **Path**, per un solo libro (con un pulsante per ricalcolarlo), oppure **Root Folder** per una selezione
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt e un OPF (la casella dice "metadata.opf"; il file prende il nome dal primo file audio del libro, per esempio `Dune.opf`, oppure `title.opf` quando non c'è audio)
-- **Write to Audio Files**: scrive i tag dei metadati
+- **Audiobookshelf**: la casella **Write All** spunta tutte le caselle qui sotto, così un solo salvataggio scrive tutti i file che legge Audiobookshelf
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, un OPF, un NFO e metadata.json. L'OPF e l'NFO hanno il nome del primo file audio del libro (per esempio `Dune.opf`), o del libro se non c'è audio
+- **Write to Audio Files**: **Write audio tags** e **Embed cover art**, che scrive la copertina nei file audio
 
-La stessa finestra si apre per serie e autori e si applica a ognuno dei loro libri. Le opzioni di scrittura partono quando salvi.
+La stessa finestra si apre per serie e autori e si applica a ognuno dei loro libri. Le opzioni di scrittura partono quando salvi. Per ogni libro si scrivono prima i file della cartella, poi i tag, poi la copertina incorporata. Un file per cui il libro non ha niente (nessuna descrizione, nessun narratore, nessuna copertina) viene saltato e non conta come errore. Con un libro o una selezione di libri vedi un avviso al salvataggio. Con una serie o un autore viene saltato in silenzio.
 
 ## Tag
 

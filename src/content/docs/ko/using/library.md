@@ -16,6 +16,10 @@ description: 책, 작가, 시리즈, 그리고 ABM이 그 상태를 추적하는
 
 책을 열면 상세 페이지가 나와요: 파일, 메타데이터, 기록, ABM이 측정한 품질, 그리고 Refresh & Scan과 편집 대화 상자(아래 참고) 같은 작업이 있어요. [사이드카 파일](/ko/using/sidecars/)을 보세요.
 
+상세 페이지에서는 파일 하나(OPF, NFO, metadata.json), 오디오 태그, 표지 삽입, 또는 **Write All**도 쓸 수 있어요. 휴대폰에서는 Actions 시트의 **Write to folder and files**에 있어요.
+
+데스크톱에서 페이지의 도구 모음이 너무 좁으면, 들어가지 않는 버튼은 그룹 끝의 **More** 메뉴로 옮겨져요. 정렬, 필터, 보기 컨트롤은 항상 막대에 남아요.
+
 Sonarr를 써 봤다면: 책은 에피소드, 시리즈는 시즌과 쇼를 합친 것, 작가는 둘을 묶는 방법이에요. 다른 점은 책 하나가 여러 시리즈에 속할 수 있다는 거예요. 하나를 골라야 할 땐 ABM이 대표 시리즈(순번이 가장 낮은 것)를 써요.
 
 ## 시리즈
@@ -40,10 +44,11 @@ Sonarr를 써 봤다면: 책은 에피소드, 시리즈는 시즌과 쇼를 합�
 - **Quality Profile**(여러 개를 편집할 땐 No Change)
 - 책 한 권이면 **Path**(다시 계산하는 버튼도 있어요), 여러 개를 선택했으면 **Root Folder**
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF(체크박스에는 "metadata.opf"라고 적혀 있지만, 파일 이름은 책의 첫 번째 오디오 파일을 따라요. 예: `Dune.opf`. 오디오가 없으면 `title.opf`예요)
-- **Write to Audio Files**: 메타데이터 태그를 써요
+- **Audiobookshelf**: **Write All** 상자를 선택하면 아래 상자가 모두 선택돼서, 한 번 저장하면 Audiobookshelf가 읽는 파일을 전부 써요
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO, metadata.json. OPF와 NFO의 이름은 책의 첫 오디오 파일을 따라가요(예: `Dune.opf`). 오디오가 없으면 책 이름을 따라가요
+- **Write to Audio Files**: **Write audio tags**와 **Embed cover art**(표지를 오디오 파일에 써요)
 
-시리즈와 작가에서도 같은 대화 상자가 열리고, 거기 속한 책 하나하나에 적용돼요. 쓰기 옵션은 저장할 때 실행돼요.
+시리즈와 작가에서도 같은 대화 상자가 열리고, 거기 속한 책 하나하나에 적용돼요. 쓰기 옵션은 저장할 때 실행돼요. 책마다 폴더 파일을 먼저 쓰고, 그다음 태그, 마지막으로 표지 삽입을 해요. 책에 쓸 내용이 없는 파일(설명, 내레이터, 표지가 없는 경우)은 건너뛰고 오류로 치지 않아요. 책 한 권이나 여러 권을 선택했을 때는 저장할 때 경고로 보여요. 시리즈나 저자일 때는 조용히 건너뛰어요.
 
 ## 태그
 

@@ -16,6 +16,10 @@ Varje bok är en översiktsrad, en affisch eller en tabellrad (vyväxlaren finns
 
 Öppna en bok för att se dess detaljsida: filer, metadata, historik, kvaliteten som ABM har mätt, och åtgärder som Refresh & Scan och redigeringsdialogen (se nedan). Se [Sidecar-filer](/sv/using/sidecars/).
 
+Detaljsidan kan också skriva en enskild fil (OPF, NFO eller metadata.json), ljudtaggarna, det inbäddade omslaget eller **Write All**. På mobilen finns de i Actions-bladet under **Write to folder and files**.
+
+När en sidas verktygsfält är för smalt på datorn flyttas knapparna som inte får plats till en **More**-meny i slutet av gruppen. Sortering, filter och vyer ligger alltid kvar i fältet.
+
 Om du kan Sonarr: en bok är ett avsnitt, en serie är säsong och serie i ett, och en författare är ett sätt att gruppera båda. Skillnaden är att en bok kan höra till flera serier, och ABM använder den primära (den lägsta platsen) när den måste välja.
 
 ## Serier
@@ -40,10 +44,11 @@ Redigeringsdialogen på en bok ändrar ABM:s egna inställningar för den, inte 
 - **Quality Profile** (No Change när du redigerar flera)
 - **Path**, för en bok (med en knapp för att räkna om den), eller **Root Folder** för ett urval
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt och en OPF (kryssrutan säger "metadata.opf"; filen döps efter bokens första ljudfil, till exempel `Dune.opf`, eller `title.opf` när det inte finns något ljud)
-- **Write to Audio Files**: skriv metadatataggar
+- **Audiobookshelf**: rutan **Write All** kryssar i alla rutor nedan, så en enda sparning skriver alla filer som Audiobookshelf läser
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, en OPF, en NFO och metadata.json. OPF och NFO får namn efter bokens första ljudfil (till exempel `Dune.opf`), eller efter boken om det inte finns något ljud
+- **Write to Audio Files**: **Write audio tags** och **Embed cover art**, som skriver omslaget i ljudfilerna
 
-Samma dialog öppnas för serier och författare och gäller då för var och en av deras böcker. Skrivalternativen körs när du sparar.
+Samma dialog öppnas för serier och författare och gäller då för var och en av deras böcker. Skrivalternativen körs när du sparar. För varje bok skrivs först mappfilerna, sedan taggarna, sedan det inbäddade omslaget. En fil som boken inte har något till (ingen beskrivning, ingen uppläsare, inget omslag) hoppas över och räknas inte som ett fel. För en bok eller ett urval av böcker ser du en varning när du sparar. För en serie eller en författare hoppas den över tyst.
 
 ## Taggar
 

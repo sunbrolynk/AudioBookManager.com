@@ -16,6 +16,10 @@ Elk boek is een overzichtsrij, een poster of een regel in een tabel (de weergave
 
 Open een boek voor de detailpagina: bestanden, metadata, geschiedenis, de kwaliteit die ABM gemeten heeft, en acties zoals Refresh & Scan en het bewerkdialoogvenster (zie hieronder). Zie [Sidecarbestanden](/nl/using/sidecars/).
 
+De detailpagina kan ook één los bestand schrijven (OPF, NFO of metadata.json), de audiotags, de ingesloten cover of **Write All**. Op een telefoon staan die in het Actions-blad onder **Write to folder and files**.
+
+Als de werkbalk van een pagina op een desktop te smal is, verhuizen de knoppen die niet meer passen naar een **More**-menu aan het einde van hun groep. Sorteren, filteren en de weergave blijven altijd op de balk staan.
+
 Ken je Sonarr? Een boek is een aflevering, een serie is seizoen en show in één, en een auteur is een manier om die twee te groeperen. Het verschil is dat één boek bij meerdere series kan horen, en ABM gebruikt de primaire serie (die met de laagste positie) als het er een moet kiezen.
 
 ## Series
@@ -40,10 +44,11 @@ Het bewerkdialoogvenster van een boek past ABM's eigen instellingen voor dat boe
 - **Quality Profile** (No Change als je er meerdere bewerkt)
 - **Path**, voor één boek (met een knop om het opnieuw te berekenen), of **Root Folder** voor een selectie
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt en een OPF (bij het vinkje staat "metadata.opf"; het bestand wordt vernoemd naar het eerste audiobestand van het boek, bijvoorbeeld `Dune.opf`, of `title.opf` als er geen audio is)
-- **Write to Audio Files**: schrijft metadatatags
+- **Audiobookshelf**: het vakje **Write All** vinkt alle vakjes hieronder aan, zodat één keer opslaan alle bestanden schrijft die Audiobookshelf leest
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, een OPF, een NFO en metadata.json. De OPF en NFO heten naar het eerste audiobestand van het boek (bijvoorbeeld `Dune.opf`), of naar het boek als er geen audio is
+- **Write to Audio Files**: **Write audio tags** en **Embed cover art**, dat de cover in de audiobestanden schrijft
 
-Hetzelfde dialoogvenster opent voor series en auteurs en geldt dan voor al hun boeken. De schrijfopties draaien als je opslaat.
+Hetzelfde dialoogvenster opent voor series en auteurs en geldt dan voor al hun boeken. De schrijfopties draaien als je opslaat. Per boek worden eerst de mapbestanden geschreven, dan de tags, dan de ingesloten cover. Een bestand waar het boek niets voor heeft (geen beschrijving, geen verteller, geen cover) wordt overgeslagen en telt niet als fout. Bij één boek of een selectie boeken zie je bij het opslaan een waarschuwing. Bij een serie of een auteur wordt het stil overgeslagen.
 
 ## Tags
 

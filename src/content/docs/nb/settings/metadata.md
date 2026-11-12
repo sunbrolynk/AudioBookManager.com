@@ -18,11 +18,11 @@ Filer som lages: `cover.jpg` (på), `title.opf` (på, kompatibel med Audiobooksh
 
 ## Skriving av tagger i lydfiler
 
-Skriver lydtagger inn i selve lydfilene.
+Skriver lydtagger inn i selve lydfilene. Skriving av tagger er på som standard, så en import skriver taggene med mindre du slår det av.
 
 | Innstilling | Standard |
 |---|---|
-| Write Audio Tags | av |
+| Write Audio Tags | på |
 | Write Audio Tags on Import | på, når skriving av tagger er slått på |
 | Write Audio Tags on Refresh | av |
 

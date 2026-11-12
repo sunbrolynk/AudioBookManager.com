@@ -18,11 +18,11 @@ description: ABM이 어떤 사이드카 파일과 오디오 태그를 언제 쓰
 
 ## 오디오 파일 태그 쓰기
 
-오디오 태그를 오디오 파일 자체에 써요.
+오디오 태그를 오디오 파일 자체에 써요. 태그 쓰기는 기본으로 켜져 있어서, 끄지 않으면 가져올 때 태그를 써요.
 
 | 설정 | 기본값 |
 |---|---|
-| Write Audio Tags | 꺼짐 |
+| Write Audio Tags | 켜짐 |
 | Write Audio Tags on Import | 태그 쓰기를 켜면 켜짐 |
 | Write Audio Tags on Refresh | 꺼짐 |
 

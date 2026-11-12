@@ -18,11 +18,11 @@ Pliki do utworzenia: `cover.jpg` (wł.), `title.opf` (wł., zgodny z Audiobooksh
 
 ## Zapisywanie tagów w plikach audio
 
-Zapisuje tagi audio w samych plikach audio.
+Zapisuje tagi audio w samych plikach audio. Zapisywanie tagów jest domyślnie włączone, więc import zapisuje tagi, chyba że je wyłączysz.
 
 | Ustawienie | Domyślnie |
 |---|---|
-| Write Audio Tags | wył. |
+| Write Audio Tags | wł. |
 | Write Audio Tags on Import | wł., gdy zapisywanie tagów jest włączone |
 | Write Audio Tags on Refresh | wył. |
 

@@ -21,7 +21,7 @@ description: ABM이 책 옆에 쓰는 metadata.json, 표지, OPF, 설명, 내레
 
 나머지 네 개는 **Settings > Metadata > Files to Create**에 각자 스위치가 있고, 기본값은 모두 켜짐이에요. 해당하는 트리거도 켜져 있어야 써요: **Create on Book Add**(꺼짐), **Create on Import**(켜짐, 다운로드, Library Import, Audible 다운로드를 다 포함해요), **Create on Refresh**(꺼짐). **Overwrite Existing**은 꺼져 있어서 이미 있는 파일은 그대로 둬요. 책 폴더가 생기기 전에는 아무것도 쓰지 않아요.
 
-편집 대화 상자의 **Write to Directories**로도 이 네 개를 쓸 수 있어요. 책 한 권, 또는 선택한 시리즈와 작가에 대해 쓸 수 있어요. [메타데이터 설정](/ko/settings/metadata/)을 보세요.
+편집 대화 상자의 **Write to Directories**는 이 네 가지와, 선택하면 `.nfo`와 `metadata.json`도 책 한 권이나 선택한 시리즈와 저자에 대해 써요. **Write All**은 태그와 표지 삽입까지 모든 상자를 선택해요. 책의 상세 페이지에서는 파일을 하나씩 쓸 수도 있어요. 책에 파일에 넣을 내용이 없으면(설명, 내레이터, 표지가 없는 경우) ABM은 오류를 보여 주는 대신 쓸 것이 없다고 알리고 넘어가요. [메타데이터 설정](/ko/settings/metadata/)을 보세요.
 
 ## 표지는 특별해요
 

@@ -18,11 +18,11 @@ Aan te maken bestanden: `cover.jpg` (aan), `title.opf` (aan, compatibel met Audi
 
 ## Tags in audiobestanden schrijven
 
-Schrijft audiotags in de audiobestanden zelf.
+Schrijft audiotags in de audiobestanden zelf. Tags schrijven staat standaard aan, dus een import schrijft de tags, tenzij je het uitzet.
 
 | Instelling | Standaard |
 |---|---|
-| Write Audio Tags | uit |
+| Write Audio Tags | aan |
 | Write Audio Tags on Import | aan, zodra het schrijven van tags aanstaat |
 | Write Audio Tags on Refresh | uit |
 

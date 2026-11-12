@@ -16,6 +16,10 @@ Každá kniha je řádek přehledu, plakát nebo řádek tabulky (přepínač zo
 
 Otevři knihu a uvidíš její detail: soubory, metadata, historii, kvalitu, kterou ABM naměřil, a akce jako Refresh & Scan a dialog úprav (viz níže). Viz [Doprovodné soubory](/cs/using/sidecars/).
 
+Stránka s detailem umí zapsat i jeden soubor (OPF, NFO nebo metadata.json), zvukové tagy, vloženou obálku nebo **Write All**. V telefonu je najdeš v listu Actions pod **Write to folder and files**.
+
+Když je lišta nástrojů stránky na počítači příliš úzká, tlačítka, která se nevejdou, přejdou na konci své skupiny do nabídky **More**. Řazení, filtr a zobrazení zůstávají na liště vždy.
+
 Pokud znáš Sonarr: kniha je epizoda, série je řada a seriál v jednom a autor je způsob, jak seskupit obojí. Rozdíl je v tom, že jedna kniha může patřit do víc sérií, a když ABM musí vybrat, použije hlavní (s nejnižším pořadím).
 
 ## Série
@@ -40,10 +44,11 @@ Dialog úprav u knihy mění vlastní nastavení ABM pro ni, ne její metadata:
 - **Quality Profile** (No Change, když upravuješ víc knih)
 - **Path** pro jednu knihu (s tlačítkem, které ji znovu spočítá), nebo **Root Folder** pro výběr
 - **Tags**
-- **Write to Directories**: cover.jpg, desc.txt, reader.txt a OPF (u zaškrtávacího políčka stojí "metadata.opf"; soubor se jmenuje podle prvního zvukového souboru knihy, třeba `Dune.opf`, nebo `title.opf`, když žádný zvuk není)
-- **Write to Audio Files**: zapíše tagy s metadaty
+- **Audiobookshelf**: políčko **Write All** zaškrtne všechna políčka níže, takže jedno uložení zapíše všechny soubory, které Audiobookshelf čte
+- **Write to Directories**: cover.jpg, desc.txt, reader.txt, OPF, NFO a metadata.json. OPF a NFO se jmenují podle prvního zvukového souboru knihy (například `Dune.opf`), nebo podle knihy, když zvuk chybí
+- **Write to Audio Files**: **Write audio tags** a **Embed cover art**, což zapíše obálku do zvukových souborů
 
-Stejný dialog se otevře i pro série a autory a platí pro každou jejich knihu. Volby zápisu se provedou při uložení.
+Stejný dialog se otevře i pro série a autory a platí pro každou jejich knihu. Volby zápisu se provedou při uložení. U každé knihy se nejdřív zapíší soubory ve složce, pak tagy, pak vložená obálka. Soubor, pro který kniha nemá nic (žádný popis, žádný vypravěč, žádná obálka), se přeskočí a nepočítá se jako chyba. U jedné knihy nebo výběru knih uvidíš při uložení varování. U série nebo autora se přeskočí potichu.
 
 ## Štítky
 
