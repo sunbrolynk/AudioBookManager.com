@@ -17,11 +17,13 @@ In einem späteren Release hat **Settings > Metadata > Source** die Einstellung 
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex auf GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM fragt die öffentliche Libex-Instanz. |
 | Self-hosted | ABM fragt einen Libex-Server, den du angibst. Trag seine **Server URL** ein, zum Beispiel `http://192.168.1.20:8000`. |
 
+Der Schritt Metadata im [Einrichtungsassistenten](/de/getting-started/first-run-setup/) bietet dieselben drei Auswahlmöglichkeiten, mit demselben **Test** für einen selbst gehosteten Server.
+
 **Test** prüft die ausgewählte Quelle, ohne zu speichern. **Status** sagt, ob sie bereit ist. Wenn du eine andere Quelle auswählst, zeigt **Status** "Not in use yet - save to switch", bis du speicherst.
 
 ## Built-in und die ausgehende Verbindung
 
-Built-in spricht von deinem Rechner aus mit Audible und nutzt deshalb **Settings > General > Proxy & VPN**. Dort wird der Weg festgelegt: ein Proxy, der eingebaute WireGuard-Tunnel, dein eigener VPN-Container oder eine direkte Verbindung, die du bewusst bestätigst. Ist nichts ausgewählt, werden automatische Abfragen blockiert, und das wird auch angezeigt. Ein ausgewählter Weg, der down ist, blockiert Abfragen ebenfalls. Es wird nie auf deine eigene Adresse zurückgefallen. Bei Direct erscheint eine Warnung, dass Audible deine IP-Adresse und die Bücher sieht, die ABM abfragt.
+Built-in spricht von deinem Rechner aus mit Audible und nutzt deshalb **Settings > Network**. Dort wird der Weg festgelegt: ein Proxy, der eingebaute WireGuard-Tunnel, dein eigener VPN-Container oder eine direkte Verbindung, die du bewusst bestätigst. Ist nichts ausgewählt, werden automatische Abfragen blockiert, und das wird auch angezeigt. Ein ausgewählter Weg, der down ist, blockiert Abfragen ebenfalls. Es wird nie auf deine eigene Adresse zurückgefallen. Bei Direct erscheint eine Warnung, dass Audible deine IP-Adresse und die Bücher sieht, die ABM abfragt.
 
 ## Hosted und Self-hosted
 

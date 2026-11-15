@@ -17,11 +17,13 @@ I en senere versjon har **Settings > Metadata > Source** en innstilling **Metada
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex på GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM spør den offentlige Libex-instansen. |
 | Self-hosted | ABM spør en Libex-server du peker den mot. Fyll inn **Server URL**, for eksempel `http://192.168.1.20:8000`. |
 
+Steget Metadata i [oppsettsveiviseren](/nb/getting-started/first-run-setup/) tilbyr de samme tre valgene, med den samme **Test** for en selvhostet server.
+
 **Test** sjekker den valgte kilden uten å lagre. **Status** sier om den er klar. Når du velger en annen kilde, viser **Status** "Not in use yet - save to switch" til du lagrer.
 
 ## Innebygd og den utgående tilkoblingen
 
-Built-in snakker med Audible fra maskinen din, så den bruker **Settings > General > Proxy & VPN**. Den siden bestemmer ruta: en proxy, den innebygde WireGuard-tunnelen, din egen VPN-container eller en direkte tilkobling du bekrefter. Er ingen valgt, blir automatiske oppslag blokkert, og det står hvorfor. En valgt rute som er nede, blokkerer også oppslag. Den faller aldri tilbake til din egen adresse. Direct viser en advarsel om at Audible ser IP-adressen din og bøkene ABM slår opp.
+Built-in snakker med Audible fra maskinen din, så den bruker **Settings > Network**. Den siden bestemmer ruta: en proxy, den innebygde WireGuard-tunnelen, din egen VPN-container eller en direkte tilkobling du bekrefter. Er ingen valgt, blir automatiske oppslag blokkert, og det står hvorfor. En valgt rute som er nede, blokkerer også oppslag. Den faller aldri tilbake til din egen adresse. Direct viser en advarsel om at Audible ser IP-adressen din og bøkene ABM slår opp.
 
 ## Hostet og selvhostet
 

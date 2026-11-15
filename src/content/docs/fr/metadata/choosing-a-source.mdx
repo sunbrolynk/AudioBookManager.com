@@ -17,11 +17,13 @@ Dans une version ultérieure, **Settings > Metadata > Source** aura un réglage 
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex sur GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | ABM interroge l'instance publique de Libex. |
 | Self-hosted | ABM interroge un serveur Libex que tu lui indiques. Saisis sa **Server URL**, par exemple `http://192.168.1.20:8000`. |
 
+L'étape Metadata de l'[assistant de configuration](/fr/getting-started/first-run-setup/) propose les mêmes trois choix, avec le même **Test** pour un serveur auto-hébergé.
+
 **Test** vérifie la source sélectionnée sans enregistrer. **Status** indique si elle est prête. Quand tu choisis une autre source, **Status** affiche « Not in use yet - save to switch » jusqu'à ce que tu enregistres.
 
 ## Built-in et la connexion sortante
 
-Built-in parle à Audible depuis ta machine, donc il utilise **Settings > General > Proxy & VPN**. Cette page décide du chemin : un proxy, le tunnel WireGuard intégré, ton propre conteneur VPN, ou une connexion directe que tu acceptes en connaissance de cause. Si rien n'est choisi, les recherches automatiques sont bloquées et le disent. Un chemin choisi qui est en panne bloque aussi les recherches. Il ne se rabat jamais sur ta propre adresse. Direct affiche un avertissement : Audible voit ton adresse IP et les livres qu'ABM recherche.
+Built-in parle à Audible depuis ta machine, donc il utilise **Settings > Network**. Cette page décide du chemin : un proxy, le tunnel WireGuard intégré, ton propre conteneur VPN, ou une connexion directe que tu acceptes en connaissance de cause. Si rien n'est choisi, les recherches automatiques sont bloquées et le disent. Un chemin choisi qui est en panne bloque aussi les recherches. Il ne se rabat jamais sur ta propre adresse. Direct affiche un avertissement : Audible voit ton adresse IP et les livres qu'ABM recherche.
 
 ## Hosted et Self-hosted
 

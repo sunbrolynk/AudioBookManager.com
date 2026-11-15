@@ -17,11 +17,13 @@ Em uma versão futura, **Settings > Metadata > Source** terá uma configuração
 | <span class="nowrap">Hosted ([LibexDB.com](https://libexdb.com) <a href="https://github.com/LibexHQ/Libex" aria-label="Libex no GitHub"><Icon name="github" size="1em" class="inline-icon" /></a>)</span> | O ABM consulta a instância pública do Libex. |
 | Self-hosted | O ABM consulta um servidor Libex que você indicar. Preencha o **Server URL** dele, por exemplo `http://192.168.1.20:8000`. |
 
+O passo Metadata do [assistente de configuração](/pt-br/getting-started/first-run-setup/) oferece as mesmas três escolhas, com o mesmo **Test** para um servidor auto-hospedado.
+
 **Test** verifica a fonte selecionada sem salvar. **Status** diz se ela está pronta. Quando você escolhe outra fonte, **Status** mostra "Not in use yet - save to switch" até você salvar.
 
 ## Built-in e a conexão de saída
 
-O Built-in conversa com a Audible a partir da sua máquina, então usa **Settings > General > Proxy & VPN**. Essa página decide a rota: um proxy, o túnel WireGuard embutido, o seu próprio contêiner de VPN ou uma conexão direta que você confirma estar ciente. Sem nenhuma escolhida, as consultas automáticas ficam bloqueadas e avisam disso. Uma rota escolhida que está fora do ar também bloqueia as consultas. Ela nunca volta para o seu próprio endereço. A conexão direta mostra um aviso de que a Audible vê o seu endereço IP e os livros que o ABM consulta.
+O Built-in conversa com a Audible a partir da sua máquina, então usa **Settings > Network**. Essa página decide a rota: um proxy, o túnel WireGuard embutido, o seu próprio contêiner de VPN ou uma conexão direta que você confirma estar ciente. Sem nenhuma escolhida, as consultas automáticas ficam bloqueadas e avisam disso. Uma rota escolhida que está fora do ar também bloqueia as consultas. Ela nunca volta para o seu próprio endereço. A conexão direta mostra um aviso de que a Audible vê o seu endereço IP e os livros que o ABM consulta.
 
 ## Hosted e Self-hosted
 
