@@ -3,10 +3,6 @@ title: Første opsætning
 description: Opsætningsguiden på en ny installation, trin for trin.
 ---
 
-:::caution[Kommer i en senere udgivelse]
-Opsætningsguiden er ikke med i en udgivet version endnu. Udgivne versioner beder kun om et login første gang.
-:::
-
 På en ny installation åbner det første besøg en opsætningsguide i stedet for loginsiden. Den guider dig gennem alt, hvad ABM har brug for, et trin ad gangen. Den dukker kun op, så længe der ikke findes en konto. Alle valg kan ændres bagefter i **Settings**.
 
 Øverst løber en kæde af otte led. Hvert led er et trin, og kæden viser, hvor du er:

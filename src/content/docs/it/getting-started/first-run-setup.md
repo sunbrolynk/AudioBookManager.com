@@ -3,10 +3,6 @@ title: Prima configurazione
 description: La procedura guidata di una nuova installazione, passo per passo.
 ---
 
-:::caution[In arrivo in una release successiva]
-La procedura guidata non è ancora in una versione rilasciata. Le versioni rilasciate chiedono solo un login alla prima visita.
-:::
-
 Su una nuova installazione, la prima visita apre una procedura guidata al posto della pagina di accesso. Ti accompagna in tutto ciò che serve ad ABM, un passo alla volta. Compare solo finché non esiste un account. Ogni scelta si può cambiare dopo in **Settings**.
 
 In alto c'è una catena di otto anelli. Ogni anello è un passo, e la catena ti dice a che punto sei:

@@ -3,10 +3,6 @@ title: Première configuration
 description: L'assistant de configuration d'une nouvelle installation, étape par étape.
 ---
 
-:::caution[Prévu pour une version ultérieure]
-L'assistant de configuration n'est pas encore dans une version publiée. Les versions publiées ne demandent qu'un identifiant à la première visite.
-:::
-
 Sur une nouvelle installation, la première visite ouvre un assistant de configuration à la place de la page de connexion. Il te guide à travers tout ce dont ABM a besoin, une étape à la fois. Il n'apparaît que tant qu'aucun compte n'existe. Tous les choix peuvent être modifiés ensuite dans **Settings**.
 
 Une chaîne de huit maillons court en haut de l'écran. Chaque maillon est une étape, et la chaîne te montre où tu en es :

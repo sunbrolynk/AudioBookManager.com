@@ -3,10 +3,6 @@ title: Førstegangsoppsett
 description: Oppsettsveiviseren på en ny installasjon, steg for steg.
 ---
 
-:::caution[Kommer i en senere versjon]
-Oppsettsveiviseren er ikke med i en utgitt versjon ennå. Utgitte versjoner ber bare om en innlogging første gang.
-:::
-
 På en ny installasjon åpner det første besøket en oppsettsveiviser i stedet for innloggingssiden. Den leder deg gjennom alt ABM trenger, ett steg om gangen. Den dukker bare opp så lenge det ikke finnes noen konto. Alle valg kan endres etterpå i **Settings**.
 
 Øverst går det en kjede med åtte ledd. Hvert ledd er ett steg, og kjeden viser hvor du er:

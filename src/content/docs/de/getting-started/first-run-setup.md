@@ -3,10 +3,6 @@ title: Ersteinrichtung
 description: Der Einrichtungsassistent bei einer neuen Installation, Schritt für Schritt.
 ---
 
-:::caution[Kommt in einem späteren Release]
-Der Einrichtungsassistent ist noch in keiner veröffentlichten Version drin. Veröffentlichte Versionen fragen beim ersten Besuch nur nach einem Login.
-:::
-
 Bei einer neuen Installation öffnet der erste Besuch einen Einrichtungsassistenten statt der Anmeldeseite. Er führt dich Schritt für Schritt durch alles, was ABM braucht. Er erscheint nur, solange es noch kein Konto gibt. Alle Entscheidungen kannst du später in **Settings** ändern.
 
 Oben läuft eine Kette aus acht Gliedern. Jedes Glied ist ein Schritt, und die Kette zeigt dir, wo du gerade bist:

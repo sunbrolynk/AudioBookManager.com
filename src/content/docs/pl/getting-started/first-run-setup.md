@@ -3,10 +3,6 @@ title: Pierwsza konfiguracja
 description: Kreator konfiguracji przy nowej instalacji, krok po kroku.
 ---
 
-:::caution[W późniejszym wydaniu]
-Kreatora konfiguracji nie ma jeszcze w żadnej wydanej wersji. Wydane wersje przy pierwszej wizycie proszą tylko o login.
-:::
-
 Przy nowej instalacji pierwsza wizyta otwiera kreator konfiguracji zamiast strony logowania. Prowadzi cię przez wszystko, czego ABM potrzebuje, krok po kroku. Pojawia się tylko dopóki nie istnieje żadne konto. Każdy wybór możesz potem zmienić w **Settings**.
 
 U góry biegnie łańcuch z ośmiu ogniw. Każde ogniwo to jeden krok, a łańcuch pokazuje, gdzie jesteś:

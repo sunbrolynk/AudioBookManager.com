@@ -3,10 +3,6 @@ title: Ensimmäinen käyttöönotto
 description: Uuden asennuksen käyttöönottoavustaja vaihe vaiheelta.
 ---
 
-:::caution[Tulossa myöhempään julkaisuun]
-Käyttöönottoavustaja ei ole vielä missään julkaistussa versiossa. Julkaistut versiot pyytävät ensimmäisellä käynnillä vain tunnukset.
-:::
-
 Uudessa asennuksessa ensimmäinen käynti avaa käyttöönottoavustajan kirjautumissivun sijaan. Se opastaa sinut läpi kaiken, mitä ABM tarvitsee, yksi vaihe kerrallaan. Se näkyy vain niin kauan kuin tiliä ei ole. Kaikkia valintoja voi muuttaa jälkeenpäin kohdassa **Settings**.
 
 Ylhäällä kulkee kahdeksan lenkin ketju. Jokainen lenkki on yksi vaihe, ja ketju näyttää, missä olet:

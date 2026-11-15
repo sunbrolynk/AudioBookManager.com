@@ -3,10 +3,6 @@ title: Första konfigurationen
 description: Installationsguiden på en ny installation, steg för steg.
 ---
 
-:::caution[Kommer i en senare version]
-Installationsguiden finns inte i någon släppt version än. Släppta versioner frågar bara efter en inloggning första gången.
-:::
-
 På en ny installation öppnar det första besöket en installationsguide i stället för inloggningssidan. Den leder dig genom allt ABM behöver, ett steg i taget. Den visas bara så länge det inte finns något konto. Alla val kan ändras efteråt i **Settings**.
 
 Överst går en kedja med åtta länkar. Varje länk är ett steg, och kedjan visar var du är:

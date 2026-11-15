@@ -3,10 +3,6 @@ title: First-run setup
 description: The setup wizard on a new install, step by step.
 ---
 
-:::caution[Coming in a later release]
-The setup wizard is not in a released version yet. Released versions ask only for a login on the first visit.
-:::
-
 On a new install, the first visit opens a setup wizard instead of the login page. It walks you through everything ABM needs, one step at a time. It only appears while no account exists. Every choice can be changed afterwards in **Settings**.
 
 A chain of eight links runs across the top. Each link is one step, and the chain tells you where you are:

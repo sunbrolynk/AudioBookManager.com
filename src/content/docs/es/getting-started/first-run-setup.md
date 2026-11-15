@@ -3,10 +3,6 @@ title: Configuración inicial
 description: El asistente de configuración de una instalación nueva, paso a paso.
 ---
 
-:::caution[Llega en una versión posterior]
-El asistente de configuración todavía no está en ninguna versión publicada. Las versiones publicadas solo piden un usuario en la primera visita.
-:::
-
 En una instalación nueva, la primera visita abre un asistente de configuración en lugar de la página de inicio de sesión. Te guía por todo lo que ABM necesita, un paso cada vez. Solo aparece mientras no exista ninguna cuenta. Todas las opciones se pueden cambiar después en **Settings**.
 
 Arriba hay una cadena de ocho eslabones. Cada eslabón es un paso, y la cadena te dice dónde estás:

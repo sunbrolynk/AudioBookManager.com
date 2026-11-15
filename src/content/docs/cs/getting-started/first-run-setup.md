@@ -3,10 +3,6 @@ title: První nastavení
 description: Průvodce nastavením u nové instalace, krok za krokem.
 ---
 
-:::caution[Přijde v pozdější verzi]
-Průvodce nastavením zatím není v žádné vydané verzi. Vydané verze se při první návštěvě ptají jen na přihlášení.
-:::
-
 U nové instalace otevře první návštěva průvodce nastavením místo přihlašovací stránky. Provede tě vším, co ABM potřebuje, krok za krokem. Zobrazí se jen dokud neexistuje žádný účet. Každou volbu můžeš potom změnit v **Settings**.
 
 Nahoře běží řetěz z osmi článků. Každý článek je jeden krok a řetěz ti ukazuje, kde jsi:

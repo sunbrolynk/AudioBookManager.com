@@ -3,10 +3,6 @@ title: Eerste configuratie
 description: De installatiewizard bij een nieuwe installatie, stap voor stap.
 ---
 
-:::caution[Komt in een latere release]
-De installatiewizard zit nog niet in een uitgebrachte versie. Uitgebrachte versies vragen bij het eerste bezoek alleen om een login.
-:::
-
 Bij een nieuwe installatie opent het eerste bezoek een installatiewizard in plaats van de inlogpagina. Die leidt je stap voor stap door alles wat ABM nodig heeft. Hij verschijnt alleen zolang er nog geen account is. Elke keuze kun je daarna wijzigen in **Settings**.
 
 Bovenaan loopt een keten van acht schakels. Elke schakel is een stap, en de keten laat zien waar je bent:

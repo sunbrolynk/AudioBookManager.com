@@ -3,10 +3,6 @@ title: Primeira configuração
 description: O assistente de configuração de uma instalação nova, passo a passo.
 ---
 
-:::caution[Chega em uma versão futura]
-O assistente de configuração ainda não está em nenhuma versão lançada. As versões lançadas só pedem um login na primeira visita.
-:::
-
 Numa instalação nova, a primeira visita abre um assistente de configuração no lugar da página de login. Ele te guia por tudo o que o ABM precisa, um passo de cada vez. Só aparece enquanto não existe nenhuma conta. Toda escolha pode ser mudada depois em **Settings**.
 
 No topo há uma corrente de oito elos. Cada elo é um passo, e a corrente mostra onde você está:
