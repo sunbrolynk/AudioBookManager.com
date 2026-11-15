@@ -7,6 +7,6 @@ ABM bekommt Daten zu Büchern, Autoren, Serien und Kapiteln von **Libex**, einem
 
 Libex: [Quellcode](https://github.com/LibexHQ/Libex) · [API-Referenz](https://libexdb.com/redoc)
 
-ABM fragt die öffentliche Libex-Instanz unter libexdb.com. Eine Auswahl der Quelle ist für ein späteres Release geplant.
+Unter **Settings > Metadata** wählst du die Quelle: Built-in, die gehostete Instanz unter libexdb.com oder deinen eigenen Libex-Server. Siehe [Eine Metadatenquelle auswählen](/de/metadata/choosing-a-source/).
 
 Wenn Libex nicht erreichbar ist, sagt ABM das und nennt die Quelle. Bücher kannst du trotzdem von Hand hinzufügen und importieren. Siehe [Fehlerbehebung](/de/troubleshooting/#die-metadatenquelle-ist-nicht-erreichbar).

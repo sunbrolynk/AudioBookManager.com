@@ -59,4 +59,4 @@ The on/off settings are checkboxes on desktop and switches on a phone.
 
 ## API
 
-The Network settings are `GET` and `PUT /api/settings/network`. The proxy test is `POST /api/settings/network/proxy/test` and `DELETE /api/settings/network/wireguard` removes the config. None of them take `current_password`, the delete takes no body, and the request bodies refuse fields they don't know. The old `/api/settings/general/proxy*` and `/api/audible/diagnostics/public-ip` routes are gone. See the [API reference](/api-reference/).
+The Network settings are `GET` and `PUT /api/settings/network`. The proxy test is `POST /api/settings/network/proxy/test` and `DELETE /api/settings/network/wireguard` removes the config. None of them take `current_password`, the delete takes no body, and the request bodies refuse fields they don't know. The old `/api/settings/general/proxy*` and `/api/audible/diagnostics/public-ip` routes are gone. See the [API reference](/en-ca/api-reference/).
