@@ -21,7 +21,7 @@ Los dos modos de **Authentication Required** que vas a usar:
 - **Enabled**: todo el mundo inicia sesión, incluida tu LAN.
 - **Disabled for Local Addresses** (guardado como `local_disabled`): una petición desde una dirección local no necesita iniciar sesión. Cuentan como locales la de loopback, los rangos privados, las de enlace local y las IPv6 de ámbito local único. **Local Networks** añade más y nunca las sustituye.
 
-En una instalación nueva, las peticiones se rechazan hasta que termina la configuración inicial.
+En una instalación nueva, las peticiones se rechazan hasta que la cuenta se crea en el [asistente de configuración](/es/getting-started/first-run-setup/). Su paso Account preselecciona **Enabled**, así que una instalación nueva exige iniciar sesión desde cualquier dirección. Una instalación existente conserva su ajuste.
 
 ## Proxies inversos
 

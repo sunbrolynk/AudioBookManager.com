@@ -8,8 +8,10 @@ description: Background work, schedules and logs.
 ![System, Tasks: scheduled tasks with their interval and last run, and the task queue](../../../assets/docs/system-tasks.jpg)
 
 - A task that completed with entries in its error list shows as **Partial**. Expand it for each skipped item and the reason. A library scan skips a book whose folder is busy with a file transfer or another scan; those count toward books skipped.
+- A task that finished with something skipped lists its warnings under its issues, so you can see what was skipped and why.
 - A task with a retry coming stays as waiting until retries run out. The attempt number is shown.
 - **Clear completed tasks older than 24 hours** tidies the list. Old tasks are also cleaned automatically (30 days by default).
+- **Local Storage Backup** is the scheduled backup of [Local Storage](/settings/metadata/#storage-backups), with its log and a Run Now.
 - Scheduled runs that did nothing appear here but not in the [Activity Log](/system/activity-log/).
 
 ## Gotchas

@@ -26,7 +26,7 @@ Every option is an optional override of a default in Media Management.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
-Names in folder names or tags that carry a role are never made into authors. A translator becomes a translator credit on the book. Other roles, such as illustrator or editor, are dropped.
+A name in a folder name, file name or tag that carries a role, such as `Jay Rubin - translator` or the narrator in `Jane Doe narrated by John Roe`, is never made into an author. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
 
 ## Joining, splitting and adding
 

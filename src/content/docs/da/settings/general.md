@@ -3,7 +3,7 @@ title: Generelt
 description: Vært, sikkerhed, proxy, logning og sikkerhedskopier.
 ---
 
-**Settings > General** har sektioner for Host, Security, Proxy, Logging og Backups. Security har [sin egen side](/da/settings/security/).
+**Settings > General** har sektioner for Host, Security, Logging og Backups. Security har [sin egen side](/da/settings/security/).
 
 ## Vært (Host)
 

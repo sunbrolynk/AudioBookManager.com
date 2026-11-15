@@ -47,9 +47,7 @@ Las etiquetas son tuyas. Las etiquetas automáticas las ponen según reglas (gé
 
 Todo lo que ABM aprende sobre un libro se queda en su propia base de datos SQLite en `/config`, incluidos los libros que quites después. Haz copia de seguridad de esa carpeta y tendrás copia del registro. Una vez que un libro está dentro, los metadatos no dependen de que se pueda llegar a la fuente.
 
-:::caution[Llega en una versión posterior]
-Está prevista una **Local Metadata Library** propia: una copia opcional de todo lo que ABM ha consultado, que se conserva aunque un libro salga de tu biblioteca, con sus propias copias de seguridad programadas y una descarga en SQLite.
-:::
+La sección **Local Storage** de **Settings > Metadata**, que sale con la fuente Built-in, es una vista previa de una copia local opcional de todo lo que ABM ha consultado. Aún no está conectada.
 
 ## Programación de actualizaciones
 

@@ -52,7 +52,7 @@ The database is a SQLite file in `/config`, so there is no database service to s
    docker compose up -d
    ```
 
-4. **Open it.** Go to `http://your-server:5173`. The first visit walks you through setting up a login.
+4. **Open it.** Go to `http://your-server:5173`. The first visit opens a setup wizard that creates your login and the rest of what ABM needs. See [First-run setup](/en-au/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ If your download client runs in its own container, its downloads folder has to b
 
 ## First run
 
-Set your timezone with `TIMEZONE` in the compose file. Then, in **Settings**, add a root folder under **Media Management**, an indexer under **Indexers** and a download client under **Download Clients**. Environment variables and reverse proxies are covered in [Configuration](/en-au/configuration/).
+Set your timezone with `TIMEZONE` in the compose file. Then open ABM and follow the setup wizard. It creates your login, sets how ABM reaches the internet and where it looks books up, and adds a root folder. A download client and an indexer can be added there too, or later under **Settings > Download Clients** and **Settings > Indexers**. The wizard is covered in [First-run setup](/en-au/getting-started/first-run-setup/). Environment variables and reverse proxies are covered in [Configuration](/en-au/configuration/).
 
 ## Build from source
 
