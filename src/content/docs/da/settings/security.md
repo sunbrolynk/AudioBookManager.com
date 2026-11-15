@@ -21,7 +21,7 @@ De to tilstande af **Authentication Required**, du kommer til at bruge:
 - **Enabled**: alle logger ind, også dit LAN.
 - **Disabled for Local Addresses** (gemt som `local_disabled`): en request fra en lokal adresse springer login over. Loopback, de private intervaller, link-local og IPv6 unique-local tæller som lokale. **Local Networks** tilføjer flere og erstatter dem aldrig.
 
-På en frisk installation bliver requests afvist, indtil opsætningen er færdig.
+På en frisk installation bliver requests afvist, indtil kontoen er oprettet i [opsætningsguiden](/da/getting-started/first-run-setup/). Dens trin Account forvælger **Enabled**, så en ny installation kræver login fra alle adresser. En eksisterende installation beholder sin indstilling.
 
 ## Reverse proxies
 

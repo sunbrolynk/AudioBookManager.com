@@ -23,7 +23,7 @@ The two modes of **Authentication Required** you will use:
 
 These settings, and the local-address bypass, decide who gets the web interface. They never open the API. Every API call needs the API key, signed in or not.
 
-On a fresh install, requests are refused until setup finishes. Setup preselects **Enabled**, so a new install requires sign-in from every address. An existing install keeps its setting.
+On a fresh install, requests are refused until the account is created in the [setup wizard](/en-au/getting-started/first-run-setup/). Its Account step preselects **Enabled**, so a new install requires sign-in from every address. An existing install keeps its setting.
 
 ## Reverse proxies
 

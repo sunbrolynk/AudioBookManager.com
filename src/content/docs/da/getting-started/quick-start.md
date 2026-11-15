@@ -7,11 +7,11 @@ Det her er den korteste vej fra en kørende container til en bog, der bliver sø
 
 ## 1. Log ind
 
-Første gang bliver du guidet igennem at oprette et login. Indtil du har gjort det, afviser ABM alle requests. Hvordan login opfører sig bagefter, står i [Sikkerhed og login](/da/settings/security/).
+Første gang åbner opsætningsguiden, og dens første trin opretter dit login. Indtil du gør det, afviser ABM requests. Guiden dækker også trin 2 til 4 nedenfor, og [Første opsætning](/da/getting-started/first-run-setup/) beskriver hvert af dens trin. Hvordan login virker bagefter, står under [Sikkerhed og login](/da/settings/security/).
 
 ## 2. Vælg, hvordan ABM kommer på nettet
 
-Under **Settings > [Network](/da/settings/network/)** vælger du, hvordan ABM når internettet: en proxy, en WireGuard-tunnel eller Direct. Intet går ud, før du har valgt.
+I guiden er det trinnet Network. Senere findes det under **Settings > [Network](/da/settings/network/)**. Vælg, hvordan ABM kommer på internettet: en proxy, en WireGuard-tunnel, din egen VPN-container eller Direct. Intet går ud, før du har valgt en.
 
 ## 3. Tilføj en rodmappe
 

@@ -7,11 +7,11 @@ description: 从全新安装到你的第一本被监控的书。
 
 ## 1. 登录
 
-第一次打开时，会引导你创建登录账号。在你创建之前，ABM 会拒绝所有请求。之后登录怎么运作，见 [安全与登录](/zh-cn/settings/security/)。
+第一次访问会打开设置向导，它的第一步就是创建你的登录账号。在你创建之前，ABM 会拒绝请求。向导也涵盖了下面的第 2 到第 4 步，每一步的说明见[首次设置](/zh-cn/getting-started/first-run-setup/)。之后登录是怎么工作的，见[安全与登录](/zh-cn/settings/security/)。
 
 ## 2. 选择 ABM 怎么连上互联网
 
-在 **Settings > [Network](/zh-cn/settings/network/)** 里选择 ABM 如何连上互联网：代理、WireGuard 隧道或 Direct。选好之前，什么都不会发出去。
+在向导里，这就是 Network 这一步。以后在 **Settings > [Network](/zh-cn/settings/network/)** 里。选择 ABM 如何连上互联网：代理、WireGuard 隧道、你自己的 VPN 容器，或者 Direct。在你选好之前，什么都不会发出去。
 
 ## 3. 添加根文件夹
 
