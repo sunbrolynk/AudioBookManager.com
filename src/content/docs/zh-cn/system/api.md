@@ -18,6 +18,7 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - 浏览器发出的修改类请求需要来源匹配。使用密钥的脚本不受此限制。
 - 请求体上限为 10 MiB（`MAX_REQUEST_BODY_BYTES`）。备份恢复和封面上传的上限更大。超过上限返回 HTTP 413。
 - 校验错误永远不会把你发送的内容原样返回。
+- `POST /api/manual-import/execute` 和 `/execute-to-book` 会按固定结构检查每一行文件。未知的键、相对路径的 `source_path` 或空的 `files` 列表会被 HTTP 422 拒绝。每个来源都必须是音频文件，且不在系统文件夹里、不直接位于 `/tmp` 或 `/mnt` 这类顶层文件夹下，也不在 ABM 自己的文件夹（配置、数据库、备份、日志、封面、回收站）里，符号链接会被跟随。被拒绝的文件会得到写有其名称的 HTTP 400（`Can't import <name>: the file <reason>.`），也不会排入任何任务。
 
 ## 元数据源中断
 

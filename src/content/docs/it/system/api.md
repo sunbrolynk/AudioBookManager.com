@@ -18,6 +18,7 @@ ABM ha un'API REST sotto `/api`. Il riferimento interattivo è su `/api/docs` (S
 - Una richiesta del browser che cambia lo stato ha bisogno di un'origine corrispondente. Gli script che usano una chiave sono esenti.
 - Il corpo delle richieste è limitato a 10 MiB (`MAX_REQUEST_BODY_BYTES`). Ripristino dei backup e caricamento delle copertine hanno limiti più alti. Oltre il limite risponde HTTP 413.
 - Gli errori di validazione non ripetono mai quello che hai inviato.
+- `POST /api/manual-import/execute` e `/execute-to-book` controllano ogni riga di file con uno schema fisso. Una chiave sconosciuta, un `source_path` relativo o un elenco `files` vuoto viene rifiutato con HTTP 422. Ogni sorgente deve essere un file audio che non sta in una cartella di sistema, né direttamente in una cartella di primo livello come `/tmp` o `/mnt`, né in una delle cartelle di ABM (configurazione, database, backup, log, copertine, cestino), seguendo i link simbolici. Un file rifiutato restituisce HTTP 400 con il suo nome (`Can't import <name>: the file <reason>.`) e non viene accodato nulla.
 
 ## Disservizi dei metadati
 

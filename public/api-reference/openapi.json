@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.22.0",
+    "version": "0.23.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3945,13 +3945,13 @@
           "Manual Import"
         ],
         "summary": "Execute Import",
-        "description": "Queue files for background import across multiple books. Returns\nimmediately with a `task_id` for tracking progress.",
+        "description": "Queue files for background import across multiple books. Only audio\nfiles outside system and app-data folders are accepted. Returns\nimmediately with a `task_id` for tracking progress.",
         "operationId": "execute_import_api_manual_import_execute_post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManualImportFilesRequest"
+                "$ref": "#/components/schemas/ManualImportPayload"
               }
             }
           },
@@ -3989,13 +3989,13 @@
           "Manual Import"
         ],
         "summary": "Execute Import To Book",
-        "description": "Queue files for background import to a single book, with an optional\ncustom `destination_filename` for multi-part files. Returns immediately\nwith a `task_id` for tracking progress.",
+        "description": "Queue files for background import to a single book, with a\n`destination_filename` for each file. Only audio files outside system and\napp-data folders are accepted. Returns immediately with a `task_id` for\ntracking progress.",
         "operationId": "execute_import_to_book_api_manual_import_execute_to_book_post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManualImportFilesRequest"
+                "$ref": "#/components/schemas/ManualImportPayload"
               }
             }
           },
@@ -28534,32 +28534,103 @@
         ],
         "title": "LoginStartResponse"
       },
-      "ManualImportFilesRequest": {
+      "ManualImportFileRow": {
         "properties": {
-          "files": {
+          "source_path": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Path"
+          },
+          "book_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Book Id"
+          },
+          "import_mode": {
             "anyOf": [
               {
-                "items": {
-                  "additionalProperties": true,
-                  "type": "object"
-                },
-                "type": "array"
+                "type": "string",
+                "enum": [
+                  "hardlink",
+                  "copy",
+                  "move"
+                ]
               },
               {
                 "type": "null"
               }
             ],
+            "title": "Import Mode"
+          },
+          "use_hardlink": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Use Hardlink"
+          },
+          "filename": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filename"
+          },
+          "destination_filename": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Destination Filename"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_path",
+          "book_id"
+        ],
+        "title": "ManualImportFileRow"
+      },
+      "ManualImportPayload": {
+        "properties": {
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/ManualImportFileRow"
+            },
+            "type": "array",
+            "maxItems": 5000,
+            "minItems": 1,
             "title": "Files"
           },
           "source_type": {
             "type": "string",
+            "const": "user",
             "title": "Source Type",
             "default": "user"
           }
         },
+        "additionalProperties": false,
         "type": "object",
-        "title": "ManualImportFilesRequest",
-        "description": "Files to queue for import; each row goes to the task verbatim."
+        "required": [
+          "files"
+        ],
+        "title": "ManualImportPayload"
       },
       "ManualImportRequest": {
         "properties": {

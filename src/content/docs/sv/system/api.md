@@ -18,6 +18,7 @@ ABM har ett REST-API under `/api`. Den interaktiva referensen finns på `/api/do
 - Ett anrop från webbläsaren som ändrar tillstånd kräver en matchande origin. Skript som använder en nyckel är undantagna.
 - Request bodies är begränsade till 10 MiB (`MAX_REQUEST_BODY_BYTES`). Återställning av säkerhetskopior och uppladdning av omslag har högre gränser. Över gränsen ger HTTP 413.
 - Valideringsfel upprepar aldrig det du skickade.
+- `POST /api/manual-import/execute` och `/execute-to-book` kontrollerar varje filrad mot ett fast schema. En okänd nyckel, en relativ `source_path` eller en tom `files`-lista avvisas med HTTP 422. Varje källa måste vara en ljudfil som inte ligger i en systemmapp, direkt i en mapp på översta nivån som `/tmp` eller `/mnt`, eller i någon av ABM:s egna mappar (konfiguration, databas, säkerhetskopior, loggar, omslag, papperskorg), med symlänkar följda. En avvisad fil får HTTP 400 med sitt namn (`Can't import <name>: the file <reason>.`) och inget läggs i kön.
 
 ## Avbrott hos metadatakällan
 

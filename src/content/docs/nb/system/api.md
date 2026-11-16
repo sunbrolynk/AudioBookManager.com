@@ -18,6 +18,7 @@ ABM har et REST-API under `/api`. Den interaktive referansen ligger på `/api/do
 - En nettleserforespørsel som endrer tilstand, trenger en opprinnelse som stemmer. Skript som bruker en nøkkel, er unntatt.
 - Forespørselskropper er begrenset til 10 MiB (`MAX_REQUEST_BODY_BYTES`). Gjenoppretting av sikkerhetskopi og opplasting av cover har høyere grenser. Over grensen gir HTTP 413.
 - Valideringsfeil gjentar aldri det du sendte.
+- `POST /api/manual-import/execute` og `/execute-to-book` sjekker hver filrad mot et fast skjema. En ukjent nøkkel, en relativ `source_path` eller en tom `files`-liste avvises med HTTP 422. Hver kilde må være en lydfil som ikke ligger i en systemmappe, direkte i en mappe på øverste nivå som `/tmp` eller `/mnt`, eller i en av ABMs egne mapper (konfigurasjon, database, sikkerhetskopier, logger, omslag, papirkurv), med symlenker fulgt. En avvist fil får HTTP 400 med navnet sitt (`Can't import <name>: the file <reason>.`), og ingenting legges i køen.
 
 ## Brudd hos metadatakilden
 

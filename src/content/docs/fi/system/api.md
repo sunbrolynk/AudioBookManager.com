@@ -18,6 +18,7 @@ ABM:llä on REST API polun `/api` alla. Interaktiivinen viite on osoitteissa `/a
 - Tilaa muuttava selainpyyntö tarvitsee täsmäävän alkuperän. Avainta käyttävät skriptit on vapautettu tästä.
 - Pyyntöjen rungot on rajattu 10 MiB:iin (`MAX_REQUEST_BODY_BYTES`). Varmuuskopion palautuksella ja kansikuvan latauksella on suuremmat rajat. Rajan ylittävä saa vastauksen HTTP 413.
 - Validointivirheet eivät koskaan toista takaisin sitä, mitä lähetit.
+- `POST /api/manual-import/execute` ja `/execute-to-book` tarkistavat jokaisen tiedostorivin kiinteää skeemaa vasten. Tuntematon avain, suhteellinen `source_path` tai tyhjä `files`-lista hylätään HTTP 422:lla. Jokaisen lähteen on oltava äänitiedosto, joka ei ole järjestelmäkansiossa, suoraan ylimmän tason kansiossa kuten `/tmp` tai `/mnt` eikä missään ABM:n omista kansioista (asetukset, tietokanta, varmuuskopiot, lokit, kannet, roskakori), ja symboliset linkit seurataan. Hylätty tiedosto saa HTTP 400:n, joka nimeää sen (`Can't import <name>: the file <reason>.`), eikä mitään lisätä jonoon.
 
 ## Metatietokatkokset
 
