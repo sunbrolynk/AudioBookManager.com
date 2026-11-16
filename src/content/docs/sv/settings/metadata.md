@@ -22,7 +22,7 @@ Filer som skapas: `cover.jpg` (på), `title.opf` (på, kompatibel med Audiobooks
 
 ## Skriva taggar i ljudfiler (Audio file tag writing)
 
-Skriver ljudtaggar direkt i ljudfilerna. Taggskrivning är på som standard, så en import skriver taggarna om du inte stänger av den.
+Skriver ljudtaggar direkt i ljudfilerna. Taggskrivning är på som standard, så en import skriver taggarna om du inte stänger av den. Standardvärdet gäller bara tills sidan sparas första gången. Därefter använder ABM det värde för **Write Audio Tags** som du sparade, på eller av.
 
 | Inställning | Standard |
 |---|---|

@@ -64,7 +64,7 @@ Under **Files to Create**, all on by default: **Cover image** (`cover.jpg`), **B
 
 ### Audio File Tag Writing
 
-Writes audio tags into the audio files themselves. Tag writing is on by default, so an import writes the tags unless you turn it off.
+Writes audio tags into the audio files themselves. Tag writing is on by default, so an import writes the tags unless you turn it off. That default only counts until the page is first saved. After that, ABM keeps the **Write Audio Tags** value you saved, on or off.
 
 | Setting | Default |
 |---|---|

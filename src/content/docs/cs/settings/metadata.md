@@ -22,7 +22,7 @@ Soubory k vytvoření: `cover.jpg` (zapnuto), `title.opf` (zapnuto, kompatibiln�
 
 ## Zápis tagů do zvukových souborů (Audio file tag writing)
 
-Zapisuje audio tagy přímo do audio souborů. Zápis tagů je ve výchozím stavu zapnutý, takže import tagy zapíše, pokud ho nevypneš.
+Zapisuje audio tagy přímo do audio souborů. Zápis tagů je ve výchozím stavu zapnutý, takže import tagy zapíše, pokud ho nevypneš. Tento výchozí stav platí jen do prvního uložení stránky. Potom ABM drží hodnotu **Write Audio Tags**, kterou jsi uložil, ať zapnutou, nebo vypnutou.
 
 | Nastavení | Výchozí |
 |---|---|

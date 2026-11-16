@@ -22,7 +22,7 @@ Luotavat tiedostot: `cover.jpg` (päällä), `title.opf` (päällä, Audiobooksh
 
 ## Tagien kirjoittaminen äänitiedostoihin
 
-Kirjoittaa audiotagit suoraan äänitiedostoihin. Tagien kirjoitus on oletuksena päällä, joten tuonti kirjoittaa tagit, ellet kytke sitä pois.
+Kirjoittaa audiotagit suoraan äänitiedostoihin. Tagien kirjoitus on oletuksena päällä, joten tuonti kirjoittaa tagit, ellet kytke sitä pois. Oletus pätee vain siihen asti, kun sivu tallennetaan ensimmäisen kerran. Sen jälkeen ABM käyttää tallentamaasi **Write Audio Tags** -arvoa, oli se päällä tai pois.
 
 | Asetus | Oletus |
 |---|---|

@@ -22,7 +22,7 @@ Filer som lages: `cover.jpg` (på), `title.opf` (på, kompatibel med Audiobooksh
 
 ## Skriving av tagger i lydfiler
 
-Skriver lydtagger inn i selve lydfilene. Skriving av tagger er på som standard, så en import skriver taggene med mindre du slår det av.
+Skriver lydtagger inn i selve lydfilene. Skriving av tagger er på som standard, så en import skriver taggene med mindre du slår det av. Standarden gjelder bare til siden lagres første gang. Etter det bruker ABM verdien for **Write Audio Tags** som du lagret, på eller av.
 
 | Innstilling | Standard |
 |---|---|

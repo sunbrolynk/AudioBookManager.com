@@ -22,7 +22,7 @@ Zu erstellende Dateien: `cover.jpg` (an), `title.opf` (an, kompatibel mit Audiob
 
 ## Tags in Audiodateien schreiben (Audio file tag writing)
 
-Schreibt die Audio-Tags direkt in die Audiodateien. Das Schreiben von Tags ist standardmäßig an, ein Import schreibt die Tags also, solange du es nicht ausschaltest.
+Schreibt die Audio-Tags direkt in die Audiodateien. Das Schreiben von Tags ist standardmäßig an, ein Import schreibt die Tags also, solange du es nicht ausschaltest. Diese Voreinstellung gilt nur, bis die Seite zum ersten Mal gespeichert wird. Danach nimmt ABM den Wert von **Write Audio Tags**, den du gespeichert hast, an oder aus.
 
 | Einstellung | Standard |
 |---|---|

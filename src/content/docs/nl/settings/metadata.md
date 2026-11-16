@@ -22,7 +22,7 @@ Aan te maken bestanden: `cover.jpg` (aan), `title.opf` (aan, compatibel met Audi
 
 ## Tags in audiobestanden schrijven
 
-Schrijft audiotags in de audiobestanden zelf. Tags schrijven staat standaard aan, dus een import schrijft de tags, tenzij je het uitzet.
+Schrijft audiotags in de audiobestanden zelf. Tags schrijven staat standaard aan, dus een import schrijft de tags, tenzij je het uitzet. Die standaard geldt alleen tot de pagina voor het eerst wordt opgeslagen. Daarna houdt ABM de waarde van **Write Audio Tags** aan die je hebt opgeslagen, aan of uit.
 
 | Instelling | Standaard |
 |---|---|
