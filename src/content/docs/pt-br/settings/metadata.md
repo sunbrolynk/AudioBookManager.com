@@ -22,7 +22,7 @@ Arquivos a criar: `cover.jpg` (ligado), `title.opf` (ligado, compatível com o A
 
 ## Gravação de tags nos arquivos de áudio
 
-Grava as tags de áudio dentro dos próprios arquivos de áudio. A gravação de tags vem ligada por padrão, então uma importação grava as tags, a menos que você a desligue. Esse padrão só vale até a página ser salva pela primeira vez. Depois disso, o ABM usa o valor de **Write Audio Tags** que você salvou, ligado ou desligado.
+Grava as tags de áudio dentro dos próprios arquivos de áudio. A gravação de tags vem ligada por padrão, então uma importação grava as tags, a menos que você a desligue.
 
 | Configuração | Padrão |
 |---|---|

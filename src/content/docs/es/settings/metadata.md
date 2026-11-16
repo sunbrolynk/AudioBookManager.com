@@ -22,7 +22,7 @@ Archivos que se crean: `cover.jpg` (activado), `title.opf` (activado, compatible
 
 ## Escritura de etiquetas en los archivos de audio
 
-Escribe las etiquetas de audio dentro de los propios archivos de audio. La escritura de etiquetas viene activada por defecto, así que una importación escribe las etiquetas salvo que la desactives. Ese valor por defecto solo cuenta hasta que guardas la página por primera vez. Después, ABM usa el valor de **Write Audio Tags** que guardaste, activado o no.
+Escribe las etiquetas de audio dentro de los propios archivos de audio. La escritura de etiquetas viene activada por defecto, así que una importación escribe las etiquetas salvo que la desactives.
 
 | Ajuste | Por defecto |
 |---|---|

@@ -22,7 +22,7 @@ Pliki do utworzenia: `cover.jpg` (wł.), `title.opf` (wł., zgodny z Audiobooksh
 
 ## Zapisywanie tagów w plikach audio
 
-Zapisuje tagi audio w samych plikach audio. Zapisywanie tagów jest domyślnie włączone, więc import zapisuje tagi, chyba że je wyłączysz. Ta wartość domyślna obowiązuje tylko do pierwszego zapisania strony. Potem ABM używa zapisanej przez ciebie wartości **Write Audio Tags**, włączonej lub wyłączonej.
+Zapisuje tagi audio w samych plikach audio. Zapisywanie tagów jest domyślnie włączone, więc import zapisuje tagi, chyba że je wyłączysz.
 
 | Ustawienie | Domyślnie |
 |---|---|

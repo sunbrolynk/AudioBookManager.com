@@ -22,7 +22,7 @@ Filer, der oprettes: `cover.jpg` (til), `title.opf` (til, kompatibel med Audiobo
 
 ## Skrivning af tags i lydfiler
 
-Skriver audio-tags ind i selve lydfilerne. Skrivning af tags er slået til som standard, så en import skriver tags, medmindre du slår det fra. Standarden gælder kun, indtil siden gemmes første gang. Derefter bruger ABM den værdi for **Write Audio Tags**, du har gemt, til eller fra.
+Skriver audio-tags ind i selve lydfilerne. Skrivning af tags er slået til som standard, så en import skriver tags, medmindre du slår det fra.
 
 | Indstilling | Standard |
 |---|---|

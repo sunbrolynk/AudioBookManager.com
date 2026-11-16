@@ -22,7 +22,7 @@ File da creare: `cover.jpg` (attivo), `title.opf` (attivo, compatibile con Audio
 
 ## Scrittura dei tag nei file audio
 
-Scrive i tag audio dentro i file audio stessi. La scrittura dei tag è attiva per impostazione predefinita, quindi un'importazione scrive i tag a meno che tu non la disattivi. Questo valore predefinito vale solo finché non salvi la pagina la prima volta. Dopo, ABM usa il valore di **Write Audio Tags** che hai salvato, attivo o no.
+Scrive i tag audio dentro i file audio stessi. La scrittura dei tag è attiva per impostazione predefinita, quindi un'importazione scrive i tag a meno che tu non la disattivi.
 
 | Impostazione | Predefinito |
 |---|---|
