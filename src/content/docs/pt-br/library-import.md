@@ -24,13 +24,17 @@ Um autor ou uma posição na série que contradiz os arquivos descarta um livro.
 
 A duração dos arquivos só conta quando deu para ler cada arquivo do livro. Se um não puder ser medido, a linha fica sem duração: só o ASIN dela pode confirmar uma correspondência e, se não, o livro espera em **Needs a look**.
 
+Quando um livro está em dois formatos, cada formato é uma linha própria e é medido separado. Um livro dividido em partes de formatos diferentes é uma linha só quando tem pasta própria, e as partes são somadas. Um download concluído com um livro em dois formatos é medido como uma cópia só, e fica sem duração para a correspondência se a duração das cópias diferir em mais de três minutos.
+
 Pela duração, só é aceita uma edição em inglês, ou uma cuja ficha não informa idioma. Uma edição em outro idioma só é aceita quando o próprio ASIN dos arquivos a encontra. Um livro respondido pelo [armazenamento local](/pt-br/settings/metadata/) em vez de uma consulta ao vivo nunca é aceito sem você.
 
 Quando uma das consultas de uma linha falha, só uma correspondência por ASIN é aceita. Um livro achado só pela busca do autor só é sugerido quando a duração dele bate com a dos arquivos, então um livro sem ficha aparece como **Unmatched** em vez de sugerir outro livro do autor.
 
 Qualquer outra correspondência continua sendo sugerida, mas a linha conta em **Needs a look**, começa desmarcada e **Select All** a deixa de fora até você confirmar essa correspondência ou escolher outra. Uma correspondência aceita com um livro que você já tem na biblioteca conta em **In library**. Uma linha **Needs a look** cuja sugestão é um livro da biblioteca só faz a pergunta sobre a biblioteca quando você confirma essa correspondência. Até lá, se você marcá-la, ela bloqueia o Add como uma linha que ainda precisa de uma decisão.
 
-Um livro em vários arquivos soltos que dividem a pasta com outros livros, como uma pasta de autor ou a pasta que você escaneia, é uma linha só com todas as partes. Arquivos que diferem por um número de livro ou de volume continuam como linhas separadas. As partes são agrupadas por formato: um arquivo com o livro inteiro ao lado é uma linha à parte, dois formatos do mesmo livro numa pasta compartilhada são linhas separadas, e uma taxa de bits no nome do arquivo, como `128kbps`, não é número de parte.
+Um livro em vários arquivos soltos que dividem a pasta com outros livros, como uma pasta de autor ou a pasta que você escaneia, é uma linha só com todas as partes. Arquivos que diferem por um número de livro ou de volume continuam como linhas separadas. As partes são agrupadas por formato: um arquivo com o livro inteiro ao lado é uma linha à parte, e uma taxa de bits no nome do arquivo, como `128kbps`, não é número de parte.
+
+Dois formatos do mesmo livro, como `Book.mp3` e `Book.m4b`, são linhas separadas, estejam os arquivos soltos na pasta que você escaneia ou numa pasta própria do livro. Cada linha importa, remove e mede só o próprio arquivo. Uma capa, um cue ou outro arquivo que não é áudio com o mesmo nome vai junto com o arquivo do livro quando o livro está ali em um formato, e fica onde está quando está em dois. Isso vale mesmo quando uma cópia é movida para a biblioteca e a outra é removida na mesma importação.
 
 Uma tag escrita como `Title: Series, Book 2` é lida como o título, a série e a posição.
 
@@ -51,9 +55,9 @@ Um ASIN encontrado num comentário ou numa descrição é só uma pista. Ele só
 
 ## Juntar, dividir e adicionar
 
-- Junte linhas que são um único livro espalhado em várias pastas. Separe de novo pelos detalhes da pasta. A correspondência da linha juntada é só uma sugestão: ela conta em **Needs a look** e começa desmarcada até você confirmar ou escolher outra. A duração dela é o total das partes só quando cada parte tem uma, e ela mantém um ASIN só quando todas as partes dão o mesmo. Uma consulta que termina depois que você junta ou divide a linha dela também é só uma sugestão.
+- Junte linhas que são um único livro espalhado em várias pastas. Separe de novo pelos detalhes da pasta. A correspondência da linha juntada é só uma sugestão: ela conta em **Needs a look** e começa desmarcada até você confirmar ou escolher outra. A duração dela é o total das partes só quando cada parte tem uma, e ela mantém um ASIN só quando todas as partes dão o mesmo. Um livro juntado a partir de dois formatos com os mesmos nomes de arquivo conta uma vez só: fica com a duração do formato mais longo, ou nenhuma se diferirem em mais de três minutos. Uma consulta que termina depois que você junta ou divide a linha dela também é só uma sugestão.
 - **Confirm match** nos detalhes de uma linha marca uma linha **Needs a look**, e **Undo confirmation** desfaz essa marcação também.
-- Adicionar fica bloqueado com o motivo mostrado acima do botão, como "Select at least one folder" ou "2 selected rows still need a decision".
+- Adicionar fica bloqueado com o motivo mostrado acima do botão, como "Select at least one folder" ou "2 selected rows still need a decision". Adicionar também é recusado, sem mexer em nada, quando duas linhas reivindicam a mesma pasta ou o mesmo arquivo.
 - Tudo o que removeria ou substituiria arquivos pergunta antes.
 - Sair da página salva as edições pendentes.
 
@@ -73,7 +77,7 @@ Um narrador, título ou caminho cortado com reticências abre inteiro quando voc
 
 ## Respostas além de importar
 
-Uma linha também pode ser respondida com **keep library** (recusar uma cópia de um livro que a biblioteca já tem) ou **remove empty** (recusar uma pasta sem áudio, que ainda guarda arte e sidecars). Isso limpa só o que pertence à linha. Qualquer coisa que tenha áudio é recusada. Os arquivos vão para a lixeira quando há uma configurada, e o log da tarefa lista cada caminho removido. Uma decisão **keep library** vale só para o livro da biblioteca a que se referia: se você escolher uma correspondência que pergunta outra coisa ou sobre outro livro da biblioteca, a linha pergunta de novo. A importação confere de novo quando roda, e nada é removido se a cópia da biblioteca não tiver arquivos até lá ("Your library has no copy of this book to keep") ou se a pasta tiver arquivos de um livro da sua biblioteca ("This folder holds files of a book in your library").
+Uma linha também pode ser respondida com **keep library** (recusar uma cópia de um livro que a biblioteca já tem) ou **remove empty** (recusar uma pasta sem áudio, que ainda guarda arte e sidecars). Isso limpa só o que pertence à linha. **remove empty** recusa qualquer coisa que tenha áudio. Os arquivos vão para a lixeira quando há uma configurada, e o log da tarefa lista cada caminho removido. Uma decisão **keep library** vale só para o livro da biblioteca a que se referia: se você escolher uma correspondência que pergunta outra coisa ou sobre outro livro da biblioteca, a linha pergunta de novo. A importação confere de novo quando roda, e nada é removido se a cópia da biblioteca não tiver arquivos até lá ("Your library has no copy of this book to keep") ou se a pasta tiver arquivos de um livro da sua biblioteca ("This folder holds files of a book in your library"). Linhas que removem arquivos em vez de importá-los só rodam depois que cada importação do mesmo Adicionar termina, e cada uma é recusada se algum dos arquivos dela pertencer nesse momento a um livro da sua biblioteca. Assim elas nunca removem arquivos de onde um livro do mesmo lote acabou de ser adicionado.
 
 ## Capa e arquivos extras por pasta
 

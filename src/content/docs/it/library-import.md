@@ -24,13 +24,17 @@ Un autore o una posizione nella serie che contraddice i file esclude un libro. S
 
 La durata dei file conta solo quando è stato possibile leggere ogni file del libro. Se uno non si può misurare, la riga non ha durata: solo il suo ASIN può confermare un abbinamento, altrimenti il libro aspetta sotto **Needs a look**.
 
+Quando un libro è in due formati, ogni formato è una riga a sé e viene misurato per conto suo. Un libro diviso in parti di formati diversi è una sola riga quando ha una cartella sua, e le sue parti vengono sommate. Un download completato con un libro in due formati viene misurato come una sola copia, e non ha una durata su cui abbinarlo se la durata delle copie differisce di più di tre minuti.
+
 In base alla durata viene accettata solo un'edizione in inglese, o una la cui scheda non indica la lingua. Un'edizione in un'altra lingua viene accettata solo quando la trova l'ASIN dei file stessi. Un libro con risposta presa dall'[archiviazione locale](/it/settings/metadata/) invece che da una ricerca dal vivo non viene mai accettato senza di te.
 
 Quando una delle ricerche di una riga fallisce, viene accettato solo un abbinamento per ASIN. Un libro trovato solo cercando l'autore viene proposto solo quando la sua durata corrisponde a quella dei file, quindi un libro senza scheda mostra **Unmatched** invece di suggerire un altro libro dell'autore.
 
 Ogni altra corrispondenza viene comunque proposta come suggerimento, ma la riga conta sotto **Needs a look**, parte senza spunta e **Select All** la salta finché non confermi quella corrispondenza o ne scegli un'altra. Una corrispondenza accettata con un libro che hai già in libreria conta sotto **In library**. Una riga **Needs a look** il cui suggerimento è un libro della libreria fa la sua domanda sulla libreria solo quando confermi quell'abbinamento. Fino ad allora, se la spunti, blocca Add come una riga che ha ancora bisogno di una decisione.
 
-Un libro in più file sciolti che condividono una cartella con altri libri, come una cartella dell'autore o la cartella che scansioni, è una sola riga con tutte le parti. I file che differiscono per un numero di libro o di volume restano righe separate. Le parti sono raggruppate per formato: un file con il libro intero accanto è una riga a sé, due formati dello stesso libro in una cartella condivisa sono righe separate, e un bitrate nel nome di un file, come `128kbps`, non è un numero di parte.
+Un libro in più file sciolti che condividono una cartella con altri libri, come una cartella dell'autore o la cartella che scansioni, è una sola riga con tutte le parti. I file che differiscono per un numero di libro o di volume restano righe separate. Le parti sono raggruppate per formato: un file con il libro intero accanto è una riga a sé, e un bitrate nel nome di un file, come `128kbps`, non è un numero di parte.
+
+Due formati dello stesso libro, come `Book.mp3` e `Book.m4b`, sono righe separate, sia che i file stiano sciolti nella cartella che scansioni sia in una cartella del libro tutta loro. Ogni riga importa, rimuove e misura solo il proprio file. Una copertina, un cue o un altro file non audio con lo stesso nome va con il file del libro quando il libro è lì in un solo formato, e resta dov'è quando è lì in due. Vale anche quando una copia viene spostata nella libreria e l'altra viene rimossa nella stessa importazione.
 
 Un tag scritto come `Title: Series, Book 2` viene letto come titolo, serie e posizione.
 
@@ -51,9 +55,9 @@ Un ASIN trovato in un commento o in una descrizione è solo un indizio. Conta co
 
 ## Unire, dividere e aggiungere
 
-- Unisci le righe che sono un unico libro diviso tra più cartelle. Puoi dividerle di nuovo dai dettagli della cartella. L'abbinamento della riga unita è solo un suggerimento: conta sotto **Needs a look** e parte senza spunta finché non lo confermi o ne scegli un altro. La sua durata è il totale delle parti solo quando ogni parte ne ha una, e mantiene un ASIN solo quando tutte le parti danno lo stesso. Anche una ricerca che finisce dopo che hai unito o diviso la sua riga è solo un suggerimento.
+- Unisci le righe che sono un unico libro diviso tra più cartelle. Puoi dividerle di nuovo dai dettagli della cartella. L'abbinamento della riga unita è solo un suggerimento: conta sotto **Needs a look** e parte senza spunta finché non lo confermi o ne scegli un altro. La sua durata è il totale delle parti solo quando ogni parte ne ha una, e mantiene un ASIN solo quando tutte le parti danno lo stesso. Un libro unito da due formati con gli stessi nomi di file conta una volta sola: prende la durata del formato più lungo, o nessuna se differiscono di più di tre minuti. Anche una ricerca che finisce dopo che hai unito o diviso la sua riga è solo un suggerimento.
 - **Confirm match** nei dettagli di una riga spunta una riga **Needs a look**, e **Undo confirmation** toglie di nuovo la spunta.
-- L'aggiunta viene bloccata con un motivo mostrato sopra il pulsante, per esempio "Select at least one folder" o "2 selected rows still need a decision".
+- L'aggiunta viene bloccata con un motivo mostrato sopra il pulsante, per esempio "Select at least one folder" o "2 selected rows still need a decision". L'aggiunta viene rifiutata anche, senza toccare nulla, quando due righe rivendicano la stessa cartella o lo stesso file.
 - Tutto quello che rimuoverebbe o sostituirebbe dei file ti chiede prima conferma.
 - Se lasci la pagina, le modifiche in sospeso vengono salvate.
 
@@ -73,7 +77,7 @@ Un narratore, un titolo o un percorso tagliato con i puntini di sospensione si a
 
 ## Risposte diverse dall'importazione
 
-A una riga puoi rispondere anche **keep library** (rifiuta la copia di un libro che la libreria ha già) o **remove empty** (rifiuta una cartella senza audio che contiene ancora immagini e sidecar). Queste risposte eliminano solo quello che appartiene alla riga. Tutto ciò che contiene audio viene rifiutato. I file finiscono nel cestino se ne hai impostato uno, e il log del task elenca ogni percorso rimosso. Una decisione **keep library** vale solo per il libro della libreria a cui si riferiva: se scegli un abbinamento che chiede altro o riguarda un altro libro della libreria, la riga chiede di nuovo. L'importazione controlla ancora quando parte, e non viene rimosso nulla se a quel punto la copia in libreria non ha file ("Your library has no copy of this book to keep") o se la cartella contiene file di un libro della tua libreria ("This folder holds files of a book in your library").
+A una riga puoi rispondere anche **keep library** (rifiuta la copia di un libro che la libreria ha già) o **remove empty** (rifiuta una cartella senza audio che contiene ancora immagini e sidecar). Queste risposte eliminano solo quello che appartiene alla riga. **remove empty** rifiuta tutto ciò che contiene audio. I file finiscono nel cestino se ne hai impostato uno, e il log del task elenca ogni percorso rimosso. Una decisione **keep library** vale solo per il libro della libreria a cui si riferiva: se scegli un abbinamento che chiede altro o riguarda un altro libro della libreria, la riga chiede di nuovo. L'importazione controlla ancora quando parte, e non viene rimosso nulla se a quel punto la copia in libreria non ha file ("Your library has no copy of this book to keep") o se la cartella contiene file di un libro della tua libreria ("This folder holds files of a book in your library"). Le righe che rimuovono file invece di importarli partono solo quando ogni importazione della stessa aggiunta è finita, e ognuna viene rifiutata se in quel momento uno dei suoi file appartiene a un libro della tua libreria. Così non rimuovono mai file da cui un libro dello stesso gruppo è appena stato aggiunto.
 
 ## Copertina e file extra per cartella
 

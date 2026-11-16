@@ -24,13 +24,17 @@ En forfatter eller en plads i serien, der modsiger filerne, udelukker en bog. Pa
 
 Filernes spilletid tæller kun, når hver fil i bogen kunne læses. Kan én ikke måles, har rækken ingen spilletid: Så kan kun dens ASIN bekræfte et match, og ellers venter bogen under **Needs a look**.
 
+Når en bog findes i to formater, er hvert format sin egen række og måles for sig. En bog delt i dele i forskellige formater er én række, når den har sin egen mappe, og dens dele lægges sammen. En færdig download med én bog i to formater måles som én kopi og har ingen spilletid at matche på, når kopiernes længde afviger med mere end tre minutter.
+
 Kun en engelsk udgave, eller en hvis opslag ikke angiver et sprog, accepteres på spilletid. En udgave på et andet sprog accepteres kun, når filernes egen ASIN finder den. En bog, der er besvaret fra [lokal lagring](/da/settings/metadata/) i stedet for et live opslag, accepteres aldrig uden dig.
 
 Når et af rækkens opslag fejler, accepteres kun et ASIN-match. En bog, der kun er fundet ved at søge på forfatteren, foreslås kun, når dens spilletid passer til filernes. En bog uden opslag står derfor som **Unmatched** i stedet for at foreslå en anden af forfatterens bøger.
 
 Alle andre match bliver stadig foreslået, men rækken tæller under **Needs a look**, starter uden flueben, og **Select All** springer den over, indtil du bekræfter matchet eller vælger et andet. Et godkendt match til en bog, du allerede har i biblioteket, tæller under **In library**. En **Needs a look**-række, hvis forslag er en bog i biblioteket, stiller først sit biblioteksspørgsmål, når du bekræfter matchet. Indtil da blokerer den Add, hvis du markerer den, som en række, der stadig mangler en beslutning.
 
-En bog i flere løse filer, der deler mappe med andre bøger, for eksempel en forfattermappe eller den mappe, du scanner, er én række med alle delene. Filer, der adskiller sig med et bog- eller bindnummer, forbliver separate rækker. Dele grupperes efter format: En fil med hele bogen ved siden af er sin egen række, to formater af samme bog i en delt mappe er separate rækker, og en bitrate i et filnavn, fx `128kbps`, er ikke et delnummer.
+En bog i flere løse filer, der deler mappe med andre bøger, for eksempel en forfattermappe eller den mappe, du scanner, er én række med alle delene. Filer, der adskiller sig med et bog- eller bindnummer, forbliver separate rækker. Dele grupperes efter format: En fil med hele bogen ved siden af er sin egen række, og en bitrate i et filnavn, fx `128kbps`, er ikke et delnummer.
+
+To formater af samme bog, fx `Book.mp3` og `Book.m4b`, er separate rækker, uanset om filerne ligger løst i den mappe, du scanner, eller i deres egen bogmappe. Hver række importerer, fjerner og måler kun sin egen fil. Et cover, en cue- eller anden ikke-lydfil med samme navn følger med bogens fil, når bogen ligger der i ét format, og bliver liggende, når den ligger der i to. Det gælder også, når den ene kopi flyttes ind i biblioteket og den anden fjernes i samme import.
 
 Et tag skrevet som `Title: Series, Book 2` bliver læst som titel, serie og plads i serien.
 
@@ -51,9 +55,9 @@ En ASIN fundet i en kommentar eller beskrivelse er kun et hint. Den tæller kun 
 
 ## Sammenlæg, del op og tilføj
 
-- Læg rækker sammen, der er én bog fordelt på flere mapper. Del dem op igen fra mappedetaljerne. Den sammenlagte rækkes match er kun et forslag: Den tæller under **Needs a look** og er ikke markeret, før du bekræfter det eller vælger et andet. Dens spilletid er delenes samlede tid, kun når hver del har en, og den beholder kun en ASIN, når alle dele angiver den samme. Et opslag, der bliver færdigt, efter du har lagt dens række sammen eller delt den op, er også kun et forslag.
+- Læg rækker sammen, der er én bog fordelt på flere mapper. Del dem op igen fra mappedetaljerne. Den sammenlagte rækkes match er kun et forslag: Den tæller under **Needs a look** og er ikke markeret, før du bekræfter det eller vælger et andet. Dens spilletid er delenes samlede tid, kun når hver del har en, og den beholder kun en ASIN, når alle dele angiver den samme. En bog lagt sammen af to formater med de samme filnavne tæller én gang og får det længste formats spilletid, eller ingen, når de afviger med mere end tre minutter. Et opslag, der bliver færdigt, efter du har lagt dens række sammen eller delt den op, er også kun et forslag.
 - **Confirm match** i en rækkes detaljer markerer en **Needs a look**-række, og **Undo confirmation** fjerner markeringen igen.
-- Tilføj er blokeret med en årsag over knappen, fx "Select at least one folder" eller "2 selected rows still need a decision".
+- Tilføj er blokeret med en årsag over knappen, fx "Select at least one folder" eller "2 selected rows still need a decision". Tilføj bliver også afvist, uden at noget røres, når to rækker gør krav på samme mappe eller fil.
 - Alt, der ville fjerne eller erstatte filer, spørger først.
 - Forlader du siden, bliver dine ventende ændringer gemt.
 
@@ -73,7 +77,7 @@ En oplæser, titel eller sti, der er kortet af med en ellipse, åbner i fuld læ
 
 ## Andre svar end import
 
-En række kan også besvares med **keep library** (afvis en kopi af en bog, biblioteket allerede har) eller **remove empty** (afvis en mappe uden lyd, som stadig indeholder billeder og sidecars). De rydder kun det, rækken selv ejer. Alt, der indeholder lyd, bliver afvist. Filer ryger i papirkurven, når der er sat en, og opgaveloggen viser hver sti, der blev fjernet. En **keep library**-beslutning gælder kun den bog i biblioteket, den handlede om: Vælger du et match, der spørger om noget andet eller om en anden bog i biblioteket, spørger rækken igen. Importen tjekker igen, når den kører, og intet fjernes, hvis bibliotekets kopi ikke har nogen filer på det tidspunkt ("Your library has no copy of this book to keep"), eller hvis mappen indeholder filer fra en bog i dit bibliotek ("This folder holds files of a book in your library").
+En række kan også besvares med **keep library** (afvis en kopi af en bog, biblioteket allerede har) eller **remove empty** (afvis en mappe uden lyd, som stadig indeholder billeder og sidecars). De rydder kun det, rækken selv ejer. **remove empty** afviser alt, der indeholder lyd. Filer ryger i papirkurven, når der er sat en, og opgaveloggen viser hver sti, der blev fjernet. En **keep library**-beslutning gælder kun den bog i biblioteket, den handlede om: Vælger du et match, der spørger om noget andet eller om en anden bog i biblioteket, spørger rækken igen. Importen tjekker igen, når den kører, og intet fjernes, hvis bibliotekets kopi ikke har nogen filer på det tidspunkt ("Your library has no copy of this book to keep"), eller hvis mappen indeholder filer fra en bog i dit bibliotek ("This folder holds files of a book in your library"). Rækker, der fjerner filer i stedet for at importere dem, kører først, når hver import i samme Tilføj er færdig, og hver bliver afvist, hvis en af dens filer på det tidspunkt hører til en bog i dit bibliotek. Så fjerner de aldrig filer, som en bog i samme omgang lige er blevet tilføjet fra.
 
 ## Cover og ekstra filer pr. mappe
 

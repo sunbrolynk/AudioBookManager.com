@@ -24,13 +24,17 @@ Een auteur of plaats in de serie die de bestanden tegenspreekt, sluit een boek u
 
 De speelduur van de bestanden telt alleen als elk bestand van het boek gelezen kon worden. Is er één niet te meten, dan heeft de rij geen speelduur: alleen de ASIN kan dan een match bevestigen, en anders wacht het boek onder **Needs a look**.
 
+Staat een boek er in twee formaten, dan is elk formaat een eigen rij en wordt het apart gemeten. Een boek in delen in verschillende formaten is één rij als het een eigen map heeft, en de delen worden opgeteld. Een voltooide download met één boek in twee formaten wordt gemeten als één kopie, en heeft geen speelduur om op te matchen als de lengtes van de kopieën meer dan drie minuten verschillen.
+
 Op speelduur wordt alleen een Engelse editie aangenomen, of een waarvan de vermelding geen taal noemt. Een editie in een andere taal wordt alleen aangenomen als de eigen ASIN van de bestanden haar vindt. Een boek dat uit [lokale opslag](/nl/settings/metadata/) is beantwoord in plaats van een live opzoeking, wordt nooit zonder jou aangenomen.
 
 Als een van de opzoekingen van een rij mislukt, wordt alleen een ASIN-match aangenomen. Een boek dat alleen via de auteur is gevonden, wordt alleen voorgesteld als de speelduur bij de bestanden past, dus een boek zonder vermelding staat op **Unmatched** in plaats van een ander boek van de auteur voor te stellen.
 
 Elke andere match wordt nog steeds voorgesteld, maar de rij telt onder **Needs a look**, begint zonder vinkje, en **Select All** slaat hem over tot je die match bevestigt of een andere kiest. Een geaccepteerde match met een boek dat al in je bibliotheek staat, telt onder **In library**. Een **Needs a look**-rij waarvan de suggestie een boek uit de bibliotheek is, stelt haar bibliotheekvraag pas als je die match bevestigt. Tot dan blokkeert ze Add als je haar aanvinkt, als een rij die nog een beslissing nodig heeft.
 
-Een boek in meerdere losse bestanden die een map delen met andere boeken, zoals een auteursmap of de map die je scant, is één rij met alle delen. Bestanden die verschillen in een boek- of deelnummer blijven aparte rijen. Delen worden per formaat gegroepeerd: een bestand met het hele boek ernaast is een eigen rij, twee formaten van één boek in een gedeelde map zijn aparte rijen, en een bitrate in een bestandsnaam, zoals `128kbps`, is geen deelnummer.
+Een boek in meerdere losse bestanden die een map delen met andere boeken, zoals een auteursmap of de map die je scant, is één rij met alle delen. Bestanden die verschillen in een boek- of deelnummer blijven aparte rijen. Delen worden per formaat gegroepeerd: een bestand met het hele boek ernaast is een eigen rij, en een bitrate in een bestandsnaam, zoals `128kbps`, is geen deelnummer.
+
+Twee formaten van één boek, zoals `Book.mp3` en `Book.m4b`, zijn aparte rijen, of de bestanden nu los in de map staan die je scant of in een eigen boekmap. Elke rij importeert, verwijdert en meet alleen zijn eigen bestand. Een cover, cue of ander niet-audiobestand met dezelfde naam gaat mee met het bestand van het boek als het boek er in één formaat staat, en blijft staan als het er in twee staat. Dat geldt ook als de ene kopie naar de bibliotheek wordt verplaatst en de andere in dezelfde import wordt verwijderd.
 
 Een tag geschreven als `Title: Series, Book 2` wordt gelezen als titel, serie en plaats in de serie.
 
@@ -51,9 +55,9 @@ Een ASIN uit een commentaar of beschrijving is alleen een hint. Het telt pas als
 
 ## Samenvoegen, splitsen en toevoegen
 
-- Voeg rijen samen die één boek zijn, verspreid over meerdere mappen. Splits ze weer vanuit de mapdetails. De match van de samengevoegde rij is alleen een suggestie: ze telt onder **Needs a look** en staat niet aangevinkt tot je haar bevestigt of een andere kiest. Haar speelduur is het totaal van de delen alleen als elk deel er een heeft, en ze houdt een ASIN alleen als alle delen dezelfde geven. Een opzoeking die klaar is nadat je haar rij hebt samengevoegd of gesplitst, is ook alleen een suggestie.
+- Voeg rijen samen die één boek zijn, verspreid over meerdere mappen. Splits ze weer vanuit de mapdetails. De match van de samengevoegde rij is alleen een suggestie: ze telt onder **Needs a look** en staat niet aangevinkt tot je haar bevestigt of een andere kiest. Haar speelduur is het totaal van de delen alleen als elk deel er een heeft, en ze houdt een ASIN alleen als alle delen dezelfde geven. Een boek samengevoegd uit twee formaten met dezelfde bestandsnamen telt één keer en krijgt de speelduur van het langste formaat, of geen als ze meer dan drie minuten verschillen. Een opzoeking die klaar is nadat je haar rij hebt samengevoegd of gesplitst, is ook alleen een suggestie.
 - **Confirm match** in de details van een rij vinkt een **Needs a look**-rij aan, en **Undo confirmation** haalt dat vinkje weer weg.
-- Toevoegen wordt geblokkeerd met een reden boven de knop, zoals "Select at least one folder" of "2 selected rows still need a decision".
+- Toevoegen wordt geblokkeerd met een reden boven de knop, zoals "Select at least one folder" of "2 selected rows still need a decision". Toevoegen wordt ook geweigerd, zonder iets aan te raken, als twee rijen dezelfde map of hetzelfde bestand claimen.
 - Alles wat bestanden zou verwijderen of vervangen, vraagt eerst om bevestiging.
 - Verlaat je de pagina, dan worden je openstaande wijzigingen bewaard.
 
@@ -73,7 +77,7 @@ Een verteller, titel of pad dat is afgekapt met een beletselteken zie je in zijn
 
 ## Andere antwoorden dan importeren
 
-Een rij kun je ook beantwoorden met **keep library** (een kopie afwijzen van een boek dat al in de bibliotheek staat) of **remove empty** (een map zonder audio afwijzen waar nog wel artwork en sidecars in staan). Die ruimen alleen op wat bij de rij hoort. Alles waar audio in zit, wordt geweigerd. Bestanden gaan naar de prullenbak als je er een hebt ingesteld, en het takenlog toont elk verwijderd pad. Een **keep library**-beslissing geldt alleen voor het bibliotheekboek waar ze over ging: kies je een match die iets anders vraagt of over een ander bibliotheekboek gaat, dan vraagt de rij het opnieuw. De import controleert het opnieuw als hij draait, en er wordt niets verwijderd als de kopie in de bibliotheek dan geen bestanden heeft ("Your library has no copy of this book to keep") of als de map bestanden van een boek uit je bibliotheek bevat ("This folder holds files of a book in your library").
+Een rij kun je ook beantwoorden met **keep library** (een kopie afwijzen van een boek dat al in de bibliotheek staat) of **remove empty** (een map zonder audio afwijzen waar nog wel artwork en sidecars in staan). Die ruimen alleen op wat bij de rij hoort. **remove empty** weigert alles waar audio in zit. Bestanden gaan naar de prullenbak als je er een hebt ingesteld, en het takenlog toont elk verwijderd pad. Een **keep library**-beslissing geldt alleen voor het bibliotheekboek waar ze over ging: kies je een match die iets anders vraagt of over een ander bibliotheekboek gaat, dan vraagt de rij het opnieuw. De import controleert het opnieuw als hij draait, en er wordt niets verwijderd als de kopie in de bibliotheek dan geen bestanden heeft ("Your library has no copy of this book to keep") of als de map bestanden van een boek uit je bibliotheek bevat ("This folder holds files of a book in your library"). Rijen die bestanden verwijderen in plaats van ze te importeren, draaien pas als elke import van dezelfde keer Toevoegen klaar is, en elke rij wordt geweigerd als een van zijn bestanden dan bij een boek uit je bibliotheek hoort. Zo verwijderen ze nooit bestanden waaruit in dezelfde ronde net een boek is toegevoegd.
 
 ## Cover en extra bestanden per map
 
