@@ -12,9 +12,9 @@ description: Ta in en befintlig samling i ABM på ett säkert sätt.
 ## Stegen
 
 1. **Library > Library Import**, skanna mappen.
-2. Läs igenom listan. Matchningar visar en procentsats. Rätta raderna **Needs attention** och **Unmatched** med **Find a match**, eller slå ihop rader som är en bok uppdelad på flera mappar.
+2. Läs igenom listan. Matchningar visar en procentsats. Rätta raderna **Needs a look** och **Unmatched** med **Find a match**, eller slå ihop rader som är en bok uppdelad på flera mappar.
 3. Kolla omslag och extrafiler per mapp bara om du vill åsidosätta standardvalen.
-4. Markera raderna och lägg till dem. Det håller sig på två klick om du godtar standardvalen.
+4. Markera raderna och lägg till dem.
 5. Håll koll på uppgiften. Sammanfattningen säger hur många filer som kopierades i stället för att hårdlänkas och vad som misslyckades.
 
 ## Om samlingen redan ligger där du vill ha den

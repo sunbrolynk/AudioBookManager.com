@@ -9,13 +9,13 @@ O Library Import varre uma pasta de audiolivros, associa cada pasta a metadados 
 
 1. Varra uma pasta. Cada pasta com áudio vira uma linha.
 2. Confira as correspondências. Corrija as que precisarem.
-3. Selecione as linhas e adicione à biblioteca.
+3. Marque as linhas que você quer e depois adicione à biblioteca ou exclua.
 
-Toda opção é uma substituição opcional de um padrão definido em Media Management. Uma varredura simples seguida de adicionar nunca precisa de mais de dois cliques.
+Toda opção é uma substituição opcional de um padrão definido em Media Management.
 
 ## Lendo a lista
 
-- O resumo mostra quantas pastas foram encontradas e quantas tiveram correspondência. Filtre a lista por All, Matched, Needs attention, Unmatched, In library ou Failed lookup. O filtro fica guardado no endereço da página.
+- O resumo mostra quantas pastas foram encontradas e quantas estão prontas. A barra do topo tem **Sort** (Folder name, Status, Title, Author, Series, Files) e **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Cada filtro mostra a sua contagem, e as contagens batem com o resumo. Uma correspondência que você confirmou se chama Ready. A ordenação e o filtro ficam lembrados neste dispositivo. Eles não ficam no endereço da página, então um link com `?sort=` ou `?filter=` não leva os dois junto.
 - Cada linha mostra a capa, o título, o autor e a série, e o quanto a correspondência é confiável em porcentagem, como "95% match". Os detalhes da pasta têm **Find a match** ou **Change match** para buscar à mão.
 - Quando os arquivos não têm ASIN nem duração para confirmar a edição, os detalhes da pasta avisam.
 - **Rescan** pega as pastas adicionadas depois da varredura e mantém as suas escolhas.

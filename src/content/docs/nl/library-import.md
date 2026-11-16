@@ -9,13 +9,13 @@ Library Import scant een map met luisterboeken, koppelt elke map aan metadata en
 
 1. Scan een map. Elke map met audio wordt een rij.
 2. Controleer de matches. Verbeter de matches die dat nodig hebben.
-3. Selecteer de rijen en voeg ze toe aan de bibliotheek.
+3. Vink de rijen aan die je wilt en voeg ze dan toe aan de bibliotheek of verwijder ze.
 
-Elke optie is een optionele afwijking van een standaard in Media Management. Gewoon scannen en toevoegen kost nooit meer dan twee klikken.
+Elke optie is een optionele afwijking van een standaard in Media Management.
 
 ## De lijst lezen
 
-- De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er gematcht zijn. Filter de lijst op All, Matched, Needs attention, Unmatched, In library of Failed lookup. Het filter blijft bewaard in het paginaadres.
+- De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er klaar zijn. De balk bovenaan heeft **Sort** (Folder name, Status, Title, Author, Series, Files) en **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Elk filter toont zijn aantal, en de aantallen kloppen met de samenvatting. Een match die je hebt bevestigd heet Ready. Sortering en filter worden op dit apparaat onthouden. Ze staan niet in het paginaadres, dus een link met `?sort=` of `?filter=` neemt ze niet mee.
 - Elke rij toont de cover, titel, auteur en serie, en hoe zeker de match is als percentage, zoals "95% match". In de mapdetails staat **Find a match** of **Change match** om zelf te zoeken.
 - Hebben de bestanden geen ASIN of speelduur om de editie te bevestigen, dan staat dat in de mapdetails.
 - **Rescan** pikt mappen op die na de scan zijn toegevoegd en houdt je keuzes vast.

@@ -9,13 +9,13 @@ Library Import scansiona una cartella di audiolibri, abbina ogni cartella ai met
 
 1. Scansiona una cartella. Ogni cartella con dell'audio diventa una riga.
 2. Controlla le corrispondenze. Sistema quelle che ne hanno bisogno.
-3. Seleziona le righe e aggiungile alla libreria.
+3. Spunta le righe che vuoi, poi aggiungile alla libreria o eliminale.
 
-Ogni opzione è una modifica facoltativa di un valore predefinito in Media Management. Una semplice scansione seguita dall'aggiunta non richiede mai più di due clic.
+Ogni opzione è una modifica facoltativa di un valore predefinito in Media Management.
 
 ## Leggere l'elenco
 
-- Il riepilogo mostra quante cartelle sono state trovate e quante sono state abbinate. Puoi filtrare l'elenco per All, Matched, Needs attention, Unmatched, In library o Failed lookup. Il filtro resta nell'indirizzo della pagina.
+- Il riepilogo mostra quante cartelle sono state trovate e quante sono pronte. La barra in alto ha **Sort** (Folder name, Status, Title, Author, Series, Files) e **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Ogni filtro mostra il suo conteggio, e i conteggi corrispondono al riepilogo. Un abbinamento che hai confermato si chiama Ready. Ordinamento e filtro vengono ricordati su questo dispositivo. Non restano nell'indirizzo della pagina, quindi un link con `?sort=` o `?filter=` non li porta con sé.
 - Ogni riga mostra copertina, titolo, autore e serie, e quanto è sicura la corrispondenza in percentuale, per esempio "95% match". Nei dettagli della cartella trovi **Find a match** o **Change match** per cercare a mano.
 - Quando i file non hanno un ASIN o una durata per confermare l'edizione, i dettagli della cartella te lo dicono.
 - **Rescan** trova le cartelle aggiunte dopo la scansione e mantiene le tue scelte.

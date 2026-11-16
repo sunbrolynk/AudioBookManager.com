@@ -26,7 +26,7 @@ Every option is an optional override of a default in Media Management.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
-A name in a folder name, file name or tag that carries a role, such as `Jay Rubin - translator` or the narrator in `Jane Doe narrated by John Roe`, is never made into an author. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
+In an author tag, a name that carries a role after a dash or in parentheses, such as `Jay Rubin - translator` or `Jane Doe (Narrator)`, is not added as an author, and `Jane Doe narrated by John Roe` adds only Jane Doe. An entry that lists several people with commas is kept as written. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
 
 ## Joining, splitting and adding
 
