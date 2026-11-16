@@ -18,6 +18,7 @@ ABM a une API REST sous `/api`. La référence interactive se trouve sur `/api/d
 - Une requête de navigateur qui modifie l'état doit venir d'une origine correspondante. Les scripts qui utilisent une clé en sont exemptés.
 - Le corps des requêtes est limité à 10 MiB (`MAX_REQUEST_BODY_BYTES`). La restauration de sauvegarde et l'envoi de couverture ont des limites plus grandes. Au-delà, c'est une erreur HTTP 413.
 - Les erreurs de validation ne renvoient jamais ce que tu as envoyé.
+- `POST /api/tasks` ne met en file que `backup_export`. Tout autre type de tâche reçoit une erreur HTTP 403, et des réglages qui ne correspondent pas à `backup_export` reçoivent une erreur HTTP 422. Les imports manuels passent par les endpoints `/api/manual-import/` et les analyses de la bibliothèque par `POST /api/library/scan`.
 
 ## Pannes de métadonnées
 

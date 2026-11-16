@@ -18,6 +18,7 @@ O ABM tem uma API REST em `/api`. A referência interativa fica em `/api/docs` (
 - Uma requisição do navegador que altera estado precisa de uma origem que bata. Scripts que usam uma chave estão isentos.
 - Os corpos de requisição têm limite de 10 MiB (`MAX_REQUEST_BODY_BYTES`). A restauração de backup e o envio de capa têm limites maiores. Acima do limite, a resposta é HTTP 413.
 - Erros de validação nunca repetem o que você enviou.
+- `POST /api/tasks` só coloca na fila o `backup_export`. Qualquer outro tipo de tarefa recebe HTTP 403, e configurações que não servem para o `backup_export` recebem HTTP 422. Importações manuais passam pelos endpoints de `/api/manual-import/` e as varreduras da biblioteca por `POST /api/library/scan`.
 
 ## Quedas da fonte de metadados
 
