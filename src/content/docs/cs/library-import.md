@@ -9,13 +9,13 @@ Library Import naskenuje složku s audioknihami, ke každé složce najde metada
 
 1. Naskenuj složku. Každá složka se zvukem se stane řádkem.
 2. Zkontroluj shody. Ty, které to potřebují, oprav.
-3. Vyber řádky a přidej je do knihovny.
+3. Zaškrtni řádky, které chceš, a pak je přidej do knihovny, nebo je smaž.
 
-Každá volba je jen nepovinné přepsání výchozího nastavení z Media Management. Obyčejné naskenování a přidání tak nikdy nepotřebuje víc než dvě kliknutí.
+Každá volba je jen nepovinné přepsání výchozího nastavení z Media Management.
 
 ## Jak číst seznam
 
-- Souhrn ukazuje, kolik složek se našlo a kolik z nich má shodu. Seznam můžeš filtrovat na All, Matched, Needs attention, Unmatched, In library nebo Failed lookup. Filtr se drží v adrese stránky.
+- Souhrn ukazuje, kolik složek se našlo a kolik je připravených. V horní liště je **Sort** (Folder name, Status, Title, Author, Series, Files) a **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Každý filtr ukazuje svůj počet a počty sedí se souhrnem. Shodě, kterou jsi potvrdil, se říká Ready. Řazení a filtr si pamatuje toto zařízení. Nedrží se v adrese stránky, takže odkaz s `?sort=` nebo `?filter=` je nepřenese.
 - Každý řádek ukazuje obálku, název, autora a sérii a v procentech, jak jistá shoda je, třeba "95% match". V detailu složky je **Find a match** nebo **Change match** pro ruční hledání.
 - Když soubory nemají ASIN ani délku, podle kterých by se dala ověřit edice, detail složky to řekne.
 - **Rescan** načte složky přidané od skenování a tvoje volby zachová.
