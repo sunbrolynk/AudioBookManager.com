@@ -18,8 +18,6 @@ Apri un libro per la sua pagina di dettaglio: file, metadati, cronologia, la qua
 
 La pagina di dettaglio può anche scrivere un singolo file (OPF, NFO o metadata.json), i tag audio, la copertina incorporata o **Write All**. Sul telefono si trovano nel foglio Actions, sotto **Write to folder and files**.
 
-Quando la barra degli strumenti di una pagina è troppo stretta sul desktop, i pulsanti che non ci stanno passano in un menu **More** in fondo al loro gruppo. Ordinamento, filtro e vista restano sempre nella barra.
-
 Se conosci Sonarr: un libro è un episodio, una serie è stagione e show insieme, e un autore è un modo per raggrupparli entrambi. La differenza è che un libro può appartenere a più serie, e ABM usa quella principale (la posizione più bassa) quando deve sceglierne una.
 
 ## Serie

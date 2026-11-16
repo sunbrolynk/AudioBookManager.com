@@ -52,7 +52,7 @@ Databasen är en SQLite-fil i `/config`, så det finns ingen databastjänst att 
    docker compose up -d
    ```
 
-4. **Öppna den.** Gå till `http://your-server:5173`. Första gången guidas du genom att sätta upp en inloggning.
+4. **Öppna den.** Gå till `http://your-server:5173`. Första gången öppnas en installationsguide som skapar din inloggning och resten av det ABM behöver. Se [Första konfigurationen](/sv/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Om din nedladdningsklient körs i en egen container måste dess nedladdningsmapp
 
 ## Första start
 
-Ställ in din tidszon med `TIMEZONE` i compose-filen. Sedan lägger du i **Settings** till en rotmapp under **Media Management**, en indexerare under **Indexers** och en nedladdningsklient under **Download Clients**. Miljövariabler och omvända proxyer tas upp i [Konfiguration](/sv/configuration/).
+Ställ in din tidszon med `TIMEZONE` i compose-filen. Öppna sedan ABM och följ installationsguiden. Den skapar din inloggning, ställer in hur ABM kommer ut på internet och var den slår upp böcker, och lägger till en rotmapp. Du kan också lägga till en nedladdningsklient och en indexer där, eller senare under **Settings > Download Clients** och **Settings > Indexers**. Guiden beskrivs i [Första konfigurationen](/sv/getting-started/first-run-setup/). Miljövariabler och omvända proxyer förklaras i [Konfiguration](/sv/configuration/).
 
 ## Bygg från källkoden
 

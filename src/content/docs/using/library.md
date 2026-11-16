@@ -32,8 +32,6 @@ Open a book for its detail page: files, metadata, history, the quality ABM measu
 
 The detail page can also write a single file (OPF, NFO or metadata.json), the audio tags, the cover embed, or **Write All**. On a phone these are in the Actions sheet under **Write to folder and files**.
 
-When a page's toolbar is too narrow on a desktop, the buttons that don't fit move into a **More** menu at the end of their group. Sort, filter and view controls always stay on the bar.
-
 If you know Sonarr: a book is an episode, a series is a season-and-show in one, and an author is a way to group both. The difference is that one book can belong to several series, and ABM uses the primary one (the lowest position) when it needs to pick.
 
 ## Series

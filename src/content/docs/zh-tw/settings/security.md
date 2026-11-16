@@ -21,7 +21,7 @@ description: 驗證模式、API 金鑰、受信任的代理、區域網路和內
 - **Enabled**：所有人都要登入，包括你的區域網路。
 - **Disabled for Local Addresses**（儲存為 `local_disabled`）：來自區域網路位址的請求可以免登入。迴路位址、私有網段、鏈路本地位址和 IPv6 唯一本地位址都算是區域網路。**Local Networks** 只會再加上更多網段，絕對不會取代這些。
 
-全新安裝時，在設定完成之前，所有請求都會被拒絕。
+全新安裝時，在[設定精靈](/zh-tw/getting-started/first-run-setup/)裡建立帳號之前，所有請求都會被拒絕。精靈的 Account 步驟會預先選取 **Enabled**，所以新安裝從任何位址存取都需要登入。既有的安裝維持原本的設定。
 
 ## 反向代理
 

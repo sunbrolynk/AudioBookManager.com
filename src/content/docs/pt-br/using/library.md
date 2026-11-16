@@ -18,8 +18,6 @@ Abra um livro para ver a página de detalhes: arquivos, metadados, histórico, a
 
 A página de detalhes também pode gravar um único arquivo (OPF, NFO ou metadata.json), as tags de áudio, a capa incorporada ou **Write All**. No celular, tudo isso fica na folha Actions, em **Write to folder and files**.
 
-Quando a barra de ferramentas de uma página fica estreita demais no desktop, os botões que não cabem vão para um menu **More** no fim do grupo. Ordenar, filtrar e as visualizações sempre ficam na barra.
-
 Se você conhece o Sonarr: um livro é um episódio, uma série é temporada e programa numa coisa só, e um autor é um jeito de agrupar os dois. A diferença é que um livro pode estar em várias séries, e o ABM usa a principal (a de menor posição) quando precisa escolher.
 
 ## Séries

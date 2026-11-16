@@ -21,6 +21,6 @@ ABM에는 `/api` 아래에 REST API가 있어요. 인터랙티브 레퍼런스�
 
 ## 메타데이터 장애
 
-Libex에서 응답을 받지 못한 도서 검색은 502와 "Libex search failed"를 돌려줘요. 저자나 시리즈 검색은 503과 "Libex could not be reached; try again shortly"를 돌려줘요. 일부 조회 경로는 장애 중에도 빈 결과를 돌려줘요.
+메타데이터 소스가 필요한데 응답을 받지 못한 요청은 빈 결과가 아니라 소스와 이유를 알려 주는 `detail`과 함께 실패합니다. Libex가 속도를 제한하면 기다리는 검색은 약 10초 뒤에 포기합니다.
 
 Sonarr를 써 봤다면: 이 API는 v3와 호환되지 않아요. Prowlarr는 Prowlarr 연결을 통해 인덱서를 ABM에 동기화할 수 있어요.

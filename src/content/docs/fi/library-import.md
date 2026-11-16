@@ -9,13 +9,13 @@ Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen
 
 1. Skannaa kansio. Jokaisesta kansiosta, jossa on ääntä, tulee rivi.
 2. Tarkista osumat. Korjaa ne, jotka sitä kaipaavat.
-3. Valitse rivit ja lisää ne kirjastoon.
+3. Rastita haluamasi rivit ja lisää ne sitten kirjastoon tai poista ne.
 
-Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle. Pelkkä skannaus ja lisäys ei koskaan vaadi kahta klikkausta enempää.
+Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle.
 
 ## Listan lukeminen
 
-- Yhteenveto näyttää, montako kansiota löytyi ja montako täsmättiin. Suodata lista valinnoilla All, Matched, Needs attention, Unmatched, In library tai Failed lookup. Suodatin säilyy sivun osoitteessa.
+- Yhteenveto näyttää, montako kansiota löytyi ja montako on valmiina. Yläpalkissa on **Sort** (Folder name, Status, Title, Author, Series, Files) ja **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jokainen suodatin näyttää määränsä, ja määrät täsmäävät yhteenvedon kanssa. Täsmäys, jonka olet vahvistanut, on nimeltään Ready. Tämä laite muistaa järjestyksen ja suodattimen. Ne eivät säily sivun osoitteessa, joten linkki, jossa on `?sort=` tai `?filter=`, ei vie niitä mukanaan.
 - Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin.
 - Kun tiedostoissa ei ole ASINia tai kestoa, jolla painos voitaisiin varmistaa, kansion tiedoissa kerrotaan siitä.
 - **Rescan** poimii skannauksen jälkeen lisätyt kansiot ja säilyttää valintasi.

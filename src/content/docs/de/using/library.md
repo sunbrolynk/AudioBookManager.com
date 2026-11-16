@@ -18,8 +18,6 @@ Jedes Buch ist eine Übersichtszeile, ein Poster oder eine Tabellenzeile (der An
 
 Auf der Detailseite kannst du auch einzelne Dateien schreiben (OPF, NFO oder metadata.json), die Audio-Tags, das eingebettete Cover oder **Write All**. Auf dem Handy findest du das im Actions-Blatt unter **Write to folder and files**.
 
-Ist die Werkzeugleiste einer Seite am Desktop zu schmal, wandern die Buttons, die nicht mehr passen, ans Ende ihrer Gruppe in ein **More**-Menü. Sortieren, Filtern und die Ansicht bleiben immer in der Leiste.
-
 Wenn du Sonarr kennst: Ein Buch ist eine Episode, eine Serie ist Staffel und Show in einem, und ein Autor ist eine Möglichkeit, beides zu gruppieren. Der Unterschied: Ein Buch kann zu mehreren Serien gehören, und ABM nimmt die primäre (die mit der niedrigsten Position), wenn es sich entscheiden muss.
 
 ## Serien

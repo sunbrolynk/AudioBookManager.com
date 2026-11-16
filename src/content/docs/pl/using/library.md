@@ -18,8 +18,6 @@ Otwórz książkę, żeby zobaczyć jej stronę ze szczegółami: pliki, metadan
 
 Strona szczegółów potrafi też zapisać pojedynczy plik (OPF, NFO lub metadata.json), tagi audio, osadzoną okładkę albo **Write All**. Na telefonie znajdziesz to w arkuszu Actions, w **Write to folder and files**.
 
-Gdy pasek narzędzi strony jest na komputerze za wąski, przyciski, które się nie mieszczą, trafiają do menu **More** na końcu swojej grupy. Sortowanie, filtr i widok zawsze zostają na pasku.
-
 Jeśli znasz Sonarra: książka to odcinek, seria to sezon i serial w jednym, a autor to sposób na pogrupowanie obu. Różnica jest taka, że jedna książka może należeć do kilku serii, a ABM, gdy musi wybrać, używa głównej (tej z najniższą pozycją).
 
 ## Serie

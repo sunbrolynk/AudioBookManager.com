@@ -18,8 +18,6 @@ Open een boek voor de detailpagina: bestanden, metadata, geschiedenis, de kwalit
 
 De detailpagina kan ook één los bestand schrijven (OPF, NFO of metadata.json), de audiotags, de ingesloten cover of **Write All**. Op een telefoon staan die in het Actions-blad onder **Write to folder and files**.
 
-Als de werkbalk van een pagina op een desktop te smal is, verhuizen de knoppen die niet meer passen naar een **More**-menu aan het einde van hun groep. Sorteren, filteren en de weergave blijven altijd op de balk staan.
-
 Ken je Sonarr? Een boek is een aflevering, een serie is seizoen en show in één, en een auteur is een manier om die twee te groeperen. Het verschil is dat één boek bij meerdere series kan horen, en ABM gebruikt de primaire serie (die met de laagste positie) als het er een moet kiezen.
 
 ## Series

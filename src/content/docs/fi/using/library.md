@@ -18,8 +18,6 @@ Avaa kirja nähdäksesi sen tietosivun: tiedostot, metatiedot, historia, ABM:n m
 
 Tietosivulta voi kirjoittaa myös yksittäisen tiedoston (OPF, NFO tai metadata.json), äänitagit, upotetun kansikuvan tai **Write All**. Puhelimessa ne ovat Actions-arkissa kohdassa **Write to folder and files**.
 
-Kun sivun työkalupalkki on tietokoneella liian kapea, palkkiin mahtumattomat painikkeet siirtyvät ryhmänsä lopussa olevaan **More**-valikkoon. Lajittelu, suodatus ja näkymä pysyvät aina palkissa.
-
 Jos tunnet Sonarrin: kirja on jakso, sarja on kausi ja ohjelma yhdessä, ja tekijä on tapa ryhmitellä molempia. Erona on se, että yksi kirja voi kuulua useaan sarjaan, ja ABM käyttää ensisijaista (pienin sijainti), kun sen täytyy valita.
 
 ## Sarjat

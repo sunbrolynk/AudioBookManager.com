@@ -21,6 +21,6 @@ ABM:llä on REST API polun `/api` alla. Interaktiivinen viite on osoitteissa `/a
 
 ## Metatietokatkokset
 
-Kirjahaku, joka ei saa vastausta Libexilta, palauttaa 502 ja viestin "Libex search failed". Kirjailija- tai sarjahaku palauttaa 503 ja viestin "Libex could not be reached; try again shortly". Jotkin hakureitit palauttavat katkon aikana edelleen tyhjän tuloksen.
+Pyyntö, joka tarvitsee metadatalähteen eikä saa vastausta, epäonnistuu `detail`-kentällä, joka nimeää lähteen ja syyn, ei koskaan tyhjällä tuloksella. Odottamasi haku luovuttaa noin 10 sekunnin kuluttua, kun Libex rajoittaa nopeutta.
 
 Jos tunnet Sonarrin: API ei ole v3-yhteensopiva. Prowlarr voi synkronoida indeksoijia ABM:ään Prowlarr-yhteytensä kautta.

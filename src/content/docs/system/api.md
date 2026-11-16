@@ -33,6 +33,6 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 
 ## Metadata outages
 
-A book search that gets no answer from Libex returns 502 with "Libex search failed". An author or series search returns 503 with "Libex could not be reached; try again shortly". Some lookup routes still return an empty result in an outage.
+A request that needs the metadata source and gets no answer fails with a `detail` that names the source and the reason, never an empty result. With [Local Storage](/metadata/control/#local-storage) on, a lookup the source cannot answer can be answered from the saved copy instead, and the result is marked as coming from Local Storage. A search you are waiting on gives up after about 10 seconds when Libex rate limits it.
 
 If you know Sonarr: the API is not v3-compatible. Prowlarr can sync indexers into ABM through its Prowlarr connection.

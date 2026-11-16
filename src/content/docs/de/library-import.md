@@ -9,13 +9,13 @@ Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ord
 
 1. Scan einen Ordner. Jeder Ordner mit Audio wird zu einer Zeile.
 2. Prüf die Zuordnungen. Korrigier die, bei denen es nötig ist.
-3. Wähl die Zeilen aus und füg sie der Bibliothek hinzu.
+3. Hak die Zeilen an, die du willst, und füg sie dann der Bibliothek hinzu oder lösch sie.
 
-Jede Option ist eine optionale Abweichung von einem Standard aus Media Management. Ein einfacher Scan mit anschließendem Hinzufügen braucht nie mehr als zwei Klicks.
+Jede Option ist eine optionale Abweichung von einem Standard aus Media Management.
 
 ## Die Liste lesen
 
-- Die Übersicht zeigt, wie viele Ordner gefunden und wie viele zugeordnet wurden. Filtern kannst du nach All, Matched, Needs attention, Unmatched, In library oder Failed lookup. Der Filter bleibt in der Seitenadresse erhalten.
+- Die Übersicht zeigt, wie viele Ordner gefunden wurden und wie viele bereit sind. In der Kopfleiste gibt es **Sort** (Folder name, Status, Title, Author, Series, Files) und **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jeder Filter zeigt seine Anzahl, und die Zahlen passen zur Übersicht. Eine Zuordnung, die du bestätigt hast, heißt Ready. Sortierung und Filter merkt sich dieses Gerät. Sie stehen nicht in der Seitenadresse, ein Link mit `?sort=` oder `?filter=` übernimmt sie also nicht.
 - Jede Zeile zeigt Cover, Titel, Autor und Serie und wie sicher die Zuordnung ist, als Prozentwert wie "95% match". In den Ordnerdetails gibt es **Find a match** oder **Change match**, um von Hand zu suchen.
 - Wenn die Dateien keine ASIN oder Laufzeit haben, mit der sich die Ausgabe bestätigen lässt, steht das in den Ordnerdetails.
 - **Rescan** findet Ordner, die seit dem Scan dazugekommen sind, und behält deine Entscheidungen.

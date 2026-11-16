@@ -5,6 +5,8 @@ description: Defaults, codec options, chapters, metadata and ffmpeg.
 
 **Settings > Conversions** sets the defaults for [Conversions](/en-ca/using/conversions/). Any job can override them.
 
+![Settings, Conversions: audio quality, chapter and metadata defaults](../../../../assets/docs/settings-conversions.jpg)
+
 ## General
 
 | Setting | Default | Effect |
@@ -41,7 +43,7 @@ A bitrate of **Copy** skips re-encoding and every codec option.
 
 | Setting | Default | Effect |
 |---|---|---|
-| Default Chapter Behavior | Auto | Preserve if they exist, generate if not. Others: preserve only, always generate, none |
+| Default Chapter Behaviour | Auto | Preserve if they exist, generate if not. Others: preserve only, always generate, none |
 | Chapter Naming Format | `Chapter {n}` | Names the chapters ABM has to make up. `{n}` is the number and `{title}` the source file's name. Chapter titles from the files or from Libex are kept |
 | Silence Detection | off | For a file with no chapters, ABM makes chapters at the longest pauses in the audio. It is used by Split Chapters and by Ensure Chapters on a single file when Libex has no chapters. Off, a split of such a file fails |
 | Target Chapter Length | 600 s | Shown when Silence Detection is on, 60 s or more. Each chapter ends at the longest pause within half this length either side of it, or at this length if there is no pause. A short tail joins the last chapter, and the chapters cover the whole file |
@@ -59,7 +61,7 @@ A bitrate of **Copy** skips re-encoding and every codec option.
 
 | Setting | Default | Effect |
 |---|---|---|
-| Delete Original | off | Default for each job, overridable. Originals go to the conversions folder of the [recycle bin](/settings/media-management/#recycle-bin), or are deleted for good when recycling is off |
+| Delete Original | off | Default for each job, overridable. Originals go to the conversions folder of the [recycle bin](/en-ca/settings/media-management/#recycle-bin), or are deleted for good when recycling is off |
 | Update Library Paths | on | Book records follow the converted files |
 | Auto-Reformat on Import | off | Converts newly imported books that arrive in another format, using the defaults above |
 | Backup Original Metadata | off | Before converting, writes a JSON file to a `.metadata_backup` folder inside the book's folder. It lists each original file's name, format and size, plus the tags and chapters embedded in it |

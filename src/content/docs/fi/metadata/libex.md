@@ -7,6 +7,6 @@ ABM saa kirjojen, tekijöiden, sarjojen ja kappaleiden tiedot **Libexiltä**, av
 
 Libex: [Lähdekoodi](https://github.com/LibexHQ/Libex) · [API-viite](https://libexdb.com/redoc)
 
-ABM kysyy julkiselta Libex-instanssilta osoitteessa libexdb.com. Lähteen valinta on suunniteltu myöhempään julkaisuun.
+Kohdassa **Settings > Metadata** valitset lähteen: Built-in, libexdb.comin isännöity instanssi tai oma Libex-palvelimesi. Katso [Metatietolähteen valinta](/fi/metadata/choosing-a-source/).
 
 Kun Libexiin ei saada yhteyttä, ABM kertoo sen ja mainitsee lähteen nimeltä. Voit silti lisätä ja tuoda kirjoja käsin. Katso [Vianmääritys](/fi/troubleshooting/#metatietolähde-ei-ole-käytettävissä).

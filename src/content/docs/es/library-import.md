@@ -9,13 +9,13 @@ Library Import escanea una carpeta de audiolibros, empareja cada carpeta con sus
 
 1. Escanea una carpeta. Cada carpeta con audio se convierte en una fila.
 2. Revisa las coincidencias. Corrige las que lo necesiten.
-3. Selecciona las filas y añádelas a la biblioteca.
+3. Marca las filas que quieras y luego añádelas a la biblioteca o bórralas.
 
-Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management. Un escaneo normal seguido de añadir nunca necesita más de dos clics.
+Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management.
 
 ## Cómo leer la lista
 
-- El resumen muestra cuántas carpetas se encontraron y cuántas coinciden. Filtra la lista por All, Matched, Needs attention, Unmatched, In library o Failed lookup. El filtro se guarda en la dirección de la página.
+- El resumen muestra cuántas carpetas se encontraron y cuántas están listas. La barra superior tiene **Sort** (Folder name, Status, Title, Author, Series, Files) y **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Cada filtro muestra su número, y los números cuadran con el resumen. Una coincidencia que ya confirmaste se llama Ready. El orden y el filtro se recuerdan en este dispositivo. No se guardan en la dirección de la página, así que un enlace con `?sort=` o `?filter=` no los lleva consigo.
 - Cada fila muestra la portada, el título, el autor y la serie, y lo segura que es la coincidencia en porcentaje, por ejemplo "95% match". Los detalles de la carpeta tienen **Find a match** o **Change match** para buscar a mano.
 - Cuando los archivos no tienen ASIN ni duración para confirmar la edición, los detalles de la carpeta lo indican.
 - **Rescan** recoge las carpetas añadidas después del escaneo y conserva lo que ya elegiste.

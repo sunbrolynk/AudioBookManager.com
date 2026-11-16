@@ -6,7 +6,7 @@ description: Bring an existing collection into ABM safely.
 ## Before you start
 
 1. Back up the collection. Library Import copies by default, but plan for mistakes.
-2. Set up a root folder and a quality profile, and make sure the metadata source is reachable.
+2. Set up a root folder and a quality profile, and make sure Libex is reachable.
 3. Decide copy, move or hardlink. Copy is safest. Hardlink saves space if the library is on the same filesystem as the source. See [Media Management](/en-gb/settings/media-management/).
 
 ## The steps
@@ -26,6 +26,6 @@ Importing puts each book in ABM's own Author/Series/Book layout under the defaul
 ## Gotchas
 
 - A book already in the library is shown as such. Decline the duplicate with the keep-library answer rather than importing it twice.
-- Delete in the bar removes the folders you ticked yourself on screen, with audio or without, after you type `delete`. It goes to the recycle bin if enabled.
+- Delete in the bar removes the folders you ticked yourself on screen, with audio or without, after you type `delete`. It goes to the recycle bin if enabled and leaves other books in the same parent folder alone. A folder that can't be deleted is reported on its own row while the others still go. "Delete these files, keep the library copy" is decided at Add.
 - An ASIN found in a description is a hint, not a match, unless the title also agrees.
 - After importing, refresh to pull in current metadata, and turn on sidecar writing if you want Audiobookshelf to see ABM's choices. See [Sidecar files](/en-gb/using/sidecars/).

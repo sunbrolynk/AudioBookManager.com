@@ -18,8 +18,6 @@ Hver bok er en oversiktsrad, en plakat eller en tabellinje (visningsbryteren lig
 
 Detaljsiden kan også skrive én enkelt fil (OPF, NFO eller metadata.json), lydtaggene, det innebygde omslaget eller **Write All**. På mobil ligger de i Actions-arket under **Write to folder and files**.
 
-Når verktøylinjen på en side er for smal på en datamaskin, flyttes knappene som ikke får plass til en **More**-meny på slutten av gruppen. Sortering, filter og visning blir alltid værende på linjen.
-
 Kan du Sonarr: en bok er en episode, en serie er sesong og serie i ett, og en forfatter er en måte å gruppere begge på. Forskjellen er at én bok kan høre til flere serier, og ABM bruker hovedserien (den laveste plasseringen) når den må velge.
 
 ## Serier

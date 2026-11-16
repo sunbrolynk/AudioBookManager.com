@@ -3,7 +3,7 @@ title: Allmänt
 description: Värd, säkerhet, proxy, loggning och säkerhetskopior.
 ---
 
-**Settings > General** har sektioner för Host, Security, Proxy, Logging och Backups. Security har [en egen sida](/sv/settings/security/).
+**Settings > General** har sektioner för Host, Security, Logging och Backups. Security har [en egen sida](/sv/settings/security/).
 
 ## Värd (Host)
 

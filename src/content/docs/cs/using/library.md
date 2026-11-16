@@ -18,8 +18,6 @@ Otevři knihu a uvidíš její detail: soubory, metadata, historii, kvalitu, kte
 
 Stránka s detailem umí zapsat i jeden soubor (OPF, NFO nebo metadata.json), zvukové tagy, vloženou obálku nebo **Write All**. V telefonu je najdeš v listu Actions pod **Write to folder and files**.
 
-Když je lišta nástrojů stránky na počítači příliš úzká, tlačítka, která se nevejdou, přejdou na konci své skupiny do nabídky **More**. Řazení, filtr a zobrazení zůstávají na liště vždy.
-
 Pokud znáš Sonarr: kniha je epizoda, série je řada a seriál v jednom a autor je způsob, jak seskupit obojí. Rozdíl je v tom, že jedna kniha může patřit do víc sérií, a když ABM musí vybrat, použije hlavní (s nejnižším pořadím).
 
 ## Série

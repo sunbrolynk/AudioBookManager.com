@@ -12,9 +12,9 @@ description: Få en eksisterende samling trygt inn i ABM.
 ## Trinnene
 
 1. **Library > Library Import**, skann mappen.
-2. Les gjennom lista. Treff viser en prosent. Fiks rader med **Needs attention** og **Unmatched** med **Find a match**, eller slå sammen rader som er én bok fordelt på flere mapper.
+2. Les gjennom lista. Treff viser en prosent. Fiks rader med **Needs a look** og **Unmatched** med **Find a match**, eller slå sammen rader som er én bok fordelt på flere mapper.
 3. Sjekk cover og ekstrafiler per mappe bare hvis du vil overstyre standardene.
-4. Velg radene og legg dem til. Det holder med to klikk hvis du godtar standardene.
+4. Velg radene og legg dem til.
 5. Følg med på oppgaven. Sammendraget sier hvor mange filer som ble kopiert i stedet for hardlenket, og hva som feilet.
 
 ## Hvis samlingen allerede ligger der du vil ha den

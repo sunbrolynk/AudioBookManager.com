@@ -21,6 +21,6 @@ ABM ha un'API REST sotto `/api`. Il riferimento interattivo è su `/api/docs` (S
 
 ## Disservizi dei metadati
 
-Una ricerca di libri che non riceve risposta da Libex restituisce 502 con "Libex search failed". Una ricerca di autori o serie restituisce 503 con "Libex could not be reached; try again shortly". Alcune route di ricerca restituiscono ancora un risultato vuoto durante un'interruzione.
+Una richiesta che ha bisogno della fonte di metadati e non riceve risposta fallisce con un `detail` che nomina la fonte e il motivo, mai con un risultato vuoto. Una ricerca che stai aspettando si arrende dopo circa 10 secondi quando Libex limita la frequenza.
 
 Se conosci Sonarr: l'API non è compatibile con la v3. Prowlarr può sincronizzare gli indexer in ABM tramite la sua connessione Prowlarr.

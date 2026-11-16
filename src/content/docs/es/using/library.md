@@ -18,8 +18,6 @@ Abre un libro para ver su página de detalle: archivos, metadatos, historial, la
 
 La página de detalle también puede escribir un solo archivo (OPF, NFO o metadata.json), las etiquetas de audio, la portada incrustada o **Write All**. En el móvil están en la hoja Actions, en **Write to folder and files**.
 
-Cuando la barra de herramientas de una página es demasiado estrecha en el escritorio, los botones que no caben pasan a un menú **More** al final de su grupo. Ordenar, filtrar y las vistas siempre se quedan en la barra.
-
 Si conoces Sonarr: un libro es un episodio, una serie es temporada y programa a la vez, y un autor es una forma de agrupar ambos. La diferencia es que un libro puede pertenecer a varias series, y ABM usa la principal (la de menor posición) cuando tiene que elegir.
 
 ## Series
