@@ -18,7 +18,7 @@ ABM heeft een REST API onder `/api`. De interactieve referentie staat op `/api/d
 - Een browserrequest dat iets wijzigt, heeft een overeenkomende origin nodig. Scripts met een sleutel zijn uitgezonderd.
 - Request bodies zijn begrensd op 10 MiB (`MAX_REQUEST_BODY_BYTES`). Back-up terugzetten en cover uploaden hebben hogere limieten. Daarboven krijg je HTTP 413.
 - Validatiefouten herhalen nooit wat je gestuurd hebt.
-- `POST /api/manual-import/execute` en `/execute-to-book` controleren elke bestandsregel tegen een vast schema. Een onbekende sleutel, een relatief `source_path` of een lege `files`-lijst wordt geweigerd met HTTP 422. Elke bron moet een audiobestand zijn dat niet in een systeemmap staat, niet direct in een map op het hoogste niveau zoals `/tmp` of `/mnt`, en niet in een van de eigen mappen van ABM (configuratie, database, back-ups, logs, covers, prullenbak), waarbij symlinks worden gevolgd. Een geweigerd bestand krijgt HTTP 400 met de naam erin (`Can't import <name>: the file <reason>.`) en er wordt niets in de wachtrij gezet.
+- `POST /api/manual-import/execute` en `/execute-to-book` controleren elke bestandsregel tegen een vast schema. Een onbekende sleutel, een relatief `source_path` of een lege `files`-lijst wordt geweigerd met HTTP 422. Elke bron moet een audiobestand zijn dat niet in een systeemmap staat, niet direct in een map op het hoogste niveau zoals `/tmp` of `/mnt`, en niet in een van de eigen mappen van ABM (configuratie, database, back-ups, logs, covers, prullenbak), waarbij symlinks worden gevolgd. Een geweigerd bestand krijgt HTTP 400 met het pad erin (`Can't import <path>: the file <reason>.`) en er wordt niets in de wachtrij gezet.
 
 ## Metadatastoringen
 

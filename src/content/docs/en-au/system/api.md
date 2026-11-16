@@ -25,7 +25,7 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - Validation errors never echo back what you sent.
 - A failed request says what could not be done in fixed wording and never includes the underlying error text, so no file paths, host names or credentials come back. The detail goes to the log files. If you match on an error message, match on the status code instead.
 - A bulk status or monitor request with an empty `book_ids` list is refused with HTTP 422.
-- `POST /api/manual-import/execute` and `/execute-to-book` check every file row against a fixed shape. An unknown key, a relative `source_path` or an empty `files` list is refused with HTTP 422. Each source has to be an audio file that isn't in a system folder, directly in a top-level folder like `/tmp` or `/mnt`, or in one of ABM's own folders (config, database, backups, logs, covers, recycle bin), with symlinks followed. A refused file gets HTTP 400 naming it (`Can't import <name>: the file <reason>.`) and nothing is queued.
+- `POST /api/manual-import/execute` and `/execute-to-book` check every file row against a fixed shape. An unknown key, a relative `source_path` or an empty `files` list is refused with HTTP 422. Each source has to be an audio file that isn't in a system folder, directly in a top-level folder like `/tmp` or `/mnt`, or in one of ABM's own folders (config, database, backups, logs, covers, recycle bin), with symlinks followed. A refused file gets HTTP 400 naming its path (`Can't import <path>: the file <reason>.`) and nothing is queued.
 
 ## Metadata outages
 
