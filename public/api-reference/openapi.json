@@ -32288,6 +32288,18 @@
             ],
             "title": "Parsed Asin"
           },
+          "parsed_hint_asin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parsed Hint Asin"
+          },
           "parsed_runtime_length_min": {
             "anyOf": [
               {

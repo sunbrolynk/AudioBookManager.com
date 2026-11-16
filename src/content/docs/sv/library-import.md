@@ -13,6 +13,23 @@ Library Import skannar en mapp med ljudböcker, matchar varje mapp mot metadata 
 
 Varje alternativ är en valfri åsidosättning av en standard i Media Management. En vanlig skanning följt av tillägg behöver aldrig mer än två klick.
 
+## När en matchning godkänns
+
+Skanningen godkänner en matchning bara när filerna bekräftar den:
+
+- ASIN:en i filernas egna taggar hittar boken, eller
+- bokens speltid ligger inom tre minuter från filernas, och dess plats i serien eller dess titel stämmer med dem.
+
+En författare eller en plats i serien som motsäger filerna utesluter en bok. Passar filerna lika bra till två olika böcker eller inspelningar godkänns ingen av dem.
+
+Alla andra matchningar föreslås fortfarande, men raden räknas under **Needs a look**, börjar utan bock, och **Select All** hoppar över den tills du bekräftar matchningen eller väljer en annan. En godkänd matchning mot en bok som redan finns i ditt bibliotek räknas under **In library**.
+
+En bok i flera lösa filer som delar mapp med andra böcker, till exempel en författarmapp eller mappen du skannar, är en rad med alla delar. Filer som skiljer sig åt med ett bok- eller volymnummer förblir separata rader.
+
+En tagg skriven som `Title: Series, Book 2` läses som titel, serie och plats i serien.
+
+**Recent Import Sessions** på sidan Library Import visar för varje skanning hur många rader som har en matchning, inklusive böcker som redan finns i biblioteket, och hur många som väntar, inklusive rader där du fortfarande behöver välja en matchning.
+
 ## Läsa listan
 
 - Sammanfattningen visar hur många mappar som hittades och hur många som matchades. Filtrera listan på All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filtret sparas i sidans adress.

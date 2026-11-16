@@ -13,6 +13,23 @@ Library Import scanne un dossier de livres audio, fait correspondre chaque dossi
 
 Chaque option est un remplacement facultatif d'une valeur par défaut de Media Management. Un simple scan suivi d'un ajout ne demande jamais plus de deux clics.
 
+## Quand une correspondance est acceptée
+
+Le scan n'accepte une correspondance que si les fichiers la confirment :
+
+- l'ASIN des tags des fichiers eux-mêmes trouve le livre, ou
+- la durée du livre est à trois minutes au plus de celle des fichiers, et sa position dans la série ou son titre concorde avec eux.
+
+Un auteur ou une position dans la série qui contredit les fichiers écarte un livre. Si les fichiers vont aussi bien à deux livres ou enregistrements différents, aucun n'est accepté.
+
+Toute autre correspondance reste proposée, mais la ligne compte sous **Needs a look**, commence décochée, et **Select All** la laisse de côté jusqu'à ce que tu confirmes cette correspondance ou en choisisses une autre. Une correspondance acceptée avec un livre déjà dans ta bibliothèque compte sous **In library**.
+
+Un livre en plusieurs fichiers isolés qui partagent un dossier avec d'autres livres, comme un dossier d'auteur ou le dossier que tu scannes, forme une seule ligne avec toutes ses parties. Les fichiers qui diffèrent par un numéro de livre ou de volume restent des lignes séparées.
+
+Un tag écrit `Title: Series, Book 2` est lu comme le titre, la série et sa position.
+
+**Recent Import Sessions** sur la page Library Import montre pour chaque scan combien de lignes ont une correspondance, livres déjà dans la bibliothèque compris, et combien sont en attente, y compris les lignes où tu dois encore choisir une correspondance.
+
 ## Lire la liste
 
 - Le résumé montre combien de dossiers ont été trouvés et combien ont une correspondance. Filtre la liste par All, Matched, Needs attention, Unmatched, In library ou Failed lookup. Le filtre est gardé dans l'adresse de la page.

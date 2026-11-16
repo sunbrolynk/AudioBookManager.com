@@ -17,6 +17,23 @@ Library Import scans a folder of audiobooks, matches each folder to metadata, an
 
 Every option is an optional override of a default in Media Management.
 
+## How a match is accepted
+
+The scan accepts a match only when the files confirm it:
+
+- the ASIN in the files' own tags finds the book, or
+- the book's runtime is within three minutes of the files', and its series position or its title agrees with them.
+
+An author or series position that contradicts the files rules a book out. When the files fit two different books or recordings equally well, neither is accepted.
+
+Any other match is still offered as a suggestion, but the row counts under **Needs a look**, starts unticked, and **Select All** leaves it alone until you confirm that match or pick another. An accepted match for a book already in your library counts under **In library**.
+
+A book in several loose files that share a folder with other books, such as an author folder or the folder you scanned, is one row holding every part. Files that differ by a book or volume number stay separate rows.
+
+A tag written as `Title: Series, Book 2` is read as the title, the series and its position.
+
+**Recent Import Sessions** on the Library Import page shows each scan with how many rows are matched, counting books already in the library, and how many are pending, counting rows still waiting for you to pick a match.
+
 ## Reading the list
 
 - The summary line shows how many folders were found and how many are ready. The header bar has **Sort** (Folder name, Status, Title, Author, Series, Files) and **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Each filter shows its count, and the counts match the summary line. A match you have confirmed is called Ready. Sort and filter are remembered on this device. They are not kept in the page address, so a link with `?sort=` or `?filter=` in it doesn't carry them over.

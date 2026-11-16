@@ -13,6 +13,23 @@ Library Import scansiona una cartella di audiolibri, abbina ogni cartella ai met
 
 Ogni opzione è una modifica facoltativa di un valore predefinito in Media Management. Una semplice scansione seguita dall'aggiunta non richiede mai più di due clic.
 
+## Quando una corrispondenza viene accettata
+
+La scansione accetta una corrispondenza solo quando i file la confermano:
+
+- l'ASIN nei tag dei file stessi trova il libro, oppure
+- la durata del libro è entro tre minuti da quella dei file, e la sua posizione nella serie o il suo titolo corrisponde.
+
+Un autore o una posizione nella serie che contraddice i file esclude un libro. Se i file si adattano ugualmente bene a due libri o registrazioni diversi, non ne viene accettato nessuno.
+
+Ogni altra corrispondenza viene comunque proposta come suggerimento, ma la riga conta sotto **Needs a look**, parte senza spunta e **Select All** la salta finché non confermi quella corrispondenza o ne scegli un'altra. Una corrispondenza accettata con un libro che hai già in libreria conta sotto **In library**.
+
+Un libro in più file sciolti che condividono una cartella con altri libri, come una cartella dell'autore o la cartella che scansioni, è una sola riga con tutte le parti. I file che differiscono per un numero di libro o di volume restano righe separate.
+
+Un tag scritto come `Title: Series, Book 2` viene letto come titolo, serie e posizione.
+
+**Recent Import Sessions** nella pagina Library Import mostra per ogni scansione quante righe hanno una corrispondenza, contando i libri già in libreria, e quante sono in sospeso, contando le righe in cui devi ancora scegliere una corrispondenza.
+
 ## Leggere l'elenco
 
 - Il riepilogo mostra quante cartelle sono state trovate e quante sono state abbinate. Puoi filtrare l'elenco per All, Matched, Needs attention, Unmatched, In library o Failed lookup. Il filtro resta nell'indirizzo della pagina.

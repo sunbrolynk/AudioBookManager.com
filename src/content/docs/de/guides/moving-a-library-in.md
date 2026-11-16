@@ -28,4 +28,5 @@ Beim Import landet jedes Buch in ABMs eigener Struktur Autor/Serie/Buch unter de
 - Ein Buch, das schon in der Bibliothek ist, wird auch so angezeigt. Lehn das Duplikat mit der Antwort keep library ab, statt es doppelt zu importieren.
 - Wenn du einen Ordner ohne Audio ablehnst, wird nur entfernt, was zu dieser Zeile gehört, und es landet im Papierkorb, falls der aktiviert ist.
 - Eine ASIN aus einer Beschreibung ist ein Hinweis und keine Zuordnung, außer der Titel passt auch.
+- Eine Zuordnung, die die Dateien nicht bestätigen, weder per ASIN noch per Laufzeit plus Serienposition oder Titel, wartet nicht angehakt unter **Needs a look**, und **Select All** lässt sie aus. Siehe [Library Import](/de/library-import/).
 - Nach dem Import aktualisierst du, um die aktuellen Metadaten zu holen, und schaltest das Schreiben von Sidecars ein, wenn Audiobookshelf ABMs Entscheidungen sehen soll. Siehe [Sidecar-Dateien](/de/using/sidecars/).

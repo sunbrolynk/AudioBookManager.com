@@ -28,4 +28,5 @@ L'import range chaque livre dans la structure Auteur/Série/Livre d'ABM, sous le
 - Un livre déjà dans la bibliothèque est affiché comme tel. Refuse le doublon avec la réponse qui garde la bibliothèque plutôt que de l'importer deux fois.
 - Refuser un dossier sans audio ne retire que ce qui appartient à cette ligne, et ça part dans la corbeille si elle est activée.
 - Un ASIN trouvé dans une description est un indice, pas une correspondance, sauf si le titre concorde aussi.
+- Une correspondance que les fichiers ne confirment pas, ni par l'ASIN ni par la durée avec la position dans la série ou le titre, attend décochée sous **Needs a look**, et **Select All** la laisse de côté. Voir [Library Import](/fr/library-import/).
 - Après l'import, lance un rafraîchissement pour récupérer les métadonnées à jour, et active l'écriture des fichiers annexes si tu veux qu'Audiobookshelf voie les choix d'ABM. Voir [Fichiers annexes](/fr/using/sidecars/).

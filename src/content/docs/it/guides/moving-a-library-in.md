@@ -28,4 +28,5 @@ L'importazione mette ogni libro nella struttura Autore/Serie/Libro di ABM, sotto
 - Un libro che è già in libreria viene mostrato come tale. Rifiuta il duplicato con la risposta keep library invece di importarlo due volte.
 - Rifiutare una cartella senza audio rimuove solo quello che appartiene a quella riga, e finisce nel cestino se è attivo.
 - Un ASIN trovato in una descrizione è un indizio, non una corrispondenza, a meno che anche il titolo coincida.
+- Una corrispondenza che i file non confermano, né con l'ASIN né con la durata insieme alla posizione nella serie o al titolo, resta senza spunta sotto **Needs a look**, e **Select All** la salta. Vedi [Library Import](/it/library-import/).
 - Dopo l'importazione fai un refresh per prendere i metadati aggiornati, e attiva la scrittura dei sidecar se vuoi che Audiobookshelf veda le scelte di ABM. Vedi [File sidecar](/it/using/sidecars/).

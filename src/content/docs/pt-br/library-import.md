@@ -13,6 +13,23 @@ O Library Import varre uma pasta de audiolivros, associa cada pasta a metadados 
 
 Toda opção é uma substituição opcional de um padrão definido em Media Management. Uma varredura simples seguida de adicionar nunca precisa de mais de dois cliques.
 
+## Quando uma correspondência é aceita
+
+O escaneamento só aceita uma correspondência quando os arquivos a confirmam:
+
+- o ASIN nas tags dos próprios arquivos encontra o livro, ou
+- a duração do livro fica a até três minutos da dos arquivos, e a posição na série ou o título bate com eles.
+
+Um autor ou uma posição na série que contradiz os arquivos descarta um livro. Se os arquivos combinam igualmente bem com dois livros ou gravações diferentes, nenhum é aceito.
+
+Qualquer outra correspondência continua sendo sugerida, mas a linha conta em **Needs a look**, começa desmarcada e **Select All** a deixa de fora até você confirmar essa correspondência ou escolher outra. Uma correspondência aceita com um livro que você já tem na biblioteca conta em **In library**.
+
+Um livro em vários arquivos soltos que dividem a pasta com outros livros, como uma pasta de autor ou a pasta que você escaneia, é uma linha só com todas as partes. Arquivos que diferem por um número de livro ou de volume continuam como linhas separadas.
+
+Uma tag escrita como `Title: Series, Book 2` é lida como o título, a série e a posição.
+
+**Recent Import Sessions** na página Library Import mostra, para cada escaneamento, quantas linhas têm correspondência, contando livros que já estão na biblioteca, e quantas estão pendentes, contando linhas em que você ainda precisa escolher uma correspondência.
+
 ## Lendo a lista
 
 - O resumo mostra quantas pastas foram encontradas e quantas tiveram correspondência. Filtre a lista por All, Matched, Needs attention, Unmatched, In library ou Failed lookup. O filtro fica guardado no endereço da página.

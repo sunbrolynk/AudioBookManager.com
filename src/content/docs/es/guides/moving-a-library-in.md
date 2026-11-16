@@ -28,4 +28,5 @@ Al importar, cada libro se coloca con la estructura Author/Series/Book propia de
 - Un libro que ya está en la biblioteca aparece como tal. Rechaza el duplicado con la respuesta keep library en lugar de importarlo dos veces.
 - Rechazar una carpeta sin audio solo elimina lo que pertenece a esa fila, y va a la papelera de reciclaje si está activada.
 - Un ASIN encontrado en una descripción es una pista, no una coincidencia, salvo que el título también concuerde.
+- Una coincidencia que los archivos no confirman, ni por ASIN ni por duración junto con la posición en la serie o el título, espera sin marcar en **Needs a look**, y **Select All** la deja fuera. Consulta [Library Import](/es/library-import/).
 - Después de importar, actualiza para traer los metadatos actuales, y activa la escritura de archivos auxiliares si quieres que Audiobookshelf vea lo que elegiste en ABM. Consulta [Archivos auxiliares](/es/using/sidecars/).

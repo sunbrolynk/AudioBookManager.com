@@ -13,6 +13,23 @@ Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ord
 
 Jede Option ist eine optionale Abweichung von einem Standard aus Media Management. Ein einfacher Scan mit anschließendem Hinzufügen braucht nie mehr als zwei Klicks.
 
+## Wann eine Zuordnung übernommen wird
+
+Der Scan übernimmt eine Zuordnung nur, wenn die Dateien sie bestätigen:
+
+- die ASIN in den eigenen Tags der Dateien findet das Buch, oder
+- die Laufzeit des Buchs weicht höchstens drei Minuten von der der Dateien ab, und seine Position in der Serie oder sein Titel passt zu ihnen.
+
+Ein Autor oder eine Serienposition, die den Dateien widerspricht, schließt ein Buch aus. Passen die Dateien gleich gut zu zwei verschiedenen Büchern oder Aufnahmen, wird keins davon übernommen.
+
+Jede andere Zuordnung wird trotzdem vorgeschlagen, aber die Zeile zählt unter **Needs a look**, ist anfangs nicht angehakt, und **Select All** lässt sie aus, bis du die Zuordnung bestätigst oder eine andere wählst. Eine übernommene Zuordnung zu einem Buch, das schon in deiner Bibliothek ist, zählt unter **In library**.
+
+Ein Buch aus mehreren losen Dateien, die sich einen Ordner mit anderen Büchern teilen, etwa einen Autorenordner oder den Ordner, den du scannst, ist eine Zeile mit allen Teilen. Dateien, die sich durch eine Buch- oder Bandnummer unterscheiden, bleiben getrennte Zeilen.
+
+Ein Tag wie `Title: Series, Book 2` wird als Titel, Serie und Position gelesen.
+
+**Recent Import Sessions** auf der Seite Library Import zeigt zu jedem Scan, wie viele Zeilen zugeordnet sind, Bücher aus der Bibliothek eingeschlossen, und wie viele offen sind, darunter Zeilen, bei denen du noch eine Zuordnung wählen musst.
+
 ## Die Liste lesen
 
 - Die Übersicht zeigt, wie viele Ordner gefunden und wie viele zugeordnet wurden. Filtern kannst du nach All, Matched, Needs attention, Unmatched, In library oder Failed lookup. Der Filter bleibt in der Seitenadresse erhalten.

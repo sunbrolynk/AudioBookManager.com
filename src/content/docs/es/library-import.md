@@ -13,6 +13,23 @@ Library Import escanea una carpeta de audiolibros, empareja cada carpeta con sus
 
 Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management. Un escaneo normal seguido de añadir nunca necesita más de dos clics.
 
+## Cuándo se acepta una coincidencia
+
+El escaneo acepta una coincidencia solo cuando los archivos la confirman:
+
+- el ASIN de las etiquetas propias de los archivos encuentra el libro, o
+- la duración del libro está a tres minutos o menos de la de los archivos, y su posición en la serie o su título coincide con ellos.
+
+Un autor o una posición en la serie que contradice los archivos descarta un libro. Si los archivos encajan igual de bien con dos libros o grabaciones distintos, no se acepta ninguno.
+
+Cualquier otra coincidencia se sigue ofreciendo como sugerencia, pero la fila cuenta en **Needs a look**, empieza sin marcar y **Select All** la deja fuera hasta que confirmes esa coincidencia o elijas otra. Una coincidencia aceptada con un libro que ya tienes en la biblioteca cuenta en **In library**.
+
+Un libro en varios archivos sueltos que comparten carpeta con otros libros, como una carpeta de autor o la carpeta que escaneas, es una sola fila con todas sus partes. Los archivos que se distinguen por un número de libro o de volumen siguen siendo filas separadas.
+
+Una etiqueta escrita como `Title: Series, Book 2` se lee como el título, la serie y su posición.
+
+**Recent Import Sessions** en la página Library Import muestra en cada escaneo cuántas filas tienen coincidencia, contando los libros que ya están en la biblioteca, y cuántas están pendientes, contando las filas en las que aún tienes que elegir una coincidencia.
+
 ## Cómo leer la lista
 
 - El resumen muestra cuántas carpetas se encontraron y cuántas coinciden. Filtra la lista por All, Matched, Needs attention, Unmatched, In library o Failed lookup. El filtro se guarda en la dirección de la página.

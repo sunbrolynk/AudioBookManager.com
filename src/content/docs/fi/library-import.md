@@ -13,6 +13,23 @@ Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen
 
 Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle. Pelkkä skannaus ja lisäys ei koskaan vaadi kahta klikkausta enempää.
 
+## Milloin osuma hyväksytään
+
+Skannaus hyväksyy osuman vain, kun tiedostot vahvistavat sen:
+
+- tiedostojen omissa tageissa oleva ASIN löytää kirjan, tai
+- kirjan kesto on enintään kolmen minuutin päässä tiedostojen kestosta, ja sen paikka sarjassa tai sen nimi täsmää niihin.
+
+Tiedostojen kanssa ristiriidassa oleva kirjailija tai sarjan paikka sulkee kirjan pois. Jos tiedostot sopivat yhtä hyvin kahteen eri kirjaan tai äänitteeseen, kumpaakaan ei hyväksytä.
+
+Muut osumat tarjotaan edelleen ehdotuksina, mutta rivi lasketaan kohtaan **Needs a look**, se on aluksi valitsematta, ja **Select All** ohittaa sen, kunnes vahvistat osuman tai valitset toisen. Hyväksytty osuma kirjaan, joka on jo kirjastossasi, lasketaan kohtaan **In library**.
+
+Kirja, joka on useana irtotiedostona samassa kansiossa muiden kirjojen kanssa, esimerkiksi kirjailijan kansiossa tai kansiossa, jota skannaat, on yksi rivi, jossa on kaikki osat. Tiedostot, jotka eroavat kirjan tai osan numerolla, pysyvät erillisinä riveinä.
+
+Tagi muodossa `Title: Series, Book 2` luetaan nimeksi, sarjaksi ja paikaksi sarjassa.
+
+Library Import -sivun **Recent Import Sessions** näyttää jokaisesta skannauksesta, monellako rivillä on osuma, kirjastossa jo olevat kirjat mukaan lukien, ja moniko odottaa, mukaan lukien rivit, joille sinun pitää vielä valita osuma.
+
 ## Listan lukeminen
 
 - Yhteenveto näyttää, montako kansiota löytyi ja montako täsmättiin. Suodata lista valinnoilla All, Matched, Needs attention, Unmatched, In library tai Failed lookup. Suodatin säilyy sivun osoitteessa.

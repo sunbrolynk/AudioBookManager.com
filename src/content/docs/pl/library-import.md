@@ -13,6 +13,23 @@ Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do met
 
 Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management. Zwykłe skanowanie i dodanie nigdy nie potrzebuje więcej niż dwóch kliknięć.
 
+## Kiedy dopasowanie jest przyjmowane
+
+Skan przyjmuje dopasowanie tylko wtedy, gdy pliki je potwierdzają:
+
+- ASIN z własnych tagów plików znajduje książkę, albo
+- czas trwania książki różni się od plików najwyżej o trzy minuty, a jej pozycja w serii albo tytuł zgadza się z nimi.
+
+Autor albo pozycja w serii sprzeczna z plikami wyklucza książkę. Gdy pliki pasują równie dobrze do dwóch różnych książek albo nagrań, żadne nie zostaje przyjęte.
+
+Każde inne dopasowanie nadal jest proponowane, ale wiersz liczy się pod **Needs a look**, startuje bez zaznaczenia, a **Select All** go pomija, dopóki nie potwierdzisz tego dopasowania albo nie wybierzesz innego. Przyjęte dopasowanie do książki, którą masz już w bibliotece, liczy się pod **In library**.
+
+Książka w kilku luźnych plikach, które dzielą folder z innymi książkami, na przykład folder autora albo folder, który skanujesz, to jeden wiersz ze wszystkimi częściami. Pliki, które różnią się numerem książki albo tomu, zostają osobnymi wierszami.
+
+Tag zapisany jako `Title: Series, Book 2` jest odczytywany jako tytuł, seria i pozycja w serii.
+
+**Recent Import Sessions** na stronie Library Import pokazuje przy każdym skanie, ile wierszy ma dopasowanie, licząc książki, które już są w bibliotece, i ile czeka, licząc wiersze, w których musisz jeszcze wybrać dopasowanie.
+
 ## Jak czytać listę
 
 - Podsumowanie pokazuje, ile folderów znaleziono i ile się dopasowało. Listę możesz filtrować: All, Matched, Needs attention, Unmatched, In library albo Failed lookup. Filtr jest zapisywany w adresie strony.

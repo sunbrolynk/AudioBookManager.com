@@ -13,6 +13,23 @@ Library Import naskenuje složku s audioknihami, ke každé složce najde metada
 
 Každá volba je jen nepovinné přepsání výchozího nastavení z Media Management. Obyčejné naskenování a přidání tak nikdy nepotřebuje víc než dvě kliknutí.
 
+## Kdy se shoda přijme
+
+Sken přijme shodu jen tehdy, když ji soubory potvrdí:
+
+- ASIN ve vlastních tazích souborů najde knihu, nebo
+- délka knihy se od souborů liší nejvýš o tři minuty a sedí její pozice v sérii nebo její název.
+
+Autor nebo pozice v sérii, které souborům odporují, knihu vyřadí. Když soubory stejně dobře sedí na dvě různé knihy nebo nahrávky, nepřijme se ani jedna.
+
+Každá jiná shoda se dál nabízí jako návrh, ale řádek se počítá pod **Needs a look**, začíná nezaškrtnutý a **Select All** ho vynechá, dokud shodu nepotvrdíš nebo nevybereš jinou. Přijatá shoda s knihou, kterou už v knihovně máš, se počítá pod **In library**.
+
+Kniha v několika volných souborech, které sdílí složku s jinými knihami, třeba složku autora nebo složku, kterou skenuješ, je jeden řádek se všemi díly. Soubory, které se liší číslem knihy nebo svazku, zůstanou samostatné řádky.
+
+Tag ve tvaru `Title: Series, Book 2` se přečte jako název, série a pozice.
+
+**Recent Import Sessions** na stránce Library Import ukazuje u každého skenu, kolik řádků má shodu, včetně knih, které už v knihovně jsou, a kolik jich čeká, včetně řádků, u kterých máš ještě vybrat shodu.
+
 ## Jak číst seznam
 
 - Souhrn ukazuje, kolik složek se našlo a kolik z nich má shodu. Seznam můžeš filtrovat na All, Matched, Needs attention, Unmatched, In library nebo Failed lookup. Filtr se drží v adrese stránky.

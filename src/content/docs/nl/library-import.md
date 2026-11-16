@@ -13,6 +13,23 @@ Library Import scant een map met luisterboeken, koppelt elke map aan metadata en
 
 Elke optie is een optionele afwijking van een standaard in Media Management. Gewoon scannen en toevoegen kost nooit meer dan twee klikken.
 
+## Wanneer een match wordt geaccepteerd
+
+De scan accepteert een match alleen als de bestanden hem bevestigen:
+
+- de ASIN in de eigen tags van de bestanden vindt het boek, of
+- de speelduur van het boek zit binnen drie minuten van die van de bestanden, en de plaats in de serie of de titel klopt met ze.
+
+Een auteur of plaats in de serie die de bestanden tegenspreekt, sluit een boek uit. Passen de bestanden even goed bij twee verschillende boeken of opnames, dan wordt geen van beide geaccepteerd.
+
+Elke andere match wordt nog steeds voorgesteld, maar de rij telt onder **Needs a look**, begint zonder vinkje, en **Select All** slaat hem over tot je die match bevestigt of een andere kiest. Een geaccepteerde match met een boek dat al in je bibliotheek staat, telt onder **In library**.
+
+Een boek in meerdere losse bestanden die een map delen met andere boeken, zoals een auteursmap of de map die je scant, is één rij met alle delen. Bestanden die verschillen in een boek- of deelnummer blijven aparte rijen.
+
+Een tag geschreven als `Title: Series, Book 2` wordt gelezen als titel, serie en plaats in de serie.
+
+**Recent Import Sessions** op de pagina Library Import toont per scan hoeveel rijen een match hebben, boeken die al in de bibliotheek staan meegeteld, en hoeveel er nog openstaan, rijen waarvoor je nog een match moet kiezen meegeteld.
+
 ## De lijst lezen
 
 - De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er gematcht zijn. Filter de lijst op All, Matched, Needs attention, Unmatched, In library of Failed lookup. Het filter blijft bewaard in het paginaadres.

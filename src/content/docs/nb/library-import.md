@@ -13,6 +13,23 @@ Library Import skanner en mappe med lydbøker, finner metadata som passer til hv
 
 Hvert valg er en valgfri overstyring av en standard i Media Management. En vanlig skanning og så legg til trenger aldri mer enn to klikk.
 
+## Når et treff blir godtatt
+
+Skanningen godtar et treff bare når filene bekrefter det:
+
+- ASIN-en i filenes egne tagger finner boka, eller
+- spilletiden til boka er innenfor tre minutter av filenes, og plassen i serien eller tittelen stemmer med dem.
+
+En forfatter eller en plass i serien som motsier filene, utelukker en bok. Passer filene like godt til to forskjellige bøker eller innspillinger, blir ingen av dem godtatt.
+
+Alle andre treff blir fortsatt foreslått, men raden telles under **Needs a look**, starter uten hake, og **Select All** hopper over den til du bekrefter treffet eller velger et annet. Et godtatt treff på en bok du allerede har i biblioteket, telles under **In library**.
+
+En bok i flere løse filer som deler mappe med andre bøker, for eksempel en forfattermappe eller mappa du skanner, er én rad med alle delene. Filer som skiller seg på et bok- eller bindnummer, forblir egne rader.
+
+En tagg skrevet som `Title: Series, Book 2` blir lest som tittel, serie og plass i serien.
+
+**Recent Import Sessions** på Library Import-siden viser for hver skanning hvor mange rader som har treff, medregnet bøker som allerede er i biblioteket, og hvor mange som venter, medregnet rader der du fortsatt må velge et treff.
+
 ## Lese lista
 
 - Sammendraget viser hvor mange mapper som ble funnet, og hvor mange som fikk treff. Filtrer lista på All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filteret blir lagret i adressen til siden.
