@@ -3421,7 +3421,7 @@
           "Library Import"
         ],
         "summary": "Retry Automatic Matching",
-        "description": "Retry automatic matching on pending_search and no_match items.\n\nExpects JSON body, each item a scan row as the page holds it:\n{\n    \"items\": [\n        {\n            \"path\": \"/path/to/folder\",\n            \"folder_name\": \"folder\",\n            \"parsed_title\": \"Book Title\",\n            \"parsed_authors\": [\"Author Name\"],\n            \"parsed_series\": \"Series Name\",\n            \"parsed_position\": \"1\",\n            \"parsed_asin\": \"B00XXXXXXX\",\n            \"parsed_hint_asin\": \"B00YYYYYYY\",\n            \"parsed_runtime_length_min\": 600,\n            \"parsed_year\": 2020,\n            \"parsed_narrator\": \"Narrator Name\",\n            \"parse_confidence\": 80.0,\n            \"parse_method\": \"metadata_tags\",\n            \"audio_files\": [\"file1.mp3\", \"file2.mp3\"],\n            \"source_files\": null,\n            \"folder_files\": null\n        },\n        ...\n    ]\n}\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
+        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
         "requestBody": {
           "content": {
