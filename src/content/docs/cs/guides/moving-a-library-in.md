@@ -12,9 +12,9 @@ description: Jak bezpečně dostat stávající sbírku do ABM.
 ## Postup
 
 1. **Library > Library Import**, naskenuj složku.
-2. Projdi seznam. Shody ukazují procento. Řádky **Needs attention** a **Unmatched** oprav přes **Find a match**, nebo spoj řádky, které jsou jedna kniha rozdělená do více složek.
+2. Projdi seznam. Shody ukazují procento. Řádky **Needs a look** a **Unmatched** oprav přes **Find a match**, nebo spoj řádky, které jsou jedna kniha rozdělená do více složek.
 3. Obálku a další soubory u jednotlivých složek kontroluj, jen pokud chceš přepsat výchozí nastavení.
-4. Vyber řádky a přidej je. Když přijmeš výchozí nastavení, zůstanou to dvě kliknutí.
+4. Vyber řádky a přidej je.
 5. Sleduj úlohu. Souhrn ti řekne, kolik souborů se zkopírovalo místo hardlinku a co selhalo.
 
 ## Pokud už máš sbírku tam, kde ji chceš mít

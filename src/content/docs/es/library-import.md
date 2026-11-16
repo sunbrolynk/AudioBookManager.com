@@ -9,9 +9,9 @@ Library Import escanea una carpeta de audiolibros, empareja cada carpeta con sus
 
 1. Escanea una carpeta. Cada carpeta con audio se convierte en una fila.
 2. Revisa las coincidencias. Corrige las que lo necesiten.
-3. Selecciona las filas y añádelas a la biblioteca.
+3. Marca las filas que quieras y luego añádelas a la biblioteca o bórralas.
 
-Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management. Un escaneo normal seguido de añadir nunca necesita más de dos clics.
+Todas las opciones son sustituciones opcionales de un valor por defecto de Media Management.
 
 ## Cuándo se acepta una coincidencia
 
@@ -22,17 +22,27 @@ El escaneo acepta una coincidencia solo cuando los archivos la confirman:
 
 Un autor o una posición en la serie que contradice los archivos descarta un libro. Si los archivos encajan igual de bien con dos libros o grabaciones distintos, no se acepta ninguno.
 
-Cualquier otra coincidencia se sigue ofreciendo como sugerencia, pero la fila cuenta en **Needs a look**, empieza sin marcar y **Select All** la deja fuera hasta que confirmes esa coincidencia o elijas otra. Una coincidencia aceptada con un libro que ya tienes en la biblioteca cuenta en **In library**.
+La duración de los archivos solo cuenta cuando se pudo leer cada archivo del libro. Si uno no se puede medir, la fila no tiene duración: solo su ASIN puede confirmar una coincidencia y, si no, el libro espera en **Needs a look**.
 
-Un libro en varios archivos sueltos que comparten carpeta con otros libros, como una carpeta de autor o la carpeta que escaneas, es una sola fila con todas sus partes. Los archivos que se distinguen por un número de libro o de volumen siguen siendo filas separadas.
+Por duración solo se acepta una edición en inglés, o una cuya ficha no indica idioma. Una edición en otro idioma solo se acepta cuando la encuentra el propio ASIN de los archivos. Un libro respondido desde el [almacenamiento local](/es/settings/metadata/) en lugar de una consulta en vivo nunca se acepta sin ti.
+
+Cuando falla una de las consultas de una fila, solo se acepta una coincidencia por ASIN. Un libro encontrado solo al buscar por el autor se ofrece solo cuando su duración encaja con la de los archivos, así que un libro sin ficha aparece como **Unmatched** en lugar de sugerir otro libro del autor.
+
+Cualquier otra coincidencia se sigue ofreciendo como sugerencia, pero la fila cuenta en **Needs a look**, empieza sin marcar y **Select All** la deja fuera hasta que confirmes esa coincidencia o elijas otra. Una coincidencia aceptada con un libro que ya tienes en la biblioteca cuenta en **In library**. Una fila **Needs a look** cuya sugerencia es un libro de la biblioteca solo hace su pregunta sobre la biblioteca cuando confirmas esa coincidencia. Hasta entonces, si la marcas, bloquea Add como una fila que todavía necesita una decisión.
+
+Un libro en varios archivos sueltos que comparten carpeta con otros libros, como una carpeta de autor o la carpeta que escaneas, es una sola fila con todas sus partes. Los archivos que se distinguen por un número de libro o de volumen siguen siendo filas separadas. Las partes se agrupan por formato: un archivo con el libro entero a su lado es una fila aparte, dos formatos de un mismo libro en una carpeta compartida son filas separadas, y una tasa de bits en el nombre de un archivo, como `128kbps`, no es un número de parte.
 
 Una etiqueta escrita como `Title: Series, Book 2` se lee como el título, la serie y su posición.
+
+Una posición en la serie escrita como rango, como `1-3`, coincide con cualquier posición dentro de él. Dos números escritos de cualquier otra forma, como `1, 3`, cuentan como ninguna posición.
+
+Se ignora una etiqueta de título, álbum, serie, parte de serie, artista, artista del álbum, compositor o narrador de más de 500 caracteres.
 
 **Recent Import Sessions** en la página Library Import muestra en cada escaneo cuántas filas tienen coincidencia, contando los libros que ya están en la biblioteca, y cuántas están pendientes, contando las filas en las que aún tienes que elegir una coincidencia.
 
 ## Cómo leer la lista
 
-- El resumen muestra cuántas carpetas se encontraron y cuántas coinciden. Filtra la lista por All, Matched, Needs attention, Unmatched, In library o Failed lookup. El filtro se guarda en la dirección de la página.
+- El resumen muestra cuántas carpetas se encontraron y cuántas están listas. La barra superior tiene **Sort** (Folder name, Status, Title, Author, Series, Files) y **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Cada filtro muestra su número, y los números cuadran con el resumen. Una coincidencia que ya confirmaste se llama Ready. El orden y el filtro se recuerdan en este dispositivo. No se guardan en la dirección de la página, así que un enlace con `?sort=` o `?filter=` no los lleva consigo.
 - Cada fila muestra la portada, el título, el autor y la serie, y lo segura que es la coincidencia en porcentaje, por ejemplo "95% match". Los detalles de la carpeta tienen **Find a match** o **Change match** para buscar a mano.
 - Cuando los archivos no tienen ASIN ni duración para confirmar la edición, los detalles de la carpeta lo indican.
 - **Rescan** recoge las carpetas añadidas después del escaneo y conserva lo que ya elegiste.
@@ -41,7 +51,8 @@ Un ASIN encontrado en un comentario o una descripción es solo una pista. Solo c
 
 ## Unir, dividir y añadir
 
-- Une las filas que son un mismo libro repartido en varias carpetas. Vuelve a dividirlas desde los detalles de la carpeta.
+- Une las filas que son un mismo libro repartido en varias carpetas. Vuelve a dividirlas desde los detalles de la carpeta. La coincidencia de la fila unida es solo una sugerencia: cuenta en **Needs a look** y empieza sin marcar hasta que la confirmas o eliges otra. Su duración es el total de las partes solo cuando cada parte tiene una, y conserva un ASIN solo cuando todas las partes dan el mismo. Una consulta que termina después de que unas o dividas su fila también es solo una sugerencia.
+- **Confirm match** en los detalles de una fila marca una fila **Needs a look**, y **Undo confirmation** quita esa marca.
 - Si no se puede añadir, el motivo aparece encima del botón, por ejemplo "Select at least one folder" o "2 selected rows still need a decision".
 - Todo lo que vaya a borrar o reemplazar archivos te pregunta antes.
 - Si sales de la página, tus cambios pendientes se guardan.
@@ -62,7 +73,7 @@ Un narrador, un título o una ruta recortados con puntos suspensivos se muestran
 
 ## Respuestas distintas de importar
 
-A una fila también se le puede responder **keep library** (rechazar una copia de un libro que ya está en la biblioteca) o **remove empty** (rechazar una carpeta sin audio, que todavía tiene ilustraciones y archivos auxiliares). Estas opciones solo limpian lo que pertenece a la fila. Todo lo que contenga audio se rechaza. Los archivos van a la papelera de reciclaje si hay una configurada, y el registro de la tarea enumera cada ruta eliminada.
+A una fila también se le puede responder **keep library** (rechazar una copia de un libro que ya está en la biblioteca) o **remove empty** (rechazar una carpeta sin audio, que todavía tiene ilustraciones y archivos auxiliares). Estas opciones solo limpian lo que pertenece a la fila. Todo lo que contenga audio se rechaza. Los archivos van a la papelera de reciclaje si hay una configurada, y el registro de la tarea enumera cada ruta eliminada. Una decisión **keep library** vale solo para el libro de la biblioteca sobre el que era: si eliges una coincidencia que pregunta otra cosa o por otro libro de la biblioteca, la fila vuelve a preguntar. La importación lo comprueba otra vez al ejecutarse y no se quita nada si para entonces la copia de la biblioteca no tiene archivos ("Your library has no copy of this book to keep") o si la carpeta contiene archivos de un libro de tu biblioteca ("This folder holds files of a book in your library").
 
 ## Portada y archivos extra por carpeta
 

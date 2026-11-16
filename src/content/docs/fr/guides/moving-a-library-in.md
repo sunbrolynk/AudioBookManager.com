@@ -12,9 +12,9 @@ description: Amène une collection existante dans ABM sans risque.
 ## Les étapes
 
 1. **Library > Library Import**, scanne le dossier.
-2. Lis la liste. Les correspondances affichent un pourcentage. Corrige les lignes **Needs attention** et **Unmatched** avec **Find a match**, ou réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers.
+2. Lis la liste. Les correspondances affichent un pourcentage. Corrige les lignes **Needs a look** et **Unmatched** avec **Find a match**, ou réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers.
 3. Vérifie la couverture et les fichiers en plus de chaque dossier seulement si tu veux changer les valeurs par défaut.
-4. Sélectionne les lignes et ajoute-les. Ça reste deux clics si tu acceptes les valeurs par défaut.
+4. Sélectionne les lignes et ajoute-les.
 5. Surveille la tâche. Le résumé indique combien de fichiers ont été copiés au lieu d'être liés physiquement, et ce qui a échoué.
 
 ## Si ta collection est déjà là où tu la veux

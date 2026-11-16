@@ -9,9 +9,9 @@ Der Bibliotheksimport (Library Import) scannt einen Ordner mit Hörbüchern, ord
 
 1. Scan einen Ordner. Jeder Ordner mit Audio wird zu einer Zeile.
 2. Prüf die Zuordnungen. Korrigier die, bei denen es nötig ist.
-3. Wähl die Zeilen aus und füg sie der Bibliothek hinzu.
+3. Hak die Zeilen an, die du willst, und füg sie dann der Bibliothek hinzu oder lösch sie.
 
-Jede Option ist eine optionale Abweichung von einem Standard aus Media Management. Ein einfacher Scan mit anschließendem Hinzufügen braucht nie mehr als zwei Klicks.
+Jede Option ist eine optionale Abweichung von einem Standard aus Media Management.
 
 ## Wann eine Zuordnung übernommen wird
 
@@ -22,17 +22,27 @@ Der Scan übernimmt eine Zuordnung nur, wenn die Dateien sie bestätigen:
 
 Ein Autor oder eine Serienposition, die den Dateien widerspricht, schließt ein Buch aus. Passen die Dateien gleich gut zu zwei verschiedenen Büchern oder Aufnahmen, wird keins davon übernommen.
 
-Jede andere Zuordnung wird trotzdem vorgeschlagen, aber die Zeile zählt unter **Needs a look**, ist anfangs nicht angehakt, und **Select All** lässt sie aus, bis du die Zuordnung bestätigst oder eine andere wählst. Eine übernommene Zuordnung zu einem Buch, das schon in deiner Bibliothek ist, zählt unter **In library**.
+Die Laufzeit der Dateien zählt nur, wenn sich jede Datei des Buchs lesen ließ. Lässt sich eine nicht messen, hat die Zeile keine Laufzeit: Dann kann nur ihre ASIN eine Zuordnung bestätigen, sonst wartet das Buch unter **Needs a look**.
 
-Ein Buch aus mehreren losen Dateien, die sich einen Ordner mit anderen Büchern teilen, etwa einen Autorenordner oder den Ordner, den du scannst, ist eine Zeile mit allen Teilen. Dateien, die sich durch eine Buch- oder Bandnummer unterscheiden, bleiben getrennte Zeilen.
+Über die Laufzeit wird nur eine englische Ausgabe übernommen oder eine, deren Eintrag keine Sprache nennt. Eine Ausgabe in einer anderen Sprache wird nur übernommen, wenn die eigene ASIN der Dateien sie findet. Ein Buch, das aus dem [lokalen Speicher](/de/settings/metadata/) statt aus einer Live-Abfrage kommt, wird nie ohne dich übernommen.
+
+Schlägt eine der Abfragen einer Zeile fehl, wird nur ein ASIN-Treffer übernommen. Ein Buch, das nur über die Suche nach dem Autor gefunden wurde, wird nur vorgeschlagen, wenn seine Laufzeit zu den Dateien passt. Ein Buch ohne Eintrag steht deshalb auf **Unmatched**, statt ein anderes Buch des Autors vorzuschlagen.
+
+Jede andere Zuordnung wird trotzdem vorgeschlagen, aber die Zeile zählt unter **Needs a look**, ist anfangs nicht angehakt, und **Select All** lässt sie aus, bis du die Zuordnung bestätigst oder eine andere wählst. Eine übernommene Zuordnung zu einem Buch, das schon in deiner Bibliothek ist, zählt unter **In library**. Eine **Needs a look**-Zeile, deren Vorschlag ein Buch aus der Bibliothek ist, stellt ihre Bibliotheksfrage erst, wenn du die Zuordnung bestätigst. Bis dahin sperrt sie Add, wenn du sie anhakst, als Zeile, die noch eine Entscheidung braucht.
+
+Ein Buch aus mehreren losen Dateien, die sich einen Ordner mit anderen Büchern teilen, etwa einen Autorenordner oder den Ordner, den du scannst, ist eine Zeile mit allen Teilen. Dateien, die sich durch eine Buch- oder Bandnummer unterscheiden, bleiben getrennte Zeilen. Teile werden pro Format gruppiert: Eine Datei mit dem ganzen Buch daneben ist eine eigene Zeile, zwei Formate eines Buchs in einem gemeinsamen Ordner sind getrennte Zeilen, und eine Bitrate im Dateinamen, etwa `128kbps`, ist keine Teilnummer.
 
 Ein Tag wie `Title: Series, Book 2` wird als Titel, Serie und Position gelesen.
+
+Eine Serienposition, die als Bereich geschrieben ist, etwa `1-3`, passt zu jeder Position darin. Zwei Zahlen, die anders geschrieben sind, etwa `1, 3`, gelten als keine Position.
+
+Ein Tag für Titel, Album, Serie, Serienteil, Interpret, Albuminterpret, Komponist oder Sprecher, der länger als 500 Zeichen ist, wird ignoriert.
 
 **Recent Import Sessions** auf der Seite Library Import zeigt zu jedem Scan, wie viele Zeilen zugeordnet sind, Bücher aus der Bibliothek eingeschlossen, und wie viele offen sind, darunter Zeilen, bei denen du noch eine Zuordnung wählen musst.
 
 ## Die Liste lesen
 
-- Die Übersicht zeigt, wie viele Ordner gefunden und wie viele zugeordnet wurden. Filtern kannst du nach All, Matched, Needs attention, Unmatched, In library oder Failed lookup. Der Filter bleibt in der Seitenadresse erhalten.
+- Die Übersicht zeigt, wie viele Ordner gefunden wurden und wie viele bereit sind. In der Kopfleiste gibt es **Sort** (Folder name, Status, Title, Author, Series, Files) und **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jeder Filter zeigt seine Anzahl, und die Zahlen passen zur Übersicht. Eine Zuordnung, die du bestätigt hast, heißt Ready. Sortierung und Filter merkt sich dieses Gerät. Sie stehen nicht in der Seitenadresse, ein Link mit `?sort=` oder `?filter=` übernimmt sie also nicht.
 - Jede Zeile zeigt Cover, Titel, Autor und Serie und wie sicher die Zuordnung ist, als Prozentwert wie "95% match". In den Ordnerdetails gibt es **Find a match** oder **Change match**, um von Hand zu suchen.
 - Wenn die Dateien keine ASIN oder Laufzeit haben, mit der sich die Ausgabe bestätigen lässt, steht das in den Ordnerdetails.
 - **Rescan** findet Ordner, die seit dem Scan dazugekommen sind, und behält deine Entscheidungen.
@@ -41,7 +51,8 @@ Eine ASIN aus einem Kommentar oder einer Beschreibung ist nur ein Hinweis. Sie z
 
 ## Zusammenführen, aufteilen und hinzufügen
 
-- Führ Zeilen zusammen, die ein Buch sind, das über mehrere Ordner verteilt ist. Aufteilen kannst du sie wieder in den Ordnerdetails.
+- Führ Zeilen zusammen, die ein Buch sind, das über mehrere Ordner verteilt ist. Aufteilen kannst du sie wieder in den Ordnerdetails. Die Zuordnung der zusammengeführten Zeile ist nur ein Vorschlag: Sie zählt unter **Needs a look** und ist nicht angehakt, bis du sie bestätigst oder eine andere wählst. Ihre Laufzeit ist die Summe der Teile, wenn jeder Teil eine hat, und sie behält eine ASIN nur, wenn alle Teile dieselbe angeben. Eine Abfrage, die erst fertig wird, nachdem du ihre Zeile zusammengeführt oder aufgeteilt hast, ist ebenfalls nur ein Vorschlag.
+- **Confirm match** in den Details einer Zeile hakt eine **Needs a look**-Zeile an, und **Undo confirmation** nimmt das Häkchen wieder weg.
 - Add ist gesperrt, und der Grund steht über dem Button, zum Beispiel "Select at least one folder" oder "2 selected rows still need a decision".
 - Alles, was Dateien entfernen oder ersetzen würde, fragt vorher nach.
 - Wenn du die Seite verlässt, werden deine offenen Änderungen gespeichert.
@@ -62,7 +73,7 @@ Ein Sprecher, Titel oder Pfad, der mit Auslassungspunkten abgeschnitten ist, öf
 
 ## Andere Antworten als Import
 
-Eine Zeile kann auch mit **keep library** beantwortet werden (eine Kopie eines Buchs ablehnen, das schon in der Bibliothek ist) oder mit **remove empty** (einen Ordner ohne Audio ablehnen, in dem noch Artwork und Sidecars liegen). Das räumt nur auf, was zu der Zeile gehört. Alles, was Audio enthält, wird verweigert. Dateien landen im Papierkorb, wenn einer eingerichtet ist, und das Task-Log listet jeden entfernten Pfad auf.
+Eine Zeile kann auch mit **keep library** beantwortet werden (eine Kopie eines Buchs ablehnen, das schon in der Bibliothek ist) oder mit **remove empty** (einen Ordner ohne Audio ablehnen, in dem noch Artwork und Sidecars liegen). Das räumt nur auf, was zu der Zeile gehört. Alles, was Audio enthält, wird verweigert. Dateien landen im Papierkorb, wenn einer eingerichtet ist, und das Task-Log listet jeden entfernten Pfad auf. Eine **keep library**-Entscheidung gilt nur für das Bibliotheksbuch, um das es ging: Wählst du eine Zuordnung, die etwas anderes oder nach einem anderen Bibliotheksbuch fragt, fragt die Zeile neu. Beim Import wird noch einmal geprüft, und nichts wird entfernt, wenn die Kopie in der Bibliothek bis dahin keine Dateien hat ("Your library has no copy of this book to keep") oder der Ordner Dateien eines Buchs aus deiner Bibliothek enthält ("This folder holds files of a book in your library").
 
 ## Cover und zusätzliche Dateien pro Ordner
 

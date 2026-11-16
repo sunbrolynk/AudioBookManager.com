@@ -12,9 +12,9 @@ description: Breng een bestaande collectie veilig in ABM.
 ## De stappen
 
 1. Ga naar **Library > Library Import** en scan de map.
-2. Lees de lijst. Matches tonen een percentage. Verbeter rijen met **Needs attention** en **Unmatched** via **Find a match**, of voeg rijen samen die één boek zijn, verspreid over meerdere mappen.
+2. Lees de lijst. Matches tonen een percentage. Verbeter rijen met **Needs a look** en **Unmatched** via **Find a match**, of voeg rijen samen die één boek zijn, verspreid over meerdere mappen.
 3. Controleer de cover en extra bestanden per map alleen als je van de standaard wilt afwijken.
-4. Selecteer de rijen en voeg ze toe. Neem je de standaard over, dan blijft het bij twee klikken.
+4. Selecteer de rijen en voeg ze toe.
 5. Houd de taak in de gaten. De samenvatting meldt hoeveel bestanden er gekopieerd zijn in plaats van gehardlinkt, en wat er misging.
 
 ## Als je collectie al staat waar je hem wilt hebben

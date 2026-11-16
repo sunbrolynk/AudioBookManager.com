@@ -12,9 +12,9 @@ description: Traga uma coleção que você já tem para o ABM com segurança.
 ## Os passos
 
 1. **Library > Library Import**, varra a pasta.
-2. Leia a lista. As correspondências mostram uma porcentagem. Corrija as linhas **Needs attention** e **Unmatched** com **Find a match**, ou junte linhas que são um único livro espalhado em várias pastas.
+2. Leia a lista. As correspondências mostram uma porcentagem. Corrija as linhas **Needs a look** e **Unmatched** com **Find a match**, ou junte linhas que são um único livro espalhado em várias pastas.
 3. Confira a capa e os arquivos extras de cada pasta só se quiser mudar os padrões.
-4. Selecione as linhas e adicione. Continua em dois cliques se você aceitar os padrões.
+4. Selecione as linhas e adicione.
 5. Acompanhe a tarefa. O resumo diz quantos arquivos foram copiados em vez de receber hardlink e o que falhou.
 
 ## Se a sua coleção já está onde você quer

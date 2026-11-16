@@ -9,9 +9,9 @@ Kirjaston tuonti (Library Import) skannaa äänikirjakansion, täsmää jokaisen
 
 1. Skannaa kansio. Jokaisesta kansiosta, jossa on ääntä, tulee rivi.
 2. Tarkista osumat. Korjaa ne, jotka sitä kaipaavat.
-3. Valitse rivit ja lisää ne kirjastoon.
+3. Rastita haluamasi rivit ja lisää ne sitten kirjastoon tai poista ne.
 
-Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle. Pelkkä skannaus ja lisäys ei koskaan vaadi kahta klikkausta enempää.
+Jokainen valinta on vapaaehtoinen ohitus Media Management -asetusten oletukselle.
 
 ## Milloin osuma hyväksytään
 
@@ -22,17 +22,27 @@ Skannaus hyväksyy osuman vain, kun tiedostot vahvistavat sen:
 
 Tiedostojen kanssa ristiriidassa oleva kirjailija tai sarjan paikka sulkee kirjan pois. Jos tiedostot sopivat yhtä hyvin kahteen eri kirjaan tai äänitteeseen, kumpaakaan ei hyväksytä.
 
-Muut osumat tarjotaan edelleen ehdotuksina, mutta rivi lasketaan kohtaan **Needs a look**, se on aluksi valitsematta, ja **Select All** ohittaa sen, kunnes vahvistat osuman tai valitset toisen. Hyväksytty osuma kirjaan, joka on jo kirjastossasi, lasketaan kohtaan **In library**.
+Tiedostojen kesto lasketaan vain, kun kirjan jokainen tiedosto voitiin lukea. Jos yhtä ei voi mitata, rivillä ei ole kestoa: silloin vain sen ASIN voi vahvistaa osuman, ja muuten kirja odottaa kohdassa **Needs a look**.
 
-Kirja, joka on useana irtotiedostona samassa kansiossa muiden kirjojen kanssa, esimerkiksi kirjailijan kansiossa tai kansiossa, jota skannaat, on yksi rivi, jossa on kaikki osat. Tiedostot, jotka eroavat kirjan tai osan numerolla, pysyvät erillisinä riveinä.
+Keston perusteella hyväksytään vain englanninkielinen painos tai sellainen, jonka tiedoissa ei ole kieltä. Muunkielinen painos hyväksytään vain, kun tiedostojen oma ASIN löytää sen. Kirjaa, johon vastaus tuli [paikallisesta tallennuksesta](/fi/settings/metadata/) eikä suorasta hausta, ei koskaan hyväksytä ilman sinua.
+
+Kun yksi rivin hauista epäonnistuu, hyväksytään vain ASIN-osuma. Pelkällä kirjailijahaulla löytynyt kirja tarjotaan vain, kun sen kesto sopii tiedostoihin. Siksi kirja, jolla ei ole tietoja, näkyy tilassa **Unmatched** eikä ehdota kirjailijan toista kirjaa.
+
+Muut osumat tarjotaan edelleen ehdotuksina, mutta rivi lasketaan kohtaan **Needs a look**, se on aluksi valitsematta, ja **Select All** ohittaa sen, kunnes vahvistat osuman tai valitset toisen. Hyväksytty osuma kirjaan, joka on jo kirjastossasi, lasketaan kohtaan **In library**. **Needs a look** -rivi, jonka ehdotus on kirjaston kirja, kysyy kirjastokysymyksensä vasta, kun vahvistat osuman. Siihen asti se estää Addin, jos valitset sen, rivinä joka tarvitsee vielä päätöksen.
+
+Kirja, joka on useana irtotiedostona samassa kansiossa muiden kirjojen kanssa, esimerkiksi kirjailijan kansiossa tai kansiossa, jota skannaat, on yksi rivi, jossa on kaikki osat. Tiedostot, jotka eroavat kirjan tai osan numerolla, pysyvät erillisinä riveinä. Osat ryhmitellään muodon mukaan: niiden vieressä oleva koko kirjan tiedosto on oma rivinsä, saman kirjan kaksi muotoa jaetussa kansiossa ovat erilliset rivit, eikä tiedostonimen bittinopeus, kuten `128kbps`, ole osan numero.
 
 Tagi muodossa `Title: Series, Book 2` luetaan nimeksi, sarjaksi ja paikaksi sarjassa.
+
+Välinä kirjoitettu sarjan sijainti, kuten `1-3`, täsmää mihin tahansa sen sisällä olevaan sijaintiin. Kaksi muuten kirjoitettua numeroa, kuten `1, 3`, lasketaan ei-sijainniksi.
+
+Yli 500 merkin pituinen nimike-, albumi-, sarja-, sarjan osa-, esittäjä-, albumin esittäjä-, säveltäjä- tai lukija-tagi ohitetaan.
 
 Library Import -sivun **Recent Import Sessions** näyttää jokaisesta skannauksesta, monellako rivillä on osuma, kirjastossa jo olevat kirjat mukaan lukien, ja moniko odottaa, mukaan lukien rivit, joille sinun pitää vielä valita osuma.
 
 ## Listan lukeminen
 
-- Yhteenveto näyttää, montako kansiota löytyi ja montako täsmättiin. Suodata lista valinnoilla All, Matched, Needs attention, Unmatched, In library tai Failed lookup. Suodatin säilyy sivun osoitteessa.
+- Yhteenveto näyttää, montako kansiota löytyi ja montako on valmiina. Yläpalkissa on **Sort** (Folder name, Status, Title, Author, Series, Files) ja **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jokainen suodatin näyttää määränsä, ja määrät täsmäävät yhteenvedon kanssa. Täsmäys, jonka olet vahvistanut, on nimeltään Ready. Tämä laite muistaa järjestyksen ja suodattimen. Ne eivät säily sivun osoitteessa, joten linkki, jossa on `?sort=` tai `?filter=`, ei vie niitä mukanaan.
 - Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin.
 - Kun tiedostoissa ei ole ASINia tai kestoa, jolla painos voitaisiin varmistaa, kansion tiedoissa kerrotaan siitä.
 - **Rescan** poimii skannauksen jälkeen lisätyt kansiot ja säilyttää valintasi.
@@ -41,7 +51,8 @@ Kommentista tai kuvauksesta löytynyt ASIN on pelkkä vihje. Se lasketaan osumak
 
 ## Yhdistäminen, jakaminen ja lisääminen
 
-- Yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon. Voit jakaa ne taas kansion tiedoista.
+- Yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon. Voit jakaa ne taas kansion tiedoista. Yhdistetyn rivin osuma on vain ehdotus: se lasketaan kohtaan **Needs a look** eikä ole valittuna, ennen kuin vahvistat sen tai valitset toisen. Sen kesto on osien summa vain, kun jokaisella osalla on kesto, ja se säilyttää ASINin vain, kun kaikki osat antavat saman. Haku, joka valmistuu vasta kun olet yhdistänyt tai jakanut sen rivin, on myös vain ehdotus.
+- Rivin tietojen **Confirm match** valitsee **Needs a look** -rivin, ja **Undo confirmation** poistaa valinnan taas.
 - Lisäys estetään, ja syy näytetään painikkeen yläpuolella, esimerkiksi "Select at least one folder" tai "2 selected rows still need a decision".
 - Kaikki, mikä poistaisi tai korvaisi tiedostoja, kysyy ensin.
 - Kun poistut sivulta, keskeneräiset muokkauksesi tallennetaan.
@@ -62,7 +73,7 @@ Lukija, nimi tai polku, joka on katkaistu kolmella pisteellä, avautuu kokonaan,
 
 ## Muut vastaukset kuin tuonti
 
-Riviin voi vastata myös **keep library** (hylkää kopio kirjasta, joka kirjastossa jo on) tai **remove empty** (hylkää kansio, jossa ei ole ääntä mutta on yhä kuvia ja sivutiedostoja). Nämä poistavat vain sen, minkä rivi omistaa. Kaikki, missä on ääntä, torjutaan. Tiedostot menevät roskakoriin, jos sellainen on asetettu, ja tehtäväloki listaa jokaisen poistetun polun.
+Riviin voi vastata myös **keep library** (hylkää kopio kirjasta, joka kirjastossa jo on) tai **remove empty** (hylkää kansio, jossa ei ole ääntä mutta on yhä kuvia ja sivutiedostoja). Nämä poistavat vain sen, minkä rivi omistaa. Kaikki, missä on ääntä, torjutaan. Tiedostot menevät roskakoriin, jos sellainen on asetettu, ja tehtäväloki listaa jokaisen poistetun polun. **keep library** -päätös koskee vain sitä kirjaston kirjaa, josta se tehtiin: jos valitset osuman, joka kysyy jotain muuta tai toista kirjaston kirjaa, rivi kysyy uudelleen. Tuonti tarkistaa asian uudelleen ajon aikana, eikä mitään poisteta, jos kirjaston kopiolla ei siihen mennessä ole tiedostoja ("Your library has no copy of this book to keep") tai jos kansiossa on kirjastosi kirjan tiedostoja ("This folder holds files of a book in your library").
 
 ## Kansikuva ja lisätiedostot kansiokohtaisesti
 

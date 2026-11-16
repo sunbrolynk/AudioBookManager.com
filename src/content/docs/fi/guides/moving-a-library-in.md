@@ -12,9 +12,9 @@ description: Tuo olemassa oleva kokoelma ABM:ään turvallisesti.
 ## Vaiheet
 
 1. **Library > Library Import**, skannaa kansio.
-2. Lue lista. Osumille näytetään prosenttiluku. Korjaa rivit **Needs attention** ja **Unmatched** painikkeella **Find a match**, tai yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon.
+2. Lue lista. Osumille näytetään prosenttiluku. Korjaa rivit **Needs a look** ja **Unmatched** painikkeella **Find a match**, tai yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon.
 3. Tarkista kansikuva ja lisätiedostot kansiokohtaisesti vain, jos haluat ohittaa oletukset.
-4. Valitse rivit ja lisää ne. Jos hyväksyt oletukset, tähän menee edelleen kaksi klikkausta.
+4. Valitse rivit ja lisää ne.
 5. Seuraa tehtävää. Yhteenveto kertoo, montako tiedostoa kopioitiin kovalinkityksen sijaan ja mikä epäonnistui.
 
 ## Jos kokoelmasi on jo siellä, missä haluat sen olevan

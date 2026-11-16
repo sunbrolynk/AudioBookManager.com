@@ -9,9 +9,9 @@ Library Import skannar en mapp med ljudböcker, matchar varje mapp mot metadata 
 
 1. Skanna en mapp. Varje mapp med ljud blir en rad.
 2. Kolla matchningarna. Rätta dem som behöver det.
-3. Markera raderna och lägg till dem i biblioteket.
+3. Bocka för raderna du vill ha och lägg sedan till dem i biblioteket eller ta bort dem.
 
-Varje alternativ är en valfri åsidosättning av en standard i Media Management. En vanlig skanning följt av tillägg behöver aldrig mer än två klick.
+Varje alternativ är en valfri åsidosättning av en standard i Media Management.
 
 ## När en matchning godkänns
 
@@ -22,17 +22,27 @@ Skanningen godkänner en matchning bara när filerna bekräftar den:
 
 En författare eller en plats i serien som motsäger filerna utesluter en bok. Passar filerna lika bra till två olika böcker eller inspelningar godkänns ingen av dem.
 
-Alla andra matchningar föreslås fortfarande, men raden räknas under **Needs a look**, börjar utan bock, och **Select All** hoppar över den tills du bekräftar matchningen eller väljer en annan. En godkänd matchning mot en bok som redan finns i ditt bibliotek räknas under **In library**.
+Filernas speltid räknas bara när varje fil i boken kunde läsas. Går en inte att mäta har raden ingen speltid: då kan bara dess ASIN bekräfta en träff, och annars väntar boken under **Needs a look**.
 
-En bok i flera lösa filer som delar mapp med andra böcker, till exempel en författarmapp eller mappen du skannar, är en rad med alla delar. Filer som skiljer sig åt med ett bok- eller volymnummer förblir separata rader.
+Bara en engelsk utgåva, eller en vars post inte anger språk, godtas på speltid. En utgåva på ett annat språk godtas bara när filernas egen ASIN hittar den. En bok som besvarats från [lokal lagring](/sv/settings/metadata/) i stället för en direktsökning godtas aldrig utan dig.
+
+När en av radens sökningar misslyckas godtas bara en ASIN-träff. En bok som bara hittats genom att söka på författaren föreslås bara när dess speltid passar filernas, så en bok utan post visas som **Unmatched** i stället för att föreslå en annan av författarens böcker.
+
+Alla andra matchningar föreslås fortfarande, men raden räknas under **Needs a look**, börjar utan bock, och **Select All** hoppar över den tills du bekräftar matchningen eller väljer en annan. En godkänd matchning mot en bok som redan finns i ditt bibliotek räknas under **In library**. En **Needs a look**-rad vars förslag är en bok i biblioteket ställer sin biblioteksfråga först när du bekräftar träffen. Tills dess blockerar den Add om du bockar i den, som en rad som fortfarande behöver ett beslut.
+
+En bok i flera lösa filer som delar mapp med andra böcker, till exempel en författarmapp eller mappen du skannar, är en rad med alla delar. Filer som skiljer sig åt med ett bok- eller volymnummer förblir separata rader. Delar grupperas per format: en fil med hela boken bredvid är en egen rad, två format av samma bok i en delad mapp är separata rader, och en bithastighet i ett filnamn, till exempel `128kbps`, är inget delnummer.
 
 En tagg skriven som `Title: Series, Book 2` läses som titel, serie och plats i serien.
+
+En plats i serien skriven som ett intervall, till exempel `1-3`, stämmer med varje plats inom det. Två tal skrivna på något annat sätt, till exempel `1, 3`, räknas som ingen plats.
+
+En tagg för titel, album, serie, seriedel, artist, albumartist, kompositör eller uppläsare som är längre än 500 tecken ignoreras.
 
 **Recent Import Sessions** på sidan Library Import visar för varje skanning hur många rader som har en matchning, inklusive böcker som redan finns i biblioteket, och hur många som väntar, inklusive rader där du fortfarande behöver välja en matchning.
 
 ## Läsa listan
 
-- Sammanfattningen visar hur många mappar som hittades och hur många som matchades. Filtrera listan på All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filtret sparas i sidans adress.
+- Sammanfattningen visar hur många mappar som hittades och hur många som är klara. Fältet högst upp har **Sort** (Folder name, Status, Title, Author, Series, Files) och **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Varje filter visar sitt antal, och antalen stämmer med sammanfattningen. En matchning som du har bekräftat kallas Ready. Den här enheten kommer ihåg sortering och filter. De sparas inte i sidans adress, så en länk med `?sort=` eller `?filter=` tar inte med dem.
 - Varje rad visar omslag, titel, författare och serie, och hur säker matchningen är i procent, till exempel "95% match". Mappdetaljerna har **Find a match** eller **Change match** för att söka för hand.
 - När filerna saknar ASIN eller speltid som kan bekräfta utgåvan står det i mappdetaljerna.
 - **Rescan** plockar upp mappar som har lagts till sedan skanningen och behåller dina val.
@@ -41,7 +51,8 @@ En ASIN som hittas i en kommentar eller beskrivning är bara en ledtråd. Den r�
 
 ## Slå ihop, dela upp och lägga till
 
-- Slå ihop rader som är en och samma bok uppdelad på flera mappar. Dela upp dem igen från mappdetaljerna.
+- Slå ihop rader som är en och samma bok uppdelad på flera mappar. Dela upp dem igen från mappdetaljerna. Den ihopslagna radens träff är bara ett förslag: den räknas under **Needs a look** och är inte ibockad förrän du bekräftar den eller väljer en annan. Dess speltid är delarnas summa bara när varje del har en, och den behåller en ASIN bara när alla delar anger samma. En sökning som blir klar efter att du slagit ihop eller delat upp dess rad är också bara ett förslag.
+- **Confirm match** i en rads detaljer bockar i en **Needs a look**-rad, och **Undo confirmation** tar bort bocken igen.
 - Lägg till blockeras med en orsak som visas ovanför knappen, till exempel "Select at least one folder" eller "2 selected rows still need a decision".
 - Allt som skulle ta bort eller ersätta filer frågar först.
 - Lämnar du sidan sparas dina ändringar som inte är klara.
@@ -62,7 +73,7 @@ En uppläsare, titel eller sökväg som har kapats med en ellips visas i sin hel
 
 ## Andra svar än import
 
-En rad kan också få svaret **keep library** (tacka nej till en kopia av en bok som redan finns i biblioteket) eller **remove empty** (tacka nej till en mapp utan ljud som ändå innehåller bilder och sidecars). De rensar bara det raden äger. Allt som innehåller ljud vägras. Filer hamnar i papperskorgen om en är inställd, och uppgiftsloggen listar varje sökväg som togs bort.
+En rad kan också få svaret **keep library** (tacka nej till en kopia av en bok som redan finns i biblioteket) eller **remove empty** (tacka nej till en mapp utan ljud som ändå innehåller bilder och sidecars). De rensar bara det raden äger. Allt som innehåller ljud vägras. Filer hamnar i papperskorgen om en är inställd, och uppgiftsloggen listar varje sökväg som togs bort. Ett **keep library**-beslut gäller bara boken i biblioteket som det handlade om: väljer du en träff som frågar om något annat eller om en annan bok i biblioteket frågar raden igen. Importen kontrollerar igen när den körs, och inget tas bort om bibliotekets kopia inte har några filer då ("Your library has no copy of this book to keep") eller om mappen innehåller filer från en bok i ditt bibliotek ("This folder holds files of a book in your library").
 
 ## Omslag och extrafiler per mapp
 

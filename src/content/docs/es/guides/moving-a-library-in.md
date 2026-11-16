@@ -12,9 +12,9 @@ description: Mete una colección que ya tienes en ABM sin riesgos.
 ## Los pasos
 
 1. En **Library > Library Import**, escanea la carpeta.
-2. Lee la lista. Las coincidencias muestran un porcentaje. Corrige las filas **Needs attention** y **Unmatched** con **Find a match**, o une las filas que son un mismo libro repartido en varias carpetas.
+2. Lee la lista. Las coincidencias muestran un porcentaje. Corrige las filas **Needs a look** y **Unmatched** con **Find a match**, o une las filas que son un mismo libro repartido en varias carpetas.
 3. Revisa la portada y los archivos extra de cada carpeta solo si quieres cambiar los valores por defecto.
-4. Selecciona las filas y añádelas. Si aceptas los valores por defecto, siguen siendo dos clics.
+4. Selecciona las filas y añádelas.
 5. Sigue la tarea. El resumen dice cuántos archivos se copiaron en lugar de enlazarse y qué falló.
 
 ## Si tu colección ya está donde la quieres

@@ -12,9 +12,9 @@ description: Bezpiecznie wprowadź istniejącą kolekcję do ABM.
 ## Kroki
 
 1. **Library > Library Import**, zeskanuj folder.
-2. Przeczytaj listę. Dopasowania mają wartość procentową. Popraw wiersze **Needs attention** i **Unmatched** przez **Find a match** albo połącz wiersze, które są jedną książką rozbitą na kilka folderów.
+2. Przeczytaj listę. Dopasowania mają wartość procentową. Popraw wiersze **Needs a look** i **Unmatched** przez **Find a match** albo połącz wiersze, które są jedną książką rozbitą na kilka folderów.
 3. Okładkę i dodatkowe pliki dla każdego folderu sprawdzaj tylko wtedy, gdy chcesz nadpisać ustawienia domyślne.
-4. Zaznacz wiersze i je dodaj. Jeśli zostajesz przy domyślnych, to nadal dwa kliknięcia.
+4. Zaznacz wiersze i je dodaj.
 5. Obserwuj zadanie. Podsumowanie mówi, ile plików skopiowano zamiast podlinkować hardlinkiem i co się nie udało.
 
 ## Jeśli kolekcja już leży tam, gdzie chcesz
