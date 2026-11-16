@@ -9,13 +9,13 @@ Library Import는 오디오북 폴더를 스캔하고, 폴더마다 메타데이
 
 1. 폴더를 스캔해요. 오디오가 있는 폴더 하나가 한 줄이 돼요.
 2. 매칭을 확인해요. 고칠 게 있으면 고쳐요.
-3. 줄을 선택하고 라이브러리에 추가해요.
+3. 원하는 줄에 체크하고, 라이브러리에 추가하거나 삭제해요.
 
-모든 옵션은 Media Management 기본값을 선택적으로 덮어쓰는 거예요. 그냥 스캔하고 추가하는 데는 클릭 두 번이면 충분해요.
+모든 옵션은 Media Management 기본값을 선택적으로 덮어쓰는 거예요.
 
 ## 목록 읽는 법
 
-- 요약에 찾은 폴더 수와 매칭된 수가 나와요. All, Matched, Needs attention, Unmatched, In library, Failed lookup으로 목록을 거를 수 있어요. 필터는 페이지 주소에 남아요.
+- 요약에 찾은 폴더 수와 준비된 수가 나와요. 위쪽 바에 **Sort** (Folder name, Status, Title, Author, Series, Files)와 **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add)가 있어요. 필터마다 개수가 표시되고, 그 개수는 요약과 맞아요. 직접 확인한 매칭은 Ready라고 불러요. 정렬과 필터는 이 기기에 기억돼요. 페이지 주소에는 남지 않아서, `?sort=`나 `?filter=`가 들어간 링크로는 넘어가지 않아요.
 - 줄마다 표지, 제목, 작가와 시리즈, 그리고 매칭을 얼마나 확신하는지 "95% match"처럼 퍼센트로 보여 줘요. 폴더 상세 정보의 **Find a match**나 **Change match**로 직접 검색할 수 있어요.
 - 판본을 확인할 ASIN이나 재생 시간이 파일에 없으면 폴더 상세 정보에 그렇다고 나와요.
 - **Rescan**은 스캔 뒤에 추가된 폴더를 찾아오고, 내가 고른 건 그대로 둬요.

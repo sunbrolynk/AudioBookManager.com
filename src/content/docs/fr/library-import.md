@@ -9,13 +9,13 @@ Library Import scanne un dossier de livres audio, fait correspondre chaque dossi
 
 1. Scanne un dossier. Chaque dossier qui contient de l'audio devient une ligne.
 2. Vérifie les correspondances. Corrige celles qui en ont besoin.
-3. Sélectionne les lignes et ajoute-les à la bibliothèque.
+3. Coche les lignes que tu veux, puis ajoute-les à la bibliothèque ou supprime-les.
 
-Chaque option est un remplacement facultatif d'une valeur par défaut de Media Management. Un simple scan suivi d'un ajout ne demande jamais plus de deux clics.
+Chaque option est un remplacement facultatif d'une valeur par défaut de Media Management.
 
 ## Lire la liste
 
-- Le résumé montre combien de dossiers ont été trouvés et combien ont une correspondance. Filtre la liste par All, Matched, Needs attention, Unmatched, In library ou Failed lookup. Le filtre est gardé dans l'adresse de la page.
+- Le résumé montre combien de dossiers ont été trouvés et combien sont prêts. La barre du haut a **Sort** (Folder name, Status, Title, Author, Series, Files) et **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Chaque filtre affiche son nombre, et les nombres correspondent au résumé. Une correspondance que tu as confirmée s'appelle Ready. Le tri et le filtre sont mémorisés sur cet appareil. Ils ne sont pas gardés dans l'adresse de la page, donc un lien avec `?sort=` ou `?filter=` ne les transmet pas.
 - Chaque ligne affiche la couverture, le titre, l'auteur et la série, et le degré de certitude de la correspondance en pourcentage, comme « 95% match ». Les détails du dossier proposent **Find a match** ou **Change match** pour chercher à la main.
 - Quand les fichiers n'ont ni ASIN ni durée pour confirmer l'édition, les détails du dossier le disent.
 - **Rescan** prend en compte les dossiers ajoutés depuis le scan et garde tes choix.
