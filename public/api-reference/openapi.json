@@ -26119,6 +26119,42 @@
         "title": "FolderMismatchRow",
         "description": "A folder name and its files' tags naming different books."
       },
+      "FormatCopyRow": {
+        "properties": {
+          "group": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Group"
+          },
+          "format": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 1,
+            "title": "Format"
+          },
+          "outranked_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outranked By"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "group",
+          "format"
+        ],
+        "title": "FormatCopyRow",
+        "description": "A row's place among copies of one book in several formats; a set\n`outranked_by` names the format that hides it."
+      },
       "FrontendErrorReport": {
         "properties": {
           "error": {
@@ -31481,6 +31517,20 @@
           "failed_count": {
             "type": "integer",
             "title": "Failed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
           }
         },
         "type": "object",
@@ -32340,6 +32390,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/FolderMismatchRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "format_copy": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormatCopyRow"
               },
               {
                 "type": "null"

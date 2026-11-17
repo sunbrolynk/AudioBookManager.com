@@ -35,7 +35,7 @@ Pull down at the top of a page to refresh it.
 
 - On Library Import's results page, the title is Match Audiobooks. It gets smaller below 390 pixels wide and wraps to two lines below 360, so it shows in full.
 - The **...** sheet has three groups. Selection holds Select all ready, Deselect unmatched and Join rows. Sort holds the sort choices. Scan holds Rescan for new folders.
-- The bar at the bottom keeps the count of selected folders, Deselect all, Add and Delete. Delete asks you to type `delete` first. A row with no audio only offers Delete. Joining is covered under Joining, splitting and adding in Library Import.
+- The bar at the bottom keeps the count of selected folders, Deselect all, Add and Delete. Delete asks you to type `delete` first. A row with no audio, and a hidden copy, only offer Delete. A hidden copy's row and details say which format was kept instead. Joining is covered under Joining, splitting and adding in Library Import.
 
 ## Selection
 
@@ -82,5 +82,6 @@ In Log Files, **Live** and **Refresh** are in the top bar, and with Live on the 
 ![The Import Workbench on a phone](../../assets/docs/phone-workbench.jpg)
 
 - A summary card shows how many folders are ready. Tap it to open the legend and filter the list.
-- A row of status chips under it filters the list. Tap a folder to open it as its own screen.
-- The bottom bar shows how many are selected, the Add and Delete buttons, and says why Add is blocked.
+- A row of status chips under it filters the list, the same as Filter. **Hidden** is among them while there are hidden copies of a book kept in another format, and **All** leaves those out. See [Copies in several formats](/library-import/#copies-in-several-formats). Tap a folder to open it as its own screen.
+- In join mode, tapping a hidden copy, or a second copy of a book already marked in another format, marks nothing and says why above the Join button.
+- The bottom bar shows how many are selected, the Add and Delete buttons, and says why Add is blocked. Add's count leaves out hidden copies.
