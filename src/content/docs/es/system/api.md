@@ -18,6 +18,7 @@ ABM tiene una API REST bajo `/api`. La referencia interactiva está en `/api/doc
 - Una petición del navegador que cambia el estado necesita un origen que coincida. Los scripts que usan una clave están exentos.
 - El cuerpo de las peticiones está limitado a 10 MiB (`MAX_REQUEST_BODY_BYTES`). La restauración de copias de seguridad y la subida de portadas tienen límites mayores. Pasarse del límite da HTTP 413.
 - Los errores de validación nunca repiten lo que enviaste.
+- `POST /api/tasks` solo encola `backup_export`. Cualquier otro tipo de tarea recibe HTTP 403, y una configuración que no encaja con `backup_export` recibe HTTP 422. Las importaciones manuales van por los endpoints de `/api/manual-import/` y los escaneos de la biblioteca por `POST /api/library/scan`.
 
 ## Caídas de metadatos
 

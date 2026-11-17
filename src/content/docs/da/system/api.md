@@ -18,6 +18,7 @@ ABM har et REST API under `/api`. Den interaktive reference ligger på `/api/doc
 - En browser-request, der ændrer tilstand, kræver en matchende origin. Scripts, der bruger en nøgle, er undtaget.
 - Request bodies er begrænset til 10 MiB (`MAX_REQUEST_BODY_BYTES`). Gendannelse af backup og upload af covers har højere grænser. Over grænsen giver HTTP 413.
 - Valideringsfejl gentager aldrig det, du sendte.
+- `POST /api/tasks` sætter kun `backup_export` i kø. Alle andre opgavetyper får HTTP 403, og indstillinger, der ikke passer til `backup_export`, får HTTP 422. Manuelle importer går gennem endpoints under `/api/manual-import/`, og biblioteksscanninger gennem `POST /api/library/scan`.
 
 ## Nedbrud hos metadatakilden
 
