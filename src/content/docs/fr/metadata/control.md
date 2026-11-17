@@ -47,9 +47,7 @@ Les tags t'appartiennent. Les tags automatiques les posent selon des règles (ge
 
 Tout ce qu'ABM apprend sur un livre reste dans la base SQLite d'ABM dans `/config`, y compris les livres que tu retires ensuite. Sauvegarde ce dossier et le registre est sauvegardé. Une fois un livre entré, ses métadonnées ne dépendent plus de la disponibilité de la source.
 
-:::caution[Prévu pour une version ultérieure]
-Une **Local Metadata Library** dédiée est prévue : une copie facultative de tout ce qu'ABM a déjà consulté, conservée même après qu'un livre a quitté ta bibliothèque, avec ses propres sauvegardes planifiées et un téléchargement SQLite.
-:::
+La section **Local Storage** de **Settings > Metadata**, affichée avec la source Built-in, est un aperçu d'une copie locale facultative de tout ce qu'ABM a consulté. Elle n'est pas encore branchée.
 
 ## Plannings de rafraîchissement
 

@@ -9,13 +9,13 @@ Biblioteksimport scanner en mappe med lydbøger, matcher hver mappe med metadata
 
 1. Scan en mappe. Hver mappe med lyd bliver en række.
 2. Tjek matchene. Ret dem, der skal rettes.
-3. Vælg rækkerne, og tilføj dem til biblioteket.
+3. Sæt flueben ved de rækker, du vil have, og tilføj dem så til biblioteket, eller slet dem.
 
-Hver mulighed er en valgfri tilsidesættelse af en standard i Media Management. En helt almindelig scanning og tilføjelse kræver aldrig mere end to klik.
+Hver mulighed er en valgfri tilsidesættelse af en standard i Media Management.
 
 ## Sådan læser du listen
 
-- Oversigten viser, hvor mange mapper der blev fundet, og hvor mange der blev matchet. Filtrér listen efter All, Matched, Needs attention, Unmatched, In library eller Failed lookup. Filteret bliver gemt i sidens adresse.
+- Oversigten viser, hvor mange mapper der blev fundet, og hvor mange der er klar. Topbjælken har **Sort** (Folder name, Status, Title, Author, Series, Files) og **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Hvert filter viser sit antal, og tallene passer med oversigten. Et match, du har bekræftet, hedder Ready. Sortering og filter huskes på denne enhed. De gemmes ikke i sidens adresse, så et link med `?sort=` eller `?filter=` tager dem ikke med.
 - Hver række viser cover, titel, forfatter og serie, og hvor sikkert matchet er i procent, fx "95% match". Mappedetaljerne har **Find a match** eller **Change match**, så du kan søge i hånden.
 - Når filerne ikke har en ASIN eller spilletid, der kan bekræfte udgaven, står det i mappedetaljerne.
 - **Rescan** samler mapper op, der er kommet til siden scanningen, og beholder dine valg.

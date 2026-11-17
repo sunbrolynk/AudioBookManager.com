@@ -9,13 +9,13 @@ Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do met
 
 1. Zeskanuj folder. Każdy folder z audio staje się wierszem.
 2. Sprawdź dopasowania. Popraw te, które tego wymagają.
-3. Zaznacz wiersze i dodaj je do biblioteki.
+3. Zaznacz wiersze, które chcesz, a potem dodaj je do biblioteki albo usuń.
 
-Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management. Zwykłe skanowanie i dodanie nigdy nie potrzebuje więcej niż dwóch kliknięć.
+Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management.
 
 ## Jak czytać listę
 
-- Podsumowanie pokazuje, ile folderów znaleziono i ile się dopasowało. Listę możesz filtrować: All, Matched, Needs attention, Unmatched, In library albo Failed lookup. Filtr jest zapisywany w adresie strony.
+- Podsumowanie pokazuje, ile folderów znaleziono i ile jest gotowych. Górny pasek ma **Sort** (Folder name, Status, Title, Author, Series, Files) i **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Każdy filtr pokazuje swoją liczbę, a liczby zgadzają się z podsumowaniem. Dopasowanie, które potwierdzisz, nazywa się Ready. Sortowanie i filtr są zapamiętywane na tym urządzeniu. Nie są trzymane w adresie strony, więc link z `?sort=` albo `?filter=` ich nie przenosi.
 - Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie.
 - Kiedy pliki nie mają ASIN-u ani czasu trwania, który potwierdziłby wydanie, szczegóły folderu to pokazują.
 - **Rescan** wyłapuje foldery dodane od czasu skanowania i zachowuje twoje wybory.

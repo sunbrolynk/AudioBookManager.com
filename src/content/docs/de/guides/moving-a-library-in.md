@@ -12,9 +12,9 @@ description: Eine bestehende Sammlung sicher in ABM übernehmen.
 ## Die Schritte
 
 1. **Library > Library Import**, scan den Ordner.
-2. Lies die Liste. Zuordnungen zeigen einen Prozentwert. Korrigier Zeilen mit **Needs attention** und **Unmatched** über **Find a match** oder führ Zeilen zusammen, die ein über mehrere Ordner verteiltes Buch sind.
+2. Lies die Liste. Zuordnungen zeigen einen Prozentwert. Korrigier Zeilen mit **Needs a look** und **Unmatched** über **Find a match** oder führ Zeilen zusammen, die ein über mehrere Ordner verteiltes Buch sind.
 3. Prüf Cover und zusätzliche Dateien pro Ordner nur, wenn du von den Standards abweichen willst.
-4. Wähl die Zeilen aus und füg sie hinzu. Wenn du die Standards übernimmst, bleibt es bei zwei Klicks.
+4. Wähl die Zeilen aus und füg sie hinzu.
 5. Behalt die Aufgabe im Blick. Die Zusammenfassung sagt, wie viele Dateien kopiert statt per Hardlink übernommen wurden und was fehlgeschlagen ist.
 
 ## Wenn deine Sammlung schon da liegt, wo du sie haben willst

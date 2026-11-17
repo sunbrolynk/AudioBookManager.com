@@ -12,9 +12,9 @@ description: Porta in ABM una collezione esistente senza rischi.
 ## I passaggi
 
 1. **Library > Library Import**, scansiona la cartella.
-2. Leggi l'elenco. Le corrispondenze mostrano una percentuale. Sistema le righe **Needs attention** e **Unmatched** con **Find a match**, oppure unisci le righe che sono un unico libro diviso tra più cartelle.
+2. Leggi l'elenco. Le corrispondenze mostrano una percentuale. Sistema le righe **Needs a look** e **Unmatched** con **Find a match**, oppure unisci le righe che sono un unico libro diviso tra più cartelle.
 3. Controlla copertina e file extra per cartella solo se vuoi cambiare i valori predefiniti.
-4. Seleziona le righe e aggiungile. Se accetti i valori predefiniti restano due clic.
+4. Seleziona le righe e aggiungile.
 5. Tieni d'occhio il task. Il riepilogo dice quanti file sono stati copiati invece che collegati con hardlink e cosa è fallito.
 
 ## Se la tua collezione è già dove la vuoi
