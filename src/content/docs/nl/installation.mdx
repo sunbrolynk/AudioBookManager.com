@@ -52,7 +52,7 @@ De database is een SQLite-bestand in `/config`, dus je hoeft geen databaseservic
    docker compose up -d
    ```
 
-4. **Open hem.** Ga naar `http://your-server:5173`. Bij het eerste bezoek word je door het aanmaken van een login geleid.
+4. **Open hem.** Ga naar `http://your-server:5173`. Bij het eerste bezoek opent een installatiewizard die je login aanmaakt en de rest van wat ABM nodig heeft. Zie [Eerste configuratie](/nl/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Draait je downloadclient in een eigen container, dan moet zijn downloadmap dezel
 
 ## De eerste keer
 
-Stel je tijdzone in met `TIMEZONE` in het compose-bestand. Voeg daarna in **Settings** een rootmap toe onder **Media Management**, een indexer onder **Indexers** en een downloadclient onder **Download Clients**. Omgevingsvariabelen en reverse proxy's staan bij [Configuratie](/nl/configuration/).
+Stel je tijdzone in met `TIMEZONE` in het compose-bestand. Open daarna ABM en volg de installatiewizard. Die maakt je login aan, stelt in hoe ABM het internet op komt en waar het boeken opzoekt, en voegt een rootmap toe. Een downloadclient en een indexer kun je daar ook toevoegen, of later via **Settings > Download Clients** en **Settings > Indexers**. De wizard staat beschreven in [Eerste configuratie](/nl/getting-started/first-run-setup/). Omgevingsvariabelen en reverse proxy's worden uitgelegd in [Configuratie](/nl/configuration/).
 
 ## Zelf bouwen vanaf de broncode
 

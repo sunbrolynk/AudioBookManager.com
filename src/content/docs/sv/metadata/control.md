@@ -47,9 +47,7 @@ Taggarna är dina. Automatiska taggar sätter dem enligt regler (genre, uppläsa
 
 Allt ABM lär sig om en bok stannar i ABM:s egen SQLite-databas i `/config`, även böcker du senare tar bort. Säkerhetskopiera den mappen så är registret säkerhetskopierat. Metadatan är inte beroende av att källan går att nå när en bok väl har kommit in.
 
-:::caution[Kommer i en senare version]
-Ett eget **Local Metadata Library** är planerat: en valfri kopia av allt ABM någonsin har slagit upp, kvar även efter att en bok lämnat ditt bibliotek, med egna schemalagda säkerhetskopior och en SQLite-nedladdning.
-:::
+Sektionen **Local Storage** under **Settings > Metadata**, som visas med Built-in-källan, är en förhandsvisning av en valfri lokal kopia av allt ABM har slagit upp. Den är inte ansluten än.
 
 ## Scheman för uppdateringar
 

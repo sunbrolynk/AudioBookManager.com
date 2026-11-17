@@ -12,9 +12,9 @@ description: Mete una colección que ya tienes en ABM sin riesgos.
 ## Los pasos
 
 1. En **Library > Library Import**, escanea la carpeta.
-2. Lee la lista. Las coincidencias muestran un porcentaje. Corrige las filas **Needs attention** y **Unmatched** con **Find a match**, o une las filas que son un mismo libro repartido en varias carpetas.
+2. Lee la lista. Las coincidencias muestran un porcentaje. Corrige las filas **Needs a look** y **Unmatched** con **Find a match**, o une las filas que son un mismo libro repartido en varias carpetas.
 3. Revisa la portada y los archivos extra de cada carpeta solo si quieres cambiar los valores por defecto.
-4. Selecciona las filas y añádelas. Si aceptas los valores por defecto, siguen siendo dos clics.
+4. Selecciona las filas y añádelas.
 5. Sigue la tarea. El resumen dice cuántos archivos se copiaron en lugar de enlazarse y qué falló.
 
 ## Si tu colección ya está donde la quieres
@@ -28,4 +28,5 @@ Al importar, cada libro se coloca con la estructura Author/Series/Book propia de
 - Un libro que ya está en la biblioteca aparece como tal. Rechaza el duplicado con la respuesta keep library en lugar de importarlo dos veces.
 - Rechazar una carpeta sin audio solo elimina lo que pertenece a esa fila, y va a la papelera de reciclaje si está activada.
 - Un ASIN encontrado en una descripción es una pista, no una coincidencia, salvo que el título también concuerde.
+- Una coincidencia que los archivos no confirman, ni por ASIN ni por duración junto con la posición en la serie o el título, espera sin marcar en **Needs a look**, y **Select All** la deja fuera. Consulta [Library Import](/es/library-import/).
 - Después de importar, actualiza para traer los metadatos actuales, y activa la escritura de archivos auxiliares si quieres que Audiobookshelf vea lo que elegiste en ABM. Consulta [Archivos auxiliares](/es/using/sidecars/).

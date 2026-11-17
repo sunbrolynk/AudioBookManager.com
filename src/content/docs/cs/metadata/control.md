@@ -47,9 +47,7 @@ Kniha nese svou sérii a pořadí. ABM sleduje série jako katalogy, takže umí
 
 Všechno, co se ABM o knize dozví, zůstává ve vlastní databázi SQLite v `/config`, včetně knih, které později odebereš. Zazálohuj tuhle složku a máš zazálohovaný i záznam. Jakmile je kniha uvnitř, metadata nezávisí na tom, jestli je zdroj dostupný.
 
-:::caution[Přijde v pozdější verzi]
-Plánuje se samostatná **Local Metadata Library**: volitelná kopie všeho, co ABM kdy vyhledal, zachovaná i poté, co kniha opustí tvou knihovnu, s vlastními plánovanými zálohami a stažením v SQLite.
-:::
+Sekce **Local Storage** v **Settings > Metadata**, zobrazená se zdrojem Built-in, je náhled volitelné místní kopie všeho, co ABM vyhledal. Zatím není připojená.
 
 ## Plány obnovy
 

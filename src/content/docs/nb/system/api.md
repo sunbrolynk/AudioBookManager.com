@@ -18,9 +18,10 @@ ABM har et REST-API under `/api`. Den interaktive referansen ligger på `/api/do
 - En nettleserforespørsel som endrer tilstand, trenger en opprinnelse som stemmer. Skript som bruker en nøkkel, er unntatt.
 - Forespørselskropper er begrenset til 10 MiB (`MAX_REQUEST_BODY_BYTES`). Gjenoppretting av sikkerhetskopi og opplasting av cover har høyere grenser. Over grensen gir HTTP 413.
 - Valideringsfeil gjentar aldri det du sendte.
+- `POST /api/tasks` setter bare `backup_export` i kø. Alle andre oppgavetyper får HTTP 403, og innstillinger som ikke passer til `backup_export`, får HTTP 422. Manuelle importer går gjennom endepunktene under `/api/manual-import/`, og biblioteksskanninger gjennom `POST /api/library/scan`.
 
 ## Brudd hos metadatakilden
 
-Et boksøk som ikke får svar fra Libex, gir 502 med "Libex search failed". Et søk etter forfattere eller serier gir 503 med "Libex could not be reached; try again shortly". Noen oppslagsruter gir fortsatt et tomt resultat under et avbrudd.
+En forespørsel som trenger metadatakilden og ikke får svar, feiler med en `detail` som nevner kilden og årsaken, aldri med et tomt resultat. Et søk du venter på gir opp etter omtrent 10 sekunder når Libex begrenser farten.
 
 Kan du Sonarr: API-et er ikke kompatibelt med v3. Prowlarr kan synkronisere indekserere inn i ABM gjennom Prowlarr-tilkoblingen.

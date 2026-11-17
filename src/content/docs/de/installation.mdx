@@ -52,7 +52,7 @@ Die Datenbank ist eine SQLite-Datei in `/config`, du musst also keinen Datenbank
    docker compose up -d
    ```
 
-4. **Öffne es.** Ruf `http://your-server:5173` auf. Beim ersten Besuch richtest du Schritt für Schritt einen Login ein.
+4. **Öffne es.** Ruf `http://your-server:5173` auf. Beim ersten Besuch öffnet sich ein Einrichtungsassistent, der deinen Login und alles Weitere anlegt, was ABM braucht. Siehe [Ersteinrichtung](/de/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Wenn dein Download-Client in einem eigenen Container läuft, muss sein Download-
 
 ## Erster Start
 
-Stell deine Zeitzone in der Compose-Datei über `TIMEZONE` ein. Danach legst du in **Settings** einen Root-Ordner unter **Media Management** an, einen Indexer unter **Indexers** und einen Download-Client unter **Download Clients**. Umgebungsvariablen und Reverse Proxys sind unter [Konfiguration](/de/configuration/) erklärt.
+Stell deine Zeitzone in der Compose-Datei über `TIMEZONE` ein. Öffne danach ABM und folge dem Einrichtungsassistenten. Er legt deinen Login an, stellt ein, wie ABM ins Internet kommt und wo es Bücher nachschlägt, und fügt einen Root-Ordner hinzu. Einen Download-Client und einen Indexer kannst du dort auch hinzufügen oder später unter **Settings > Download Clients** und **Settings > Indexers**. Der Assistent ist unter [Ersteinrichtung](/de/getting-started/first-run-setup/) beschrieben. Umgebungsvariablen und Reverse Proxys sind unter [Konfiguration](/de/configuration/) erklärt.
 
 ## Aus dem Quellcode bauen
 

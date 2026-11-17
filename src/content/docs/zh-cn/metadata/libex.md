@@ -7,6 +7,6 @@ ABM 从 **Libex** 获取书籍、作者、系列和章节数据。Libex 是一�
 
 Libex: [源代码](https://github.com/LibexHQ/Libex) · [API 参考](https://libexdb.com/redoc)
 
-ABM 向 libexdb.com 上的公共 Libex 实例查询。数据源的选择计划在后续版本中提供。
+在 **Settings > Metadata** 里选择来源：Built-in、libexdb.com 上的托管实例，或你自己的 Libex 服务器。见[选择元数据源](/zh-cn/metadata/choosing-a-source/)。
 
 连不上 Libex 时，ABM 会明确告诉你，并写出元数据源的名字。你仍然可以手动添加和导入书。见 [故障排除](/zh-cn/troubleshooting/#元数据源不可用)。

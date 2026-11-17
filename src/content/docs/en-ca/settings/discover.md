@@ -14,7 +14,7 @@ Each catalogue (New Releases, Coming Soon, Audible Best, Recommended) has its ow
 | Setting | Effect |
 |---|---|
 | Auto Refresh | Refresh catalogues on a schedule |
-| Frequency | Daily, weekly or monthly, with day and time |
+| Frequency | Daily, weekly or monthly, with day and time. Day of Month is 1 to 28 |
 | Refresh on Startup | Fill any empty catalogue when ABM starts |
 | Use CRON Expression | Replaces the simple options |
 
@@ -25,6 +25,8 @@ Each catalogue (New Releases, Coming Soon, Audible Best, Recommended) has its ow
 | Pages to Scrape | 1 to 50 | Audible pages read per catalogue |
 | Max ASINs per Refresh | 100 to 5000 | Books fetched from Libex per refresh |
 | Batch Size | 10 to 900 | ASINs per Libex request. Larger is faster and may fail on some systems |
+
+A value outside these ranges, or outside the schedule ranges above, is refused with HTTP 422 and nothing is saved.
 
 The defaults live in the app and are not repeated here. Open the page to see them.
 

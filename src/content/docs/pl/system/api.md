@@ -18,9 +18,10 @@ ABM ma REST API pod `/api`. Interaktywna dokumentacja jest pod `/api/docs` (Swag
 - Żądanie z przeglądarki, które zmienia stan, potrzebuje pasującego originu. Skrypty używające klucza są z tego zwolnione.
 - Ciała żądań są ograniczone do 10 MiB (`MAX_REQUEST_BODY_BYTES`). Przywracanie kopii zapasowej i wgrywanie okładek mają wyższe limity. Powyżej limitu jest HTTP 413.
 - Błędy walidacji nigdy nie odsyłają z powrotem tego, co wysłałeś.
+- `POST /api/tasks` kolejkuje tylko `backup_export`. Każdy inny typ zadania dostaje HTTP 403, a ustawienia, które nie pasują do `backup_export`, dostają HTTP 422. Ręczne importy idą przez endpointy `/api/manual-import/`, a skanowanie biblioteki przez `POST /api/library/scan`.
 
 ## Awarie metadanych
 
-Wyszukiwanie książek, które nie dostaje odpowiedzi od Libexa, zwraca 502 z "Libex search failed". Wyszukiwanie autorów lub serii zwraca 503 z "Libex could not be reached; try again shortly". Niektóre trasy wyszukiwania podczas awarii nadal zwracają pusty wynik.
+Żądanie, które potrzebuje źródła metadanych i nie dostaje odpowiedzi, kończy się błędem z `detail` wskazującym źródło i powód, nigdy pustym wynikiem. Wyszukiwanie, na które czekasz, poddaje się po około 10 sekundach, gdy Libex ogranicza tempo.
 
 Jeśli znasz Sonarra: API nie jest zgodne z v3. Prowlarr może synchronizować indeksery do ABM przez swoje połączenie z Prowlarrem.

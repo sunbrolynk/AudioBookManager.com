@@ -5,6 +5,10 @@ description: Quali file sidecar e tag audio scrive ABM, e quando.
 
 **Settings > Metadata** decide cosa scrive ABM nella cartella di un libro e nei suoi file. Come vengono usati questi file è spiegato in [File sidecar](/it/using/sidecars/).
 
+## Fonte (Source)
+
+**Metadata Source** è Built-in (predefinita), Hosted (libexdb.com) o Self-hosted, che richiede un **Server URL**. **Test** fa una richiesta vera alla fonte scelta senza salvare, **Status** dice se è pronta, e **Connection** mostra la via da cui escono le richieste, con un link a **Settings > Network**. Il cambio vale subito per tutte le richieste. Vedi [Scegliere una fonte di metadati](/it/metadata/choosing-a-source/).
+
 ## Creazione dei file di metadati
 
 | Impostazione | Predefinito | Effetto |
@@ -28,11 +32,12 @@ Scrive i tag audio dentro i file audio stessi.
 
 Campi dei tag, tutti attivi di default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) e Cover Art.
 
-## In arrivo in una release successiva
+## Archivio locale (Local Storage)
 
-Una scelta della fonte di metadati e una copia locale della libreria di metadati sono previste per una release successiva. Vedi [I tuoi metadati, il tuo controllo](/it/metadata/control/).
+Con la fonte Built-in compaiono le sezioni **Local Storage** e **Storage Backups**. Sono un'anteprima e non sono ancora collegate. Vedi [I tuoi metadati, sotto il tuo controllo](/it/metadata/control/).
 
 ## Da tenere presente
 
 - La scrittura dei tag modifica i file audio. Audiobookshelf li vedrà come modificati.
 - Se durante la scrittura dei tag non si riescono a prendere metadati o copertina, la chiamata restituisce degli avvisi invece di fallire.
+- Quando una copertina non è stata incorporata perché la connessione l'ha rifiutata, la pagina del libro e la finestra di modifica mostrano un avviso invece di un semplice successo.

@@ -18,9 +18,10 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 - Požadavek z prohlížeče, který mění stav, potřebuje odpovídající původ. Skripty s klíčem jsou výjimkou.
 - Těla požadavků jsou omezená na 10 MiB (`MAX_REQUEST_BODY_BYTES`). Obnova zálohy a nahrání obálky mají vyšší limity. Nad limitem přijde HTTP 413.
 - Chyby validace nikdy nevracejí zpátky to, co jsi poslal.
+- `POST /api/tasks` zařadí do fronty jen `backup_export`. Jakýkoli jiný typ úlohy dostane HTTP 403 a nastavení, která k `backup_export` nesedí, dostanou HTTP 422. Ruční importy jdou přes endpointy `/api/manual-import/` a skenování knihovny přes `POST /api/library/scan`.
 
 ## Výpadky metadat
 
-Vyhledávání knih, které nedostane odpověď od Libexu, vrátí 502 s "Libex search failed". Vyhledávání autorů nebo sérií vrátí 503 s "Libex could not be reached; try again shortly". Některé vyhledávací cesty při výpadku pořád vracejí prázdný výsledek.
+Požadavek, který potřebuje zdroj metadat a nedostane odpověď, selže s `detail`, který pojmenuje zdroj a důvod, nikdy s prázdným výsledkem. Hledání, na které čekáš, se po zhruba 10 sekundách vzdá, když Libex omezuje rychlost.
 
 Pokud znáš Sonarr: API není kompatibilní s v3. Prowlarr umí do ABM synchronizovat indexery přes své připojení Prowlarr.
