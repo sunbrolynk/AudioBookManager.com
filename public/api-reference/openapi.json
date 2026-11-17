@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.22.0",
+    "version": "0.24.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3421,7 +3421,7 @@
           "Library Import"
         ],
         "summary": "Retry Automatic Matching",
-        "description": "Retry automatic matching on pending_search and no_match items.\n\nExpects JSON body:\n{\n    \"items\": [\n        {\n            \"path\": \"/path/to/folder\",\n            \"parsed_title\": \"Book Title\",\n            \"parsed_authors\": [\"Author Name\"],\n            \"parsed_series\": \"Series Name\",\n            \"parsed_position\": \"1\",\n            \"parsed_asin\": \"B00XXXXXX\",\n            \"audio_files\": [\"file1.mp3\", \"file2.mp3\"],\n            \"file_count\": 2\n        },\n        ...\n    ]\n}\n\nReturns updated results with matches found.",
+        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
         "requestBody": {
           "content": {
@@ -17125,7 +17125,7 @@
           "Tasks"
         ],
         "summary": "Queue Task",
-        "description": "Queue a new background task. Task types: `backup_export` (export backups\nto remote targets), `manual_import` (import files from the manual import\nfolder) and `library_scan` (scan the library for changes).",
+        "description": "Queue a background task. The only task type you can queue here is\n`backup_export`, which exports backups to remote targets. Its payload is\n`filenames` (the backup files to export) and `target_ids` (the remote\ntargets to send them to); each must list at least one entry. Any other\ntask type is refused with 403.",
         "operationId": "queue_task_api_tasks_post",
         "requestBody": {
           "required": true,
@@ -30934,22 +30934,6 @@
             "additionalProperties": true,
             "type": "object",
             "title": "Payload"
-          },
-          "priority": {
-            "type": "integer",
-            "title": "Priority",
-            "default": 100
-          },
-          "total_items": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Items"
           }
         },
         "type": "object",
@@ -31599,6 +31583,7 @@
               "type": "object"
             },
             "type": "array",
+            "maxItems": 100,
             "title": "Items",
             "default": []
           }
@@ -32287,6 +32272,18 @@
               }
             ],
             "title": "Parsed Asin"
+          },
+          "parsed_hint_asin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parsed Hint Asin"
           },
           "parsed_runtime_length_min": {
             "anyOf": [
