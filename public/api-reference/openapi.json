@@ -3287,7 +3287,7 @@
           "Library Import"
         ],
         "summary": "Rescan Session",
-        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left exactly as they are; the new rows are returned.",
+        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left as they are, save a `format_copy` stamped on a stored\nrow a new row is a format copy of; the new rows and those stamps are returned.",
         "operationId": "rescan_session_api_library_import_session__session_id__rescan_post",
         "parameters": [
           {
