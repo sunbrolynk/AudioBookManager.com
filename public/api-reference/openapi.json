@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.21.3",
+    "version": "0.24.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -17184,7 +17184,7 @@
           "Tasks"
         ],
         "summary": "Queue Task",
-        "description": "Queue a new background task. Task types: `backup_export` (export backups\nto remote targets), `manual_import` (import files from the manual import\nfolder) and `library_scan` (scan the library for changes).",
+        "description": "Queue a background task. The only task type you can queue here is\n`backup_export`, which exports backups to remote targets. Its payload is\n`filenames` (the backup files to export) and `target_ids` (the remote\ntargets to send them to); each must list at least one entry. Any other\ntask type is refused with 403.",
         "operationId": "queue_task_api_tasks_post",
         "requestBody": {
           "required": true,
@@ -31124,22 +31124,6 @@
             "additionalProperties": true,
             "type": "object",
             "title": "Payload"
-          },
-          "priority": {
-            "type": "integer",
-            "title": "Priority",
-            "default": 100
-          },
-          "total_items": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Items"
           }
         },
         "type": "object",
