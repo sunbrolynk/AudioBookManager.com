@@ -28,4 +28,5 @@ Import dá každou knihu do vlastního rozložení ABM Autor/Série/Kniha pod v�
 - Kniha, která už v knihovně je, se tak i zobrazí. Duplikát odmítni odpovědí, která ponechá knihovnu, místo abys ji importoval dvakrát.
 - Odmítnutí složky bez zvuku odstraní jen to, co patří danému řádku, a pokud je zapnutý koš, putuje to do něj.
 - ASIN nalezený v popisu je jen nápověda, ne shoda, pokud nesedí i název.
+- Shoda, kterou soubory nepotvrdí, ani přes ASIN, ani délkou spolu s pozicí v sérii nebo názvem, čeká nezaškrtnutá pod **Needs a look** a **Select All** ji vynechá. Viz [Library Import](/cs/library-import/).
 - Po importu obnov metadata, abys natáhl aktuální data, a zapni zápis doprovodných souborů, pokud chceš, aby Audiobookshelf viděl volby ABM. Viz [Doprovodné soubory](/cs/using/sidecars/).
