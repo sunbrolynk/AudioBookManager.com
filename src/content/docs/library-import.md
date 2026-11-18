@@ -70,9 +70,15 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
 - Leaving the page saves your pending edits.
 
+## Where books go
+
+Books imported from a folder or drive outside every root folder are organized into the default root folder, and they send an On Import notification. Books that already sit inside a root folder and that ABM doesn't know yet are added where they are, and their files are renamed in place. A file loose at the top of a root folder, or sharing a folder with other books, is moved into its own book folder in that same root. Nothing is copied, and no notification is sent. A root folder itself can't be picked as one book's source: ABM asks you to import the books inside it instead. Scans never notify. A joined row (several files put together as one book) counts as an import from outside when any of its files sits outside the root folder its folder is in: it is placed into the default root folder by the import mode and sends On Import. When a row adds missing files to a book already in the library, each file is handled on its own. A file that already sits inside one of your root folders is moved into the book's folder and renamed there, and is never copied, whatever the import mode. A file from outside your root folders follows the import mode (copy, move or hardlink). A row with both kinds is handled file by file. Adding files to an existing book sends no On Import notification. A book whose audio files can't be taken in fails the import with a message, and nothing is added for it.
+
+The destination line on the page reads: "Books imported from outside your root folders are organized into this root folder and send an On Import notification. Adopting books already in a root folder renames their files in place and doesn't notify."
+
 ## Copy, move or hardlink
 
-**Settings > Media Management > Importing** sets the default for Library Import: copy (the default), move or hardlink. You can pick another for each import.
+**Settings > Media Management > Importing** sets the default for Library Import of books from outside your root folders: copy (the default), move or hardlink. You can pick another for each import.
 
 A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the default root folder to support it and to be checked first. Otherwise the option is grayed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
 
