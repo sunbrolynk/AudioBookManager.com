@@ -21,11 +21,12 @@ description: Bring an existing collection into ABM safely.
 
 Adding the folder as a root folder doesn't add any books by itself. ABM's scans only check books it already knows about, so it won't pick up what's in there. The books still have to come in through Library Import: the root's **Unmapped Folders** count under **Settings > Media Management** opens Library Import for that root.
 
-Importing puts each book in ABM's own Author/Series/Book layout under the default root folder. Pick hardlink to leave the originals untouched without using more space.
+Importing from outside your root folders puts each book in ABM's own Author/Series/Book layout under the default root folder. Pick hardlink to leave the originals untouched without using more space. Books already inside a root folder are added where they are and their files are renamed in place. A file loose at the top of a root folder, or sharing a folder with other books, is moved into its own book folder in that same root. Nothing is copied. A joined row (several files put together as one book) counts as an import from outside when any of its files sits outside the root folder its folder is in: it is placed into the default root folder by the import mode and sends On Import.
 
 ## Gotchas
 
 - A book already in the library is shown as such. Decline the duplicate with the keep-library answer rather than importing it twice.
 - Delete in the bar removes the folders you ticked yourself on screen, with audio or without, after you type `delete`. It goes to the recycle bin if enabled and leaves other books in the same parent folder alone. A folder that can't be deleted is reported on its own row while the others still go. "Delete these files, keep the library copy" is decided at Add.
 - An ASIN found in a description is a hint, not a match, unless the title also agrees.
+- A match the files don't confirm, by their ASIN or by runtime plus series position or title, waits under **Needs a look** unticked, and **Select All** passes it by. See [Library Import](/library-import/#how-a-match-is-accepted).
 - After importing, refresh to pull in current metadata, and turn on sidecar writing if you want Audiobookshelf to see ABM's choices. See [Sidecar files](/using/sidecars/).

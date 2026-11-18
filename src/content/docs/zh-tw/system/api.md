@@ -18,6 +18,7 @@ ABM 在 `/api` 底下有一套 REST API。互動式參考在 `/api/docs`（Swagg
 - 瀏覽器送來會改變狀態的請求，需要符合的來源。使用金鑰的指令碼不受限制。
 - 請求內容最大 10 MiB（`MAX_REQUEST_BODY_BYTES`）。備份還原和封面上傳的上限比較大。超過上限會回 HTTP 413。
 - 驗證錯誤永遠不會把你送出的內容原樣回傳。
+- `POST /api/tasks` 只會把 `backup_export` 加入佇列。其他任何工作類型都會收到 HTTP 403，不符合 `backup_export` 的設定會收到 HTTP 422。手動匯入請用 `/api/manual-import/` 底下的端點，掃描媒體庫請用 `POST /api/library/scan`。
 - `POST /api/manual-import/execute` 和 `/execute-to-book` 會依固定結構檢查每一列檔案。未知的鍵、相對路徑的 `source_path` 或空的 `files` 清單會被 HTTP 422 拒絕。每個來源都必須是音訊檔，且不在系統資料夾裡、不直接位於 `/tmp` 或 `/mnt` 這類頂層資料夾下，也不在 ABM 自己的資料夾（設定、資料庫、備份、記錄、封面、資源回收筒）裡，符號連結會被追蹤。被拒絕的檔案會收到寫有其路徑的 HTTP 400（`Can't import <path>: the file <reason>.`），也不會排入任何工作。
 
 ## 中繼資料服務中斷

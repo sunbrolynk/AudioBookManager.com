@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Messaggi personalizzati
 
-Un messaggio personalizzato riscrive il testo di un evento. Scegli un **Format**, una **Cover** (Auto usa la copertina del libro, None, oppure un Custom URL), scrivi il **Title** e il corpo, e clicca su una variabile per inserirla. Il modello predefinito di ogni evento è un punto di partenza. L'anteprima mostra il risultato, e puoi inviare una prova tramite una connessione.
+Un messaggio personalizzato riscrive il testo di un evento. Scegli un **Format**, una **Cover** (Auto usa la copertina del libro, None, oppure un Custom URL), scrivi il **Title** e il corpo, e clicca su una variabile per inserirla. Il modello predefinito di ogni evento è un punto di partenza. L'anteprima mostra il risultato, e puoi inviare una prova tramite una connessione. L'URL di una copertina personalizzata deve essere un indirizzo pubblico; uno della tua LAN viene rifiutato.
 
 ## Da tenere presente
 

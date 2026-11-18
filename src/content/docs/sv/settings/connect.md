@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Egna meddelanden
 
-Ett eget meddelande skriver om texten för en händelse. Välj ett **Format**, ett **Cover** (Auto använder bokens omslag, None, eller en Custom URL), skriv **Title** och brödtext, och klicka på en variabel för att infoga den. Standardmallen för varje händelse är en utgångspunkt. Förhandsvisningen visar resultatet, och du kan skicka ett test via en anslutning.
+Ett eget meddelande skriver om texten för en händelse. Välj ett **Format**, ett **Cover** (Auto använder bokens omslag, None, eller en Custom URL), skriv **Title** och brödtext, och klicka på en variabel för att infoga den. Standardmallen för varje händelse är en utgångspunkt. Förhandsvisningen visar resultatet, och du kan skicka ett test via en anslutning. En egen omslags-URL måste vara en publik adress; en adress på ditt LAN avvisas.
 
 ## Fallgropar
 

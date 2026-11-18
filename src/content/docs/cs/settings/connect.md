@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Vlastní zprávy
 
-Vlastní zpráva přepíše text pro danou událost. Vyber **Format**, **Cover** (Auto použije obálku knihy, None, nebo Custom URL), napiš **Title** a tělo a kliknutím na proměnnou ji vložíš. Výchozí šablona každé události je jen výchozí bod. Náhled ukáže výsledek a přes připojení můžeš poslat test.
+Vlastní zpráva přepíše text pro danou událost. Vyber **Format**, **Cover** (Auto použije obálku knihy, None, nebo Custom URL), napiš **Title** a tělo a kliknutím na proměnnou ji vložíš. Výchozí šablona každé události je jen výchozí bod. Náhled ukáže výsledek a přes připojení můžeš poslat test. Vlastní URL obálky musí být veřejná adresa; adresa z tvé sítě LAN se odmítne.
 
 ## Na co si dát pozor
 

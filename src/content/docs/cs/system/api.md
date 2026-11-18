@@ -18,6 +18,7 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 - Požadavek z prohlížeče, který mění stav, potřebuje odpovídající původ. Skripty s klíčem jsou výjimkou.
 - Těla požadavků jsou omezená na 10 MiB (`MAX_REQUEST_BODY_BYTES`). Obnova zálohy a nahrání obálky mají vyšší limity. Nad limitem přijde HTTP 413.
 - Chyby validace nikdy nevracejí zpátky to, co jsi poslal.
+- `POST /api/tasks` zařadí do fronty jen `backup_export`. Jakýkoli jiný typ úlohy dostane HTTP 403 a nastavení, která k `backup_export` nesedí, dostanou HTTP 422. Ruční importy jdou přes endpointy `/api/manual-import/` a skenování knihovny přes `POST /api/library/scan`.
 - `POST /api/manual-import/execute` a `/execute-to-book` kontrolují každý řádek souboru podle pevného schématu. Neznámý klíč, relativní `source_path` nebo prázdný seznam `files` se odmítne s HTTP 422. Každý zdroj musí být zvukový soubor, který neleží v systémové složce, přímo ve složce nejvyšší úrovně jako `/tmp` nebo `/mnt`, ani v žádné z vlastních složek ABM (konfigurace, databáze, zálohy, logy, obálky, koš), přičemž se sledují symbolické odkazy. Odmítnutý soubor dostane HTTP 400 se svou cestou (`Can't import <path>: the file <reason>.`) a nic se nezařadí do fronty.
 
 ## Výpadky metadat

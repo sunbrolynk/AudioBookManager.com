@@ -37,7 +37,7 @@ La pagina di un libro ha in alto Search, Interactive, Import (Convert quando ha 
 
 - Calendar è un elenco giorno per giorno. Il selettore di vista imposta il periodo. Agenda non c'è.
 - Conversions ha le schede Queue e History.
-- Le schede della Dashboard si impilano in una sola colonna.
+- La Dashboard mostra i totali in una griglia, con sotto le schede New, Wanted e Coming e un breve riepilogo delle serie complete e del narratore che ascolti di più.
 - Le finestre di dialogo si aprono come pannelli dal fondo dello schermo.
 
 ## Impostazioni
