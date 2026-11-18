@@ -23,7 +23,7 @@ The two modes of **Authentication Required** you will use:
 
 These settings, and the local-address bypass, decide who gets the web interface. They never open the API. Every API call needs the API key, signed in or not.
 
-On a fresh install, requests are refused until setup finishes. Setup preselects **Enabled**, so a new install requires sign-in from every address. An existing install keeps its setting.
+On a fresh install, requests are refused until the account is created in the [setup wizard](/getting-started/first-run-setup/). Its Account step preselects **Enabled**, so a new install requires sign-in from every address. An existing install keeps its setting.
 
 ## Reverse proxies
 
@@ -74,4 +74,4 @@ There is no lockout. Failed attempts are logged, folded per address in the Activ
 
 ## Secrets
 
-Passwords and keys that ABM stores for indexers, clients and connections are encrypted with an app secret. Set `APP_SECRET` to keep the key off the config disk. If neither exists, ABM generates `/config/app_secret`. Proxy and export-target passwords are stored as plain text.
+Passwords and keys that ABM stores for indexers, clients and connections are encrypted with an app secret. Set `APP_SECRET` to keep the key off the config disk. If neither exists, ABM generates `/config/app_secret`. The proxy password and the remote passwords and S3 secret keys of backup export targets are encrypted the same way. If a saved password can't be decrypted (the key changed, or a backup was restored onto another instance), it is never sent, and Test and Export tell you to re-enter it. An older version can't read these encrypted values, so after rolling back, re-enter the proxy and export passwords. Tracker passkeys in RSS URLs are masked in the logs.

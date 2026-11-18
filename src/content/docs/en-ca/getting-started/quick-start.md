@@ -7,11 +7,11 @@ This is the shortest path from a running container to a book being searched for.
 
 ## 1. Sign in
 
-The first visit walks you through creating a login. Until you do, ABM refuses requests. How sign-in behaves afterwards is covered in [Security and sign-in](/en-ca/settings/security/).
+The first visit opens the setup wizard, and its first step creates your login. Until you do, ABM refuses requests. The wizard also covers steps 2 to 4 below, and [First-run setup](/en-ca/getting-started/first-run-setup/) describes each of its steps. How sign-in behaves afterwards is covered in [Security and sign-in](/en-ca/settings/security/).
 
 ## 2. Choose how ABM reaches the internet
 
-Under **Settings > General** there is a **Proxy** section. Set a proxy there if ABM has to go through one to reach the internet. Skip it if ABM can reach the internet directly.
+In the wizard this is the Network step. Later it is under **Settings > [Network](/en-ca/settings/network/)**. Choose how ABM reaches the internet: a proxy, a WireGuard tunnel, your own VPN container or Direct. Nothing goes out until you choose one.
 
 ## 3. Add a root folder
 
@@ -42,3 +42,5 @@ A book you add is wanted until a file for it is imported. Wanted books appear un
 ## 8. Watch it work
 
 **Activity > Queue** shows what is downloading. **Activity > History** shows what was grabbed and imported. When something goes wrong, [Troubleshooting](/en-ca/troubleshooting/) and the [Tasks](/en-ca/system/tasks/) page are the places to look.
+
+![The Dashboard: library totals, recent activity and recently added books](../../../../assets/docs/dashboard.jpg)

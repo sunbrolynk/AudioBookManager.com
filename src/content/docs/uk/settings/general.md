@@ -3,7 +3,7 @@ title: Загальні
 description: Хост, безпека, проксі, журнали та резервні копії.
 ---
 
-**Settings > General** має розділи Host, Security, Proxy, Logging і Backups. Security має [окрему сторінку](/uk/settings/security/).
+**Settings > General** має розділи Host, Security, Logging і Backups. Security має [окрему сторінку](/uk/settings/security/).
 
 ## Хост (Host)
 

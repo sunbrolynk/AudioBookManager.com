@@ -14,7 +14,7 @@ description: How ABM reaches the internet, with a proxy, a WireGuard tunnel or a
 | Use Proxy | off | Make the proxy below available as a connection |
 | Proxy Type | HTTP | HTTP, HTTPS, SOCKS5 or SOCKS5 (remote DNS), which sends DNS lookups through the proxy too |
 | Hostname, Port | empty | Proxy address |
-| Username, Password | empty | Optional |
+| Username, Password | empty | Optional. The password is stored encrypted with the app key. If it can't be decrypted, Test Connection asks you to re-enter it |
 | Test Connection | | Test Proxy checks the proxy. It needs a hostname |
 
 SOCKS4 is not supported. If a saved proxy still uses it, switch it to another type before saving. Testing and saving the proxy don't ask for your password.

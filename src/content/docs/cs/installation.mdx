@@ -52,7 +52,7 @@ Databáze je soubor SQLite v `/config`, takže žádnou databázovou službu nas
    docker compose up -d
    ```
 
-4. **Otevři ho.** Jdi na `http://your-server:5173`. Při první návštěvě tě ABM provede nastavením přihlášení.
+4. **Otevři ho.** Jdi na `http://your-server:5173`. První návštěva otevře průvodce nastavením, který vytvoří tvé přihlášení a zbytek toho, co ABM potřebuje. Viz [První nastavení](/cs/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +62,7 @@ Pokud tvůj klient pro stahování běží ve vlastním kontejneru, jeho složka
 
 ## První spuštění
 
-Nastav své časové pásmo přes `TIMEZONE` v souboru compose. Pak v **Settings** přidej kořenovou složku v **Media Management**, indexer v **Indexers** a klienta pro stahování v **Download Clients**. Proměnné prostředí a reverzní proxy popisuje [Konfigurace](/cs/configuration/).
+Nastav své časové pásmo přes `TIMEZONE` v souboru compose. Pak otevři ABM a projdi průvodce nastavením. Vytvoří tvé přihlášení, nastaví, jak se ABM dostane na internet a kde hledá knihy, a přidá kořenovou složku. Stahovacího klienta a indexer tam můžeš přidat také, nebo později v **Settings > Download Clients** a **Settings > Indexers**. Průvodce popisuje stránka [První nastavení](/cs/getting-started/first-run-setup/). Proměnné prostředí a reverzní proxy vysvětluje stránka [Konfigurace](/cs/configuration/).
 
 ## Sestavení ze zdrojáků
 

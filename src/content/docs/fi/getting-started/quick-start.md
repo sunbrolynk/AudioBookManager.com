@@ -7,11 +7,11 @@ Tämä on lyhin reitti käynnissä olevasta kontista siihen, että jotain kirjaa
 
 ## 1. Kirjaudu sisään
 
-Ensimmäisellä käynnillä sinut opastetaan luomaan tunnukset. Siihen asti ABM hylkää pyynnöt. Kirjautumisen toiminta sen jälkeen käydään läpi sivulla [Tietoturva ja kirjautuminen](/fi/settings/security/).
+Ensimmäinen käynti avaa käyttöönottoavustajan, ja sen ensimmäinen vaihe luo tunnuksesi. Kunnes teet sen, ABM hylkää pyynnöt. Avustaja kattaa myös alla olevat vaiheet 2–4, ja sivu [Ensimmäinen käyttöönotto](/fi/getting-started/first-run-setup/) kuvaa jokaisen sen vaiheen. Miten kirjautuminen toimii jatkossa, selitetään sivulla [Tietoturva ja kirjautuminen](/fi/settings/security/).
 
 ## 2. Valitse, miten ABM pääsee internetiin
 
-Kohdassa **Settings > General** on **Proxy**-osio. Aseta siellä välityspalvelin, jos ABM:n pitää kulkea sellaisen kautta päästäkseen internetiin. Jos ABM pääsee internetiin suoraan, ohita tämä.
+Avustajassa tämä on vaihe Network. Myöhemmin se löytyy kohdasta **Settings > [Network](/fi/settings/network/)**. Valitse, miten ABM pääsee internetiin: välityspalvelin, WireGuard-tunneli, oma VPN-konttisi tai Direct. Mitään ei lähde ulos, ennen kuin valitset yhden.
 
 ## 3. Lisää juurikansio
 

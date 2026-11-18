@@ -22,7 +22,7 @@ The search has modes for Title, Author, Series, Books by author, Books in series
 
 You also pick the root folder, the quality profile, and whether books that appear later are added too (**Monitor New Books**). That is on by default for a series and off for an author. An author or series already in your library shows "In Library" with an **Add missing books** action.
 
-The add runs as a background task with a progress toast.
+The add runs as a background task with a progress toast. If the task cannot be queued, **Add missing books** fails with "Could not queue the task." instead of reporting that books are being added.
 
 ## If search returns nothing
 

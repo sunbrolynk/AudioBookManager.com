@@ -1,8 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { existsSync } from 'node:fs';
+import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
 import { chromium } from 'playwright';
-import { fileFor, findOverflow } from '../scripts/check-overflow.mjs';
+import { fileFor, findOverflow, serve } from '../scripts/check-overflow.mjs';
 
 // Build hosts without Playwright's Chromium (Cloudflare Pages) skip this; GitHub Actions installs it, so there it always runs.
 const skip = !existsSync(chromium.executablePath()) && process.env.GITHUB_ACTIONS !== 'true' && "Playwright's Chromium is not installed on this host";
@@ -28,4 +30,22 @@ test('the check server only hands out files inside dist', () => {
   // The URL parser folds plain dot segments; an encoded slash only becomes one after decoding.
   assert.equal(fileFor('/site/dist', '/../package.json'), '/site/dist/package.json');
   for (const url of ['/%2e%2e%2fpackage.json', '/x/..%2f..%2f..%2fsecret', '/%E0%A4%A']) assert.equal(fileFor('/site/dist', url), null, url);
+});
+
+test('the check server redirects a directory URL and 404s a missing file without crashing', async () => {
+  const dist = mkdtempSync(join(tmpdir(), 'ovf-'));
+  mkdirSync(join(dist, 'docs'));
+  writeFileSync(join(dist, 'docs', 'index.html'), 'ok');
+  const server = await serve(dist);
+  const base = `http://127.0.0.1:${server.address().port}`;
+  try {
+    const dir = await fetch(`${base}/docs`, { redirect: 'manual' });
+    assert.equal(dir.status, 308);
+    assert.equal(dir.headers.get('location'), '/docs/');
+    assert.equal((await fetch(`${base}/docs/`)).status, 200);
+    assert.equal((await fetch(`${base}/missing.css`)).status, 404);
+  } finally {
+    server.close();
+    rmSync(dist, { recursive: true });
+  }
 });
