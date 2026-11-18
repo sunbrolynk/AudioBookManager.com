@@ -19,7 +19,7 @@ ABM에는 `/api` 아래에 REST API가 있어요. 인터랙티브 레퍼런스�
 - 요청 본문은 10 MiB로 제한돼요(`MAX_REQUEST_BODY_BYTES`). 백업 복원과 표지 업로드는 한도가 더 커요. 한도를 넘으면 HTTP 413이에요.
 - 유효성 검사 오류는 내가 보낸 값을 그대로 되돌려 보여 주지 않아요.
 - `POST /api/tasks`는 `backup_export`만 대기열에 넣습니다. 다른 작업 유형은 HTTP 403을 받고, `backup_export`에 맞지 않는 설정은 HTTP 422를 받습니다. 수동 가져오기는 `/api/manual-import/` 엔드포인트를, 라이브러리 스캔은 `POST /api/library/scan`을 사용하세요.
-- `POST /api/manual-import/execute`와 `/execute-to-book`은 파일 행마다 고정된 스키마로 확인해요. 알 수 없는 키, 상대 경로인 `source_path`, 빈 `files` 목록은 HTTP 422로 거부돼요. 각 소스는 시스템 폴더, `/tmp`나 `/mnt` 같은 최상위 폴더 바로 아래, ABM 자체 폴더(설정, 데이터베이스, 백업, 로그, 표지, 휴지통) 어디에도 있지 않은 오디오 파일이어야 하고, 심볼릭 링크는 따라가서 판단해요. 거부된 파일은 경로가 담긴 HTTP 400(`Can't import <path>: the file <reason>.`)을 받고, 아무것도 대기열에 들어가지 않아요.
+- `POST /api/manual-import/execute`와 `/execute-to-book`은 파일 행마다 고정된 스키마로 확인해요. 알 수 없는 키, 상대 경로인 `source_path`, 빈 `files` 목록은 HTTP 422로 거부돼요. 각 소스는 시스템 폴더, `/tmp`나 `/mnt` 같은 최상위 폴더 바로 아래, ABM 자체 폴더(설정, 데이터베이스, 백업, 로그, 표지, 휴지통, 임시 폴더, SSL 인증서와 키가 있는 폴더) 어디에도 있지 않은 오디오 파일이어야 하고, 심볼릭 링크는 따라가서 판단해요. 거부된 파일은 경로가 담긴 HTTP 400(`Can't import <path>: the file <reason>.`)을 받고, 아무것도 대기열에 들어가지 않아요.
 
 ## 메타데이터 장애
 

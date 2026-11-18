@@ -19,7 +19,7 @@ ABM har et REST API under `/api`. Den interaktive reference ligger på `/api/doc
 - Request bodies er begrænset til 10 MiB (`MAX_REQUEST_BODY_BYTES`). Gendannelse af backup og upload af covers har højere grænser. Over grænsen giver HTTP 413.
 - Valideringsfejl gentager aldrig det, du sendte.
 - `POST /api/tasks` sætter kun `backup_export` i kø. Alle andre opgavetyper får HTTP 403, og indstillinger, der ikke passer til `backup_export`, får HTTP 422. Manuelle importer går gennem endpoints under `/api/manual-import/`, og biblioteksscanninger gennem `POST /api/library/scan`.
-- `POST /api/manual-import/execute` og `/execute-to-book` tjekker hver filrække mod et fast skema. En ukendt nøgle, en relativ `source_path` eller en tom `files`-liste afvises med HTTP 422. Hver kilde skal være en lydfil, der ikke ligger i en systemmappe, direkte i en mappe på øverste niveau som `/tmp` eller `/mnt`, eller i en af ABM's egne mapper (konfiguration, database, sikkerhedskopier, logs, covers, papirkurv), med symlinks fulgt. En afvist fil får HTTP 400 med sin sti (`Can't import <path>: the file <reason>.`), og intet sættes i kø.
+- `POST /api/manual-import/execute` og `/execute-to-book` tjekker hver filrække mod et fast skema. En ukendt nøgle, en relativ `source_path` eller en tom `files`-liste afvises med HTTP 422. Hver kilde skal være en lydfil, der ikke ligger i en systemmappe, direkte i en mappe på øverste niveau som `/tmp` eller `/mnt`, eller i en af ABM's egne mapper (konfiguration, database, sikkerhedskopier, logs, covers, papirkurv, midlertidig mappe og mapperne med SSL-certifikatet og -nøglen), med symlinks fulgt. En afvist fil får HTTP 400 med sin sti (`Can't import <path>: the file <reason>.`), og intet sættes i kø.
 
 ## Nedbrud hos metadatakilden
 
