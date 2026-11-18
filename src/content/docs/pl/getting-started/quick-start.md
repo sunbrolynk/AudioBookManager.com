@@ -7,11 +7,11 @@ To najkrótsza droga od działającego kontenera do książki, której ABM zaczy
 
 ## 1. Zaloguj się
 
-Przy pierwszej wizycie ABM przeprowadzi cię przez założenie loginu. Dopóki tego nie zrobisz, ABM odrzuca żądania. Jak działa logowanie później, opisuje strona [Bezpieczeństwo i logowanie](/pl/settings/security/).
+Pierwsza wizyta otwiera kreator konfiguracji, a jego pierwszy krok tworzy twój login. Dopóki tego nie zrobisz, ABM odrzuca żądania. Kreator obejmuje też kroki 2 do 4 poniżej, a [Pierwsza konfiguracja](/pl/getting-started/first-run-setup/) opisuje każdy z jego kroków. Jak działa logowanie potem, opisano w [Bezpieczeństwo i logowanie](/pl/settings/security/).
 
 ## 2. Wybierz, jak ABM łączy się z internetem
 
-W **Settings > General** jest sekcja **Proxy**. Ustaw tam proxy, jeśli ABM musi łączyć się z internetem przez proxy. Jeśli ABM łączy się bezpośrednio, pomiń ten krok.
+W kreatorze to krok Network. Później znajdziesz to w **Settings > [Network](/pl/settings/network/)**. Wybierz, jak ABM łączy się z internetem: proxy, tunel WireGuard, twój własny kontener VPN albo Direct. Nic nie wychodzi, dopóki nie wybierzesz jednego.
 
 ## 3. Dodaj folder główny
 

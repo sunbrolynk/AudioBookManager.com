@@ -7,6 +7,6 @@ ABM gets book, author, series and chapter data from **Libex**, an open Audible m
 
 Libex: [Source code](https://github.com/LibexHQ/Libex) · [API Reference](https://libexdb.com/redoc)
 
-ABM asks the public Libex instance at libexdb.com. A choice of source is planned for a later release.
+Under **Settings > Metadata** you choose the source: Built-in, the hosted instance at libexdb.com, or your own Libex server. See [Choosing a metadata source](/metadata/choosing-a-source/).
 
 When Libex cannot be reached, ABM says so. You can still add and import books by hand. Libex uptime is on the [Libex status page](https://status.libexdb.com). See [Troubleshooting](/troubleshooting/#the-metadata-source-is-unavailable).

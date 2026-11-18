@@ -7,11 +7,11 @@ C'est le chemin le plus court entre un conteneur qui tourne et un livre en cours
 
 ## 1. Connecte-toi
 
-À la première visite, l'app te guide pour créer un identifiant. Tant que ce n'est pas fait, ABM refuse les requêtes. Le comportement de la connexion ensuite est expliqué dans [Sécurité et connexion](/fr/settings/security/).
+La première visite ouvre l'assistant de configuration, dont la première étape crée ton identifiant. Tant que ce n'est pas fait, ABM refuse les requêtes. L'assistant couvre aussi les étapes 2 à 4 ci-dessous, et [Première configuration](/fr/getting-started/first-run-setup/) décrit chacune de ses étapes. Le fonctionnement de la connexion ensuite est expliqué dans [Sécurité et connexion](/fr/settings/security/).
 
 ## 2. Choisis comment ABM accède à Internet
 
-Dans **Settings > General**, il y a une section **Proxy**. Règle-y un proxy si ABM doit en passer par un pour accéder à Internet. Si ABM accède directement à Internet, passe cette étape.
+Dans l'assistant, c'est l'étape Network. Plus tard, c'est dans **Settings > [Network](/fr/settings/network/)**. Choisis comment ABM accède à Internet : un proxy, un tunnel WireGuard, ton propre conteneur VPN ou Direct. Rien ne sort tant que tu n'en as pas choisi un.
 
 ## 3. Ajoute un dossier racine
 

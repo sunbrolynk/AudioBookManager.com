@@ -47,9 +47,7 @@ Tags zijn van jou. Automatische tags zetten ze op basis van regels (genre, verte
 
 Alles wat ABM over een boek leert, blijft in ABM's eigen SQLite-database in `/config`, ook van boeken die je later weghaalt. Maak een back-up van die map en het archief zit erin. Zodra een boek erin staat, is de metadata niet meer afhankelijk van de bereikbaarheid van de bron.
 
-:::caution[Komt in een latere release]
-Een aparte **Local Metadata Library** staat gepland: een optionele kopie van alles wat ABM ooit heeft opgezocht, bewaard ook als een boek je bibliotheek verlaat, met eigen geplande back-ups en een SQLite-download.
-:::
+De sectie **Local Storage** onder **Settings > Metadata**, zichtbaar met de Built-in-bron, is een voorproefje van een optionele lokale kopie van alles wat ABM heeft opgezocht. Ze is nog niet aangesloten.
 
 ## Schema's voor vernieuwen
 

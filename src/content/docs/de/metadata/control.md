@@ -47,9 +47,7 @@ Tags gehören dir. Auto-Tags setzen sie nach Regeln (Genre, Sprecher, Bewertung,
 
 Alles, was ABM über ein Buch erfährt, bleibt in ABMs eigener SQLite-Datenbank in `/config`, auch bei Büchern, die du später entfernst. Sicherst du diesen Ordner, ist der Bestand gesichert. Sobald ein Buch drin ist, hängen die Metadaten nicht mehr davon ab, ob die Quelle erreichbar ist.
 
-:::caution[Kommt in einem späteren Release]
-Eine eigene **Local Metadata Library** ist geplant: eine optionale Kopie von allem, was ABM je nachgeschlagen hat, auch nachdem ein Buch deine Bibliothek verlassen hat, mit eigenen geplanten Backups und einem SQLite-Download.
-:::
+Der Abschnitt **Local Storage** unter **Settings > Metadata**, der bei der Built-in-Quelle erscheint, ist eine Vorschau auf eine optionale lokale Kopie von allem, was ABM nachgeschlagen hat. Er ist noch nicht angebunden.
 
 ## Zeitpläne für Aktualisierungen
 

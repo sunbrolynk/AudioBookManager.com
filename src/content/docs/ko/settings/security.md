@@ -21,7 +21,7 @@ description: 인증 방식, API 키, 신뢰하는 프록시, 로컬 네트워크
 - **Enabled**: 내 LAN까지 포함해서 모두가 로그인해요.
 - **Disabled for Local Addresses**(`local_disabled`로 저장돼요): 로컬 주소에서 온 요청은 로그인을 건너뛰어요. 루프백, 사설 대역, 링크 로컬, IPv6 고유 로컬을 로컬로 쳐요. **Local Networks**는 여기에 더할 뿐, 대신하지는 않아요.
 
-새로 설치하면 설정이 끝날 때까지 요청을 거부해요.
+새로 설치하면 [설정 마법사](/ko/getting-started/first-run-setup/)에서 계정을 만들 때까지 요청을 거부해요. 마법사의 Account 단계는 **Enabled**를 미리 선택해 두어서, 새 설치는 모든 주소에서 로그인이 필요해요. 기존 설치는 설정이 그대로 유지돼요.
 
 ## 리버스 프록시
 

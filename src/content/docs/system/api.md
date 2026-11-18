@@ -26,6 +26,7 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - A failed request says what could not be done in fixed wording and never includes the underlying error text, so no file paths, host names or credentials come back. The detail goes to the log files. If you match on an error message, match on the status code instead.
 - A bulk status or monitor request with an empty `book_ids` list is refused with HTTP 422.
 - A request that has to queue a background task, such as a conversion create, retry, restart or single-job resume (`POST /api/conversions/job/{id}/resume`), answers HTTP 503 when the queue refuses it, so you can try again. `POST /api/tasks` answers 200 with status `skipped` when the task was deliberately not queued.
+- `POST /api/tasks` only queues `backup_export`. Any other task type gets HTTP 403, and settings that don't fit `backup_export` get HTTP 422. Manual imports go through the `/api/manual-import/` endpoints and library scans through `POST /api/library/scan`.
 - `POST /api/queue/manual-import` answers HTTP 409 with a "being scanned" detail while a library scan is reading that book. Try again in a moment. The automatic import of a completed download waits for the next pass in that case instead of failing.
 
 - An action that needs a background task and cannot queue it returns HTTP 503 with the detail "Could not queue the task.". When a route adds something and then queues a follow-up (add book, add an author's or series' books, Add Missing Books), the new item is still returned, with a message saying the follow-up could not be queued.
@@ -33,6 +34,6 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 
 ## Metadata outages
 
-A book search that gets no answer from Libex returns 502 with "Libex search failed". An author or series search returns 503 with "Libex could not be reached; try again shortly". Some lookup routes still return an empty result in an outage.
+A request that needs the metadata source and gets no answer fails with a `detail` that names the source and the reason, never an empty result. With [Local Storage](/metadata/control/#local-storage) on, a lookup the source cannot answer can be answered from the saved copy instead, and the result is marked as coming from Local Storage. A search you are waiting on gives up after about 10 seconds when Libex rate limits it.
 
 If you know Sonarr: the API is not v3-compatible. Prowlarr can sync indexers into ABM through its Prowlarr connection.
