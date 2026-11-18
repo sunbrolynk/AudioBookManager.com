@@ -12,9 +12,9 @@ description: Få en eksisterende samling trygt inn i ABM.
 ## Trinnene
 
 1. **Library > Library Import**, skann mappen.
-2. Les gjennom lista. Treff viser en prosent. Fiks rader med **Needs attention** og **Unmatched** med **Find a match**, eller slå sammen rader som er én bok fordelt på flere mapper.
+2. Les gjennom lista. Treff viser en prosent. Fiks rader med **Needs a look** og **Unmatched** med **Find a match**, eller slå sammen rader som er én bok fordelt på flere mapper.
 3. Sjekk cover og ekstrafiler per mappe bare hvis du vil overstyre standardene.
-4. Velg radene og legg dem til. Det holder med to klikk hvis du godtar standardene.
+4. Velg radene og legg dem til.
 5. Følg med på oppgaven. Sammendraget sier hvor mange filer som ble kopiert i stedet for hardlenket, og hva som feilet.
 
 ## Hvis samlingen allerede ligger der du vil ha den
@@ -28,4 +28,5 @@ Importen legger hver bok i ABMs egen Forfatter/Serie/Bok-struktur under standard
 - En bok som allerede er i biblioteket, vises som det. Avslå duplikatet med svaret som beholder biblioteket i stedet for å importere den to ganger.
 - Avslår du en mappe uten lyd, fjernes bare det den raden eier, og det havner i papirkurven hvis den er slått på.
 - En ASIN som står i en beskrivelse, er et hint og ikke et treff, med mindre tittelen også stemmer.
+- Et treff filene ikke bekrefter, verken med ASIN eller med spilletid pluss plass i serien eller tittel, venter uten hake under **Needs a look**, og **Select All** hopper over det. Se [Library Import](/nb/library-import/).
 - Etter importen bør du oppdatere for å hente inn ferske metadata, og slå på skriving av sidefiler hvis du vil at Audiobookshelf skal se valgene ABM har gjort. Se [Sidefiler](/nb/using/sidecars/).

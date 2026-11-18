@@ -47,9 +47,7 @@ Tagit ovat sinun. Automaattiset tagit lisäävät niitä sääntöjen perusteell
 
 Kaikki, mitä ABM saa kirjasta selville, jää ABM:n omaan SQLite-tietokantaan kansioon `/config`, myös myöhemmin poistamasi kirjat. Varmuuskopioi se kansio, niin tiedot on varmuuskopioitu. Kun kirja on kerran sisällä, metatiedot eivät riipu siitä, saadaanko lähteeseen yhteys.
 
-:::caution[Tulossa myöhempään julkaisuun]
-Oma **Local Metadata Library** on suunnitteilla: valinnainen kopio kaikesta, mitä ABM on koskaan hakenut, säilytettynä vaikka kirja poistuisi kirjastostasi, omilla ajastetuilla varmuuskopioilla ja SQLite-latauksella.
-:::
+Built-in-lähteen kanssa näkyvä **Local Storage** -osio kohdassa **Settings > Metadata** on esikatselu valinnaisesta paikallisesta kopiosta kaikesta, mitä ABM on hakenut. Se ei ole vielä kytketty.
 
 ## Päivitysten ajastukset
 

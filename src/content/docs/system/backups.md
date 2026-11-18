@@ -29,7 +29,13 @@ Restoring a backup by name answers 404 if the file is not in the list. A backup 
 
 A backup made on an older version is upgraded to the current schema as part of the restore, before it replaces the live database, so no restart is needed. A backup from a newer version, or a file that isn't an ABM database, is refused with a 400 and the live database is left untouched.
 
+After a restore, the restored schedules for the ABM backup and the Local Storage backup take effect right away, with no restart.
+
 A backup is refused, with nothing changed, if it holds unexpected entries, is not a valid SQLite database, or is a legacy backup from before the SQLite move.
+
+## Local Storage backups
+
+The library kept by [Local Storage](/metadata/control/#local-storage) has its own backups, made and restored under [Storage Backups](/settings/metadata/#storage-backups). They do not appear in this list. Deleting an export target under [General](/settings/general/) also removes it from the Local Storage backup's chosen targets. An ABM backup carries the Local Storage switch and its backup schedule, not the stored lookups.
 
 ## Export targets
 
@@ -45,4 +51,4 @@ ABM trusts the server's host key the first time it connects, saves it on the tar
 
 - A retention prune that can't remove one old backup carries on with the rest.
 - The Docker image and your compose file are not in the backup. Keep the compose file.
-- If you set `APP_SECRET`, back that up separately. Without it, stored credentials cannot be decrypted after a restore on another host.
+- Keep the app key backed up alongside your backups: your `APP_SECRET`, or the `/config/app_secret` file if you didn't set one. Without it, stored credentials, including export target passwords and S3 secret keys, cannot be decrypted after a restore on another host, and Test and Export ask you to re-enter them.

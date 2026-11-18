@@ -3,7 +3,7 @@ title: General
 description: Host, seguridad, proxy, registros y copias de seguridad.
 ---
 
-**Settings > General** tiene secciones para Host, Security, Proxy, Logging y Backups. Security tiene [su propia página](/es/settings/security/).
+**Settings > General** tiene secciones para Host, Security, Logging y Backups. Security tiene [su propia página](/es/settings/security/).
 
 ## Host
 

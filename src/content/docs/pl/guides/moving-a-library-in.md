@@ -12,9 +12,9 @@ description: Bezpiecznie wprowadź istniejącą kolekcję do ABM.
 ## Kroki
 
 1. **Library > Library Import**, zeskanuj folder.
-2. Przeczytaj listę. Dopasowania mają wartość procentową. Popraw wiersze **Needs attention** i **Unmatched** przez **Find a match** albo połącz wiersze, które są jedną książką rozbitą na kilka folderów.
+2. Przeczytaj listę. Dopasowania mają wartość procentową. Popraw wiersze **Needs a look** i **Unmatched** przez **Find a match** albo połącz wiersze, które są jedną książką rozbitą na kilka folderów.
 3. Okładkę i dodatkowe pliki dla każdego folderu sprawdzaj tylko wtedy, gdy chcesz nadpisać ustawienia domyślne.
-4. Zaznacz wiersze i je dodaj. Jeśli zostajesz przy domyślnych, to nadal dwa kliknięcia.
+4. Zaznacz wiersze i je dodaj.
 5. Obserwuj zadanie. Podsumowanie mówi, ile plików skopiowano zamiast podlinkować hardlinkiem i co się nie udało.
 
 ## Jeśli kolekcja już leży tam, gdzie chcesz
@@ -28,4 +28,5 @@ Import układa każdą książkę we własnym układzie ABM (Author/Series/Book)
 - Książka, która już jest w bibliotece, jest tak oznaczona. Odrzuć duplikat odpowiedzią keep library, zamiast importować go drugi raz.
 - Odrzucenie folderu bez audio usuwa tylko to, co należy do tego wiersza, i trafia do kosza, jeśli jest włączony.
 - ASIN znaleziony w opisie to podpowiedź, a nie dopasowanie, chyba że tytuł też się zgadza.
+- Dopasowanie, którego pliki nie potwierdzają, ani przez ASIN, ani czasem trwania razem z pozycją w serii albo tytułem, czeka bez zaznaczenia pod **Needs a look**, a **Select All** je pomija. Zobacz [Library Import](/pl/library-import/).
 - Po imporcie odśwież książki, żeby pobrać aktualne metadane, i włącz zapisywanie plików sidecar, jeśli chcesz, żeby Audiobookshelf widział wybory ABM. Zobacz [Pliki sidecar](/pl/using/sidecars/).

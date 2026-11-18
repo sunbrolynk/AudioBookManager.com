@@ -12,9 +12,9 @@ description: Tuo olemassa oleva kokoelma ABM:ään turvallisesti.
 ## Vaiheet
 
 1. **Library > Library Import**, skannaa kansio.
-2. Lue lista. Osumille näytetään prosenttiluku. Korjaa rivit **Needs attention** ja **Unmatched** painikkeella **Find a match**, tai yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon.
+2. Lue lista. Osumille näytetään prosenttiluku. Korjaa rivit **Needs a look** ja **Unmatched** painikkeella **Find a match**, tai yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon.
 3. Tarkista kansikuva ja lisätiedostot kansiokohtaisesti vain, jos haluat ohittaa oletukset.
-4. Valitse rivit ja lisää ne. Jos hyväksyt oletukset, tähän menee edelleen kaksi klikkausta.
+4. Valitse rivit ja lisää ne.
 5. Seuraa tehtävää. Yhteenveto kertoo, montako tiedostoa kopioitiin kovalinkityksen sijaan ja mikä epäonnistui.
 
 ## Jos kokoelmasi on jo siellä, missä haluat sen olevan
@@ -28,4 +28,5 @@ Tuonti sijoittaa jokaisen kirjan ABM:n omaan Author/Series/Book-rakenteeseen ole
 - Kirjastossa jo oleva kirja näytetään sellaisena. Hylkää kaksoiskappale vastauksella, joka pitää kirjaston version, äläkä tuo sitä kahdesti.
 - Kansion, jossa ei ole ääntä, hylkääminen poistaa vain sen, minkä kyseinen rivi omistaa, ja siirtää sen roskakoriin, jos roskakori on käytössä.
 - Kuvauksesta löytynyt ASIN on vihje, ei osuma, ellei myös nimi täsmää.
+- Osuma, jota tiedostot eivät vahvista ASINilla eivätkä kestolla yhdessä sarjan paikan tai nimen kanssa, odottaa valitsematta kohdassa **Needs a look**, ja **Select All** ohittaa sen. Katso [Library Import](/fi/library-import/).
 - Päivitä tuonnin jälkeen, jotta saat ajantasaiset metatiedot, ja ota sivutiedostojen kirjoitus käyttöön, jos haluat Audiobookshelfin näkevän ABM:n valinnat. Katso [Sivutiedostot](/fi/using/sidecars/).

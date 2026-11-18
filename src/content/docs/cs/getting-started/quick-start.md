@@ -7,11 +7,11 @@ Tohle je nejkratší cesta od běžícího kontejneru ke knize, kterou ABM hled�
 
 ## 1. Přihlas se
 
-Při první návštěvě tě ABM provede vytvořením přihlášení. Dokud to neuděláš, odmítá požadavky. Jak se přihlašování chová potom, popisuje [Zabezpečení a přihlášení](/cs/settings/security/).
+První návštěva otevře průvodce nastavením a jeho první krok vytvoří tvé přihlášení. Dokud to neuděláš, ABM požadavky odmítá. Průvodce pokrývá také kroky 2 až 4 níže a stránka [První nastavení](/cs/getting-started/first-run-setup/) popisuje každý jeho krok. Jak přihlašování funguje potom, vysvětluje stránka [Zabezpečení a přihlášení](/cs/settings/security/).
 
 ## 2. Vyber, jak se ABM dostane na internet
 
-V **Settings > General** je sekce **Proxy**. Nastav tam proxy, pokud ABM musí na internet přes proxy. Pokud se ABM na internet dostane přímo, tohle přeskoč.
+V průvodci je to krok Network. Později to najdeš v **Settings > [Network](/cs/settings/network/)**. Vyber, jak se ABM dostane na internet: proxy, tunel WireGuard, tvůj vlastní VPN kontejner nebo Direct. Nic neodejde, dokud jednu možnost nezvolíš.
 
 ## 3. Přidej kořenovou složku
 

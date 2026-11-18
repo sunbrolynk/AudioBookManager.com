@@ -39,7 +39,7 @@ export default defineConfig({
         ThemeSelect: './src/components/overrides/ThemeSelect.astro',
       },
       sidebar: [
-        { label: 'Getting started', translations: sidebarLabels['Getting started'], items: ['installation', 'getting-started/quick-start'] },
+        { label: 'Getting started', translations: sidebarLabels['Getting started'], items: ['installation', 'getting-started/first-run-setup', 'getting-started/quick-start'] },
         { label: 'Using ABM', translations: sidebarLabels['Using ABM'], items: ['using/library', 'using/add-new', 'library-import', 'using/series-tracking', 'using/wanted', 'using/activity', 'using/calendar', 'using/discover', 'audible', 'using/conversions', 'using/sidecars', 'phone'] },
         { label: 'Metadata & Libex', translations: sidebarLabels['Metadata & Libex'], items: ['metadata/libex', 'metadata/control', 'metadata/cover-lock'] },
         { label: 'Settings', translations: sidebarLabels['Settings'], items: ['settings/media-management', 'settings/audible', 'settings/conversions', 'settings/discover', 'settings/profiles', 'settings/indexers', 'settings/download-clients', 'settings/import-lists', 'settings/connect', 'settings/metadata', 'settings/tags', 'settings/network', 'settings/general', 'settings/security', 'settings/ui', 'configuration'] },

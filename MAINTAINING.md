@@ -175,6 +175,7 @@ enforces rulesets on public repositories (or with Pro).
 - Allow GitHub-owned actions and actions pinned to a full commit SHA only.
 - Require SHA pinning.
 - Keep the default workflow token read-only.
+- Allow auto-merge (the release sync PRs use it).
 - Require approval for workflows from first-time outside contributors.
 
 **Security.** Turn on secret scanning with push protection, private
@@ -202,12 +203,30 @@ writes `public/releases.json` and one file per release in
 already there, and `--date YYYY-MM-DD` dates a section the changelog leaves
 undated.
 
-`.github/workflows/sync-releases.yml` does this every six hours: when ABM has a
-published release newer than the newest entry, `scripts/sync-releases.sh` opens
-a PR into `dev` with the new entries. It needs an `ABM_RELEASES_TOKEN` Actions
-secret (fine-grained, read-only Contents on the ABM repo) while that repo is
-private; delete the secret once it's public. Scheduled workflows run from
-`main`, so it starts after the next `dev` to `main` release.
+`.github/workflows/sync-releases.yml` does this every six hours with no clicks.
+`scripts/sync-releases.sh` runs once for `dev` and once for `main`. For each, when
+ABM has a published release newer than that branch's newest entry, it opens a PR
+(`releases/v<ver>` into `dev`, `releases/main/v<ver>` into `main`) that changes
+only `public/releases.json` and `src/content/releases/<ver>.md`, then sets it to
+squash-merge. So a release reaches `main`, and the site deploys, without
+dragging along other unpublished `dev` work. An open PR is retried on the next
+run, and a branch that already had a PR is left alone.
+
+- **`dev`** has no required checks, so its PR merges at once.
+- **`main`** needs the `Site validation` check. A PR opened with the workflow
+  token starts no workflows, so the script dispatches `site-checks.yml` on the
+  branch and auto-merge waits for it. It never bypasses the ruleset.
+- **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so
+  the release-only PR to `main` posts nothing. The later `dev` to `main` release
+  still posts as before.
+- **Settings it relies on.** Allow auto-merge on, Actions allowed to create pull
+  requests, and an `ABM_RELEASES_TOKEN` Actions secret (fine-grained, read-only
+  Contents on the ABM repo) while that repo is private; delete the secret once
+  it's public. If `main` moves while its PR waits, update the branch so the
+  up-to-date rule is met.
+
+Scheduled workflows run from `main`, so changes to the job start after the next
+`dev` to `main` release.
 
 ### API reference
 
