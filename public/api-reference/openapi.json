@@ -3165,65 +3165,6 @@
         }
       }
     },
-    "/api/library/recent": {
-      "get": {
-        "tags": [
-          "Library"
-        ],
-        "summary": "Get Recent Books",
-        "description": "Newest imported books, or newest books on the Missing list.",
-        "operationId": "get_recent_books_api_library_recent_get",
-        "parameters": [
-          {
-            "name": "kind",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": [
-                "imported",
-                "wanted"
-              ],
-              "type": "string",
-              "title": "Kind"
-            }
-          },
-          {
-            "name": "limit",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "maximum": 24,
-              "minimum": 1,
-              "default": 12,
-              "title": "Limit"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/RecentBooksResponse"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/library/scan": {
       "post": {
         "tags": [
@@ -21789,28 +21730,6 @@
             ],
             "title": "Series Position"
           },
-          "series_id": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Series Id"
-          },
-          "author_id": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Author Id"
-          },
           "asin": {
             "anyOf": [
               {
@@ -28141,35 +28060,6 @@
         "title": "IndexerUpdate",
         "description": "Fields to update on an indexer. All fields are optional; only those\npresent are applied."
       },
-      "LibraryFormatMix": {
-        "properties": {
-          "m4b": {
-            "type": "integer",
-            "title": "M4B"
-          },
-          "mp3": {
-            "type": "integer",
-            "title": "Mp3"
-          },
-          "other": {
-            "type": "integer",
-            "title": "Other"
-          },
-          "unclassified": {
-            "type": "integer",
-            "title": "Unclassified"
-          }
-        },
-        "type": "object",
-        "required": [
-          "m4b",
-          "mp3",
-          "other",
-          "unclassified"
-        ],
-        "title": "LibraryFormatMix",
-        "description": "Books with files per format, from each book's classified quality rung."
-      },
       "LibraryMigrateRequest": {
         "properties": {
           "book_ids": {
@@ -28254,57 +28144,6 @@
           "total_series": {
             "type": "integer",
             "title": "Total Series"
-          },
-          "books_with_files": {
-            "type": "integer",
-            "title": "Books With Files"
-          },
-          "wanted_missing": {
-            "type": "integer",
-            "title": "Wanted Missing"
-          },
-          "hours": {
-            "type": "integer",
-            "title": "Hours"
-          },
-          "size_bytes": {
-            "type": "integer",
-            "title": "Size Bytes"
-          },
-          "last_import_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Last Import At"
-          },
-          "top_author": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/LibraryTopEntry"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "top_narrator": {
-            "anyOf": [
-              {
-                "$ref": "#/components/schemas/LibraryTopEntry"
-              },
-              {
-                "type": "null"
-              }
-            ]
-          },
-          "formats": {
-            "$ref": "#/components/schemas/LibraryFormatMix"
           }
         },
         "type": "object",
@@ -28314,39 +28153,10 @@
           "downloaded_books",
           "total_files",
           "total_authors",
-          "total_series",
-          "books_with_files",
-          "wanted_missing",
-          "hours",
-          "size_bytes",
-          "formats"
+          "total_series"
         ],
         "title": "LibraryStats",
         "description": "Library statistics"
-      },
-      "LibraryTopEntry": {
-        "properties": {
-          "id": {
-            "type": "integer",
-            "title": "Id"
-          },
-          "name": {
-            "type": "string",
-            "title": "Name"
-          },
-          "count": {
-            "type": "integer",
-            "title": "Count"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "name",
-          "count"
-        ],
-        "title": "LibraryTopEntry",
-        "description": "The author or narrator with the most books in the library."
       },
       "LocalStorageMarker": {
         "properties": {
@@ -31304,97 +31114,6 @@
           "identity_check"
         ],
         "title": "ReauthStartResponse"
-      },
-      "RecentBook": {
-        "properties": {
-          "id": {
-            "type": "integer",
-            "title": "Id"
-          },
-          "title": {
-            "type": "string",
-            "title": "Title"
-          },
-          "authors": {
-            "items": {
-              "type": "string"
-            },
-            "type": "array",
-            "title": "Authors"
-          },
-          "cover_url": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Cover Url"
-          },
-          "cover_updated_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Cover Updated At"
-          },
-          "imported_at": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Imported At"
-          },
-          "added_date": {
-            "anyOf": [
-              {
-                "type": "string",
-                "format": "date-time"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Added Date"
-          }
-        },
-        "type": "object",
-        "required": [
-          "id",
-          "title",
-          "authors"
-        ],
-        "title": "RecentBook",
-        "description": "A book on the dashboard's New list."
-      },
-      "RecentBooksResponse": {
-        "properties": {
-          "books": {
-            "items": {
-              "$ref": "#/components/schemas/RecentBook"
-            },
-            "type": "array",
-            "title": "Books"
-          }
-        },
-        "type": "object",
-        "required": [
-          "books"
-        ],
-        "title": "RecentBooksResponse",
-        "description": "Newest books by import or by being added as wanted."
       },
       "RecycleBinPathCheck": {
         "properties": {
