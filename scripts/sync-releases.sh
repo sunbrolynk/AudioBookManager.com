@@ -7,7 +7,13 @@ set -euo pipefail
 
 abm() { GH_TOKEN="${ABM_TOKEN:-$GH_TOKEN}" gh api "$@"; }
 valid='^v[0-9]+\.[0-9]+\.[0-9]+$'
-tags=$(abm "repos/$ABM_REPO/releases?per_page=20" --jq '.[] | select(.draft == false and .prerelease == false) | .tag_name' | grep -E "$valid" | sort -V || true)
+# A failed lookup must stop the run: an empty list reads as "every base is current" and closes the open release PRs.
+releases=$(abm "repos/$ABM_REPO/releases?per_page=20" --jq '.[] | select(.draft == false and .prerelease == false) | .tag_name')
+tags=$({ grep -E "$valid" <<<"$releases" || [ $? -eq 1 ]; } | sort -V)
+[ -n "$tags" ] || { echo "::error::no published ABM releases found in $ABM_REPO"; exit 1; }
+# Only PRs this workflow opened in this repo; a fork PR can use the same branch name.
+bot='select(.isCrossRepository == false and (.author.login | test("^(app/)?github-actions$")))'
+closing='Closing this one:'
 
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -28,7 +34,7 @@ build() {
 
 # sync_base <base branch> <PR branch prefix>
 sync_base() {
-  local base=$1 prefix=$2 newest tag last branch pr old head new=()
+  local base=$1 prefix=$2 newest tag last branch pr old oldhead olds head new=()
   newest=$(git ls-tree --name-only "origin/$base" src/content/releases/ | sed 's|.*/||; s/\.md$//' | sort -V | tail -1)
   for tag in $tags; do
     [ "$(printf '%s\n%s\n' "${tag#v}" "$newest" | sort -V | tail -1)" = "${tag#v}" ] && [ "${tag#v}" != "$newest" ] && new+=("$tag")
@@ -38,16 +44,20 @@ sync_base() {
   branch="$prefix$last"
 
   # The newest release PR carries every release the base is missing, so any older one is closed.
-  for old in $(gh pr list --base "$base" --state open --json headRefName --jq ".[].headRefName | select(test(\"^${prefix}v[0-9.]+\$\"))"); do
-    [ "$old" = "$branch" ] && continue
-    gh pr close "$old" --delete-branch --comment "Closing this one: ${last:+the pull request for ${last#v} includes these releases}${last:-$base already has these releases}."
-  done
+  olds=$(gh pr list --base "$base" --state open --json number,headRefName,isCrossRepository,author \
+    --jq ".[] | $bot | select(.headRefName | test(\"^${prefix}v[0-9.]+\$\")) | \"\(.number) \(.headRefName)\"")
+  while read -r old oldhead; do
+    [ -n "$old" ] && [ "$oldhead" != "$branch" ] || continue
+    gh pr close "$old" --delete-branch --comment "$closing ${last:+the pull request for ${last#v} includes these releases}${last:-$base already has these releases}."
+  done <<<"$olds"
   [ -n "$last" ] || { echo "$base is current at $newest"; return 0; }
 
   head="origin/$branch"
-  pr=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number // empty')
+  pr=$(gh pr list --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
   if [ -z "$pr" ]; then
-    if [ -n "$(gh pr list --head "$branch" --state all --json number --jq '.[].number')" ]; then
+    # A release PR closed by hand stays closed; one this script closed itself does not count.
+    if [ -n "$(gh pr list --head "$branch" --state all --json number,isCrossRepository,author,comments \
+      --jq ".[] | $bot | select(any(.comments[]; (.author.login | test(\"^(app/)?github-actions$\")) and (.body | startswith(\"$closing\"))) | not) | .number")" ]; then
       echo "$branch already had a pull request"; return 0
     fi
     build "$base" "$branch" "${new[@]}"
@@ -66,7 +76,7 @@ sync_base() {
     # Checks from a dispatched run don't count for a PR, so site-checks reports the result as a commit status.
     # A PR opened with the workflow token starts no checks of its own, so run them unless the head already has a result.
     case "$(gh api "repos/{owner}/{repo}/commits/$(git rev-parse "$head")/status" --jq '[.statuses[] | select(.context == "Site validation")][0].state // ""')" in
-      success|pending) ;;
+      success) ;;
       *) gh workflow run site-checks.yml --ref "$branch" ;;
     esac
     gh pr merge "$pr" --squash --auto || echo "::warning::auto-merge is off; turn on Allow auto-merge in the repository settings"
