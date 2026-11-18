@@ -20,12 +20,14 @@ git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
 # build <base> <branch> <tag...>: one commit on top of the base with the given releases added.
 build() {
-  local base=$1 branch=$2 tag; shift 2
+  local base=$1 branch=$2 tag date; shift 2
   git switch --quiet --detach "origin/$base"
   git switch --quiet -C "$branch"
   for tag in "$@"; do
     abm "repos/$ABM_REPO/contents/CHANGELOG.md?ref=$tag" -H 'Accept: application/vnd.github.raw' > "$RUNNER_TEMP/CHANGELOG.md"
-    node scripts/build-releases.mjs "$RUNNER_TEMP/CHANGELOG.md" "$tag" --keep --date "$(abm "repos/$ABM_REPO/releases/tags/$tag" --jq '.published_at[:10]')"
+    # Its own statement, so a failed lookup stops the run instead of publishing an undated release.
+    date=$(abm "repos/$ABM_REPO/releases/tags/$tag" --jq '.published_at[:10]')
+    node scripts/build-releases.mjs "$RUNNER_TEMP/CHANGELOG.md" "$tag" --keep --date "$date"
   done
   git add public/releases.json src/content/releases
   git commit --quiet -m "add ${*#v} to the updates page"
@@ -44,7 +46,7 @@ sync_base() {
   branch="$prefix$last"
 
   # The newest release PR carries every release the base is missing, so any older one is closed.
-  olds=$(gh pr list --base "$base" --state open --json number,headRefName,isCrossRepository,author \
+  olds=$(gh pr list --limit 200 --base "$base" --state open --json number,headRefName,isCrossRepository,author \
     --jq ".[] | $bot | select(.headRefName | test(\"^${prefix}v[0-9.]+\$\")) | \"\(.number) \(.headRefName)\"")
   while read -r old oldhead; do
     [ -n "$old" ] && [ "$oldhead" != "$branch" ] || continue
@@ -53,10 +55,10 @@ sync_base() {
   [ -n "$last" ] || { echo "$base is current at $newest"; return 0; }
 
   head="origin/$branch"
-  pr=$(gh pr list --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
+  pr=$(gh pr list --limit 200 --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
   if [ -z "$pr" ]; then
     # A release PR closed by hand stays closed; one this script closed itself does not count.
-    if [ -n "$(gh pr list --head "$branch" --state all --json number,isCrossRepository,author,comments \
+    if [ -n "$(gh pr list --limit 200 --head "$branch" --state all --json number,isCrossRepository,author,comments \
       --jq ".[] | $bot | select(any(.comments[]; (.author.login | test(\"^(app/)?github-actions$\")) and (.body | startswith(\"$closing\"))) | not) | .number")" ]; then
       echo "$branch already had a pull request"; return 0
     fi
@@ -79,7 +81,7 @@ sync_base() {
       success) ;;
       *) gh workflow run site-checks.yml --ref "$branch" ;;
     esac
-    gh pr merge "$pr" --squash --auto || echo "::warning::auto-merge is off; turn on Allow auto-merge in the repository settings"
+    gh pr merge "$pr" --squash --auto || echo "::warning::could not turn on auto-merge for $pr; gh's error is above"
   else
     # dev has no required checks, so there is nothing for auto-merge to wait on.
     gh pr merge "$pr" --squash --auto || gh pr merge "$pr" --squash

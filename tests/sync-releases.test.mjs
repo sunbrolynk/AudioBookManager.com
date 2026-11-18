@@ -194,3 +194,9 @@ test('a failed ABM release lookup stops the run before any PR is touched', { ski
   const calls = run(env, 1);
   assert.ok(!calls.some((c) => c[0] === 'pr' || c[0] === 'workflow'), JSON.stringify(calls));
 });
+
+test('a release lookup with no valid tags stops the run before any PR is touched', { skip }, () => {
+  const env = setup({ dev: ['0.26.0'], main: ['0.25.0'], tags: ['nightly'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }] });
+  const calls = run(env, 1);
+  assert.ok(!calls.some((c) => c[0] === 'pr' || c[0] === 'workflow'), JSON.stringify(calls));
+});
