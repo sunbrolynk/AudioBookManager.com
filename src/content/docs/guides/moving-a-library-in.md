@@ -28,4 +28,5 @@ Importing puts each book in ABM's own Author/Series/Book layout under the defaul
 - A book already in the library is shown as such. Decline the duplicate with the keep-library answer rather than importing it twice.
 - Delete in the bar removes the folders you ticked yourself on screen, with audio or without, after you type `delete`. It goes to the recycle bin if enabled and leaves other books in the same parent folder alone. A folder that can't be deleted is reported on its own row while the others still go. "Delete these files, keep the library copy" is decided at Add.
 - An ASIN found in a description is a hint, not a match, unless the title also agrees.
+- A match the files don't confirm, by their ASIN or by runtime plus series position or title, waits under **Needs a look** unticked, and **Select All** passes it by. See [Library Import](/library-import/#how-a-match-is-accepted).
 - After importing, refresh to pull in current metadata, and turn on sidecar writing if you want Audiobookshelf to see ABM's choices. See [Sidecar files](/using/sidecars/).

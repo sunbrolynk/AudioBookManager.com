@@ -18,6 +18,7 @@ ABM:llä on REST API polun `/api` alla. Interaktiivinen viite on osoitteissa `/a
 - Tilaa muuttava selainpyyntö tarvitsee täsmäävän alkuperän. Avainta käyttävät skriptit on vapautettu tästä.
 - Pyyntöjen rungot on rajattu 10 MiB:iin (`MAX_REQUEST_BODY_BYTES`). Varmuuskopion palautuksella ja kansikuvan latauksella on suuremmat rajat. Rajan ylittävä saa vastauksen HTTP 413.
 - Validointivirheet eivät koskaan toista takaisin sitä, mitä lähetit.
+- `POST /api/tasks` lisää jonoon vain `backup_export`-tehtävän. Mikä tahansa muu tehtävätyyppi saa HTTP 403:n, ja asetukset, jotka eivät sovi `backup_export`-tehtävälle, saavat HTTP 422:n. Manuaaliset tuonnit kulkevat `/api/manual-import/`-päätepisteiden kautta ja kirjaston skannaukset `POST /api/library/scan` -kutsulla.
 
 ## Metatietokatkokset
 

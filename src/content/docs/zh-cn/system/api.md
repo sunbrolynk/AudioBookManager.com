@@ -18,6 +18,7 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - 浏览器发出的修改类请求需要来源匹配。使用密钥的脚本不受此限制。
 - 请求体上限为 10 MiB（`MAX_REQUEST_BODY_BYTES`）。备份恢复和封面上传的上限更大。超过上限返回 HTTP 413。
 - 校验错误永远不会把你发送的内容原样返回。
+- `POST /api/tasks` 只会把 `backup_export` 加入队列。其他任何任务类型都会得到 HTTP 403，不符合 `backup_export` 的设置会得到 HTTP 422。手动导入请用 `/api/manual-import/` 下的端点，扫描媒体库请用 `POST /api/library/scan`。
 
 ## 元数据源中断
 
