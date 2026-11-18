@@ -9,6 +9,8 @@ description: Varmuuskopioi, vie ja palauta ABM.
 
 Salattu arkisto, jossa on yhtenäinen kopio tietokannasta (`database.db`), asetukset (`settings.json`) ja manifesti. Ota myös `/config` mukaan omiin varmuuskopioihisi kansikuvien ja sovellussalaisuustiedoston vuoksi.
 
+Audiobookshelf-API-avain on osa varmuuskopiota salattuna. Sitä ei voi purkaa eri `APP_SECRET`-arvolla, joten syötä se uudelleen, jos palautat toisella.
+
 ## Palauttaminen
 
 Valitse yksi listalta tai lataa varmuuskopiotiedosto (enintään 500 MiB). Käytössä olevasta tietokannasta tallennetaan ensin kopio. Palautusta ei voi perua.

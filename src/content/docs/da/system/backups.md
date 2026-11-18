@@ -9,6 +9,8 @@ description: Tag backup af, eksportér og gendan ABM.
 
 Et krypteret arkiv med en konsistent kopi af databasen (`database.db`), indstillingerne (`settings.json`) og et manifest. Tag også `/config` med i dine egne backups for covers og filen med app-hemmeligheden.
 
+Audiobookshelf-API-nøglen er en del af sikkerhedskopien, krypteret. Den kan ikke dekrypteres under en anden `APP_SECRET`, så indtast den igen, hvis du gendanner med en anden.
+
 ## Gendannelse
 
 Vælg en fra listen, eller upload en backupfil (op til 500 MiB). Der bliver gemt en kopi af den kørende database først. En gendannelse kan ikke fortrydes.
