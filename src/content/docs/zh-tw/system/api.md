@@ -19,6 +19,8 @@ ABM 在 `/api` 底下有一套 REST API。互動式參考在 `/api/docs`（Swagg
 - 請求內容最大 10 MiB（`MAX_REQUEST_BODY_BYTES`）。備份還原和封面上傳的上限比較大。超過上限會回 HTTP 413。
 - 驗證錯誤永遠不會把你送出的內容原樣回傳。
 - `POST /api/tasks` 只會把 `backup_export` 加入佇列。其他任何工作類型都會收到 HTTP 403，不符合 `backup_export` 的設定會收到 HTTP 422。手動匯入請用 `/api/manual-import/` 底下的端點，掃描媒體庫請用 `POST /api/library/scan`。
+- Library Import 會自己在伺服器上保存每一列的 Libex 比對結果。儲存工作階段（`PUT /api/library-import/session/{id}` 或 `PATCH /api/library-import/session/{id}/choices`）時，如果某一列帶了 `libex_matches`，會被拒絕，回傳 HTTP 422 並指出這個欄位，所以你寫回的列裡別帶它。`POST /api/library-import/retry-match` 接受一個選用的 `session_id`，會把找到的比對結果存進那個工作階段。
+- 不帶 `limit` 時，`GET /api/metadata/search` 會回傳全部結果。帶上 `limit`（1 到 50）時，最多回傳這麼多筆。
 
 ## 中繼資料服務中斷
 

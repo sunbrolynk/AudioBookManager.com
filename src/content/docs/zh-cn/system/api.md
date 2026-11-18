@@ -19,6 +19,8 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - 请求体上限为 10 MiB（`MAX_REQUEST_BODY_BYTES`）。备份恢复和封面上传的上限更大。超过上限返回 HTTP 413。
 - 校验错误永远不会把你发送的内容原样返回。
 - `POST /api/tasks` 只会把 `backup_export` 加入队列。其他任何任务类型都会得到 HTTP 403，不符合 `backup_export` 的设置会得到 HTTP 422。手动导入请用 `/api/manual-import/` 下的端点，扫描媒体库请用 `POST /api/library/scan`。
+- Library Import 会自己在服务器上保存每一行的 Libex 匹配结果。保存会话（`PUT /api/library-import/session/{id}` 或 `PATCH /api/library-import/session/{id}/choices`）时，如果某一行带了 `libex_matches`，会被拒绝，返回 HTTP 422 并指出这个字段，所以你写回的行里别带它。`POST /api/library-import/retry-match` 接受一个可选的 `session_id`，会把找到的匹配结果存进那个会话。
+- 不带 `limit` 时，`GET /api/metadata/search` 返回全部结果。带上 `limit`（1 到 50）时，最多返回这么多条。
 
 ## 元数据源中断
 

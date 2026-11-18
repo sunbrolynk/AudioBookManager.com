@@ -47,7 +47,7 @@ Library Import 页面上的 **Recent Import Sessions** 会显示每次扫描有�
 ## 怎么看列表
 
 - 摘要显示找到了多少个文件夹、有多少个已经就绪。顶部栏有 **Sort** (Folder name, Status, Title, Author, Series, Files) 和 **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add)。每个筛选都会显示数量，这些数量和摘要对得上。你确认过的匹配叫 Ready。排序和筛选会记在这台设备上。它们不会保留在页面地址里，所以带 `?sort=` 或 `?filter=` 的链接不会把它们带过去。
-- 每一行显示封面、标题、作者和系列，以及匹配的把握程度（百分比），比如“95% match”。文件夹详情里有 **Find a match** 或 **Change match**，可以手动搜索。
+- 每一行显示封面、标题、作者和系列，以及匹配的把握程度（百分比），比如“95% match”。文件夹详情里有 **Find a match** 或 **Change match**，可以手动搜索。搜索会列出 Libex 找到的每一本书。
 - 当文件里没有 ASIN 或时长来确认版本时，文件夹详情会注明。
 - **Rescan** 会找出扫描之后新加的文件夹，并保留你已经做的选择。
 

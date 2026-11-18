@@ -19,6 +19,8 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 - Těla požadavků jsou omezená na 10 MiB (`MAX_REQUEST_BODY_BYTES`). Obnova zálohy a nahrání obálky mají vyšší limity. Nad limitem přijde HTTP 413.
 - Chyby validace nikdy nevracejí zpátky to, co jsi poslal.
 - `POST /api/tasks` zařadí do fronty jen `backup_export`. Jakýkoli jiný typ úlohy dostane HTTP 403 a nastavení, která k `backup_export` nesedí, dostanou HTTP 422. Ruční importy jdou přes endpointy `/api/manual-import/` a skenování knihovny přes `POST /api/library/scan`.
+- Library Import si shody z Libexu pro každý řádek drží sám na serveru. Uložení relace (`PUT /api/library-import/session/{id}` nebo `PATCH /api/library-import/session/{id}/choices`) s řádkem, který posílá `libex_matches`, se odmítne s HTTP 422, které pole pojmenuje, takže ho z řádků, které ukládáš zpět, vynech. `POST /api/library-import/retry-match` bere volitelné `session_id` a nalezené shody uloží do té relace.
+- `GET /api/metadata/search` vrátí každý výsledek, když `limit` vynecháš. S `limit` (1 až 50) jich vrátí nejvýš tolik.
 
 ## Výpadky metadat
 

@@ -47,7 +47,7 @@ Tag tytułu, albumu, serii, części serii, wykonawcy, wykonawcy albumu, kompozy
 ## Jak czytać listę
 
 - Podsumowanie pokazuje, ile folderów znaleziono i ile jest gotowych. Górny pasek ma **Sort** (Folder name, Status, Title, Author, Series, Files) i **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Każdy filtr pokazuje swoją liczbę, a liczby zgadzają się z podsumowaniem. Dopasowanie, które potwierdzisz, nazywa się Ready. Sortowanie i filtr są zapamiętywane na tym urządzeniu. Nie są trzymane w adresie strony, więc link z `?sort=` albo `?filter=` ich nie przenosi.
-- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie.
+- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie. Wyszukiwanie pokazuje każdą książkę, którą znajdzie Libex.
 - Kiedy pliki nie mają ASIN-u ani czasu trwania, który potwierdziłby wydanie, szczegóły folderu to pokazują.
 - **Rescan** wyłapuje foldery dodane od czasu skanowania i zachowuje twoje wybory.
 

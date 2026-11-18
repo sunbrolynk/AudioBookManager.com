@@ -47,7 +47,7 @@ Een tag voor titel, album, serie, seriedeel, artiest, albumartiest, componist of
 ## De lijst lezen
 
 - De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er klaar zijn. De balk bovenaan heeft **Sort** (Folder name, Status, Title, Author, Series, Files) en **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Elk filter toont zijn aantal, en de aantallen kloppen met de samenvatting. Een match die je hebt bevestigd heet Ready. Sortering en filter worden op dit apparaat onthouden. Ze staan niet in het paginaadres, dus een link met `?sort=` of `?filter=` neemt ze niet mee.
-- Elke rij toont de cover, titel, auteur en serie, en hoe zeker de match is als percentage, zoals "95% match". In de mapdetails staat **Find a match** of **Change match** om zelf te zoeken.
+- Elke rij toont de cover, titel, auteur en serie, en hoe zeker de match is als percentage, zoals "95% match". In de mapdetails staat **Find a match** of **Change match** om zelf te zoeken. De zoekopdracht toont elk boek dat Libex vindt.
 - Hebben de bestanden geen ASIN of speelduur om de editie te bevestigen, dan staat dat in de mapdetails.
 - **Rescan** pikt mappen op die na de scan zijn toegevoegd en houdt je keuzes vast.
 

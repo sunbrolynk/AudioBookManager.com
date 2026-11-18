@@ -19,6 +19,8 @@ O ABM tem uma API REST em `/api`. A referência interativa fica em `/api/docs` (
 - Os corpos de requisição têm limite de 10 MiB (`MAX_REQUEST_BODY_BYTES`). A restauração de backup e o envio de capa têm limites maiores. Acima do limite, a resposta é HTTP 413.
 - Erros de validação nunca repetem o que você enviou.
 - `POST /api/tasks` só coloca na fila o `backup_export`. Qualquer outro tipo de tarefa recebe HTTP 403, e configurações que não servem para o `backup_export` recebem HTTP 422. Importações manuais passam pelos endpoints de `/api/manual-import/` e as varreduras da biblioteca por `POST /api/library/scan`.
+- O Library Import guarda no servidor as correspondências do Libex de cada linha. Um salvamento da sessão (`PUT /api/library-import/session/{id}` ou `PATCH /api/library-import/session/{id}/choices`) com uma linha que envia `libex_matches` é recusado com HTTP 422 que nomeia o campo, então deixe ele de fora das linhas que você salva de volta. `POST /api/library-import/retry-match` aceita um `session_id` opcional e guarda nessa sessão as correspondências que encontrar.
+- `GET /api/metadata/search` devolve todos os resultados quando você omite `limit`. Com `limit` (de 1 a 50) devolve no máximo essa quantidade.
 
 ## Quedas da fonte de metadados
 

@@ -19,6 +19,8 @@ ABM:llä on REST API polun `/api` alla. Interaktiivinen viite on osoitteissa `/a
 - Pyyntöjen rungot on rajattu 10 MiB:iin (`MAX_REQUEST_BODY_BYTES`). Varmuuskopion palautuksella ja kansikuvan latauksella on suuremmat rajat. Rajan ylittävä saa vastauksen HTTP 413.
 - Validointivirheet eivät koskaan toista takaisin sitä, mitä lähetit.
 - `POST /api/tasks` lisää jonoon vain `backup_export`-tehtävän. Mikä tahansa muu tehtävätyyppi saa HTTP 403:n, ja asetukset, jotka eivät sovi `backup_export`-tehtävälle, saavat HTTP 422:n. Manuaaliset tuonnit kulkevat `/api/manual-import/`-päätepisteiden kautta ja kirjaston skannaukset `POST /api/library/scan` -kutsulla.
+- Library Import pitää jokaisen rivin Libex-osumat itse palvelimella. Istunnon tallennus (`PUT /api/library-import/session/{id}` tai `PATCH /api/library-import/session/{id}/choices`), jonka rivi lähettää `libex_matches`-kentän, hylätään HTTP 422 -virheellä, joka nimeää kentän, joten jätä se pois riveistä, jotka tallennat takaisin. `POST /api/library-import/retry-match` ottaa valinnaisen `session_id`:n ja tallentaa löytämänsä osumat siihen istuntoon.
+- `GET /api/metadata/search` palauttaa jokaisen tuloksen, kun jätät `limit`-parametrin pois. `limit`-arvolla (1–50) se palauttaa enintään niin monta.
 
 ## Metatietokatkokset
 

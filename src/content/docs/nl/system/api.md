@@ -19,6 +19,8 @@ ABM heeft een REST API onder `/api`. De interactieve referentie staat op `/api/d
 - Request bodies zijn begrensd op 10 MiB (`MAX_REQUEST_BODY_BYTES`). Back-up terugzetten en cover uploaden hebben hogere limieten. Daarboven krijg je HTTP 413.
 - Validatiefouten herhalen nooit wat je gestuurd hebt.
 - `POST /api/tasks` zet alleen `backup_export` in de wachtrij. Elk ander taaktype krijgt HTTP 403, en instellingen die niet bij `backup_export` passen krijgen HTTP 422. Handmatige imports gaan via de endpoints onder `/api/manual-import/` en bibliotheekscans via `POST /api/library/scan`.
+- Library Import bewaart de Libex-matches van elke rij zelf op de server. Een sessie opslaan (`PUT /api/library-import/session/{id}` of `PATCH /api/library-import/session/{id}/choices`) met een rij die `libex_matches` meestuurt, wordt geweigerd met HTTP 422 die het veld noemt, dus laat het weg uit rijen die je terug opslaat. `POST /api/library-import/retry-match` neemt een optionele `session_id` en bewaart de gevonden matches in die sessie.
+- `GET /api/metadata/search` geeft elk resultaat terug als je `limit` weglaat. Met `limit` (1 tot 50) geeft het er hoogstens zoveel.
 
 ## Metadatastoringen
 

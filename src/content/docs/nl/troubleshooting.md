@@ -36,6 +36,10 @@ Het applog vertelt je welk van de twee het is:
 
 Het omgekeerde geval: een proxy die geen forwarding-headers meestuurt, ziet eruit als een lokale client, dus alles wat erdoorheen komt hoeft niet in te loggen. Zet Authentication Required op Enabled.
 
+## Een pagina blijft leeg of geeft fouten na een update
+
+Herlaad het tabblad. Een pagina die al openstond van voor de update heeft de API-sleutel nog niet. Een Library Import-pagina die nog openstaat van voor de update kan zijn wijzigingen pas opslaan als je hem herlaadt. Draait ABM achter een proxy, laat dan ook `/initialize.json`, `/media-cover/`, `/backup/` en `/logfile` door. Zie [Reverse proxy](/nl/guides/reverse-proxy/).
+
 ## Wijzigingen vanuit de browser worden geweigerd
 
 Zorg dat de proxy de originele `Host`-header doorgeeft, of `X-Forwarded-Host` meestuurt. Zie [Configuratie](/nl/configuration/#reverse-proxy).

@@ -47,7 +47,7 @@ Tag názvu, alba, série, části série, interpreta, interpreta alba, skladatel
 ## Jak číst seznam
 
 - Souhrn ukazuje, kolik složek se našlo a kolik je připravených. V horní liště je **Sort** (Folder name, Status, Title, Author, Series, Files) a **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Každý filtr ukazuje svůj počet a počty sedí se souhrnem. Shodě, kterou jsi potvrdil, se říká Ready. Řazení a filtr si pamatuje toto zařízení. Nedrží se v adrese stránky, takže odkaz s `?sort=` nebo `?filter=` je nepřenese.
-- Každý řádek ukazuje obálku, název, autora a sérii a v procentech, jak jistá shoda je, třeba "95% match". V detailu složky je **Find a match** nebo **Change match** pro ruční hledání.
+- Každý řádek ukazuje obálku, název, autora a sérii a v procentech, jak jistá shoda je, třeba "95% match". V detailu složky je **Find a match** nebo **Change match** pro ruční hledání. Hledání ukáže každou knihu, kterou Libex najde.
 - Když soubory nemají ASIN ani délku, podle kterých by se dala ověřit edice, detail složky to řekne.
 - **Rescan** načte složky přidané od skenování a tvoje volby zachová.
 

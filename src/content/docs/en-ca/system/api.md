@@ -26,6 +26,8 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 - A failed request says what could not be done in fixed wording and never includes the underlying error text, so no file paths, host names or credentials come back. The detail goes to the log files. If you match on an error message, match on the status code instead.
 - A bulk status or monitor request with an empty `book_ids` list is refused with HTTP 422.
 - `POST /api/tasks` only queues `backup_export`. Any other task type gets HTTP 403, and settings that don't fit `backup_export` get HTTP 422. Manual imports go through the `/api/manual-import/` endpoints and library scans through `POST /api/library/scan`.
+- Library Import keeps each row's Libex matches on the server. A session save (`PUT /api/library-import/session/{id}` or `PATCH /api/library-import/session/{id}/choices`) with a row that sends `libex_matches` is refused with HTTP 422 naming the field, so leave it out of rows you save back. `POST /api/library-import/retry-match` takes an optional `session_id` and stores the matches it finds in that session.
+- `GET /api/metadata/search` returns every result when you leave out `limit`. With `limit` (1 to 50) it returns at most that many.
 
 ## Metadata outages
 

@@ -19,6 +19,8 @@ ABM에는 `/api` 아래에 REST API가 있어요. 인터랙티브 레퍼런스�
 - 요청 본문은 10 MiB로 제한돼요(`MAX_REQUEST_BODY_BYTES`). 백업 복원과 표지 업로드는 한도가 더 커요. 한도를 넘으면 HTTP 413이에요.
 - 유효성 검사 오류는 내가 보낸 값을 그대로 되돌려 보여 주지 않아요.
 - `POST /api/tasks`는 `backup_export`만 대기열에 넣습니다. 다른 작업 유형은 HTTP 403을 받고, `backup_export`에 맞지 않는 설정은 HTTP 422를 받습니다. 수동 가져오기는 `/api/manual-import/` 엔드포인트를, 라이브러리 스캔은 `POST /api/library/scan`을 사용하세요.
+- Library Import는 줄마다 Libex 매칭 후보를 서버에 직접 보관해요. 세션 저장(`PUT /api/library-import/session/{id}` 또는 `PATCH /api/library-import/session/{id}/choices`)에서 `libex_matches`를 보내는 줄이 있으면 그 필드 이름을 알려 주는 HTTP 422로 거부되니, 다시 저장하는 줄에서는 빼 주세요. `POST /api/library-import/retry-match`는 선택 항목인 `session_id`를 받고, 찾은 매칭 후보를 그 세션에 저장해요.
+- `GET /api/metadata/search`는 `limit`를 빼면 결과를 모두 돌려줘요. `limit`(1~50)를 주면 최대 그만큼만 돌려줘요.
 
 ## 메타데이터 장애
 

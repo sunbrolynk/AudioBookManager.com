@@ -47,7 +47,7 @@ Library Import 페이지의 **Recent Import Sessions**는 스캔마다 매칭된
 ## 목록 읽는 법
 
 - 요약에 찾은 폴더 수와 준비된 수가 나와요. 위쪽 바에 **Sort** (Folder name, Status, Title, Author, Series, Files)와 **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add)가 있어요. 필터마다 개수가 표시되고, 그 개수는 요약과 맞아요. 직접 확인한 매칭은 Ready라고 불러요. 정렬과 필터는 이 기기에 기억돼요. 페이지 주소에는 남지 않아서, `?sort=`나 `?filter=`가 들어간 링크로는 넘어가지 않아요.
-- 줄마다 표지, 제목, 작가와 시리즈, 그리고 매칭을 얼마나 확신하는지 "95% match"처럼 퍼센트로 보여 줘요. 폴더 상세 정보의 **Find a match**나 **Change match**로 직접 검색할 수 있어요.
+- 줄마다 표지, 제목, 작가와 시리즈, 그리고 매칭을 얼마나 확신하는지 "95% match"처럼 퍼센트로 보여 줘요. 폴더 상세 정보의 **Find a match**나 **Change match**로 직접 검색할 수 있어요. 검색은 Libex가 찾은 책을 모두 보여 줘요.
 - 판본을 확인할 ASIN이나 재생 시간이 파일에 없으면 폴더 상세 정보에 그렇다고 나와요.
 - **Rescan**은 스캔 뒤에 추가된 폴더를 찾아오고, 내가 고른 건 그대로 둬요.
 

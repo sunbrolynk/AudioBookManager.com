@@ -47,7 +47,7 @@ Library Import ページの **Recent Import Sessions** には、スキャンご�
 ## 一覧の読み方
 
 - サマリーには、見つかったフォルダの数と準備ができた数が表示されます。上部のバーには **Sort** (Folder name, Status, Title, Author, Series, Files) と **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add) があります。各フィルターには件数が表示され、その件数はサマリーと一致します。確認済みのマッチは Ready と呼ばれます。並べ替えと絞り込みはこのデバイスに記憶されます。ページのアドレスには残らないので、`?sort=` や `?filter=` の付いたリンクでは引き継がれません。
-- 各行には表紙、タイトル、著者、シリーズと、マッチの確かさがパーセンテージ（たとえば「95% match」）で表示されます。フォルダの詳細には、手で検索するための **Find a match** か **Change match** があります。
+- 各行には表紙、タイトル、著者、シリーズと、マッチの確かさがパーセンテージ（たとえば「95% match」）で表示されます。フォルダの詳細には、手で検索するための **Find a match** か **Change match** があります。検索には Libex が見つけた本がすべて表示されます。
 - ファイルに版を確かめるための ASIN や再生時間がない場合は、フォルダの詳細にそう表示されます。
 - **Rescan** はスキャン後に追加されたフォルダを拾い、自分で選んだ内容はそのまま残します。
 

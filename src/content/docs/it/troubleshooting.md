@@ -36,6 +36,10 @@ Il log dell'app ti dice qual è il caso:
 
 Il caso opposto: un proxy che non invia header di inoltro sembra un client locale, quindi tutto quello che passa da lì salta l'accesso. Imposta Authentication Required su Enabled.
 
+## Una pagina resta vuota o mostra errori dopo l'aggiornamento
+
+Ricarica la scheda. Una pagina aperta da prima dell'aggiornamento non ha ancora la chiave API. Una pagina di Library Import rimasta aperta da prima dell'aggiornamento non può salvare le modifiche finché non la ricarichi. Se ABM sta dietro un proxy, lascia passare anche `/initialize.json`, `/media-cover/`, `/backup/` e `/logfile`. Vedi [Reverse proxy](/it/guides/reverse-proxy/).
+
 ## Le modifiche dal browser vengono rifiutate
 
 Assicurati che il proxy faccia passare l'header `Host` originale, oppure invii `X-Forwarded-Host`. Vedi [Configurazione](/it/configuration/#reverse-proxy).

@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.26.0",
+    "version": "0.25.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3480,7 +3480,7 @@
           "Library Import"
         ],
         "summary": "Retry Automatic Matching",
-        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
+        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found and, with a\n`session_id`, the paths whose candidates were stored in that session.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
         "requestBody": {
           "content": {
@@ -10945,14 +10945,20 @@
             "in": "query",
             "required": false,
             "schema": {
-              "type": "integer",
-              "maximum": 50,
-              "minimum": 1,
-              "description": "Max results",
-              "default": 10,
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 50,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Max results; every result when omitted",
               "title": "Limit"
             },
-            "description": "Max results"
+            "description": "Max results; every result when omitted"
           }
         ],
         "responses": {
@@ -32451,11 +32457,23 @@
             "maxItems": 100,
             "title": "Items",
             "default": []
+          },
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 36
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
           }
         },
         "type": "object",
         "title": "RetryMatchRequest",
-        "description": "Rows to search again; each row is the free-form parse a scan produced."
+        "description": "Rows to search again; each row is the free-form parse a scan produced. With\n`session_id`, each searched row's candidates are stored in that session."
       },
       "RootFolderCreate": {
         "properties": {
@@ -33267,22 +33285,6 @@
               }
             ],
             "title": "Library Book Path"
-          },
-          "libex_matches": {
-            "anyOf": [
-              {
-                "items": {
-                  "additionalProperties": true,
-                  "type": "object"
-                },
-                "type": "array",
-                "maxItems": 100
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Libex Matches"
           },
           "best_match": {
             "anyOf": [

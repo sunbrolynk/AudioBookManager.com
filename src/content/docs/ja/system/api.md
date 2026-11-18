@@ -19,6 +19,8 @@ ABM には `/api` の下に REST API があります。インタラクティブ�
 - リクエストボディの上限は 10 MiB です（`MAX_REQUEST_BODY_BYTES`）。バックアップの復元と表紙のアップロードは上限が大きめです。上限を超えると HTTP 413 になります。
 - バリデーションエラーで、送った内容がそのまま返されることはありません。
 - `POST /api/tasks` がキューに入れるのは `backup_export` だけです。それ以外のタスク種別は HTTP 403 になり、`backup_export` に合わない設定は HTTP 422 になります。手動インポートは `/api/manual-import/` のエンドポイントを、ライブラリのスキャンは `POST /api/library/scan` を使ってください。
+- Library Import は各行の Libex のマッチ候補をサーバー側で保持します。セッションの保存（`PUT /api/library-import/session/{id}` または `PATCH /api/library-import/session/{id}/choices`）で `libex_matches` を送る行があると、そのフィールド名を示す HTTP 422 で拒否されます。保存し直す行には含めないでください。`POST /api/library-import/retry-match` は省略可能な `session_id` を受け取り、見つかったマッチ候補をそのセッションに保存します。
+- `GET /api/metadata/search` は `limit` を省くとすべての結果を返します。`limit`（1〜50）を付けると、最大でその件数を返します。
 
 ## メタデータの障害
 

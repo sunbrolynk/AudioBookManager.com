@@ -33,6 +33,8 @@ Every call under `/api` needs the API key, the way Sonarr and Radarr work. That 
 
 - An action that needs a background task and cannot queue it returns HTTP 503 with the detail "Could not queue the task.". When a route adds something and then queues a follow-up (add book, add an author's or series' books, Add Missing Books), the new item is still returned, with a message saying the follow-up could not be queued.
 - A PATCH with an explicit `null` clears an optional field on a book, author, series, indexer, download client, notification, import list or remote path mapping. A required field, or a flag or setting that has a default, ignores `null` the same as leaving it out.
+- Library Import keeps each row's Libex matches on the server. A session save (`PUT /api/library-import/session/{id}` or `PATCH /api/library-import/session/{id}/choices`) with a row that sends `libex_matches` is refused with HTTP 422 naming the field, so leave it out of rows you save back. `POST /api/library-import/retry-match` takes an optional `session_id` and stores the matches it finds in that session.
+- `GET /api/metadata/search` returns every result when you leave out `limit`. With `limit` (1 to 50) it returns at most that many.
 
 ## Metadata outages
 
