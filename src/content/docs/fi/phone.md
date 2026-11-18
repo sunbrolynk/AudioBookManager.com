@@ -37,7 +37,7 @@ Kirjan sivun yläosassa ovat Search, Interactive, Import (Convert, kun kirjalla 
 
 - Calendar on päivä päivältä etenevä lista. Näkymävalitsin määrää jakson. Agenda-näkymää ei tarjota.
 - Conversionsissa on välilehdet Queue ja History.
-- Dashboardin kortit pinoutuvat yhteen sarakkeeseen.
+- Dashboard näyttää kokonaismäärät ruudukossa, sen alla välilehdet New, Wanted ja Coming sekä lyhyen yhteenvedon sarjoista ja eniten kuuntelemastasi lukijasta.
 - Valintaikkunat avautuvat paneeleina näytön alalaidasta.
 
 ## Asetukset
