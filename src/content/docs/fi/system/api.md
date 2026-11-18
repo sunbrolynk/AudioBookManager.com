@@ -19,6 +19,7 @@ ABM:llä on REST API polun `/api` alla. Interaktiivinen viite on osoitteissa `/a
 - Pyyntöjen rungot on rajattu 10 MiB:iin (`MAX_REQUEST_BODY_BYTES`). Varmuuskopion palautuksella ja kansikuvan latauksella on suuremmat rajat. Rajan ylittävä saa vastauksen HTTP 413.
 - Validointivirheet eivät koskaan toista takaisin sitä, mitä lähetit.
 - `POST /api/tasks` lisää jonoon vain `backup_export`-tehtävän. Mikä tahansa muu tehtävätyyppi saa HTTP 403:n, ja asetukset, jotka eivät sovi `backup_export`-tehtävälle, saavat HTTP 422:n. Manuaaliset tuonnit kulkevat `/api/manual-import/`-päätepisteiden kautta ja kirjaston skannaukset `POST /api/library/scan` -kutsulla.
+- `POST /api/manual-import/execute` ja `/execute-to-book` tarkistavat jokaisen tiedostorivin kiinteää skeemaa vasten. Tuntematon avain, suhteellinen `source_path` tai tyhjä `files`-lista hylätään HTTP 422:lla. Jokaisen lähteen on oltava äänitiedosto, joka ei ole järjestelmäkansiossa, suoraan ylimmän tason kansiossa kuten `/tmp` tai `/mnt` eikä missään ABM:n omista kansioista (asetukset, tietokanta, varmuuskopiot, lokit, kannet, roskakori, väliaikaiskansio sekä SSL-varmenteen ja -avaimen kansiot), ja symboliset linkit seurataan. Hylätty tiedosto saa HTTP 400:n, joka nimeää sen polun (`Can't import <path>: the file <reason>.`), eikä mitään lisätä jonoon.
 
 ## Metatietokatkokset
 

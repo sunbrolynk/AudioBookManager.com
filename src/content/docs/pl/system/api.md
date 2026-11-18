@@ -19,6 +19,7 @@ ABM ma REST API pod `/api`. Interaktywna dokumentacja jest pod `/api/docs` (Swag
 - Ciała żądań są ograniczone do 10 MiB (`MAX_REQUEST_BODY_BYTES`). Przywracanie kopii zapasowej i wgrywanie okładek mają wyższe limity. Powyżej limitu jest HTTP 413.
 - Błędy walidacji nigdy nie odsyłają z powrotem tego, co wysłałeś.
 - `POST /api/tasks` kolejkuje tylko `backup_export`. Każdy inny typ zadania dostaje HTTP 403, a ustawienia, które nie pasują do `backup_export`, dostają HTTP 422. Ręczne importy idą przez endpointy `/api/manual-import/`, a skanowanie biblioteki przez `POST /api/library/scan`.
+- `POST /api/manual-import/execute` i `/execute-to-book` sprawdzają każdy wiersz pliku według stałego schematu. Nieznany klucz, względna ścieżka `source_path` albo pusta lista `files` kończy się odrzuceniem z HTTP 422. Każde źródło musi być plikiem audio, który nie leży w folderze systemowym, bezpośrednio w folderze najwyższego poziomu jak `/tmp` czy `/mnt` ani w żadnym z folderów samego ABM (konfiguracja, baza danych, kopie zapasowe, logi, okładki, kosz, folder tymczasowy oraz foldery z certyfikatem i kluczem SSL), z podążaniem za dowiązaniami symbolicznymi. Odrzucony plik dostaje HTTP 400 ze swoją ścieżką (`Can't import <path>: the file <reason>.`) i nic nie trafia do kolejki.
 
 ## Awarie metadanych
 
