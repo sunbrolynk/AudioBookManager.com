@@ -20,7 +20,8 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - 校验错误永远不会把你发送的内容原样返回。
 - `POST /api/tasks` 只会把 `backup_export` 加入队列。其他任何任务类型都会得到 HTTP 403，不符合 `backup_export` 的设置会得到 HTTP 422。手动导入请用 `/api/manual-import/` 下的端点，扫描媒体库请用 `POST /api/library/scan`。
 - Library Import 会自己在服务器上保存每一行的 Libex 匹配结果。保存会话（`PUT /api/library-import/session/{id}` 或 `PATCH /api/library-import/session/{id}/choices`）时，如果某一行带了 `libex_matches`，会被拒绝，返回 HTTP 422 并指出这个字段，所以你写回的行里别带它。`POST /api/library-import/retry-match` 接受一个可选的 `session_id`，会把找到的匹配结果存进那个会话。
-- 不带 `limit` 时，`GET /api/metadata/search` 返回全部结果。带上 `limit`（1 到 50）时，最多返回这么多条。
+- `GET /api/metadata/search` 每次返回一页，最多 50 条结果。`page`（0 到 9）选择页码，响应里带有 `page` 和 `has_more`，后者说明后面的页是否可能还有结果。按 ASIN 搜索只有第 0 页。`search_type=phrase` 返回 Libex 针对该查询的最佳匹配，同样只有第 0 页，`has_more` 为 false。因为 Libex 会略过它读不了的书，一页结果不满时 `has_more` 仍可能为 true，所以要一直往后取，直到 `has_more` 为 false。`limit`（1 到 50）会截短一页。
+- `POST /api/manual-import/execute` 和 `/execute-to-book` 会按固定结构检查每一行文件。未知的键、相对路径的 `source_path` 或空的 `files` 列表会被 HTTP 422 拒绝。每个来源都必须是音频文件，且不在系统文件夹里、不直接位于 `/tmp` 或 `/mnt` 这类顶层文件夹下，也不在 ABM 自己的文件夹（配置、数据库、备份、日志、封面、回收站、临时文件夹，以及存放 SSL 证书和密钥的文件夹）里，符号链接会被跟随。被拒绝的文件会得到写有其路径的 HTTP 400（`Can't import <path>: the file <reason>.`），也不会排入任何任务。
 
 ## 元数据源中断
 

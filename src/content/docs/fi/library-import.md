@@ -24,7 +24,7 @@ Tiedostojen kanssa ristiriidassa oleva kirjailija tai sarjan paikka sulkee kirja
 
 Tiedostojen kesto lasketaan vain, kun kirjan jokainen tiedosto voitiin lukea. Jos yhtä ei voi mitata, rivillä ei ole kestoa: silloin vain sen ASIN voi vahvistaa osuman, ja muuten kirja odottaa kohdassa **Needs a look**.
 
-Kun kirja on kahdessa muodossa, kumpikin muoto on oma rivinsä ja mitataan erikseen. Kirja, joka on jaettu osiin eri muodoissa, on yksi rivi, kun sillä on oma kansionsa, ja sen osat lasketaan yhteen. Valmis lataus, jossa on yksi kirja kahdessa muodossa, mitataan yhtenä kopiona, eikä sillä ole kestoa, jolla osumaa haettaisiin, jos kopioiden kestot eroavat yli kolme minuuttia.
+Kun kirja on kahdessa muodossa, kumpikin muoto on oma rivinsä ja mitataan erikseen. Kirja, joka on jaettu osiin eri muodoissa, on yksi rivi, kun sillä on oma kansionsa, ja sen osat lasketaan yhteen.
 
 Keston perusteella hyväksytään vain englanninkielinen painos tai sellainen, jonka tiedoissa ei ole kieltä. Muunkielinen painos hyväksytään vain, kun tiedostojen oma ASIN löytää sen. Kirjaa, johon vastaus tuli [paikallisesta tallennuksesta](/fi/settings/metadata/) eikä suorasta hausta, ei koskaan hyväksytä ilman sinua.
 
@@ -47,7 +47,7 @@ Library Import -sivun **Recent Import Sessions** näyttää jokaisesta skannauks
 ## Listan lukeminen
 
 - Yhteenveto näyttää, montako kansiota löytyi ja montako on valmiina. Yläpalkissa on **Sort** (Folder name, Status, Title, Author, Series, Files) ja **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jokainen suodatin näyttää määränsä, ja määrät täsmäävät yhteenvedon kanssa. Täsmäys, jonka olet vahvistanut, on nimeltään Ready. Tämä laite muistaa järjestyksen ja suodattimen. Ne eivät säily sivun osoitteessa, joten linkki, jossa on `?sort=` tai `?filter=`, ei vie niitä mukanaan.
-- Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin. Haku näyttää jokaisen kirjan, jonka Libex löytää.
+- Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Jokainen rivi säilyttää kaikki osumat, jotka sen nimi-, tekijä- ja sarjahaut löytävät. Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin. Haku näyttää ensin Libexin parhaat osumat kirjoittamallesi tekstille ja sitten kirjat, jotka nimi-, tekijä- ja sarjahaut löytävät, jokaisen kirjan kerran, 50 kerrallaan. Lisää latautuu, kun vierität, tai **Load more** -painikkeella, kunnes tuloksia ei ole enempää.
 - Kun tiedostoissa ei ole ASINia tai kestoa, jolla painos voitaisiin varmistaa, kansion tiedoissa kerrotaan siitä.
 - **Rescan** poimii skannauksen jälkeen lisätyt kansiot ja säilyttää valintasi.
 
@@ -55,7 +55,7 @@ Kommentista tai kuvauksesta löytynyt ASIN on pelkkä vihje. Se lasketaan osumak
 
 ## Yhdistäminen, jakaminen ja lisääminen
 
-- Yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon. Voit jakaa ne taas kansion tiedoista. Yhdistetyn rivin osuma on vain ehdotus: se lasketaan kohtaan **Needs a look** eikä ole valittuna, ennen kuin vahvistat sen tai valitset toisen. Sen kesto on osien summa vain, kun jokaisella osalla on kesto, ja se säilyttää ASINin vain, kun kaikki osat antavat saman. Kirja, joka on yhdistetty kahdesta muodosta samoilla tiedostonimillä, lasketaan kerran: se saa pidemmän muodon keston, tai ei kestoa lainkaan, jos ne eroavat yli kolme minuuttia tai jos jollakin yhdistetyistä riveistä on jo molemmat muodot. Haku, joka valmistuu vasta kun olet yhdistänyt tai jakanut sen rivin, on myös vain ehdotus.
+- Yhdistä rivit, jotka ovat yksi kirja jaettuna useaan kansioon. Voit jakaa ne taas kansion tiedoista. Yhdistetyn rivin osuma on vain ehdotus: se lasketaan kohtaan **Needs a look** eikä ole valittuna, ennen kuin vahvistat sen tai valitset toisen. Sen kesto on osien summa vain, kun jokaisella osalla on kesto, ja se säilyttää ASINin vain, kun kaikki osat antavat saman. Yhdistäminen on vain yhden kirjan osille: jätä saman kirjan kaksi muotoa erillisiksi riveiksi, koska yhdistäminen laskee molemmat kestot yhteen. Haku, joka valmistuu vasta kun olet yhdistänyt tai jakanut sen rivin, on myös vain ehdotus.
 - Rivin tietojen **Confirm match** valitsee **Needs a look** -rivin, ja **Undo confirmation** poistaa valinnan taas.
 - Lisäys estetään, ja syy näytetään painikkeen yläpuolella, esimerkiksi "Select at least one folder" tai "2 selected rows still need a decision". Lisäys torjutaan myös koskematta mihinkään, kun kaksi riviä vaatii samaa kansiota tai tiedostoa.
 - Kaikki, mikä poistaisi tai korvaisi tiedostoja, kysyy ensin.

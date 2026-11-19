@@ -24,7 +24,7 @@ Un auteur ou une position dans la série qui contredit les fichiers écarte un l
 
 La durée des fichiers ne compte que si chaque fichier du livre a pu être lu. Si l'un d'eux ne peut pas être mesuré, la ligne n'a pas de durée : seul son ASIN peut confirmer une correspondance, sinon le livre attend sous **Needs a look**.
 
-Quand un livre existe en deux formats, chaque format est sa propre ligne et est mesuré à part. Un livre découpé en parties de formats différents forme une seule ligne quand il a son propre dossier, et ses parties sont additionnées. Un téléchargement terminé qui contient un livre en deux formats est mesuré comme une seule copie, et n'a pas de durée pour la correspondance si la durée des copies diffère de plus de trois minutes.
+Quand un livre existe en deux formats, chaque format est sa propre ligne et est mesuré à part. Un livre découpé en parties de formats différents forme une seule ligne quand il a son propre dossier, et ses parties sont additionnées.
 
 Seule une édition en anglais, ou une dont la fiche n'indique pas de langue, est acceptée sur la durée. Une édition dans une autre langue n'est acceptée que si l'ASIN des fichiers eux-mêmes la trouve. Un livre répondu depuis le [stockage local](/fr/settings/metadata/) au lieu d'une recherche en direct n'est jamais accepté sans toi.
 
@@ -47,7 +47,7 @@ Un tag de titre, d'album, de série, de partie de série, d'artiste, d'artiste d
 ## Lire la liste
 
 - Le résumé montre combien de dossiers ont été trouvés et combien sont prêts. La barre du haut a **Sort** (Folder name, Status, Title, Author, Series, Files) et **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Chaque filtre affiche son nombre, et les nombres correspondent au résumé. Une correspondance que tu as confirmée s'appelle Ready. Le tri et le filtre sont mémorisés sur cet appareil. Ils ne sont pas gardés dans l'adresse de la page, donc un lien avec `?sort=` ou `?filter=` ne les transmet pas.
-- Chaque ligne affiche la couverture, le titre, l'auteur et la série, et le degré de certitude de la correspondance en pourcentage, comme « 95% match ». Les détails du dossier proposent **Find a match** ou **Change match** pour chercher à la main. La recherche liste chaque livre que Libex trouve.
+- Chaque ligne affiche la couverture, le titre, l'auteur et la série, et le degré de certitude de la correspondance en pourcentage, comme « 95% match ». Chaque ligne garde toutes les correspondances que trouvent ses recherches par titre, auteur et série. Les détails du dossier proposent **Find a match** ou **Change match** pour chercher à la main. La recherche affiche d'abord les meilleures correspondances de Libex pour ce que tu as tapé, puis les livres que trouvent les recherches par titre, auteur et série, chaque livre une seule fois, 50 à la fois. La suite se charge quand tu fais défiler ou avec **Load more**, jusqu'à ce qu'il n'y en ait plus.
 - Quand les fichiers n'ont ni ASIN ni durée pour confirmer l'édition, les détails du dossier le disent.
 - **Rescan** prend en compte les dossiers ajoutés depuis le scan et garde tes choix.
 
@@ -55,7 +55,7 @@ Un ASIN trouvé dans un commentaire ou une description n'est qu'un indice. Il ne
 
 ## Réunir, séparer et ajouter
 
-- Réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers. Sépare-les de nouveau depuis les détails du dossier. La correspondance de la ligne réunie n'est qu'une suggestion : elle compte sous **Needs a look** et reste décochée jusqu'à ce que tu la confirmes ou en choisisses une autre. Sa durée est le total des parties seulement si chaque partie en a une, et elle ne garde un ASIN que si toutes les parties donnent le même. Un livre réuni à partir de deux formats aux mêmes noms de fichiers compte une seule fois : il prend la durée du format le plus long, ou aucune si elles diffèrent de plus de trois minutes ou si l'une des lignes réunies contient déjà les deux formats. Une recherche qui se termine après que tu as réuni ou séparé sa ligne n'est aussi qu'une suggestion.
+- Réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers. Sépare-les de nouveau depuis les détails du dossier. La correspondance de la ligne réunie n'est qu'une suggestion : elle compte sous **Needs a look** et reste décochée jusqu'à ce que tu la confirmes ou en choisisses une autre. Sa durée est le total des parties seulement si chaque partie en a une, et elle ne garde un ASIN que si toutes les parties donnent le même. Réunir sert seulement aux parties d'un même livre : laisse deux formats d'un livre en lignes séparées, car les réunir additionne les deux durées. Une recherche qui se termine après que tu as réuni ou séparé sa ligne n'est aussi qu'une suggestion.
 - **Confirm match** dans les détails d'une ligne coche une ligne **Needs a look**, et **Undo confirmation** retire cette coche.
 - L'ajout est bloqué avec une raison affichée au-dessus du bouton, comme « Select at least one folder » ou « 2 selected rows still need a decision ». L'ajout est aussi refusé, sans rien toucher, quand deux lignes réclament le même dossier ou le même fichier.
 - Tout ce qui retirerait ou remplacerait des fichiers demande d'abord.

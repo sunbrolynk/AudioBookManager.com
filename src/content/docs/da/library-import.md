@@ -24,7 +24,7 @@ En forfatter eller en plads i serien, der modsiger filerne, udelukker en bog. Pa
 
 Filernes spilletid tæller kun, når hver fil i bogen kunne læses. Kan én ikke måles, har rækken ingen spilletid: Så kan kun dens ASIN bekræfte et match, og ellers venter bogen under **Needs a look**.
 
-Når en bog findes i to formater, er hvert format sin egen række og måles for sig. En bog delt i dele i forskellige formater er én række, når den har sin egen mappe, og dens dele lægges sammen. En færdig download med én bog i to formater måles som én kopi og har ingen spilletid at matche på, når kopiernes længde afviger med mere end tre minutter.
+Når en bog findes i to formater, er hvert format sin egen række og måles for sig. En bog delt i dele i forskellige formater er én række, når den har sin egen mappe, og dens dele lægges sammen.
 
 Kun en engelsk udgave, eller en hvis opslag ikke angiver et sprog, accepteres på spilletid. En udgave på et andet sprog accepteres kun, når filernes egen ASIN finder den. En bog, der er besvaret fra [lokal lagring](/da/settings/metadata/) i stedet for et live opslag, accepteres aldrig uden dig.
 
@@ -47,7 +47,7 @@ Et titel-, album-, serie-, seriedel-, kunstner-, albumkunstner-, komponist- elle
 ## Sådan læser du listen
 
 - Oversigten viser, hvor mange mapper der blev fundet, og hvor mange der er klar. Topbjælken har **Sort** (Folder name, Status, Title, Author, Series, Files) og **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Hvert filter viser sit antal, og tallene passer med oversigten. Et match, du har bekræftet, hedder Ready. Sortering og filter huskes på denne enhed. De gemmes ikke i sidens adresse, så et link med `?sort=` eller `?filter=` tager dem ikke med.
-- Hver række viser cover, titel, forfatter og serie, og hvor sikkert matchet er i procent, fx "95% match". Mappedetaljerne har **Find a match** eller **Change match**, så du kan søge i hånden. Søgningen viser hver bog, Libex finder.
+- Hver række viser cover, titel, forfatter og serie, og hvor sikkert matchet er i procent, fx "95% match". Hver række beholder alle de match, som dens søgninger på titel, forfatter og serie finder. Mappedetaljerne har **Find a match** eller **Change match**, så du kan søge i hånden. Søgningen viser først Libex' bedste match for det, du skrev, og derefter de bøger, som søgningerne på titel, forfatter og serie finder, hver bog én gang, 50 ad gangen. Flere indlæses, når du scroller, eller med **Load more**, indtil der ikke er flere.
 - Når filerne ikke har en ASIN eller spilletid, der kan bekræfte udgaven, står det i mappedetaljerne.
 - **Rescan** samler mapper op, der er kommet til siden scanningen, og beholder dine valg.
 
@@ -55,7 +55,7 @@ En ASIN fundet i en kommentar eller beskrivelse er kun et hint. Den tæller kun 
 
 ## Sammenlæg, del op og tilføj
 
-- Læg rækker sammen, der er én bog fordelt på flere mapper. Del dem op igen fra mappedetaljerne. Den sammenlagte rækkes match er kun et forslag: Den tæller under **Needs a look** og er ikke markeret, før du bekræfter det eller vælger et andet. Dens spilletid er delenes samlede tid, kun når hver del har en, og den beholder kun en ASIN, når alle dele angiver den samme. En bog lagt sammen af to formater med de samme filnavne tæller én gang og får det længste formats spilletid, eller ingen, når de afviger med mere end tre minutter, eller når en af de sammenlagte rækker allerede rummer begge formater. Et opslag, der bliver færdigt, efter du har lagt dens række sammen eller delt den op, er også kun et forslag.
+- Læg rækker sammen, der er én bog fordelt på flere mapper. Del dem op igen fra mappedetaljerne. Den sammenlagte rækkes match er kun et forslag: Den tæller under **Needs a look** og er ikke markeret, før du bekræfter det eller vælger et andet. Dens spilletid er delenes samlede tid, kun når hver del har en, og den beholder kun en ASIN, når alle dele angiver den samme. Sammenlægning er kun til delene af én bog: Lad to formater af én bog være separate rækker, for en sammenlægning lægger begge spilletider sammen. Et opslag, der bliver færdigt, efter du har lagt dens række sammen eller delt den op, er også kun et forslag.
 - **Confirm match** i en rækkes detaljer markerer en **Needs a look**-række, og **Undo confirmation** fjerner markeringen igen.
 - Tilføj er blokeret med en årsag over knappen, fx "Select at least one folder" eller "2 selected rows still need a decision". Tilføj bliver også afvist, uden at noget røres, når to rækker gør krav på samme mappe eller fil.
 - Alt, der ville fjerne eller erstatte filer, spørger først.

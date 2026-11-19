@@ -24,7 +24,7 @@ Autor nebo pozice v sérii, které souborům odporují, knihu vyřadí. Když so
 
 Délka souborů se počítá jen tehdy, když se dal přečíst každý soubor knihy. Když jeden změřit nejde, řádek nemá žádnou délku: přiřazení pak může potvrdit jen jeho ASIN, jinak kniha čeká pod **Needs a look**.
 
-Když je kniha ve dvou formátech, každý formát je samostatný řádek a měří se zvlášť. Kniha rozdělená na části v různých formátech je jeden řádek, když má vlastní složku, a její části se sčítají. Dokončené stahování s jednou knihou ve dvou formátech se měří jako jedna kopie a nemá žádnou délku k přiřazení, když se délky kopií liší o víc než tři minuty.
+Když je kniha ve dvou formátech, každý formát je samostatný řádek a měří se zvlášť. Kniha rozdělená na části v různých formátech je jeden řádek, když má vlastní složku, a její části se sčítají.
 
 Podle délky se přijme jen anglické vydání nebo takové, jehož záznam neuvádí jazyk. Vydání v jiném jazyce se přijme jen tehdy, když ho najde vlastní ASIN souborů. Kniha zodpovězená z [místního úložiště](/cs/settings/metadata/) místo živého dotazu se bez tebe nikdy nepřijme.
 
@@ -47,7 +47,7 @@ Tag názvu, alba, série, části série, interpreta, interpreta alba, skladatel
 ## Jak číst seznam
 
 - Souhrn ukazuje, kolik složek se našlo a kolik je připravených. V horní liště je **Sort** (Folder name, Status, Title, Author, Series, Files) a **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Každý filtr ukazuje svůj počet a počty sedí se souhrnem. Shodě, kterou jsi potvrdil, se říká Ready. Řazení a filtr si pamatuje toto zařízení. Nedrží se v adrese stránky, takže odkaz s `?sort=` nebo `?filter=` je nepřenese.
-- Každý řádek ukazuje obálku, název, autora a sérii a v procentech, jak jistá shoda je, třeba "95% match". V detailu složky je **Find a match** nebo **Change match** pro ruční hledání. Hledání ukáže každou knihu, kterou Libex najde.
+- Každý řádek ukazuje obálku, název, autora a sérii a v procentech, jak jistá shoda je, třeba "95% match". Každý řádek si ponechá všechny shody, které najdou jeho hledání podle názvu, autora a série. V detailu složky je **Find a match** nebo **Change match** pro ruční hledání. Hledání ukáže nejdřív nejlepší shody z Libexu pro to, co jsi napsal, a pak knihy, které najdou hledání podle názvu, autora a série, každou knihu jen jednou, po 50. Další se načtou, když posuneš stránku dolů, nebo přes **Load more**, dokud nějaké zbývají.
 - Když soubory nemají ASIN ani délku, podle kterých by se dala ověřit edice, detail složky to řekne.
 - **Rescan** načte složky přidané od skenování a tvoje volby zachová.
 
@@ -55,7 +55,7 @@ ASIN nalezený v komentáři nebo popisu je jen nápověda. Za shodu se počít�
 
 ## Spojování, dělení a přidávání
 
-- Spoj řádky, které jsou jedna kniha rozdělená do více složek. Znovu je rozdělíš v detailu složky. Přiřazení spojeného řádku je jen návrh: počítá se pod **Needs a look** a není zaškrtnuté, dokud ho nepotvrdíš nebo nevybereš jiné. Jeho délka je součet částí jen tehdy, když ji má každá část, a ASIN si ponechá jen tehdy, když všechny části uvádějí stejné. Kniha spojená ze dvou formátů se stejnými názvy souborů se počítá jednou: dostane délku delšího formátu, nebo žádnou, když se liší o víc než tři minuty nebo když některý ze spojených řádků už obsahuje oba formáty. Dotaz, který doběhne až po spojení nebo rozdělení jeho řádku, je také jen návrh.
+- Spoj řádky, které jsou jedna kniha rozdělená do více složek. Znovu je rozdělíš v detailu složky. Přiřazení spojeného řádku je jen návrh: počítá se pod **Needs a look** a není zaškrtnuté, dokud ho nepotvrdíš nebo nevybereš jiné. Jeho délka je součet částí jen tehdy, když ji má každá část, a ASIN si ponechá jen tehdy, když všechny části uvádějí stejné. Spojení je jen pro části jedné knihy: dva formáty jedné knihy nech jako samostatné řádky, protože spojení sečte obě délky. Dotaz, který doběhne až po spojení nebo rozdělení jeho řádku, je také jen návrh.
 - **Confirm match** v detailech řádku zaškrtne řádek **Needs a look** a **Undo confirmation** zaškrtnutí zase vezme zpět.
 - Když přidání nejde, nad tlačítkem se ukáže důvod, třeba "Select at least one folder" nebo "2 selected rows still need a decision". Přidání se taky odmítne, aniž by se čehokoli dotklo, když si dva řádky nárokují stejnou složku nebo soubor.
 - Cokoli, co by odstranilo nebo nahradilo soubory, se nejdřív zeptá.

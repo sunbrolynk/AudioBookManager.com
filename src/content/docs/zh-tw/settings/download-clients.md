@@ -35,6 +35,8 @@ Deluge、qBittorrent、Transmission、rTorrent、SABnzbd、NZBGet 和 Blackhole�
 | Redownload Failed | 開啟 | 把失敗的發行版本加進封鎖清單，然後重新搜尋 |
 | Redownload Failed from Interactive Search | 開啟 | 同上，用在你手動挑選的發行版本 |
 
+已完成的下載以不同格式多次包含同一本書時，ABM 只匯入這本書的品質設定檔排得最高的那份副本。把下載配對到書時也只測量一份副本，也就是預設品質設定檔排得最高的那份。設定檔排名相同或沒有包含的格式，依 M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA 的順序。其餘副本會留在下載裡；只有 **Also Delete Files** 在匯入後移除下載時才會刪除它們。一組分段旁邊的單一檔案，只有長度相符時才算第二份副本，否則就是同一本書的各部分。封面和其他額外檔案仍會跟著 ABM 取用的副本一起匯入。下載資料夾裡還有另一本書的音訊時，只有以匯入音訊命名的額外檔案會一起匯入。
+
 匯入時要用硬連結還是複製，由〈[媒體管理](/zh-tw/settings/media-management/)〉裡的 **Use Hardlinks instead of Copy** 決定。如果用戶端的資料夾跟 ABM 看到的不是同一個路徑，就新增遠端路徑對應。
 
 ## 遠端路徑對應

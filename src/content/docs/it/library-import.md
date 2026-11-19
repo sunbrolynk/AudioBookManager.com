@@ -24,7 +24,7 @@ Un autore o una posizione nella serie che contraddice i file esclude un libro. S
 
 La durata dei file conta solo quando è stato possibile leggere ogni file del libro. Se uno non si può misurare, la riga non ha durata: solo il suo ASIN può confermare un abbinamento, altrimenti il libro aspetta sotto **Needs a look**.
 
-Quando un libro è in due formati, ogni formato è una riga a sé e viene misurato per conto suo. Un libro diviso in parti di formati diversi è una sola riga quando ha una cartella sua, e le sue parti vengono sommate. Un download completato con un libro in due formati viene misurato come una sola copia, e non ha una durata su cui abbinarlo se la durata delle copie differisce di più di tre minuti.
+Quando un libro è in due formati, ogni formato è una riga a sé e viene misurato per conto suo. Un libro diviso in parti di formati diversi è una sola riga quando ha una cartella sua, e le sue parti vengono sommate.
 
 In base alla durata viene accettata solo un'edizione in inglese, o una la cui scheda non indica la lingua. Un'edizione in un'altra lingua viene accettata solo quando la trova l'ASIN dei file stessi. Un libro con risposta presa dall'[archiviazione locale](/it/settings/metadata/) invece che da una ricerca dal vivo non viene mai accettato senza di te.
 
@@ -47,7 +47,7 @@ Un tag di titolo, album, serie, parte della serie, artista, artista dell'album, 
 ## Leggere l'elenco
 
 - Il riepilogo mostra quante cartelle sono state trovate e quante sono pronte. La barra in alto ha **Sort** (Folder name, Status, Title, Author, Series, Files) e **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Ogni filtro mostra il suo conteggio, e i conteggi corrispondono al riepilogo. Un abbinamento che hai confermato si chiama Ready. Ordinamento e filtro vengono ricordati su questo dispositivo. Non restano nell'indirizzo della pagina, quindi un link con `?sort=` o `?filter=` non li porta con sé.
-- Ogni riga mostra copertina, titolo, autore e serie, e quanto è sicura la corrispondenza in percentuale, per esempio "95% match". Nei dettagli della cartella trovi **Find a match** o **Change match** per cercare a mano. La ricerca mostra ogni libro che Libex trova.
+- Ogni riga mostra copertina, titolo, autore e serie, e quanto è sicura la corrispondenza in percentuale, per esempio "95% match". Ogni riga tiene tutte le corrispondenze che trovano le sue ricerche per titolo, autore e serie. Nei dettagli della cartella trovi **Find a match** o **Change match** per cercare a mano. La ricerca mostra prima le migliori corrispondenze di Libex per quello che hai scritto, poi i libri che trovano le ricerche per titolo, autore e serie, ogni libro una volta sola, 50 alla volta. Altri si caricano mentre scorri o con **Load more**, finché non ce ne sono più.
 - Quando i file non hanno un ASIN o una durata per confermare l'edizione, i dettagli della cartella te lo dicono.
 - **Rescan** trova le cartelle aggiunte dopo la scansione e mantiene le tue scelte.
 
@@ -55,7 +55,7 @@ Un ASIN trovato in un commento o in una descrizione è solo un indizio. Conta co
 
 ## Unire, dividere e aggiungere
 
-- Unisci le righe che sono un unico libro diviso tra più cartelle. Puoi dividerle di nuovo dai dettagli della cartella. L'abbinamento della riga unita è solo un suggerimento: conta sotto **Needs a look** e parte senza spunta finché non lo confermi o ne scegli un altro. La sua durata è il totale delle parti solo quando ogni parte ne ha una, e mantiene un ASIN solo quando tutte le parti danno lo stesso. Un libro unito da due formati con gli stessi nomi di file conta una volta sola: prende la durata del formato più lungo, o nessuna se differiscono di più di tre minuti o se una delle righe unite contiene già entrambi i formati. Anche una ricerca che finisce dopo che hai unito o diviso la sua riga è solo un suggerimento.
+- Unisci le righe che sono un unico libro diviso tra più cartelle. Puoi dividerle di nuovo dai dettagli della cartella. L'abbinamento della riga unita è solo un suggerimento: conta sotto **Needs a look** e parte senza spunta finché non lo confermi o ne scegli un altro. La sua durata è il totale delle parti solo quando ogni parte ne ha una, e mantiene un ASIN solo quando tutte le parti danno lo stesso. Unire serve solo per le parti di un unico libro: lascia due formati dello stesso libro come righe separate, perché unendoli le due durate si sommano. Anche una ricerca che finisce dopo che hai unito o diviso la sua riga è solo un suggerimento.
 - **Confirm match** nei dettagli di una riga spunta una riga **Needs a look**, e **Undo confirmation** toglie di nuovo la spunta.
 - L'aggiunta viene bloccata con un motivo mostrato sopra il pulsante, per esempio "Select at least one folder" o "2 selected rows still need a decision". L'aggiunta viene rifiutata anche, senza toccare nulla, quando due righe rivendicano la stessa cartella o lo stesso file.
 - Tutto quello che rimuoverebbe o sostituirebbe dei file ti chiede prima conferma.

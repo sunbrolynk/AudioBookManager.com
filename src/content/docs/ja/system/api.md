@@ -20,7 +20,8 @@ ABM には `/api` の下に REST API があります。インタラクティブ�
 - バリデーションエラーで、送った内容がそのまま返されることはありません。
 - `POST /api/tasks` がキューに入れるのは `backup_export` だけです。それ以外のタスク種別は HTTP 403 になり、`backup_export` に合わない設定は HTTP 422 になります。手動インポートは `/api/manual-import/` のエンドポイントを、ライブラリのスキャンは `POST /api/library/scan` を使ってください。
 - Library Import は各行の Libex のマッチ候補をサーバー側で保持します。セッションの保存（`PUT /api/library-import/session/{id}` または `PATCH /api/library-import/session/{id}/choices`）で `libex_matches` を送る行があると、そのフィールド名を示す HTTP 422 で拒否されます。保存し直す行には含めないでください。`POST /api/library-import/retry-match` は省略可能な `session_id` を受け取り、見つかったマッチ候補をそのセッションに保存します。
-- `GET /api/metadata/search` は `limit` を省くとすべての結果を返します。`limit`（1〜50）を付けると、最大でその件数を返します。
+- `GET /api/metadata/search` は 1 ページ最大 50 件の結果を返します。`page`（0〜9）でページを選び、レスポンスには `page` と、後のページにまだ結果があるかもしれないかを示す `has_more` が含まれます。ASIN 検索はページ 0 だけです。`search_type=phrase` はクエリに対する Libex のベストマッチを返します。こちらもページ 0 だけで、`has_more` は false です。Libex は読み取れない本を除くため、件数が少ないページでも `has_more` が true になることがあります。`has_more` が false になるまで次のページを取得してください。`limit`（1〜50）はページを短くします。
+- `POST /api/manual-import/execute` と `/execute-to-book` は、ファイルの各行を固定のスキーマで確認します。不明なキー、相対パスの `source_path`、空の `files` リストは HTTP 422 で拒否されます。各ソースは音声ファイルで、システムフォルダ、`/tmp` や `/mnt` のような最上位フォルダの直下、ABM 自身のフォルダ（設定、データベース、バックアップ、ログ、カバー、ごみ箱、一時フォルダ、SSL 証明書と鍵のあるフォルダ）のどれにもないことが必要です。シンボリックリンクは辿って判断します。拒否されたファイルはパス入りの HTTP 400（`Can't import <path>: the file <reason>.`）になり、何もキューに入りません。
 
 ## メタデータの障害
 

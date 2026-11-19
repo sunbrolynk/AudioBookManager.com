@@ -24,7 +24,7 @@ Autor albo pozycja w serii sprzeczna z plikami wyklucza książkę. Gdy pliki pa
 
 Długość plików liczy się tylko wtedy, gdy dało się odczytać każdy plik książki. Jeśli któregoś nie da się zmierzyć, wiersz nie ma długości: dopasowanie może wtedy potwierdzić tylko jego ASIN, a w przeciwnym razie książka czeka w **Needs a look**.
 
-Gdy książka jest w dwóch formatach, każdy format to osobny wiersz i jest mierzony osobno. Książka podzielona na części w różnych formatach to jeden wiersz, gdy ma własny folder, a jej części są sumowane. Ukończone pobieranie z jedną książką w dwóch formatach jest mierzone jako jedna kopia i nie ma długości do dopasowania, gdy długości kopii różnią się o więcej niż trzy minuty.
+Gdy książka jest w dwóch formatach, każdy format to osobny wiersz i jest mierzony osobno. Książka podzielona na części w różnych formatach to jeden wiersz, gdy ma własny folder, a jej części są sumowane.
 
 Na podstawie długości przyjmowane jest tylko wydanie angielskie albo takie, którego wpis nie podaje języka. Wydanie w innym języku jest przyjmowane tylko wtedy, gdy znajdzie je własny ASIN plików. Książka z odpowiedzią z [pamięci lokalnej](/pl/settings/metadata/) zamiast z wyszukiwania na żywo nigdy nie jest przyjmowana bez ciebie.
 
@@ -47,7 +47,7 @@ Tag tytułu, albumu, serii, części serii, wykonawcy, wykonawcy albumu, kompozy
 ## Jak czytać listę
 
 - Podsumowanie pokazuje, ile folderów znaleziono i ile jest gotowych. Górny pasek ma **Sort** (Folder name, Status, Title, Author, Series, Files) i **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Każdy filtr pokazuje swoją liczbę, a liczby zgadzają się z podsumowaniem. Dopasowanie, które potwierdzisz, nazywa się Ready. Sortowanie i filtr są zapamiętywane na tym urządzeniu. Nie są trzymane w adresie strony, więc link z `?sort=` albo `?filter=` ich nie przenosi.
-- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie. Wyszukiwanie pokazuje każdą książkę, którą znajdzie Libex.
+- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". Każdy wiersz zachowuje wszystkie dopasowania znalezione przez jego wyszukiwania po tytule, autorze i serii. W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie. Wyszukiwanie pokazuje najpierw najlepsze dopasowania Libex do tego, co wpisałeś, a potem książki znalezione przez wyszukiwania po tytule, autorze i serii, każdą książkę raz, po 50. Kolejne wczytują się, gdy przewijasz, albo przez **Load more**, aż nie będzie więcej.
 - Kiedy pliki nie mają ASIN-u ani czasu trwania, który potwierdziłby wydanie, szczegóły folderu to pokazują.
 - **Rescan** wyłapuje foldery dodane od czasu skanowania i zachowuje twoje wybory.
 
@@ -55,7 +55,7 @@ ASIN znaleziony w komentarzu albo opisie to tylko podpowiedź. Liczy się jako d
 
 ## Łączenie, rozdzielanie i dodawanie
 
-- Połącz wiersze, które są jedną książką rozbitą na kilka folderów. Rozdzielisz je z powrotem w szczegółach folderu. Dopasowanie połączonego wiersza jest tylko propozycją: liczy się w **Needs a look** i nie jest zaznaczone, dopóki go nie potwierdzisz albo nie wybierzesz innego. Jego długość jest sumą części tylko wtedy, gdy każda część ją ma, a ASIN zostaje tylko wtedy, gdy wszystkie części podają ten sam. Książka połączona z dwóch formatów o tych samych nazwach plików liczy się raz: dostaje długość dłuższego formatu albo żadnej, gdy różnią się o więcej niż trzy minuty albo gdy któryś z połączonych wierszy już zawiera oba formaty. Wyszukiwanie, które kończy się po połączeniu albo rozdzieleniu jego wiersza, też jest tylko propozycją.
+- Połącz wiersze, które są jedną książką rozbitą na kilka folderów. Rozdzielisz je z powrotem w szczegółach folderu. Dopasowanie połączonego wiersza jest tylko propozycją: liczy się w **Needs a look** i nie jest zaznaczone, dopóki go nie potwierdzisz albo nie wybierzesz innego. Jego długość jest sumą części tylko wtedy, gdy każda część ją ma, a ASIN zostaje tylko wtedy, gdy wszystkie części podają ten sam. Łączenie jest tylko dla części jednej książki: zostaw dwa formaty jednej książki jako osobne wiersze, bo połączenie sumuje obie długości. Wyszukiwanie, które kończy się po połączeniu albo rozdzieleniu jego wiersza, też jest tylko propozycją.
 - **Confirm match** w szczegółach wiersza zaznacza wiersz **Needs a look**, a **Undo confirmation** cofa też to zaznaczenie.
 - Add jest zablokowany, a powód widać nad przyciskiem, na przykład "Select at least one folder" albo "2 selected rows still need a decision". Add zostaje też odrzucony, bez ruszania czegokolwiek, gdy dwa wiersze wskazują ten sam folder albo plik.
 - Wszystko, co usunęłoby albo zastąpiło pliki, najpierw pyta.

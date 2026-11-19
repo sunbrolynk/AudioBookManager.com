@@ -32,6 +32,7 @@ export default defineConfig({
         { icon: 'github', label: 'GitHub', href: 'https://github.com/sunbrolynk/AudioBook-Manager' },
       ],
       customCss: ['./src/styles/custom.css'],
+      routeMiddleware: './src/routeData.ts',
       components: {
         Header: './src/components/overrides/Header.astro',
         PageTitle: './src/components/overrides/PageTitle.astro',

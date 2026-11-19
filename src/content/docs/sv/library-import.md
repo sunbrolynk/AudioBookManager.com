@@ -24,7 +24,7 @@ En författare eller en plats i serien som motsäger filerna utesluter en bok. P
 
 Filernas speltid räknas bara när varje fil i boken kunde läsas. Går en inte att mäta har raden ingen speltid: då kan bara dess ASIN bekräfta en träff, och annars väntar boken under **Needs a look**.
 
-När en bok finns i två format är varje format en egen rad och mäts för sig. En bok som är delad i delar i olika format är en rad när den har en egen mapp, och delarna läggs ihop. En slutförd nedladdning med en bok i två format mäts som en kopia och har ingen speltid att matcha på när kopiornas längd skiljer sig med mer än tre minuter.
+När en bok finns i två format är varje format en egen rad och mäts för sig. En bok som är delad i delar i olika format är en rad när den har en egen mapp, och delarna läggs ihop.
 
 Bara en engelsk utgåva, eller en vars post inte anger språk, godtas på speltid. En utgåva på ett annat språk godtas bara när filernas egen ASIN hittar den. En bok som besvarats från [lokal lagring](/sv/settings/metadata/) i stället för en direktsökning godtas aldrig utan dig.
 
@@ -47,7 +47,7 @@ En tagg för titel, album, serie, seriedel, artist, albumartist, kompositör ell
 ## Läsa listan
 
 - Sammanfattningen visar hur många mappar som hittades och hur många som är klara. Fältet högst upp har **Sort** (Folder name, Status, Title, Author, Series, Files) och **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Varje filter visar sitt antal, och antalen stämmer med sammanfattningen. En matchning som du har bekräftat kallas Ready. Den här enheten kommer ihåg sortering och filter. De sparas inte i sidans adress, så en länk med `?sort=` eller `?filter=` tar inte med dem.
-- Varje rad visar omslag, titel, författare och serie, och hur säker matchningen är i procent, till exempel "95% match". Mappdetaljerna har **Find a match** eller **Change match** för att söka för hand. Sökningen visar varje bok som Libex hittar.
+- Varje rad visar omslag, titel, författare och serie, och hur säker matchningen är i procent, till exempel "95% match". Varje rad behåller alla träffar som sökningarna på titel, författare och serie hittar. Mappdetaljerna har **Find a match** eller **Change match** för att söka för hand. Sökningen visar först Libex bästa träffar för det du skrev och sedan böckerna som sökningarna på titel, författare och serie hittar, varje bok en gång, 50 åt gången. Fler laddas när du scrollar, eller med **Load more**, tills det inte finns fler.
 - När filerna saknar ASIN eller speltid som kan bekräfta utgåvan står det i mappdetaljerna.
 - **Rescan** plockar upp mappar som har lagts till sedan skanningen och behåller dina val.
 
@@ -55,7 +55,7 @@ En ASIN som hittas i en kommentar eller beskrivning är bara en ledtråd. Den r�
 
 ## Slå ihop, dela upp och lägga till
 
-- Slå ihop rader som är en och samma bok uppdelad på flera mappar. Dela upp dem igen från mappdetaljerna. Den ihopslagna radens träff är bara ett förslag: den räknas under **Needs a look** och är inte ibockad förrän du bekräftar den eller väljer en annan. Dess speltid är delarnas summa bara när varje del har en, och den behåller en ASIN bara när alla delar anger samma. En bok som slagits ihop av två format med samma filnamn räknas en gång och får det längre formatets speltid, eller ingen när de skiljer sig med mer än tre minuter eller när en av de ihopslagna raderna redan har båda formaten. En sökning som blir klar efter att du slagit ihop eller delat upp dess rad är också bara ett förslag.
+- Slå ihop rader som är en och samma bok uppdelad på flera mappar. Dela upp dem igen från mappdetaljerna. Den ihopslagna radens träff är bara ett förslag: den räknas under **Needs a look** och är inte ibockad förrän du bekräftar den eller väljer en annan. Dess speltid är delarnas summa bara när varje del har en, och den behåller en ASIN bara när alla delar anger samma. Att slå ihop är bara till för delarna av en bok: låt två format av en bok vara separata rader, eftersom en ihopslagning lägger ihop båda speltiderna. En sökning som blir klar efter att du slagit ihop eller delat upp dess rad är också bara ett förslag.
 - **Confirm match** i en rads detaljer bockar i en **Needs a look**-rad, och **Undo confirmation** tar bort bocken igen.
 - Lägg till blockeras med en orsak som visas ovanför knappen, till exempel "Select at least one folder" eller "2 selected rows still need a decision". Lägg till vägras också, utan att något rörs, när två rader gör anspråk på samma mapp eller fil.
 - Allt som skulle ta bort eller ersätta filer frågar först.

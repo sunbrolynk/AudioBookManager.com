@@ -3,7 +3,7 @@ title: Dodawanie nowych książek
 description: Wyszukaj książkę i dodaj ją jako poszukiwaną.
 ---
 
-**Library > Add New** szuka książek w Libex i dodaje te, które wybierzesz. Wyszukiwanie dopasowuje tytuł, autora, serię albo ASIN.
+**Library > Add New** szuka książek w Libex i dodaje te, które wybierzesz. Wyszukiwanie dopasowuje tytuł, autora, serię albo ASIN. Wyszukiwanie w trybie **Title** pokazuje najpierw **Best matches**, czyli najlepsze dopasowania Libex do tego, co wpisałeś. Potem są wyniki po tytule, bez książek, które już tam są, po 50. Kolejne 50 wczytuje się, gdy przewijasz, albo przez **Load more**, aż Libex nie będzie mieć więcej, najwyżej 500.
 
 ## Co robi dodanie
 

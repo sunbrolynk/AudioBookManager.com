@@ -1,8 +1,9 @@
 ---
-import { getCollection, render } from 'astro:content';
+import { render } from 'astro:content';
 import highlights from '../data/release-highlights.json';
 import strings from '../ui-strings.json';
 import { PRERELEASE } from '../prerelease';
+import { releaseAnchor, releasesNewestFirst } from '../lib/releases.mjs';
 
 type Highlight = { title: string; summary: string; upgrade?: string };
 const notes = highlights as Record<string, Highlight>;
@@ -20,15 +21,14 @@ const tally = (markdown: string) => {
   return kinds;
 };
 const kindClass = (k: string) => (/fix/i.test(k) ? 'fixed' : /secur/i.test(k) ? 'security' : 'changed');
-const newestFirst = (a: string, b: string) => b.localeCompare(a, undefined, { numeric: true });
 
-const entries = (await getCollection('releases')).sort((a, b) => newestFirst(a.data.version, b.data.version));
+const entries = await releasesNewestFirst();
 const rendered = await Promise.all(
   entries.map(async (e) => {
     const kinds = tally(e.body ?? '');
     const counts = Object.entries(kinds.reduce<Record<string, number>>((a, k) => ((a[k] = (a[k] ?? 0) + 1), a), {}));
     const { Content } = await render(e);
-    return { ...e.data, kinds, counts, note: notes[e.data.version], Content };
+    return { ...e.data, id: releaseAnchor(e.data.version), kinds, counts, note: notes[e.data.version], Content };
   }),
 );
 ---
@@ -37,10 +37,10 @@ const rendered = await Promise.all(
 <div class="releases not-content">
   {
     rendered.map((r) => (
-      <section class="rel" aria-labelledby={`v${r.version}`}>
+      <section class="rel" aria-labelledby={r.id}>
         <div class="meta">
-          <h2 id={`v${r.version}`} class="cond">{PRERELEASE ? r.version : <a href={r.url}>{r.version}</a>}</h2>
-          {r.date && <div class="d">{r.date}</div>}
+          <h2 id={r.id} class="cond">{PRERELEASE ? r.version : <a href={r.url}>{r.version}</a>}</h2>
+          {r.date && <time class="d" datetime={r.date} data-local-day>{r.date.slice(0, 10)}</time>}
           <div class="st" aria-hidden="true">{r.kinds.map((k) => <i class={kindClass(k)} />)}</div>
           <small>{r.counts.map(([k, n]) => `${n} ${k.toLowerCase()}`).join(' · ')}</small>
         </div>
@@ -55,11 +55,17 @@ const rendered = await Promise.all(
   }
 </div>
 
+<script>
+  import { localDay } from '../lib/local-date.mjs';
+  // The build writes the UTC day; this shows the day where the reader is.
+  for (const t of document.querySelectorAll('time[data-local-day]')) if (t instanceof HTMLTimeElement) t.textContent = localDay(t.dateTime);
+</script>
+
 <style>
   .rel { display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 2rem; padding: 2.25rem 0; border-top: 1px solid var(--r1-line); }
   .meta h2 { font-size: 3.4rem; margin: 0; }
   .meta h2 a { color: var(--r1-ink); text-decoration: none; }
-  .meta .d { font: 13px var(--r1-mono); color: var(--r1-mut); margin-top: .4rem; }
+  .meta .d { display: block; font: 13px var(--r1-mono); color: var(--r1-mut); margin-top: .4rem; }
   .st { display: flex; flex-wrap: wrap; gap: 2px; margin-top: .9rem; }
   .st i { width: 10px; height: 24px; display: block; }
   .st .changed { background: var(--r1-find); } .st .fixed { background: var(--r1-done); } .st .security { background: var(--r1-want); }
