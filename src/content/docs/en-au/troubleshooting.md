@@ -42,7 +42,7 @@ Every API call needs the API key, including from your own network and when signe
 
 ## A page stays blank or shows errors after updating
 
-Reload the tab. An open page from before the update does not have the API key yet. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/en-au/guides/reverse-proxy/).
+Reload the tab. An open page from before the update does not have the API key yet. A Library Import page left open from before the update can't save its changes until you reload it. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/en-au/guides/reverse-proxy/).
 
 ## My calendar subscription stopped updating
 

@@ -47,7 +47,7 @@ Un tag di titolo, album, serie, parte della serie, artista, artista dell'album, 
 ## Leggere l'elenco
 
 - Il riepilogo mostra quante cartelle sono state trovate e quante sono pronte. La barra in alto ha **Sort** (Folder name, Status, Title, Author, Series, Files) e **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Ogni filtro mostra il suo conteggio, e i conteggi corrispondono al riepilogo. Un abbinamento che hai confermato si chiama Ready. Ordinamento e filtro vengono ricordati su questo dispositivo. Non restano nell'indirizzo della pagina, quindi un link con `?sort=` o `?filter=` non li porta con sé.
-- Ogni riga mostra copertina, titolo, autore e serie, e quanto è sicura la corrispondenza in percentuale, per esempio "95% match". Nei dettagli della cartella trovi **Find a match** o **Change match** per cercare a mano.
+- Ogni riga mostra copertina, titolo, autore e serie, e quanto è sicura la corrispondenza in percentuale, per esempio "95% match". Ogni riga tiene tutte le corrispondenze che trovano le sue ricerche per titolo, autore e serie. Nei dettagli della cartella trovi **Find a match** o **Change match** per cercare a mano. La ricerca mostra prima le migliori corrispondenze di Libex per quello che hai scritto, poi i libri che trovano le ricerche per titolo, autore e serie, ogni libro una volta sola, 50 alla volta. Altri si caricano mentre scorri o con **Load more**, finché non ce ne sono più.
 - Quando i file non hanno un ASIN o una durata per confermare l'edizione, i dettagli della cartella te lo dicono.
 - **Rescan** trova le cartelle aggiunte dopo la scansione e mantiene le tue scelte.
 
