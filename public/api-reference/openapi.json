@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.23.0",
+    "version": "0.26.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3163,6 +3163,65 @@
         }
       }
     },
+    "/api/library/recent": {
+      "get": {
+        "tags": [
+          "Library"
+        ],
+        "summary": "Get Recent Books",
+        "description": "Newest imported books, or newest books on the Missing list.",
+        "operationId": "get_recent_books_api_library_recent_get",
+        "parameters": [
+          {
+            "name": "kind",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": [
+                "imported",
+                "wanted"
+              ],
+              "type": "string",
+              "title": "Kind"
+            }
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 24,
+              "minimum": 1,
+              "default": 12,
+              "title": "Limit"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RecentBooksResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/library/scan": {
       "post": {
         "tags": [
@@ -3419,7 +3478,7 @@
           "Library Import"
         ],
         "summary": "Retry Automatic Matching",
-        "description": "Retry automatic matching on pending_search and no_match items.\n\nExpects JSON body:\n{\n    \"items\": [\n        {\n            \"path\": \"/path/to/folder\",\n            \"parsed_title\": \"Book Title\",\n            \"parsed_authors\": [\"Author Name\"],\n            \"parsed_series\": \"Series Name\",\n            \"parsed_position\": \"1\",\n            \"parsed_asin\": \"B00XXXXXX\",\n            \"audio_files\": [\"file1.mp3\", \"file2.mp3\"],\n            \"file_count\": 2\n        },\n        ...\n    ]\n}\n\nReturns updated results with matches found.",
+        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
         "requestBody": {
           "content": {
@@ -3943,13 +4002,13 @@
           "Manual Import"
         ],
         "summary": "Execute Import",
-        "description": "Queue files for background import across multiple books. Returns\nimmediately with a `task_id` for tracking progress.",
+        "description": "Queue files for background import across multiple books. Only audio\nfiles outside system and app-data folders are accepted. Returns\nimmediately with a `task_id` for tracking progress.",
         "operationId": "execute_import_api_manual_import_execute_post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManualImportFilesRequest"
+                "$ref": "#/components/schemas/ManualImportPayload"
               }
             }
           },
@@ -3987,13 +4046,13 @@
           "Manual Import"
         ],
         "summary": "Execute Import To Book",
-        "description": "Queue files for background import to a single book, with an optional\ncustom `destination_filename` for multi-part files. Returns immediately\nwith a `task_id` for tracking progress.",
+        "description": "Queue files for background import to a single book, with a\n`destination_filename` for each file. Only audio files outside system and\napp-data folders are accepted. Returns immediately with a `task_id` for\ntracking progress.",
         "operationId": "execute_import_to_book_api_manual_import_execute_to_book_post",
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ManualImportFilesRequest"
+                "$ref": "#/components/schemas/ManualImportPayload"
               }
             }
           },
@@ -16064,6 +16123,123 @@
         }
       }
     },
+    "/api/settings/abs": {
+      "get": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Get Abs Settings",
+        "description": "The saved connection and the status of its last check; the key is never returned.",
+        "operationId": "get_abs_settings_api_settings_abs_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbsSettings"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Put Abs Settings",
+        "description": "Save the connection. An enabled one is checked first and refused with 422 when it fails an error check.",
+        "operationId": "put_abs_settings_api_settings_abs_put",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AbsSettingsRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbsSettings"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Delete Abs Settings",
+        "description": "Disconnect: remove the saved connection and its key.",
+        "operationId": "delete_abs_settings_api_settings_abs_delete",
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          }
+        }
+      }
+    },
+    "/api/settings/abs/test": {
+      "post": {
+        "tags": [
+          "Settings"
+        ],
+        "summary": "Test Abs Settings",
+        "description": "Check a server without saving: its version, the key's permissions and its libraries.",
+        "operationId": "test_abs_settings_api_settings_abs_test_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AbsTestRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AbsTestResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/system/status": {
       "get": {
         "tags": [
@@ -17213,7 +17389,7 @@
           "Tasks"
         ],
         "summary": "Queue Task",
-        "description": "Queue a new background task. Task types: `backup_export` (export backups\nto remote targets), `manual_import` (import files from the manual import\nfolder) and `library_scan` (scan the library for changes).",
+        "description": "Queue a background task. The only task type you can queue here is\n`backup_export`, which exports backups to remote targets. Its payload is\n`filenames` (the backup files to export) and `target_ids` (the remote\ntargets to send them to); each must list at least one entry. Any other\ntask type is refused with 403.",
         "operationId": "queue_task_api_tasks_post",
         "requestBody": {
           "required": true,
@@ -17783,6 +17959,473 @@
   },
   "components": {
     "schemas": {
+      "AbsCheck": {
+        "properties": {
+          "key": {
+            "type": "string",
+            "title": "Key"
+          },
+          "ok": {
+            "type": "boolean",
+            "title": "Ok"
+          },
+          "severity": {
+            "type": "string",
+            "enum": [
+              "error",
+              "warning"
+            ],
+            "title": "Severity"
+          },
+          "message": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Message"
+          }
+        },
+        "type": "object",
+        "required": [
+          "key",
+          "ok",
+          "severity"
+        ],
+        "title": "AbsCheck"
+      },
+      "AbsLibrary": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "folders": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibraryFolder"
+            },
+            "type": "array",
+            "title": "Folders"
+          }
+        },
+        "type": "object",
+        "required": [
+          "folders"
+        ],
+        "title": "AbsLibrary"
+      },
+      "AbsLibraryFolder": {
+        "properties": {
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id"
+          },
+          "full_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Full Path"
+          }
+        },
+        "type": "object",
+        "title": "AbsLibraryFolder"
+      },
+      "AbsLibraryPairing": {
+        "properties": {
+          "root_folder_id": {
+            "type": "integer",
+            "title": "Root Folder Id"
+          },
+          "abs_library_id": {
+            "type": "string",
+            "title": "Abs Library Id"
+          },
+          "abs_folder_id": {
+            "type": "string",
+            "title": "Abs Folder Id"
+          },
+          "abs_folder_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abs Folder Path"
+          },
+          "verified_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Verified At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "root_folder_id",
+          "abs_library_id",
+          "abs_folder_id"
+        ],
+        "title": "AbsLibraryPairing"
+      },
+      "AbsLibraryPairingRequest": {
+        "properties": {
+          "root_folder_id": {
+            "type": "integer",
+            "title": "Root Folder Id"
+          },
+          "abs_library_id": {
+            "type": "string",
+            "title": "Abs Library Id"
+          },
+          "abs_folder_id": {
+            "type": "string",
+            "title": "Abs Folder Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "root_folder_id",
+          "abs_library_id",
+          "abs_folder_id"
+        ],
+        "title": "AbsLibraryPairingRequest"
+      },
+      "AbsSettings": {
+        "properties": {
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "has_api_key": {
+            "type": "boolean",
+            "title": "Has Api Key"
+          },
+          "unreadable_credentials": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Unreadable Credentials"
+          },
+          "verify_tls": {
+            "type": "boolean",
+            "title": "Verify Tls"
+          },
+          "ca_bundle_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ca Bundle Path"
+          },
+          "libraries": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibraryPairing"
+            },
+            "type": "array",
+            "title": "Libraries"
+          },
+          "taken_over_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Taken Over At"
+          },
+          "status": {
+            "$ref": "#/components/schemas/AbsStatus"
+          }
+        },
+        "type": "object",
+        "required": [
+          "enabled",
+          "url",
+          "has_api_key",
+          "unreadable_credentials",
+          "verify_tls",
+          "libraries",
+          "status"
+        ],
+        "title": "AbsSettings"
+      },
+      "AbsSettingsRequest": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "api_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Api Key"
+          },
+          "verify_tls": {
+            "type": "boolean",
+            "title": "Verify Tls",
+            "default": true
+          },
+          "ca_bundle_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ca Bundle Path"
+          },
+          "enabled": {
+            "type": "boolean",
+            "title": "Enabled"
+          },
+          "libraries": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibraryPairingRequest"
+            },
+            "type": "array",
+            "maxItems": 0,
+            "title": "Libraries"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "url",
+          "enabled"
+        ],
+        "title": "AbsSettingsRequest"
+      },
+      "AbsStatus": {
+        "properties": {
+          "state": {
+            "type": "string",
+            "enum": [
+              "unconfigured",
+              "ok",
+              "warning",
+              "error"
+            ],
+            "title": "State"
+          },
+          "server_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Server Version"
+          },
+          "user": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AbsUser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/AbsCheck"
+            },
+            "type": "array",
+            "title": "Checks"
+          },
+          "last_check_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Check At"
+          }
+        },
+        "type": "object",
+        "required": [
+          "state",
+          "checks"
+        ],
+        "title": "AbsStatus"
+      },
+      "AbsTestRequest": {
+        "properties": {
+          "url": {
+            "type": "string",
+            "title": "Url"
+          },
+          "api_key": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Api Key"
+          },
+          "verify_tls": {
+            "type": "boolean",
+            "title": "Verify Tls",
+            "default": true
+          },
+          "ca_bundle_path": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Ca Bundle Path"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "url"
+        ],
+        "title": "AbsTestRequest"
+      },
+      "AbsTestResult": {
+        "properties": {
+          "ok": {
+            "type": "boolean",
+            "title": "Ok"
+          },
+          "server_version": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Server Version"
+          },
+          "user": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/AbsUser"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "checks": {
+            "items": {
+              "$ref": "#/components/schemas/AbsCheck"
+            },
+            "type": "array",
+            "title": "Checks"
+          },
+          "libraries": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibrary"
+            },
+            "type": "array",
+            "title": "Libraries"
+          }
+        },
+        "type": "object",
+        "required": [
+          "ok",
+          "checks",
+          "libraries"
+        ],
+        "title": "AbsTestResult"
+      },
+      "AbsUser": {
+        "properties": {
+          "username": {
+            "type": "string",
+            "title": "Username"
+          },
+          "type": {
+            "type": "string",
+            "title": "Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "username",
+          "type"
+        ],
+        "title": "AbsUser"
+      },
       "AccountActiveUpdate": {
         "properties": {
           "is_active": {
@@ -22007,6 +22650,28 @@
               }
             ],
             "title": "Series Position"
+          },
+          "series_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series Id"
+          },
+          "author_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Author Id"
           },
           "asin": {
             "anyOf": [
@@ -28338,6 +29003,35 @@
         "title": "IndexerUpdate",
         "description": "Fields to update on an indexer. All fields are optional; only those\npresent are applied."
       },
+      "LibraryFormatMix": {
+        "properties": {
+          "m4b": {
+            "type": "integer",
+            "title": "M4B"
+          },
+          "mp3": {
+            "type": "integer",
+            "title": "Mp3"
+          },
+          "other": {
+            "type": "integer",
+            "title": "Other"
+          },
+          "unclassified": {
+            "type": "integer",
+            "title": "Unclassified"
+          }
+        },
+        "type": "object",
+        "required": [
+          "m4b",
+          "mp3",
+          "other",
+          "unclassified"
+        ],
+        "title": "LibraryFormatMix",
+        "description": "Books with files per format, from each book's classified quality rung."
+      },
       "LibraryMigrateRequest": {
         "properties": {
           "book_ids": {
@@ -28422,6 +29116,57 @@
           "total_series": {
             "type": "integer",
             "title": "Total Series"
+          },
+          "books_with_files": {
+            "type": "integer",
+            "title": "Books With Files"
+          },
+          "wanted_missing": {
+            "type": "integer",
+            "title": "Wanted Missing"
+          },
+          "hours": {
+            "type": "integer",
+            "title": "Hours"
+          },
+          "size_bytes": {
+            "type": "integer",
+            "title": "Size Bytes"
+          },
+          "last_import_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Last Import At"
+          },
+          "top_author": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LibraryTopEntry"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "top_narrator": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LibraryTopEntry"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "formats": {
+            "$ref": "#/components/schemas/LibraryFormatMix"
           }
         },
         "type": "object",
@@ -28431,10 +29176,39 @@
           "downloaded_books",
           "total_files",
           "total_authors",
-          "total_series"
+          "total_series",
+          "books_with_files",
+          "wanted_missing",
+          "hours",
+          "size_bytes",
+          "formats"
         ],
         "title": "LibraryStats",
         "description": "Library statistics"
+      },
+      "LibraryTopEntry": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "name": {
+            "type": "string",
+            "title": "Name"
+          },
+          "count": {
+            "type": "integer",
+            "title": "Count"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "count"
+        ],
+        "title": "LibraryTopEntry",
+        "description": "The author or narrator with the most books in the library."
       },
       "LocalStorageMarker": {
         "properties": {
@@ -28812,32 +29586,103 @@
         ],
         "title": "LoginStartResponse"
       },
-      "ManualImportFilesRequest": {
+      "ManualImportFileRow": {
         "properties": {
-          "files": {
+          "source_path": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Source Path"
+          },
+          "book_id": {
+            "type": "integer",
+            "exclusiveMinimum": 0.0,
+            "title": "Book Id"
+          },
+          "import_mode": {
             "anyOf": [
               {
-                "items": {
-                  "additionalProperties": true,
-                  "type": "object"
-                },
-                "type": "array"
+                "type": "string",
+                "enum": [
+                  "hardlink",
+                  "copy",
+                  "move"
+                ]
               },
               {
                 "type": "null"
               }
             ],
+            "title": "Import Mode"
+          },
+          "use_hardlink": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Use Hardlink"
+          },
+          "filename": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Filename"
+          },
+          "destination_filename": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 255
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Destination Filename"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "source_path",
+          "book_id"
+        ],
+        "title": "ManualImportFileRow"
+      },
+      "ManualImportPayload": {
+        "properties": {
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/ManualImportFileRow"
+            },
+            "type": "array",
+            "maxItems": 5000,
+            "minItems": 1,
             "title": "Files"
           },
           "source_type": {
             "type": "string",
+            "const": "user",
             "title": "Source Type",
             "default": "user"
           }
         },
+        "additionalProperties": false,
         "type": "object",
-        "title": "ManualImportFilesRequest",
-        "description": "Files to queue for import; each row goes to the task verbatim."
+        "required": [
+          "files"
+        ],
+        "title": "ManualImportPayload"
       },
       "ManualImportRequest": {
         "properties": {
@@ -31212,22 +32057,6 @@
             "additionalProperties": true,
             "type": "object",
             "title": "Payload"
-          },
-          "priority": {
-            "type": "integer",
-            "title": "Priority",
-            "default": 100
-          },
-          "total_items": {
-            "anyOf": [
-              {
-                "type": "integer"
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Total Items"
           }
         },
         "type": "object",
@@ -31408,6 +32237,97 @@
           "identity_check"
         ],
         "title": "ReauthStartResponse"
+      },
+      "RecentBook": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "authors": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Authors"
+          },
+          "cover_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Url"
+          },
+          "cover_updated_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Updated At"
+          },
+          "imported_at": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Imported At"
+          },
+          "added_date": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "date-time"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Added Date"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "authors"
+        ],
+        "title": "RecentBook",
+        "description": "A book on the dashboard's New list."
+      },
+      "RecentBooksResponse": {
+        "properties": {
+          "books": {
+            "items": {
+              "$ref": "#/components/schemas/RecentBook"
+            },
+            "type": "array",
+            "title": "Books"
+          }
+        },
+        "type": "object",
+        "required": [
+          "books"
+        ],
+        "title": "RecentBooksResponse",
+        "description": "Newest books by import or by being added as wanted."
       },
       "RecycleBinPathCheck": {
         "properties": {
@@ -31877,6 +32797,7 @@
               "type": "object"
             },
             "type": "array",
+            "maxItems": 100,
             "title": "Items",
             "default": []
           }
@@ -32565,6 +33486,18 @@
               }
             ],
             "title": "Parsed Asin"
+          },
+          "parsed_hint_asin": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 2000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Parsed Hint Asin"
           },
           "parsed_runtime_length_min": {
             "anyOf": [
