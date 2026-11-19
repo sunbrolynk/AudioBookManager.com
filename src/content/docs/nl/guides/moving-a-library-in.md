@@ -12,9 +12,9 @@ description: Breng een bestaande collectie veilig in ABM.
 ## De stappen
 
 1. Ga naar **Library > Library Import** en scan de map.
-2. Lees de lijst. Matches tonen een percentage. Verbeter rijen met **Needs attention** en **Unmatched** via **Find a match**, of voeg rijen samen die één boek zijn, verspreid over meerdere mappen.
+2. Lees de lijst. Matches tonen een percentage. Verbeter rijen met **Needs a look** en **Unmatched** via **Find a match**, of voeg rijen samen die één boek zijn, verspreid over meerdere mappen.
 3. Controleer de cover en extra bestanden per map alleen als je van de standaard wilt afwijken.
-4. Selecteer de rijen en voeg ze toe. Neem je de standaard over, dan blijft het bij twee klikken.
+4. Selecteer de rijen en voeg ze toe.
 5. Houd de taak in de gaten. De samenvatting meldt hoeveel bestanden er gekopieerd zijn in plaats van gehardlinkt, en wat er misging.
 
 ## Als je collectie al staat waar je hem wilt hebben
@@ -28,4 +28,5 @@ Bij het importeren zet ABM elk boek in zijn eigen indeling Auteur/Serie/Boek ond
 - Een boek dat al in de bibliotheek staat, wordt ook zo getoond. Wijs het duplicaat af met het antwoord keep library in plaats van het twee keer te importeren.
 - Een map zonder audio afwijzen verwijdert alleen wat bij die rij hoort, en gaat naar de prullenbak als die aanstaat.
 - Een ASIN uit een beschrijving is een hint, geen match, tenzij de titel ook overeenkomt.
+- Een match die de bestanden niet bevestigen, niet met de ASIN en niet met de speelduur plus de plaats in de serie of de titel, wacht zonder vinkje onder **Needs a look**, en **Select All** slaat hem over. Zie [Library Import](/nl/library-import/).
 - Ververs na het importeren om de actuele metadata binnen te halen, en zet het schrijven van sidecars aan als je wilt dat Audiobookshelf de keuzes van ABM ziet. Zie [Sidecarbestanden](/nl/using/sidecars/).

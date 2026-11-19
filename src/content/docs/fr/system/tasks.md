@@ -6,6 +6,7 @@ description: Le travail en arrière-plan, les plannings et les journaux.
 **System > Tasks** liste tout ce qu'ABM fait en arrière-plan : scans de bibliothèque, rafraîchissements, imports, recherches, téléchargements, synchronisations, sauvegardes. Chaque ligne affiche son état (en attente, en cours, terminée, en échec), sa progression, son résultat et un bouton pour le journal.
 
 - Une tâche terminée avec des entrées dans sa liste d'erreurs s'affiche comme **Partial**. Déplie-la pour voir chaque élément sauté et la raison.
+- Une tâche terminée avec quelque chose d'ignoré liste ses avertissements sous ses problèmes, pour que tu voies ce qui a été ignoré et pourquoi.
 - Une tâche qui a une nouvelle tentative prévue reste en attente jusqu'à épuisement des tentatives. Le numéro de la tentative est affiché.
 - **Clear completed tasks older than 24 hours** fait le ménage dans la liste. Les anciennes tâches sont aussi nettoyées automatiquement (30 jours par défaut).
 - Les exécutions planifiées qui n'ont rien fait apparaissent ici, mais pas dans le [journal d'activité](/fr/system/activity-log/).

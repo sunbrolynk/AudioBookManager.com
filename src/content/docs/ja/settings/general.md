@@ -3,7 +3,7 @@ title: 一般
 description: ホスト、セキュリティ、プロキシ、ログ、バックアップ。
 ---
 
-**Settings > General** には Host、Security、Proxy、Logging、Backups のセクションがあります。Security には[専用のページ](/ja/settings/security/)があります。
+**Settings > General** には Host、Security、Logging、Backups のセクションがあります。Security には[専用のページ](/ja/settings/security/)があります。
 
 ## ホスト（Host）
 

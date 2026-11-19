@@ -95,9 +95,9 @@ Picking a new folder, in the folder browser or by typing a path, asks right away
 
 ## File names
 
-Rename Files, Library Import, Manual Import, Audible downloads and conversions all build a book's file name in one place, so they agree: `Title - (Part 01) - (2020) - (MP3).mp3`. A one-file book has no part. A multi-file book gets `Part 01`, `Part 02` and so on in listening order, padded to the width of the file count, and the extension is lowercase. A rename where files trade names, or shift by one, goes through without losing any. A multi-part book imported under an older layout, or with an upper-case extension, shows as needing a rename the next time Rename runs.
+Rename Files, Organize, Library Import, Manual Import, Audible downloads and conversions all name a book's audio files from the Standard Book format in [Book Naming](#book-naming), so they agree. With the default format a file is named `Title - (Part 01) - (2020) - (MP3).mp3`. A one-file book has no part. A multi-file book gets `Part 01`, `Part 02` and so on in listening order, padded to at least the width of the file count, and the extension is lowercase. A rename where files trade names, or shift by one, goes through without losing any. A book whose file names don't match the format, or that has an upper-case extension, shows as needing a rename the next time Rename runs.
 
-Names are cut to fit the 255-byte filename limit. The title is shortened, never the part number or the extension, and split chapter files, sidecars named after the audio and a folder's ` [ASIN]` tag get the same treatment.
+Names are cut to fit the 255-byte filename limit. Only the book title and subtitle are shortened, never the part number, the extension or anything else the format adds, and folder names, split chapter files and sidecars named after the audio get the same treatment, so a folder keeps its ` [ASIN]` tag.
 
 ## Book Naming
 

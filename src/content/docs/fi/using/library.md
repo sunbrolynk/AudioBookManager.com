@@ -28,6 +28,12 @@ Jos tunnet Sonarrin: kirja on jakso, sarja on kausi ja ohjelma yhdessä, ja teki
 
 Sarjan tai tekijän poistaminen hylätään niin kauan kuin sillä on kirjoja kirjastossa. Poista kirjat ensin.
 
+## Paluu listaan
+
+Kun palaat kirjan, sarjan tai tekijän sivulta, **Books**, **Series**, **Authors** ja **Audible Library** ovat siinä kohdassa, johon jäit, ja avaamasi kohde on samassa paikassa. Tämä toimii kaikissa näkymissä ja puhelimessa. Valikosta avattu tai uudelleen ladattu lista alkaa ylhäältä.
+
+Ctrl+H ja Ctrl+E hyppäävät Books-listan alkuun ja loppuun missä tahansa näkymässä. Paina `?` nähdäksesi kaikki pikanäppäimet.
+
 ## Laatuprofiilin periytyminen
 
 Kirjan laatuprofiili tulee järjestyksessä seuraavista: sen oma ohitus, sen ensisijainen sarja, sen ensisijainen tekijä ja lopulta oletusprofiili. Katso [Profiilit](/fi/settings/profiles/).

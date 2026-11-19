@@ -28,6 +28,12 @@ Si tu connais Sonarr : un livre, c'est un épisode, une série, c'est une saison
 
 La suppression d'une série ou d'un auteur est refusée tant qu'il reste des livres dans la bibliothèque. Retire d'abord les livres.
 
+## Revenir à une liste
+
+Quand tu reviens depuis la page d'un livre, d'une série ou d'un auteur, **Books**, **Series**, **Authors** et **Audible Library** reprennent là où tu les avais laissés, avec l'élément ouvert au même endroit. Ça marche dans chaque vue et sur téléphone. Une liste ouverte depuis le menu, ou rechargée, commence en haut.
+
+Ctrl+H et Ctrl+E sautent en haut et en bas de la liste Books, quelle que soit la vue. Appuie sur `?` pour voir tous les raccourcis clavier.
+
 ## Héritage du profil de qualité
 
 Le profil de qualité d'un livre vient, dans l'ordre : de son propre réglage spécifique, de sa série principale, de son auteur principal, puis du profil par défaut. Voir [Profils](/fr/settings/profiles/).

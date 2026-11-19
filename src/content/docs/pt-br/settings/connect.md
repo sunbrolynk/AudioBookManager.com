@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Mensagens personalizadas
 
-Uma mensagem personalizada reescreve o texto de um evento. Escolha um **Format**, uma **Cover** (Auto usa a capa do livro, None, ou uma Custom URL), escreva o **Title** e o corpo, e clique numa variável para inserir. O modelo padrão de cada evento é um ponto de partida. A prévia mostra o resultado, e você pode mandar um teste por uma conexão.
+Uma mensagem personalizada reescreve o texto de um evento. Escolha um **Format**, uma **Cover** (Auto usa a capa do livro, None, ou uma Custom URL), escreva o **Title** e o corpo, e clique numa variável para inserir. O modelo padrão de cada evento é um ponto de partida. A prévia mostra o resultado, e você pode mandar um teste por uma conexão. A URL de uma capa personalizada precisa ser um endereço público; um endereço da sua LAN é recusado.
 
 ## Pegadinhas
 

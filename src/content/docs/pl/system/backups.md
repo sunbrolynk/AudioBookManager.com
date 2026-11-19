@@ -9,6 +9,8 @@ description: Twórz kopie, eksportuj i przywracaj ABM.
 
 Zaszyfrowane archiwum ze spójną kopią bazy danych (`database.db`), ustawień (`settings.json`) i manifestu. Do swoich własnych kopii dorzuć też `/config`, żeby mieć okładki i plik z sekretem aplikacji.
 
+Klucz API Audiobookshelf jest częścią kopii zapasowej, w postaci zaszyfrowanej. Nie odszyfruje się go z innym `APP_SECRET`, więc wpisz go ponownie, jeśli przywracasz z innym.
+
 ## Przywracanie
 
 Wybierz kopię z listy albo wgraj plik kopii (do 500 MiB). Najpierw zapisywana jest kopia aktualnej bazy. Przywrócenia nie da się cofnąć.

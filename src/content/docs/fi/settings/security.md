@@ -21,7 +21,7 @@ description: Tunnistautumistilat, API-avaimet, luotetut välityspalvelimet, läh
 - **Enabled**: kaikki kirjautuvat, myös lähiverkkosi.
 - **Disabled for Local Addresses** (tallennetaan arvona `local_disabled`): paikallisesta osoitteesta tuleva pyyntö ohittaa kirjautumisen. Loopback, yksityiset osoitealueet, link-local ja IPv6:n unique-local lasketaan paikallisiksi. **Local Networks** lisää niitä, eikä koskaan korvaa niitä.
 
-Tuoreessa asennuksessa pyynnöt hylätään, kunnes käyttöönotto on valmis.
+Tuoreessa asennuksessa pyynnöt hylätään, kunnes tili on luotu [käyttöönottoavustajassa](/fi/getting-started/first-run-setup/). Sen Account-vaihe esivalitsee **Enabled**, joten uusi asennus vaatii kirjautumisen kaikista osoitteista. Olemassa oleva asennus säilyttää asetuksensa.
 
 ## Käänteiset välityspalvelimet
 

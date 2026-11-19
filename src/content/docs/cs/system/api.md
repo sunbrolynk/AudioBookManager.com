@@ -18,9 +18,13 @@ ABM má REST API pod `/api`. Interaktivní reference je na `/api/docs` (Swagger)
 - Požadavek z prohlížeče, který mění stav, potřebuje odpovídající původ. Skripty s klíčem jsou výjimkou.
 - Těla požadavků jsou omezená na 10 MiB (`MAX_REQUEST_BODY_BYTES`). Obnova zálohy a nahrání obálky mají vyšší limity. Nad limitem přijde HTTP 413.
 - Chyby validace nikdy nevracejí zpátky to, co jsi poslal.
+- `POST /api/tasks` zařadí do fronty jen `backup_export`. Jakýkoli jiný typ úlohy dostane HTTP 403 a nastavení, která k `backup_export` nesedí, dostanou HTTP 422. Ruční importy jdou přes endpointy `/api/manual-import/` a skenování knihovny přes `POST /api/library/scan`.
+- `POST /api/manual-import/execute` a `/execute-to-book` kontrolují každý řádek souboru podle pevného schématu. Neznámý klíč, relativní `source_path` nebo prázdný seznam `files` se odmítne s HTTP 422. Každý zdroj musí být zvukový soubor, který neleží v systémové složce, přímo ve složce nejvyšší úrovně jako `/tmp` nebo `/mnt`, ani v žádné z vlastních složek ABM (konfigurace, databáze, zálohy, logy, obálky, koš, dočasná složka a složky s certifikátem a klíčem SSL), přičemž se sledují symbolické odkazy. Odmítnutý soubor dostane HTTP 400 se svou cestou (`Can't import <path>: the file <reason>.`) a nic se nezařadí do fronty.
+- `POST /api/manual-import/execute` a `/execute-to-book` pojmenují každý soubor podle [Book Naming](/cs/settings/media-management/#book-naming) až při spuštění importu a ignorují `destination_filename` uvedené v řádku souboru.
+- `POST /api/manual-import/check-conflicts` bere `book_id` a `source_paths`, které chceš importovat, a v `destination_filenames` vrátí název, který každý soubor dostane, podle zdrojové cesty. `clashed` uvádí zdrojové soubory, které dostanou název z formátu, protože by se jejich vlastní název střetl s jiným. `audio_conflicts` a `other_conflicts` uvádějí názvy, které už ve složce knihy jsou, bez ohledu na velikost písmen.
 
 ## Výpadky metadat
 
-Vyhledávání knih, které nedostane odpověď od Libexu, vrátí 502 s "Libex search failed". Vyhledávání autorů nebo sérií vrátí 503 s "Libex could not be reached; try again shortly". Některé vyhledávací cesty při výpadku pořád vracejí prázdný výsledek.
+Požadavek, který potřebuje zdroj metadat a nedostane odpověď, selže s `detail`, který pojmenuje zdroj a důvod, nikdy s prázdným výsledkem. Hledání, na které čekáš, se po zhruba 10 sekundách vzdá, když Libex omezuje rychlost.
 
 Pokud znáš Sonarr: API není kompatibilní s v3. Prowlarr umí do ABM synchronizovat indexery přes své připojení Prowlarr.

@@ -12,9 +12,9 @@ description: Porta in ABM una collezione esistente senza rischi.
 ## I passaggi
 
 1. **Library > Library Import**, scansiona la cartella.
-2. Leggi l'elenco. Le corrispondenze mostrano una percentuale. Sistema le righe **Needs attention** e **Unmatched** con **Find a match**, oppure unisci le righe che sono un unico libro diviso tra più cartelle.
+2. Leggi l'elenco. Le corrispondenze mostrano una percentuale. Sistema le righe **Needs a look** e **Unmatched** con **Find a match**, oppure unisci le righe che sono un unico libro diviso tra più cartelle.
 3. Controlla copertina e file extra per cartella solo se vuoi cambiare i valori predefiniti.
-4. Seleziona le righe e aggiungile. Se accetti i valori predefiniti restano due clic.
+4. Seleziona le righe e aggiungile.
 5. Tieni d'occhio il task. Il riepilogo dice quanti file sono stati copiati invece che collegati con hardlink e cosa è fallito.
 
 ## Se la tua collezione è già dove la vuoi
@@ -28,4 +28,5 @@ L'importazione mette ogni libro nella struttura Autore/Serie/Libro di ABM, sotto
 - Un libro che è già in libreria viene mostrato come tale. Rifiuta il duplicato con la risposta keep library invece di importarlo due volte.
 - Rifiutare una cartella senza audio rimuove solo quello che appartiene a quella riga, e finisce nel cestino se è attivo.
 - Un ASIN trovato in una descrizione è un indizio, non una corrispondenza, a meno che anche il titolo coincida.
+- Una corrispondenza che i file non confermano, né con l'ASIN né con la durata insieme alla posizione nella serie o al titolo, resta senza spunta sotto **Needs a look**, e **Select All** la salta. Vedi [Library Import](/it/library-import/).
 - Dopo l'importazione fai un refresh per prendere i metadati aggiornati, e attiva la scrittura dei sidecar se vuoi che Audiobookshelf veda le scelte di ABM. Vedi [File sidecar](/it/using/sidecars/).

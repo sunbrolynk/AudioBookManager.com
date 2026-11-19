@@ -7,11 +7,11 @@ description: 從剛裝好到第一本被監控的書。
 
 ## 1. 登入
 
-第一次開啟時會帶你建立登入帳號。在你建好之前，ABM 會拒絕所有請求。之後登入的行為請看〈[安全性與登入](/zh-tw/settings/security/)〉。
+第一次造訪會開啟設定精靈，它的第一步就是建立你的登入帳號。在你建立之前，ABM 會拒絕請求。精靈也涵蓋了下面的第 2 到第 4 步，每一步的說明請見[首次設定](/zh-tw/getting-started/first-run-setup/)。之後登入是怎麼運作的，請見[安全性與登入](/zh-tw/settings/security/)。
 
 ## 2. 選擇 ABM 連上網路的方式
 
-**Settings > General** 裡有一個 **Proxy** 區塊。如果 ABM 得透過代理才能上網，就在那裡設定代理。如果 ABM 能直接上網，跳過這一步就好。
+在精靈裡，這就是 Network 這一步。之後在 **Settings > [Network](/zh-tw/settings/network/)** 裡。選擇 ABM 如何連上網際網路：代理、WireGuard 通道、你自己的 VPN 容器，或者 Direct。在你選好之前，什麼都不會送出去。
 
 ## 3. 新增根資料夾
 
