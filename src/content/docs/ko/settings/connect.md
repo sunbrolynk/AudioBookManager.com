@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## 커스텀 메시지
 
-커스텀 메시지는 이벤트의 문구를 바꿔 써요. **Format**과 **Cover**(Auto는 책 표지, None, 또는 Custom URL)를 고르고, **Title**과 본문을 쓰고, 변수를 클릭해서 넣으세요. 이벤트마다 있는 기본 템플릿에서 시작하면 돼요. 미리 보기로 결과를 볼 수 있고, 연결을 통해 테스트도 보낼 수 있어요.
+커스텀 메시지는 이벤트의 문구를 바꿔 써요. **Format**과 **Cover**(Auto는 책 표지, None, 또는 Custom URL)를 고르고, **Title**과 본문을 쓰고, 변수를 클릭해서 넣으세요. 이벤트마다 있는 기본 템플릿에서 시작하면 돼요. 미리 보기로 결과를 볼 수 있고, 연결을 통해 테스트도 보낼 수 있어요. 사용자 지정 커버 URL은 공개 주소여야 하며, LAN에 있는 주소는 거부됩니다.
 
 ## 주의할 점
 

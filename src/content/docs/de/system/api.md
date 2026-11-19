@@ -18,9 +18,11 @@ ABM hat eine REST-API unter `/api`. Die interaktive Referenz liegt unter `/api/d
 - Eine Browser-Anfrage, die den Zustand ändert, braucht einen passenden Origin. Skripte mit einem Key sind davon ausgenommen.
 - Request-Bodys sind auf 10 MiB begrenzt (`MAX_REQUEST_BODY_BYTES`). Backup-Wiederherstellung und Cover-Upload haben höhere Grenzen. Darüber gibt es HTTP 413.
 - Validierungsfehler geben nie zurück, was du geschickt hast.
+- `POST /api/tasks` reiht nur `backup_export` ein. Jeder andere Aufgabentyp bekommt HTTP 403, und Einstellungen, die nicht zu `backup_export` passen, bekommen HTTP 422. Manuelle Importe laufen über die Endpunkte unter `/api/manual-import/`, Bibliotheksscans über `POST /api/library/scan`.
+- `POST /api/manual-import/execute` und `/execute-to-book` prüfen jede Dateizeile gegen ein festes Schema. Ein unbekannter Schlüssel, ein relativer `source_path` oder eine leere `files`-Liste wird mit HTTP 422 abgelehnt. Jede Quelle muss eine Audiodatei sein, die weder in einem Systemordner noch direkt in einem Ordner der obersten Ebene wie `/tmp` oder `/mnt` noch in einem von ABMs eigenen Ordnern liegt (Konfiguration, Datenbank, Backups, Logs, Cover, Papierkorb, temporärer Ordner und die Ordner mit dem SSL-Zertifikat und -Schlüssel). Symlinks werden dabei aufgelöst. Eine abgelehnte Datei bekommt HTTP 400 mit ihrem Pfad (`Can't import <path>: the file <reason>.`), und nichts wird eingereiht.
 
 ## Ausfälle der Metadatenquelle
 
-Eine Buchsuche, die von Libex keine Antwort bekommt, liefert 502 mit "Libex search failed". Eine Autoren- oder Serien-Suche liefert 503 mit "Libex could not be reached; try again shortly". Manche Lookup-Routen liefern bei einem Ausfall trotzdem ein leeres Ergebnis.
+Eine Anfrage, die die Metadatenquelle braucht und keine Antwort bekommt, schlägt mit einem `detail` fehl, das die Quelle und den Grund nennt, nie mit einem leeren Ergebnis. Eine Suche, auf die du wartest, gibt bei einem Libex-Rate-Limit nach etwa 10 Sekunden auf.
 
 Wenn du Sonarr kennst: Die API ist nicht v3-kompatibel. Prowlarr kann über seine Prowlarr-Verbindung Indexer in ABM synchronisieren.

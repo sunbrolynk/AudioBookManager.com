@@ -18,9 +18,11 @@ O ABM tem uma API REST em `/api`. A referência interativa fica em `/api/docs` (
 - Uma requisição do navegador que altera estado precisa de uma origem que bata. Scripts que usam uma chave estão isentos.
 - Os corpos de requisição têm limite de 10 MiB (`MAX_REQUEST_BODY_BYTES`). A restauração de backup e o envio de capa têm limites maiores. Acima do limite, a resposta é HTTP 413.
 - Erros de validação nunca repetem o que você enviou.
+- `POST /api/tasks` só coloca na fila o `backup_export`. Qualquer outro tipo de tarefa recebe HTTP 403, e configurações que não servem para o `backup_export` recebem HTTP 422. Importações manuais passam pelos endpoints de `/api/manual-import/` e as varreduras da biblioteca por `POST /api/library/scan`.
+- `POST /api/manual-import/execute` e `/execute-to-book` conferem cada linha de arquivo com um esquema fixo. Uma chave desconhecida, um `source_path` relativo ou uma lista `files` vazia é recusado com HTTP 422. Cada origem precisa ser um arquivo de áudio que não esteja numa pasta do sistema, direto numa pasta de nível superior como `/tmp` ou `/mnt`, nem numa das pastas do próprio ABM (configuração, banco de dados, backups, logs, capas, lixeira, pasta temporária e as pastas com o certificado e a chave SSL), seguindo links simbólicos. Um arquivo recusado recebe HTTP 400 com o caminho dele (`Can't import <path>: the file <reason>.`) e nada entra na fila.
 
 ## Quedas da fonte de metadados
 
-Uma busca de livros que não recebe resposta do Libex retorna 502 com "Libex search failed". Uma busca de autores ou séries retorna 503 com "Libex could not be reached; try again shortly". Algumas rotas de consulta ainda retornam um resultado vazio durante uma queda.
+Uma requisição que precisa da fonte de metadados e não recebe resposta falha com um `detail` que cita a fonte e o motivo, nunca com um resultado vazio. Uma busca que você está esperando desiste depois de cerca de 10 segundos quando o Libex limita a taxa.
 
 Se você conhece o Sonarr: a API não é compatível com a v3. O Prowlarr pode sincronizar indexadores com o ABM pela conexão Prowlarr dele.

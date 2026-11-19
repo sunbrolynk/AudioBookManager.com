@@ -18,9 +18,11 @@ ABM har et REST-API under `/api`. Den interaktive referansen ligger på `/api/do
 - En nettleserforespørsel som endrer tilstand, trenger en opprinnelse som stemmer. Skript som bruker en nøkkel, er unntatt.
 - Forespørselskropper er begrenset til 10 MiB (`MAX_REQUEST_BODY_BYTES`). Gjenoppretting av sikkerhetskopi og opplasting av cover har høyere grenser. Over grensen gir HTTP 413.
 - Valideringsfeil gjentar aldri det du sendte.
+- `POST /api/tasks` setter bare `backup_export` i kø. Alle andre oppgavetyper får HTTP 403, og innstillinger som ikke passer til `backup_export`, får HTTP 422. Manuelle importer går gjennom endepunktene under `/api/manual-import/`, og biblioteksskanninger gjennom `POST /api/library/scan`.
+- `POST /api/manual-import/execute` og `/execute-to-book` sjekker hver filrad mot et fast skjema. En ukjent nøkkel, en relativ `source_path` eller en tom `files`-liste avvises med HTTP 422. Hver kilde må være en lydfil som ikke ligger i en systemmappe, direkte i en mappe på øverste nivå som `/tmp` eller `/mnt`, eller i en av ABMs egne mapper (konfigurasjon, database, sikkerhetskopier, logger, omslag, papirkurv, midlertidig mappe og mappene med SSL-sertifikatet og -nøkkelen), med symlenker fulgt. En avvist fil får HTTP 400 med stien sin (`Can't import <path>: the file <reason>.`), og ingenting legges i køen.
 
 ## Brudd hos metadatakilden
 
-Et boksøk som ikke får svar fra Libex, gir 502 med "Libex search failed". Et søk etter forfattere eller serier gir 503 med "Libex could not be reached; try again shortly". Noen oppslagsruter gir fortsatt et tomt resultat under et avbrudd.
+En forespørsel som trenger metadatakilden og ikke får svar, feiler med en `detail` som nevner kilden og årsaken, aldri med et tomt resultat. Et søk du venter på gir opp etter omtrent 10 sekunder når Libex begrenser farten.
 
 Kan du Sonarr: API-et er ikke kompatibelt med v3. Prowlarr kan synkronisere indekserere inn i ABM gjennom Prowlarr-tilkoblingen.

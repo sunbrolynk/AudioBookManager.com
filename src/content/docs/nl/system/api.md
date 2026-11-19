@@ -18,9 +18,11 @@ ABM heeft een REST API onder `/api`. De interactieve referentie staat op `/api/d
 - Een browserrequest dat iets wijzigt, heeft een overeenkomende origin nodig. Scripts met een sleutel zijn uitgezonderd.
 - Request bodies zijn begrensd op 10 MiB (`MAX_REQUEST_BODY_BYTES`). Back-up terugzetten en cover uploaden hebben hogere limieten. Daarboven krijg je HTTP 413.
 - Validatiefouten herhalen nooit wat je gestuurd hebt.
+- `POST /api/tasks` zet alleen `backup_export` in de wachtrij. Elk ander taaktype krijgt HTTP 403, en instellingen die niet bij `backup_export` passen krijgen HTTP 422. Handmatige imports gaan via de endpoints onder `/api/manual-import/` en bibliotheekscans via `POST /api/library/scan`.
+- `POST /api/manual-import/execute` en `/execute-to-book` controleren elke bestandsregel tegen een vast schema. Een onbekende sleutel, een relatief `source_path` of een lege `files`-lijst wordt geweigerd met HTTP 422. Elke bron moet een audiobestand zijn dat niet in een systeemmap staat, niet direct in een map op het hoogste niveau zoals `/tmp` of `/mnt`, en niet in een van de eigen mappen van ABM (configuratie, database, back-ups, logs, covers, prullenbak, tijdelijke map en de mappen met het SSL-certificaat en de sleutel), waarbij symlinks worden gevolgd. Een geweigerd bestand krijgt HTTP 400 met het pad erin (`Can't import <path>: the file <reason>.`) en er wordt niets in de wachtrij gezet.
 
 ## Metadatastoringen
 
-Een zoekopdracht op boeken die geen antwoord van Libex krijgt, geeft 502 met "Libex search failed". Een zoekopdracht op auteurs of series geeft 503 met "Libex could not be reached; try again shortly". Sommige opzoekroutes geven bij een storing nog steeds een leeg resultaat.
+Een verzoek dat de metadatabron nodig heeft en geen antwoord krijgt, mislukt met een `detail` dat de bron en de reden noemt, nooit met een leeg resultaat. Een zoekopdracht waarop je wacht, geeft na ongeveer 10 seconden op als Libex de snelheid beperkt.
 
 Ken je Sonarr? De API is niet v3-compatibel. Prowlarr kan indexers naar ABM synchroniseren via de Prowlarr-koppeling.

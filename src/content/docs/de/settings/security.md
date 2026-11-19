@@ -21,7 +21,7 @@ Die zwei Modi von **Authentication Required**, die du nutzen wirst:
 - **Enabled**: Jeder meldet sich an, auch aus deinem LAN.
 - **Disabled for Local Addresses** (gespeichert als `local_disabled`): Eine Anfrage von einer lokalen Adresse kommt ohne Anmeldung durch. Loopback, die privaten Bereiche, Link-Local und IPv6 Unique-Local gelten als lokal. **Local Networks** fügt weitere hinzu und ersetzt diese nie.
 
-Bei einer frischen Installation werden Anfragen abgelehnt, bis die Einrichtung abgeschlossen ist.
+Bei einer frischen Installation werden Anfragen abgelehnt, bis das Konto im [Einrichtungsassistenten](/de/getting-started/first-run-setup/) angelegt ist. Dessen Schritt Account wählt **Enabled** vor, sodass eine neue Installation die Anmeldung von jeder Adresse verlangt. Eine bestehende Installation behält ihre Einstellung.
 
 ## Reverse Proxys
 

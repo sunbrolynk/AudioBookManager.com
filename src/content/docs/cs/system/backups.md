@@ -9,6 +9,8 @@ description: Zálohování, export a obnova ABM.
 
 Šifrovaný archiv s konzistentní kopií databáze (`database.db`), nastavením (`settings.json`) a manifestem. Do svých vlastních záloh přidej i `/config`, kvůli obálkám a souboru s tajným klíčem aplikace.
 
+Klíč API Audiobookshelf je součástí zálohy, zašifrovaný. S jiným `APP_SECRET` se nedá dešifrovat, takže ho zadej znovu, pokud obnovuješ s jiným.
+
 ## Obnova
 
 Vyber zálohu ze seznamu, nebo nahraj soubor se zálohou (až 500 MiB). Nejdřív se uloží kopie živé databáze. Obnova se nedá vrátit.

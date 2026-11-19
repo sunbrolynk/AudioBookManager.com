@@ -19,6 +19,9 @@ jobs:
     name: Site validation
     runs-on: ubuntu-24.04
     timeout-minutes: 15
+    permissions:
+      contents: read
+      statuses: write
 
     steps:
       - name: Check out repository
@@ -62,3 +65,14 @@ jobs:
 
       - name: Check every page for sideways overflow
         run: node scripts/check-overflow.mjs
+
+      # A dispatched run's checks never count for a pull request, so the release sync's run reports its result as a status.
+      - name: Report the result on the commit
+        if: always() && github.event_name == 'workflow_dispatch'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          STATE: ${{ job.status == 'success' && 'success' || 'failure' }}
+        run: >-
+          gh api "repos/$GITHUB_REPOSITORY/statuses/$GITHUB_SHA"
+          -f state="$STATE" -f context='Site validation'
+          -f target_url="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"

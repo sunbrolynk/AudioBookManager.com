@@ -18,9 +18,11 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - 浏览器发出的修改类请求需要来源匹配。使用密钥的脚本不受此限制。
 - 请求体上限为 10 MiB（`MAX_REQUEST_BODY_BYTES`）。备份恢复和封面上传的上限更大。超过上限返回 HTTP 413。
 - 校验错误永远不会把你发送的内容原样返回。
+- `POST /api/tasks` 只会把 `backup_export` 加入队列。其他任何任务类型都会得到 HTTP 403，不符合 `backup_export` 的设置会得到 HTTP 422。手动导入请用 `/api/manual-import/` 下的端点，扫描媒体库请用 `POST /api/library/scan`。
+- `POST /api/manual-import/execute` 和 `/execute-to-book` 会按固定结构检查每一行文件。未知的键、相对路径的 `source_path` 或空的 `files` 列表会被 HTTP 422 拒绝。每个来源都必须是音频文件，且不在系统文件夹里、不直接位于 `/tmp` 或 `/mnt` 这类顶层文件夹下，也不在 ABM 自己的文件夹（配置、数据库、备份、日志、封面、回收站、临时文件夹，以及存放 SSL 证书和密钥的文件夹）里，符号链接会被跟随。被拒绝的文件会得到写有其路径的 HTTP 400（`Can't import <path>: the file <reason>.`），也不会排入任何任务。
 
 ## 元数据源中断
 
-书籍搜索得不到 Libex 的响应时，会返回 502 和 "Libex search failed"。作者或系列搜索会返回 503 和 "Libex could not be reached; try again shortly"。有些查询路由在宕机时仍然返回空结果。
+需要元数据来源却得不到回应的请求，会以带有 `detail` 的错误失败，其中写明来源和原因，绝不会返回空结果。Libex 限速时，你正在等的搜索大约 10 秒后放弃。
 
 如果你用过 Sonarr：这个 API 和 v3 不兼容。Prowlarr 可以通过它的 Prowlarr 连接把索引器同步到 ABM。

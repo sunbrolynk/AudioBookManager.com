@@ -7,11 +7,11 @@ Das ist der kürzeste Weg von einem laufenden Container zu einem Buch, nach dem 
 
 ## 1. Anmelden
 
-Beim ersten Besuch legst du einen Login an. Bis das erledigt ist, lehnt ABM Anfragen ab. Wie die Anmeldung danach funktioniert, steht unter [Sicherheit und Anmeldung](/de/settings/security/).
+Beim ersten Besuch öffnet sich der Einrichtungsassistent, und sein erster Schritt legt deinen Login an. Bis das erledigt ist, lehnt ABM Anfragen ab. Der Assistent deckt auch die Schritte 2 bis 4 unten ab, und [Ersteinrichtung](/de/getting-started/first-run-setup/) beschreibt jeden seiner Schritte. Wie die Anmeldung danach funktioniert, steht unter [Sicherheit und Anmeldung](/de/settings/security/).
 
 ## 2. Festlegen, wie ABM ins Internet kommt
 
-Unter **Settings > General** gibt es den Abschnitt **Proxy**. Stell dort einen Proxy ein, wenn ABM über einen ins Internet muss. Kommt ABM direkt ins Internet, überspring das.
+Im Assistenten ist das der Schritt Network. Später findest du es unter **Settings > [Network](/de/settings/network/)**. Wähl, wie ABM ins Internet kommt: über einen Proxy, einen WireGuard-Tunnel, deinen eigenen VPN-Container oder Direct. Nichts geht raus, bis du eins gewählt hast.
 
 ## 3. Einen Root-Ordner anlegen
 

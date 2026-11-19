@@ -50,10 +50,10 @@ Augmente `MAX_REQUEST_BODY_BYTES`. Un reverse proxy peut aussi imposer une limit
 
 ## La source de métadonnées est indisponible
 
-Ajouter, chercher, actualiser et Discover ont besoin de Libex. Quand ABM n'obtient pas de réponse, une recherche de livres échoue avec "Libex search failed" et une recherche d'auteurs ou de séries avec "Libex could not be reached; try again shortly", au lieu d'afficher une liste vide. Causes : Libex est en panne, ou la connexion d'ABM ne l'atteint pas.
+Les ajouts, recherches, actualisations et Discover ont besoin de la source de métadonnées. Quand ABM n'obtient pas de réponse, l'erreur nomme la source et la vraie raison, par exemple que le VPN est coupé, au lieu d'afficher une liste vide. Causes : la source est en panne, ou la connexion d'ABM ne l'atteint pas. Une actualisation, un import ou une synchro sur beaucoup d'éléments s'arrête quand la source est injoignable ou refuse ABM, avec une notification par type de panne, et un simple délai dépassé ne saute que cet élément.
 
 1. Regarde la [page d'état d'ABM](https://status.audiobookmanager.com) et la [page d'état de Libex](https://status.libexdb.com) pour voir si c'est en panne pour tout le monde.
-2. Vérifie que le conteneur a accès à Internet, et que le proxy sous **Settings > General > Proxy** est bon si tu en utilises un.
+2. Vérifie que le conteneur a accès à Internet, et que le proxy sous **Settings > Network** est bon si tu en utilises un.
 3. Réessaie au bout d'une minute.
 4. Tu peux continuer à ajouter et importer des livres à la main en attendant.
 

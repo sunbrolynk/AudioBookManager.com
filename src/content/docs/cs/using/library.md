@@ -28,6 +28,12 @@ Pokud znáš Sonarr: kniha je epizoda, série je řada a seriál v jednom a auto
 
 Smazání série nebo autora se odmítne, dokud má v knihovně ještě knihy. Nejdřív odeber knihy.
 
+## Návrat do seznamu
+
+Když se vrátíš zpět ze stránky knihy, série nebo autora, **Books**, **Series**, **Authors** a **Audible Library** se vrátí tam, kde jsi skončil, a otevřená položka je na stejném místě. Funguje to v každém zobrazení i na telefonu. Seznam otevřený z nabídky nebo po obnovení stránky začíná nahoře.
+
+Ctrl+H a Ctrl+E skočí na začátek a konec seznamu Books v každém zobrazení. Klávesou `?` zobrazíš všechny klávesové zkratky.
+
 ## Dědění profilu kvality
 
 Profil kvality knihy se bere v tomhle pořadí: z jejího vlastního přepsání, z její hlavní série, z jejího hlavního autora a nakonec z výchozího profilu. Viz [Profily](/cs/settings/profiles/).
