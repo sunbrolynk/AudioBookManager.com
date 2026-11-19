@@ -212,10 +212,10 @@ missing, changes only `public/releases.json` and `src/content/releases/`, and is
 set to squash-merge. So a release reaches `main`, and the site deploys, without
 dragging along other unpublished `dev` work.
 
-- **One PR per branch.** When a newer release comes out, the script closes the
-  older release PR by number, deletes its branch and opens the new one. When a
-  branch already has every release, any leftover release PR is closed the same
-  way.
+- **One PR per branch.** When a newer release comes out, the script opens the
+  new PR first, then closes the older release PR by number and deletes its
+  branch. When a branch already has every release, any leftover release PR is
+  closed the same way.
 - **Only its own PRs.** The script only looks at PRs that `github-actions`
   opened from this repository, so a fork PR with the same branch name is never
   touched.
@@ -234,8 +234,8 @@ dragging along other unpublished `dev` work.
   never bypasses the ruleset.
 - **When it fails.** If auto-merge can't be turned on, the run logs a warning
   with gh's own error. The run stops with an error, and touches no PR, when the
-  ABM release lookup fails, finds no published release, or can't read a
-  release date.
+  ABM release lookup fails or finds no published release, when the lookup for
+  a release PR I closed by hand fails, or when a release date can't be read.
 - **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so
   the release-only PR to `main` posts nothing. The later `dev` to `main` release
   still posts as before.

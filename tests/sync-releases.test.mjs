@@ -204,10 +204,16 @@ test('a release lookup with no valid tags stops the run before any PR is touched
 });
 
 for (const [fail, what] of [['history', 'closed-PR lookup'], ['date', 'release date read']]) {
-  test(`a failed ${what} stops the run before anything is pushed or opened`, { skip }, () => {
-    const env = setup({ dev: ['0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], fail });
+  test(`a failed ${what} stops the run before anything is pushed, opened or closed`, { skip }, () => {
+    const env = setup({
+      dev: ['0.26.0'],
+      main: ['0.20.0'],
+      tags: ['v0.25.0', 'v0.26.0'],
+      prs: [{ base: 'main', head: 'releases/main/v0.25.0', number: 221 }],
+      fail,
+    });
     const calls = run(env, 1);
-    assert.ok(!calls.some((c) => c[1] === 'create' || c[0] === 'workflow'), JSON.stringify(calls));
-    assert.equal(env.git(env.remote, 'branch', '--list', 'releases/main/*'), '', 'a release branch was pushed');
+    assert.ok(!calls.some((c) => ['create', 'close', 'edit', 'merge'].includes(c[1]) || c[0] === 'workflow'), JSON.stringify(calls));
+    assert.equal(env.git(env.remote, 'branch', '--list', 'releases/main/v0.26.0'), '', 'the new release branch was pushed');
   });
 }

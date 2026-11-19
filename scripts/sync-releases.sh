@@ -6,10 +6,9 @@
 set -euo pipefail
 
 abm() { GH_TOKEN="${ABM_TOKEN:-$GH_TOKEN}" gh api "$@"; }
-valid='^v[0-9]+\.[0-9]+\.[0-9]+$'
 # A failed lookup must stop the run: an empty list reads as "every base is current" and closes the open release PRs.
-releases=$(abm "repos/$ABM_REPO/releases?per_page=20" --jq '.[] | select(.draft == false and .prerelease == false) | .tag_name')
-tags=$({ grep -E "$valid" <<<"$releases" || [ $? -eq 1 ]; } | sort -V)
+tags=$(abm "repos/$ABM_REPO/releases?per_page=20" \
+  --jq '.[] | select(.draft == false and .prerelease == false and (.tag_name | test("^v[0-9]+\\.[0-9]+\\.[0-9]+$"))) | .tag_name' | sort -V)
 [ -n "$tags" ] || { echo "::error::no published ABM releases found in $ABM_REPO"; exit 1; }
 # Only PRs this workflow opened in this repo; a fork PR can use the same branch name.
 botlogin='(.author.login | test("^(app/)?github-actions$"))'
@@ -35,27 +34,30 @@ build() {
   git push --quiet --force origin "$branch"
 }
 
+# close_others <base> <prefix> <branch to keep> <reason>: closes this script's other release PRs into the base.
+close_others() {
+  local base=$1 prefix=$2 keep=$3 reason=$4 olds old oldhead
+  olds=$(gh pr list --limit 200 --base "$base" --state open --json number,headRefName,isCrossRepository,author \
+    --jq ".[] | $bot | select(.headRefName | test(\"^${prefix}v[0-9.]+\$\")) | \"\(.number) \(.headRefName)\"")
+  while read -r old oldhead; do
+    [ -n "$old" ] && [ "$oldhead" != "$keep" ] || continue
+    gh pr close "$old" --delete-branch --comment "$closing $reason."
+  done <<<"$olds"
+}
+
 # sync_base <base branch> <PR branch prefix>
 sync_base() {
-  local base=$1 prefix=$2 newest tag last branch pr old oldhead olds head msg closed state new=()
+  local base=$1 prefix=$2 newest tag last branch pr head closed state new=()
   newest=$(git ls-tree --name-only "origin/$base" src/content/releases/ | sed 's|.*/||; s/\.md$//' | sort -V | tail -1)
   for tag in $tags; do
     [ "$(printf '%s\n%s\n' "${tag#v}" "$newest" | sort -V | tail -1)" = "${tag#v}" ] && [ "${tag#v}" != "$newest" ] && new+=("$tag")
   done
-  last=''
-  [ ${#new[@]} -eq 0 ] || last=${new[-1]}
+  if [ ${#new[@]} -eq 0 ]; then
+    close_others "$base" "$prefix" '' "$base already has these releases"
+    echo "$base is current at $newest"; return 0
+  fi
+  last=${new[-1]}
   branch="$prefix$last"
-
-  # The newest release PR carries every release the base is missing, so any older one is closed.
-  msg="$base already has these releases"
-  [ -z "$last" ] || msg="the pull request for ${last#v} includes these releases"
-  olds=$(gh pr list --limit 200 --base "$base" --state open --json number,headRefName,isCrossRepository,author \
-    --jq ".[] | $bot | select(.headRefName | test(\"^${prefix}v[0-9.]+\$\")) | \"\(.number) \(.headRefName)\"")
-  while read -r old oldhead; do
-    [ -n "$old" ] && [ "$oldhead" != "$branch" ] || continue
-    gh pr close "$old" --delete-branch --comment "$closing $msg."
-  done <<<"$olds"
-  [ -n "$last" ] || { echo "$base is current at $newest"; return 0; }
 
   head="origin/$branch"
   pr=$(gh pr list --limit 200 --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
@@ -77,6 +79,8 @@ sync_base() {
     head=HEAD
     gh pr edit "$pr" --title "add ${new[*]#v} to the updates page"
   fi
+  # Only now that the newest PR is in place, so a failure above never leaves a release without one.
+  close_others "$base" "$prefix" "$branch" "the pull request for ${last#v} includes these releases"
 
   if [ "$base" = main ]; then
     # Checks from a dispatched run don't count for a PR, so site-checks reports the result as a commit status.
