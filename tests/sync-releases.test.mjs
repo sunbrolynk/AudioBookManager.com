@@ -33,7 +33,7 @@ if (a[0] === 'api') {
     if (st.releasesFail) { process.stderr.write('HTTP 401: Bad credentials\\n'); process.exit(1); }
     reply(st.tags.map((tag_name) => ({ tag_name, draft: false, prerelease: false })));
   } else if (p.includes('/contents/CHANGELOG.md')) reply(st.tags.map((t) => '## [' + t.slice(1) + ']\\n\\n- ' + t + ' notes\\n').join('\\n'));
-  else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: '2026-11-18T00:00:00Z' });
+  else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: '2026-11-19T02:30:00Z' });
   else if (p.endsWith('/status')) {
     const sha = p.split('/').at(-2);
     reply({ statuses: st.green.includes(sha) ? [{ context: 'Site validation', state: 'success' }] : [] });
@@ -124,6 +124,7 @@ test('main gets a release dev already has, and the new PR closes the older one',
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'));
   assert.ok(!calls.some((c) => c[1] === 'create' && c.includes('dev')), 'dev already has 0.26.0');
   assert.deepEqual(files(env, 'releases/main/v0.26.0'), ['0.20.0.md', '0.25.0.md', '0.26.0.md']);
+  assert.match(env.git(env.remote, 'show', 'releases/main/v0.26.0:src/content/releases/0.26.0.md'), /^date: '2026-11-19T02:30:00Z'$/m, 'the release keeps its full published time');
   assert.ok(has(calls, 'workflow', 'run', 'site-checks.yml', '--ref', 'releases/main/v0.26.0'));
   assert.ok(has(calls, 'pr', 'merge', 'https://example.test/pull/99', '--squash', '--auto'));
 });

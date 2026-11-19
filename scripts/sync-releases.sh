@@ -26,7 +26,7 @@ build() {
   for tag in "$@"; do
     abm "repos/$ABM_REPO/contents/CHANGELOG.md?ref=$tag" -H 'Accept: application/vnd.github.raw' > "$RUNNER_TEMP/CHANGELOG.md"
     # Its own statement, so a failed lookup stops the run instead of publishing an undated release.
-    date=$(abm "repos/$ABM_REPO/releases/tags/$tag" --jq '.published_at[:10]')
+    date=$(abm "repos/$ABM_REPO/releases/tags/$tag" --jq '.published_at')
     node scripts/build-releases.mjs "$RUNNER_TEMP/CHANGELOG.md" "$tag" --keep --date "$date"
   done
   git add public/releases.json src/content/releases
