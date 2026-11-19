@@ -233,7 +233,7 @@ dragging along other unpublished `dev` work.
   skips the dispatch when the PR's commit already has a passing status. It
   never bypasses the ruleset.
 - **When it fails.** If auto-merge can't be turned on, the run logs a warning
-  with gh's own error. The run stops with an error, and touches no PR, when the
+  with gh's own error. The run stops with an error, and touches none of that branch's PRs, when the
   ABM release lookup fails or finds no published release, when the lookup for
   a release PR I closed by hand fails, or when a release date can't be read.
 - **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so
