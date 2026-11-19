@@ -24,7 +24,7 @@ En forfatter eller en plass i serien som motsier filene, utelukker en bok. Passe
 
 Filenes spilletid teller bare når hver fil i boka kunne leses. Kan én ikke måles, har raden ingen spilletid: Da kan bare ASIN-en bekrefte et treff, og ellers venter boka under **Needs a look**.
 
-Når en bok finnes i to formater, er hvert format en egen rad og måles for seg. En bok delt i deler i ulike formater er én rad når den har sin egen mappe, og delene legges sammen. En fullført nedlasting med én bok i to formater måles som én kopi og har ingen spilletid å matche på når kopienes lengde skiller seg med mer enn tre minutter.
+Når en bok finnes i to formater, er hvert format en egen rad og måles for seg. En bok delt i deler i ulike formater er én rad når den har sin egen mappe, og delene legges sammen.
 
 Bare en engelsk utgave, eller en der oppføringen ikke oppgir språk, godtas på spilletid. En utgave på et annet språk godtas bare når filenes egen ASIN finner den. En bok som er besvart fra [lokal lagring](/nb/settings/metadata/) i stedet for et direkte oppslag, godtas aldri uten deg.
 
@@ -55,7 +55,7 @@ En ASIN som står i en kommentar eller beskrivelse, er bare et hint. Den teller 
 
 ## Slå sammen, dele opp og legge til
 
-- Slå sammen rader som er én bok fordelt på flere mapper. Del dem opp igjen fra mappedetaljene. Treffet til den sammenslåtte raden er bare et forslag: Den teller under **Needs a look** og er ikke avhuket før du bekrefter det eller velger et annet. Spilletiden er delenes sum bare når hver del har en, og den beholder en ASIN bare når alle delene oppgir den samme. En bok slått sammen fra to formater med de samme filnavnene teller én gang og får spilletiden til det lengste formatet, eller ingen når de skiller seg med mer enn tre minutter eller en av de sammenslåtte radene allerede har begge formatene. Et oppslag som blir ferdig etter at du har slått sammen eller delt opp raden, er også bare et forslag.
+- Slå sammen rader som er én bok fordelt på flere mapper. Del dem opp igjen fra mappedetaljene. Treffet til den sammenslåtte raden er bare et forslag: Den teller under **Needs a look** og er ikke avhuket før du bekrefter det eller velger et annet. Spilletiden er delenes sum bare når hver del har en, og den beholder en ASIN bare når alle delene oppgir den samme. Sammenslåing er bare for delene av én bok: La to formater av én bok være egne rader, for en sammenslåing legger sammen begge spilletidene. Et oppslag som blir ferdig etter at du har slått sammen eller delt opp raden, er også bare et forslag.
 - **Confirm match** i en rads detaljer huker av en **Needs a look**-rad, og **Undo confirmation** fjerner avhukingen igjen.
 - Add blir blokkert med en grunn som vises over knappen, for eksempel "Select at least one folder" eller "2 selected rows still need a decision". Add blir også avvist, uten at noe røres, når to rader gjør krav på samme mappe eller fil.
 - Alt som ville fjerne eller erstatte filer, spør først.

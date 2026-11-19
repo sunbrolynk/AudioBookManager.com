@@ -35,6 +35,8 @@ Která pole se ukážou, záleží na klientovi.
 | Redownload Failed | zapnuto | Neúspěšné vydání dá na blocklist a hledá znovu |
 | Redownload Failed from Interactive Search | zapnuto | Totéž pro vydání, která jsi vybral ručně |
 
+Když dokončené stahování obsahuje stejnou knihu víckrát, v různých formátech, ABM naimportuje jen kopii, kterou profil kvality knihy řadí nejvýš. Při přiřazování stahování ke knize se taky měří jen jedna kopie, ta, kterou nejvýš řadí výchozí profil kvality. Formáty, které profil řadí stejně nebo v sobě nemá, jdou v pořadí M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. Ostatní kopie ABM nechá ve stahování; smažou se jen tehdy, když **Also Delete Files** po importu stahování odstraní. Jeden soubor vedle sady částí se počítá jako druhá kopie jen tehdy, když jejich délky souhlasí; jinak jsou to části jedné knihy. Obálka a další soubory navíc přijdou s kopií, kterou ABM vezme. Když složka stahování obsahuje i zvuk jiné knihy, přijdou jen soubory navíc pojmenované podle importovaného zvuku.
+
 Jestli importy dělají hardlink, nebo kopii, určuje **Use Hardlinks instead of Copy** ve [Správě médií](/cs/settings/media-management/). Pokud složka klienta není na stejné cestě, jakou vidí ABM, přidej mapování vzdálené cesty.
 
 ## Mapování vzdálených cest (Remote path mappings)

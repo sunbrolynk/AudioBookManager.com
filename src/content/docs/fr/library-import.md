@@ -24,7 +24,7 @@ Un auteur ou une position dans la série qui contredit les fichiers écarte un l
 
 La durée des fichiers ne compte que si chaque fichier du livre a pu être lu. Si l'un d'eux ne peut pas être mesuré, la ligne n'a pas de durée : seul son ASIN peut confirmer une correspondance, sinon le livre attend sous **Needs a look**.
 
-Quand un livre existe en deux formats, chaque format est sa propre ligne et est mesuré à part. Un livre découpé en parties de formats différents forme une seule ligne quand il a son propre dossier, et ses parties sont additionnées. Un téléchargement terminé qui contient un livre en deux formats est mesuré comme une seule copie, et n'a pas de durée pour la correspondance si la durée des copies diffère de plus de trois minutes.
+Quand un livre existe en deux formats, chaque format est sa propre ligne et est mesuré à part. Un livre découpé en parties de formats différents forme une seule ligne quand il a son propre dossier, et ses parties sont additionnées.
 
 Seule une édition en anglais, ou une dont la fiche n'indique pas de langue, est acceptée sur la durée. Une édition dans une autre langue n'est acceptée que si l'ASIN des fichiers eux-mêmes la trouve. Un livre répondu depuis le [stockage local](/fr/settings/metadata/) au lieu d'une recherche en direct n'est jamais accepté sans toi.
 
@@ -55,7 +55,7 @@ Un ASIN trouvé dans un commentaire ou une description n'est qu'un indice. Il ne
 
 ## Réunir, séparer et ajouter
 
-- Réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers. Sépare-les de nouveau depuis les détails du dossier. La correspondance de la ligne réunie n'est qu'une suggestion : elle compte sous **Needs a look** et reste décochée jusqu'à ce que tu la confirmes ou en choisisses une autre. Sa durée est le total des parties seulement si chaque partie en a une, et elle ne garde un ASIN que si toutes les parties donnent le même. Un livre réuni à partir de deux formats aux mêmes noms de fichiers compte une seule fois : il prend la durée du format le plus long, ou aucune si elles diffèrent de plus de trois minutes ou si l'une des lignes réunies contient déjà les deux formats. Une recherche qui se termine après que tu as réuni ou séparé sa ligne n'est aussi qu'une suggestion.
+- Réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers. Sépare-les de nouveau depuis les détails du dossier. La correspondance de la ligne réunie n'est qu'une suggestion : elle compte sous **Needs a look** et reste décochée jusqu'à ce que tu la confirmes ou en choisisses une autre. Sa durée est le total des parties seulement si chaque partie en a une, et elle ne garde un ASIN que si toutes les parties donnent le même. Réunir sert seulement aux parties d'un même livre : laisse deux formats d'un livre en lignes séparées, car les réunir additionne les deux durées. Une recherche qui se termine après que tu as réuni ou séparé sa ligne n'est aussi qu'une suggestion.
 - **Confirm match** dans les détails d'une ligne coche une ligne **Needs a look**, et **Undo confirmation** retire cette coche.
 - L'ajout est bloqué avec une raison affichée au-dessus du bouton, comme « Select at least one folder » ou « 2 selected rows still need a decision ». L'ajout est aussi refusé, sans rien toucher, quand deux lignes réclament le même dossier ou le même fichier.
 - Tout ce qui retirerait ou remplacerait des fichiers demande d'abord.

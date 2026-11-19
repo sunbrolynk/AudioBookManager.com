@@ -24,7 +24,7 @@ Autor nebo pozice v sérii, které souborům odporují, knihu vyřadí. Když so
 
 Délka souborů se počítá jen tehdy, když se dal přečíst každý soubor knihy. Když jeden změřit nejde, řádek nemá žádnou délku: přiřazení pak může potvrdit jen jeho ASIN, jinak kniha čeká pod **Needs a look**.
 
-Když je kniha ve dvou formátech, každý formát je samostatný řádek a měří se zvlášť. Kniha rozdělená na části v různých formátech je jeden řádek, když má vlastní složku, a její části se sčítají. Dokončené stahování s jednou knihou ve dvou formátech se měří jako jedna kopie a nemá žádnou délku k přiřazení, když se délky kopií liší o víc než tři minuty.
+Když je kniha ve dvou formátech, každý formát je samostatný řádek a měří se zvlášť. Kniha rozdělená na části v různých formátech je jeden řádek, když má vlastní složku, a její části se sčítají.
 
 Podle délky se přijme jen anglické vydání nebo takové, jehož záznam neuvádí jazyk. Vydání v jiném jazyce se přijme jen tehdy, když ho najde vlastní ASIN souborů. Kniha zodpovězená z [místního úložiště](/cs/settings/metadata/) místo živého dotazu se bez tebe nikdy nepřijme.
 
@@ -55,7 +55,7 @@ ASIN nalezený v komentáři nebo popisu je jen nápověda. Za shodu se počít�
 
 ## Spojování, dělení a přidávání
 
-- Spoj řádky, které jsou jedna kniha rozdělená do více složek. Znovu je rozdělíš v detailu složky. Přiřazení spojeného řádku je jen návrh: počítá se pod **Needs a look** a není zaškrtnuté, dokud ho nepotvrdíš nebo nevybereš jiné. Jeho délka je součet částí jen tehdy, když ji má každá část, a ASIN si ponechá jen tehdy, když všechny části uvádějí stejné. Kniha spojená ze dvou formátů se stejnými názvy souborů se počítá jednou: dostane délku delšího formátu, nebo žádnou, když se liší o víc než tři minuty nebo když některý ze spojených řádků už obsahuje oba formáty. Dotaz, který doběhne až po spojení nebo rozdělení jeho řádku, je také jen návrh.
+- Spoj řádky, které jsou jedna kniha rozdělená do více složek. Znovu je rozdělíš v detailu složky. Přiřazení spojeného řádku je jen návrh: počítá se pod **Needs a look** a není zaškrtnuté, dokud ho nepotvrdíš nebo nevybereš jiné. Jeho délka je součet částí jen tehdy, když ji má každá část, a ASIN si ponechá jen tehdy, když všechny části uvádějí stejné. Spojení je jen pro části jedné knihy: dva formáty jedné knihy nech jako samostatné řádky, protože spojení sečte obě délky. Dotaz, který doběhne až po spojení nebo rozdělení jeho řádku, je také jen návrh.
 - **Confirm match** v detailech řádku zaškrtne řádek **Needs a look** a **Undo confirmation** zaškrtnutí zase vezme zpět.
 - Když přidání nejde, nad tlačítkem se ukáže důvod, třeba "Select at least one folder" nebo "2 selected rows still need a decision". Přidání se taky odmítne, aniž by se čehokoli dotklo, když si dva řádky nárokují stejnou složku nebo soubor.
 - Cokoli, co by odstranilo nebo nahradilo soubory, se nejdřív zeptá.
