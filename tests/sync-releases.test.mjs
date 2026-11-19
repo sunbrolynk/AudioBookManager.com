@@ -26,19 +26,21 @@ const reply = (data) => {
   process.stdout.write(r.stdout);
   process.exit(r.status);
 };
+const fail = () => { process.stderr.write('HTTP 502: Bad Gateway\\n'); process.exit(1); };
 if (a[0] === 'api') {
   const p = a[1];
   if (p.includes('/releases?')) {
     if (st.releasesFail) { process.stderr.write('HTTP 401: Bad credentials\\n'); process.exit(1); }
     reply(st.tags.map((tag_name) => ({ tag_name, draft: false, prerelease: false })));
   } else if (p.includes('/contents/CHANGELOG.md')) reply(st.tags.map((t) => '## [' + t.slice(1) + ']\\n\\n- ' + t + ' notes\\n').join('\\n'));
-  else if (p.includes('/releases/tags/')) reply({ published_at: '2026-11-18T00:00:00Z' });
+  else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: '2026-11-18T00:00:00Z' });
   else if (p.endsWith('/status')) {
     const sha = p.split('/').at(-2);
     reply({ statuses: st.green.includes(sha) ? [{ context: 'Site validation', state: 'success' }] : [] });
   }
 } else if (a[0] === 'pr' && a[1] === 'list') {
   const state = opt('--state');
+  if (state === 'all' && st.fail === 'history') fail();
   reply(st.prs
     .filter((p) => (!opt('--base') || p.base === opt('--base')) && (!opt('--head') || p.head === opt('--head')) && (state === 'all' || p.state === 'OPEN'))
     .map((p) => ({ number: p.number, headRefName: p.head, state: p.state, isCrossRepository: !!p.fork,
@@ -50,7 +52,7 @@ const roots = [];
 after(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
 
 // prs: { number, base, head, state = 'OPEN', fork, author, comments, at = where its branch starts }.
-function setup({ dev, main, tags, prs = [], green = [], releasesFail = false }) {
+function setup({ dev, main, tags, prs = [], green = [], releasesFail = false, fail = '' }) {
   const root = mkdtempSync(join(tmpdir(), 'sync-releases-'));
   roots.push(root);
   const git = (cwd, ...args) => execFileSync('git', ['-C', cwd, ...args], { env: cleanEnv, encoding: 'utf8', stdio: 'pipe' }).trim();
@@ -90,7 +92,7 @@ function setup({ dev, main, tags, prs = [], green = [], releasesFail = false }) 
   mkdirSync(fake);
   writeFileSync(join(fake, 'gh'), fakeGh);
   chmodSync(join(fake, 'gh'), 0o755);
-  const state = { tags, releasesFail, prs: prs.map((p) => ({ state: 'OPEN', ...p })), green: green.map((h) => shas[h]) };
+  const state = { tags, releasesFail, fail, prs: prs.map((p) => ({ state: 'OPEN', ...p })), green: green.map((h) => shas[h]) };
   writeFileSync(join(fake, 'state.json'), JSON.stringify(state));
   writeFileSync(join(fake, 'calls.log'), '');
   return { work, remote, fake, git };
@@ -118,7 +120,7 @@ test('main gets a release dev already has, and the new PR closes the older one',
   });
   const calls = run(env);
   assert.ok(has(calls, 'pr', 'close', '221'), 'the older main PR stays open');
-  assert.ok(calls.find((c) => c[1] === 'close').includes('--delete-branch'));
+  assert.deepEqual(calls.find((c) => c[1] === 'close'), ['pr', 'close', '221', '--delete-branch', '--comment', 'Closing this one: the pull request for 0.26.0 includes these releases.']);
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'));
   assert.ok(!calls.some((c) => c[1] === 'create' && c.includes('dev')), 'dev already has 0.26.0');
   assert.deepEqual(files(env, 'releases/main/v0.26.0'), ['0.20.0.md', '0.25.0.md', '0.26.0.md']);
@@ -134,7 +136,7 @@ test('a base that already has every release has its leftover release PRs closed'
     prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }],
   });
   const calls = run(env);
-  assert.ok(has(calls, 'pr', 'close', '230'));
+  assert.ok(has(calls, 'pr', 'close', '230', '--delete-branch', '--comment', 'Closing this one: main already has these releases.'));
   assert.ok(!calls.some((c) => c[1] === 'create' || c[0] === 'workflow'));
 });
 
@@ -200,3 +202,12 @@ test('a release lookup with no valid tags stops the run before any PR is touched
   const calls = run(env, 1);
   assert.ok(!calls.some((c) => c[0] === 'pr' || c[0] === 'workflow'), JSON.stringify(calls));
 });
+
+for (const [fail, what] of [['history', 'closed-PR lookup'], ['date', 'release date read']]) {
+  test(`a failed ${what} stops the run before anything is pushed or opened`, { skip }, () => {
+    const env = setup({ dev: ['0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], fail });
+    const calls = run(env, 1);
+    assert.ok(!calls.some((c) => c[1] === 'create' || c[0] === 'workflow'), JSON.stringify(calls));
+    assert.equal(env.git(env.remote, 'branch', '--list', 'releases/main/*'), '', 'a release branch was pushed');
+  });
+}

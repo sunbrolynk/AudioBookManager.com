@@ -12,7 +12,8 @@ releases=$(abm "repos/$ABM_REPO/releases?per_page=20" --jq '.[] | select(.draft 
 tags=$({ grep -E "$valid" <<<"$releases" || [ $? -eq 1 ]; } | sort -V)
 [ -n "$tags" ] || { echo "::error::no published ABM releases found in $ABM_REPO"; exit 1; }
 # Only PRs this workflow opened in this repo; a fork PR can use the same branch name.
-bot='select(.isCrossRepository == false and (.author.login | test("^(app/)?github-actions$")))'
+botlogin='(.author.login | test("^(app/)?github-actions$"))'
+bot="select(.isCrossRepository == false and $botlogin)"
 closing='Closing this one:'
 
 git config user.name 'github-actions[bot]'
@@ -36,7 +37,7 @@ build() {
 
 # sync_base <base branch> <PR branch prefix>
 sync_base() {
-  local base=$1 prefix=$2 newest tag last branch pr old oldhead olds head new=()
+  local base=$1 prefix=$2 newest tag last branch pr old oldhead olds head msg closed state new=()
   newest=$(git ls-tree --name-only "origin/$base" src/content/releases/ | sed 's|.*/||; s/\.md$//' | sort -V | tail -1)
   for tag in $tags; do
     [ "$(printf '%s\n%s\n' "${tag#v}" "$newest" | sort -V | tail -1)" = "${tag#v}" ] && [ "${tag#v}" != "$newest" ] && new+=("$tag")
@@ -46,11 +47,13 @@ sync_base() {
   branch="$prefix$last"
 
   # The newest release PR carries every release the base is missing, so any older one is closed.
+  msg="$base already has these releases"
+  [ -z "$last" ] || msg="the pull request for ${last#v} includes these releases"
   olds=$(gh pr list --limit 200 --base "$base" --state open --json number,headRefName,isCrossRepository,author \
     --jq ".[] | $bot | select(.headRefName | test(\"^${prefix}v[0-9.]+\$\")) | \"\(.number) \(.headRefName)\"")
   while read -r old oldhead; do
     [ -n "$old" ] && [ "$oldhead" != "$branch" ] || continue
-    gh pr close "$old" --delete-branch --comment "$closing ${last:+the pull request for ${last#v} includes these releases}${last:-$base already has these releases}."
+    gh pr close "$old" --delete-branch --comment "$closing $msg."
   done <<<"$olds"
   [ -n "$last" ] || { echo "$base is current at $newest"; return 0; }
 
@@ -58,8 +61,9 @@ sync_base() {
   pr=$(gh pr list --limit 200 --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
   if [ -z "$pr" ]; then
     # A release PR closed by hand stays closed; one this script closed itself does not count.
-    if [ -n "$(gh pr list --limit 200 --head "$branch" --state all --json number,isCrossRepository,author,comments \
-      --jq ".[] | $bot | select(any(.comments[]; (.author.login | test(\"^(app/)?github-actions$\")) and (.body | startswith(\"$closing\"))) | not) | .number")" ]; then
+    closed=$(gh pr list --limit 200 --head "$branch" --state all --json number,isCrossRepository,author,comments \
+      --jq ".[] | $bot | select(any(.comments[]; $botlogin and (.body | startswith(\"$closing\"))) | not) | .number")
+    if [ -n "$closed" ]; then
       echo "$branch already had a pull request"; return 0
     fi
     build "$base" "$branch" "${new[@]}"
@@ -77,10 +81,9 @@ sync_base() {
   if [ "$base" = main ]; then
     # Checks from a dispatched run don't count for a PR, so site-checks reports the result as a commit status.
     # A PR opened with the workflow token starts no checks of its own, so run them unless the head already has a result.
-    case "$(gh api "repos/{owner}/{repo}/commits/$(git rev-parse "$head")/status" --jq '[.statuses[] | select(.context == "Site validation")][0].state // ""')" in
-      success) ;;
-      *) gh workflow run site-checks.yml --ref "$branch" ;;
-    esac
+    # A failed status read only costs an extra check run, so it is not fatal.
+    state=$(gh api "repos/{owner}/{repo}/commits/$(git rev-parse "$head")/status" --jq '[.statuses[] | select(.context == "Site validation")][0].state // ""') || state=''
+    [ "$state" = success ] || gh workflow run site-checks.yml --ref "$branch"
     gh pr merge "$pr" --squash --auto || echo "::warning::could not turn on auto-merge for $pr; gh's error is above"
   else
     # dev has no required checks, so there is nothing for auto-merge to wait on.
