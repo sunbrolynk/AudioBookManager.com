@@ -35,6 +35,8 @@ Deluge, qBittorrent, Transmission, rTorrent, SABnzbd, NZBGet, Blackhole(감시 �
 | Redownload Failed | 켜짐 | 실패한 릴리스를 차단 목록에 넣고 다시 검색해요 |
 | Redownload Failed from Interactive Search | 켜짐 | 직접 고른 릴리스에도 똑같이 해요 |
 
+완료된 다운로드에 같은 책이 서로 다른 형식으로 두 번 이상 들어 있으면, ABM은 책의 품질 프로필이 가장 높게 매긴 사본만 가져와요. 다운로드를 책과 일치시킬 때도 사본 하나만 재는데, 기본 품질 프로필이 가장 높게 매긴 사본이에요. 프로필이 같은 순위로 두거나 넣지 않은 형식은 M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA 순서를 따라요. 나머지 사본은 다운로드에 남고, 가져온 뒤 **Also Delete Files**가 다운로드를 지울 때만 삭제돼요. 파트 묶음 옆에 있는 파일 하나는 재생 시간이 맞을 때만 두 번째 사본으로 치고, 아니면 한 책의 파트예요. 표지와 다른 추가 파일은 ABM이 가져가는 사본과 함께 그대로 따라와요. 다운로드 폴더에 다른 책의 오디오도 있으면, 가져온 오디오 이름을 딴 추가 파일만 따라와요.
+
 가져올 때 하드링크를 쓸지 복사할지는 [미디어 관리](/ko/settings/media-management/)의 **Use Hardlinks instead of Copy**에서 정해요. 클라이언트 폴더가 ABM이 보는 경로와 다르면 원격 경로 매핑을 추가하세요.
 
 ## 원격 경로 매핑

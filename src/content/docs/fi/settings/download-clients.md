@@ -35,6 +35,8 @@ Näkyvät kentät riippuvat asiakkaasta.
 | Redownload Failed | päällä | Laita epäonnistunut julkaisu estolistalle ja hae uudelleen |
 | Redownload Failed from Interactive Search | päällä | Sama käsin valitsemillesi julkaisuille |
 
+Kun valmiissa latauksessa on sama kirja useammin kuin kerran, eri muodoissa, ABM tuo vain sen kopion, jonka kirjan laatuprofiili asettaa korkeimmalle. Kun latausta yhdistetään kirjaan, sekin mittaa vain yhden kopion, sen jonka oletuslaatuprofiili asettaa korkeimmalle. Muodot, jotka profiili asettaa samalle tasolle tai jättää pois, menevät järjestyksessä M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. Muut kopiot ABM jättää lataukseen; ne poistetaan vain, jos **Also Delete Files** poistaa latauksen tuonnin jälkeen. Yksittäinen tiedosto osasarjan vieressä lasketaan toiseksi kopioksi vain, kun niiden kestot täsmäävät; muuten ne ovat yhden kirjan osia. Kansikuva ja muut lisätiedostot tulevat silti mukaan kopion kanssa, jonka ABM ottaa. Kun latauksen kansiossa on myös toisen kirjan ääntä, mukaan tulevat vain lisätiedostot, jotka on nimetty tuodun äänen mukaan.
+
 Se, kovalinkitetäänkö vai kopioidaanko tuonnit, määritetään asetuksella **Use Hardlinks instead of Copy** sivulla [Median hallinta](/fi/settings/media-management/). Jos asiakkaan kansio ei ole samassa polussa kuin ABM näkee, lisää etäpolun vastaavuus.
 
 ## Etäpolkujen vastaavuudet (Remote Path Mappings)

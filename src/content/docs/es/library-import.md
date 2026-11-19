@@ -24,7 +24,7 @@ Un autor o una posición en la serie que contradice los archivos descarta un lib
 
 La duración de los archivos solo cuenta cuando se pudo leer cada archivo del libro. Si uno no se puede medir, la fila no tiene duración: solo su ASIN puede confirmar una coincidencia y, si no, el libro espera en **Needs a look**.
 
-Cuando un libro está en dos formatos, cada formato es su propia fila y se mide por separado. Un libro dividido en partes de distintos formatos es una sola fila cuando tiene su propia carpeta, y sus partes se suman. Una descarga completada con un libro en dos formatos se mide como una sola copia, y no tiene duración con la que buscar coincidencia si la duración de las copias difiere en más de tres minutos.
+Cuando un libro está en dos formatos, cada formato es su propia fila y se mide por separado. Un libro dividido en partes de distintos formatos es una sola fila cuando tiene su propia carpeta, y sus partes se suman.
 
 Por duración solo se acepta una edición en inglés, o una cuya ficha no indica idioma. Una edición en otro idioma solo se acepta cuando la encuentra el propio ASIN de los archivos. Un libro respondido desde el [almacenamiento local](/es/settings/metadata/) en lugar de una consulta en vivo nunca se acepta sin ti.
 
@@ -55,7 +55,7 @@ Un ASIN encontrado en un comentario o una descripción es solo una pista. Solo c
 
 ## Unir, dividir y añadir
 
-- Une las filas que son un mismo libro repartido en varias carpetas. Vuelve a dividirlas desde los detalles de la carpeta. La coincidencia de la fila unida es solo una sugerencia: cuenta en **Needs a look** y empieza sin marcar hasta que la confirmas o eliges otra. Su duración es el total de las partes solo cuando cada parte tiene una, y conserva un ASIN solo cuando todas las partes dan el mismo. Un libro unido a partir de dos formatos con los mismos nombres de archivo cuenta una sola vez: toma la duración del formato más largo, o ninguna si difieren en más de tres minutos o si una de las filas unidas ya tiene los dos formatos. Una consulta que termina después de que unas o dividas su fila también es solo una sugerencia.
+- Une las filas que son un mismo libro repartido en varias carpetas. Vuelve a dividirlas desde los detalles de la carpeta. La coincidencia de la fila unida es solo una sugerencia: cuenta en **Needs a look** y empieza sin marcar hasta que la confirmas o eliges otra. Su duración es el total de las partes solo cuando cada parte tiene una, y conserva un ASIN solo cuando todas las partes dan el mismo. Unir es solo para las partes de un mismo libro: deja dos formatos de un libro como filas separadas, porque al unirlas se suman las dos duraciones. Una consulta que termina después de que unas o dividas su fila también es solo una sugerencia.
 - **Confirm match** en los detalles de una fila marca una fila **Needs a look**, y **Undo confirmation** quita esa marca.
 - Si no se puede añadir, el motivo aparece encima del botón, por ejemplo "Select at least one folder" o "2 selected rows still need a decision". Añadir también se rechaza, sin tocar nada, cuando dos filas reclaman la misma carpeta o el mismo archivo.
 - Todo lo que vaya a borrar o reemplazar archivos te pregunta antes.
