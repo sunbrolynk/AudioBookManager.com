@@ -236,6 +236,11 @@ dragging along other unpublished `dev` work.
   with gh's own error. The run stops with an error, and touches none of that branch's PRs, when the
   ABM release lookup fails or finds no published release, when the lookup for
   a release PR I closed by hand fails, or when a release date can't be read.
+- **Never behind quietly.** When a branch is still missing a release more than
+  24 hours after ABM published it, the run does its PR work as usual and then
+  fails, naming the branch and the releases, so GitHub emails me. That covers a
+  release PR I closed by hand, a `main` PR whose checks failed, and auto-merge
+  that couldn't be turned on. Merging the release, by its PR or by hand, clears it.
 - **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so
   the release-only PR to `main` posts nothing. The later `dev` to `main` release
   still posts as before.
