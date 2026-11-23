@@ -32,7 +32,7 @@ if (a[0] === 'api') {
   if (p.includes('/releases?')) {
     if (st.releasesFail) { process.stderr.write('HTTP 401: Bad credentials\\n'); process.exit(1); }
     reply([...st.tags.map((tag_name) => ({ tag_name, draft: false, prerelease: false })), ...st.unpublished]);
-  } else if (p.includes('/contents/CHANGELOG.md')) reply(st.tags.map((t) => '## [' + t.slice(1) + ']\\n\\n- ' + t + ' notes\\n').join('\\n'));
+  } else if (p.includes('/contents/CHANGELOG.md')) reply(st.tags.map((t) => '## [' + t.slice(1) + ']\\n\\n- ' + t + ' ' + (st.notes ?? 'notes') + '\\n').join('\\n'));
   else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: st.published[p.split('/').at(-1)] ?? st.published });
   else if (p.endsWith('/status')) {
     const sha = p.split('/').at(-2);
@@ -169,19 +169,6 @@ test('an open PR left behind its base is rebuilt on the new base and checked aga
   assert.ok(has(calls, 'workflow', 'run', 'site-checks.yml', '--ref', 'releases/main/v0.26.0'));
 });
 
-test('an up-to-date PR whose checks already passed is left to merge itself', { skip }, () => {
-  const env = setup({
-    dev: ['0.25.0', '0.26.0'],
-    main: ['0.25.0'],
-    tags: ['v0.25.0', 'v0.26.0'],
-    prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }],
-    green: ['releases/main/v0.26.0'],
-  });
-  const calls = run(env);
-  assert.ok(!calls.some((c) => c[0] === 'workflow' || c[1] === 'edit' || c[1] === 'create'));
-  assert.ok(has(calls, 'pr', 'merge', '230', '--squash', '--auto'));
-});
-
 test('a release PR that was closed by hand is not opened again', { skip }, () => {
   const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED' }] });
   const calls = run(env);
@@ -303,4 +290,48 @@ test('an overdue release whose PR does not merge still fails the run, and only f
   run(env, 1, out);
   assert.match(out.text, /::error::main is missing 0\.26\.0/);
   assert.doesNotMatch(out.text, /::error::dev/, 'dev merged it this run');
+});
+
+// Opens the PR the last run created, as GitHub would, then changes what ABM has before the next run.
+function reopen(env, change = {}) {
+  const f = join(env.fake, 'state.json');
+  const st = JSON.parse(readFileSync(f, 'utf8'));
+  st.prs.push({ number: 99, ...st.created, state: 'OPEN' });
+  writeFileSync(f, JSON.stringify({ ...st, ...change }));
+  writeFileSync(join(env.fake, 'calls.log'), '');
+}
+const show = (env, file) => env.git(env.remote, 'show', `releases/main/v0.24.0:src/content/releases/${file}`);
+const halfHourAgo = new Date(Date.now() - 1800e3).toISOString().replace(/\.\d+Z$/, 'Z');
+
+for (const [what, first, change, check] of [
+  ['a backport published', ['v0.23.0', 'v0.24.0'], { tags: ['v0.23.0', 'v0.23.1', 'v0.24.0'] },
+    (env) => assert.deepEqual(files(env, 'releases/main/v0.24.0'), ['0.23.0.md', '0.23.1.md', '0.24.0.md'])],
+  ['a release unpublished', ['v0.23.0', 'v0.23.1', 'v0.24.0'], { tags: ['v0.23.0', 'v0.24.0'] },
+    (env) => assert.deepEqual(files(env, 'releases/main/v0.24.0'), ['0.23.0.md', '0.24.0.md'])],
+  ['a changelog section edited', ['v0.23.0', 'v0.24.0'], { notes: 'reworded notes' },
+    (env) => assert.match(show(env, '0.24.0.md'), /^- v0\.24\.0 reworded notes$/m)],
+  ['a publish date changed', ['v0.23.0', 'v0.24.0'], { published: halfHourAgo },
+    (env) => assert.match(show(env, '0.24.0.md'), new RegExp(`^date: '${halfHourAgo}'$`, 'm'))],
+]) {
+  test(`${what} while a release PR is open reaches that PR with the base unmoved`, { skip }, () => {
+    const env = setup({ dev: ['0.23.0', '0.23.1', '0.24.0'], main: ['0.23.0'], tags: first });
+    run(env);
+    reopen(env, change);
+    const calls = run(env);
+    check(env);
+    assert.ok(has(calls, 'pr', 'edit', '99', '--title'), JSON.stringify(calls));
+    assert.ok(!calls.some((c) => c[1] === 'create' || c[1] === 'close'), 'the same PR carries it');
+    assert.ok(has(calls, 'workflow', 'run', 'site-checks.yml', '--ref', 'releases/main/v0.24.0'), 'the new commit is checked');
+  });
+}
+
+test('an open release PR that already matches ABM is not pushed again', { skip }, () => {
+  const env = setup({ dev: ['0.23.0', '0.24.0'], main: ['0.23.0'], tags: ['v0.23.0', 'v0.24.0'] });
+  run(env);
+  const sha = env.git(env.remote, 'rev-parse', 'releases/main/v0.24.0');
+  reopen(env, { green: [sha] });
+  const calls = run(env);
+  assert.equal(env.git(env.remote, 'rev-parse', 'releases/main/v0.24.0'), sha);
+  assert.ok(!calls.some((c) => c[0] === 'workflow' || ['edit', 'create', 'close'].includes(c[1])), JSON.stringify(calls));
+  assert.ok(has(calls, 'pr', 'merge', '99', '--squash', '--auto'));
 });

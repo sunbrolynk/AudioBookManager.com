@@ -21,7 +21,7 @@ overdue=()
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
-# build <base> <branch> <tag...>: one commit on top of the base with the given releases added.
+# build <base> <branch> <tag...>: one local commit on top of the base with the given releases added.
 build() {
   local base=$1 branch=$2 tag date; shift 2
   git switch --quiet --detach "origin/$base"
@@ -34,7 +34,6 @@ build() {
   done
   git add public/releases.json src/content/releases
   git commit --quiet -m "add ${*#v} to the updates page"
-  git push --quiet --force origin "$branch"
 }
 
 # close_others <base> <prefix> <branch to keep> <reason>: closes this script's other release PRs into the base.
@@ -79,15 +78,20 @@ sync_base() {
       echo "$branch already had a pull request"; return 0
     fi
     build "$base" "$branch" "${new[@]}"
+    git push --quiet --force origin "$branch"
     head=HEAD
     pr=$(gh pr create --base "$base" --head "$branch" \
       --title "add ${new[*]#v} to the updates page" \
       --body "Release notes taken from the ABM changelog at the release tag. Built by scripts/sync-releases.sh." )
-  elif ! git merge-base --is-ancestor "origin/$base" "origin/$branch"; then
-    # The base moved since the PR opened, and the base must be up to date for the PR to merge.
+  else
+    # Built fresh every run, so a new backport, an unpublished release, or a changed changelog or date reaches the open PR.
     build "$base" "$branch" "${new[@]}"
-    head=HEAD
-    gh pr edit "$pr" --title "add ${new[*]#v} to the updates page"
+    # Pushed only when the base moved (it must be up to date for the PR to merge) or the files differ.
+    if ! git merge-base --is-ancestor "origin/$base" "origin/$branch" || ! git diff --quiet "origin/$branch" HEAD; then
+      git push --quiet --force origin "$branch"
+      head=HEAD
+      gh pr edit "$pr" --title "add ${new[*]#v} to the updates page"
+    fi
   fi
   # Only now that the newest PR is in place, so a failure above never leaves a release without one.
   close_others "$base" "$prefix" "$branch" "the pull request for ${last#v} includes these releases"

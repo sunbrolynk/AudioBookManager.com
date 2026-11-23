@@ -221,9 +221,11 @@ dragging along other unpublished `dev` work.
   touched.
 - **Closed by hand stays closed.** If I close a release PR myself, the script
   leaves that release alone. A PR the script closed itself doesn't count.
-- **When the base moves.** If `dev` or `main` moves while a release PR waits,
-  the script rebuilds the PR on the new base, so the up-to-date rule is always
-  met.
+- **While a PR waits.** Every run rebuilds the open release PR from the current
+  base and ABM. It pushes only when the base moved, so the up-to-date rule is
+  always met, or when the files differ: a backport published, a release
+  unpublished, or a changelog section or publish date changed. An unchanged PR
+  isn't pushed or checked again.
 - **`dev`** has no required checks, so its PR merges at once.
 - **`main`** needs the `Site validation` check. A PR opened with the workflow
   token starts no checks of its own, and a dispatched run's checks don't count
