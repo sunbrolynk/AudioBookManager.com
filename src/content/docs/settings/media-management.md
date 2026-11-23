@@ -20,7 +20,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Setting | Default | Effect |
 |---|---|---|
 | Create Empty Book Folders | off | Creates missing book folders on add, on root folder change and during a disk scan. Ignored while **Delete empty folders** is on, so a folder is not made only to be removed. |
-| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted |
+| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted, and the folders an Organize move leaves empty, never the root folder itself |
 
 ## Importing
 
@@ -116,6 +116,10 @@ On a book's page, a book whose folder isn't where the naming settings would put 
 When a book's new folder would sit inside the folder it is in now, Organize makes the subfolder there and moves only that book's own files into it: its audio, plus the cover, chapter and other sidecar files I keep for it. Anything else in the folder stays where it was. The preview says "Moves into a subfolder" and lists what stays, and the result dialog lists the files left where they were. If a move fails partway, the files already moved are put back. Moving a book's folder from its edit dialog into a subfolder of itself works the same way.
 
 Library Import follows the same naming settings, including when it adds a book that already sits in a root folder or moves files into a book I already have. With Rename Books off, each file keeps the name it came with. A file whose name would clash with another file in the batch, or with one already in the book's folder (case ignored), takes the name from the format instead, and the import notes which files it did that for. With Rename Books on, files that would get the same name are numbered by position, so Manual Import never skips one.
+
+A Standard Book format that would still give two files in one folder the same name, case ignored, is refused before any file is copied, moved or renamed. `{Original Filename}` with `CD1/01.mp3` and `CD2/01.mp3` is one example. The import fails with a message naming the file, Rename Files refuses the book, and Organize skips it and says why. An Audible download has no original file name, so `{Original Filename}` names it after the book's title.
+
+When Organize renames a book's audio in a folder it shares with other books, the sidecars named after that audio follow it. A file that belongs to another book in the folder stays as it is, including one named after that book's audio.
 
 The default layout is `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A standalone book has no series folder or volume: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A series book with no position also starts with the year. A year that isn't known is left out, never written as `(Unknown)`.
 
