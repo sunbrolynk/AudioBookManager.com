@@ -17551,7 +17551,7 @@
           "Tasks"
         ],
         "summary": "Cancel Task",
-        "description": "Cancel a queued task (200), or ask a running task to stop (202). Only\nsome task types can stop once started; the rest, and finished tasks, are\nrefused with 409. An unknown task is 404.",
+        "description": "Cancel a queued task, or ask a running task to stop.\n\n- 200: a queued task was cancelled.\n- 202: a stop was requested, or the task is already stopping.\n- 404: unknown task.\n- 409: the task has finished, cannot be stopped once started, or had nothing left to stop.\n- 500: the stop could not be delivered, or the cancel could not be saved.",
         "operationId": "cancel_task_api_tasks__task_id__delete",
         "parameters": [
           {
