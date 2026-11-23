@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.26.1",
+    "version": "0.27.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -12554,7 +12554,7 @@
           "Audible"
         ],
         "summary": "Cancel Download Task",
-        "description": "Cancel a queued download task.",
+        "description": "Cancel a queued download task. A download that has started runs to its end.",
         "operationId": "cancel_download_task_api_audible_tasks__task_id__delete",
         "parameters": [
           {
@@ -17551,7 +17551,7 @@
           "Tasks"
         ],
         "summary": "Cancel Task",
-        "description": "Cancel a queued task. Cannot cancel running tasks.",
+        "description": "Cancel a queued task (200), or ask a running task to stop (202). Only\nsome task types can stop once started; the rest, and finished tasks, are\nrefused with 409. An unknown task is 404.",
         "operationId": "cancel_task_api_tasks__task_id__delete",
         "parameters": [
           {
