@@ -32,7 +32,7 @@ Each row shows where its pairing stands:
 
 ### What Save checks
 
-When you save a new or changed pairing, ABM takes up to three of that root folder's books that have files in ABM, oldest first, and asks Audiobookshelf for each one, by its ASIN and then its title. Every one has to be in the chosen folder at the same path, or the pairing is refused and the reason shows under that root folder's row. This normally takes a second or two. If a book can't be found that way, ABM reads through the library's whole list of items instead, which on a very large library can take up to two minutes before it gives up and asks you to save again.
+When you save a new or changed pairing, ABM takes up to three of that root folder's books that have files in ABM, oldest first, and asks Audiobookshelf for each one, by its ASIN and then its title. Every one has to be in the chosen folder at the same path, or the pairing is refused and the reason shows under that root folder's row. This normally takes a second or two. If a book can't be found that way, ABM reads through the library's whole list of items instead. One save gets up to two minutes for its whole check, across every pairing it checks. If that runs out, the save is refused and tells you to save again when Audiobookshelf is not busy, or to pair fewer root folders in one save. If Audiobookshelf sends the same page of its list twice, the save is refused and says so. That usually means something between ABM and Audiobookshelf, such as a caching proxy, is ignoring the page number.
 
 When a book isn't there, the reason names its path and says Audiobookshelf may not have scanned it yet. Scan the library in Audiobookshelf and save again. If it still isn't found, check that the two really are the same folder.
 
@@ -40,11 +40,12 @@ A root folder with no books that have files saves without being checked, and sho
 
 A save is also refused when:
 
-- you add or change a pairing while **Enable** is off. Removing one works either way. With pairings saved, that includes turning **Enable** off and changing the server address, Verify TLS or the CA bundle in the same save, because every pairing then counts as changed.
+- you add or change a pairing while **Enable** is off. Removing one works either way.
+- you change the server address, Verify TLS or the CA bundle while **Enable** is off and root folders are paired. The message tells you to turn Audiobookshelf on to change them, or to remove the pairings first.
 - the [recycle bin](/settings/media-management/#recycle-bin) is, contains or sits inside the root folder.
 - the same root folder or the same Audiobookshelf folder appears in two pairings.
 - the server no longer lists the chosen folder.
-- the server address, Verify TLS, the CA bundle or the API key changed, for example from another browser tab, while the save was checking. Reload the page and save again.
+- the server address, Verify TLS, the CA bundle, the API key or the pairings changed while the save was checking, for example from another browser tab, a **Disconnect** or a root folder being deleted. Reload the page and save again.
 
 A refused save changes nothing: the connection and the pairings stay as they were.
 
