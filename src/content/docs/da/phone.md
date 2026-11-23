@@ -37,7 +37,7 @@ En bogside har Search, Interactive, Import (Convert, når den har filer) og Refr
 
 - Calendar er en liste dag for dag. Visningsvælgeren bestemmer perioden. Agenda findes ikke her.
 - Conversions har fanerne Queue og History.
-- Dashboard-kortene stables i én kolonne.
+- Dashboard viser totalerne i et gitter, med fanerne New, Wanted og Coming under og et kort resumé af serier og den oplæser, du lytter mest til.
 - Dialoger åbner som ark nedefra.
 
 ## Indstillinger

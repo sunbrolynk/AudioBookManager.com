@@ -28,4 +28,5 @@ description: 安全地把现有收藏导入 ABM。
 - 书库里已有的书会被标出来。用 keep-library 的处理方式放弃重复的那份，别导入两次。
 - 放弃一个没有音频的文件夹时，只会删除这一行自己拥有的内容；如果开启了回收站，会进回收站。
 - 在简介里找到的 ASIN 只是线索，不算匹配，除非标题也对得上。
+- 文件既没用 ASIN、也没用时长加系列序号或书名印证的匹配，会不勾选地留在 **Needs a look** 里，**Select All** 也会跳过它。参见 [Library Import](/zh-cn/library-import/)。
 - 导入之后刷新一下，拉取最新的元数据；如果你想让 Audiobookshelf 看到 ABM 的选择，就打开附属文件写入。见 [附属文件](/zh-cn/using/sidecars/)。

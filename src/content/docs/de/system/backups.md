@@ -9,6 +9,8 @@ Unter **System > Backups** erstellst und wiederherstellst du Backups. **Backup N
 
 Ein verschlüsseltes Archiv mit einer konsistenten Kopie der Datenbank (`database.db`), den Einstellungen (`settings.json`) und einem Manifest. Nimm `/config` außerdem in deine eigenen Backups auf, wegen der Cover und der App-Secret-Datei.
 
+Der Audiobookshelf-API-Key ist Teil des Backups und liegt verschlüsselt darin. Unter einem anderen `APP_SECRET` lässt er sich nicht entschlüsseln. Gib ihn also neu ein, wenn du mit einem anderen wiederherstellst.
+
 ## Wiederherstellen
 
 Wähl eins aus der Liste oder lade eine Backup-Datei hoch (bis 500 MiB). Vorher wird eine Kopie der laufenden Datenbank gespeichert. Eine Wiederherstellung lässt sich nicht rückgängig machen.

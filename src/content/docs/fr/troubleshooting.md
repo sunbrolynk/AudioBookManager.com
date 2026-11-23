@@ -36,6 +36,10 @@ Le journal de l'app dit de quel cas il s'agit :
 
 Le cas inverse : un proxy qui n'envoie aucun en-tête de transfert ressemble à un client local, donc tout ce qui passe par lui saute la connexion. Règle Authentication Required sur Enabled.
 
+## Une page reste blanche ou affiche des erreurs après une mise à jour
+
+Recharge l'onglet. Une page ouverte depuis avant la mise à jour n'a pas encore la clé d'API. Une page Library Import restée ouverte depuis avant la mise à jour ne peut pas enregistrer ses modifications tant que tu ne la recharges pas. Si ABM est derrière un proxy, laisse aussi passer `/initialize.json`, `/media-cover/`, `/backup/` et `/logfile`. Voir [Reverse proxy](/fr/guides/reverse-proxy/).
+
 ## Les modifications sont refusées depuis le navigateur
 
 Vérifie que le proxy transmet l'en-tête `Host` d'origine, ou qu'il envoie `X-Forwarded-Host`. Voir [Configuration](/fr/configuration/#reverse-proxy).

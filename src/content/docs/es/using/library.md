@@ -28,6 +28,12 @@ Si conoces Sonarr: un libro es un episodio, una serie es temporada y programa a 
 
 Borrar una serie o un autor se rechaza mientras todavía tenga libros en la biblioteca. Quita primero los libros.
 
+## Volver a una lista
+
+Al volver desde la página de un libro, una serie o un autor, **Books**, **Series**, **Authors** y **Audible Library** quedan donde los dejaste, con el elemento que abriste en el mismo sitio. Funciona en todas las vistas y en el móvil. Si abres una lista desde el menú o la recargas, empieza arriba.
+
+Ctrl+H y Ctrl+E saltan al principio y al final de la lista de Books en cualquier vista. Pulsa `?` para ver todos los atajos de teclado.
+
 ## Herencia del perfil de calidad
 
 El perfil de calidad de un libro sale, en este orden, de: su propio ajuste, su serie principal, su autor principal y, por último, el perfil predeterminado. Consulta [Perfiles](/es/settings/profiles/).

@@ -37,7 +37,7 @@ A página de um livro tem Search, Interactive, Import (Convert quando já tem ar
 
 - O Calendar é uma lista dia a dia. O seletor de visualização define o período. Agenda não está disponível.
 - Conversions tem as abas Queue e History.
-- Os cartões do Dashboard ficam empilhados numa coluna só.
+- O Dashboard mostra os totais numa grade, com as abas New, Wanted e Coming abaixo e um resumo curto das séries e do narrador que você mais ouve.
 - Os diálogos abrem como folhas que sobem da parte de baixo da tela.
 
 ## Configurações

@@ -36,6 +36,10 @@ Sovelluksen loki kertoo, kummasta on kyse:
 
 Päinvastainen tapaus: välityspalvelin, joka ei lähetä välitysotsakkeita, näyttää paikalliselta asiakkaalta, joten kaikki sen kautta tuleva ohittaa kirjautumisen. Aseta Authentication Required arvoon Enabled.
 
+## Sivu jää tyhjäksi tai näyttää virheitä päivityksen jälkeen
+
+Lataa välilehti uudelleen. Ennen päivitystä avatulla sivulla ei ole vielä API-avainta. Ennen päivitystä auki jäänyt Library Import -sivu ei voi tallentaa muutoksiaan ennen kuin lataat sen uudelleen. Jos ABM on välityspalvelimen takana, päästä läpi myös `/initialize.json`, `/media-cover/`, `/backup/` ja `/logfile`. Katso [Käänteinen välityspalvelin](/fi/guides/reverse-proxy/).
+
 ## Selaimesta tehdyt muutokset hylätään
 
 Varmista, että välityspalvelin välittää alkuperäisen `Host`-otsakkeen tai lähettää `X-Forwarded-Host`. Katso [Ympäristömuuttujat](/fi/configuration/#käänteinen-välityspalvelin).

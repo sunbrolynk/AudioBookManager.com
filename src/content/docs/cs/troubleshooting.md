@@ -36,6 +36,10 @@ Log aplikace řekne, o který případ jde:
 
 Opačný případ: proxy, která neposílá žádné přeposílací hlavičky, vypadá jako lokální klient, takže všechno, co přes ni jde, se přihlašovat nemusí. Nastav Authentication Required na Enabled.
 
+## Stránka po aktualizaci zůstane prázdná nebo ukazuje chyby
+
+Načti kartu znovu. Stránka otevřená ještě před aktualizací nemá API klíč. Stránka Library Import, která zůstala otevřená z doby před aktualizací, neuloží změny, dokud ji znovu nenačteš. Pokud máš ABM za proxy, propusť i `/initialize.json`, `/media-cover/`, `/backup/` a `/logfile`. Viz [Reverzní proxy](/cs/guides/reverse-proxy/).
+
 ## Změny z prohlížeče se odmítají
 
 Ověř, že proxy předává původní hlavičku `Host`, nebo posílá `X-Forwarded-Host`. Viz [Konfigurace](/cs/configuration/#reverzní-proxy).

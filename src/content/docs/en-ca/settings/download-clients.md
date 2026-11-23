@@ -35,6 +35,8 @@ Which fields show depends on the client.
 | Redownload Failed | on | Blocklist a failed release and search again |
 | Redownload Failed from Interactive Search | on | Same, for releases you picked by hand |
 
+When a finished download holds the same book more than once, in different formats, ABM imports only the copy the book's quality profile ranks highest. Matching the download to a book measures one copy too, the one the default quality profile ranks highest. Formats the profile ranks the same, or leaves off, go in the order M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. ABM leaves the other copies in the download; they are deleted only if **Also Delete Files** removes the download after import. A single file beside a set of parts counts as a second copy only when their runtimes agree; otherwise they are parts of one book. The cover and other extra files still come along with the copy ABM takes. When the download's folder also holds audio from another book, only extra files named after the imported audio come along.
+
 Whether imports hardlink or copy is **Use Hardlinks instead of Copy** in [Media Management](/en-ca/settings/media-management/). If the client's folder is not the same path ABM sees, add a remote path mapping.
 
 ## Remote path mappings

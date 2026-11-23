@@ -37,7 +37,7 @@ Een boekpagina heeft bovenaan Search, Interactive, Import (Convert zodra het bes
 
 - Calendar is een lijst per dag. De weergavekiezer bepaalt de periode. Agenda is er niet.
 - Conversions heeft de tabbladen Queue en History.
-- De kaarten van het Dashboard staan onder elkaar in één kolom.
+- Het Dashboard toont de totalen in een raster, met daaronder de tabbladen New, Wanted en Coming en een korte samenvatting van seriecompleetheid en de verteller die je het meest hoort.
 - Dialoogvensters openen als een paneel vanaf de onderkant van het scherm.
 
 ## Instellingen

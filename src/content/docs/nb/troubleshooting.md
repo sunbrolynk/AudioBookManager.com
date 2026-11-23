@@ -36,6 +36,10 @@ Apploggen sier hva det er:
 
 Det motsatte tilfellet: en proxy som ikke sender videresendingsheadere, ser ut som en lokal klient, så alt som går gjennom den, slipper innlogging. Sett Authentication Required til Enabled.
 
+## En side forblir tom eller viser feil etter en oppdatering
+
+Last inn fanen på nytt. En side som var åpen fra før oppdateringen, har ikke API-nøkkelen ennå. En Library Import-side som fortsatt er åpen fra før oppdateringen, kan ikke lagre endringene sine før du laster den inn på nytt. Står ABM bak en proxy, slipp også gjennom `/initialize.json`, `/media-cover/`, `/backup/` og `/logfile`. Se [Omvendt proxy](/nb/guides/reverse-proxy/).
+
 ## Endringer blir avvist fra nettleseren
 
 Sjekk at proxyen sender den opprinnelige `Host`-headeren videre, eller sender `X-Forwarded-Host`. Se [Konfigurasjon](/nb/configuration/#omvendt-proxy).

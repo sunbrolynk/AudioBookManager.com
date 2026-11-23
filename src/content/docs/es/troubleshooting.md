@@ -36,6 +36,10 @@ El registro de la aplicación te dice cuál es el caso:
 
 El caso contrario: un proxy que no envía cabeceras de reenvío parece un cliente local, así que todo lo que pasa por él se salta el inicio de sesión. Pon Authentication Required en Enabled.
 
+## Una página se queda en blanco o muestra errores tras actualizar
+
+Recarga la pestaña. Una página abierta desde antes de la actualización todavía no tiene la clave de API. Una página de Library Import que quedó abierta desde antes de la actualización no puede guardar sus cambios hasta que la recargues. Si ABM está detrás de un proxy, deja pasar también `/initialize.json`, `/media-cover/`, `/backup/` y `/logfile`. Consulta [Proxy inverso](/es/guides/reverse-proxy/).
+
 ## El navegador rechaza los cambios
 
 Asegúrate de que el proxy deja pasar la cabecera `Host` original o envía `X-Forwarded-Host`. Consulta [Configuración](/es/configuration/#proxy-inverso).

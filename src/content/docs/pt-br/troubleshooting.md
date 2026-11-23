@@ -36,6 +36,10 @@ O log do app diz qual é o caso:
 
 O caso contrário: um proxy que não envia cabeçalhos de encaminhamento parece um cliente local, então tudo o que passa por ele pula o login. Coloque Authentication Required em Enabled.
 
+## Uma página fica em branco ou mostra erros depois de atualizar
+
+Recarregue a aba. Uma página aberta desde antes da atualização ainda não tem a chave de API. Uma página do Library Import que ficou aberta desde antes da atualização não consegue salvar as alterações até você recarregar. Se o ABM fica atrás de um proxy, deixe passar também `/initialize.json`, `/media-cover/`, `/backup/` e `/logfile`. Veja [Proxy reverso](/pt-br/guides/reverse-proxy/).
+
 ## Alterações são recusadas pelo navegador
 
 Confira se o proxy repassa o cabeçalho `Host` original ou envia `X-Forwarded-Host`. Veja [Configuração](/pt-br/configuration/#proxy-reverso).

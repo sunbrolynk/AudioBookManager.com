@@ -3,7 +3,7 @@ title: 新增書籍
 description: 搜尋一本書，把它加成想要的書。
 ---
 
-**Library > Add New** 會在 Libex 搜尋書，並加入你挑選的書。搜尋會比對書名、作者、系列或 ASIN。
+**Library > Add New** 會在 Libex 搜尋書，並加入你挑選的書。搜尋會比對書名、作者、系列或 ASIN。用 **Title** 搜尋時，會先在 **Best matches** 列出 Libex 針對你輸入內容的最佳比對結果。之後是書名搜尋結果，已經列在那裡的書不再重複，每次 50 筆。往下捲動或點 **Load more** 會載入下一批 50 筆，直到 Libex 沒有更多，最多 500 筆。
 
 ## 新增會做什麼
 

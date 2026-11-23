@@ -29,7 +29,7 @@ On Grab、On Import、On Upgrade、On Conversion、On Health Issue、On Health R
 
 ## 自定义消息
 
-自定义消息会改写某个事件的文字。选一个 **Format**、一个 **Cover**（Auto 使用书的封面，也可以选 None 或 Custom URL），写好 **Title** 和正文，点一下变量就能插入。每个事件的默认模板可以作为起点。预览会显示最终效果，你也可以通过某个连接发一条测试。
+自定义消息会改写某个事件的文字。选一个 **Format**、一个 **Cover**（Auto 使用书的封面，也可以选 None 或 Custom URL），写好 **Title** 和正文，点一下变量就能插入。每个事件的默认模板可以作为起点。预览会显示最终效果，你也可以通过某个连接发一条测试。自定义封面 URL 必须是公网地址，局域网里的地址会被拒绝。
 
 ## 注意事项
 
