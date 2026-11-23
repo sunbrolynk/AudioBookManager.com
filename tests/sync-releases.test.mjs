@@ -31,9 +31,9 @@ if (a[0] === 'api') {
   const p = a[1];
   if (p.includes('/releases?')) {
     if (st.releasesFail) { process.stderr.write('HTTP 401: Bad credentials\\n'); process.exit(1); }
-    reply(st.tags.map((tag_name) => ({ tag_name, draft: false, prerelease: false })));
+    reply([...st.tags.map((tag_name) => ({ tag_name, draft: false, prerelease: false })), ...st.unpublished]);
   } else if (p.includes('/contents/CHANGELOG.md')) reply(st.tags.map((t) => '## [' + t.slice(1) + ']\\n\\n- ' + t + ' notes\\n').join('\\n'));
-  else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: '2026-11-19T02:30:00Z' });
+  else if (p.includes('/releases/tags/')) st.fail === 'date' ? fail() : reply({ published_at: st.published });
   else if (p.endsWith('/status')) {
     const sha = p.split('/').at(-2);
     reply({ statuses: st.green.includes(sha) ? [{ context: 'Site validation', state: 'success' }] : [] });
@@ -52,7 +52,9 @@ const roots = [];
 after(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
 
 // prs: { number, base, head, state = 'OPEN', fork, author, comments, at = where its branch starts }.
-function setup({ dev, main, tags, prs = [], green = [], releasesFail = false, fail = '' }) {
+// published is when every release came out; an hour ago keeps it inside the stale grace period.
+const hourAgo = new Date(Date.now() - 3600e3).toISOString().replace(/\.\d+Z$/, 'Z');
+function setup({ dev, main, tags, unpublished = [], published = hourAgo, prs = [], green = [], releasesFail = false, fail = '' }) {
   const root = mkdtempSync(join(tmpdir(), 'sync-releases-'));
   roots.push(root);
   const git = (cwd, ...args) => execFileSync('git', ['-C', cwd, ...args], { env: cleanEnv, encoding: 'utf8', stdio: 'pipe' }).trim();
@@ -92,13 +94,13 @@ function setup({ dev, main, tags, prs = [], green = [], releasesFail = false, fa
   mkdirSync(fake);
   writeFileSync(join(fake, 'gh'), fakeGh);
   chmodSync(join(fake, 'gh'), 0o755);
-  const state = { tags, releasesFail, fail, prs: prs.map((p) => ({ state: 'OPEN', ...p })), green: green.map((h) => shas[h]) };
+  const state = { tags, unpublished, published, releasesFail, fail, prs: prs.map((p) => ({ state: 'OPEN', ...p })), green: green.map((h) => shas[h]) };
   writeFileSync(join(fake, 'state.json'), JSON.stringify(state));
   writeFileSync(join(fake, 'calls.log'), '');
   return { work, remote, fake, git };
 }
 
-function run(env, expectStatus = 0) {
+function run(env, expectStatus = 0, out = {}) {
   const r = spawnSync('bash', ['scripts/sync-releases.sh'], {
     cwd: env.work,
     encoding: 'utf8',
@@ -106,6 +108,7 @@ function run(env, expectStatus = 0) {
   });
   if (expectStatus === 0) assert.equal(r.status, 0, r.stdout + r.stderr);
   else assert.notEqual(r.status, 0, r.stdout + r.stderr);
+  out.text = r.stdout + r.stderr;
   return readFileSync(join(env.fake, 'calls.log'), 'utf8').trim().split('\n').filter(Boolean).map((l) => JSON.parse(l));
 }
 const has = (calls, ...prefix) => calls.some((c) => prefix.every((p, i) => c[i] === p));
@@ -124,7 +127,7 @@ test('main gets a release dev already has, and the new PR closes the older one',
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'));
   assert.ok(!calls.some((c) => c[1] === 'create' && c.includes('dev')), 'dev already has 0.26.0');
   assert.deepEqual(files(env, 'releases/main/v0.26.0'), ['0.20.0.md', '0.25.0.md', '0.26.0.md']);
-  assert.match(env.git(env.remote, 'show', 'releases/main/v0.26.0:src/content/releases/0.26.0.md'), /^date: '2026-11-19T02:30:00Z'$/m, 'the release keeps its full published time');
+  assert.match(env.git(env.remote, 'show', 'releases/main/v0.26.0:src/content/releases/0.26.0.md'), new RegExp(`^date: '${hourAgo}'$`, 'm'), 'the release keeps its full published time');
   assert.ok(has(calls, 'workflow', 'run', 'site-checks.yml', '--ref', 'releases/main/v0.26.0'));
   assert.ok(has(calls, 'pr', 'merge', 'https://example.test/pull/99', '--squash', '--auto'));
 });
@@ -218,3 +221,37 @@ for (const [fail, what] of [['history', 'closed-PR lookup'], ['date', 'release d
     assert.equal(env.git(env.remote, 'branch', '--list', 'releases/main/v0.26.0'), '', 'the new release branch was pushed');
   });
 }
+
+test('a draft or prerelease is never added, so a base with every published release gets no PR', { skip }, () => {
+  const env = setup({
+    dev: ['0.26.0'],
+    main: ['0.26.0'],
+    tags: ['v0.26.0'],
+    unpublished: [{ tag_name: 'v0.27.0', draft: true, prerelease: false }, { tag_name: 'v0.28.0', draft: false, prerelease: true }],
+  });
+  const calls = run(env);
+  assert.ok(!calls.some((c) => ['create', 'merge', 'edit'].includes(c[1]) || c[0] === 'workflow'), JSON.stringify(calls));
+});
+
+test('a release missing for over a day still gets its PR, then fails the run naming the base', { skip }, () => {
+  const env = setup({ dev: ['0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: '2026-11-19T02:30:00Z' });
+  const out = {};
+  const calls = run(env, 1, out);
+  assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'), 'the PR work still runs first');
+  assert.match(out.text, /::error::main is missing 0\.26\.0; 0\.26\.0 came out at 2026-11-19T02:30:00Z/);
+  assert.doesNotMatch(out.text, /::error::dev/, 'dev already has it');
+});
+
+test('a release PR closed by hand fails the run once the release is over a day old', { skip }, () => {
+  const env = setup({
+    dev: ['0.26.0'],
+    main: ['0.25.0'],
+    tags: ['v0.25.0', 'v0.26.0'],
+    published: '2026-11-19T02:30:00Z',
+    prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED' }],
+  });
+  const out = {};
+  const calls = run(env, 1, out);
+  assert.ok(!calls.some((c) => c[1] === 'create' || c[0] === 'workflow' || c[1] === 'merge'), 'it stays closed');
+  assert.match(out.text, /::error::main is missing 0\.26\.0/);
+});

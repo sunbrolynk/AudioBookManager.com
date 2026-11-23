@@ -14,6 +14,9 @@ tags=$(abm "repos/$ABM_REPO/releases?per_page=20" \
 botlogin='(.author.login | test("^(app/)?github-actions$"))'
 bot="select(.isCrossRepository == false and $botlogin)"
 closing='Closing this one:'
+# Six-hourly runs plus a merge take well under a day, so a release missing for longer is stuck.
+stale_hours=24
+stale=()
 
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -47,7 +50,7 @@ close_others() {
 
 # sync_base <base branch> <PR branch prefix>
 sync_base() {
-  local base=$1 prefix=$2 newest tag last branch pr head closed state new=()
+  local base=$1 prefix=$2 newest tag last branch published pr head closed state new=()
   newest=$(git ls-tree --name-only "origin/$base" src/content/releases/ | sed 's|.*/||; s/\.md$//' | sort -V | tail -1)
   for tag in $tags; do
     [ "$(printf '%s\n%s\n' "${tag#v}" "$newest" | sort -V | tail -1)" = "${tag#v}" ] && [ "${tag#v}" != "$newest" ] && new+=("$tag")
@@ -58,6 +61,11 @@ sync_base() {
   fi
   last=${new[-1]}
   branch="$prefix$last"
+  # Checked before the PR work, so a PR closed by hand or a stuck merge can't keep the page behind quietly.
+  published=$(abm "repos/$ABM_REPO/releases/tags/${new[0]}" --jq '.published_at')
+  if (( $(date +%s) - $(date -d "$published" +%s) > stale_hours * 3600 )); then
+    stale+=("$base is missing ${new[*]#v}; ${new[0]#v} came out at $published, over $stale_hours hours ago")
+  fi
 
   head="origin/$branch"
   pr=$(gh pr list --limit 200 --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
@@ -98,3 +106,7 @@ sync_base() {
 git fetch --quiet origin dev main '+refs/heads/releases/*:refs/remotes/origin/releases/*'
 sync_base dev releases/
 sync_base main releases/main/
+
+# Fails the run, which GitHub emails about, instead of leaving the Updates page behind with a green run.
+for s in "${stale[@]}"; do echo "::error::$s"; done
+[ ${#stale[@]} -eq 0 ]
