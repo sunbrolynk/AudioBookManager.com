@@ -16,7 +16,7 @@ Audiobookshelf (ABS) is the server you listen from. Connect ABM to it under **Se
 
 ## Libraries
 
-The Libraries section pairs each of ABM's root folders with the Audiobookshelf library folder that is the same folder on disk. It appears once a server address and API key are saved. There is one row per root folder, and each has a picker listing the server's library folders as library name and folder path, for example `Audiobooks: /audiobooks`. The paths can differ between the two apps, for example when they run in separate containers, as long as both point at the same folder.
+The Libraries section pairs each of ABM's root folders with the Audiobookshelf library folder that is the same folder on disk. It appears once a server address and API key are saved. There is one row per root folder, and each has a picker listing the folders of the server's audiobook libraries as library name and folder path, for example `Audiobooks: /audiobooks`. Podcast libraries aren't listed. The paths can differ between the two apps, for example when they run in separate containers, as long as both point at the same folder.
 
 - **Not paired** leaves the root folder unpaired. A root folder doesn't have to be paired.
 - A folder already picked for another root folder is listed with that root folder's name and can't be picked. One root folder pairs with one Audiobookshelf folder, and one Audiobookshelf folder with one root folder.
@@ -32,27 +32,30 @@ Each row shows where its pairing stands:
 
 ### What Save checks
 
-When you save a new or changed pairing, ABM checks that the two really are the same folder. It takes up to 3 of the root folder's books that have files in ABM, oldest first, and looks for each one at the same path inside the chosen Audiobookshelf folder. Every one has to be there. Otherwise the save is refused and the reason shows under that root folder's row, naming the book's path it could not find. If Audiobookshelf hasn't scanned that book yet, scan the library there and save again.
+When you save a new or changed pairing, ABM takes up to three of that root folder's books that have files in ABM, oldest first, and asks Audiobookshelf for each one, by its ASIN and then its title. Every one has to be in the chosen folder at the same path, or the pairing is refused and the reason shows under that root folder's row. This normally takes a second or two. If a book can't be found that way, ABM reads through the library's whole list of items instead, which on a very large library can take up to two minutes before it gives up and asks you to save again.
 
-ABM reads at most the first 5,000 items of the Audiobookshelf library, and gives up on a root folder after 60 seconds, so a save can take about a minute for each changed pairing on a big library. A root folder with no books that have files saves without being checked, and shows **Saved, not checked yet**. Pairings you didn't change aren't checked again, unless you also changed the server address, **Verify TLS certificate** or the CA bundle path. Then every saved pairing is checked again against the new server, whether or not you changed it.
+When a book isn't there, the reason names its path and says Audiobookshelf may not have scanned it yet. Scan the library in Audiobookshelf and save again. If it still isn't found, check that the two really are the same folder.
+
+A root folder with no books that have files saves without being checked, and shows **Saved, not checked yet**. Pairings you didn't change aren't checked again, unless you also changed the server address, **Verify TLS certificate** or the CA bundle path. Then every saved pairing is checked again against the new server, whether or not you changed it.
 
 A save is also refused when:
 
-- you add or change a pairing while **Enable** is off. With pairings saved, that includes turning **Enable** off and changing the server address, Verify TLS or the CA bundle in the same save, because every pairing then counts as changed.
+- you add or change a pairing while **Enable** is off. Removing one works either way. With pairings saved, that includes turning **Enable** off and changing the server address, Verify TLS or the CA bundle in the same save, because every pairing then counts as changed.
 - the [recycle bin](/settings/media-management/#recycle-bin) is, contains or sits inside the root folder.
 - the same root folder or the same Audiobookshelf folder appears in two pairings.
 - the server no longer lists the chosen folder.
+- the server address, Verify TLS, the CA bundle or the API key changed, for example from another browser tab, while the save was checking. Reload the page and save again.
 
 A refused save changes nothing: the connection and the pairings stay as they were.
 
-ABM never sends its own folder paths to Audiobookshelf and only reads from it to check a pairing.
+To check a pairing, ABM sends each sampled book's ASIN and title to your Audiobookshelf server as a search. File paths are never sent. Checking changes nothing in Audiobookshelf.
 
 ### When there's nothing to pick
 
 - **No root folders yet:** add one on [Media Management](/settings/media-management/#root-folders) first.
-- **Audiobookshelf turned off:** the pickers can't be used until you turn on **Enable**.
+- **Audiobookshelf turned off:** you can set a row to **Not paired** to remove its pairing. Adding or changing one needs **Enable** turned on.
 - **No libraries yet:** add a library in Audiobookshelf, then press **Test**.
-- **ABM could not list the libraries:** press **Test** to list them. Saved pairings are kept. This also happens after you change the address, Verify TLS or the CA bundle, until you press **Test** with the new details.
+- **ABM could not list the libraries:** press **Test** to list them. Saved pairings are kept. This also happens after you change the address, Verify TLS or the CA bundle, and after you type a new API key, until you press **Test** with the new details.
 
 ## How ABM reaches ABS
 
