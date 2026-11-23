@@ -46,7 +46,7 @@ The database is a SQLite file in `/config`, so there is no database service to s
    | `/path/to/downloads` | `/downloads` | Where your download client puts finished downloads. Required. |
    | `/path/to/config` | `/config` | The SQLite database, backups, logs, recycle bins, saved covers and the generated app secret. Keep it. |
 
-   Saved covers are kept in `/config/MediaCover` and are removed when their book or author is deleted. To keep them on another disk, make `MediaCover` itself a link to a folder there. A folder linked inside it, such as `MediaCover/books`, is ignored with a warning in the log. Its covers then load from the cover host instead of a saved copy until you link `MediaCover` itself or move the folder back.
+   Saved covers are kept in `/config/MediaCover` and are removed when their book or author is deleted. To keep them on another disk, make `MediaCover` itself a link to a folder there. A folder linked inside it, such as `MediaCover/books`, is ignored with a warning in the log. Its covers show placeholder art until the nightly cover cache run, then load from the cover host instead of a saved copy until you link `MediaCover` itself or move the folder back. After that they are saved again within the hour.
 
 3. **Start it.** Run this from the folder with the compose file:
 
