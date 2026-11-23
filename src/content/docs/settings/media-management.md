@@ -15,6 +15,8 @@ Adding a root folder that is, contains or sits inside the [recycle bin](#recycle
 
 A root folder can be a link to your library somewhere else. Every disk scan checks where a root really leads, and a root that now leads to `/`, a system folder or a bare top-level folder like `/mnt` is not scanned: the scan reports "Refusing to scan system folder" with the real path, and your other roots still scan. A book whose folder or root leads into one is skipped the same way, and a refresh of it leaves it untouched. Point the root, or the link, back at your library folder.
 
+A root folder that is missing or doesn't answer within the time limit (10 seconds for a scan or a refresh, up to 2 minutes for an import) is treated as unavailable. ABM doesn't create it, change its books or mark them missing. A scan reports it as "Library root does not exist or is not answering", and an import fails the books going into it with "Root folder does not exist or is not answering".
+
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
 ## Folders
@@ -72,6 +74,8 @@ A book, author or series refresh, and the book refresh endpoint, also leave a bo
 There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one setting and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
 
 Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root. Old files are only cleared from the bin after checking it again: a bin that now leads to a protected folder, through a link for example, is left alone.
+
+Purge, expiry and restore of conversion originals act only on files inside the `conversions` folder. If that folder links to another ordinary folder, ABM follows the link. If it leads into a system or app data folder, nothing is removed or restored, and **Recycle Bin Cleanup** says why. A restore is also refused when the original folder now leads into a system or top-level folder or its root is missing or not answering.
 
 Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If either task cannot be queued, the change is refused with "Could not queue the task.". If an old bin holds a root folder, its files can only be left in place.
 
