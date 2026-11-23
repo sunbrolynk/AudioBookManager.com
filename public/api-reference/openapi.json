@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.26.2",
+    "version": "0.27.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3567,7 +3567,7 @@
           "Library Import"
         ],
         "summary": "Retry Automatic Matching",
-        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found.",
+        "description": "Retry automatic matching on pending_search and no_match rows, each item a\nscan row as the page holds it.\n\nA row already carrying `selectedMatch` or `best_match` comes back\nunchanged. Returns updated results with matches found and, with a\n`session_id`, the paths whose candidates were stored in that session.",
         "operationId": "retry_automatic_matching_api_library_import_retry_match_post",
         "requestBody": {
           "content": {
@@ -4223,7 +4223,7 @@
           "Manual Import"
         ],
         "summary": "Check Import Conflicts",
-        "description": "Check whether importing `source_paths` would overwrite existing files in\nthe destination folder. Returns the names the import will give each file,\nand the conflicting audio files and other files as separate lists.",
+        "description": "Check whether importing `source_paths` would land on existing files in\nthe destination folder. Returns the names the import will give each file,\nthe audio files already at those names, and which of them are the book's own.",
         "operationId": "check_import_conflicts_api_manual_import_check_conflicts_post",
         "requestBody": {
           "content": {
@@ -10978,7 +10978,7 @@
           "Metadata"
         ],
         "summary": "Search Metadata",
-        "description": "Search for audiobooks via Libex",
+        "description": "One page of Libex search results, up to 50 a page. `has_more` says whether a later page may hold more; an ASIN lookup and a phrase search have only page 0.",
         "operationId": "search_metadata_api_metadata_search_get",
         "parameters": [
           {
@@ -11000,11 +11000,11 @@
             "required": false,
             "schema": {
               "type": "string",
-              "description": "Search type: title, author, series, or asin",
+              "description": "Search type: title, phrase, author, series, or asin",
               "default": "title",
               "title": "Search Type"
             },
-            "description": "Search type: title, author, series, or asin"
+            "description": "Search type: title, phrase, author, series, or asin"
           },
           {
             "name": "author",
@@ -11030,14 +11030,34 @@
             "in": "query",
             "required": false,
             "schema": {
-              "type": "integer",
-              "maximum": 50,
-              "minimum": 1,
-              "description": "Max results",
-              "default": 10,
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "maximum": 50,
+                  "minimum": 1
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Max results kept from this page; the whole page when omitted",
               "title": "Limit"
             },
-            "description": "Max results"
+            "description": "Max results kept from this page; the whole page when omitted"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "maximum": 9,
+              "minimum": 0,
+              "description": "Results page, 50 results to a page",
+              "default": 0,
+              "title": "Page"
+            },
+            "description": "Results page, 50 results to a page"
           }
         ],
         "responses": {
@@ -11046,9 +11066,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Search Metadata Api Metadata Search Get"
+                  "$ref": "#/components/schemas/BookSearchResponse"
                 }
               }
             }
@@ -19921,11 +19939,6 @@
             ],
             "title": "Earliest Year"
           },
-          "total_size": {
-            "type": "integer",
-            "title": "Total Size",
-            "default": 0
-          },
           "publishers": {
             "items": {
               "type": "string"
@@ -19957,6 +19970,11 @@
             "type": "array",
             "title": "Locations",
             "default": []
+          },
+          "total_size": {
+            "type": "integer",
+            "title": "Total Size",
+            "default": 0
           },
           "preference_profile_id": {
             "anyOf": [
@@ -21504,6 +21522,478 @@
         ],
         "title": "BookResponse",
         "description": "Response model for a book"
+      },
+      "BookSearchAuthor": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asin"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Region"
+          }
+        },
+        "type": "object",
+        "title": "BookSearchAuthor"
+      },
+      "BookSearchResponse": {
+        "properties": {
+          "results": {
+            "items": {
+              "$ref": "#/components/schemas/BookSearchResult"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "query": {
+            "type": "string",
+            "title": "Query"
+          },
+          "search_type": {
+            "type": "string",
+            "title": "Search Type"
+          },
+          "page": {
+            "type": "integer",
+            "title": "Page"
+          },
+          "has_more": {
+            "type": "boolean",
+            "title": "Has More"
+          }
+        },
+        "type": "object",
+        "required": [
+          "results",
+          "total",
+          "query",
+          "search_type",
+          "page",
+          "has_more"
+        ],
+        "title": "BookSearchResponse",
+        "description": "One page of a Libex book search."
+      },
+      "BookSearchResult": {
+        "properties": {
+          "asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asin"
+          },
+          "title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Title"
+          },
+          "subtitle": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Subtitle"
+          },
+          "authors": {
+            "items": {
+              "$ref": "#/components/schemas/BookSearchAuthor"
+            },
+            "type": "array",
+            "title": "Authors"
+          },
+          "narrators": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Narrators"
+          },
+          "release_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Release Date"
+          },
+          "release_year": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Release Year"
+          },
+          "released": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Released"
+          },
+          "series": {
+            "items": {
+              "$ref": "#/components/schemas/BookSearchSeries"
+            },
+            "type": "array",
+            "title": "Series"
+          },
+          "series_name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series Name"
+          },
+          "series_asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series Asin"
+          },
+          "series_region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series Region"
+          },
+          "series_position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Series Position"
+          },
+          "cover_url": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Cover Url"
+          },
+          "description": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Description"
+          },
+          "summary": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Summary"
+          },
+          "publisher": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Publisher"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "runtime_length_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Runtime Length Min"
+          },
+          "content_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Content Type"
+          },
+          "content_delivery_type": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Content Delivery Type"
+          },
+          "rating": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Rating"
+          },
+          "genres": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Genres"
+          },
+          "genre_details": {
+            "items": {
+              "$ref": "#/components/schemas/GenreDetail"
+            },
+            "type": "array",
+            "title": "Genre Details"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Region"
+          },
+          "is_vvab": {
+            "type": "boolean",
+            "title": "Is Vvab",
+            "default": false
+          },
+          "plans": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Plans"
+          },
+          "explicit": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Explicit"
+          },
+          "abridged": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Abridged"
+          },
+          "local_storage": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/LocalStorageMarker"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "in_library": {
+            "type": "boolean",
+            "title": "In Library"
+          },
+          "library_book_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Library Book Id"
+          },
+          "library_book_title": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Library Book Title"
+          },
+          "library_has_files": {
+            "type": "boolean",
+            "title": "Library Has Files",
+            "default": false
+          }
+        },
+        "additionalProperties": true,
+        "type": "object",
+        "required": [
+          "in_library"
+        ],
+        "title": "BookSearchResult",
+        "description": "A Libex book from a metadata search, marked with whether the library holds it."
+      },
+      "BookSearchSeries": {
+        "properties": {
+          "name": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Name"
+          },
+          "asin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Asin"
+          },
+          "position": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Position"
+          },
+          "region": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Region"
+          }
+        },
+        "type": "object",
+        "title": "BookSearchSeries"
       },
       "BookSeriesEntry": {
         "properties": {
@@ -27654,13 +28144,17 @@
           },
           "source_paths": {
             "items": {
-              "type": "string"
+              "type": "string",
+              "maxLength": 4096,
+              "minLength": 1
             },
             "type": "array",
+            "maxItems": 5000,
             "title": "Source Paths",
             "default": []
           }
         },
+        "additionalProperties": false,
         "type": "object",
         "title": "ImportConflictsRequest"
       },
@@ -27699,20 +28193,16 @@
             "type": "array",
             "title": "Audio Conflicts"
           },
-          "other_conflicts": {
+          "own_conflicts": {
             "items": {
               "type": "string"
             },
             "type": "array",
-            "title": "Other Conflicts"
+            "title": "Own Conflicts"
           },
           "has_audio_conflicts": {
             "type": "boolean",
             "title": "Has Audio Conflicts"
-          },
-          "has_other_conflicts": {
-            "type": "boolean",
-            "title": "Has Other Conflicts"
           },
           "destination_filenames": {
             "additionalProperties": {
@@ -27737,9 +28227,8 @@
           "existing_audio_files",
           "existing_other_files",
           "audio_conflicts",
-          "other_conflicts",
+          "own_conflicts",
           "has_audio_conflicts",
-          "has_other_conflicts",
           "destination_filenames",
           "clashed"
         ],
@@ -33450,11 +33939,23 @@
             "maxItems": 100,
             "title": "Items",
             "default": []
+          },
+          "session_id": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 36
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Session Id"
           }
         },
         "type": "object",
         "title": "RetryMatchRequest",
-        "description": "Rows to search again; each row is the free-form parse a scan produced."
+        "description": "Rows to search again; each row is the free-form parse a scan produced. With\n`session_id`, each searched row's candidates are stored in that session."
       },
       "RootFolderCreate": {
         "properties": {
@@ -34266,22 +34767,6 @@
               }
             ],
             "title": "Library Book Path"
-          },
-          "libex_matches": {
-            "anyOf": [
-              {
-                "items": {
-                  "additionalProperties": true,
-                  "type": "object"
-                },
-                "type": "array",
-                "maxItems": 100
-              },
-              {
-                "type": "null"
-              }
-            ],
-            "title": "Libex Matches"
           },
           "best_match": {
             "anyOf": [

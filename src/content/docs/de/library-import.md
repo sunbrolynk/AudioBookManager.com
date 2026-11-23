@@ -47,7 +47,7 @@ Ein Tag für Titel, Album, Serie, Serienteil, Interpret, Albuminterpret, Komponi
 ## Die Liste lesen
 
 - Die Übersicht zeigt, wie viele Ordner gefunden wurden und wie viele bereit sind. In der Kopfleiste gibt es **Sort** (Folder name, Status, Title, Author, Series, Files) und **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jeder Filter zeigt seine Anzahl, und die Zahlen passen zur Übersicht. Eine Zuordnung, die du bestätigt hast, heißt Ready. Sortierung und Filter merkt sich dieses Gerät. Sie stehen nicht in der Seitenadresse, ein Link mit `?sort=` oder `?filter=` übernimmt sie also nicht.
-- Jede Zeile zeigt Cover, Titel, Autor und Serie und wie sicher die Zuordnung ist, als Prozentwert wie "95% match". In den Ordnerdetails gibt es **Find a match** oder **Change match**, um von Hand zu suchen.
+- Jede Zeile zeigt Cover, Titel, Autor und Serie und wie sicher die Zuordnung ist, als Prozentwert wie "95% match". Jede Zeile behält jeden Treffer, den ihre Suchen nach Titel, Autor und Serie finden. In den Ordnerdetails gibt es **Find a match** oder **Change match**, um von Hand zu suchen. Die Suche zeigt zuerst die besten Treffer von Libex für deine Eingabe, dann die Bücher, die die Suchen nach Titel, Autor und Serie finden, jedes Buch nur einmal, 50 auf einmal. Weitere laden, wenn du scrollst oder auf **Load more** klickst, bis keine mehr kommen.
 - Wenn die Dateien keine ASIN oder Laufzeit haben, mit der sich die Ausgabe bestätigen lässt, steht das in den Ordnerdetails.
 - **Rescan** findet Ordner, die seit dem Scan dazugekommen sind, und behält deine Entscheidungen.
 

@@ -3,7 +3,7 @@ title: Přidání nové knihy
 description: Najdi knihu a přidej ji jako hledanou.
 ---
 
-**Library > Add New** hledá knihy v Libexu a přidá ty, které vybereš. Hledání páruje název, autora, sérii nebo ASIN.
+**Library > Add New** hledá knihy v Libexu a přidá ty, které vybereš. Hledání páruje název, autora, sérii nebo ASIN. Hledání v režimu **Title** ukáže nejdřív **Best matches**, nejlepší shody z Libexu pro to, co jsi napsal. Pak následují výsledky podle názvu bez knih, které už jsou mezi nimi, po 50. Dalších 50 se načte, když posuneš stránku dolů, nebo přes **Load more**, dokud Libex nějaké má, nejvýš 500.
 
 ## Co přidání udělá
 

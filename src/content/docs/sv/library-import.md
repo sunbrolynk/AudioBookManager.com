@@ -47,7 +47,7 @@ En tagg för titel, album, serie, seriedel, artist, albumartist, kompositör ell
 ## Läsa listan
 
 - Sammanfattningen visar hur många mappar som hittades och hur många som är klara. Fältet högst upp har **Sort** (Folder name, Status, Title, Author, Series, Files) och **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Varje filter visar sitt antal, och antalen stämmer med sammanfattningen. En matchning som du har bekräftat kallas Ready. Den här enheten kommer ihåg sortering och filter. De sparas inte i sidans adress, så en länk med `?sort=` eller `?filter=` tar inte med dem.
-- Varje rad visar omslag, titel, författare och serie, och hur säker matchningen är i procent, till exempel "95% match". Mappdetaljerna har **Find a match** eller **Change match** för att söka för hand.
+- Varje rad visar omslag, titel, författare och serie, och hur säker matchningen är i procent, till exempel "95% match". Varje rad behåller alla träffar som sökningarna på titel, författare och serie hittar. Mappdetaljerna har **Find a match** eller **Change match** för att söka för hand. Sökningen visar först Libex bästa träffar för det du skrev och sedan böckerna som sökningarna på titel, författare och serie hittar, varje bok en gång, 50 åt gången. Fler laddas när du scrollar, eller med **Load more**, tills det inte finns fler.
 - När filerna saknar ASIN eller speltid som kan bekräfta utgåvan står det i mappdetaljerna.
 - **Rescan** plockar upp mappar som har lagts till sedan skanningen och behåller dina val.
 

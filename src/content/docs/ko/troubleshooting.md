@@ -36,6 +36,10 @@ ABM을 인터넷에 공개하는 것은 권하지 않습니다. Servarr 앱들�
 
 반대 경우도 있어요: 포워딩 헤더를 안 보내는 프록시는 로컬 클라이언트처럼 보여서, 그 프록시를 거치는 모든 요청이 로그인을 건너뛰어요. Authentication Required를 Enabled로 하세요.
 
+## 업데이트 후 페이지가 비어 있거나 오류가 나요
+
+탭을 새로 고치세요. 업데이트 전부터 열려 있던 페이지에는 아직 API 키가 없어요. 업데이트 전부터 열려 있던 Library Import 페이지는 새로 고칠 때까지 변경 사항을 저장할 수 없어요. ABM을 프록시 뒤에서 쓴다면 `/initialize.json`, `/media-cover/`, `/backup/`, `/logfile`도 통과시켜 주세요. [리버스 프록시](/ko/guides/reverse-proxy/)를 참고하세요.
+
 ## 브라우저에서 변경이 거부돼요
 
 프록시가 원래 `Host` 헤더를 넘기는지, 아니면 `X-Forwarded-Host`를 보내는지 확인하세요. [환경 변수](/ko/configuration/#리버스-프록시)를 보세요.

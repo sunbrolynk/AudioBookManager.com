@@ -47,7 +47,7 @@ En tittel-, album-, serie-, seriedel-, artist-, albumartist-, komponist- eller i
 ## Lese lista
 
 - Sammendraget viser hvor mange mapper som ble funnet, og hvor mange som er klare. Topplinjen har **Sort** (Folder name, Status, Title, Author, Series, Files) og **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Hvert filter viser antallet sitt, og tallene stemmer med sammendraget. Et treff du har bekreftet, heter Ready. Sortering og filter blir husket på denne enheten. De blir ikke lagret i adressen til siden, så en lenke med `?sort=` eller `?filter=` tar dem ikke med.
-- Hver rad viser cover, tittel, forfatter og serie, og hvor sikkert treffet er i prosent, for eksempel "95% match". Mappedetaljene har **Find a match** eller **Change match** for å søke for hånd.
+- Hver rad viser cover, tittel, forfatter og serie, og hvor sikkert treffet er i prosent, for eksempel "95% match". Hver rad beholder alle treffene som søkene på tittel, forfatter og serie finner. Mappedetaljene har **Find a match** eller **Change match** for å søke for hånd. Søket viser først Libex sine beste treff for det du skrev, og deretter bøkene som søkene på tittel, forfatter og serie finner, hver bok én gang, 50 om gangen. Flere lastes inn når du blar, eller med **Load more**, til det ikke er flere.
 - Når filene ikke har noen ASIN eller spilletid som kan bekrefte utgaven, sier mappedetaljene fra om det.
 - **Rescan** plukker opp mapper som er lagt til siden skanningen, og beholder valgene dine.
 

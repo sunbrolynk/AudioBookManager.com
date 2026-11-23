@@ -3,7 +3,7 @@ title: Uuden lisääminen
 description: Hae kirjaa ja lisää se haluttujen listalle.
 ---
 
-**Library > Add New** hakee kirjoja Libexistä ja lisää valitsemasi. Haku täsmää nimeen, tekijään, sarjaan tai ASINiin.
+**Library > Add New** hakee kirjoja Libexistä ja lisää valitsemasi. Haku täsmää nimeen, tekijään, sarjaan tai ASINiin. **Title**-haku näyttää ensin **Best matches** -osion, Libexin parhaat osumat kirjoittamallesi tekstille. Sen jälkeen tulevat nimihaun tulokset ilman kirjoja, jotka ovat jo siellä, 50 kerrallaan. Seuraavat 50 latautuvat, kun vierität, tai **Load more** -painikkeella, kunnes Libexillä ei ole enempää, enintään 500.
 
 ## Mitä lisääminen tekee
 

@@ -205,7 +205,7 @@ undated.
 
 `.github/workflows/sync-releases.yml` does this every six hours with no clicks.
 `scripts/sync-releases.sh` runs once for `dev` and once for `main`. For each,
-when ABM has published releases newer than that branch's newest entry, it keeps
+when ABM has published releases that branch doesn't have, backports included, it keeps
 one PR open for the newest of them (`releases/v<ver>` into `dev`,
 `releases/main/v<ver>` into `main`). That PR carries every release the branch is
 missing, changes only `public/releases.json` and `src/content/releases/`, and is
@@ -221,9 +221,11 @@ dragging along other unpublished `dev` work.
   touched.
 - **Closed by hand stays closed.** If I close a release PR myself, the script
   leaves that release alone. A PR the script closed itself doesn't count.
-- **When the base moves.** If `dev` or `main` moves while a release PR waits,
-  the script rebuilds the PR on the new base, so the up-to-date rule is always
-  met.
+- **While a PR waits.** Every run rebuilds the open release PR from the current
+  base and ABM. It pushes only when the base moved, so the up-to-date rule is
+  always met, or when the files differ: a backport published, a release
+  unpublished, or a changelog section or publish date changed. An unchanged PR
+  isn't pushed or checked again.
 - **`dev`** has no required checks, so its PR merges at once.
 - **`main`** needs the `Site validation` check. A PR opened with the workflow
   token starts no checks of its own, and a dispatched run's checks don't count
@@ -236,6 +238,13 @@ dragging along other unpublished `dev` work.
   with gh's own error. The run stops with an error, and touches none of that branch's PRs, when the
   ABM release lookup fails or finds no published release, when the lookup for
   a release PR I closed by hand fails, or when a release date can't be read.
+- **Never behind quietly.** When a branch is still missing a release more than
+  24 hours after ABM published it, the run does its PR work as usual, reads the
+  branches again, and then fails, naming the branch and each overdue release, so
+  GitHub emails me. Each missing release is timed on its own, so a fresh backport
+  can't hide an older release, and one this run merged doesn't count. That covers a
+  release PR I closed by hand, a `main` PR whose checks failed, and auto-merge
+  that couldn't be turned on. Merging the release, by its PR or by hand, clears it.
 - **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so
   the release-only PR to `main` posts nothing. The later `dev` to `main` release
   still posts as before.

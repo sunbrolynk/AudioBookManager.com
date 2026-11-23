@@ -47,7 +47,7 @@ Library Import 頁面上的 **Recent Import Sessions** 會顯示每次掃描有�
 ## 看懂清單
 
 - 摘要會顯示找到幾個資料夾、有幾個已經就緒。頂端列有 **Sort** (Folder name, Status, Title, Author, Series, Files) 和 **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add)。每個篩選都會顯示數量，而這些數量和摘要對得起來。你確認過的配對叫做 Ready。排序和篩選會記在這台裝置上。它們不會留在頁面網址裡，所以帶有 `?sort=` 或 `?filter=` 的連結不會把它們帶過去。
-- 每一列會顯示封面、書名、作者和系列，以及比對的把握有多大（用百分比表示，例如「95% match」）。資料夾詳細資料裡有 **Find a match** 或 **Change match** 可以手動搜尋。
+- 每一列會顯示封面、書名、作者和系列，以及比對的把握有多大（用百分比表示，例如「95% match」）。每一列都會保留依書名、作者和系列搜尋找到的所有比對結果。資料夾詳細資料裡有 **Find a match** 或 **Change match** 可以手動搜尋。搜尋會先列出 Libex 針對你輸入內容的最佳比對結果，接著是依書名、作者和系列搜尋找到的書，每本書只出現一次，每次 50 本。往下捲動或點 **Load more** 會繼續載入，直到沒有更多。
 - 如果檔案裡沒有 ASIN 或播放長度可以確認版本，資料夾詳細資料會告訴你。
 - **Rescan** 會抓到掃描後才新增的資料夾，並保留你做過的選擇。
 

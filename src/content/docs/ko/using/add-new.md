@@ -3,7 +3,7 @@ title: 새로 추가 (Add New)
 description: 책을 검색해서 Wanted로 추가해요.
 ---
 
-**Library > Add New**는 Libex에서 책을 검색하고 내가 고른 책을 추가해요. 제목, 작가, 시리즈, ASIN으로 검색할 수 있어요.
+**Library > Add New**는 Libex에서 책을 검색하고 내가 고른 책을 추가해요. 제목, 작가, 시리즈, ASIN으로 검색할 수 있어요. **Title** 검색은 먼저 **Best matches**에 입력한 내용에 대한 Libex의 베스트 매치를 보여 줘요. 그다음 제목 결과가 거기 이미 있는 책을 빼고 50개씩 이어져요. 스크롤하거나 **Load more**를 누르면 Libex에 더 없을 때까지, 최대 500개까지 다음 50개를 불러와요.
 
 ## 추가하면 일어나는 일
 
