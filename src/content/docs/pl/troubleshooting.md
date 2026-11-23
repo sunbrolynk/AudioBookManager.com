@@ -36,6 +36,10 @@ Log aplikacji mówi, o który przypadek chodzi:
 
 Odwrotny przypadek: proxy, które nie wysyła żadnych nagłówków przekierowania, wygląda jak lokalny klient, więc wszystko, co przez nie przechodzi, pomija logowanie. Ustaw Authentication Required na Enabled.
 
+## Strona po aktualizacji jest pusta albo pokazuje błędy
+
+Odśwież kartę. Strona otwarta jeszcze przed aktualizacją nie ma klucza API. Strona Library Import otwarta sprzed aktualizacji nie zapisze zmian, dopóki jej nie odświeżysz. Jeśli ABM stoi za proxy, przepuść też `/initialize.json`, `/media-cover/`, `/backup/` i `/logfile`. Zobacz [Reverse proxy](/pl/guides/reverse-proxy/).
+
 ## Przeglądarka dostaje odmowę przy zmianach
 
 Upewnij się, że proxy przekazuje oryginalny nagłówek `Host` albo wysyła `X-Forwarded-Host`. Zobacz [Konfiguracja](/pl/configuration/#reverse-proxy).

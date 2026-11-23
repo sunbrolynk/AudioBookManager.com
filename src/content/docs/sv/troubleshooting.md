@@ -36,6 +36,10 @@ Apploggen säger vilket det är:
 
 Det omvända fallet: en proxy som inte skickar några forwarding-headers ser ut som en lokal klient, så allt som går genom den slipper logga in. Sätt Authentication Required till Enabled.
 
+## En sida förblir tom eller visar fel efter en uppdatering
+
+Ladda om fliken. En sida som var öppen från före uppdateringen har inte API-nyckeln än. En Library Import-sida som är öppen sedan före uppdateringen kan inte spara sina ändringar förrän du laddar om den. Om ABM ligger bakom en proxy, släpp även igenom `/initialize.json`, `/media-cover/`, `/backup/` och `/logfile`. Se [Omvänd proxy](/sv/guides/reverse-proxy/).
+
 ## Ändringar från webbläsaren nekas
 
 Se till att proxyn skickar vidare den ursprungliga `Host`-headern, eller skickar `X-Forwarded-Host`. Se [Konfiguration](/sv/configuration/#omvänd-proxy).

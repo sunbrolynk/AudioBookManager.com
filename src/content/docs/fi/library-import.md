@@ -47,7 +47,7 @@ Library Import -sivun **Recent Import Sessions** näyttää jokaisesta skannauks
 ## Listan lukeminen
 
 - Yhteenveto näyttää, montako kansiota löytyi ja montako on valmiina. Yläpalkissa on **Sort** (Folder name, Status, Title, Author, Series, Files) ja **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Jokainen suodatin näyttää määränsä, ja määrät täsmäävät yhteenvedon kanssa. Täsmäys, jonka olet vahvistanut, on nimeltään Ready. Tämä laite muistaa järjestyksen ja suodattimen. Ne eivät säily sivun osoitteessa, joten linkki, jossa on `?sort=` tai `?filter=`, ei vie niitä mukanaan.
-- Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin.
+- Jokaisella rivillä näkyy kansikuva, nimi, tekijä ja sarja sekä osuman varmuus prosentteina, esimerkiksi "95% match". Jokainen rivi säilyttää kaikki osumat, jotka sen nimi-, tekijä- ja sarjahaut löytävät. Kansion tiedoissa on **Find a match** tai **Change match**, joilla voit hakea käsin. Haku näyttää ensin Libexin parhaat osumat kirjoittamallesi tekstille ja sitten kirjat, jotka nimi-, tekijä- ja sarjahaut löytävät, jokaisen kirjan kerran, 50 kerrallaan. Lisää latautuu, kun vierität, tai **Load more** -painikkeella, kunnes tuloksia ei ole enempää.
 - Kun tiedostoissa ei ole ASINia tai kestoa, jolla painos voitaisiin varmistaa, kansion tiedoissa kerrotaan siitä.
 - **Rescan** poimii skannauksen jälkeen lisätyt kansiot ja säilyttää valintasi.
 

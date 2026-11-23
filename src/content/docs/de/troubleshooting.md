@@ -36,6 +36,10 @@ Im App-Log steht, was davon zutrifft:
 
 Der umgekehrte Fall: Ein Proxy, der keine Forwarding-Header schickt, sieht aus wie ein lokaler Client, also kommt alles über ihn ohne Anmeldung durch. Stell Authentication Required auf Enabled.
 
+## Eine Seite bleibt nach einem Update leer oder zeigt Fehler
+
+Lad den Tab neu. Eine Seite, die schon vor dem Update offen war, hat den API-Key noch nicht. Eine Library-Import-Seite, die von vor dem Update noch offen ist, kann ihre Änderungen erst speichern, wenn du sie neu lädst. Wenn ABM hinter einem Proxy läuft, reich auch `/initialize.json`, `/media-cover/`, `/backup/` und `/logfile` durch. Siehe [Reverse Proxy](/de/guides/reverse-proxy/).
+
 ## Änderungen aus dem Browser werden abgelehnt
 
 Stell sicher, dass der Proxy den ursprünglichen `Host`-Header weitergibt oder `X-Forwarded-Host` schickt. Siehe [Konfiguration](/de/configuration/#reverse-proxy).
