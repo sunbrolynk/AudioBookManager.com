@@ -205,7 +205,7 @@ undated.
 
 `.github/workflows/sync-releases.yml` does this every six hours with no clicks.
 `scripts/sync-releases.sh` runs once for `dev` and once for `main`. For each,
-when ABM has published releases newer than that branch's newest entry, it keeps
+when ABM has published releases that branch doesn't have, backports included, it keeps
 one PR open for the newest of them (`releases/v<ver>` into `dev`,
 `releases/main/v<ver>` into `main`). That PR carries every release the branch is
 missing, changes only `public/releases.json` and `src/content/releases/`, and is
@@ -237,8 +237,10 @@ dragging along other unpublished `dev` work.
   ABM release lookup fails or finds no published release, when the lookup for
   a release PR I closed by hand fails, or when a release date can't be read.
 - **Never behind quietly.** When a branch is still missing a release more than
-  24 hours after ABM published it, the run does its PR work as usual and then
-  fails, naming the branch and the releases, so GitHub emails me. That covers a
+  24 hours after ABM published it, the run does its PR work as usual, reads the
+  branches again, and then fails, naming the branch and each overdue release, so
+  GitHub emails me. Each missing release is timed on its own, so a fresh backport
+  can't hide an older release, and one this run merged doesn't count. That covers a
   release PR I closed by hand, a `main` PR whose checks failed, and auto-merge
   that couldn't be turned on. Merging the release, by its PR or by hand, clears it.
 - **Discord.** `release-discord.yml` only posts for a PR whose head is `dev`, so

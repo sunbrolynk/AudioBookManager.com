@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Adds every ABM release newer than the newest one on the Updates page, for dev and for main.
+# Adds every published ABM release the Updates page is missing, for dev and for main.
 # Each base gets one PR, for its newest missing release, with only public/releases.json and src/content/releases/<ver>.md, set to merge itself.
 # Env: ABM_REPO (owner/name), ABM_TOKEN (read-only; may be empty once ABM is public), GH_TOKEN (this repo).
 # Release text only ever lands in files, never in a command line.
@@ -16,7 +16,7 @@ bot="select(.isCrossRepository == false and $botlogin)"
 closing='Closing this one:'
 # Six-hourly runs plus a merge take well under a day, so a release missing for longer is stuck.
 stale_hours=24
-stale=()
+overdue=()
 
 git config user.name 'github-actions[bot]'
 git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
@@ -50,22 +50,24 @@ close_others() {
 
 # sync_base <base branch> <PR branch prefix>
 sync_base() {
-  local base=$1 prefix=$2 newest tag last branch published pr head closed state new=()
-  newest=$(git ls-tree --name-only "origin/$base" src/content/releases/ | sed 's|.*/||; s/\.md$//' | sort -V | tail -1)
+  local base=$1 prefix=$2 tag last branch published pr head closed state new=()
+  # Each release is looked up on its own, so a backport older than the newest entry still counts as missing.
   for tag in $tags; do
-    [ "$(printf '%s\n%s\n' "${tag#v}" "$newest" | sort -V | tail -1)" = "${tag#v}" ] && [ "${tag#v}" != "$newest" ] && new+=("$tag")
+    git cat-file -e "origin/$base:src/content/releases/${tag#v}.md" 2>/dev/null || new+=("$tag")
   done
   if [ ${#new[@]} -eq 0 ]; then
     close_others "$base" "$prefix" '' "$base already has these releases"
-    echo "$base is current at $newest"; return 0
+    echo "$base has every published release"; return 0
   fi
   last=${new[-1]}
   branch="$prefix$last"
-  # Checked before the PR work, so a PR closed by hand or a stuck merge can't keep the page behind quietly.
-  published=$(abm "repos/$ABM_REPO/releases/tags/${new[0]}" --jq '.published_at')
-  if (( $(date +%s) - $(date -d "$published" +%s) > stale_hours * 3600 )); then
-    stale+=("$base is missing ${new[*]#v}; ${new[0]#v} came out at $published, over $stale_hours hours ago")
-  fi
+  # Every missing release is aged, so a fresh backport can't hide an older one that is stuck.
+  for tag in "${new[@]}"; do
+    published=$(abm "repos/$ABM_REPO/releases/tags/$tag" --jq '.published_at')
+    if (( $(date +%s) - $(date -d "$published" +%s) > stale_hours * 3600 )); then
+      overdue+=("$base $tag $published")
+    fi
+  done
 
   head="origin/$branch"
   pr=$(gh pr list --limit 200 --head "$branch" --state open --json number,isCrossRepository,author --jq "[.[] | $bot][0].number // empty")
@@ -108,5 +110,13 @@ sync_base dev releases/
 sync_base main releases/main/
 
 # Fails the run, which GitHub emails about, instead of leaving the Updates page behind with a green run.
-for s in "${stale[@]}"; do echo "::error::$s"; done
-[ ${#stale[@]} -eq 0 ]
+# The branches are read again first, so a release this run merged doesn't count.
+[ ${#overdue[@]} -eq 0 ] || git fetch --quiet origin dev main
+failed=0
+for o in "${overdue[@]}"; do
+  read -r base tag published <<<"$o"
+  git cat-file -e "origin/$base:src/content/releases/${tag#v}.md" 2>/dev/null && continue
+  echo "::error::$base is missing ${tag#v}, which came out at $published, over $stale_hours hours ago"
+  failed=1
+done
+exit "$failed"
