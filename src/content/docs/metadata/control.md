@@ -9,7 +9,7 @@ ABM keeps a record of your library's metadata in its own database, and writes it
 
 A refresh (a book's **Refresh & Scan**, an author refresh, a series refresh) asks the metadata source again and applies what comes back. Fields it overwrites when the source has a value: title, subtitle, year and release date, rating, runtime, language, publisher, description, authors, translators, narrators, genres, and the cover.
 
-A field the source returns empty is left as it is.
+A field the source returns empty is left as it is. Translators come from the source's list of authors, so a refresh that returns authors but no translator clears them.
 
 ## What you control
 
