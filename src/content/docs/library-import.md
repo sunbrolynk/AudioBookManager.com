@@ -57,7 +57,7 @@ A title, album, series, series part, artist, album artist, composer or narrator 
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
-In an author tag, a name that carries a role after a dash or in parentheses, such as `Jay Rubin - translator` or `Jane Doe (Narrator)`, is not added as an author, and `Jane Doe narrated by John Roe` adds only Jane Doe. An entry that lists several people with commas is kept as one name, without the role. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
+In an author tag, a name that carries a role after a dash or in parentheses, such as `Jay Brody - translator` or `Jane Doe (Narrator)`, is not added as an author, and `Jane Doe narrated by John Roe` adds only Jane Doe. An entry that lists several people with commas is kept as one name, without the role. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
 
 A reader named in brackets in a folder or file name, such as `The Ashen Court (Read by Tobias Quill)` or `The Ashen Court [Narrated by Tobias Quill]`, is read as the narrator, and the bracket is left out of the title. A book folder named `Title by Author` keeps a "by" that belongs to the title, so `Bound by Salt by Maren Ashcombe` is the book Bound by Salt by Maren Ashcombe.
 
