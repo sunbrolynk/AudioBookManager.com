@@ -13,6 +13,8 @@ A root folder is a directory ABM manages books in. Add one with **Add Root Folde
 
 Adding a root folder that is, contains or sits inside the [recycle bin](#recycle-bin) is refused with HTTP 400, naming the bin. Root folders can't be nested. Adding one that sits inside another root, or that contains one, is refused with HTTP 400 naming the other root. If you already have a nested pair, System > Status warns and names both paths. A book counts under, and is removed with, the most specific root that holds it, so removing the outer root leaves the inner root's books alone, and **Delete the books and their files** is refused while another root lies inside the one you're removing.
 
+A root folder can be a link to your library somewhere else. Every disk scan checks where a root really leads, and a root that now leads to `/`, a system folder or a bare top-level folder like `/mnt` is not scanned: the scan reports "Refusing to scan system folder" with the real path, and your other roots still scan. A book whose folder or root leads into one is skipped the same way, and a refresh of it leaves it untouched. Point the root, or the link, back at your library folder.
+
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
 ## Folders
@@ -20,7 +22,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Setting | Default | Effect |
 |---|---|---|
 | Create Empty Book Folders | off | Creates missing book folders on add, on root folder change and during a disk scan. Ignored while **Delete empty folders** is on, so a folder is not made only to be removed. |
-| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted |
+| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted. It only removes folders inside the root and never follows a link out of it |
 
 ## Importing
 
@@ -69,7 +71,7 @@ A book, author or series refresh, and the book refresh endpoint, also leave a bo
 
 There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one setting and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
 
-Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
+Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root. Old files are only cleared from the bin after checking it again: a bin that now leads to a protected folder, through a link for example, is left alone.
 
 Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If either task cannot be queued, the change is refused with "Could not queue the task.". If an old bin holds a root folder, its files can only be left in place.
 
