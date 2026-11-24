@@ -13,7 +13,7 @@ jobs:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.base.ref == 'main' &&
-      github.event.pull_request.head.ref == 'dev'
+      contains(github.event.pull_request.labels.*.name, 'site-release')
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:

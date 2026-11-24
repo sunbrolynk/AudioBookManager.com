@@ -1,4 +1,4 @@
-// Posts a merged dev -> main site PR to the Discord release webhook as embeds.
+// Posts a merged site PR labelled site-release to the Discord release webhook as embeds.
 // Reads the PR from the event file ($GITHUB_EVENT_PATH). --dry-run prints the payloads instead.
 import { readFileSync } from 'node:fs';
 import { pathToFileURL } from 'node:url';
