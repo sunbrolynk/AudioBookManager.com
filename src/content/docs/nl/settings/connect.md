@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Eigen berichten
 
-Met een eigen bericht herschrijf je de tekst voor een gebeurtenis. Kies een **Format**, een **Cover** (Auto gebruikt de boekcover, None, of een Custom URL), schrijf de **Title** en de tekst, en klik op een variabele om die in te voegen. Het standaardsjabloon voor elke gebeurtenis is een beginpunt. De preview laat het resultaat zien, en je kunt een test via een koppeling versturen.
+Met een eigen bericht herschrijf je de tekst voor een gebeurtenis. Kies een **Format**, een **Cover** (Auto gebruikt de boekcover, None, of een Custom URL), schrijf de **Title** en de tekst, en klik op een variabele om die in te voegen. Het standaardsjabloon voor elke gebeurtenis is een beginpunt. De preview laat het resultaat zien, en je kunt een test via een koppeling versturen. Een eigen cover-URL moet een openbaar adres zijn; een adres op je LAN wordt geweigerd.
 
 ## Valkuilen
 

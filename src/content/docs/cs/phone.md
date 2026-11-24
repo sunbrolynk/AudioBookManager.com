@@ -37,7 +37,7 @@ Stránka knihy má nahoře Search, Interactive, Import (Convert, jakmile má sou
 
 - Calendar je seznam den po dni. Výběr zobrazení určuje období. Agenda tu není.
 - Conversions má karty Queue a History.
-- Karty na Dashboardu jsou pod sebou v jednom sloupci.
+- Dashboard ukazuje součty v mřížce, pod ní karty New, Wanted a Coming a krátké shrnutí sérií a vypravěče, kterého posloucháš nejvíc.
 - Dialogy se otevírají jako panely ze spodku obrazovky.
 
 ## Nastavení

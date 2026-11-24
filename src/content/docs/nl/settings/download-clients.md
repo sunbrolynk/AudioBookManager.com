@@ -35,6 +35,8 @@ Welke velden je ziet, hangt af van de client.
 | Redownload Failed | aan | Zet een mislukte release op de blocklist en zoekt opnieuw |
 | Redownload Failed from Interactive Search | aan | Hetzelfde, voor releases die je met de hand gekozen hebt |
 
+Als een voltooide download hetzelfde boek meer dan eens bevat, in verschillende formaten, importeert ABM alleen de kopie die het kwaliteitsprofiel van het boek het hoogst plaatst. Bij het koppelen van de download aan een boek wordt ook maar één kopie gemeten, die het standaard kwaliteitsprofiel het hoogst plaatst. Formaten die het profiel even hoog plaatst, of niet bevat, gaan in de volgorde M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. ABM laat de andere kopieën in de download staan; ze worden alleen verwijderd als **Also Delete Files** de download na het importeren weghaalt. Eén bestand naast een reeks delen telt alleen als tweede kopie als hun speelduren overeenkomen; anders zijn het delen van één boek. De cover en de andere extra bestanden komen nog steeds mee met de kopie die ABM neemt. Als de map van de download ook audio van een ander boek bevat, komen alleen extra bestanden mee die naar de geïmporteerde audio zijn genoemd.
+
 Of imports hardlinken of kopiëren, regel je met **Use Hardlinks instead of Copy** in [Mediabeheer](/nl/settings/media-management/). Is de map van de client niet hetzelfde pad dat ABM ziet, voeg dan een remote path mapping toe.
 
 ## Externe padkoppelingen (Remote path mappings)

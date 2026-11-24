@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Własne wiadomości
 
-Własna wiadomość zmienia tekst dla danego zdarzenia. Wybierz **Format**, **Cover** (Auto używa okładki książki, None albo Custom URL), napisz **Title** i treść, i kliknij zmienną, żeby ją wstawić. Domyślny szablon każdego zdarzenia to punkt wyjścia. Podgląd pokazuje wynik, a test możesz wysłać przez wybrane połączenie.
+Własna wiadomość zmienia tekst dla danego zdarzenia. Wybierz **Format**, **Cover** (Auto używa okładki książki, None albo Custom URL), napisz **Title** i treść, i kliknij zmienną, żeby ją wstawić. Domyślny szablon każdego zdarzenia to punkt wyjścia. Podgląd pokazuje wynik, a test możesz wysłać przez wybrane połączenie. Własny adres URL okładki musi być adresem publicznym; adres z twojej sieci LAN zostanie odrzucony.
 
 ## Pułapki
 

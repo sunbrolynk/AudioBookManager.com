@@ -3,7 +3,7 @@ title: 添加新书
 description: 搜索一本书，把它添加为想要。
 ---
 
-**Library > Add New** 会在 Libex 里搜索书，并添加你选中的那些。搜索可以匹配标题、作者、系列或 ASIN。
+**Library > Add New** 会在 Libex 里搜索书，并添加你选中的那些。搜索可以匹配标题、作者、系列或 ASIN。用 **Title** 搜索时，会先在 **Best matches** 里列出 Libex 针对你输入内容的最佳匹配。之后是标题搜索结果，已经在那里的书不再重复，每次 50 条。往下滚动或点 **Load more** 会加载下一批 50 条，直到 Libex 没有更多，最多 500 条。
 
 ## 添加之后会发生什么
 

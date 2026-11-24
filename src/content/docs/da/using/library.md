@@ -30,6 +30,12 @@ Kender du Sonarr: en bog er en episode, en serie er sæson og serie i ét, og en
 
 Sletning af en serie eller forfatter bliver afvist, så længe den stadig har bøger i biblioteket. Fjern bøgerne først.
 
+## Tilbage til en liste
+
+Når du går tilbage fra en bog-, serie- eller forfatterside, står **Books**, **Series**, **Authors** og **Audible Library** der, hvor du forlod dem, med det du åbnede samme sted. Det virker i alle visninger og på en telefon. En liste, du åbner fra menuen eller genindlæser, starter fra toppen.
+
+Ctrl+H og Ctrl+E springer til toppen og bunden af Books-listen i alle visninger. Tryk `?` for at se alle tastaturgenveje.
+
 ## Arv af kvalitetsprofil
 
 En bogs kvalitetsprofil kommer, i denne rækkefølge, fra: dens egen tilsidesættelse, dens primære serie, dens primære forfatter og til sidst standardprofilen. Se [Profiler](/da/settings/profiles/).

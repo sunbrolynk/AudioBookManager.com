@@ -28,4 +28,5 @@ Importen lägger varje bok i ABM:s egen struktur Author/Series/Book under standa
 - En bok som redan finns i biblioteket visas som det. Tacka nej till dubbletten med svaret keep library i stället för att importera den två gånger.
 - Att tacka nej till en mapp utan ljud tar bara bort det som den raden äger, och det hamnar i papperskorgen om den är på.
 - En ASIN som hittas i en beskrivning är en ledtråd, inte en matchning, om inte titeln också stämmer.
+- En matchning som filerna inte bekräftar, varken med ASIN eller med speltid plus plats i serien eller titel, väntar utan bock under **Needs a look**, och **Select All** hoppar över den. Se [Library Import](/sv/library-import/).
 - Efter importen, uppdatera för att hämta aktuell metadata, och slå på skrivning av sidecars om du vill att Audiobookshelf ska se ABM:s val. Se [Sidecar-filer](/sv/using/sidecars/).

@@ -9,6 +9,8 @@ description: Faça backup, exporte e restaure o ABM.
 
 Um arquivo criptografado com uma cópia consistente do banco de dados (`database.db`), as configurações (`settings.json`) e um manifesto. Inclua também `/config` nos seus próprios backups, por causa das capas e do arquivo de segredo do app.
 
+A chave de API do Audiobookshelf faz parte do backup, criptografada. Ela não é descriptografada com um `APP_SECRET` diferente, então digite-a de novo se restaurar com outro.
+
 ## Restaurando
 
 Escolha um da lista, ou envie um arquivo de backup (até 500 MiB). Antes, é salva uma cópia do banco de dados em uso. A restauração não pode ser desfeita.

@@ -52,6 +52,12 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
 
+## Going back to a list
+
+Going back from a book, series or author page puts **Books**, **Series**, **Authors** and **Audible Library** back where you left them, with the item you opened where it was. That works in every view and on a phone. Opening a list from the menu, or reloading it, starts at the top.
+
+Ctrl+H and Ctrl+E jump to the top and bottom of the Books list in any view. Press `?` for every keyboard shortcut.
+
 ## Quality profile inheritance
 
 A book's quality profile comes from, in order: its own override, its primary series, its primary author, then the default profile. See [Profiles](/en-gb/settings/profiles/).

@@ -30,6 +30,12 @@ Jeśli znasz Sonarra: książka to odcinek, seria to sezon i serial w jednym, a 
 
 Usunięcie serii albo autora jest blokowane, dopóki mają jeszcze książki w bibliotece. Najpierw usuń książki.
 
+## Powrót do listy
+
+Gdy wracasz ze strony książki, serii albo autora, **Books**, **Series**, **Authors** i **Audible Library** wracają tam, gdzie je zostawiłeś, a otwarta pozycja jest w tym samym miejscu. Działa to w każdym widoku i na telefonie. Lista otwarta z menu albo przeładowana zaczyna się od góry.
+
+Ctrl+H i Ctrl+E przeskakują na początek i koniec listy Books w każdym widoku. Naciśnij `?`, żeby zobaczyć wszystkie skróty klawiszowe.
+
 ## Dziedziczenie profilu jakości
 
 Profil jakości książki bierze się kolejno z: jej własnego nadpisania, jej głównej serii, jej głównego autora, a na końcu z profilu domyślnego. Zobacz [Profile](/pl/settings/profiles/).

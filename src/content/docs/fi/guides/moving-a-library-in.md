@@ -28,4 +28,5 @@ Tuonti sijoittaa jokaisen kirjan ABM:n omaan Author/Series/Book-rakenteeseen ole
 - Kirjastossa jo oleva kirja näytetään sellaisena. Hylkää kaksoiskappale vastauksella, joka pitää kirjaston version, äläkä tuo sitä kahdesti.
 - Kansion, jossa ei ole ääntä, hylkääminen poistaa vain sen, minkä kyseinen rivi omistaa, ja siirtää sen roskakoriin, jos roskakori on käytössä.
 - Kuvauksesta löytynyt ASIN on vihje, ei osuma, ellei myös nimi täsmää.
+- Osuma, jota tiedostot eivät vahvista ASINilla eivätkä kestolla yhdessä sarjan paikan tai nimen kanssa, odottaa valitsematta kohdassa **Needs a look**, ja **Select All** ohittaa sen. Katso [Library Import](/fi/library-import/).
 - Päivitä tuonnin jälkeen, jotta saat ajantasaiset metatiedot, ja ota sivutiedostojen kirjoitus käyttöön, jos haluat Audiobookshelfin näkevän ABM:n valinnat. Katso [Sivutiedostot](/fi/using/sidecars/).

@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Eigene Nachrichten
 
-Eine eigene Nachricht schreibt den Text für ein Ereignis um. Wähl ein **Format**, ein **Cover** (Auto nimmt das Buchcover, None oder eine Custom URL), schreib **Title** und Text und klick auf eine Variable, um sie einzufügen. Die Standardvorlage für jedes Ereignis ist ein Ausgangspunkt. Die Vorschau zeigt das Ergebnis, und du kannst über eine Verbindung einen Test schicken.
+Eine eigene Nachricht schreibt den Text für ein Ereignis um. Wähl ein **Format**, ein **Cover** (Auto nimmt das Buchcover, None oder eine Custom URL), schreib **Title** und Text und klick auf eine Variable, um sie einzufügen. Die Standardvorlage für jedes Ereignis ist ein Ausgangspunkt. Die Vorschau zeigt das Ergebnis, und du kannst über eine Verbindung einen Test schicken. Eine eigene Cover-URL muss eine öffentliche Adresse sein; eine Adresse in deinem LAN wird abgelehnt.
 
 ## Stolperfallen
 

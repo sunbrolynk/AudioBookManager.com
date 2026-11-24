@@ -30,6 +30,12 @@ Om du kan Sonarr: en bok är ett avsnitt, en serie är säsong och serie i ett, 
 
 Att ta bort en serie eller författare vägras så länge den fortfarande har böcker i biblioteket. Ta bort böckerna först.
 
+## Tillbaka till en lista
+
+När du går tillbaka från en bok-, serie- eller författarsida står **Books**, **Series**, **Authors** och **Audible Library** där du lämnade dem, med det du öppnade på samma ställe. Det fungerar i alla vyer och på telefonen. En lista som du öppnar från menyn eller laddar om börjar högst upp.
+
+Ctrl+H och Ctrl+E hoppar till början och slutet av Books-listan i alla vyer. Tryck `?` för att se alla kortkommandon.
+
 ## Arv av kvalitetsprofil
 
 En boks kvalitetsprofil kommer, i den här ordningen, från: dess egen åsidosättning, dess primära serie, dess primära författare och sist standardprofilen. Se [Profiler](/sv/settings/profiles/).
