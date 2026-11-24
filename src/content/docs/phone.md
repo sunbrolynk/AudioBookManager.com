@@ -43,7 +43,7 @@ In selection mode, tapping a row selects it. The selection bar replaces the bott
 
 ## Book, series and author pages
 
-A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. On a series page, tapping a book you don't own opens its actions.
+A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. The Overview tab lists the authors, narrators and, when the book has them, translators. On a series page, tapping a book you don't own opens its actions.
 
 ![A book's page on a phone](../../assets/docs/phone-book.jpg)
 
