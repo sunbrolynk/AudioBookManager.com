@@ -33,6 +33,9 @@ Writes audio tags into the audio files themselves. Tag writing is on by default,
 | Write Audio Tags | on |
 | Write Audio Tags on Import | on, once tag writing is on |
 | Write Audio Tags on Refresh | off |
+| Write Audio Tags to Hardlinked Files | off |
+
+**Write Audio Tags to Hardlinked Files** shows once tag writing is on and covers an audio file hardlinked to your download client. Off, ABM writes no tags or cover into those files and leaves them as they are. On, ABM gives each one its own copy before writing, so the book uses its full size on disk a second time. See [Sidecar files](/en-ca/using/sidecars/#hardlinks).
 
 Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 
