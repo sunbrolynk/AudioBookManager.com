@@ -18,7 +18,7 @@ Add an account under **Settings > Audible**. You can connect more than one. Each
 
 ABM checks the pasted address strictly. It must be https, on the exact sign-in host, with no port and no username or password in it. Something like `https://www.amazon.com:443/...` is refused as an invalid redirect URL. Copy the address exactly as the browser shows it.
 
-Accounts added before the newer sign-in still use an old device registration, and Audible refuses download licences to those as throttled. Waiting doesn't fix it. Such an account shows a warning with the reason on **Settings > Audible**, and ABM never picks it for a download until you sign in to it again. Books Audible serves without DRM are downloaded as they are, without decryption and without chapter or cover embedding.
+Accounts added before the newer sign-in still use an old device registration, and Audible refuses download licences to those as throttled. Waiting doesn't fix it. Such an account shows a warning with the reason on **Settings > Audible**, and downloads and the mirror skip it until you sign in to it again. Books Audible serves without DRM are downloaded as they are, without decryption and without chapter or cover embedding.
 
 Every account on **Settings > Audible** can sign in again at any time, not only when its sign-in stops working. Signing in again registers the account afresh and takes the new credentials. It keeps the account's Audible library, its downloaded and imported books, and their links to your ABM library, so you never need to delete an account and add it back. If a sign-in stops working, the account says it needs to sign in again, in Settings and on the health page. Do not delete the account to fix this: deleting it removes its Audible library from ABM (a later sync rebuilds it once the account is added back) and removes its device from Audible.
 
@@ -34,7 +34,7 @@ A download needs an account that is active, doesn't need to sign in again, isn't
 
 ABM asks Audible for download licences one at a time per account, with a short pause between them. The audio itself still downloads in parallel. A download waiting its turn says so on **System > Tasks**. If Audible refuses a licence as throttled, the downloads still waiting on that account stop without asking Audible again. An account on the old device registration is told to sign in again. An up-to-date account is told to try again later and is held for 48 hours, or until it signs in again.
 
-An Audible title counts as downloaded when its book in ABM has files.
+A bulk download or a retry treats an Audible title as already downloaded when its book in ABM has files.
 
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only, or build a custom filter (see [Custom filters](/using/library/#custom-filters)).
 
