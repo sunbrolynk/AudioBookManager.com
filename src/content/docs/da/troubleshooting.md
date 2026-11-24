@@ -36,6 +36,10 @@ App-loggen siger, hvad det drejer sig om:
 
 Det modsatte tilfælde: en proxy, der ikke sender forwarding-headers, ligner en lokal klient, så alt, der går igennem den, springer login over. Sæt Authentication Required til Enabled.
 
+## En side forbliver tom eller viser fejl efter en opdatering
+
+Genindlæs fanen. En side, der var åben fra før opdateringen, har ikke API-nøglen endnu. En Library Import-side, der stadig er åben fra før opdateringen, kan ikke gemme sine ændringer, før du genindlæser den. Hvis du kører ABM bag en proxy, så send også `/initialize.json`, `/media-cover/`, `/backup/` og `/logfile` igennem. Se [Reverse proxy](/da/guides/reverse-proxy/).
+
 ## Ændringer bliver afvist fra browseren
 
 Sørg for, at proxyen sender den oprindelige `Host`-header videre eller sender `X-Forwarded-Host`. Se [Konfiguration](/da/configuration/#reverse-proxy).

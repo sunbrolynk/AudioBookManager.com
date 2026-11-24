@@ -36,6 +36,10 @@ description: 最可能遇到的问题和解决办法。
 
 反过来的情况：不发送任何转发头的代理看起来像一个本地客户端，所以经过它的所有请求都会跳过登录。这时请把 Authentication Required 设为 Enabled。
 
+## 更新后页面一片空白或报错
+
+刷新标签页。更新前就打开的页面还没有 API 密钥。更新前就开着的 Library Import 页面要刷新后才能保存修改。如果 ABM 在代理后面，也要放行 `/initialize.json`, `/media-cover/`, `/backup/` 和 `/logfile`。参见[反向代理](/zh-cn/guides/reverse-proxy/)。
+
 ## 浏览器里的修改被拒绝
 
 确认代理传递了原始的 `Host` 请求头，或者发送了 `X-Forwarded-Host`。见 [配置](/zh-cn/configuration/#反向代理)。

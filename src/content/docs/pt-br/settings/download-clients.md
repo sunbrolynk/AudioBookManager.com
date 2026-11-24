@@ -35,6 +35,8 @@ Os campos que aparecem dependem do cliente.
 | Redownload Failed | ligado | Coloca uma release que falhou na blocklist e busca de novo |
 | Redownload Failed from Interactive Search | ligado | O mesmo, para releases que você escolheu à mão |
 
+Quando um download concluído tem o mesmo livro mais de uma vez, em formatos diferentes, o ABM importa só a cópia que o perfil de qualidade do livro coloca mais alto. Ao ligar o download a um livro, também só uma cópia é medida, a que o perfil de qualidade padrão coloca mais alto. Formatos que o perfil coloca no mesmo nível, ou que não inclui, seguem a ordem M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. O ABM deixa as outras cópias no download; elas só são apagadas se **Also Delete Files** remover o download depois da importação. Um arquivo único ao lado de um conjunto de partes só conta como segunda cópia quando as durações batem; se não, são partes de um mesmo livro. A capa e os outros arquivos extras continuam vindo junto com a cópia que o ABM pega. Quando a pasta do download também tem áudio de outro livro, só vêm os arquivos extras com o nome do áudio importado.
+
 Se as importações usam hardlink ou cópia é definido por **Use Hardlinks instead of Copy** em [Media Management](/pt-br/settings/media-management/). Se a pasta do cliente não estiver no mesmo caminho que o ABM enxerga, adicione um mapeamento de caminho remoto.
 
 ## Mapeamentos de caminho remoto

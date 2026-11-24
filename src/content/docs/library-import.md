@@ -24,11 +24,11 @@ The scan accepts a match only when the files confirm it:
 - the ASIN in the files' own tags finds the book, or
 - the book's runtime is within three minutes of the files', and its series position or its title agrees with them.
 
-An author or series position that contradicts the files rules a book out. When the files fit two different books or recordings equally well, neither is accepted.
+An author or series position that contradicts the files rules a book out. A name the files give as the author that is the book's narrator or translator doesn't count against it, so a folder or tag that puts the reader or translator in the author's place still matches. When the files fit two different books or recordings equally well, neither is accepted.
 
 The files' runtime counts only when every file of the book could be read. If one can't be measured, the row has no runtime: only its ASIN can confirm a match, and otherwise the book waits under **Needs a look**.
 
-When a book is kept in two formats, each format is its own row and is measured on its own. A book split into parts in different formats is one row when it has a folder of its own, and its parts are added up. A completed download holding one book in two formats is measured as one copy, and has no runtime to match on when the copies' lengths differ by more than three minutes.
+When a book is kept in two formats, each format is its own row and is measured on its own. A book split into parts in different formats is one row when it has a folder of its own, and its parts are added up.
 
 Only an English edition, or one whose listing gives no language, is accepted on runtime. An edition in another language is accepted only when the files' own ASIN finds it. A book answered from [Local Storage](/settings/metadata/#local-storage) instead of a live lookup is never accepted without you.
 
@@ -51,15 +51,19 @@ A title, album, series, series part, artist, album artist, composer or narrator 
 ## Reading the list
 
 - The summary line shows how many folders were found and how many are ready. The header bar has **Sort** (Folder name, Status, Title, Author, Series, Files) and **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Each filter shows its count, and the counts match the summary line. A match you have confirmed is called Ready. Sort and filter are remembered on this device. They are not kept in the page address, so a link with `?sort=` or `?filter=` in it doesn't carry them over.
-- Each row shows the cover, title, author and series, and how sure the match is as a percentage, such as "95% match". The folder details have **Find a match** or **Change match** to search by hand.
+- Each row shows the cover, title, author and series, and how sure the match is as a percentage, such as "95% match". Each row keeps every match its title, author and series searches find. The folder details have **Find a match** or **Change match** to search by hand. The search lists Libex's best matches for what you typed first, then the books its title, author and series searches find, each book once, 50 at a time. More load as you scroll, or with **Load more**, until there are no more.
 - When the files have no ASIN or runtime to confirm the edition, the folder details say so.
 - **Rescan** picks up folders added since the scan and keeps your choices.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
+In an author tag, a name that carries a role after a dash or in parentheses, such as `Jay Brody - translator` or `Jane Doe (Narrator)`, is not added as an author, and `Jane Doe narrated by John Roe` adds only Jane Doe. An entry that lists several people with commas is kept as one name, without the role. The book's translator credits come from the metadata source once the book is matched, and other roles, such as illustrator or editor, are not kept.
+
+A reader named in brackets in a folder or file name, such as `The Ashen Court (Read by Tobias Quill)` or `The Ashen Court [Narrated by Tobias Quill]`, is read as the narrator, and the bracket is left out of the title. A book folder named `Title by Author` keeps a "by" that belongs to the title, so `Bound by Salt by Maren Ashcombe` is the book Bound by Salt by Maren Ashcombe.
+
 ## Joining, splitting and adding
 
-- Join rows that are one book split across folders. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. A book joined from two formats with the same file names counts once, taking the longer format's runtime, or none when they differ by more than three minutes or one of the joined rows already holds both formats. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
+- Join rows that are one book split across folders. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. Join is only for the parts of one book: leave two formats of one book as separate rows, since joining them adds both runtimes. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
 - On a phone, hold a row for about half a second to start joining. A "Hold to join" hint shows until you dismiss it or open a row. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest join into. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
 - On a phone, a folder's details have **Split into separate books** when the folder holds several files.
 - A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
