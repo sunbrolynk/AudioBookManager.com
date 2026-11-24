@@ -36,14 +36,14 @@ npm ci --ignore-scripts
 echo "Auditing dependencies..."
 node scripts/audit-new-advisories.mjs
 
-echo "Running regression tests..."
-npm test
-
 echo "Type-checking the site source..."
 npm run typecheck
 
 echo "Building the website and checking it against its CSP..."
 npm run build
+
+echo "Running regression tests..."
+npm test
 
 echo "Checking internal links..."
 node scripts/check-links.mjs
