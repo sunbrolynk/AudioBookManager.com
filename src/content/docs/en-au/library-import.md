@@ -93,7 +93,7 @@ Delete asks first. The dialog lists the folders and how many audio files each ho
 Delete refuses:
 
 - the scanned folder itself, and anything outside the scan
-- a root folder or a protected folder
+- a folder that is, or holds, a root folder, the recycle bin or one of ABM's own folders, or that leads into a system folder
 - a symlink
 - a folder or file that is, sits inside, or contains a library book's folder or one of its files
 

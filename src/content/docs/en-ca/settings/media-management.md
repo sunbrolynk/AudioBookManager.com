@@ -7,7 +7,7 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 ## Root Folders
 
-A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm.
+A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** deletes each book ABM has recorded under the root the way deleting that book does, through the recycle bin when it is on, and removes the author and series folders that leaves empty. The root folder itself, and anything in it that doesn't belong to a book, stays on disk. This choice is refused for a root folder that isn't there, such as an unmounted share. A root with books in it makes you type to confirm.
 
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
@@ -16,7 +16,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Setting | Default | Effect |
 |---|---|---|
 | Create Empty Book Folders | off | Creates missing book folders on add, on root folder change and during a disk scan. Ignored while **Delete empty folders** is on, so a folder is not made only to be removed. |
-| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted |
+| Delete empty folders | off | During a disk scan, goes through the book folders ABM has recorded. A book's folder with no files left is removed, with the author and series folders that leaves empty, up to but never including the root folder. A book's folder that still has files only loses its empty subfolders. A folder no book records, such as an empty mount point, is left alone, and so is a book's folder that holds another book's folder, a root folder, the recycle bin or ABM's own data. It never follows a link out of the root |
 
 ## Importing
 
@@ -61,7 +61,7 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 
 There is one recycle bin, set here. Inside it, `media/` holds deleted book files and `conversions/` holds the originals a conversion replaced when **Delete Original** is on. The one setting and the one retention above cover both. The Conversions page has no bin settings of its own, and the bin is never emptied by size, only by age.
 
-Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
+Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a folder in a system folder (`/bin`, `/boot`, `/lib`, `/sbin`, `/proc`, `/usr/bin` or anything inside them) or one that is, or holds, ABM's own data: its config folder, which holds the key file, and the database's folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
 
 Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If an old bin holds a root folder, its files can only be left in place.
 
