@@ -44,4 +44,5 @@ A hardlinked import keeps the original untouched. When ABM writes any of these f
 - A release `.nfo` is not imported unless you choose it, because ABM writes its own and Audiobookshelf reads one per book.
 - A `metadata.json` is handled by ABM when it carries ABM's own block. Another tool's `metadata.json` follows the Book info files setting.
 - In a folder shared by several books, only files named after this book's audio belong to it.
+- A new sidecar or saved cover gets the permissions your system's umask allows, as any new file would. A file ABM replaces keeps the permissions it had.
 - Deleting a book's files removes its whole folder when nothing else needs it. When the folder holds another book's files or folder, only that book's own files and ABM's `.opf`, `.nfo`, `desc.txt`, `reader.txt` and `metadata.json` go. The same goes for a folder that is, or holds, a root folder, the recycle bin or ABM's own data, and that folder always stays. When the book's folder is a link, only the book's own files go, and the folder the link leads to keeps everything else.
