@@ -13,7 +13,10 @@ jobs:
     if: >-
       github.event.pull_request.merged == true &&
       github.event.pull_request.base.ref == 'main' &&
-      contains(github.event.pull_request.labels.*.name, 'site-release')
+      github.event.pull_request.user.type != 'Bot' &&
+      !startsWith(github.event.pull_request.head.ref, 'dependabot/') &&
+      !startsWith(github.event.pull_request.head.ref, 'deps/') &&
+      !startsWith(github.event.pull_request.head.ref, 'releases/')
     runs-on: ubuntu-24.04
     timeout-minutes: 5
     steps:

@@ -242,9 +242,9 @@ set to squash-merge, so a release reaches the Updates page on its own.
   can't hide an older release, and one this run merged doesn't count. That covers a
   release PR I closed by hand, a `main` PR whose checks failed, and auto-merge
   that couldn't be turned on. Merging the release, by its PR or by hand, clears it.
-- **Discord.** `release-discord.yml` only posts a merged PR into `main` that
-  carries the `site-release` label, so the release-only PRs post nothing. I add
-  the label to the site PR whose description should go out as the release post.
+- **Discord.** `release-discord.yml` posts every merged PR into `main` except
+  bot PRs, dependency bumps (`dependabot/`, `deps/`) and the Updates PRs
+  (`releases/`), so each docs change goes out when it is published.
 - **Settings it relies on.** Allow auto-merge on, Actions allowed to create pull
   requests, and an `ABM_RELEASES_TOKEN` Actions secret (fine-grained, read-only
   Contents on the ABM repo) while that repo is private; delete the secret once
