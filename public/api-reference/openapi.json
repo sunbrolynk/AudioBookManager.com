@@ -18647,6 +18647,10 @@
               "auth_error"
             ],
             "title": "Auth Status"
+          },
+          "needs_reregistration": {
+            "type": "boolean",
+            "title": "Needs Reregistration"
           }
         },
         "type": "object",
@@ -18657,7 +18661,8 @@
           "marketplace",
           "is_active",
           "created_at",
-          "auth_status"
+          "auth_status",
+          "needs_reregistration"
         ],
         "title": "AccountResponse"
       },
