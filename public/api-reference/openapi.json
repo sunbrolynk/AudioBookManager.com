@@ -17775,7 +17775,7 @@
           "Tasks"
         ],
         "summary": "Cancel Task",
-        "description": "Cancel a queued task, or ask a running task to stop.\n\n- 200: a queued task was cancelled.\n- 202: a stop was requested, or the task is already stopping.\n- 404: unknown task.\n- 409: the task has finished, cannot be stopped once started, or had nothing left to stop.\n- 500: the stop could not be delivered, or the cancel could not be saved.",
+        "description": "Cancel a queued task, or ask a running task to stop.",
         "operationId": "cancel_task_api_tasks__task_id__delete",
         "parameters": [
           {
@@ -17786,11 +17786,23 @@
               "type": "string",
               "title": "Task Id"
             }
+          },
+          {
+            "name": "queued_only",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "description": "Cancel only a task that has not started; never stop a running one.",
+              "default": false,
+              "title": "Queued Only"
+            },
+            "description": "Cancel only a task that has not started; never stop a running one."
           }
         ],
         "responses": {
           "200": {
-            "description": "Successful Response",
+            "description": "A queued task was cancelled.",
             "content": {
               "application/json": {
                 "schema": {
@@ -17800,6 +17812,27 @@
                 }
               }
             }
+          },
+          "202": {
+            "description": "A stop was requested, or the task is already stopping.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response 202 Cancel Task Api Tasks  Task Id  Delete"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Unknown task."
+          },
+          "409": {
+            "description": "The task has finished, cannot be stopped once started, had nothing left to stop, or started before a `queued_only` cancel."
+          },
+          "500": {
+            "description": "The stop could not be delivered, or the cancel could not be saved."
           },
           "422": {
             "description": "Validation Error",

@@ -3,15 +3,25 @@ title: Tasks
 description: Background work, schedules and logs.
 ---
 
-**System > Tasks** lists everything ABM does in the background: library scans, refreshes, imports, searches, downloads, syncs, backups. Each row shows its state (waiting, running, completed, failed), progress, result and a log button.
+**System > Tasks** lists everything ABM does in the background: library scans, refreshes, imports, searches, downloads, syncs, backups. Each row shows its state (waiting, running, completed, failed, cancelled or stopped), progress, result and a log button. The log button shows only for a task that wrote a log. A few quick housekeeping tasks write none, so their rows have no log button. If the log file has since been deleted, opening it says the log no longer exists.
 
 ![System, Tasks: scheduled tasks with their interval and last run, and the task queue](../../../../assets/docs/system-tasks.jpg)
 
-- A task that completed with entries in its error list shows as **Partial**. Expand it for each skipped item and the reason.
+- A task that completed with entries in its error list shows as **Partial**. Expand it for each skipped item and the reason. A library scan skips a book whose folder is busy with a file transfer or another scan; those count toward books skipped.
 - A task that finished with something skipped lists its warnings under its issues, so you can see what was skipped and why.
+- A queued task has **Cancel**, and a running task that can be stopped has **Stop**, on desktop and on a phone. Both ask first. A cancelled task is taken out of the queue and never runs. If the task moves on before you answer, such as a queued task starting or a running one ending, the question is withdrawn and nothing is sent. Cancel never stops a task: if a queued task starts running before the cancel reaches it, ABM says it started first, the task keeps running, and its row offers **Stop** instead.
+- Tasks that can be stopped include Library Import scans and imports, library scans, manual imports, bulk edits, book, author and series deletes, recycle bin moves and deletes, backups and their exports, Audible library syncs and bulk adds, metadata refreshes, Discover refreshes, cover caching, organizing books, batch searches, grab retries, delay re-checks, completed download checks, RSS syncs and conversions.
+- A stopped task finishes the item it is working on, then stops before the next one. What it already did stays done. Until it reaches that point its row reads **Stopping…**. It then says how far it got, such as "Stopped after 3 of 10", and its details list the items done and not done. A task that reached its end before the stop took effect says so.
+- A stopped Organize finishes the book it is on and leaves the books it had not reached as they were. Its result says "Stopped. Books not reached were left as they were." and counts what it moved and renamed.
+- A conversion is stopped at once: stopping its task cancels the job without finishing the book it is converting.
+- A task that can't be stopped once it starts has no Stop and runs to its end. Examples are a single Audible download, a single book search, adding an author or a series, and the short housekeeping tasks.
+- The queue filter has **Stopped** after **Failed**. Stopped holds the tasks you stopped and the ones you cancelled before they ran. Failed holds only tasks that failed.
+- If a stop can't be delivered, ABM says so and the task keeps running. The same goes for a task that had nothing left to stop because it was already finishing on its own. Either way its row still has Stop, and you can stop it again.
+- A stop asked for just before ABM restarts still holds: the task ends as stopped and does not run again.
+- Shutting ABM down asks every running task that can be stopped to stop at its next safe point, and waits up to 30 seconds in all. A task that is safe to run again goes back in the queue. Any other is marked failed with "Interrupted by an application restart" and shows how far it got.
 - A task with a retry coming stays as waiting until retries run out. The attempt number is shown.
 - **Clear completed tasks older than 24 hours** tidies the list. Old tasks are also cleaned automatically (30 days by default).
-- **Local Storage Backup** is the scheduled backup of [Local Storage](/en-ca/settings/metadata/#storage-backups), with its log.
+- **Local Storage Backup** is the scheduled backup of [Local Storage](/en-ca/settings/metadata/#storage-backups), with its log and a Run Now.
 - Scheduled runs that did nothing appear here but not in the [Activity Log](/en-ca/system/activity-log/).
 
 ## Gotchas
