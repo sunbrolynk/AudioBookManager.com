@@ -4189,6 +4189,7 @@
             "required": true,
             "schema": {
               "type": "string",
+              "maxLength": 4096,
               "title": "File Path"
             }
           }
@@ -20709,6 +20710,20 @@
               }
             ],
             "title": "Narrators"
+          },
+          "translators": {
+            "anyOf": [
+              {
+                "items": {
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Translators"
           },
           "asin": {
             "anyOf": [
