@@ -23,7 +23,7 @@ ABM에는 `/api` 아래에 REST API가 있어요. 인터랙티브 레퍼런스�
 - `GET /api/metadata/search`는 한 페이지에 결과를 최대 50개 돌려줘요. `page`(0~9)로 페이지를 고르고, 응답에는 `page`와, 뒤 페이지에 결과가 더 있을 수 있는지 알려 주는 `has_more`가 들어 있어요. ASIN 검색은 페이지 0만 있어요. `search_type=phrase`는 검색어에 대한 Libex의 베스트 매치를 돌려줘요. 이것도 페이지 0만 있고 `has_more`는 false예요. Libex는 읽을 수 없는 책을 빼기 때문에 결과가 적은 페이지도 `has_more`가 true일 수 있어요. 그러니 `has_more`가 false가 될 때까지 다음 페이지를 계속 받아 오면 돼요. `limit`(1~50)는 한 페이지를 줄여요.
 - `POST /api/manual-import/execute`와 `/execute-to-book`은 파일 행마다 고정된 스키마로 확인해요. 알 수 없는 키, 상대 경로인 `source_path`, 빈 `files` 목록은 HTTP 422로 거부돼요. 각 소스는 시스템 폴더, `/tmp`나 `/mnt` 같은 최상위 폴더 바로 아래, ABM 자체 폴더(설정, 데이터베이스, 백업, 로그, 표지, 휴지통, 임시 폴더, SSL 인증서와 키가 있는 폴더) 어디에도 있지 않은 오디오 파일이어야 하고, 심볼릭 링크는 따라가서 판단해요. 거부된 파일은 경로가 담긴 HTTP 400(`Can't import <path>: the file <reason>.`)을 받고, 아무것도 대기열에 들어가지 않아요.
 - `POST /api/manual-import/execute`와 `/execute-to-book`은 가져오기가 실행될 때 [Book Naming](/ko/settings/media-management/#book-naming)에 따라 각 파일의 이름을 정하고, 파일 행에 있는 `destination_filename`은 무시해요.
-- `POST /api/manual-import/check-conflicts`는 `book_id`와 가져오려는 `source_paths`를 받아서, 각 파일이 받을 이름을 소스 경로별로 `destination_filenames`에 돌려줘요. `clashed`는 자기 이름이 겹쳐서 형식에서 이름을 받는 소스 파일 목록이에요. `audio_conflicts`와 `other_conflicts`는 책 폴더에 이미 있는 이름 목록이고, 대소문자는 구분하지 않아요.
+- `POST /api/manual-import/check-conflicts`는 `book_id`와 가져오려는 `source_paths`를 받아서, 각 파일이 받을 이름을 소스 경로별로 `destination_filenames`에 돌려줘요. `clashed`는 자기 이름이 겹쳐서 형식에서 이름을 받는 소스 파일 목록이에요. `audio_conflicts`와 `own_conflicts`는 책 폴더에 이미 있는 이름 목록이고, 대소문자는 구분하지 않아요.
 
 ## 메타데이터 장애
 

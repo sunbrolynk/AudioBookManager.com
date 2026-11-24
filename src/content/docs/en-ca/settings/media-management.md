@@ -5,9 +5,13 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 **Settings > Media Management** controls where books live and how files move in. Settings marked advanced appear with **Show Advanced**.
 
+![Settings, Media Management: importing options](../../../../assets/docs/settings-media.jpg)
+
 ## Root Folders
 
-A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm.
+A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** permanently deletes everything under the path without using the recycling bin. A root with books in it makes you type to confirm. Removing a root also deletes any auto-tag rule condition that named it.
+
+Adding a root folder that is, contains or sits inside the [recycle bin](#recycle-bin) is refused with HTTP 400, naming the bin. Root folders can't be nested. Adding one that sits inside another root, or that contains one, is refused with HTTP 400 naming the other root. If you already have a nested pair, System > Status warns and names both paths. A book counts under, and is removed with, the most specific root that holds it, so removing the outer root leaves the inner root's books alone, and **Delete the books and their files** is refused while another root lies inside the one you're removing.
 
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
@@ -16,7 +20,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Setting | Default | Effect |
 |---|---|---|
 | Create Empty Book Folders | off | Creates missing book folders on add, on root folder change and during a disk scan. Ignored while **Delete empty folders** is on, so a folder is not made only to be removed. |
-| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted |
+| Delete empty folders | off | Deletes empty book folders during a disk scan and when book files are deleted, and the folders an Organize move leaves empty, never the root folder itself |
 
 ## Importing
 
@@ -35,12 +39,16 @@ The default root folder is the one new books go to and the one that decides whet
 | Option | Default | Covers |
 |---|---|---|
 | Cover art | on | Cover plus back-cover and booklet scans |
-| Book info files | on | metadata.json, .opf, .nfo, desc.txt, reader.txt |
-| PDFs and companion docs | off | PDFs shipped with a book |
-| Chapters, transcripts and playlists | on | .cue, chapter lists, subtitles, lyrics, playlists. File names inside them are rewritten to the renamed audio. |
-| Audible originals and ebooks | off | .aax/.aaxc, vouchers, epub and similar |
+| Book info files | on | metadata.json, .opf, desc.txt, reader.txt. A release .nfo stays behind unless you choose it |
+| PDFs & companion docs | off | PDFs shipped with a book |
+| Chapters, transcripts & playlists | on | .cue, chapter lists, subtitles, lyrics, playlists. File names inside them are rewritten to the renamed audio. |
+| Audible originals & ebooks | off | .aax/.aaxc, vouchers, epub and similar |
 
 Partial downloads and executables are never imported. ABM's own `metadata.json` is always handled by ABM.
+
+An import never replaces a file that isn't the book's own. When something already sits at the name a completed download, Manual Import or Library Import would give a file, and it isn't one of that book's files, it is left alone and the import reports the file it skipped. A broken link at that name counts too. An upgrade or a re-download still replaces the book's own copy. Files added to a book in parts take the next free part numbers. An Audible download that would land on such a file fails and says why, and it keeps the book's own copy until the new file is in place.
+
+Before a Manual Import, the conflict check shows which names are already taken in the book's folder: the book's own files there are replaced, and anything else is skipped. A Manual Import where every file was refused or failed ends as failed and lists each file with its reason. Adding files to a book already in the library fails when none of them could be added, and the book is left as it was.
 
 Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for downloads. The Library Import default is only what the Add to Library dialog preselects.
 
@@ -53,9 +61,13 @@ Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for d
 | Enable Recycle Bin | on | Deleted book files, and the originals a conversion replaces, move to one bin instead of being deleted. Off means both are deleted for good |
 | Recycle Bin | empty | Where the bin is. Empty uses `/config/recycle`, with a `media` folder for deleted book files and a `conversions` folder for replaced conversion originals |
 | Recycle Bin Cleanup | 7 (days) | How long items stay, for both folders. 0 disables automatic cleanup |
-| Library Scan Interval | 24 (hours) | Hours between automatic scans |
-| Watch for Changes | on | Scan when files are added, removed or changed |
+| Library Scan Interval | 24 (hours) | Hours between automatic scans. Choices are Disabled, every hour, 6, 12 or 24 hours, or weekly |
+| Watch for Changes | on | Scan when files are added, removed or changed. A root folder the system can't watch, such as one past the inotify watch limit, is logged and skipped instead of stopping startup |
 | Cover Cache Workers | 4 | How many covers are downloaded at once when caching artwork, from 1 to 16 |
+
+A scan or refresh treats file extensions in any case (`Chapter 1.MP3`) and files at any depth (`Disc 1/`, `Disc 2/`) as the book's audio. A book whose folder is an author folder is the exception: a rescan takes only its loose files, never the audio of the books in the folders beneath it. A book is left alone when its files can't be read, or when its tracked files still exist somewhere other than the folder searched: nothing is changed, a single-book refresh says "Some files could not be read; book left untouched.", and a library scan counts the book as skipped. A scan also skips a book whose folder is busy with a file transfer or another scan, with the reason "its folder is busy with a file transfer or another scan". That is routine, especially for a Watch for Changes scan during an import, and the next scan picks the book up.
+
+A book, author or series refresh, and the book refresh endpoint, also leave a book alone while its files are being imported or scanned. The book is reported as skipped with "A file transfer or scan is in progress; book left untouched." The book refresh endpoint answers `success=false` with that message. In author and series results it counts as a skipped book with error type `import_pending`, not as updated. A root folder that doesn't answer within 10 seconds is treated as unusable instead of being waited on. A scan also leaves a book alone while an import is bringing its files in, and counts it as skipped. An import that finds a scan already reading its book waits for it to finish. Audible downloads land in the library under a temporary name, so a scan never sees a half-copied file.
 
 ## Recycle Bin
 
@@ -63,7 +75,7 @@ There is one recycle bin, set here. Inside it, `media/` holds deleted book files
 
 Keep the bin outside every root folder. A bin that is a root folder, sits inside one, or contains one is refused, and so is a protected folder. The refusal shows under the folder field the moment you pick or type the path, with the server's reason, so you find out before you press Save. System > Status still warns about a bin that already sits inside a root.
 
-Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If an old bin holds a root folder, its files can only be left in place.
+Picking a new folder, in the folder browser or by typing a path, asks right away what to do with what is in the old bin: **Move them to the new folder**, **Leave them where they are** (they stop being cleaned up automatically), or **Delete them**, which makes you type `delete` to confirm. Move and delete also refuse a new folder nested inside the current bin. Nothing moves on disk until you press Save. A move and a delete then run as the tasks **Move Recycle Bin** and **Empty Old Recycle Bin** on System > Tasks. A move switches the bin only once the old one is empty, so one that fails partway keeps the old bin and can be run again. Only one of them runs at a time. If either task cannot be queued, the change is refused with "Could not queue the task.". If an old bin holds a root folder, its files can only be left in place.
 
 ## Quality Upgrades
 
@@ -85,21 +97,33 @@ Picking a new folder, in the folder browser or by typing a path, asks right away
 - If the recycle bin is enabled but its folder is unavailable, deletes that need it fail instead of deleting permanently.
 - Hardlinks only work inside one filesystem. Files that cannot be linked are copied, never moved, and counted in the import result.
 
+## File names
+
+Rename Files, Organize, Library Import, Manual Import, Audible downloads and conversions all name a book's audio files from the Standard Book format in [Book Naming](#book-naming), so they agree. With the default format a file is named `Title - (Part 01) - (2020) - (MP3).mp3`. A one-file book has no part. A multi-file book gets `Part 01`, `Part 02` and so on in listening order, padded to at least the width of the file count, and the extension is lowercase. A rename where files trade names, or shift by one, goes through without losing any. A book whose file names don't match the format, or that has an upper-case extension, shows as needing a rename the next time Rename runs.
+
+Names are cut to fit the 255-byte filename limit. Only the book title and subtitle are shortened, never the part number, the extension or anything else the format adds, and folder names, split chapter files and sidecars named after the audio get the same treatment, so a folder keeps its ` [ASIN]` tag.
+
 ## Book Naming
 
 Book Naming sets how I name files and folders, and it is saved with the page's one Save along with the rest of Media Management. It has Rename Books, Replace Illegal Characters, Colon Replacement (with a custom option), and formats for Standard Book, Author Folder, Series Folder, Standalone Folder and Book Folder. Each format shows a live example, and a token list shows every token you can use. The Author tokens use the book's first author. A book with no author but a translator uses its first translator instead, and a book with neither uses Unknown.
 
 Library, Series and Authors also have an **Organize** action on the selected books, and so does a book's own page. It opens a preview of every change first, and nothing moves until you confirm it. Organize then moves and renames: it moves each book's folder to where the naming settings put it and renames its files. It runs as a task you can follow, cancel and, after a restart, resume where it stopped. Only one Organize runs at a time. There is no undo, so check the preview. Bulk rename stays on Library, Series and Authors as **Rename Files**.
 
-If an Organize is interrupted, the next run resumes where it stopped. A book the interrupted run had already moved or renamed on disk is found at its new location and its records are updated, so nothing is moved twice. The preview shows such a book as already moved or already renamed, and the result counts it as reconciled. A book is only reconciled when I can prove the folder is that book's: its files must match what I have recorded and no other book may claim the folder. Otherwise the book is skipped, with the reason. There is still no undo.
+If an Organize is interrupted, the next run resumes where it stopped. A book the interrupted run had already moved or renamed on disk is found at its new location and its records are updated, so nothing is moved twice. The preview shows such a book as already moved or already renamed, and the result counts it as reconciled. A book is only reconciled when I can prove the folder is that book's: its files must match what I have recorded and no other book may claim the folder. Otherwise the book is skipped, with the reason. A book whose pending renames swap two files of the same size, or of an unrecorded size, is skipped too, because the files could not be told apart if a run stopped halfway. There is still no undo.
+
+A file or folder is skipped when something else already has its new name, and a broken symlink at that name counts as something. A rename that only changes letter case, such as `book.mp3` to `Book.mp3`, goes through on a drive that ignores case, like an SMB share or a Windows or macOS folder, because the only thing there is the book's own file or folder. The same goes for moving a book's folder from its edit dialog.
 
 The preview lists only the books that would change. Tick **Show all selected books** to see the rest too. It loads in pages, so use **Load more** to keep going through a big selection. The preview's title counts how many books will change and how many will be skipped.
 
 On a book's page, a book whose folder isn't where the naming settings would put it says so, shows the folder it would go to, and has an Organize button.
 
-When a book's new folder would sit inside the folder it is in now, Organize makes the subfolder there and moves only that book's own files into it: its audio, plus the cover, chapter and other sidecar files I keep for it. Anything else in the folder stays where it was. The preview says "Moves into a subfolder" and lists what stays, and the result dialog lists the files left where they were. If a move fails partway, the files already moved are put back. Moving a book's folder from its edit dialog into a subfolder of itself works the same way.
+When a book's new folder would sit inside the folder it is in now, Organize makes the subfolder there and moves only that book's own files into it: its audio, plus the cover, chapter and other sidecar files I keep for it. Anything else in the folder stays where it was. The preview says "Moves into a subfolder" and lists what stays, and the result dialog lists the files left where they were. If a move fails partway, the files already moved are put back. Moving a book's folder from its edit dialog into a subfolder of itself works the same way. Neither nests a book into a folder that already holds audio that isn't the book's, loose or in a folder beneath it. Organize skips such a book and the edit dialog refuses the move, each saying why.
 
 Library Import follows the same naming settings, including when it adds a book that already sits in a root folder or moves files into a book I already have. With Rename Books off, each file keeps the name it came with. A file whose name would clash with another file in the batch, or with one already in the book's folder (case ignored), takes the name from the format instead, and the import notes which files it did that for. With Rename Books on, files that would get the same name are numbered by position, so Manual Import never skips one.
+
+A Standard Book format that would still give two files in one folder the same name, case ignored, is refused before any file is copied, moved or renamed. `{Original Filename}` with `CD1/01.mp3` and `CD2/01.mp3` is one example. The import fails with a message naming the file, Rename Files refuses the book, and Organize skips it and says why. An Audible download has no original file name, so `{Original Filename}` names it after the book's title.
+
+When Organize renames a book's audio in a folder it shares with other books, the sidecars named after that audio follow it. A file that belongs to another book in the folder stays as it is, including one named after that book's audio.
 
 The default layout is `Author/Series/Vol 01 - 2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A standalone book has no series folder or volume: `Author/2004 - Title [ASIN]/Title - (2004) - (MP3).mp3`. A series book with no position also starts with the year. A year that isn't known is left out, never written as `(Unknown)`.
 

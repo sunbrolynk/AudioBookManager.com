@@ -23,7 +23,7 @@ ABM 在 `/api` 下提供 REST API。交互式参考在 `/api/docs`（Swagger）�
 - `GET /api/metadata/search` 每次返回一页，最多 50 条结果。`page`（0 到 9）选择页码，响应里带有 `page` 和 `has_more`，后者说明后面的页是否可能还有结果。按 ASIN 搜索只有第 0 页。`search_type=phrase` 返回 Libex 针对该查询的最佳匹配，同样只有第 0 页，`has_more` 为 false。因为 Libex 会略过它读不了的书，一页结果不满时 `has_more` 仍可能为 true，所以要一直往后取，直到 `has_more` 为 false。`limit`（1 到 50）会截短一页。
 - `POST /api/manual-import/execute` 和 `/execute-to-book` 会按固定结构检查每一行文件。未知的键、相对路径的 `source_path` 或空的 `files` 列表会被 HTTP 422 拒绝。每个来源都必须是音频文件，且不在系统文件夹里、不直接位于 `/tmp` 或 `/mnt` 这类顶层文件夹下，也不在 ABM 自己的文件夹（配置、数据库、备份、日志、封面、回收站、临时文件夹，以及存放 SSL 证书和密钥的文件夹）里，符号链接会被跟随。被拒绝的文件会得到写有其路径的 HTTP 400（`Can't import <path>: the file <reason>.`），也不会排入任何任务。
 - `POST /api/manual-import/execute` 和 `/execute-to-book` 在导入运行时按 [Book Naming](/zh-cn/settings/media-management/#book-naming) 给每个文件命名，并忽略文件行里的 `destination_filename`。
-- `POST /api/manual-import/check-conflicts` 接收 `book_id` 和你要导入的 `source_paths`，在 `destination_filenames` 中按源路径返回每个文件将得到的名字。`clashed` 列出因自身名字会冲突而改用格式命名的源文件。`audio_conflicts` 和 `other_conflicts` 列出书籍文件夹中已有的名字，不区分大小写。
+- `POST /api/manual-import/check-conflicts` 接收 `book_id` 和你要导入的 `source_paths`，在 `destination_filenames` 中按源路径返回每个文件将得到的名字。`clashed` 列出因自身名字会冲突而改用格式命名的源文件。`audio_conflicts` 和 `own_conflicts` 列出书籍文件夹中已有的名字，不区分大小写。
 
 ## 元数据源中断
 
