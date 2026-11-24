@@ -3,7 +3,7 @@ import { render } from 'astro:content';
 import highlights from '../data/release-highlights.json';
 import strings from '../ui-strings.json';
 import { PRERELEASE } from '../prerelease';
-import { releaseAnchor, releasesNewestFirst } from '../lib/releases.mjs';
+import { releaseAnchor, releaseAnchorDashed, releasesNewestFirst } from '../lib/releases.mjs';
 
 type Highlight = { title: string; summary: string; upgrade?: string };
 const notes = highlights as Record<string, Highlight>;
@@ -28,7 +28,7 @@ const rendered = await Promise.all(
     const kinds = tally(e.body ?? '');
     const counts = Object.entries(kinds.reduce<Record<string, number>>((a, k) => ((a[k] = (a[k] ?? 0) + 1), a), {}));
     const { Content } = await render(e);
-    return { ...e.data, id: releaseAnchor(e.data.version), kinds, counts, note: notes[e.data.version], Content };
+    return { ...e.data, id: releaseAnchor(e.data.version), alias: releaseAnchorDashed(e.data.version), kinds, counts, note: notes[e.data.version], Content };
   }),
 );
 ---
@@ -39,6 +39,7 @@ const rendered = await Promise.all(
     rendered.map((r) => (
       <section class="rel" aria-labelledby={r.id}>
         <div class="meta">
+          <span id={r.alias} />
           <h2 id={r.id} class="cond">{PRERELEASE ? r.version : <a href={r.url}>{r.version}</a>}</h2>
           {r.date && <time class="d" datetime={r.date} data-local-day>{r.date.slice(0, 10)}</time>}
           <div class="st" aria-hidden="true">{r.kinds.map((k) => <i class={kindClass(k)} />)}</div>
