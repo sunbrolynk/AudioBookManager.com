@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.27.1",
+    "version": "0.28.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -13698,7 +13698,7 @@
           "Settings"
         ],
         "summary": "Delete Root Folder",
-        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete each of those\nbooks' files, as deleting the book would. The root folder itself, and\nanything in it outside every book's folder, is always left on disk.\nAuto-tag rules scoped to this root folder are removed with it, along with\nany rule left with no conditions, and `removed_auto_tag_rules` in the\nresponse lists them.",
+        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete each of those\nbooks' files, as deleting the book would. The root folder itself, and\nanything in it outside every book's folder, is always left on disk.\n`files_failed` counts files that could not be deleted, and\n`failed_book_count` every book not fully removed. Auto-tag rules scoped\nto this root folder are removed with it, along with any rule left with\nno conditions, and `removed_auto_tag_rules` in the response lists them.",
         "operationId": "delete_root_folder_api_settings_root_folders__folder_id__delete",
         "parameters": [
           {
