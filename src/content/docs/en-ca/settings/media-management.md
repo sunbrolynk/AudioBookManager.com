@@ -7,7 +7,7 @@ description: Root folders, importing, extra files, recycling, scans, upgrades an
 
 ## Root Folders
 
-A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** deletes each book ABM has recorded under the root the way deleting that book does, through the recycle bin when it is on, and removes the author and series folders that leaves empty. The root folder itself, and anything in it that doesn't belong to a book, stays on disk. This choice is refused for a root folder that isn't there, such as an unmounted share. A root with books in it makes you type to confirm.
+A root folder is a directory ABM manages books in. Add one with **Add Root Folder**, which opens a folder browser with a typeable path. ABM can also list unmapped folders under a root and import them. A root's free space and hardlink support are checked when it is added. Removing a root asks what to do: **Remove from ABM only** (the default) forgets the books under it and leaves the files, and **Delete the books and their files** deletes each book ABM has recorded under the root the way deleting that book does, through the recycle bin when it is on, and removes the author and series folders that leaves empty. The root folder itself, and anything in it that doesn't belong to a book, stays on disk. This choice is refused for a root folder that isn't there, such as an unmounted share, and while the recycle bin is on but its folder doesn't exist, can't be written to or doesn't answer (see [Gotchas](/en-ca/settings/media-management/#gotchas)). If some files can't be deleted, the root is still removed and a warning says how many files in how many books stayed on disk. The log names each one. A root with books in it makes you type to confirm.
 
 The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
 
@@ -82,7 +82,7 @@ Picking a new folder, in the folder browser or by typing a path, asks right away
 
 ## Gotchas
 
-- If the recycle bin is enabled but its folder is unavailable, deletes that need it fail instead of deleting permanently.
+- If the recycle bin is enabled but its folder doesn't exist, can't be written to or doesn't answer within a few seconds, deleting books, authors, series or a root folder with their files is refused with HTTP 400 and the reason before anything changes, instead of deleting permanently. Nothing is removed from ABM. The delete's task checks the bin again when it runs and deletes nothing if the bin can't take the files by then. A missing bin folder is never created by a delete, since it may be a share that isn't mounted.
 - Hardlinks only work inside one filesystem. Files that cannot be linked are copied, never moved, and counted in the import result.
 
 If you know Sonarr: this is Sonarr's Media Management without naming formats. Folder names are chosen by ABM. Bulk rename lives on Library, Series and Authors as **Rename Files**.

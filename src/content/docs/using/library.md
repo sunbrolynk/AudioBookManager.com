@@ -50,7 +50,7 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 ![An author's page: bio, quality profile and every book by them, grouped by series](../../../assets/docs/author.jpg)
 
-Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
+Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Deleting them from disk is refused, with nothing changed, while the recycle bin is on but can't take the files. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
 
 ## Going back to a list
 
@@ -90,4 +90,4 @@ Discover's custom filters keep a plain text box, because its catalog is filtered
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. Deleting books shows the delete task's own progress and result, including how many it actually deleted, and refreshes the list in place. Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed delete or removal (Series, Authors, Blocklist, Queue, a Library Import session) shows the server's reason in a toast. On a phone, see [Phone use](/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Deleting books shows the delete task's own progress and result, including how many it actually deleted, and refreshes the list in place. A delete that removes files, of one book or several, is refused with the reason before anything changes while the recycle bin is on but its folder doesn't exist, can't be written to or doesn't answer. See [Gotchas](/settings/media-management/#gotchas). Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed delete or removal (Series, Authors, Blocklist, Queue, a Library Import session) shows the server's reason in a toast. On a phone, see [Phone use](/phone/).
