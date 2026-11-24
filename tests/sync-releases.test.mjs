@@ -63,7 +63,7 @@ after(() => roots.forEach((r) => rmSync(r, { recursive: true, force: true })));
 // published is when every release came out, or a map of tag to time; an hour ago keeps it inside the stale grace period.
 // merges lists the bases where a merge call lands at once.
 const hourAgo = new Date(Date.now() - 3600e3).toISOString().replace(/\.\d+Z$/, 'Z');
-function setup({ dev, main, tags, unpublished = [], published = hourAgo, merges = [], prs = [], green = [], releasesFail = false, fail = '' }) {
+function setup({ main, tags, unpublished = [], published = hourAgo, merges = [], prs = [], green = [], releasesFail = false, fail = '' }) {
   const root = mkdtempSync(join(tmpdir(), 'sync-releases-'));
   roots.push(root);
   const git = (cwd, ...args) => execFileSync('git', ['-C', cwd, ...args], { env: cleanEnv, encoding: 'utf8', stdio: 'pipe' }).trim();
@@ -86,8 +86,6 @@ function setup({ dev, main, tags, unpublished = [], published = hourAgo, merges 
   git(work, 'commit', '-q', '--allow-empty', '-m', 'start');
   publish(main);
   git(work, 'push', '-q', 'origin', 'HEAD:main');
-  publish(dev);
-  git(work, 'push', '-q', 'origin', 'HEAD:dev');
   const shas = {};
   // A fork PR's branch lives in the fork, so only this repo's open PRs get a branch here.
   for (const p of prs.filter((p) => !p.fork && (p.state ?? 'OPEN') === 'OPEN')) {
@@ -98,7 +96,7 @@ function setup({ dev, main, tags, unpublished = [], published = hourAgo, merges 
     git(work, 'push', '-q', 'origin', `HEAD:refs/heads/${p.head}`);
     shas[p.head] = git(work, 'rev-parse', 'HEAD');
   }
-  git(work, 'switch', '-q', '--detach', 'origin/dev');
+  git(work, 'switch', '-q', '--detach', 'origin/main');
   const fake = join(root, 'fake');
   mkdirSync(fake);
   writeFileSync(join(fake, 'gh'), fakeGh);
@@ -123,9 +121,8 @@ function run(env, expectStatus = 0, out = {}) {
 const has = (calls, ...prefix) => calls.some((c) => prefix.every((p, i) => c[i] === p));
 const files = (env, ref) => env.git(env.remote, 'ls-tree', '--name-only', ref, 'src/content/releases/').split('\n').map((f) => f.split('/').pop());
 
-test('main gets a release dev already has, and the new PR closes the older one', { skip }, () => {
+test('main gets a new release, and the new PR closes the older one', { skip }, () => {
   const env = setup({
-    dev: ['0.20.0', '0.25.0', '0.26.0'],
     main: ['0.20.0'],
     tags: ['v0.25.0', 'v0.26.0'],
     prs: [{ base: 'main', head: 'releases/main/v0.25.0', number: 221 }],
@@ -134,7 +131,7 @@ test('main gets a release dev already has, and the new PR closes the older one',
   assert.ok(has(calls, 'pr', 'close', '221'), 'the older main PR stays open');
   assert.deepEqual(calls.find((c) => c[1] === 'close'), ['pr', 'close', '221', '--delete-branch', '--comment', 'Closing this one: the pull request for 0.26.0 includes these releases.']);
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'));
-  assert.ok(!calls.some((c) => c[1] === 'create' && c.includes('dev')), 'dev already has 0.26.0');
+  assert.ok(calls.filter((c) => c[1] === 'create').every((c) => c.includes('main')), 'every PR goes into main');
   assert.deepEqual(files(env, 'releases/main/v0.26.0'), ['0.20.0.md', '0.25.0.md', '0.26.0.md']);
   assert.match(env.git(env.remote, 'show', 'releases/main/v0.26.0:src/content/releases/0.26.0.md'), new RegExp(`^date: '${hourAgo}'$`, 'm'), 'the release keeps its full published time');
   assert.ok(has(calls, 'workflow', 'run', 'site-checks.yml', '--ref', 'releases/main/v0.26.0'));
@@ -143,7 +140,6 @@ test('main gets a release dev already has, and the new PR closes the older one',
 
 test('a base that already has every release has its leftover release PRs closed', { skip }, () => {
   const env = setup({
-    dev: ['0.25.0', '0.26.0'],
     main: ['0.25.0', '0.26.0'],
     tags: ['v0.25.0', 'v0.26.0'],
     prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }],
@@ -155,7 +151,6 @@ test('a base that already has every release has its leftover release PRs closed'
 
 test('an open PR left behind its base is rebuilt on the new base and checked again', { skip }, () => {
   const env = setup({
-    dev: ['0.25.0', '0.26.0'],
     main: ['0.25.0'],
     tags: ['v0.25.0', 'v0.26.0'],
     // Opened on an older main, so the current main is not in its history.
@@ -170,21 +165,21 @@ test('an open PR left behind its base is rebuilt on the new base and checked aga
 });
 
 test('a release PR that was closed by hand is not opened again', { skip }, () => {
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED' }] });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED' }] });
   const calls = run(env);
   assert.ok(!calls.some((c) => c[1] === 'create' || c[0] === 'workflow' || c[1] === 'merge'));
 });
 
 test('a release PR the script closed itself is opened again', { skip }, () => {
   const bot = { author: { login: 'github-actions' }, body: 'Closing this one: main already has these releases.' };
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED', comments: [bot] }] });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230, state: 'CLOSED', comments: [bot] }] });
   const calls = run(env);
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'));
 });
 
 test('a fork PR with a release branch name is never edited, merged or closed', { skip }, () => {
   const fork = { base: 'main', head: 'releases/main/v0.26.0', number: 666, fork: true, author: 'someone' };
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [fork, { ...fork, head: 'releases/main/v0.25.0', number: 667 }] });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], prs: [fork, { ...fork, head: 'releases/main/v0.25.0', number: 667 }] });
   const calls = run(env);
   assert.ok(!calls.some((c) => c.includes('666') || c.includes('667')), JSON.stringify(calls));
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'), 'the release still gets its own PR');
@@ -192,13 +187,13 @@ test('a fork PR with a release branch name is never edited, merged or closed', {
 });
 
 test('a failed ABM release lookup stops the run before any PR is touched', { skip }, () => {
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }], releasesFail: true });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.26.0'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }], releasesFail: true });
   const calls = run(env, 1);
   assert.ok(!calls.some((c) => c[0] === 'pr' || c[0] === 'workflow'), JSON.stringify(calls));
 });
 
 test('a release lookup with no valid tags stops the run before any PR is touched', { skip }, () => {
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['nightly'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }] });
+  const env = setup({ main: ['0.25.0'], tags: ['nightly'], prs: [{ base: 'main', head: 'releases/main/v0.26.0', number: 230 }] });
   const calls = run(env, 1);
   assert.ok(!calls.some((c) => c[0] === 'pr' || c[0] === 'workflow'), JSON.stringify(calls));
 });
@@ -206,7 +201,6 @@ test('a release lookup with no valid tags stops the run before any PR is touched
 for (const [fail, what] of [['history', 'closed-PR lookup'], ['date', 'release date read']]) {
   test(`a failed ${what} stops the run before anything is pushed, opened or closed`, { skip }, () => {
     const env = setup({
-      dev: ['0.25.0', '0.26.0'],
       main: ['0.20.0'],
       tags: ['v0.25.0', 'v0.26.0'],
       prs: [{ base: 'main', head: 'releases/main/v0.25.0', number: 221 }],
@@ -220,7 +214,6 @@ for (const [fail, what] of [['history', 'closed-PR lookup'], ['date', 'release d
 
 test('a draft or prerelease is never added, so a base with every published release gets no PR', { skip }, () => {
   const env = setup({
-    dev: ['0.25.0', '0.26.0'],
     main: ['0.26.0'],
     tags: ['v0.26.0'],
     unpublished: [{ tag_name: 'v0.27.0', draft: true, prerelease: false }, { tag_name: 'v0.28.0', draft: false, prerelease: true }],
@@ -230,17 +223,15 @@ test('a draft or prerelease is never added, so a base with every published relea
 });
 
 test('a release missing for over a day still gets its PR, then fails the run naming the base', { skip }, () => {
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: '2026-11-19T02:30:00Z' });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: '2026-11-19T02:30:00Z' });
   const out = {};
   const calls = run(env, 1, out);
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.26.0'), 'the PR work still runs first');
   assert.match(out.text, /::error::main is missing 0\.26\.0, which came out at 2026-11-19T02:30:00Z/);
-  assert.doesNotMatch(out.text, /::error::dev/, 'dev already has it');
 });
 
 test('a release PR closed by hand fails the run once the release is over a day old', { skip }, () => {
   const env = setup({
-    dev: ['0.25.0', '0.26.0'],
     main: ['0.25.0'],
     tags: ['v0.25.0', 'v0.26.0'],
     published: '2026-11-19T02:30:00Z',
@@ -255,7 +246,7 @@ test('a release PR closed by hand fails the run once the release is over a day o
 const dayAgo = '2026-11-19T02:30:00Z';
 
 test('a backport older than the newest entry is still added', { skip }, () => {
-  const env = setup({ dev: ['0.23.0', '0.24.0'], main: ['0.23.0', '0.24.0'], tags: ['v0.23.0', 'v0.23.1', 'v0.24.0'] });
+  const env = setup({ main: ['0.23.0', '0.24.0'], tags: ['v0.23.0', 'v0.23.1', 'v0.24.0'] });
   const calls = run(env);
   assert.ok(has(calls, 'pr', 'create', '--base', 'main', '--head', 'releases/main/v0.23.1'), JSON.stringify(calls));
   assert.deepEqual(files(env, 'releases/main/v0.23.1'), ['0.23.0.md', '0.23.1.md', '0.24.0.md']);
@@ -263,7 +254,6 @@ test('a backport older than the newest entry is still added', { skip }, () => {
 
 test('a fresh backport does not hide an older release that is overdue', { skip }, () => {
   const env = setup({
-    dev: ['0.23.0', '0.23.1', '0.24.0'],
     main: ['0.23.0'],
     tags: ['v0.23.0', 'v0.23.1', 'v0.24.0'],
     published: { 'v0.23.0': dayAgo, 'v0.24.0': dayAgo, 'v0.23.1': hourAgo },
@@ -276,7 +266,7 @@ test('a fresh backport does not hide an older release that is overdue', { skip }
 
 test('an overdue release that this run merges does not fail it', { skip }, () => {
   // Its checks finish inside the run, so main's auto-merge lands before the end.
-  const env = setup({ dev: ['0.25.0', '0.26.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: dayAgo, merges: ['main'] });
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: dayAgo, merges: ['main'] });
   const out = {};
   const calls = run(env, 0, out);
   assert.ok(has(calls, 'pr', 'merge', 'https://example.test/pull/99', '--squash', '--auto'));
@@ -284,12 +274,11 @@ test('an overdue release that this run merges does not fail it', { skip }, () =>
   assert.doesNotMatch(out.text, /::error::/);
 });
 
-test('an overdue release whose PR does not merge still fails the run, and only for that branch', { skip }, () => {
-  const env = setup({ dev: ['0.25.0'], main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: dayAgo, merges: ['dev'] });
+test('an overdue release whose PR does not merge still fails the run', { skip }, () => {
+  const env = setup({ main: ['0.25.0'], tags: ['v0.25.0', 'v0.26.0'], published: dayAgo });
   const out = {};
   run(env, 1, out);
   assert.match(out.text, /::error::main is missing 0\.26\.0/);
-  assert.doesNotMatch(out.text, /::error::dev/, 'dev merged it this run');
 });
 
 // Opens the PR the last run created, as GitHub would, then changes what ABM has before the next run.
@@ -314,7 +303,7 @@ for (const [what, first, change, check] of [
     (env) => assert.match(show(env, '0.24.0.md'), new RegExp(`^date: '${halfHourAgo}'$`, 'm'))],
 ]) {
   test(`${what} while a release PR is open reaches that PR with the base unmoved`, { skip }, () => {
-    const env = setup({ dev: ['0.23.0', '0.23.1', '0.24.0'], main: ['0.23.0'], tags: first });
+    const env = setup({ main: ['0.23.0'], tags: first });
     run(env);
     reopen(env, change);
     const calls = run(env);
@@ -326,7 +315,7 @@ for (const [what, first, change, check] of [
 }
 
 test('an open release PR that already matches ABM is not pushed again', { skip }, () => {
-  const env = setup({ dev: ['0.23.0', '0.24.0'], main: ['0.23.0'], tags: ['v0.23.0', 'v0.24.0'] });
+  const env = setup({ main: ['0.23.0'], tags: ['v0.23.0', 'v0.24.0'] });
   run(env);
   const sha = env.git(env.remote, 'rev-parse', 'releases/main/v0.24.0');
   reopen(env, { green: [sha] });
