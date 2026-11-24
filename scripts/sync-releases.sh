@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Adds every published ABM release the Updates page is missing, for dev and for main.
-# Each base gets one PR, for its newest missing release, with only public/releases.json and src/content/releases/<ver>.md, set to merge itself.
+# Adds every published ABM release the Updates page is missing to main.
+# It keeps one PR, for the newest missing release, with only public/releases.json and src/content/releases/<ver>.md, set to merge itself.
 # Env: ABM_REPO (owner/name), ABM_TOKEN (read-only; may be empty once ABM is public), GH_TOKEN (this repo).
 # Release text only ever lands in files, never in a command line.
 set -euo pipefail
@@ -96,26 +96,21 @@ sync_base() {
   # Only now that the newest PR is in place, so a failure above never leaves a release without one.
   close_others "$base" "$prefix" "$branch" "the pull request for ${last#v} includes these releases"
 
-  if [ "$base" = main ]; then
-    # Checks from a dispatched run don't count for a PR, so site-checks reports the result as a commit status.
-    # A PR opened with the workflow token starts no checks of its own, so run them unless the head already has a result.
-    # A failed status read only costs an extra check run, so it is not fatal.
-    state=$(gh api "repos/{owner}/{repo}/commits/$(git rev-parse "$head")/status" --jq '[.statuses[] | select(.context == "Site validation")][0].state // ""') || state=''
-    [ "$state" = success ] || gh workflow run site-checks.yml --ref "$branch"
-    gh pr merge "$pr" --squash --auto || echo "::warning::could not turn on auto-merge for $pr; gh's error is above"
-  else
-    # dev has no required checks, so there is nothing for auto-merge to wait on.
-    gh pr merge "$pr" --squash --auto || gh pr merge "$pr" --squash
-  fi
+  # Checks from a dispatched run don't count for a PR, so site-checks reports the result as a commit status.
+  # A PR opened with the workflow token starts no checks of its own, so run them unless the head already has a result.
+  # A failed status read only costs an extra check run, so it is not fatal.
+  state=$(gh api "repos/{owner}/{repo}/commits/$(git rev-parse "$head")/status" --jq '[.statuses[] | select(.context == "Site validation")][0].state // ""') || state=''
+  [ "$state" = success ] || gh workflow run site-checks.yml --ref "$branch"
+  gh pr merge "$pr" --squash --auto || echo "::warning::could not turn on auto-merge for $pr; gh's error is above"
 }
 
-git fetch --quiet origin dev main '+refs/heads/releases/*:refs/remotes/origin/releases/*'
-sync_base dev releases/
+# Keeps the releases/main/ prefix: a merged PR on a branch name counts as done, and releases/v<ver> were dev's.
+git fetch --quiet origin main '+refs/heads/releases/*:refs/remotes/origin/releases/*'
 sync_base main releases/main/
 
 # Fails the run, which GitHub emails about, instead of leaving the Updates page behind with a green run.
 # The branches are read again first, so a release this run merged doesn't count.
-[ ${#overdue[@]} -eq 0 ] || git fetch --quiet origin dev main
+[ ${#overdue[@]} -eq 0 ] || git fetch --quiet origin main
 failed=0
 for o in "${overdue[@]}"; do
   read -r base tag published <<<"$o"
