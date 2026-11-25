@@ -1,9 +1,9 @@
 ---
 title: Notifications
-description: The bell in the header and the panel under it.
+description: The Notification Center in the header and its panel.
 ---
 
-The bell in the desktop header is where ABM tells you what happened and what needs you. Click it to open the notification panel. There is no bell on a phone yet.
+The Notification Center, the bell in the header, is where ABM tells you what happened and what needs you. Click it to open the notification panel. On a phone it opens as a sheet.
 
 ## The bell
 
@@ -33,9 +33,11 @@ A notification can come from a background task, a download or a conversion, or f
 
 ## Results at the control
 
-Actions on Library, Book Detail, Calendar, Authors, Series and the cover actions show their result as a short line at the control you used. A plain success line clears itself after a couple of seconds. A failure or a warning stays until your next action on that control. Failures are also recorded in the Notification Center, so you can still find them after the line is gone.
+Actions on Library, Book Detail, Calendar, Authors, Series, Queue, Backups, adding an author or series, and the cover actions show their result as a short line at the control you used. A plain success line clears itself after a couple of seconds. A failure or a warning stays until your next action on that control. Failures are also recorded in the Notification Center, so you can still find them after the line is gone.
 
 A book, author or series that is saved but whose catalog fill does not start records the warning "Catalog fill not started". An add-all where some books fail records "Some books were not added" with the reasons.
+
+If ABM cannot finish checking your sign-in, the page says why and offers **Retry**, and the login screen shows the same reason.
 
 ## Retention
 
