@@ -3,7 +3,7 @@ title: Adicionar novo
 description: Busque um livro e adicione como desejado.
 ---
 
-**Library > Add New** busca livros no Libex e adiciona os que você escolher. A busca encontra por título, autor, série ou ASIN.
+**Library > Add New** busca livros no Libex e adiciona os que você escolher. A busca encontra por título, autor, série ou ASIN. Uma busca no modo **Title** mostra primeiro **Best matches**, as melhores correspondências do Libex para o que você digitou. Depois vêm os resultados por título, sem os livros que já aparecem ali, de 50 em 50. Os próximos 50 carregam quando você rola a página ou com **Load more**, até o Libex não ter mais, no máximo 500.
 
 ## O que adicionar faz
 

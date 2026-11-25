@@ -35,6 +35,8 @@ Les champs affichés dépendent du client.
 | Redownload Failed | activé | Met une sortie en échec dans la liste de blocage et relance une recherche |
 | Redownload Failed from Interactive Search | activé | Pareil, pour les sorties que tu as choisies à la main |
 
+Quand un téléchargement terminé contient le même livre plus d'une fois, dans des formats différents, ABM n'importe que la copie que le profil de qualité du livre classe le plus haut. Pour associer le téléchargement à un livre, une seule copie est mesurée aussi, celle que le profil de qualité par défaut classe le plus haut. Les formats que le profil classe au même niveau, ou qu'il ne contient pas, suivent l'ordre M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. ABM laisse les autres copies dans le téléchargement ; elles ne sont supprimées que si **Also Delete Files** retire le téléchargement après l'import. Un fichier seul à côté d'un ensemble de parties ne compte comme deuxième copie que si leurs durées concordent ; sinon ce sont les parties d'un même livre. La couverture et les autres fichiers annexes suivent quand même la copie que prend ABM. Quand le dossier du téléchargement contient aussi l'audio d'un autre livre, seuls les fichiers annexes nommés d'après l'audio importé suivent.
+
 Le choix entre liens physiques et copie pour les imports se fait avec **Use Hardlinks instead of Copy** dans [Gestion des médias](/fr/settings/media-management/). Si le dossier du client n'est pas au même chemin que celui que voit ABM, ajoute une correspondance de chemin distant.
 
 ## Correspondances de chemins distants

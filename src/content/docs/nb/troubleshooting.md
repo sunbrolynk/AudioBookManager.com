@@ -36,6 +36,10 @@ Apploggen sier hva det er:
 
 Det motsatte tilfellet: en proxy som ikke sender videresendingsheadere, ser ut som en lokal klient, så alt som går gjennom den, slipper innlogging. Sett Authentication Required til Enabled.
 
+## En side forblir tom eller viser feil etter en oppdatering
+
+Last inn fanen på nytt. En side som var åpen fra før oppdateringen, har ikke API-nøkkelen ennå. En Library Import-side som fortsatt er åpen fra før oppdateringen, kan ikke lagre endringene sine før du laster den inn på nytt. Står ABM bak en proxy, slipp også gjennom `/initialize.json`, `/media-cover/`, `/backup/` og `/logfile`. Se [Omvendt proxy](/nb/guides/reverse-proxy/).
+
 ## Endringer blir avvist fra nettleseren
 
 Sjekk at proxyen sender den opprinnelige `Host`-headeren videre, eller sender `X-Forwarded-Host`. Se [Konfigurasjon](/nb/configuration/#omvendt-proxy).
@@ -50,10 +54,10 @@ Content-Security-Policy-headeren tillater bare coverbilder over HTTPS. Sjekk net
 
 ## Metadatakilden er utilgjengelig
 
-Å legge til, søke, oppdatere og Discover trenger Libex. Får ikke ABM svar, feiler et boksøk med "Libex search failed" og et søk etter forfattere eller serier med "Libex could not be reached; try again shortly", i stedet for å vise en tom liste. Årsaker: Libex er nede, eller ABMs tilkobling når det ikke.
+Å legge til, søke, oppdatere og Discover trenger metadatakilden. Når ABM ikke får svar, nevner feilen kilden og den egentlige årsaken, for eksempel at VPN-en er nede, i stedet for å vise en tom liste. Årsaker: kilden er nede, eller ABMs forbindelse når den ikke. En oppdatering, import eller synk over mange elementer stopper når kilden ikke kan nås eller avviser ABM, med ett varsel per type avbrudd, og et enkelt tidsavbrudd hopper bare over det elementet.
 
 1. Sjekk [ABMs statusside](https://status.audiobookmanager.com) og [Libex sin statusside](https://status.libexdb.com) for å se om det er nede for alle.
-2. Sjekk at containeren kommer ut på internett, og at proxyen under **Settings > General > Proxy** stemmer, hvis du bruker en.
+2. Sjekk at containeren kommer ut på internett, og at proxyen under **Settings > Network** stemmer, hvis du bruker en.
 3. Prøv igjen etter et minutt.
 4. I mellomtiden kan du fortsatt legge til og importere bøker for hånd.
 

@@ -35,6 +35,8 @@ To, które pola widać, zależy od klienta.
 | Redownload Failed | wł. | Wrzuca nieudane wydanie na czarną listę i szuka ponownie |
 | Redownload Failed from Interactive Search | wł. | To samo, dla wydań wybranych ręcznie |
 
+Gdy ukończone pobieranie zawiera tę samą książkę więcej niż raz, w różnych formatach, ABM importuje tylko kopię, którą profil jakości książki stawia najwyżej. Przy dopasowywaniu pobierania do książki też mierzona jest tylko jedna kopia, ta, którą najwyżej stawia domyślny profil jakości. Formaty, które profil stawia na równi albo których nie ma, idą w kolejności M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. Pozostałe kopie ABM zostawia w pobieraniu; są usuwane tylko wtedy, gdy **Also Delete Files** usuwa pobieranie po imporcie. Pojedynczy plik obok zestawu części liczy się jako druga kopia tylko wtedy, gdy ich długości się zgadzają; inaczej to części jednej książki. Okładka i inne dodatkowe pliki i tak trafiają razem z kopią, którą bierze ABM. Gdy folder pobierania zawiera też dźwięk innej książki, trafiają tylko dodatkowe pliki nazwane tak jak importowany dźwięk.
+
 To, czy importy używają hardlinków, czy kopiują, ustawia **Use Hardlinks instead of Copy** w [Media Management](/pl/settings/media-management/). Jeśli folder klienta nie ma tej samej ścieżki, którą widzi ABM, dodaj mapowanie zdalnej ścieżki.
 
 ## Mapowania zdalnych ścieżek

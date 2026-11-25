@@ -28,6 +28,12 @@ Kender du Sonarr: en bog er en episode, en serie er sæson og serie i ét, og en
 
 Sletning af en serie eller forfatter bliver afvist, så længe den stadig har bøger i biblioteket. Fjern bøgerne først.
 
+## Tilbage til en liste
+
+Når du går tilbage fra en bog-, serie- eller forfatterside, står **Books**, **Series**, **Authors** og **Audible Library** der, hvor du forlod dem, med det du åbnede samme sted. Det virker i alle visninger og på en telefon. En liste, du åbner fra menuen eller genindlæser, starter fra toppen.
+
+Ctrl+H og Ctrl+E springer til toppen og bunden af Books-listen i alle visninger. Tryk `?` for at se alle tastaturgenveje.
+
 ## Arv af kvalitetsprofil
 
 En bogs kvalitetsprofil kommer, i denne rækkefølge, fra: dens egen tilsidesættelse, dens primære serie, dens primære forfatter og til sidst standardprofilen. Se [Profiler](/da/settings/profiles/).
@@ -51,4 +57,4 @@ Bøger, forfattere og serier kan have tags. Tags styrer indeksere, notifikatione
 
 ## Markering
 
-Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. På en telefon, se [Brug på telefonen](/da/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletning af bøger kører som en opgave, og resultatet, med hvor mange der faktisk blev slettet, registreres i [Notifikationer](/da/system/notifications/). På en Library Import-session viser en afvist eller mislykket fjernelse af en mappe årsagen som en linje på siden og registreres også i [Notifikationer](/da/system/notifications/).
+Markér rækker for at handle på flere ad gangen: overvåg, søg, tag, omdøb, slet. Organize viser først en forhåndsvisning af hver flytning og omdøbning, se [Book Naming](/da/settings/media-management/#book-naming). På en telefon, se [Brug på telefonen](/da/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletning af bøger kører som en opgave, og resultatet, med hvor mange der faktisk blev slettet, registreres i [Notifikationer](/da/system/notifications/). På en Library Import-session viser en afvist eller mislykket fjernelse af en mappe årsagen som en linje på siden og registreres også i [Notifikationer](/da/system/notifications/).

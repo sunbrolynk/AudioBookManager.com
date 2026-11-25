@@ -28,6 +28,12 @@ Om du kan Sonarr: en bok är ett avsnitt, en serie är säsong och serie i ett, 
 
 Att ta bort en serie eller författare vägras så länge den fortfarande har böcker i biblioteket. Ta bort böckerna först.
 
+## Tillbaka till en lista
+
+När du går tillbaka från en bok-, serie- eller författarsida står **Books**, **Series**, **Authors** och **Audible Library** där du lämnade dem, med det du öppnade på samma ställe. Det fungerar i alla vyer och på telefonen. En lista som du öppnar från menyn eller laddar om börjar högst upp.
+
+Ctrl+H och Ctrl+E hoppar till början och slutet av Books-listan i alla vyer. Tryck `?` för att se alla kortkommandon.
+
 ## Arv av kvalitetsprofil
 
 En boks kvalitetsprofil kommer, i den här ordningen, från: dess egen åsidosättning, dess primära serie, dess primära författare och sist standardprofilen. Se [Profiler](/sv/settings/profiles/).
@@ -51,4 +57,4 @@ Böcker, författare och serier kan ha taggar. Taggar styr indexerare, notiser, 
 
 ## Markering
 
-Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. På mobilen, se [Använda mobilen](/sv/phone/). Åtgärder i Library visar ett resultat som en rad på sidan. Att ta bort böcker körs som en uppgift och resultatet, med hur många som faktiskt togs bort, registreras i [Aviseringar](/sv/system/notifications/). I en Library Import-session visar en nekad eller misslyckad borttagning av en mapp orsaken som en rad på sidan och registreras också i [Aviseringar](/sv/system/notifications/).
+Markera rader för att göra något med flera på en gång: bevaka, söka, tagga, döpa om, ta bort. Organize visar först en förhandsvisning av varje flytt och omdöpning, se [Book Naming](/sv/settings/media-management/#book-naming). På mobilen, se [Använda mobilen](/sv/phone/). Åtgärder i Library visar ett resultat som en rad på sidan. Att ta bort böcker körs som en uppgift och resultatet, med hur många som faktiskt togs bort, registreras i [Aviseringar](/sv/system/notifications/). I en Library Import-session visar en nekad eller misslyckad borttagning av en mapp orsaken som en rad på sidan och registreras också i [Aviseringar](/sv/system/notifications/).

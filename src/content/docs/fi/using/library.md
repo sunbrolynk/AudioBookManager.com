@@ -28,6 +28,12 @@ Jos tunnet Sonarrin: kirja on jakso, sarja on kausi ja ohjelma yhdessä, ja teki
 
 Sarjan tai tekijän poistaminen hylätään niin kauan kuin sillä on kirjoja kirjastossa. Poista kirjat ensin.
 
+## Paluu listaan
+
+Kun palaat kirjan, sarjan tai tekijän sivulta, **Books**, **Series**, **Authors** ja **Audible Library** ovat siinä kohdassa, johon jäit, ja avaamasi kohde on samassa paikassa. Tämä toimii kaikissa näkymissä ja puhelimessa. Valikosta avattu tai uudelleen ladattu lista alkaa ylhäältä.
+
+Ctrl+H ja Ctrl+E hyppäävät Books-listan alkuun ja loppuun missä tahansa näkymässä. Paina `?` nähdäksesi kaikki pikanäppäimet.
+
 ## Laatuprofiilin periytyminen
 
 Kirjan laatuprofiili tulee järjestyksessä seuraavista: sen oma ohitus, sen ensisijainen sarja, sen ensisijainen tekijä ja lopulta oletusprofiili. Katso [Profiilit](/fi/settings/profiles/).
@@ -51,4 +57,4 @@ Kirjoilla, tekijöillä ja sarjoilla voi olla tageja. Tagit ohjaavat indeksoijia
 
 ## Valinta
 
-Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Puhelimella katso [Puhelimella käyttö](/fi/phone/). Library-toiminnot näyttävät tuloksen rivinä sivulla. Kirjojen poisto ajetaan tehtävänä, ja sen tulos, mukaan lukien kuinka monta todella poistettiin, tallennetaan [Ilmoituksiin](/fi/system/notifications/). Library Import -istunnossa hylätty tai epäonnistunut kansion poisto näyttää syyn rivinä sivulla ja tallennetaan myös [Ilmoituksiin](/fi/system/notifications/).
+Valitse rivejä, niin voit toimia monella kerralla: seuraa, hae, tagita, nimeä uudelleen, poista. Organize näyttää ensin esikatselun jokaisesta siirrosta ja uudelleennimeämisestä, katso [Book Naming](/fi/settings/media-management/#book-naming). Puhelimella katso [Puhelimella käyttö](/fi/phone/). Library-toiminnot näyttävät tuloksen rivinä sivulla. Kirjojen poisto ajetaan tehtävänä, ja sen tulos, mukaan lukien kuinka monta todella poistettiin, tallennetaan [Ilmoituksiin](/fi/system/notifications/). Library Import -istunnossa hylätty tai epäonnistunut kansion poisto näyttää syyn rivinä sivulla ja tallennetaan myös [Ilmoituksiin](/fi/system/notifications/).

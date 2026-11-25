@@ -3,7 +3,7 @@ title: 常规
 description: 主机、安全、代理、日志和备份。
 ---
 
-**Settings > General** 有 Host、Security、Proxy、Logging 和 Backups 几个部分。Security 有[单独的页面](/zh-cn/settings/security/)。
+**Settings > General** 有 Host、Security、Logging 和 Backups 几个部分。Security 有[单独的页面](/zh-cn/settings/security/)。
 
 ## 主机（Host）
 

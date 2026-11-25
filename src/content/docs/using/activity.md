@@ -17,7 +17,9 @@ Removing a row, from the row, a selection, a phone action sheet or the details v
 
 ## History
 
-Grabs, imports, failures and upgrades. A failed grab says which clients were tried. A download that fails in the client gets its own row with the client's reason.
+Grabs, imports, failures, upgrades, deletes, renames and Organize moves. A failed grab says which clients were tried. A download that fails in the client gets its own row with the client's reason.
+
+The filter has All, Grabbed, Imported, Failed, Deleted, Renamed, Organized and Ignored. Imported includes upgrades and files added to a book. Failed includes an import refused because the folder belongs to another book, and a step after adding or importing a book that failed, such as writing a sidecar.
 
 ![Activity, History: grabs and imports with the book, author, series and date](../../../assets/docs/activity-history.jpg)
 

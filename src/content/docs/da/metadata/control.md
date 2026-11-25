@@ -47,9 +47,7 @@ Tags er dine. Auto-tags sætter dem ud fra regler (genre, oplæser, bedømmelse,
 
 Alt, hvad ABM lærer om en bog, bliver i ABM's egen SQLite-database i `/config`, også bøger, du senere fjerner. Tag backup af den mappe, så er samlingen også med. Metadata afhænger ikke af, at kilden kan nås, når en bog først er inde.
 
-:::caution[Kommer i en senere udgivelse]
-Et dedikeret **Local Metadata Library** er planlagt: en valgfri kopi af alt, ABM nogensinde har slået op, bevaret selv efter en bog har forladt dit bibliotek, med egne planlagte sikkerhedskopier og en SQLite-download.
-:::
+Sektionen **Local Storage** under **Settings > Metadata**, som vises med Built-in-kilden, er en forhåndsvisning af en valgfri lokal kopi af alt, ABM har slået op. Den er endnu ikke koblet til.
 
 ## Tidsplaner for opdatering
 

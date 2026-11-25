@@ -28,6 +28,12 @@ Kan du Sonarr: en bok er en episode, en serie er sesong og serie i ett, og en fo
 
 Å slette en serie eller forfatter blir avvist så lenge den fortsatt har bøker i biblioteket. Fjern bøkene først.
 
+## Tilbake til en liste
+
+Når du går tilbake fra en bok-, serie- eller forfatterside, står **Books**, **Series**, **Authors** og **Audible Library** der du forlot dem, med det du åpnet på samme sted. Det virker i alle visninger og på telefon. En liste du åpner fra menyen eller laster inn på nytt, starter øverst.
+
+Ctrl+H og Ctrl+E hopper til toppen og bunnen av Books-listen i alle visninger. Trykk `?` for å se alle hurtigtaster.
+
 ## Arv av kvalitetsprofil
 
 Kvalitetsprofilen til en bok kommer fra, i denne rekkefølgen: dens egen overstyring, hovedserien, hovedforfatteren, og så standardprofilen. Se [Profiler](/nb/settings/profiles/).
@@ -51,4 +57,4 @@ Bøker, forfattere og serier kan ha tagger. Tagger styrer indekserere, varsler, 
 
 ## Utvalg
 
-Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. På telefon, se [Bruk på telefon](/nb/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletting av bøker kjører som en oppgave, og resultatet, med hvor mange som faktisk ble slettet, registreres i [Varsler](/nb/system/notifications/). I en Library Import-økt viser en avvist eller mislykket fjerning av en mappe årsaken som en linje på siden og registreres også i [Varsler](/nb/system/notifications/).
+Velg rader for å gjøre noe med flere samtidig: overvåke, søke, tagge, gi nytt navn, slette. Organize viser først en forhåndsvisning av hver flytting og omdøping, se [Book Naming](/nb/settings/media-management/#book-naming). På telefon, se [Bruk på telefon](/nb/phone/). Handlinger i Library viser et resultat som en linje på siden. Sletting av bøker kjører som en oppgave, og resultatet, med hvor mange som faktisk ble slettet, registreres i [Varsler](/nb/system/notifications/). I en Library Import-økt viser en avvist eller mislykket fjerning av en mappe årsaken som en linje på siden og registreres også i [Varsler](/nb/system/notifications/).

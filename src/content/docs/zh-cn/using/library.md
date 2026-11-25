@@ -28,6 +28,12 @@ description: 书、作者和系列，以及 ABM 怎么追踪它们的状态。
 
 只要书库里还有它的书，系列或作者就不能删除。先把书删掉。
 
+## 返回列表
+
+从书、系列或作者页面返回时，**Books**、**Series**、**Authors** 和 **Audible Library** 会回到你离开时的位置，你打开的那一项也在原来的地方。所有视图和手机上都一样。从菜单打开或刷新的列表从顶部开始。
+
+在任何视图中，Ctrl+H 和 Ctrl+E 会跳到 Books 列表的顶部和底部。按 `?` 查看所有键盘快捷键。
+
 ## 质量配置的继承
 
 一本书的质量配置依次来自：它自己的覆盖设置、它的主系列、它的主作者，最后是默认配置。见 [配置文件](/zh-cn/settings/profiles/)。
@@ -51,4 +57,4 @@ description: 书、作者和系列，以及 ABM 怎么追踪它们的状态。
 
 ## 多选
 
-选中多行就能一次处理多个：监控、搜索、打标签、重命名、删除。手机上的用法见 [手机使用](/zh-cn/phone/)。Library 的操作会在页面上以一行显示结果。删除书籍作为任务运行，它的结果（包括实际删除了多少）会记录在[通知](/zh-cn/system/notifications/)里。在 Library Import 会话中，被拒绝或失败的文件夹删除会在页面上以一行显示原因，并同时记录在[通知](/zh-cn/system/notifications/)里。
+选中多行就能一次处理多个：监控、搜索、打标签、重命名、删除。Organize 会先预览每一次移动和重命名，见 [Book Naming](/zh-cn/settings/media-management/#book-naming)。手机上的用法见 [手机使用](/zh-cn/phone/)。Library 的操作会在页面上以一行显示结果。删除书籍作为任务运行，它的结果（包括实际删除了多少）会记录在[通知](/zh-cn/system/notifications/)里。在 Library Import 会话中，被拒绝或失败的文件夹删除会在页面上以一行显示原因，并同时记录在[通知](/zh-cn/system/notifications/)里。

@@ -28,6 +28,12 @@ Si tu connais Sonarr : un livre, c'est un épisode, une série, c'est une saison
 
 La suppression d'une série ou d'un auteur est refusée tant qu'il reste des livres dans la bibliothèque. Retire d'abord les livres.
 
+## Revenir à une liste
+
+Quand tu reviens depuis la page d'un livre, d'une série ou d'un auteur, **Books**, **Series**, **Authors** et **Audible Library** reprennent là où tu les avais laissés, avec l'élément ouvert au même endroit. Ça marche dans chaque vue et sur téléphone. Une liste ouverte depuis le menu, ou rechargée, commence en haut.
+
+Ctrl+H et Ctrl+E sautent en haut et en bas de la liste Books, quelle que soit la vue. Appuie sur `?` pour voir tous les raccourcis clavier.
+
 ## Héritage du profil de qualité
 
 Le profil de qualité d'un livre vient, dans l'ordre : de son propre réglage spécifique, de sa série principale, de son auteur principal, puis du profil par défaut. Voir [Profils](/fr/settings/profiles/).
@@ -51,4 +57,4 @@ Les livres, les auteurs et les séries peuvent porter des tags. Les tags oriente
 
 ## Sélection
 
-Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Sur téléphone, voir [Sur téléphone](/fr/phone/). Les actions de Library montrent un résultat sous forme de ligne sur la page. La suppression de livres tourne comme une tâche dont le résultat, avec le nombre de livres réellement supprimés, est enregistré dans [Notifications](/fr/system/notifications/). Dans une session de Library Import, la suppression refusée ou échouée d'un dossier affiche son motif sous forme de ligne sur la page et est aussi enregistrée dans [Notifications](/fr/system/notifications/).
+Sélectionne des lignes pour agir sur plusieurs à la fois : surveiller, chercher, taguer, renommer, supprimer. Organize montre d'abord un aperçu de chaque déplacement et renommage, voir [Book Naming](/fr/settings/media-management/#book-naming). Sur téléphone, voir [Sur téléphone](/fr/phone/). Les actions de Library montrent un résultat sous forme de ligne sur la page. La suppression de livres tourne comme une tâche dont le résultat, avec le nombre de livres réellement supprimés, est enregistré dans [Notifications](/fr/system/notifications/). Dans une session de Library Import, la suppression refusée ou échouée d'un dossier affiche son motif sous forme de ligne sur la page et est aussi enregistrée dans [Notifications](/fr/system/notifications/).

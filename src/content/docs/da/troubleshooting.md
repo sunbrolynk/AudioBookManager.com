@@ -36,6 +36,10 @@ App-loggen siger, hvad det drejer sig om:
 
 Det modsatte tilfælde: en proxy, der ikke sender forwarding-headers, ligner en lokal klient, så alt, der går igennem den, springer login over. Sæt Authentication Required til Enabled.
 
+## En side forbliver tom eller viser fejl efter en opdatering
+
+Genindlæs fanen. En side, der var åben fra før opdateringen, har ikke API-nøglen endnu. En Library Import-side, der stadig er åben fra før opdateringen, kan ikke gemme sine ændringer, før du genindlæser den. Hvis du kører ABM bag en proxy, så send også `/initialize.json`, `/media-cover/`, `/backup/` og `/logfile` igennem. Se [Reverse proxy](/da/guides/reverse-proxy/).
+
 ## Ændringer bliver afvist fra browseren
 
 Sørg for, at proxyen sender den oprindelige `Host`-header videre eller sender `X-Forwarded-Host`. Se [Konfiguration](/da/configuration/#reverse-proxy).
@@ -50,10 +54,10 @@ Hæv `MAX_REQUEST_BODY_BYTES`. En reverse proxy kan også have en lavere grænse
 
 ## Metadatakilden er ikke tilgængelig
 
-Tilføjelse, søgning, opdatering og Discover har brug for Libex. Får ABM ikke svar, fejler en bogsøgning med "Libex search failed" og en søgning efter forfattere eller serier med "Libex could not be reached; try again shortly", i stedet for at vise en tom liste. Årsager: Libex er nede, eller ABM's forbindelse når det ikke.
+Tilføjelse, søgning, opdatering og Discover har brug for metadatakilden. Når ABM ikke får svar, nævner fejlen kilden og den virkelige årsag, for eksempel at VPN'en er nede, i stedet for at vise en tom liste. Årsager: kilden er nede, eller ABM's forbindelse når den ikke. En opdatering, import eller synk over mange poster stopper, når kilden ikke kan nås eller afviser ABM, med én notifikation pr. slags afbrydelse, og en enkelt timeout springer kun den post over.
 
 1. Se [ABM's statusside](https://status.audiobookmanager.com) og [Libex' statusside](https://status.libexdb.com) for at se, om det er nede for alle.
-2. Tjek, at containeren kan nå internettet, og at proxyen under **Settings > General > Proxy** er rigtig, hvis du bruger en.
+2. Tjek, at containeren kan nå internettet, og at proxyen under **Settings > Network** er rigtig, hvis du bruger en.
 3. Prøv igen efter et minut.
 4. I mellemtiden kan du stadig tilføje og importere bøger i hånden.
 

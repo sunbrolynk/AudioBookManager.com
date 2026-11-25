@@ -7,11 +7,15 @@ description: The queue, history and blocklist.
 
 What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see. In the manual import window, a failed scan, stage or import shows its reason as a line in the window.
 
-Removing a row from the queue follows **Queue Page Remove Action** in the download client's settings: dismiss from ABM only, remove from the client and keep files, or remove from the client and delete files. See [Download Clients](/en-ca/settings/download-clients/).
+**Check for Imports** in the toolbar checks every completed download for something to import, or only the selected rows when some are selected. A row's **Import Now** imports just that row, and the result says how many of the ones you picked were not ready. A failed import, remove, retry or grab shows a toast with the server's reason.
+
+Removing a row, from the row, a selection, a phone action sheet or the details view, always asks first. The confirmation can also remove the download from its client, and add the release to the blocklist (only when it is removed from the client). A manual Remove ignores seed goals. When the removal also deletes the files, you type `delete` to confirm. The default for **Remove from download client** follows **Queue Page Remove Action** in the download client's settings: dismiss from ABM only, remove from the client and keep files, or remove from the client and delete files. See [Download Clients](/en-ca/settings/download-clients/).
 
 ## History
 
 Grabs, imports, failures and upgrades. A failed grab says which clients were tried. A download that fails in the client gets its own row with the client's reason.
+
+![Activity, History: grabs and imports with the book, author, series and date](../../../../assets/docs/activity-history.jpg)
 
 ## Blocklist
 

@@ -3,7 +3,7 @@ title: 일반
 description: 호스트, 보안, 프록시, 로그, 백업.
 ---
 
-**Settings > General**에는 Host, Security, Proxy, Logging, Backups 섹션이 있어요. Security는 [별도 페이지](/ko/settings/security/)가 있어요.
+**Settings > General**에는 Host, Security, Logging, Backups 섹션이 있어요. Security는 [별도 페이지](/ko/settings/security/)가 있어요.
 
 ## 호스트 (Host)
 

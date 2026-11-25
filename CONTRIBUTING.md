@@ -43,7 +43,9 @@ to pass first. GitHub only enforces rulesets on a public repository or GitHub
 Pro, so it starts working when the repository goes public.
 
 - Every PR into `main` runs `Site validation`, including Dependabot's and the
-  translation review PRs, so the required check is never missing.
+  translation review PRs, so the required check is never missing. The release
+  sync PRs get it as a commit status from a dispatched run, as
+  [MAINTAINING.md](MAINTAINING.md#release-notes) explains.
 - The `translation/<code>` branches are deliberately left out of the ruleset.
   Translators' fork PRs target them, and corrections get pushed to them
   directly. Their PRs still run the same checks, and nothing on them reaches

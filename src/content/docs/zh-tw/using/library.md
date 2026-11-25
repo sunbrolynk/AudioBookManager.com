@@ -28,6 +28,12 @@ description: 書、作者和系列，以及 ABM 怎麼追蹤它們的狀態。
 
 只要系列或作者在書庫裡還有書，就不能刪除。請先移除那些書。
 
+## 回到清單
+
+從書、系列或作者頁面返回時，**Books**、**Series**、**Authors** 和 **Audible Library** 會回到你離開時的位置，你開啟的那一項也在原來的地方。所有檢視和手機上都一樣。從選單開啟或重新整理的清單會從頂端開始。
+
+在任何檢視中，Ctrl+H 和 Ctrl+E 會跳到 Books 清單的頂端和底端。按 `?` 查看所有鍵盤快速鍵。
+
 ## 品質設定檔的繼承
 
 一本書的品質設定檔依序來自：它自己的覆寫設定、它的主要系列、它的主要作者，最後才是預設設定檔。請看〈[設定檔](/zh-tw/settings/profiles/)〉。
@@ -51,4 +57,4 @@ description: 書、作者和系列，以及 ABM 怎麼追蹤它們的狀態。
 
 ## 選取
 
-選取多列就能一次對好幾個項目動作：監控、搜尋、加標籤、重新命名、刪除。手機上的用法請看〈[在手機上使用](/zh-tw/phone/)〉。Library 的操作會在頁面上以一行顯示結果。刪除書籍作為任務執行，它的結果（包括實際刪除了多少）會記錄在[通知](/zh-tw/system/notifications/)裡。在 Library Import 工作階段中，被拒絕或失敗的資料夾刪除會在頁面上以一行顯示原因，並同時記錄在[通知](/zh-tw/system/notifications/)裡。
+選取多列就能一次對好幾個項目動作：監控、搜尋、加標籤、重新命名、刪除。Organize 會先預覽每一次移動和重新命名，請看〈[Book Naming](/zh-tw/settings/media-management/#book-naming)〉。手機上的用法請看〈[在手機上使用](/zh-tw/phone/)〉。Library 的操作會在頁面上以一行顯示結果。刪除書籍作為任務執行，它的結果（包括實際刪除了多少）會記錄在[通知](/zh-tw/system/notifications/)裡。在 Library Import 工作階段中，被拒絕或失敗的資料夾刪除會在頁面上以一行顯示原因，並同時記錄在[通知](/zh-tw/system/notifications/)裡。

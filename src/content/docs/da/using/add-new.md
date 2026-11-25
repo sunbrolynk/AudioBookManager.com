@@ -3,7 +3,7 @@ title: Tilføj ny
 description: Søg efter en bog, og tilføj den som ønsket.
 ---
 
-**Library > Add New** søger i Libex efter bøger og tilføjer dem, du vælger. Søgningen matcher titel, forfatter, serie eller en ASIN.
+**Library > Add New** søger i Libex efter bøger og tilføjer dem, du vælger. Søgningen matcher titel, forfatter, serie eller en ASIN. En søgning i **Title** viser først **Best matches**, Libex' bedste match for det, du skrev. Derefter kommer titelresultaterne uden de bøger, der allerede står der, 50 ad gangen. De næste 50 indlæses, når du scroller, eller med **Load more**, indtil Libex ikke har flere, højst 500.
 
 ## Hvad tilføjelse gør
 

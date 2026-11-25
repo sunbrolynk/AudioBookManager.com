@@ -22,4 +22,4 @@ Okładkę książki możesz zresetować do automatycznej, co ją odblokowuje. Po
 ## Pułapki
 
 - Blokada dotyczy tylko okładki. Tytuł, autor i cała reszta dalej się odświeżają.
-- Okładki są pobierane przez twoje proxy, jeśli ustawisz je w **Settings > General > Proxy**.
+- Okładki są pobierane przez twoje proxy, jeśli ustawisz je w **Settings > Network**.

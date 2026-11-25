@@ -28,6 +28,12 @@ Pokud znáš Sonarr: kniha je epizoda, série je řada a seriál v jednom a auto
 
 Smazání série nebo autora se odmítne, dokud má v knihovně ještě knihy. Nejdřív odeber knihy.
 
+## Návrat do seznamu
+
+Když se vrátíš zpět ze stránky knihy, série nebo autora, **Books**, **Series**, **Authors** a **Audible Library** se vrátí tam, kde jsi skončil, a otevřená položka je na stejném místě. Funguje to v každém zobrazení i na telefonu. Seznam otevřený z nabídky nebo po obnovení stránky začíná nahoře.
+
+Ctrl+H a Ctrl+E skočí na začátek a konec seznamu Books v každém zobrazení. Klávesou `?` zobrazíš všechny klávesové zkratky.
+
 ## Dědění profilu kvality
 
 Profil kvality knihy se bere v tomhle pořadí: z jejího vlastního přepsání, z její hlavní série, z jejího hlavního autora a nakonec z výchozího profilu. Viz [Profily](/cs/settings/profiles/).
@@ -51,4 +57,4 @@ Knihy, autoři i série můžou mít štítky. Štítky řídí indexery, oznám
 
 ## Výběr
 
-Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Na telefonu viz [Používání na telefonu](/cs/phone/). Akce v Library ukazují výsledek jako řádek na stránce. Mazání knih běží jako úloha a její výsledek, včetně toho, kolik se skutečně smazalo, se zaznamená do [Oznámení](/cs/system/notifications/). Na relaci Library Import se u odmítnutého nebo selhaného odstranění složky ukáže důvod jako řádek na stránce a zaznamená se také do [Oznámení](/cs/system/notifications/).
+Vyber řádky a pracuj s víc najednou: sledování, hledání, štítky, přejmenování, mazání. Organize nejdřív ukáže náhled každého přesunu a přejmenování, viz [Book Naming](/cs/settings/media-management/#book-naming). Na telefonu viz [Používání na telefonu](/cs/phone/). Akce v Library ukazují výsledek jako řádek na stránce. Mazání knih běží jako úloha a její výsledek, včetně toho, kolik se skutečně smazalo, se zaznamená do [Oznámení](/cs/system/notifications/). Na relaci Library Import se u odmítnutého nebo selhaného odstranění složky ukáže důvod jako řádek na stránce a zaznamená se také do [Oznámení](/cs/system/notifications/).

@@ -3,7 +3,7 @@ title: Yleiset
 description: Isäntä, tietoturva, välityspalvelin, lokit ja varmuuskopiot.
 ---
 
-**Settings > General** sisältää osiot Host, Security, Proxy, Logging ja Backups. Securityllä on [oma sivunsa](/fi/settings/security/).
+**Settings > General** sisältää osiot Host, Security, Logging ja Backups. Securityllä on [oma sivunsa](/fi/settings/security/).
 
 ## Isäntä (Host)
 

@@ -3,7 +3,7 @@ title: Add New
 description: Search for a book and add it as wanted.
 ---
 
-**Library > Add New** searches Libex for books and adds the ones you pick. The search matches title, author, series or an ASIN.
+**Library > Add New** searches Libex for books and adds the ones you pick. The search matches title, author, series or an ASIN. A **Title** search first lists **Best matches**, Libex's best matches for what you typed. The title results follow, without the books already listed there, 50 at a time. The next 50 load as you scroll, or with **Load more**, until Libex has no more, up to 500.
 
 ## What adding does
 

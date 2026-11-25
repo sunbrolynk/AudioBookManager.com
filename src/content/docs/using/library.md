@@ -19,6 +19,8 @@ Each book is an overview row, a poster or a table line (the view switch is in th
 
 ![A book's page: cover, rating, runtime, authors, narrators, series, synopsis and its files](../../../assets/docs/book.jpg)
 
+A book that has translators also shows them in a card after the narrators, on desktop and phone.
+
 ![The Files and Other files sections of a book's page, with codec, bitrate, size and format](../../../assets/docs/book-files.jpg)
 
 ![The Chapters section of a book's page, listing each chapter's title and start time](../../../assets/docs/book-chapters.jpg)
@@ -34,7 +36,7 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 ## Series
 
-**Library > Series** lists every series as Posters or Overview. Each shows a bar such as `3/7 Books`, coloured Downloading, Continuing (everything released is downloaded and more is coming), Complete, Missing Books or Missing Books (Unmonitored). The filter offers All, Monitored Only, Unmonitored, Missing and Wanted. A series page shows the whole catalog, including books you don't own. Filter it to All, In Library or Not in Library. **Add Remaining** or **Select to Add** brings the missing books in as wanted, and **Refresh Series** pulls the catalog again. **Monitor New Books** (All or None, chosen in the Add New dialog) decides whether books that come out later are added as wanted. See [Series tracking](/using/series-tracking/).
+**Library > Series** lists every series as Posters or Overview. Each shows a bar such as `3/7 Books`, coloured Downloading, Continuing (everything released is downloaded and more is coming), Complete, Missing Books or Missing Books (Unmonitored). The filter offers All, Monitored Only, Unmonitored, Missing, Wanted, Complete, One Book Short and Incomplete. Complete, One Book Short and Incomplete list exactly the series that the footer's Complete and Missing Books counts add up to: One Book Short is a series with a single released book still missing, and Incomplete is every series with missing books. A series page shows the whole catalog, including books you don't own. Filter it to All, In Library or Not in Library. **Add Remaining** or **Select to Add** brings the missing books in as wanted, and **Refresh Series** pulls the catalog again. **Monitor New Books** (All or None, chosen in the Add New dialog) decides whether books that come out later are added as wanted. See [Series tracking](/using/series-tracking/).
 
 ![The Series page: one tile per series with how many books are in the library](../../../assets/docs/series.jpg)
 
@@ -49,6 +51,12 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 ![An author's page: bio, quality profile and every book by them, grouped by series](../../../assets/docs/author.jpg)
 
 Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
+
+## Going back to a list
+
+Going back from a book, series or author page puts **Books**, **Series**, **Authors** and **Audible Library** back where you left them, with the item you opened where it was. That works in every view and on a phone. Opening a list from the menu, or reloading it, starts at the top.
+
+Ctrl+H and Ctrl+E jump to the top and bottom of the Books list in any view. Press `?` for every keyboard shortcut.
 
 ## Quality profile inheritance
 
@@ -82,4 +90,4 @@ Discover's custom filters keep a plain text box, because its catalog is filtered
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. Library actions show a result line on the page. An RSS sync reports how many items it added, or an error when no import list is enabled. A refresh from Book Detail reports how many files it found and how many were new. Writing audio tags says how many files it updated, shows a warning when the write finished with warnings, and shows an error when some files failed. Errors and warnings stay until your next action. Deleting books runs as a task. Its result, including how many it actually deleted, is recorded in the [Notification Center](/system/notifications/), and the list refreshes in place. Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed book delete is recorded in the Notification Center with the server's reason. On Series and Authors, a refused or failed delete shows its reason as a line on the page and in the Notification Center. A refused removal on Blocklist or Queue is recorded in the Notification Center with the server's reason. On a Library Import session, a refused or failed folder removal shows its reason as a line on the page and in the Notification Center. On a phone, see [Phone use](/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Library actions show a result line on the page. An RSS sync reports how many items it added, or an error when no import list is enabled. A refresh from Book Detail reports how many files it found and how many were new. Writing audio tags says how many files it updated, shows a warning when the write finished with warnings, and shows an error when some files failed. Errors and warnings stay until your next action. Deleting books runs as a task. Its result, including how many it actually deleted, is recorded in the [Notification Center](/system/notifications/), and the list refreshes in place. Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed book delete is recorded in the Notification Center with the server's reason. On Series and Authors, a refused or failed delete shows its reason as a line on the page and in the Notification Center. A refused removal on Blocklist or Queue is recorded in the Notification Center with the server's reason. On a Library Import session, a refused or failed folder removal shows its reason as a line on the page and in the Notification Center. With **Delete Book Folder** on, deleting a book removes its folder. When that folder holds anything of another book, only the book's own files and sidecars go and the rest stays. That covers another book's files or folder, audio not imported yet (loose beside it or in a folder beneath it), and another book's description, reader or metadata file. A book whose folder is a root folder only ever has its own files removed. Organize previews every move and rename first; see [Book Naming](/settings/media-management/#book-naming). On a phone, see [Phone use](/phone/).

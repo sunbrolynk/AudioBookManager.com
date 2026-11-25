@@ -3,7 +3,7 @@ title: Nieuw toevoegen
 description: Zoek een boek en voeg het toe als gewenst.
 ---
 
-**Library > Add New** zoekt boeken op bij Libex en voegt de boeken toe die je kiest. De zoekopdracht matcht op titel, auteur, serie of een ASIN.
+**Library > Add New** zoekt boeken op bij Libex en voegt de boeken toe die je kiest. De zoekopdracht matcht op titel, auteur, serie of een ASIN. Een zoekopdracht in **Title** toont eerst **Best matches**, de beste treffers van Libex voor wat je typte. Daarna volgen de titelresultaten, zonder de boeken die daar al staan, 50 tegelijk. De volgende 50 laden als je scrolt, of met **Load more**, tot Libex er geen meer heeft, maximaal 500.
 
 ## Wat toevoegen doet
 
