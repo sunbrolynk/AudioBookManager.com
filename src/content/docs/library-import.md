@@ -56,6 +56,8 @@ When copies rank the same, one is still kept: the one with the higher bitrate, t
 
 The ranking follows the profile as it is now, so changing the profile before you import changes which copy is kept.
 
+Copies of one book can each match it. When a copy without a match of its own becomes the kept one, it takes the match of the best-ranked other copy that has one, so a matched copy is never hidden behind an unmatched one. This happens on a scan, on a profile change, when another copy is deleted or taken off the import, and on a rescan, including one that makes a copy already in the list the kept one. A copy that was deleted or taken off the import never gives its match, and a copy that is a library book's own folder keeps its own.
+
 A hidden copy is never added. Its row says why, such as "MP3 copy of a book also here as M4B; this book's quality profile ranks M4B higher." Other reasons read "with no quality profile set, ABM prefers M4B", "both rank the same and the M4B was picked as the better file", or "you chose to import the M4B".
 
 Nothing is hidden, and every copy stays in the list, when:
@@ -65,13 +67,13 @@ Nothing is hidden, and every copy stays in the list, when:
 
 ### Picking a copy
 
-The folder details of a book kept in several formats have a **Formats** section listing each copy. **Import this one instead** on a hidden copy keeps that copy and hides the others behind it. When the copy you pick has no match of its own, it takes the match of the copy it replaced. Your pick stays through a rescan, a change to the profile, and deleting another copy. Picking waits while a rescan or a delete runs.
+The folder details of a book kept in several formats have a **Formats** section listing each copy. **Import this one instead** on a hidden copy keeps that copy and hides the others behind it. When the copy you pick has no match of its own, it takes the match of the copy it replaced, so the match you were looking at stays with your pick. A copy that is a library book's own folder keeps its own. Your pick stays through a rescan, a change to the profile, and deleting another copy. Picking waits while a rescan or a delete runs.
 
 ### Rescan, delete and finishing
 
 **Rescan** ranks a book's copies again when it finds a new one. A better format found on rescan hides the copy you already had, and the rescan's message says how many rows are now hidden.
 
-Deleting the copy that was kept brings back the next best one, which then gets its lookup if it hasn't had one.
+Deleting the copy that was kept brings back the next best one. It takes the match of another copy still in the import, as above, or gets its lookup when none of them has a match and it hasn't had one.
 
 When only hidden copies are left, All says so and offers a way to show them.
 

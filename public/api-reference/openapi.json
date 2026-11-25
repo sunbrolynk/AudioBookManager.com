@@ -3433,7 +3433,7 @@
           "Library Import"
         ],
         "summary": "Rescan Session",
-        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left as they are, save the `format_copy` of a stored row\nwhose copy set a new row joins, ranked again with it; the new rows and\nthose changes are returned.",
+        "description": "Scan the session's folder again and add the folders it does not already account for;\nexisting rows and choices are kept, except a stored row's `format_copy` when a new row joins its copy set.",
         "operationId": "rescan_session_api_library_import_session__session_id__rescan_post",
         "parameters": [
           {
@@ -23622,7 +23622,7 @@
           "status"
         ],
         "title": "CarriedMatch",
-        "description": "The match a newly kept copy took from the copy it replaced, as its stored row now holds it."
+        "description": "The match a newly kept copy took from another copy of its book, as its stored row now holds it."
       },
       "CatalogAddOptions": {
         "properties": {
@@ -26790,6 +26790,20 @@
           "session_closed": {
             "type": "boolean",
             "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
           }
         },
         "type": "object",
@@ -34261,6 +34275,20 @@
           "session_closed": {
             "type": "boolean",
             "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
           }
         },
         "type": "object",
