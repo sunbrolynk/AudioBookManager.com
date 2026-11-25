@@ -29,7 +29,7 @@ A book's root is the root folder its folder sits in. The default root folder is 
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/en-gb/library-import/): copy, hardlink or move. It only preselects the choice; the Add to Library dialog still greyeds Hardlink out when a root the import lands in can't use it. |
+| Library Import | Copy | The default for [Library Import](/en-gb/library-import/): copy, hardlink or move. It only preselects the choice; the Add to Library dialog still greys Hardlink out when a root the import lands in can't use it. |
 | Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |
