@@ -52,7 +52,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
    docker compose up -d
    ```
 
-4. **開く**。`http://your-server:5173` にアクセスします。最初のアクセスでログインの設定を案内してくれます。
+4. **開く**。`http://your-server:5173` にアクセスします。最初のアクセスでセットアップウィザードが開き、ログインと ABM に必要なその他の設定を案内してくれます。[初回セットアップ](/ja/getting-started/first-run-setup/)を参照してください。
 
 </Steps>
 
@@ -62,7 +62,7 @@ import { Aside, Steps } from '@astrojs/starlight/components';
 
 ## 初回の起動
 
-compose ファイルの `TIMEZONE` でタイムゾーンを設定します。それから **Settings** で、**Media Management** にルートフォルダ、**Indexers** にインデクサー、**Download Clients** にダウンロードクライアントを追加します。環境変数とリバースプロキシについては[環境変数](/ja/configuration/)で説明しています。
+compose ファイルの `TIMEZONE` でタイムゾーンを設定します。そのあと ABM を開いて、セットアップウィザードに従ってください。ログインの作成、ABM がインターネットにつなぐ方法と本を調べる先の設定、ルートフォルダの追加までを行います。ダウンロードクライアントとインデクサーもそこで追加できますし、あとから **Settings > Download Clients** と **Settings > Indexers** で追加しても構いません。ウィザードについては[初回セットアップ](/ja/getting-started/first-run-setup/)で説明しています。環境変数とリバースプロキシについては[環境変数](/ja/configuration/)で説明しています。
 
 ## ソースからビルドする
 

@@ -28,6 +28,12 @@ Se você conhece o Sonarr: um livro é um episódio, uma série é temporada e p
 
 Apagar uma série ou um autor é recusado enquanto ainda houver livros dele na biblioteca. Remova os livros primeiro.
 
+## Voltar para uma lista
+
+Ao voltar da página de um livro, série ou autor, **Books**, **Series**, **Authors** e **Audible Library** ficam onde você parou, com o item que você abriu no mesmo lugar. Funciona em todas as visualizações e no celular. Uma lista aberta pelo menu, ou recarregada, começa do topo.
+
+Ctrl+H e Ctrl+E pulam para o início e o fim da lista Books em qualquer visualização. Aperte `?` para ver todos os atalhos de teclado.
+
 ## Herança do perfil de qualidade
 
 O perfil de qualidade de um livro vem, nesta ordem: da substituição do próprio livro, da série principal, do autor principal e, por fim, do perfil padrão. Veja [Perfis](/pt-br/settings/profiles/).
@@ -51,4 +57,4 @@ Livros, autores e séries podem ter tags. As tags orientam indexadores, notifica
 
 ## Seleção
 
-Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. No celular, veja [Uso no celular](/pt-br/phone/).
+Selecione linhas para agir em várias de uma vez: monitorar, buscar, colocar tag, renomear, apagar. O Organize mostra antes uma prévia de cada movimentação e renomeação, veja [Book Naming](/pt-br/settings/media-management/#book-naming). No celular, veja [Uso no celular](/pt-br/phone/).

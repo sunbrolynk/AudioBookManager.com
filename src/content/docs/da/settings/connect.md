@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Egne beskeder
 
-En egen besked omskriver teksten for en hændelse. Vælg et **Format**, et **Cover** (Auto bruger bogens cover, None, eller en Custom URL), skriv **Title** og brødtekst, og klik på en variabel for at indsætte den. Standardskabelonen for hver hændelse er et udgangspunkt. Forhåndsvisningen viser resultatet, og du kan sende en test gennem en forbindelse.
+En egen besked omskriver teksten for en hændelse. Vælg et **Format**, et **Cover** (Auto bruger bogens cover, None, eller en Custom URL), skriv **Title** og brødtekst, og klik på en variabel for at indsætte den. Standardskabelonen for hver hændelse er et udgangspunkt. Forhåndsvisningen viser resultatet, og du kan sende en test gennem en forbindelse. En brugerdefineret cover-URL skal være en offentlig adresse; en adresse på dit LAN afvises.
 
 ## Faldgruber
 

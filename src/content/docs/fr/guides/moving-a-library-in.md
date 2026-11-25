@@ -12,9 +12,9 @@ description: Amène une collection existante dans ABM sans risque.
 ## Les étapes
 
 1. **Library > Library Import**, scanne le dossier.
-2. Lis la liste. Les correspondances affichent un pourcentage. Corrige les lignes **Needs attention** et **Unmatched** avec **Find a match**, ou réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers.
+2. Lis la liste. Les correspondances affichent un pourcentage. Corrige les lignes **Needs a look** et **Unmatched** avec **Find a match**, ou réunis les lignes qui sont un seul livre réparti sur plusieurs dossiers.
 3. Vérifie la couverture et les fichiers en plus de chaque dossier seulement si tu veux changer les valeurs par défaut.
-4. Sélectionne les lignes et ajoute-les. Ça reste deux clics si tu acceptes les valeurs par défaut.
+4. Sélectionne les lignes et ajoute-les.
 5. Surveille la tâche. Le résumé indique combien de fichiers ont été copiés au lieu d'être liés physiquement, et ce qui a échoué.
 
 ## Si ta collection est déjà là où tu la veux
@@ -28,4 +28,5 @@ L'import range chaque livre dans la structure Auteur/Série/Livre d'ABM, sous le
 - Un livre déjà dans la bibliothèque est affiché comme tel. Refuse le doublon avec la réponse qui garde la bibliothèque plutôt que de l'importer deux fois.
 - Refuser un dossier sans audio ne retire que ce qui appartient à cette ligne, et ça part dans la corbeille si elle est activée.
 - Un ASIN trouvé dans une description est un indice, pas une correspondance, sauf si le titre concorde aussi.
+- Une correspondance que les fichiers ne confirment pas, ni par l'ASIN ni par la durée avec la position dans la série ou le titre, attend décochée sous **Needs a look**, et **Select All** la laisse de côté. Voir [Library Import](/fr/library-import/).
 - Après l'import, lance un rafraîchissement pour récupérer les métadonnées à jour, et active l'écriture des fichiers annexes si tu veux qu'Audiobookshelf voie les choix d'ABM. Voir [Fichiers annexes](/fr/using/sidecars/).

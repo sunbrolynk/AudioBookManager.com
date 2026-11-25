@@ -28,6 +28,12 @@ Se conosci Sonarr: un libro è un episodio, una serie è stagione e show insieme
 
 Eliminare una serie o un autore viene rifiutato finché ha ancora libri in libreria. Rimuovi prima i libri.
 
+## Tornare a un elenco
+
+Quando torni indietro dalla pagina di un libro, di una serie o di un autore, **Books**, **Series**, **Authors** e **Audible Library** tornano dove li avevi lasciati, con l'elemento aperto nello stesso punto. Funziona in ogni vista e sul telefono. Un elenco aperto dal menu, o ricaricato, parte dall'inizio.
+
+Ctrl+H e Ctrl+E saltano all'inizio e alla fine dell'elenco Books in qualsiasi vista. Premi `?` per vedere tutte le scorciatoie da tastiera.
+
 ## Ereditarietà del profilo di qualità
 
 Il profilo di qualità di un libro viene, in quest'ordine, da: la sua impostazione specifica, la sua serie principale, il suo autore principale, e infine il profilo predefinito. Vedi [Profili](/it/settings/profiles/).
@@ -51,4 +57,4 @@ Libri, autori e serie possono avere tag. I tag guidano indexer, notifiche, liste
 
 ## Selezione
 
-Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Per il telefono, vedi [Usarlo dal telefono](/it/phone/).
+Seleziona delle righe per agire su più elementi insieme: monitorare, cercare, taggare, rinominare, eliminare. Organize mostra prima un'anteprima di ogni spostamento e rinomina, vedi [Book Naming](/it/settings/media-management/#book-naming). Per il telefono, vedi [Usarlo dal telefono](/it/phone/).

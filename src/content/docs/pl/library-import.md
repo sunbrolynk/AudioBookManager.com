@@ -9,14 +9,45 @@ Import biblioteki skanuje folder z audiobookami, dopasowuje każdy folder do met
 
 1. Zeskanuj folder. Każdy folder z audio staje się wierszem.
 2. Sprawdź dopasowania. Popraw te, które tego wymagają.
-3. Zaznacz wiersze i dodaj je do biblioteki.
+3. Zaznacz wiersze, które chcesz, a potem dodaj je do biblioteki albo usuń.
 
-Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management. Zwykłe skanowanie i dodanie nigdy nie potrzebuje więcej niż dwóch kliknięć.
+Każda opcja to tylko opcjonalne nadpisanie domyślnego ustawienia z Media Management.
+
+## Kiedy dopasowanie jest przyjmowane
+
+Skan przyjmuje dopasowanie tylko wtedy, gdy pliki je potwierdzają:
+
+- ASIN z własnych tagów plików znajduje książkę, albo
+- czas trwania książki różni się od plików najwyżej o trzy minuty, a jej pozycja w serii albo tytuł zgadza się z nimi.
+
+Autor albo pozycja w serii sprzeczna z plikami wyklucza książkę. Gdy pliki pasują równie dobrze do dwóch różnych książek albo nagrań, żadne nie zostaje przyjęte.
+
+Długość plików liczy się tylko wtedy, gdy dało się odczytać każdy plik książki. Jeśli któregoś nie da się zmierzyć, wiersz nie ma długości: dopasowanie może wtedy potwierdzić tylko jego ASIN, a w przeciwnym razie książka czeka w **Needs a look**.
+
+Gdy książka jest w dwóch formatach, każdy format to osobny wiersz i jest mierzony osobno. Książka podzielona na części w różnych formatach to jeden wiersz, gdy ma własny folder, a jej części są sumowane.
+
+Na podstawie długości przyjmowane jest tylko wydanie angielskie albo takie, którego wpis nie podaje języka. Wydanie w innym języku jest przyjmowane tylko wtedy, gdy znajdzie je własny ASIN plików. Książka z odpowiedzią z [pamięci lokalnej](/pl/settings/metadata/) zamiast z wyszukiwania na żywo nigdy nie jest przyjmowana bez ciebie.
+
+Gdy jedno z wyszukiwań wiersza się nie uda, przyjmowane jest tylko dopasowanie po ASIN. Książka znaleziona tylko przez wyszukanie autora jest proponowana tylko wtedy, gdy jej długość pasuje do plików, więc książka bez wpisu pokazuje **Unmatched**, zamiast proponować inną książkę tego autora.
+
+Każde inne dopasowanie nadal jest proponowane, ale wiersz liczy się pod **Needs a look**, startuje bez zaznaczenia, a **Select All** go pomija, dopóki nie potwierdzisz tego dopasowania albo nie wybierzesz innego. Przyjęte dopasowanie do książki, którą masz już w bibliotece, liczy się pod **In library**. Wiersz **Needs a look**, którego propozycją jest książka z biblioteki, zadaje pytanie o bibliotekę dopiero wtedy, gdy potwierdzisz to dopasowanie. Do tego czasu, jeśli go zaznaczysz, blokuje Add jako wiersz, który wciąż potrzebuje decyzji.
+
+Książka w kilku luźnych plikach, które dzielą folder z innymi książkami, na przykład folder autora albo folder, który skanujesz, to jeden wiersz ze wszystkimi częściami. Pliki, które różnią się numerem książki albo tomu, zostają osobnymi wierszami. Części są grupowane według formatu: plik z całą książką obok nich to osobny wiersz, a bitrate w nazwie pliku, np. `128kbps`, nie jest numerem części.
+
+Dwa formaty jednej książki, na przykład `Book.mp3` i `Book.m4b`, to osobne wiersze, niezależnie od tego, czy pliki leżą luzem w folderze, który skanujesz, czy we własnym folderze książki. Każdy wiersz importuje, usuwa i mierzy tylko swój własny plik. Okładka, cue albo inny plik niebędący audio o tej samej nazwie idzie z plikiem książki, gdy książka jest tam w jednym formacie, i zostaje na miejscu, gdy jest tam w dwóch. Tak jest też wtedy, gdy jedna kopia zostaje przeniesiona do biblioteki, a druga usunięta w tym samym imporcie.
+
+Tag zapisany jako `Title: Series, Book 2` jest odczytywany jako tytuł, seria i pozycja w serii.
+
+Pozycja w serii zapisana jako zakres, np. `1-3`, zgadza się z każdą pozycją w jego obrębie. Dwie liczby zapisane inaczej, np. `1, 3`, liczą się jako brak pozycji.
+
+Tag tytułu, albumu, serii, części serii, wykonawcy, wykonawcy albumu, kompozytora lub lektora dłuższy niż 500 znaków jest ignorowany.
+
+**Recent Import Sessions** na stronie Library Import pokazuje przy każdym skanie, ile wierszy ma dopasowanie, licząc książki, które już są w bibliotece, i ile czeka, licząc wiersze, w których musisz jeszcze wybrać dopasowanie.
 
 ## Jak czytać listę
 
-- Podsumowanie pokazuje, ile folderów znaleziono i ile się dopasowało. Listę możesz filtrować: All, Matched, Needs attention, Unmatched, In library albo Failed lookup. Filtr jest zapisywany w adresie strony.
-- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie.
+- Podsumowanie pokazuje, ile folderów znaleziono i ile jest gotowych. Górny pasek ma **Sort** (Folder name, Status, Title, Author, Series, Files) i **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Każdy filtr pokazuje swoją liczbę, a liczby zgadzają się z podsumowaniem. Dopasowanie, które potwierdzisz, nazywa się Ready. Sortowanie i filtr są zapamiętywane na tym urządzeniu. Nie są trzymane w adresie strony, więc link z `?sort=` albo `?filter=` ich nie przenosi.
+- Każdy wiersz pokazuje okładkę, tytuł, autora i serię oraz to, jak pewne jest dopasowanie, w procentach, na przykład "95% match". Każdy wiersz zachowuje wszystkie dopasowania znalezione przez jego wyszukiwania po tytule, autorze i serii. W szczegółach folderu są **Find a match** albo **Change match**, żeby szukać ręcznie. Wyszukiwanie pokazuje najpierw najlepsze dopasowania Libex do tego, co wpisałeś, a potem książki znalezione przez wyszukiwania po tytule, autorze i serii, każdą książkę raz, po 50. Kolejne wczytują się, gdy przewijasz, albo przez **Load more**, aż nie będzie więcej.
 - Kiedy pliki nie mają ASIN-u ani czasu trwania, który potwierdziłby wydanie, szczegóły folderu to pokazują.
 - **Rescan** wyłapuje foldery dodane od czasu skanowania i zachowuje twoje wybory.
 
@@ -24,8 +55,9 @@ ASIN znaleziony w komentarzu albo opisie to tylko podpowiedź. Liczy się jako d
 
 ## Łączenie, rozdzielanie i dodawanie
 
-- Połącz wiersze, które są jedną książką rozbitą na kilka folderów. Rozdzielisz je z powrotem w szczegółach folderu.
-- Add jest zablokowany, a powód widać nad przyciskiem, na przykład "Select at least one folder" albo "2 selected rows still need a decision".
+- Połącz wiersze, które są jedną książką rozbitą na kilka folderów. Rozdzielisz je z powrotem w szczegółach folderu. Dopasowanie połączonego wiersza jest tylko propozycją: liczy się w **Needs a look** i nie jest zaznaczone, dopóki go nie potwierdzisz albo nie wybierzesz innego. Jego długość jest sumą części tylko wtedy, gdy każda część ją ma, a ASIN zostaje tylko wtedy, gdy wszystkie części podają ten sam. Łączenie jest tylko dla części jednej książki: zostaw dwa formaty jednej książki jako osobne wiersze, bo połączenie sumuje obie długości. Wyszukiwanie, które kończy się po połączeniu albo rozdzieleniu jego wiersza, też jest tylko propozycją.
+- **Confirm match** w szczegółach wiersza zaznacza wiersz **Needs a look**, a **Undo confirmation** cofa też to zaznaczenie.
+- Add jest zablokowany, a powód widać nad przyciskiem, na przykład "Select at least one folder" albo "2 selected rows still need a decision". Add zostaje też odrzucony, bez ruszania czegokolwiek, gdy dwa wiersze wskazują ten sam folder albo plik.
 - Wszystko, co usunęłoby albo zastąpiło pliki, najpierw pyta.
 - Wyjście ze strony zapisuje twoje oczekujące zmiany.
 
@@ -45,7 +77,7 @@ Lektor, tytuł albo ścieżka ucięte wielokropkiem otwierają się w całości,
 
 ## Odpowiedzi inne niż import
 
-Na wiersz możesz też odpowiedzieć **keep library** (odrzuć kopię książki, którą biblioteka już ma) albo **remove empty** (odrzuć folder bez audio, w którym wciąż leżą grafiki i pliki sidecar). Czyszczą one tylko to, co należy do danego wiersza. Wszystko, co zawiera audio, zostaje odrzucone. Pliki trafiają do kosza, jeśli jest ustawiony, a log zadania wypisuje każdą usuniętą ścieżkę.
+Na wiersz możesz też odpowiedzieć **keep library** (odrzuć kopię książki, którą biblioteka już ma) albo **remove empty** (odrzuć folder bez audio, w którym wciąż leżą grafiki i pliki sidecar). Czyszczą one tylko to, co należy do danego wiersza. **remove empty** odrzuca wszystko, co zawiera audio. Pliki trafiają do kosza, jeśli jest ustawiony, a log zadania wypisuje każdą usuniętą ścieżkę. Decyzja **keep library** dotyczy tylko tej książki z biblioteki, o którą chodziło: jeśli wybierzesz dopasowanie, które pyta o coś innego albo o inną książkę z biblioteki, wiersz zapyta ponownie. Import sprawdza to jeszcze raz przy uruchomieniu i nic nie jest usuwane, jeśli kopia w bibliotece nie ma już plików ("Your library has no copy of this book to keep") albo jeśli folder zawiera pliki książki z twojej biblioteki ("This folder holds files of a book in your library"). Wiersze, które usuwają pliki zamiast je importować, ruszają dopiero, gdy skończy się każdy import z tego samego Add, a każdy z nich zostaje odrzucony, jeśli któryś z jego plików należy wtedy do książki z twojej biblioteki. Dzięki temu nigdy nie usuwają plików, z których w tej samej partii właśnie dodano książkę.
 
 ## Okładka i dodatkowe pliki dla każdego folderu
 

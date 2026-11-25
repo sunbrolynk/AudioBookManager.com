@@ -35,7 +35,7 @@ clone. It refuses to overwrite a different existing hook or a custom
   live language is complete, against exactly what's being committed.
 - **pre-push** needs a clean tree and the pushed commit checked out, then runs
   the full-history secret scan, `npm ci --ignore-scripts`,
-  `node scripts/audit-new-advisories.mjs` (fails only on advisories the change adds against `origin/dev`), `npm test`, `npm run typecheck`, `npm run build`, the link
+  `node scripts/audit-new-advisories.mjs` (fails only on advisories the change adds against `origin/main`), `npm test`, `npm run typecheck`, `npm run build`, the link
   check and the overflow check. Any failure stops the push.
 
 The hooks are a convenience, not a security boundary. They can be skipped and
@@ -175,6 +175,7 @@ enforces rulesets on public repositories (or with Pro).
 - Allow GitHub-owned actions and actions pinned to a full commit SHA only.
 - Require SHA pinning.
 - Keep the default workflow token read-only.
+- Allow auto-merge (the release sync PRs use it).
 - Require approval for workflows from first-time outside contributors.
 
 **Security.** Turn on secret scanning with push protection, private
@@ -202,12 +203,54 @@ writes `public/releases.json` and one file per release in
 already there, and `--date YYYY-MM-DD` dates a section the changelog leaves
 undated.
 
-`.github/workflows/sync-releases.yml` does this every six hours: when ABM has a
-published release newer than the newest entry, `scripts/sync-releases.sh` opens
-a PR into `dev` with the new entries. It needs an `ABM_RELEASES_TOKEN` Actions
-secret (fine-grained, read-only Contents on the ABM repo) while that repo is
-private; delete the secret once it's public. Scheduled workflows run from
-`main`, so it starts after the next `dev` to `main` release.
+`.github/workflows/sync-releases.yml` does this every six hours with no clicks.
+When ABM has published releases that `main` doesn't have, backports included,
+`scripts/sync-releases.sh` keeps one PR open for the newest of them
+(`releases/main/v<ver>` into `main`). That PR carries every release `main` is
+missing, changes only `public/releases.json` and `src/content/releases/`, and is
+set to squash-merge, so a release reaches the Updates page on its own.
+
+- **One PR at a time.** When a newer release comes out, the script opens the
+  new PR first, then closes the older release PR by number and deletes its
+  branch. When `main` already has every release, any leftover release PR is
+  closed the same way.
+- **Only its own PRs.** The script only looks at PRs that `github-actions`
+  opened from this repository, so a fork PR with the same branch name is never
+  touched.
+- **Closed by hand stays closed.** If I close a release PR myself, the script
+  leaves that release alone. A PR the script closed itself doesn't count.
+- **While a PR waits.** Every run rebuilds the open release PR from the current
+  base and ABM. It pushes only when the base moved, so the up-to-date rule is
+  always met, or when the files differ: a backport published, a release
+  unpublished, or a changelog section or publish date changed. An unchanged PR
+  isn't pushed or checked again.
+- **Checks.** `main` needs the `Site validation` check. A PR opened with the workflow
+  token starts no checks of its own, and a dispatched run's checks don't count
+  for a PR. So the script dispatches `site-checks.yml` on the branch, and that
+  run posts its result as a `Site validation` commit status, which satisfies
+  the **protect main** rule. Auto-merge goes through once it passes. The script
+  skips the dispatch when the PR's commit already has a passing status. It
+  never bypasses the ruleset.
+- **When it fails.** If auto-merge can't be turned on, the run logs a warning
+  with gh's own error. The run stops with an error, and touches none of that branch's PRs, when the
+  ABM release lookup fails or finds no published release, when the lookup for
+  a release PR I closed by hand fails, or when a release date can't be read.
+- **Never behind quietly.** When `main` is still missing a release more than
+  24 hours after ABM published it, the run does its PR work as usual, reads
+  `main` again, and then fails, naming each overdue release, so
+  GitHub emails me. Each missing release is timed on its own, so a fresh backport
+  can't hide an older release, and one this run merged doesn't count. That covers a
+  release PR I closed by hand, a `main` PR whose checks failed, and auto-merge
+  that couldn't be turned on. Merging the release, by its PR or by hand, clears it.
+- **Discord.** `release-discord.yml` posts every merged PR into `main` except
+  bot PRs, dependency bumps (`dependabot/`, `deps/`) and the Updates PRs
+  (`releases/`), so each docs change goes out when it is published.
+- **Settings it relies on.** Allow auto-merge on, Actions allowed to create pull
+  requests, and an `ABM_RELEASES_TOKEN` Actions secret (fine-grained, read-only
+  Contents on the ABM repo) while that repo is private; delete the secret once
+  it's public.
+
+Scheduled workflows run from `main`, so changes to the job start once they merge.
 
 ### API reference
 

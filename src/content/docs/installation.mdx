@@ -44,7 +44,15 @@ The database is a SQLite file in `/config`, so there is no database service to s
    |---|---|---|
    | `/path/to/library` | `/audiobooks` | Your audiobook library. Required. |
    | `/path/to/downloads` | `/downloads` | Where your download client puts finished downloads. Required. |
-   | `/path/to/config` | `/config` | The SQLite database, backups, logs, recycle bins and the generated app secret. Keep it. |
+   | `/path/to/config` | `/config` | The SQLite database, backups, logs, recycle bins, saved covers and the generated app secret. Keep it. |
+
+   Saved covers are kept in `/config/MediaCover` and are removed when their book or author is deleted. To keep them on another disk, mount a folder there as `/config/MediaCover` by adding a line under `volumes:`, below the `/config` line:
+
+   ```yaml
+         - /path/to/covers:/config/MediaCover
+   ```
+
+   A folder linked inside it, such as `MediaCover/books`, is ignored with a warning in the log. Its covers show placeholder art until the nightly cover cache run, then load from the cover host instead of a saved copy until you mount `MediaCover` itself or move the folder back. After that they are saved again within the hour.
 
 3. **Start it.** Run this from the folder with the compose file:
 
@@ -52,7 +60,7 @@ The database is a SQLite file in `/config`, so there is no database service to s
    docker compose up -d
    ```
 
-4. **Open it.** Go to `http://your-server:5173`. The first visit walks you through setting up a login.
+4. **Open it.** Go to `http://your-server:5173`. The first visit opens a setup wizard that creates your login and the rest of what ABM needs. See [First-run setup](/getting-started/first-run-setup/).
 
 </Steps>
 
@@ -62,7 +70,7 @@ If your download client runs in its own container, its downloads folder has to b
 
 ## First run
 
-Set your timezone with `TIMEZONE` in the compose file. Then, in **Settings**, add a root folder under **Media Management**, an indexer under **Indexers** and a download client under **Download Clients**. Environment variables and reverse proxies are covered in [Configuration](/configuration/).
+Set your timezone with `TIMEZONE` in the compose file. Then open ABM and follow the setup wizard. It creates your login, sets how ABM reaches the internet and where it looks books up, and adds a root folder. A download client and an indexer can be added there too, or later under **Settings > Download Clients** and **Settings > Indexers**. The wizard is covered in [First-run setup](/getting-started/first-run-setup/). Environment variables and reverse proxies are covered in [Configuration](/configuration/).
 
 ## Build from source
 

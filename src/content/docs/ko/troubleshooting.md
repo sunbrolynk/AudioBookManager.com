@@ -36,6 +36,10 @@ ABM을 인터넷에 공개하는 것은 권하지 않습니다. Servarr 앱들�
 
 반대 경우도 있어요: 포워딩 헤더를 안 보내는 프록시는 로컬 클라이언트처럼 보여서, 그 프록시를 거치는 모든 요청이 로그인을 건너뛰어요. Authentication Required를 Enabled로 하세요.
 
+## 업데이트 후 페이지가 비어 있거나 오류가 나요
+
+탭을 새로 고치세요. 업데이트 전부터 열려 있던 페이지에는 아직 API 키가 없어요. 업데이트 전부터 열려 있던 Library Import 페이지는 새로 고칠 때까지 변경 사항을 저장할 수 없어요. ABM을 프록시 뒤에서 쓴다면 `/initialize.json`, `/media-cover/`, `/backup/`, `/logfile`도 통과시켜 주세요. [리버스 프록시](/ko/guides/reverse-proxy/)를 참고하세요.
+
 ## 브라우저에서 변경이 거부돼요
 
 프록시가 원래 `Host` 헤더를 넘기는지, 아니면 `X-Forwarded-Host`를 보내는지 확인하세요. [환경 변수](/ko/configuration/#리버스-프록시)를 보세요.
@@ -50,10 +54,10 @@ Content-Security-Policy 헤더는 HTTPS 표지 이미지만 허용해요. 브라
 
 ## 메타데이터 소스를 사용할 수 없어요
 
-추가, 검색, 새로 고침, Discover는 Libex가 있어야 해요. ABM이 응답을 받지 못하면 도서 검색은 "Libex search failed"로, 저자나 시리즈 검색은 "Libex could not be reached; try again shortly"로 실패하고, 빈 목록을 보여 주지 않아요. 원인은 Libex가 내려가 있거나 ABM의 연결이 Libex에 닿지 못하는 경우예요.
+추가, 검색, 새로 고침, Discover에는 메타데이터 소스가 필요합니다. ABM이 응답을 받지 못하면 빈 목록 대신 오류에 소스와 실제 이유(예를 들어 VPN이 꺼져 있음)가 나옵니다. 원인: 소스가 내려가 있거나 ABM의 연결이 닿지 않습니다. 소스에 닿지 않거나 ABM을 거부하면 많은 항목에 대한 새로 고침, 가져오기, 동기화가 멈추고, 알림은 장애 종류마다 한 번이며, 타임아웃 한 번은 그 항목만 건너뜁니다.
 
 1. [ABM 상태 페이지](https://status.audiobookmanager.com)와 [Libex 상태 페이지](https://status.libexdb.com)에서 모두에게 내려가 있는지 확인하세요.
-2. 컨테이너가 인터넷에 나갈 수 있는지, 프록시를 쓴다면 **Settings > General > Proxy** 설정이 맞는지 확인하세요.
+2. 컨테이너가 인터넷에 나갈 수 있는지, 프록시를 쓴다면 **Settings > Network** 설정이 맞는지 확인하세요.
 3. 1분 뒤에 다시 시도하세요.
 4. 그동안에도 책을 직접 추가하고 가져올 수 있어요.
 

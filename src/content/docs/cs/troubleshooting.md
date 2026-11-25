@@ -36,6 +36,10 @@ Log aplikace řekne, o který případ jde:
 
 Opačný případ: proxy, která neposílá žádné přeposílací hlavičky, vypadá jako lokální klient, takže všechno, co přes ni jde, se přihlašovat nemusí. Nastav Authentication Required na Enabled.
 
+## Stránka po aktualizaci zůstane prázdná nebo ukazuje chyby
+
+Načti kartu znovu. Stránka otevřená ještě před aktualizací nemá API klíč. Stránka Library Import, která zůstala otevřená z doby před aktualizací, neuloží změny, dokud ji znovu nenačteš. Pokud máš ABM za proxy, propusť i `/initialize.json`, `/media-cover/`, `/backup/` a `/logfile`. Viz [Reverzní proxy](/cs/guides/reverse-proxy/).
+
 ## Změny z prohlížeče se odmítají
 
 Ověř, že proxy předává původní hlavičku `Host`, nebo posílá `X-Forwarded-Host`. Viz [Konfigurace](/cs/configuration/#reverzní-proxy).
@@ -50,10 +54,10 @@ Zvyš `MAX_REQUEST_BODY_BYTES`. Nižší limit může vynucovat i reverzní prox
 
 ## Zdroj metadat není dostupný
 
-Přidávání, hledání, obnovování a Discover potřebují Libex. Když ABM nedostane odpověď, vyhledávání knih selže s hlášením "Libex search failed" a vyhledávání autorů nebo sérií s hlášením "Libex could not be reached; try again shortly", místo aby ukázalo prázdný seznam. Příčiny: Libex nefunguje, nebo se k němu připojení ABM nedostane.
+Přidávání, hledání, aktualizace a Discover potřebují zdroj metadat. Když ABM nedostane odpověď, chyba pojmenuje zdroj a skutečný důvod, například že VPN neběží, místo prázdného seznamu. Příčiny: zdroj je mimo provoz, nebo se k němu připojení ABM nedostane. Aktualizace, import nebo synchronizace u mnoha položek se zastaví, když je zdroj nedostupný nebo ABM odmítá, s jedním upozorněním na druh výpadku, a jediný timeout přeskočí jen tu položku.
 
 1. Podívej se na [stavovou stránku ABM](https://status.audiobookmanager.com) a [stavovou stránku Libexu](https://status.libexdb.com), jestli to nefunguje pro všechny.
-2. Zkontroluj, že kontejner se dostane na internet a že proxy v **Settings > General > Proxy** je správně, pokud nějakou používáš.
+2. Zkontroluj, že kontejner se dostane na internet a že proxy v **Settings > Network** je správně, pokud nějakou používáš.
 3. Za minutu to zkus znovu.
 4. Mezitím můžeš knihy pořád přidávat a importovat ručně.
 

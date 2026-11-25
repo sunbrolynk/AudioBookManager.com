@@ -36,6 +36,10 @@ Log aplikacji mówi, o który przypadek chodzi:
 
 Odwrotny przypadek: proxy, które nie wysyła żadnych nagłówków przekierowania, wygląda jak lokalny klient, więc wszystko, co przez nie przechodzi, pomija logowanie. Ustaw Authentication Required na Enabled.
 
+## Strona po aktualizacji jest pusta albo pokazuje błędy
+
+Odśwież kartę. Strona otwarta jeszcze przed aktualizacją nie ma klucza API. Strona Library Import otwarta sprzed aktualizacji nie zapisze zmian, dopóki jej nie odświeżysz. Jeśli ABM stoi za proxy, przepuść też `/initialize.json`, `/media-cover/`, `/backup/` i `/logfile`. Zobacz [Reverse proxy](/pl/guides/reverse-proxy/).
+
 ## Przeglądarka dostaje odmowę przy zmianach
 
 Upewnij się, że proxy przekazuje oryginalny nagłówek `Host` albo wysyła `X-Forwarded-Host`. Zobacz [Konfiguracja](/pl/configuration/#reverse-proxy).
@@ -50,10 +54,10 @@ Podnieś `MAX_REQUEST_BODY_BYTES`. Reverse proxy też może mieć niższy limit 
 
 ## Źródło metadanych jest niedostępne
 
-Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują Libexa. Gdy ABM nie dostaje odpowiedzi, wyszukiwanie książek kończy się błędem "Libex search failed", a wyszukiwanie autorów lub serii błędem "Libex could not be reached; try again shortly", zamiast pokazywać pustą listę. Przyczyny: Libex nie działa albo połączenie ABM go nie dosięga.
+Dodawanie, wyszukiwanie, odświeżanie i Discover potrzebują źródła metadanych. Gdy ABM nie dostaje odpowiedzi, błąd wskazuje źródło i prawdziwy powód, na przykład że VPN nie działa, zamiast pokazywać pustą listę. Przyczyny: źródło nie działa albo połączenie ABM go nie osiąga. Odświeżanie, import lub synchronizacja wielu pozycji zatrzymuje się, gdy źródło jest nieosiągalne albo odrzuca ABM, z jednym powiadomieniem na rodzaj awarii, a pojedynczy timeout pomija tylko tę pozycję.
 
 1. Zajrzyj na [stronę statusu ABM](https://status.audiobookmanager.com) i [stronę statusu Libexa](https://status.libexdb.com), żeby sprawdzić, czy nie działa dla wszystkich.
-2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > General > Proxy** jest poprawne, jeśli z niego korzystasz.
+2. Sprawdź, czy kontener ma dostęp do internetu i czy proxy w **Settings > Network** jest poprawne, jeśli z niego korzystasz.
 3. Spróbuj ponownie po minucie.
 4. W międzyczasie nadal możesz dodawać i importować książki ręcznie.
 

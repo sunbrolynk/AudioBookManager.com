@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Custom messages
 
-A custom message rewrites the text for an event. Pick a **Format**, a **Cover** (Auto uses the book cover, None, or a Custom URL), write the **Title** and body, and click a variable to insert it. The default template for each event is a starting point. The preview shows the result, and you can send a test through a connection.
+A custom message rewrites the text for an event. Pick a **Format**, a **Cover** (Auto uses the book cover, None, or a Custom URL), write the **Title** and body, and click a variable to insert it. The default template for each event is a starting point. The preview shows the result, and you can send a test through a connection. A custom cover URL has to be a public address; one on your LAN is refused.
 
 ## Gotchas
 

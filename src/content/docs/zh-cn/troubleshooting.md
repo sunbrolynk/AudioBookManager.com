@@ -36,6 +36,10 @@ description: 最可能遇到的问题和解决办法。
 
 反过来的情况：不发送任何转发头的代理看起来像一个本地客户端，所以经过它的所有请求都会跳过登录。这时请把 Authentication Required 设为 Enabled。
 
+## 更新后页面一片空白或报错
+
+刷新标签页。更新前就打开的页面还没有 API 密钥。更新前就开着的 Library Import 页面要刷新后才能保存修改。如果 ABM 在代理后面，也要放行 `/initialize.json`, `/media-cover/`, `/backup/` 和 `/logfile`。参见[反向代理](/zh-cn/guides/reverse-proxy/)。
+
 ## 浏览器里的修改被拒绝
 
 确认代理传递了原始的 `Host` 请求头，或者发送了 `X-Forwarded-Host`。见 [配置](/zh-cn/configuration/#反向代理)。
@@ -50,10 +54,10 @@ Content-Security-Policy 响应头只允许 HTTPS 的封面图片。到浏览器�
 
 ## 元数据源不可用
 
-添加、搜索、刷新和 Discover 都需要 Libex。ABM 得不到响应时，书籍搜索会以 "Libex search failed" 失败，作者或系列搜索会以 "Libex could not be reached; try again shortly" 失败，而不是显示空列表。原因：Libex 宕机了，或者 ABM 的连接够不到它。
+添加、搜索、刷新和 Discover 都需要元数据来源。ABM 得不到回应时，错误信息会写明来源和真正的原因，比如 VPN 断了，而不是显示空列表。原因：来源宕机，或 ABM 的连接够不到它。来源连不上或拒绝 ABM 时，对大量条目的刷新、导入或同步会停下来，每种故障只发一条通知，单次超时只跳过那一个条目。
 
 1. 看看 [ABM 状态页](https://status.audiobookmanager.com)和 [Libex 状态页](https://status.libexdb.com)，确认是不是对所有人都宕机了。
-2. 检查容器能不能上网；如果你用了代理，检查 **Settings > General > Proxy** 里的设置对不对。
+2. 检查容器能不能上网；如果你用了代理，检查 **Settings > Network** 里的设置对不对。
 3. 过一分钟再试。
 4. 这期间你仍然可以手动添加和导入书籍。
 

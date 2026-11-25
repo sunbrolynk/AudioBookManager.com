@@ -28,6 +28,12 @@ Jeśli znasz Sonarra: książka to odcinek, seria to sezon i serial w jednym, a 
 
 Usunięcie serii albo autora jest blokowane, dopóki mają jeszcze książki w bibliotece. Najpierw usuń książki.
 
+## Powrót do listy
+
+Gdy wracasz ze strony książki, serii albo autora, **Books**, **Series**, **Authors** i **Audible Library** wracają tam, gdzie je zostawiłeś, a otwarta pozycja jest w tym samym miejscu. Działa to w każdym widoku i na telefonie. Lista otwarta z menu albo przeładowana zaczyna się od góry.
+
+Ctrl+H i Ctrl+E przeskakują na początek i koniec listy Books w każdym widoku. Naciśnij `?`, żeby zobaczyć wszystkie skróty klawiszowe.
+
 ## Dziedziczenie profilu jakości
 
 Profil jakości książki bierze się kolejno z: jej własnego nadpisania, jej głównej serii, jej głównego autora, a na końcu z profilu domyślnego. Zobacz [Profile](/pl/settings/profiles/).
@@ -51,4 +57,4 @@ Książki, autorzy i serie mogą mieć tagi. Tagi sterują indekserami, powiadom
 
 ## Zaznaczanie
 
-Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Na telefonie zobacz [Na telefonie](/pl/phone/).
+Zaznacz wiersze, żeby działać na kilku naraz: monitorowanie, wyszukiwanie, tagowanie, zmiana nazw, usuwanie. Organize najpierw pokazuje podgląd każdego przeniesienia i zmiany nazwy, zobacz [Book Naming](/pl/settings/media-management/#book-naming). Na telefonie zobacz [Na telefonie](/pl/phone/).

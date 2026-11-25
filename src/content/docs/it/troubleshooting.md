@@ -36,6 +36,10 @@ Il log dell'app ti dice qual è il caso:
 
 Il caso opposto: un proxy che non invia header di inoltro sembra un client locale, quindi tutto quello che passa da lì salta l'accesso. Imposta Authentication Required su Enabled.
 
+## Una pagina resta vuota o mostra errori dopo l'aggiornamento
+
+Ricarica la scheda. Una pagina aperta da prima dell'aggiornamento non ha ancora la chiave API. Una pagina di Library Import rimasta aperta da prima dell'aggiornamento non può salvare le modifiche finché non la ricarichi. Se ABM sta dietro un proxy, lascia passare anche `/initialize.json`, `/media-cover/`, `/backup/` e `/logfile`. Vedi [Reverse proxy](/it/guides/reverse-proxy/).
+
 ## Le modifiche dal browser vengono rifiutate
 
 Assicurati che il proxy faccia passare l'header `Host` originale, oppure invii `X-Forwarded-Host`. Vedi [Configurazione](/it/configuration/#reverse-proxy).
@@ -50,10 +54,10 @@ Alza `MAX_REQUEST_BODY_BYTES`. Anche un reverse proxy può imporre un limite pi�
 
 ## La fonte dei metadati non è disponibile
 
-Aggiungere, cercare, aggiornare e Discover hanno bisogno di Libex. Quando ABM non riceve risposta, una ricerca di libri fallisce con "Libex search failed" e una ricerca di autori o serie con "Libex could not be reached; try again shortly", invece di mostrare un elenco vuoto. Cause: Libex è fuori uso, oppure la connessione di ABM non lo raggiunge.
+Aggiunte, ricerche, aggiornamenti e Discover hanno bisogno della fonte di metadati. Quando ABM non riceve risposta, l'errore nomina la fonte e il motivo vero, per esempio che la VPN è giù, invece di mostrare un elenco vuoto. Cause: la fonte è giù, o la connessione di ABM non la raggiunge. Un aggiornamento, un'importazione o una sincronizzazione su molti elementi si ferma quando la fonte non è raggiungibile o rifiuta ABM, con una notifica per tipo di interruzione, e un singolo timeout salta solo quell'elemento.
 
 1. Guarda la [pagina di stato di ABM](https://status.audiobookmanager.com) e la [pagina di stato di Libex](https://status.libexdb.com) per vedere se è fuori uso per tutti.
-2. Controlla che il container raggiunga internet e che il proxy in **Settings > General > Proxy** sia a posto, se ne usi uno.
+2. Controlla che il container raggiunga internet e che il proxy in **Settings > Network** sia a posto, se ne usi uno.
 3. Riprova dopo un minuto.
 4. Nel frattempo puoi continuare ad aggiungere e importare libri a mano.
 

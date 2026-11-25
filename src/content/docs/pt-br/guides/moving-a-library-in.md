@@ -12,9 +12,9 @@ description: Traga uma coleção que você já tem para o ABM com segurança.
 ## Os passos
 
 1. **Library > Library Import**, varra a pasta.
-2. Leia a lista. As correspondências mostram uma porcentagem. Corrija as linhas **Needs attention** e **Unmatched** com **Find a match**, ou junte linhas que são um único livro espalhado em várias pastas.
+2. Leia a lista. As correspondências mostram uma porcentagem. Corrija as linhas **Needs a look** e **Unmatched** com **Find a match**, ou junte linhas que são um único livro espalhado em várias pastas.
 3. Confira a capa e os arquivos extras de cada pasta só se quiser mudar os padrões.
-4. Selecione as linhas e adicione. Continua em dois cliques se você aceitar os padrões.
+4. Selecione as linhas e adicione.
 5. Acompanhe a tarefa. O resumo diz quantos arquivos foram copiados em vez de receber hardlink e o que falhou.
 
 ## Se a sua coleção já está onde você quer
@@ -28,4 +28,5 @@ Importar coloca cada livro na estrutura Autor/Série/Livro do próprio ABM, dent
 - Um livro que já está na biblioteca aparece marcado assim. Recuse a duplicata com a resposta keep library em vez de importar duas vezes.
 - Recusar uma pasta sem áudio remove só o que pertence àquela linha e vai para a lixeira, se ela estiver ativada.
 - Um ASIN encontrado numa descrição é uma pista, não uma correspondência, a não ser que o título também bata.
+- Uma correspondência que os arquivos não confirmam, nem pelo ASIN nem pela duração junto com a posição na série ou o título, espera desmarcada em **Needs a look**, e **Select All** a deixa de fora. Veja [Library Import](/pt-br/library-import/).
 - Depois de importar, atualize para puxar os metadados atuais, e ligue a gravação de sidecars se quiser que o Audiobookshelf veja as escolhas do ABM. Veja [Arquivos sidecar](/pt-br/using/sidecars/).

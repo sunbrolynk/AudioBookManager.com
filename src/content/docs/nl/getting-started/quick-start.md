@@ -7,11 +7,11 @@ Dit is de kortste weg van een draaiende container naar een boek waar naar gezoch
 
 ## 1. Inloggen
 
-Bij het eerste bezoek word je door het aanmaken van een login geleid. Tot je dat gedaan hebt, weigert ABM requests. Hoe inloggen daarna werkt, lees je bij [Beveiliging en inloggen](/nl/settings/security/).
+Bij het eerste bezoek opent de installatiewizard, en de eerste stap daarvan maakt je login aan. Tot je dat doet, weigert ABM requests. De wizard dekt ook stap 2 tot en met 4 hieronder, en [Eerste configuratie](/nl/getting-started/first-run-setup/) beschrijft elke stap ervan. Hoe inloggen daarna werkt, staat op [Beveiliging en inloggen](/nl/settings/security/).
 
 ## 2. Kies hoe ABM het internet op gaat
 
-Onder **Settings > General** staat een sectie **Proxy**. Stel daar een proxy in als ABM via een proxy het internet op moet. Komt ABM rechtstreeks op het internet, dan sla je dit over.
+In de wizard is dit de stap Network. Later vind je het onder **Settings > [Network](/nl/settings/network/)**. Kies hoe ABM het internet op komt: een proxy, een WireGuard-tunnel, je eigen VPN-container of Direct. Er gaat niets naar buiten tot je er een kiest.
 
 ## 3. Voeg een rootmap toe
 

@@ -47,9 +47,7 @@ Tagi są twoje. Automatyczne tagi nadają je według reguł (gatunek, lektor, oc
 
 Wszystko, czego ABM dowie się o książce, zostaje we własnej bazie SQLite ABM w `/config`, łącznie z książkami, które potem usuniesz. Zrób kopię tego folderu i masz kopię całego zapisu. Gdy książka już jest w bibliotece, metadane nie zależą od tego, czy źródło jest osiągalne.
 
-:::caution[W późniejszym wydaniu]
-Planowana jest osobna **Local Metadata Library**: opcjonalna kopia wszystkiego, co ABM kiedykolwiek sprawdził, zachowana nawet po tym, jak książka opuści twoją bibliotekę, z własnymi zaplanowanymi kopiami zapasowymi i pobraniem w SQLite.
-:::
+Sekcja **Local Storage** w **Settings > Metadata**, widoczna przy źródle Built-in, to podgląd opcjonalnej lokalnej kopii wszystkiego, co ABM wyszukał. Nie jest jeszcze podłączona.
 
 ## Harmonogramy odświeżania
 

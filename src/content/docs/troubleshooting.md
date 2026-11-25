@@ -42,7 +42,7 @@ Every API call needs the API key, including from your own network and when signe
 
 ## A page stays blank or shows errors after updating
 
-Reload the tab. An open page from before the update does not have the API key yet. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/guides/reverse-proxy/).
+Reload the tab. An open page from before the update does not have the API key yet. A Library Import page left open from before the update can't save its changes until you reload it. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/guides/reverse-proxy/).
 
 ## My calendar subscription stopped updating
 
@@ -62,7 +62,7 @@ Raise `MAX_REQUEST_BODY_BYTES`. A reverse proxy can also enforce a lower limit a
 
 ## The metadata source is unavailable
 
-Adds, searches, refreshes and Discover need Libex. When ABM can't get an answer, a book search fails with "Libex search failed" and an author or series search with "Libex could not be reached; try again shortly", instead of showing an empty list. Causes: Libex is down, or ABM's connection can't reach it.
+Adds, searches, refreshes and Discover need the metadata source. When ABM can't get an answer, the error names the source and the real reason, for example that the VPN is down, instead of showing an empty list. Causes: the source is down, or ABM's connection can't reach it. A refresh, import or sync over many items stops when the source can't be reached or refuses ABM, with one notification per kind of outage, and a single timeout only skips that item.
 
 1. Check the [ABM status page](https://status.audiobookmanager.com) and the [Libex status page](https://status.libexdb.com) to see whether it is down for everyone.
 2. Check that the container can reach the internet, and that a connection is chosen under **Settings > Network**, and that the proxy there is right if you use one.
@@ -95,9 +95,11 @@ Check DNS and that a connection is chosen under **Settings > Network** before an
 
 Audible is refusing download licences for the account. This isn't an ownership problem, and the book is still yours.
 
-ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again on the Audible settings page to start fresh.
+If the error says to sign in to the account again, the account still uses an old device registration that Audible refuses licences to. Waiting won't fix it. On **Settings > Audible**, use Re-authenticate (Sign in again on a phone) on that account. Signing in again keeps its Audible library and your downloaded books, so don't delete the account and add it back. The account also shows a warning there until you do.
 
-Running diagnostics during the hold sends nothing either. The download test just reports the hold.
+If the error says to try again later, the account is up to date and Audible is throttling it for now. ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again to start fresh.
+
+Either way, the account's other downloads still waiting for a licence stop without asking Audible again. Running diagnostics sends nothing either. The download test just reports it.
 
 ## Audible says "invalid redirect URL"
 

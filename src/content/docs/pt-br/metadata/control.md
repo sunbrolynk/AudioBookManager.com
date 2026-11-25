@@ -47,9 +47,7 @@ As tags são suas. As tags automáticas aplicam tags por regras (gênero, narrad
 
 Tudo o que o ABM aprende sobre um livro fica no próprio banco SQLite do ABM em `/config`, inclusive livros que você remover depois. Faça backup dessa pasta e o registro está salvo. Depois que um livro entra, os metadados não dependem de a fonte estar acessível.
 
-:::caution[Chega em uma versão futura]
-Uma **Local Metadata Library** própria está prevista: uma cópia opcional de tudo que o ABM já consultou, mantida mesmo depois que um livro sai da sua biblioteca, com backups agendados próprios e um download em SQLite.
-:::
+A seção **Local Storage** em **Settings > Metadata**, mostrada com a fonte Built-in, é uma prévia de uma cópia local opcional de tudo que o ABM já consultou. Ela ainda não está conectada.
 
 ## Agendamentos de atualização
 
