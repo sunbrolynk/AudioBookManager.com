@@ -37,7 +37,7 @@ description: 在宽度小于 768px 的屏幕上，ABM 是怎么表现的。
 
 - Calendar 是一个按天排列的列表。视图选择器决定显示的时间段。不提供 Agenda。
 - Conversions 有 Queue 和 History 两个标签页。
-- Dashboard 的卡片堆成一列。
+- Dashboard 把总数排成网格，下面是 New、Wanted、Coming 三个标签，以及系列完成情况和你听得最多的朗读者的简短摘要。
 - 对话框会以面板的形式从屏幕底部弹出。
 
 ## 设置

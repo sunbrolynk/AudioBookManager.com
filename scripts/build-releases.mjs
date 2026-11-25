@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Usage: node scripts/build-releases.mjs <CHANGELOG.md> <tag...> [--out public/releases.json] [--repo <ABM checkout>] [--date YYYY-MM-DD] [--keep]
+// Usage: node scripts/build-releases.mjs <CHANGELOG.md> <tag...> [--out public/releases.json] [--repo <ABM checkout>] [--date <ISO timestamp or YYYY-MM-DD>] [--keep]
 // --keep adds the given tags to the releases already on the site instead of replacing them all.
 // Also writes one markdown file per release into src/content/releases/ for the Updates page.
 import { execFileSync } from 'node:child_process';
@@ -10,16 +10,18 @@ const args = process.argv.slice(2);
 let out = new URL('../public/releases.json', import.meta.url).pathname;
 const oi = args.indexOf('--out');
 if (oi !== -1) out = args.splice(oi, 2)[1];
-// With --repo, a version whose changelog heading has no date takes its tag's commit date.
+// With --repo, a version whose changelog heading has no date takes its tag's commit time.
 let repo = null;
 const ri = args.indexOf('--repo');
 if (ri !== -1) repo = args.splice(ri, 2)[1];
 const tagDate = (version) =>
-  execFileSync('git', ['-C', repo, 'log', '-1', '--format=%cs', `v${version}`], { encoding: 'utf8' }).trim() || null;
+  execFileSync('git', ['-C', repo, 'log', '-1', '--format=%cI', `v${version}`], { encoding: 'utf8' }).trim() || null;
 // --date dates an undated changelog section when there is no checkout to read the tag from.
+// A full timestamp is kept, in UTC, so the Updates page can show the day where the reader is.
 let given = null;
 const di = args.indexOf('--date');
 if (di !== -1) given = args.splice(di, 2)[1];
+const stamp = (d) => (d?.includes('T') ? new Date(d).toISOString().replace('.000Z', 'Z') : d);
 const ki = args.indexOf('--keep');
 const keep = ki !== -1;
 if (keep) args.splice(ki, 1);
@@ -46,7 +48,7 @@ const versions = [...new Set(tags.map((t) => t.replace(/^v/, '')))].sort(cmp);
 const fresh = versions.map((version) => {
   const s = sections.get(version);
   if (!s) throw new Error(`no changelog section for ${version}`);
-  return { version, date: s.date ?? (repo ? tagDate(version) : given), notes_markdown: s.notes, url: `${REPO}/releases/tag/v${version}` };
+  return { version, date: stamp(s.date ?? (repo ? tagDate(version) : given)), notes_markdown: s.notes, url: `${REPO}/releases/tag/v${version}` };
 });
 
 const dir = new URL('../src/content/releases/', import.meta.url).pathname;

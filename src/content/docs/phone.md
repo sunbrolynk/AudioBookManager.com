@@ -43,7 +43,7 @@ In selection mode, tapping a row selects it. The selection bar replaces the bott
 
 ## Book, series and author pages
 
-A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. On a series page, tapping a book you don't own opens its actions.
+A book page has Search, Interactive, Import (Convert once it has files) and Refresh at the top, with Edit and an Actions sheet next to them, and Overview, Files, Chapters and History tabs below. The Overview tab lists the authors, narrators and, when the book has them, translators. On a series page, tapping a book you don't own opens its actions.
 
 ![A book's page on a phone](../../assets/docs/phone-book.jpg)
 
@@ -56,7 +56,7 @@ A book page has Search, Interactive, Import (Convert once it has files) and Refr
 - Calendar is a day-by-day list. The view picker sets the period. Agenda is not offered.
 - Conversions has Queue and History tabs. Pause queue is an icon in the top bar beside the plus button. Tap a job for its progress and source files, and a failed job has Retry on its row.
 - Add New opens a sheet with the book's cover. When the book is in a series, **Add whole series** adds every book in it.
-- Dashboard cards stack in one column.
+- The Dashboard shows the totals in a grid, with New, Wanted and Coming tabs below it and a short summary of series completion and your most-heard narrator.
 - Dialogs open as sheets from the bottom of the screen.
 
 ![Discover on a phone](../../assets/docs/phone-discover.jpg)

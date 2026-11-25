@@ -42,7 +42,7 @@ Every API call needs the API key, including from your own network and when signe
 
 ## A page stays blank or shows errors after updating
 
-Reload the tab. An open page from before the update does not have the API key yet. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/guides/reverse-proxy/).
+Reload the tab. An open page from before the update does not have the API key yet. A Library Import page left open from before the update can't save its changes until you reload it. If you proxy ABM, also pass `/initialize.json`, `/media-cover/`, `/backup/` and `/logfile`. See [Reverse proxy](/guides/reverse-proxy/).
 
 ## My calendar subscription stopped updating
 
@@ -95,9 +95,11 @@ Check DNS and that a connection is chosen under **Settings > Network** before an
 
 Audible is refusing download licences for the account. This isn't an ownership problem, and the book is still yours.
 
-ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again on the Audible settings page to start fresh.
+If the error says to sign in to the account again, the account still uses an old device registration that Audible refuses licences to. Waiting won't fix it. On **Settings > Audible**, use Re-authenticate (Sign in again on a phone) on that account. Signing in again keeps its Audible library and your downloaded books, so don't delete the account and add it back. The account also shows a warning there until you do.
 
-Running diagnostics during the hold sends nothing either. The download test just reports the hold.
+If the error says to try again later, the account is up to date and Audible is throttling it for now. ABM holds attempts for that account for 48 hours, and the error shows when the hold ends. Nothing is sent to Audible in the meantime. Wait it out, or sign the account in again to start fresh.
+
+Either way, the account's other downloads still waiting for a licence stop without asking Audible again. Running diagnostics sends nothing either. The download test just reports it.
 
 ## Audible says "invalid redirect URL"
 

@@ -36,6 +36,10 @@ App 記錄檔會告訴你是哪一種情況：
 
 相反的情況：不送任何轉送標頭的代理看起來會像區域網路的用戶端，所以經過它的所有請求都會免登入。請把 Authentication Required 設成 Enabled。
 
+## 更新後頁面一片空白或出現錯誤
+
+重新整理分頁。更新前就開著的頁面還沒有 API 金鑰。更新前就開著的 Library Import 頁面要重新整理後才能儲存變更。如果 ABM 在代理後面，也要放行 `/initialize.json`, `/media-cover/`, `/backup/` 和 `/logfile`。請參閱[反向代理](/zh-tw/guides/reverse-proxy/)。
+
 ## 從瀏覽器做的變更被拒絕
 
 確認代理有轉送原本的 `Host` 標頭，或是有送 `X-Forwarded-Host`。請看〈[設定](/zh-tw/configuration/#反向代理)〉。

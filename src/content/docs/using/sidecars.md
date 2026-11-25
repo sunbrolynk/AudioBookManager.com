@@ -7,10 +7,10 @@ A sidecar is a small file beside the audio. Audiobookshelf and other players rea
 
 | File | Contents | Setting |
 |---|---|---|
-| `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else. It says whether the book is explicit and whether it is abridged; a flag ABM does not know is left out, so Audiobookshelf keeps its own value. It carries no tags, so tags you set in Audiobookshelf stay | None, always written |
+| `metadata.json` | Audiobookshelf's own metadata file, plus an `abm` block that marks it as ABM's. Audiobookshelf reads it before anything else. It lists the book's translators next to its authors and narrators. It says whether the book is explicit and whether it is abridged; a flag ABM does not know is left out, so Audiobookshelf keeps its own value. It carries no tags, so tags you set in Audiobookshelf stay | None, always written |
 | `<audio file name>.nfo` | The title, author, narrator and series lines Audiobookshelf reads. Named after the book's first audio file, or after the book when it has no audio. ABM always overwrites it | None, always written |
 | `cover.jpg` | The book's cover. Not written when the folder already has a `cover.*` | Cover image |
-| `.opf` | Metadata in OPF form. Named after the book's first audio file (for example `Dune.opf`), or after the book when it has no audio | Book info |
+| `.opf` | Metadata in OPF form, with translators marked as translators. Named after the book's first audio file (for example `Dune.opf`), or after the book when it has no audio | Book info |
 | `desc.txt` | The description, without HTML. Skipped when there is none | Description |
 | `reader.txt` | The narrators. Skipped when there are none | Narrator |
 
@@ -44,4 +44,5 @@ A hardlinked import keeps the original untouched. When ABM writes any of these f
 - A release `.nfo` is not imported unless you choose it, because ABM writes its own and Audiobookshelf reads one per book.
 - A `metadata.json` is handled by ABM when it carries ABM's own block. Another tool's `metadata.json` follows the Book info files setting.
 - In a folder shared by several books, only files named after this book's audio belong to it.
+- A new sidecar or saved cover gets the permissions your system's umask allows, as any new file would. A file ABM replaces keeps the permissions it had.
 - Deleting a book's files removes its whole folder when no other book uses it. In a folder shared with another book, only that book's own files and ABM's `.opf`, `.nfo`, `desc.txt`, `reader.txt` and `metadata.json` go.

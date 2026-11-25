@@ -24,7 +24,7 @@ En forfatter eller en plass i serien som motsier filene, utelukker en bok. Passe
 
 Filenes spilletid teller bare når hver fil i boka kunne leses. Kan én ikke måles, har raden ingen spilletid: Da kan bare ASIN-en bekrefte et treff, og ellers venter boka under **Needs a look**.
 
-Når en bok finnes i to formater, er hvert format en egen rad og måles for seg. En bok delt i deler i ulike formater er én rad når den har sin egen mappe, og delene legges sammen. En fullført nedlasting med én bok i to formater måles som én kopi og har ingen spilletid å matche på når kopienes lengde skiller seg med mer enn tre minutter.
+Når en bok finnes i to formater, er hvert format en egen rad og måles for seg. En bok delt i deler i ulike formater er én rad når den har sin egen mappe, og delene legges sammen.
 
 Bare en engelsk utgave, eller en der oppføringen ikke oppgir språk, godtas på spilletid. En utgave på et annet språk godtas bare når filenes egen ASIN finner den. En bok som er besvart fra [lokal lagring](/nb/settings/metadata/) i stedet for et direkte oppslag, godtas aldri uten deg.
 
@@ -47,7 +47,7 @@ En tittel-, album-, serie-, seriedel-, artist-, albumartist-, komponist- eller i
 ## Lese lista
 
 - Sammendraget viser hvor mange mapper som ble funnet, og hvor mange som er klare. Topplinjen har **Sort** (Folder name, Status, Title, Author, Series, Files) og **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Hvert filter viser antallet sitt, og tallene stemmer med sammendraget. Et treff du har bekreftet, heter Ready. Sortering og filter blir husket på denne enheten. De blir ikke lagret i adressen til siden, så en lenke med `?sort=` eller `?filter=` tar dem ikke med.
-- Hver rad viser cover, tittel, forfatter og serie, og hvor sikkert treffet er i prosent, for eksempel "95% match". Mappedetaljene har **Find a match** eller **Change match** for å søke for hånd.
+- Hver rad viser cover, tittel, forfatter og serie, og hvor sikkert treffet er i prosent, for eksempel "95% match". Hver rad beholder alle treffene som søkene på tittel, forfatter og serie finner. Mappedetaljene har **Find a match** eller **Change match** for å søke for hånd. Søket viser først Libex sine beste treff for det du skrev, og deretter bøkene som søkene på tittel, forfatter og serie finner, hver bok én gang, 50 om gangen. Flere lastes inn når du blar, eller med **Load more**, til det ikke er flere.
 - Når filene ikke har noen ASIN eller spilletid som kan bekrefte utgaven, sier mappedetaljene fra om det.
 - **Rescan** plukker opp mapper som er lagt til siden skanningen, og beholder valgene dine.
 
@@ -55,7 +55,7 @@ En ASIN som står i en kommentar eller beskrivelse, er bare et hint. Den teller 
 
 ## Slå sammen, dele opp og legge til
 
-- Slå sammen rader som er én bok fordelt på flere mapper. Del dem opp igjen fra mappedetaljene. Treffet til den sammenslåtte raden er bare et forslag: Den teller under **Needs a look** og er ikke avhuket før du bekrefter det eller velger et annet. Spilletiden er delenes sum bare når hver del har en, og den beholder en ASIN bare når alle delene oppgir den samme. En bok slått sammen fra to formater med de samme filnavnene teller én gang og får spilletiden til det lengste formatet, eller ingen når de skiller seg med mer enn tre minutter eller en av de sammenslåtte radene allerede har begge formatene. Et oppslag som blir ferdig etter at du har slått sammen eller delt opp raden, er også bare et forslag.
+- Slå sammen rader som er én bok fordelt på flere mapper. Del dem opp igjen fra mappedetaljene. Treffet til den sammenslåtte raden er bare et forslag: Den teller under **Needs a look** og er ikke avhuket før du bekrefter det eller velger et annet. Spilletiden er delenes sum bare når hver del har en, og den beholder en ASIN bare når alle delene oppgir den samme. Sammenslåing er bare for delene av én bok: La to formater av én bok være egne rader, for en sammenslåing legger sammen begge spilletidene. Et oppslag som blir ferdig etter at du har slått sammen eller delt opp raden, er også bare et forslag.
 - **Confirm match** i en rads detaljer huker av en **Needs a look**-rad, og **Undo confirmation** fjerner avhukingen igjen.
 - Add blir blokkert med en grunn som vises over knappen, for eksempel "Select at least one folder" eller "2 selected rows still need a decision". Add blir også avvist, uten at noe røres, når to rader gjør krav på samme mappe eller fil.
 - Alt som ville fjerne eller erstatte filer, spør først.

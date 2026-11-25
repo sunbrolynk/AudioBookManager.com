@@ -28,3 +28,9 @@ test('without --keep the published list is replaced', () => {
   assert.deepEqual(json().map((r) => r.version), ['0.2.0']);
   assert.equal(existsSync(join(site, 'src/content/releases/0.1.0.md')), false);
 });
+
+test('a published timestamp is kept whole, in UTC', () => {
+  run('v0.2.0', '--date', '2026-11-18T19:30:00-07:00');
+  assert.equal(json()[0].date, '2026-11-19T02:30:00Z');
+  assert.match(readFileSync(join(site, 'src/content/releases/0.2.0.md'), 'utf8'), /^date: '2026-11-19T02:30:00Z'$/m);
+});

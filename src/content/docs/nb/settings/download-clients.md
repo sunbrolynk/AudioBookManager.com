@@ -35,6 +35,8 @@ Hvilke felt som vises, kommer an på klienten.
 | Redownload Failed | på | Blokker en utgivelse som feilet, og søk igjen |
 | Redownload Failed from Interactive Search | på | Det samme, for utgivelser du valgte for hånd |
 
+Når en fullført nedlasting har den samme boka mer enn én gang, i ulike formater, importerer ABM bare kopien bokas kvalitetsprofil rangerer høyest. Når nedlastingen matches mot en bok, måles også bare én kopi, den standard kvalitetsprofil rangerer høyest. Formater profilen rangerer likt eller ikke har med, går i rekkefølgen M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA. ABM lar de andre kopiene ligge i nedlastingen; de slettes bare hvis **Also Delete Files** fjerner nedlastingen etter import. En enkelt fil ved siden av et sett deler teller bare som en ekstra kopi når spilletidene stemmer; ellers er de deler av én bok. Omslaget og de andre ekstrafilene blir fortsatt med kopien ABM tar. Når mappen til nedlastingen også har lyd fra en annen bok, blir bare ekstrafiler som er oppkalt etter den importerte lyden, med.
+
 Om importer hardlenker eller kopierer, styres av **Use Hardlinks instead of Copy** i [Mediehåndtering](/nb/settings/media-management/). Hvis mappen til klienten ikke har samme sti som ABM ser, legger du til en remote path mapping.
 
 ## Eksterne stitilordninger (Remote path mappings)

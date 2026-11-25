@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Egne meldinger
 
-En egen melding skriver om teksten for en hendelse. Velg et **Format**, et **Cover** (Auto bruker coveret til boka, None, eller en Custom URL), skriv **Title** og brødteksten, og klikk på en variabel for å sette den inn. Standardmalen for hver hendelse er et utgangspunkt. Forhåndsvisningen viser resultatet, og du kan sende en test gjennom en tilkobling.
+En egen melding skriver om teksten for en hendelse. Velg et **Format**, et **Cover** (Auto bruker coveret til boka, None, eller en Custom URL), skriv **Title** og brødteksten, og klikk på en variabel for å sette den inn. Standardmalen for hver hendelse er et utgangspunkt. Forhåndsvisningen viser resultatet, og du kan sende en test gjennom en tilkobling. En egen cover-URL må være en offentlig adresse; en adresse på LAN-et ditt avvises.
 
 ## Fallgruver
 

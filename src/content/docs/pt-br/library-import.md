@@ -24,7 +24,7 @@ Um autor ou uma posição na série que contradiz os arquivos descarta um livro.
 
 A duração dos arquivos só conta quando deu para ler cada arquivo do livro. Se um não puder ser medido, a linha fica sem duração: só o ASIN dela pode confirmar uma correspondência e, se não, o livro espera em **Needs a look**.
 
-Quando um livro está em dois formatos, cada formato é uma linha própria e é medido separado. Um livro dividido em partes de formatos diferentes é uma linha só quando tem pasta própria, e as partes são somadas. Um download concluído com um livro em dois formatos é medido como uma cópia só, e fica sem duração para a correspondência se a duração das cópias diferir em mais de três minutos.
+Quando um livro está em dois formatos, cada formato é uma linha própria e é medido separado. Um livro dividido em partes de formatos diferentes é uma linha só quando tem pasta própria, e as partes são somadas.
 
 Pela duração, só é aceita uma edição em inglês, ou uma cuja ficha não informa idioma. Uma edição em outro idioma só é aceita quando o próprio ASIN dos arquivos a encontra. Um livro respondido pelo [armazenamento local](/pt-br/settings/metadata/) em vez de uma consulta ao vivo nunca é aceito sem você.
 
@@ -47,7 +47,7 @@ Uma tag de título, álbum, série, parte da série, artista, artista do álbum,
 ## Lendo a lista
 
 - O resumo mostra quantas pastas foram encontradas e quantas estão prontas. A barra do topo tem **Sort** (Folder name, Status, Title, Author, Series, Files) e **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Cada filtro mostra a sua contagem, e as contagens batem com o resumo. Uma correspondência que você confirmou se chama Ready. A ordenação e o filtro ficam lembrados neste dispositivo. Eles não ficam no endereço da página, então um link com `?sort=` ou `?filter=` não leva os dois junto.
-- Cada linha mostra a capa, o título, o autor e a série, e o quanto a correspondência é confiável em porcentagem, como "95% match". Os detalhes da pasta têm **Find a match** ou **Change match** para buscar à mão.
+- Cada linha mostra a capa, o título, o autor e a série, e o quanto a correspondência é confiável em porcentagem, como "95% match". Cada linha guarda todas as correspondências que as buscas por título, autor e série encontram. Os detalhes da pasta têm **Find a match** ou **Change match** para buscar à mão. A busca mostra primeiro as melhores correspondências do Libex para o que você digitou e depois os livros que as buscas por título, autor e série encontram, cada livro uma vez só, de 50 em 50. Mais resultados carregam quando você rola a página ou com **Load more**, até não haver mais.
 - Quando os arquivos não têm ASIN nem duração para confirmar a edição, os detalhes da pasta avisam.
 - **Rescan** pega as pastas adicionadas depois da varredura e mantém as suas escolhas.
 
@@ -55,7 +55,7 @@ Um ASIN encontrado num comentário ou numa descrição é só uma pista. Ele só
 
 ## Juntar, dividir e adicionar
 
-- Junte linhas que são um único livro espalhado em várias pastas. Separe de novo pelos detalhes da pasta. A correspondência da linha juntada é só uma sugestão: ela conta em **Needs a look** e começa desmarcada até você confirmar ou escolher outra. A duração dela é o total das partes só quando cada parte tem uma, e ela mantém um ASIN só quando todas as partes dão o mesmo. Um livro juntado a partir de dois formatos com os mesmos nomes de arquivo conta uma vez só: fica com a duração do formato mais longo, ou nenhuma se diferirem em mais de três minutos ou se uma das linhas juntadas já tiver os dois formatos. Uma consulta que termina depois que você junta ou divide a linha dela também é só uma sugestão.
+- Junte linhas que são um único livro espalhado em várias pastas. Separe de novo pelos detalhes da pasta. A correspondência da linha juntada é só uma sugestão: ela conta em **Needs a look** e começa desmarcada até você confirmar ou escolher outra. A duração dela é o total das partes só quando cada parte tem uma, e ela mantém um ASIN só quando todas as partes dão o mesmo. Juntar serve só para as partes de um mesmo livro: deixe dois formatos de um livro como linhas separadas, porque juntar soma as duas durações. Uma consulta que termina depois que você junta ou divide a linha dela também é só uma sugestão.
 - **Confirm match** nos detalhes de uma linha marca uma linha **Needs a look**, e **Undo confirmation** desfaz essa marcação também.
 - Adicionar fica bloqueado com o motivo mostrado acima do botão, como "Select at least one folder" ou "2 selected rows still need a decision". Adicionar também é recusado, sem mexer em nada, quando duas linhas reivindicam a mesma pasta ou o mesmo arquivo.
 - Tudo o que removeria ou substituiria arquivos pergunta antes.

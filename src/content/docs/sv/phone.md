@@ -37,7 +37,7 @@ En boksida har Search, Interactive, Import (Convert när den har filer) och Refr
 
 - Calendar är en lista dag för dag. Vyväljaren ställer in perioden. Agenda finns inte.
 - Conversions har flikarna Queue och History.
-- Korten på Dashboard staplas i en kolumn.
+- Dashboard visar totalerna i ett rutnät, med flikarna New, Wanted och Coming under och en kort sammanfattning av serier och den uppläsare du lyssnar mest på.
 - Dialoger öppnas som ark från skärmens nederkant.
 
 ## Inställningar

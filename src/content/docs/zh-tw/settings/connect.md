@@ -29,7 +29,7 @@ On Grab、On Import、On Upgrade、On Conversion、On Health Issue、On Health R
 
 ## 自訂訊息
 
-自訂訊息會改寫某個事件的文字。選一個 **Format**、一個 **Cover**（Auto 用書的封面，或 None，或 Custom URL），寫好 **Title** 和內文，點一下變數就能插入。每個事件的預設範本可以當成起點。預覽會顯示結果，你也可以透過某個連線送出測試。
+自訂訊息會改寫某個事件的文字。選一個 **Format**、一個 **Cover**（Auto 用書的封面，或 None，或 Custom URL），寫好 **Title** 和內文，點一下變數就能插入。每個事件的預設範本可以當成起點。預覽會顯示結果，你也可以透過某個連線送出測試。自訂封面 URL 必須是公開位址，區域網路裡的位址會被拒絕。
 
 ## 要注意的地方
 

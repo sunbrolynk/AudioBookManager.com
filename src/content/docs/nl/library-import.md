@@ -24,7 +24,7 @@ Een auteur of plaats in de serie die de bestanden tegenspreekt, sluit een boek u
 
 De speelduur van de bestanden telt alleen als elk bestand van het boek gelezen kon worden. Is er één niet te meten, dan heeft de rij geen speelduur: alleen de ASIN kan dan een match bevestigen, en anders wacht het boek onder **Needs a look**.
 
-Staat een boek er in twee formaten, dan is elk formaat een eigen rij en wordt het apart gemeten. Een boek in delen in verschillende formaten is één rij als het een eigen map heeft, en de delen worden opgeteld. Een voltooide download met één boek in twee formaten wordt gemeten als één kopie, en heeft geen speelduur om op te matchen als de lengtes van de kopieën meer dan drie minuten verschillen.
+Staat een boek er in twee formaten, dan is elk formaat een eigen rij en wordt het apart gemeten. Een boek in delen in verschillende formaten is één rij als het een eigen map heeft, en de delen worden opgeteld.
 
 Op speelduur wordt alleen een Engelse editie aangenomen, of een waarvan de vermelding geen taal noemt. Een editie in een andere taal wordt alleen aangenomen als de eigen ASIN van de bestanden haar vindt. Een boek dat uit [lokale opslag](/nl/settings/metadata/) is beantwoord in plaats van een live opzoeking, wordt nooit zonder jou aangenomen.
 
@@ -47,7 +47,7 @@ Een tag voor titel, album, serie, seriedeel, artiest, albumartiest, componist of
 ## De lijst lezen
 
 - De samenvatting laat zien hoeveel mappen er gevonden zijn en hoeveel er klaar zijn. De balk bovenaan heeft **Sort** (Folder name, Status, Title, Author, Series, Files) en **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Elk filter toont zijn aantal, en de aantallen kloppen met de samenvatting. Een match die je hebt bevestigd heet Ready. Sortering en filter worden op dit apparaat onthouden. Ze staan niet in het paginaadres, dus een link met `?sort=` of `?filter=` neemt ze niet mee.
-- Elke rij toont de cover, titel, auteur en serie, en hoe zeker de match is als percentage, zoals "95% match". In de mapdetails staat **Find a match** of **Change match** om zelf te zoeken.
+- Elke rij toont de cover, titel, auteur en serie, en hoe zeker de match is als percentage, zoals "95% match". Elke rij houdt alle treffers die de zoekopdrachten op titel, auteur en serie vinden. In de mapdetails staat **Find a match** of **Change match** om zelf te zoeken. De zoekopdracht toont eerst de beste treffers van Libex voor wat je typte, en daarna de boeken die de zoekopdrachten op titel, auteur en serie vinden, elk boek één keer, 50 tegelijk. Er laden er meer als je scrolt, of met **Load more**, tot er geen meer zijn.
 - Hebben de bestanden geen ASIN of speelduur om de editie te bevestigen, dan staat dat in de mapdetails.
 - **Rescan** pikt mappen op die na de scan zijn toegevoegd en houdt je keuzes vast.
 
@@ -55,7 +55,7 @@ Een ASIN uit een commentaar of beschrijving is alleen een hint. Het telt pas als
 
 ## Samenvoegen, splitsen en toevoegen
 
-- Voeg rijen samen die één boek zijn, verspreid over meerdere mappen. Splits ze weer vanuit de mapdetails. De match van de samengevoegde rij is alleen een suggestie: ze telt onder **Needs a look** en staat niet aangevinkt tot je haar bevestigt of een andere kiest. Haar speelduur is het totaal van de delen alleen als elk deel er een heeft, en ze houdt een ASIN alleen als alle delen dezelfde geven. Een boek samengevoegd uit twee formaten met dezelfde bestandsnamen telt één keer en krijgt de speelduur van het langste formaat, of geen als ze meer dan drie minuten verschillen of een van de samengevoegde rijen al beide formaten bevat. Een opzoeking die klaar is nadat je haar rij hebt samengevoegd of gesplitst, is ook alleen een suggestie.
+- Voeg rijen samen die één boek zijn, verspreid over meerdere mappen. Splits ze weer vanuit de mapdetails. De match van de samengevoegde rij is alleen een suggestie: ze telt onder **Needs a look** en staat niet aangevinkt tot je haar bevestigt of een andere kiest. Haar speelduur is het totaal van de delen alleen als elk deel er een heeft, en ze houdt een ASIN alleen als alle delen dezelfde geven. Samenvoegen is alleen voor de delen van één boek: laat twee formaten van één boek aparte rijen, want samenvoegen telt beide speelduren op. Een opzoeking die klaar is nadat je haar rij hebt samengevoegd of gesplitst, is ook alleen een suggestie.
 - **Confirm match** in de details van een rij vinkt een **Needs a look**-rij aan, en **Undo confirmation** haalt dat vinkje weer weg.
 - Toevoegen wordt geblokkeerd met een reden boven de knop, zoals "Select at least one folder" of "2 selected rows still need a decision". Toevoegen wordt ook geweigerd, zonder iets aan te raken, als twee rijen dezelfde map of hetzelfde bestand claimen.
 - Alles wat bestanden zou verwijderen of vervangen, vraagt eerst om bevestiging.

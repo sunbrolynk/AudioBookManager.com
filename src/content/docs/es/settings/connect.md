@@ -29,7 +29,7 @@ On Grab, On Import, On Upgrade, On Conversion, On Health Issue, On Health Restor
 
 ## Mensajes personalizados
 
-Un mensaje personalizado reescribe el texto de un evento. Elige un **Format**, una **Cover** (Auto usa la portada del libro, None, o una Custom URL), escribe el **Title** y el cuerpo, y haz clic en una variable para insertarla. La plantilla por defecto de cada evento es un punto de partida. La vista previa muestra el resultado, y puedes enviar una prueba a través de una conexión.
+Un mensaje personalizado reescribe el texto de un evento. Elige un **Format**, una **Cover** (Auto usa la portada del libro, None, o una Custom URL), escribe el **Title** y el cuerpo, y haz clic en una variable para insertarla. La plantilla por defecto de cada evento es un punto de partida. La vista previa muestra el resultado, y puedes enviar una prueba a través de una conexión. La URL de una portada personalizada tiene que ser una dirección pública; una de tu LAN se rechaza.
 
 ## Detalles a tener en cuenta
 

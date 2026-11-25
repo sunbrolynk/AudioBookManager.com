@@ -50,6 +50,12 @@ If you know Sonarr: a book is an episode, a series is a season-and-show in one, 
 
 Deleting a series or author also deletes the books it has in the library. The dialog lists those books first, and flags any that are co-authored or also in another series. When there are books you type `delete` to confirm. Two boxes are off by default: one stops lists from adding these books again, and the other deletes the book folders and their contents from disk. Afterwards ABM removes any other author or series left with no books, except ones you added yourself.
 
+## Going back to a list
+
+Going back from a book, series or author page puts **Books**, **Series**, **Authors** and **Audible Library** back where you left them, with the item you opened where it was. That works in every view and on a phone. Opening a list from the menu, or reloading it, starts at the top.
+
+Ctrl+H and Ctrl+E jump to the top and bottom of the Books list in any view. Press `?` for every keyboard shortcut.
+
 ## Quality profile inheritance
 
 A book's quality profile comes from, in order: its own override, its primary series, its primary author, then the default profile. See [Profiles](/en-gb/settings/profiles/).
@@ -82,4 +88,4 @@ Discover's custom filters keep a plain text box, because its catalogue is filter
 
 ## Selection
 
-Select rows to act on several at once: monitor, search, tag, rename, delete. Deleting books shows the delete task's own progress and result, including how many it actually deleted, and refreshes the list in place. Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed delete or removal (Series, Authors, Blocklist, Queue, a Library Import session) shows the server's reason in a toast. On a phone, see [Phone use](/en-gb/phone/).
+Select rows to act on several at once: monitor, search, tag, rename, delete. Deleting books shows the delete task's own progress and result, including how many it actually deleted, and refreshes the list in place. Typing `delete` is only asked for deletes that remove files or data for good, such as a series or author with their books, a single file on disk, or the Workbench's delete-these-files choice. Removing a tag, profile, indexer or list entry is a plain confirm. A refused or failed delete or removal (Series, Authors, Blocklist, Queue, a Library Import session) shows the server's reason in a toast. Organize previews every move and rename first; see [Book Naming](/en-gb/settings/media-management/#book-naming). On a phone, see [Phone use](/en-gb/phone/).

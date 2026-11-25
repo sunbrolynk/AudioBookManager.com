@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Fails only on advisories this change introduces: those already in the base branch's lock are reported, not blocking.
-// Base ref: AUDIT_BASE, default origin/dev. A base that can't be read means every advisory counts as new.
+// Base ref: AUDIT_BASE, default origin/main. A base that can't be read means every advisory counts as new.
 import { execFileSync } from 'node:child_process';
 import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
@@ -35,7 +35,7 @@ const audit = (dir) => {
 };
 
 function main() {
-  const base = process.env.AUDIT_BASE ?? 'origin/dev';
+  const base = process.env.AUDIT_BASE ?? 'origin/main';
   const now = audit('.');
   let was = { vulnerabilities: {} };
   const tmp = mkdtempSync(join(tmpdir(), 'audit-base-'));

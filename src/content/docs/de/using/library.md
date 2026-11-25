@@ -28,6 +28,12 @@ Wenn du Sonarr kennst: Ein Buch ist eine Episode, eine Serie ist Staffel und Sho
 
 Eine Serie oder einen Autor zu löschen wird verweigert, solange noch Bücher davon in der Bibliothek sind. Entfern zuerst die Bücher.
 
+## Zurück zu einer Liste
+
+Gehst du von einer Buch-, Serien- oder Autorenseite zurück, stehen **Books**, **Series**, **Authors** und **Audible Library** wieder da, wo du sie verlassen hast, mit dem geöffneten Eintrag an derselben Stelle. Das klappt in jeder Ansicht und auf dem Handy. Eine Liste, die du über das Menü öffnest oder neu lädst, beginnt oben.
+
+Strg+H und Strg+E springen in jeder Ansicht an den Anfang und das Ende der Books-Liste. Mit `?` siehst du alle Tastenkürzel.
+
 ## Vererbung des Qualitätsprofils
 
 Das Qualitätsprofil eines Buchs kommt, in dieser Reihenfolge, aus: seiner eigenen Überschreibung, seiner primären Serie, seinem primären Autor und dann dem Standardprofil. Siehe [Profile](/de/settings/profiles/).
@@ -51,4 +57,4 @@ Bücher, Autoren und Serien können Tags tragen. Tags steuern Indexer, Benachric
 
 ## Auswahl
 
-Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Fürs Handy siehe [Nutzung am Handy](/de/phone/).
+Wähl Zeilen aus, um mehrere auf einmal zu bearbeiten: überwachen, suchen, taggen, umbenennen, löschen. Organize zeigt vorher jede Verschiebung und Umbenennung in einer Vorschau, siehe [Book Naming](/de/settings/media-management/#book-naming). Fürs Handy siehe [Nutzung am Handy](/de/phone/).

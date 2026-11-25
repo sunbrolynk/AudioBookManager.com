@@ -28,6 +28,12 @@ Ken je Sonarr? Een boek is een aflevering, een serie is seizoen en show in één
 
 Een serie of auteur verwijderen wordt geweigerd zolang er nog boeken van in de bibliotheek staan. Haal eerst de boeken weg.
 
+## Terug naar een lijst
+
+Ga je terug vanaf de pagina van een boek, serie of auteur, dan staan **Books**, **Series**, **Authors** en **Audible Library** weer waar je ze verliet, met het item dat je opende op dezelfde plek. Dat werkt in elke weergave en op je telefoon. Een lijst die je via het menu opent of herlaadt, begint bovenaan.
+
+Ctrl+H en Ctrl+E springen in elke weergave naar het begin en eind van de Books-lijst. Druk op `?` voor alle sneltoetsen.
+
 ## Overerving van het kwaliteitsprofiel
 
 Het kwaliteitsprofiel van een boek komt, in deze volgorde, van: zijn eigen instelling, zijn primaire serie, zijn primaire auteur, en dan het standaardprofiel. Zie [Profielen](/nl/settings/profiles/).
@@ -51,4 +57,4 @@ Boeken, auteurs en series kunnen tags hebben. Tags sturen indexers, meldingen, i
 
 ## Selecteren
 
-Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Voor de telefoon, zie [Op je telefoon](/nl/phone/).
+Selecteer rijen om in één keer iets met meerdere te doen: volgen, zoeken, taggen, hernoemen, verwijderen. Organize toont eerst een voorbeeld van elke verplaatsing en hernoeming, zie [Book Naming](/nl/settings/media-management/#book-naming). Voor de telefoon, zie [Op je telefoon](/nl/phone/).
