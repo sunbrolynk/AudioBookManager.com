@@ -3433,7 +3433,7 @@
           "Library Import"
         ],
         "summary": "Rescan Session",
-        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left exactly as they are; the new rows are returned.",
+        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left as they are, save the `format_copy` of a stored row\nwhose copy set a new row joins, ranked again with it; the new rows and\nthose changes are returned.",
         "operationId": "rescan_session_api_library_import_session__session_id__rescan_post",
         "parameters": [
           {
@@ -3611,7 +3611,7 @@
           "Library Import"
         ],
         "summary": "Get Import Session",
-        "description": "Get an import session by ID",
+        "description": "Get an import session by ID, its format copies ranked by the quality profiles as they are now.",
         "operationId": "get_import_session_api_library_import_session__session_id__get",
         "parameters": [
           {
@@ -3905,6 +3905,112 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RemoveFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/dismiss-folders": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Dismiss Import Folders",
+        "description": "Take the session's rows named off the page, leaving their files where they are.",
+        "operationId": "dismiss_import_folders_api_library_import_session__session_id__dismiss_folders_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFoldersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DismissFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/format-copy": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Choose Format Copy",
+        "description": "Keep the copy at `path` in place of the one its quality profile ranks first.",
+        "operationId": "choose_format_copy_api_library_import_session__session_id__format_copy_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChooseFormatCopyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChooseFormatCopyResponse"
                 }
               }
             }
@@ -16303,7 +16409,7 @@
           "Settings"
         ],
         "summary": "Put Abs Settings",
-        "description": "Save the connection. An enabled one is checked first and refused with 422 when it fails an error check.",
+        "description": "Save the connection. An enabled one is checked first and refused with 422 when it fails an error check.\n\nA 422 names the root folder a refused pairing belongs to in `root_folder_id`, beside `detail`.",
         "operationId": "put_abs_settings_api_settings_abs_put",
         "requestBody": {
           "content": {
@@ -18212,9 +18318,16 @@
               }
             ],
             "title": "Full Path"
+          },
+          "pairable": {
+            "type": "boolean",
+            "title": "Pairable"
           }
         },
         "type": "object",
+        "required": [
+          "pairable"
+        ],
         "title": "AbsLibraryFolder"
       },
       "AbsLibraryPairing": {
@@ -18232,14 +18345,7 @@
             "title": "Abs Folder Id"
           },
           "abs_folder_path": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "string",
             "title": "Abs Folder Path"
           },
           "verified_at": {
@@ -18259,7 +18365,8 @@
         "required": [
           "root_folder_id",
           "abs_library_id",
-          "abs_folder_id"
+          "abs_folder_id",
+          "abs_folder_path"
         ],
         "title": "AbsLibraryPairing"
       },
@@ -18267,17 +18374,25 @@
         "properties": {
           "root_folder_id": {
             "type": "integer",
+            "minimum": 1.0,
             "title": "Root Folder Id"
           },
           "abs_library_id": {
             "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
             "title": "Abs Library Id"
           },
           "abs_folder_id": {
             "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
             "title": "Abs Folder Id"
           }
         },
+        "additionalProperties": false,
         "type": "object",
         "required": [
           "root_folder_id",
@@ -18327,7 +18442,15 @@
               "$ref": "#/components/schemas/AbsLibraryPairing"
             },
             "type": "array",
-            "title": "Libraries"
+            "title": "Libraries",
+            "description": "Always empty; the pairings are in `pairings`."
+          },
+          "pairings": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibraryPairing"
+            },
+            "type": "array",
+            "title": "Pairings"
           },
           "taken_over_at": {
             "anyOf": [
@@ -18353,6 +18476,7 @@
           "unreadable_credentials",
           "verify_tls",
           "libraries",
+          "pairings",
           "status"
         ],
         "title": "AbsSettings"
@@ -18400,7 +18524,24 @@
             },
             "type": "array",
             "maxItems": 0,
-            "title": "Libraries"
+            "title": "Libraries",
+            "description": "Accepted only empty, and ignored; send `pairings`."
+          },
+          "pairings": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/AbsLibraryPairingRequest"
+                },
+                "type": "array",
+                "maxItems": 64
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pairings",
+            "description": "The full set of root folder pairings; omitted or null leaves the saved pairings as they are."
           }
         },
         "additionalProperties": false,
@@ -23397,6 +23538,92 @@
         ],
         "title": "CalendarResponse"
       },
+      "CarriedMatch": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "best_match": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Best Match"
+          },
+          "libex_matches": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Libex Matches"
+          },
+          "selectedMatch": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selectedmatch"
+          },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
+          },
+          "match_confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Match Confidence"
+          },
+          "matched_runtime_length_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Runtime Length Min"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "CarriedMatch",
+        "description": "The match a newly kept copy took from the copy it replaced, as its stored row now holds it."
+      },
       "CatalogAddOptions": {
         "properties": {
           "monitor": {
@@ -23462,6 +23689,59 @@
         "type": "object",
         "title": "CatalogRemoveRequest",
         "description": "Remove a catalog entry, optionally excluding it from being re-added."
+      },
+      "ChooseFormatCopyRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Path"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "title": "ChooseFormatCopyRequest"
+      },
+      "ChooseFormatCopyResponse": {
+        "properties": {
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "format_copies"
+        ],
+        "title": "ChooseFormatCopyResponse"
       },
       "ClientCreate": {
         "properties": {
@@ -26487,6 +26767,39 @@
         "type": "object",
         "title": "DiscoverSettingsUpdate"
       },
+      "DismissFoldersResponse": {
+        "properties": {
+          "dismissed_count": {
+            "type": "integer",
+            "title": "Dismissed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dismissed_count",
+          "format_copies",
+          "session_closed"
+        ],
+        "title": "DismissFoldersResponse"
+      },
       "DownloadHandlingSettings": {
         "properties": {
           "enable_completed_handling": {
@@ -27769,6 +28082,82 @@
           "needs_move"
         ],
         "title": "FolderPlanOut"
+      },
+      "FormatCopyRow": {
+        "properties": {
+          "group": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Group"
+          },
+          "format": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 1,
+            "title": "Format"
+          },
+          "outranked_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outranked By"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Rank",
+            "default": 0
+          },
+          "chosen": {
+            "type": "boolean",
+            "title": "Chosen",
+            "default": false
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "profile",
+                  "format_order",
+                  "tie",
+                  "chosen"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "group",
+          "format"
+        ],
+        "title": "FormatCopyRow",
+        "description": "A row's place among copies of one book in several formats. `rank` is\nits place in the set's order, 0 first; a hidden copy's `outranked_by`\nnames the one kept copy and `reason` says why it lost."
       },
       "FrontendErrorReport": {
         "properties": {
@@ -33854,13 +34243,32 @@
           "failed_count": {
             "type": "integer",
             "title": "Failed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
           }
         },
         "type": "object",
         "required": [
           "results",
           "removed_count",
-          "failed_count"
+          "failed_count",
+          "session_closed"
         ],
         "title": "RemoveFoldersResponse"
       },
@@ -34725,6 +35133,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/FolderMismatchRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "format_copy": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormatCopyRow"
               },
               {
                 "type": "null"

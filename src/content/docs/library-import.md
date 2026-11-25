@@ -38,7 +38,7 @@ Any other match is still offered as a suggestion, but the row counts under **Nee
 
 A book in several loose files that share a folder with other books, such as an author folder or the folder you scanned, is one row holding every part. Files that differ by a book or volume number stay separate rows. Parts are grouped per format, so a whole-book file beside them is a row of its own, and a bitrate in a file name, such as `128kbps`, is not a part number.
 
-Two formats of one book, such as `Book.mp3` and `Book.m4b`, are one row per format, whether the files sit loose in the folder you scan or in a book folder of their own. Each row imports, removes and measures only its own file. A cover, cue or other non-audio file with the same name goes with the book's file when the book is there in one format, and stays where it is when it is there in two. This holds even when one copy is moved into the library and the other is cleared in the same import. Usually only the copy your quality profile ranks highest is offered for import, as described under [Copies in several formats](#copies-in-several-formats).
+Two formats of one book, such as `Book.mp3` and `Book.m4b`, are one row per format, whether the files sit loose in the folder you scan or in a book folder of their own. Each row imports, removes and measures only its own file. A cover, cue or other non-audio file with the same name goes with the book's file when the book is there in one format, and stays where it is when it is there in two. This holds even when one copy is moved into the library and the other is cleared in the same import. Usually only the copy the book's quality profile ranks highest is offered for import, as described under [Copies in several formats](#copies-in-several-formats).
 
 A tag written as `Title: Series, Book 2` is read as the title, the series and its position.
 
@@ -50,21 +50,32 @@ A title, album, series, series part, artist, album artist, composer or narrator 
 
 ## Copies in several formats
 
-When one folder holds the same book in several formats, with the same file names apart from the extension, the scan keeps the copy your default quality profile ranks highest and puts the others under **Hidden**. See [Profiles](/settings/profiles/#quality-profiles) for how the ladder ranks formats. A format switched off in the profile ranks below every format switched on, and a format that isn't on the ladder ranks lowest.
+When one folder holds the same book in several formats, with the same file names apart from the extension, the scan keeps one copy and puts the others under **Hidden**. The kept copy is the one the book's quality profile ranks highest. A book that isn't in your library yet uses the default quality profile. See [Profiles](/settings/profiles/#quality-profiles) for how the ladder ranks formats. A format switched off in the profile, or one that isn't on the ladder, ranks below every format switched on. With no quality profile at all, formats rank in this order: M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA.
 
-A hidden copy is never added. Its row says why, such as "MP3 copy of a book also here as M4B; your profile ranks M4B higher."
+When copies rank the same, one is still kept: the one with the higher bitrate, then the bigger one, then the one first in that order.
+
+The ranking follows the profile as it is now, so changing the profile before you import changes which copy is kept.
+
+A hidden copy is never added. Its row says why, such as "MP3 copy of a book also here as M4B; this book's quality profile ranks M4B higher." Other reasons read "with no quality profile set, ABM prefers M4B", "both rank the same and the M4B was picked as the better file", or "you chose to import the M4B".
 
 Nothing is hidden, and every copy stays in the list, when:
 
-- there is no default quality profile
 - two of the copies are in the same format
-- the copies' runtimes differ by more than three minutes, or 2% of the longer one, since they may be different recordings
+- the copies' runtimes differ by more than three minutes or 2% of the longer one, whichever is more, since they may be different recordings
 
-Formats that tie for the top rank all stay in the list, and only the copies ranked below them are hidden. When copies stay visible together, each row names the other formats the book is also here as. **Rescan** leaves the rows it already had as they are, so a better format added to the folder after the scan shows beside the copy already there instead of hiding it.
+### Picking a copy
+
+The folder details of a book kept in several formats have a **Formats** section listing each copy. **Import this one instead** on a hidden copy keeps that copy and hides the others behind it. When the copy you pick has no match of its own, it takes the match of the copy it replaced. Your pick stays through a rescan, a change to the profile, and deleting another copy. Picking waits while a rescan or a delete runs.
+
+### Rescan, delete and finishing
+
+**Rescan** ranks a book's copies again when it finds a new one. A better format found on rescan hides the copy you already had, and the rescan's message says how many rows are now hidden.
 
 Deleting the copy that was kept brings back the next best one, which then gets its lookup if it hasn't had one.
 
-When only hidden copies are left, All says so and offers a way to show them. Once every other row is imported, the session is finished, whatever hidden copies are still in it.
+When only hidden copies are left, All says so and offers a way to show them.
+
+After Add, a "Delete the other copies?" dialog lists the hidden copies of the books just added, with each file it would delete. **Delete files** deletes them once you type `delete`. **Keep files** takes them off the import and leaves the files where they are. A session with hidden copies still in it stays open, and it closes on its own once every row left in it is imported.
 
 ## Reading the list
 
@@ -81,13 +92,14 @@ A reader named in brackets in a folder or file name, such as `The Ashen Court (R
 
 ## Joining, splitting and adding
 
-- Join rows that are one book split across folders. Join refuses a hidden copy ("Hidden copies can't be joined.") and two copies of one book in different formats, since joining would import them as parts. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. Join is only for the parts of one book: leave two formats of one book as separate rows, since joining them adds both runtimes. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
+- Join rows that are one book split across folders. Join refuses a hidden copy ("Hidden copies can't be joined.") and a kept copy while other formats of it are still hidden, since those copies would be left behind. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. Join is only for the parts of one book: leave two formats of one book as separate rows, since joining them adds both runtimes. Join and split wait while a rescan runs. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
 - On a phone, hold a row for about half a second to start joining. A "Hold to join" hint shows until you dismiss it or open a row. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest join into. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
 - On a phone, a folder's details have **Split into separate books** when the folder holds several files.
-- A row's details offer **Confirm match** and **Delete**. A row with no audio, and a hidden copy, only offer Delete. A hidden copy can't be split either. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
+- A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete. A hidden copy offers Delete and **Import this one instead**, as described under [Picking a copy](#picking-a-copy). A hidden copy can't be split, and neither can a kept copy while other formats of it are still hidden. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
 - Tick the folders you want, then choose what to do with them. The bar above the list has **Select All**, **Add to Library** and **Delete**, and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add. **Select All** never ticks a hidden copy, except under the Hidden filter, where it ticks every hidden copy so you can delete them together.
 - Add never imports a hidden copy, ticked or not. With only hidden copies ticked, Add is blocked with "Hidden copies are never added; delete them or untick them."
 - Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted. Add is also refused, with nothing touched, when two rows claim the same folder or file.
+- Add is blocked when two ticked rows are matched to the same edition, and the reason names both: "A and B are matched to the same edition. Import one and delete or leave the other, or pick a different edition for one of them." One edition takes one folder.
 - Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
