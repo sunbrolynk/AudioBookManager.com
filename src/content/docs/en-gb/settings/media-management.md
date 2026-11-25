@@ -13,7 +13,7 @@ A root folder is a directory ABM manages books in. Add one with **Add Root Folde
 
 Adding a root folder that is, contains or sits inside the [recycle bin](#recycle-bin) is refused with HTTP 400, naming the bin. Root folders can't be nested. Adding one that sits inside another root, or that contains one, is refused with HTTP 400 naming the other root. If you already have a nested pair, System > Status warns and names both paths. A book counts under, and is removed with, the most specific root that holds it, so removing the outer root leaves the inner root's books alone, and **Delete the books and their files** is refused while another root lies inside the one you're removing.
 
-The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
+A book's root is the root folder its folder sits in. The default root folder is the fallback for new books that nothing more specific places: a new book with no root picked for it goes to its series' root folder, else its author's, else the default.
 
 ## Folders
 
@@ -29,7 +29,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/en-gb/library-import/): copy, hardlink or move. Hardlink is greyed out until the default root has been checked and supports it. |
+| Library Import | Copy | The default for [Library Import](/en-gb/library-import/): copy, hardlink or move. It only preselects the choice; the Add to Library dialog still greyeds Hardlink out when a root the import lands in can't use it. |
 | Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |

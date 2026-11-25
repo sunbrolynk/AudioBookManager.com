@@ -74,7 +74,7 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 
 **Settings > Media Management > Importing** sets the default for Library Import: copy (the default), move or hardlink. You can pick another for each import.
 
-A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs the default root folder to support it and to be checked first. Otherwise the option is greyed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
+A hardlinked book takes no extra disk space and the original stays where it is. Hardlink needs every root folder the import lands in to support it and to be checked first. Each root is judged on its own. Otherwise the option is greyed out with the reason. A file that cannot be linked, such as one on another drive, is copied and never moved. The finished import says how many were copied.
 
 ## Extra files
 

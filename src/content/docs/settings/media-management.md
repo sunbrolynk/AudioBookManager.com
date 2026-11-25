@@ -19,13 +19,13 @@ The default root folder is the fallback for new books that nothing more specific
 
 ### Where new books go
 
-When Monitor New Books finds a new book for an author or series, it goes to:
+A new book with no root folder picked for it goes to the first of these that applies. That covers a book added with **Automatic (author / series root)**, which is where the Add Book dialog starts, a book Monitor New Books finds for an author or series, and a book from an Automatic Library Import:
 
 1. the series' root folder, if the series has one;
 2. otherwise the author's root folder, if the author has one;
 3. otherwise the default root folder.
 
-An author gets a root when you add it. The Add New dialog asks, unless you have only one root folder, in which case the author takes that one. A series starts as **Inherit from author**, which means it has no root of its own, and you can pick one to override the author. Change either later in the [edit dialog](/using/library/#the-edit-dialog). That only decides where books added from now on go. It never moves a book you already have. Authors that existed before took the root most of their books are in.
+An author gets a root when you add it. The Add New dialog asks, unless you have only one root folder, in which case the author takes that one. A series starts as **Inherit from author**, which means it has no root of its own, and you can pick one to override the author. Change either later in the [edit dialog](/using/library/#the-edit-dialog). That only decides where books added from now on go. It never moves a book you already have. An author with no root folder yet, such as one first added along with a book, takes the root folder that book lands in.
 
 Removing a root folder clears it from every author and series that used it, so they fall through to the next step.
 
