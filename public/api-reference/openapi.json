@@ -16303,7 +16303,7 @@
           "Settings"
         ],
         "summary": "Put Abs Settings",
-        "description": "Save the connection. An enabled one is checked first and refused with 422 when it fails an error check.",
+        "description": "Save the connection. An enabled one is checked first and refused with 422 when it fails an error check.\n\nA 422 names the root folder a refused pairing belongs to in `root_folder_id`, beside `detail`.",
         "operationId": "put_abs_settings_api_settings_abs_put",
         "requestBody": {
           "content": {
@@ -18245,9 +18245,16 @@
               }
             ],
             "title": "Full Path"
+          },
+          "pairable": {
+            "type": "boolean",
+            "title": "Pairable"
           }
         },
         "type": "object",
+        "required": [
+          "pairable"
+        ],
         "title": "AbsLibraryFolder"
       },
       "AbsLibraryPairing": {
@@ -18265,14 +18272,7 @@
             "title": "Abs Folder Id"
           },
           "abs_folder_path": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "null"
-              }
-            ],
+            "type": "string",
             "title": "Abs Folder Path"
           },
           "verified_at": {
@@ -18292,7 +18292,8 @@
         "required": [
           "root_folder_id",
           "abs_library_id",
-          "abs_folder_id"
+          "abs_folder_id",
+          "abs_folder_path"
         ],
         "title": "AbsLibraryPairing"
       },
@@ -18300,17 +18301,25 @@
         "properties": {
           "root_folder_id": {
             "type": "integer",
+            "minimum": 1.0,
             "title": "Root Folder Id"
           },
           "abs_library_id": {
             "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
             "title": "Abs Library Id"
           },
           "abs_folder_id": {
             "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "pattern": "^[A-Za-z0-9_-]+$",
             "title": "Abs Folder Id"
           }
         },
+        "additionalProperties": false,
         "type": "object",
         "required": [
           "root_folder_id",
@@ -18360,7 +18369,15 @@
               "$ref": "#/components/schemas/AbsLibraryPairing"
             },
             "type": "array",
-            "title": "Libraries"
+            "title": "Libraries",
+            "description": "Always empty; the pairings are in `pairings`."
+          },
+          "pairings": {
+            "items": {
+              "$ref": "#/components/schemas/AbsLibraryPairing"
+            },
+            "type": "array",
+            "title": "Pairings"
           },
           "taken_over_at": {
             "anyOf": [
@@ -18386,6 +18403,7 @@
           "unreadable_credentials",
           "verify_tls",
           "libraries",
+          "pairings",
           "status"
         ],
         "title": "AbsSettings"
@@ -18433,7 +18451,24 @@
             },
             "type": "array",
             "maxItems": 0,
-            "title": "Libraries"
+            "title": "Libraries",
+            "description": "Accepted only empty, and ignored; send `pairings`."
+          },
+          "pairings": {
+            "anyOf": [
+              {
+                "items": {
+                  "$ref": "#/components/schemas/AbsLibraryPairingRequest"
+                },
+                "type": "array",
+                "maxItems": 64
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pairings",
+            "description": "The full set of root folder pairings; omitted or null leaves the saved pairings as they are."
           }
         },
         "additionalProperties": false,
@@ -18680,6 +18715,10 @@
               "auth_error"
             ],
             "title": "Auth Status"
+          },
+          "needs_reregistration": {
+            "type": "boolean",
+            "title": "Needs Reregistration"
           }
         },
         "type": "object",
@@ -18690,7 +18729,8 @@
           "marketplace",
           "is_active",
           "created_at",
-          "auth_status"
+          "auth_status",
+          "needs_reregistration"
         ],
         "title": "AccountResponse"
       },

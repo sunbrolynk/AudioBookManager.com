@@ -69,6 +69,9 @@ An ASIN found in a comment or description is only a hint. It counts as a match o
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
 - Leaving the page saves your pending edits.
+- An import can be stopped from [Tasks](/en-ca/system/tasks/). It finishes the books it is working on, then stops. The rows it imported drop off the list and the rest stay with your choices on them, and a warning says how far it got and how many are still listed, for example "The import was stopped after 4 of 10. 6 are still listed here (1 failed)." A stopped import also skips filling in the series and author catalogs for the books it did import.
+- An import cut short by a restart keeps the rows it never reached the same way, with your choices on them, and says "The import was interrupted after" with the same counts.
+- A scan that is stopped saves no import session.
 
 ## Copy, move or hardlink
 
