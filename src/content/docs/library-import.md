@@ -54,6 +54,7 @@ A title, album, series, series part, artist, album artist, composer or narrator 
 - Each row shows the cover, title, author and series, and how sure the match is as a percentage, such as "95% match". Each row keeps every match its title, author and series searches find. The folder details have **Find a match** or **Change match** to search by hand. The search lists Libex's best matches for what you typed first, then the books its title, author and series searches find, each book once, 50 at a time. More load as you scroll, or with **Load more**, until there are no more.
 - When the files have no ASIN or runtime to confirm the edition, the folder details say so.
 - **Rescan** picks up folders added since the scan and keeps your choices.
+- A folder whose files lead into a system folder is left out of the scan results. A scan or a **Rescan** tells you how many folders it left out, and the scan's entry on System > Tasks gives the count too. A folder whose files link to another ordinary folder is still offered.
 
 An ASIN found in a comment or description is only a hint. It counts as a match only when the title also agrees with the folder name. Only the dedicated ASIN tag counts on its own.
 
@@ -68,7 +69,7 @@ A reader named in brackets in a folder or file name, such as `The Ashen Court (R
 - On a phone, a folder's details have **Split into separate books** when the folder holds several files.
 - A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
 - Tick the folders you want, then choose what to do with them. The bar above the list has **Select All**, **Add to Library** and **Delete**, and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add.
-- Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted. Add is also refused, with nothing touched, when two rows claim the same folder or file.
+- Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted. Add is also refused, with nothing touched, when two rows claim the same folder or file. Each row's folder and files are checked again when it is imported. A row whose folder or files lead into a system folder, through a link for example, fails with that reason and nothing is taken from it. ABM also checks each destination root folder again, once per import, and refuses to place files in a root that is missing, can't be read, isn't answering, or leads into a system folder. A slow network share gets up to 2 minutes to answer. One row that can't be read fails on its own, and the rest of the import carries on.
 - Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
@@ -106,7 +107,7 @@ Delete asks first. The dialog lists the folders and how many audio files each ho
 Delete refuses:
 
 - the scanned folder itself, and anything outside the scan
-- a root folder or a protected folder
+- a folder that is, or holds, a root folder, the recycle bin or one of ABM's own folders, or that leads into a system folder
 - a symlink
 - a folder or file that is, sits inside, or contains a library book's folder or one of its files
 
@@ -116,7 +117,7 @@ A folder with no audio is deleted the same way as any other: tick it and choose 
 
 ## Answers other than import
 
-A row can also be answered **Delete these files, keep the library copy** to decline a copy of a book the library already has. It asks first with a "Delete these files?" dialog listing what goes, and has a Keep importing button to back out. Because this removes data, you type `delete` to confirm. The decision is only carried out when you Add, and it holds only for the library book it was about. Pick a match that asks something else, asks about a different library book, or asks nothing, and the earlier choice no longer applies, so the row asks again. Add refuses an import that would remove files to keep a library copy that is missing or has no files. The import checks again when it runs, and nothing is removed if the library copy has no files by then ("Your library has no copy of this book to keep") or if the folder holds files of a book in your library ("This folder holds files of a book in your library"). The row fails with that message. Rows that remove files instead of importing them run only after every import in the same Add has finished, and each is refused if any of its files belongs to a book in your library at that point. So they never remove files a book in that batch was just added from.
+A row can also be answered **Delete these files, keep the library copy** to decline a copy of a book the library already has. It asks first with a "Delete these files?" dialog listing what goes, and has a Keep importing button to back out. Because this removes data, you type `delete` to confirm. The decision is only carried out when you Add, and it holds only for the library book it was about. Pick a match that asks something else, asks about a different library book, or asks nothing, and the earlier choice no longer applies, so the row asks again. Add refuses an import that would remove files to keep a library copy that is missing or has no files. The import checks again when it runs, and nothing is removed if the library copy has no files by then ("Your library has no copy of this book to keep") or if the folder holds files of a book in your library ("This folder holds files of a book in your library"). The row fails with that message. Rows that remove files instead of importing them run only after every import in the same Add has finished, and each is refused if any of its files belongs to a book in your library at that point. So they never remove files a book in that batch was just added from. Rows you keep or remove go through the same folder check as imported rows, so a folder that now leads into a system folder is never touched.
 
 ## Cover and extra files per folder
 
