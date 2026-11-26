@@ -20,7 +20,7 @@ description: Pull wanted books in from MyAnonamouse or an RSS feed.
 | Quality Profile | A profile, or Inherit (use default) |
 | Tags | Applied to everything the list adds |
 
-**Sync Now** runs lists right away.
+**Sync Now** runs lists right away. A refused sync of a single list is recorded in the [Notification Center](/system/notifications/) with the server's reason.
 
 ## Options
 
