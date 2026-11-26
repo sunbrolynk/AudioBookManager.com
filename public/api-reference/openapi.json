@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.28.0",
+    "version": "0.29.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3486,9 +3486,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Rescan Session Api Library Import Session  Session Id  Rescan Post"
+                  "$ref": "#/components/schemas/RescanResponse"
                 }
               }
             }
@@ -34383,6 +34381,60 @@
         },
         "type": "object",
         "title": "RenameFileRequest"
+      },
+      "RescanResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "added": {
+            "type": "integer",
+            "title": "Added"
+          },
+          "results": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CarriedMatch"
+            },
+            "type": "object",
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "session_id",
+          "added",
+          "results",
+          "format_copies"
+        ],
+        "title": "RescanResponse"
       },
       "RetryMatchRequest": {
         "properties": {
