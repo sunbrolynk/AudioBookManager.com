@@ -28,6 +28,8 @@ Which fields show depends on the client.
 
 **Test** checks the connection. A disabled client is not an unhealthy one. A failing client is retried with a back-off.
 
+For Blackhole, removing a download deletes its entry from the watch folder. Only an entry directly in the watch folder is removed, never a path inside one or an entry that links out of the watch folder. Nothing is removed from a watch folder at the top of the filesystem (`/`), and an entry that is, or holds, a root folder, the recycle bin or ABM's own data is never deleted.
+
 Test also checks that ABM can see the folder the client saves to. That is the Directory as you entered it when one is set, otherwise the save path the client reports:
 
 - qBittorrent: with automatic torrent management on and a Category set, the category's save path, or a folder named after the category in the default save path when the category has none. Otherwise the default save path.
