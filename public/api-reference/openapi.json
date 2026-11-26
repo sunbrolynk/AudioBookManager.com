@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.29.0",
+    "version": "0.30.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -33489,7 +33489,7 @@
           "path_mapping_suggestion"
         ],
         "title": "QueueItemResponse",
-        "description": "One queue row: an active client download, a client-history failure, a\npending grab or a delay-profile hold. Fields that do not apply to a\nrow's kind are null."
+        "description": "One queue row: an active client download, a job from the client's\nhistory (SABnzbd/NZBGet: finished, failed or post-processing), a pending\ngrab or a delay-profile hold. Fields that do not apply to a row's kind\nare null."
       },
       "QueuePollErrorResponse": {
         "properties": {

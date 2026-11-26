@@ -5,7 +5,7 @@ description: The queue, history and blocklist.
 
 ## Queue
 
-What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see.
+What your download clients are working on. Row actions include **Grab now**, **Import Now**, **Manual Import** and **Retry Now**, and **Configure remote path mapping** when a finished download sits in a path ABM cannot see. Such a download also gets **Import Now** and **Manual Import**, to use once the path is fixed. **Configure remote path mapping** opens the remote path mappings in [Download Clients](/settings/download-clients/#remote-path-mappings). When no saved mapping covers the download's path and ABM can work one out, the mapping form opens filled in with it. When a saved mapping already covers the path, correct that one.
 
 **Check for Imports** in the toolbar checks every completed download for something to import, or only the selected rows when some are selected. A row's **Import Now** imports just that row, and the result says how many of the ones you picked were not ready. A failed import, remove, retry or grab shows a toast with the server's reason.
 
