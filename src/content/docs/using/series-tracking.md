@@ -23,4 +23,5 @@ The Series list shows how many of each series' books are downloaded, as `3/7 Boo
 
 - A series you added by hand stays, even with no books, until you remove it.
 - Box sets with a range position such as "1-7" sort after books with a real number when ABM has to pick a primary series.
+- Books that share a position, such as two editions both numbered 1, are ordered by release date, older first, wherever books sort by series position. The older one gives the series its cover.
 - Deleting a series also deletes the books it has in the library, after a confirmation that lists them. See [Library](/using/library/#authors).
