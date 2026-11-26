@@ -28,6 +28,8 @@ Which fields show depends on the client.
 
 **Test** checks the connection, and for SABnzbd the API key too. A disabled client is not an unhealthy one. A failing client is retried with a back-off.
 
+For Blackhole, removing a download deletes its entry from the watch folder. Only an entry directly in the watch folder is removed, never a path inside one or an entry that links out of the watch folder. Nothing is removed from a watch folder at the top of the filesystem (`/`), and an entry that is, or holds, a root folder, the recycle bin or ABM's own data is never deleted.
+
 ## Completed download handling
 
 | Setting | Default | Effect |
