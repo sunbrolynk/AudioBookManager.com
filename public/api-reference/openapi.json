@@ -13887,7 +13887,7 @@
           "Settings"
         ],
         "summary": "Delete Root Folder",
-        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete the folder's\ncontents, limited to the configured root path. Auto-tag rules scoped to\nthis root folder are removed with it, along with any rule left with no\nconditions, and `removed_auto_tag_rules` in the response lists them.",
+        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete each of those\nbooks' files, as deleting the book would. The root folder itself, and\nanything in it outside every book's folder, is always left on disk.\n`files_failed` counts files that could not be deleted, and\n`failed_book_count` every book not fully removed. Auto-tag rules scoped\nto this root folder are removed with it, along with any rule left with\nno conditions, and `removed_auto_tag_rules` in the response lists them.",
         "operationId": "delete_root_folder_api_settings_root_folders__folder_id__delete",
         "parameters": [
           {
@@ -28139,6 +28139,7 @@
                 "enum": [
                   "profile",
                   "format_order",
+                  "profiles_unread",
                   "tie",
                   "chosen"
                 ]
@@ -34396,6 +34397,10 @@
             "type": "integer",
             "title": "Added"
           },
+          "left_out": {
+            "type": "integer",
+            "title": "Left Out"
+          },
           "results": {
             "items": {
               "additionalProperties": true,
@@ -34431,6 +34436,7 @@
           "success",
           "session_id",
           "added",
+          "left_out",
           "results",
           "format_copies"
         ],
