@@ -73,7 +73,7 @@ A reader named in brackets in a folder or file name, such as `The Ashen Court (R
 - Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is grayed out with its reason underneath when it can't be used.
-- When you choose Add, the confirm step first checks which books already sit in a root folder, and the import can't start until that check is done. Those books are listed as renamed in place. Nothing is copied or moved for them, and Copy, Move or Hardlink applies only to the other books. When every book is renamed in place, there is no Copy, Move or Hardlink choice and no root to pick, and on desktop the button reads **Import in Place**. If the check fails, the confirm step says so and you can still add: any book that already sits in a root folder is renamed in place.
+- When you choose Add, the confirm step first checks which books already sit in a root folder, and the import can't start until that check is done. Those books are listed as renamed in place. Nothing is copied or moved for them, and Copy, Move or Hardlink applies only to the other books. When every book is renamed in place, there is no Copy, Move or Hardlink choice and no root to pick, and on desktop the button reads **Import in Place**. If the check fails, or your root folders can't be read, the confirm step says so and you can still add: any book that already sits in a root folder is renamed in place.
 - A row fails with "Root folders changed since this import was confirmed; add it again" when your root folders change between confirming and the import reaching that row, so the book would land somewhere other than what you confirmed. Nothing is taken from that row. Add it again.
 - Leaving the page saves your pending edits.
 
@@ -86,7 +86,7 @@ Books are filed into the root folder the scan sits in. When the scan is outside 
 - A book found inside a root folder stays in that root and is adopted in place.
 - **Choose Another Folder** with a folder outside every root offers two choices: **Add as a root folder**, which adds it and then scans it, or **Open in Import Workbench**.
 - In the Import Workbench, the root picker starts on **Automatic (author / series root)**. Each new book goes to its series' root folder, else its author's, else the default. You can pick one root for the whole import instead. When the scan is inside a root, that root is used and there is nothing to pick.
-- Every row shows the root it will land in, and you can change it for a single row. A row that adds files to a book already in your library shows **Stays in …** with that book's root. If working out where rows land fails, the page shows an error instead of spinning.
+- Every row shows the root it will land in, and you can change it for a single row. A row that adds files to a book already in your library shows **Stays in …** with that book's root.
 - **Choose Another Folder** is disabled while root folders are loading or if they failed to load.
 - An author with no root folder yet takes the root its first imported book lands in.
 
