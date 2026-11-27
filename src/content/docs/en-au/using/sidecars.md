@@ -22,7 +22,7 @@ Together with the folder layout, these are the files Audiobookshelf reads for a 
 
 The other four each have a setting under **Settings > Metadata > Files to Create**, all on by default. They are written only when the matching trigger is on as well: **Create on Book Add** (off), **Create on Import** (on, which covers downloads, Library Import and Audible downloads) and **Create on Refresh** (off). **Overwrite Existing** is off, so a file that is already there stays. Nothing is written until the book's folder exists.
 
-The edit dialog's **Write to Directories** writes the four as well, for one book or a selection of series and authors. See [Metadata settings](/en-au/settings/metadata/).
+The edit dialog's **Write files** list writes any of these files, plus the audio tags and the cover embed, for one book or a selection of series and authors. **Write All** at the top of the list ticks every item. A book's detail page can also write one at a time, and on a phone they are in the **Write to folder and files** sheet. If a book has nothing to put in a file (no description, no narrator, no cover), ABM says there is nothing to write and moves on instead of showing an error. See [Metadata settings](/en-au/settings/metadata/).
 
 If writing a sidecar, an audio tag or auto-tagging fails after an import, the book is still imported and the failure is shown with its reason as a warning. It appears on the task log, in the book's History as "post import failed", and in the Activity Log. When a book is added, a failed step shows in the book's History as "post add failed", labelled "metadata:" or "auto-tagging:". After a refresh the failure goes on the refresh's run log instead. These rows are not on the Activity > History page, which shows download events only.
 
@@ -37,6 +37,8 @@ Importing also brings across a book's existing non-audio files, governed by **Me
 ## Hardlinks
 
 A hardlinked import keeps the original untouched. When ABM writes any of these files it writes a new file instead of editing in place, so the source you imported from keeps its content.
+
+Audio tags and an embedded cover go inside the audio file, so a hardlinked audio file is left untagged by default and the write says so. Turn on **Write Audio Tags to Hardlinked Files** in [Metadata settings](/en-au/settings/metadata/) to tag them anyway: ABM then gives the file its own copy first, so the seeding download keeps its bytes and the book takes its full size on disk a second time. An audio file that another book in ABM also points at is never tagged, so one book's tags don't overwrite the other's.
 
 ## Gotchas
 
