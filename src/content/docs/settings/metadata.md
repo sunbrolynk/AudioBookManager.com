@@ -82,4 +82,4 @@ The **Tag Fields** show once **Write Audio Tags** is on, all on by default: Titl
 - Tag writing changes the audio files. Audiobookshelf will see them as modified.
 - If metadata or a cover cannot be fetched during tag writing, the call returns warnings instead of failing.
 - When a cover could not be embedded because the connection refused it, the book page and the edit dialog show a warning instead of plain success.
-- Writing audio tags alone follows the **Cover Art** tag field for the cover. When the cover embed is chosen too, as **Write All** always does, the cover goes in during the tag write, and a book with no cover gets the warning "No cover available to embed".
+- The **Write Audio Tags** action follows the **Cover Art** tag field, and so do the tag writes ABM does on its own. In the Edit dialog and the series or author edit, the cover goes into the audio files only when **Embed cover** is ticked. **Write All** always embeds it, in the same pass as the tags, and a book with no cover gets the warning "No cover available to embed".
