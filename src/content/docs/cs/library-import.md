@@ -57,7 +57,7 @@ ASIN nalezený v komentáři nebo popisu je jen nápověda. Za shodu se počít�
 
 - Spoj řádky, které jsou jedna kniha rozdělená do více složek. Znovu je rozdělíš v detailu složky. Přiřazení spojeného řádku je jen návrh: počítá se pod **Needs a look** a není zaškrtnuté, dokud ho nepotvrdíš nebo nevybereš jiné. Jeho délka je součet částí jen tehdy, když ji má každá část, a ASIN si ponechá jen tehdy, když všechny části uvádějí stejné. Spojení je jen pro části jedné knihy: dva formáty jedné knihy nech jako samostatné řádky, protože spojení sečte obě délky. Dotaz, který doběhne až po spojení nebo rozdělení jeho řádku, je také jen návrh.
 - **Confirm match** v detailech řádku zaškrtne řádek **Needs a look** a **Undo confirmation** zaškrtnutí zase vezme zpět.
-- Když přidání nejde, nad tlačítkem se ukáže důvod, třeba "Select at least one folder" nebo "2 selected rows still need a decision". Přidání se taky odmítne, aniž by se čehokoli dotklo, když si dva řádky nárokují stejnou složku nebo soubor.
+- Když přidání nejde, nad tlačítkem se ukáže důvod, třeba "Select at least one folder" nebo "2 selected rows still need a decision". Přidání se taky odmítne, aniž by se čehokoli dotklo, když si dva řádky nárokují stejnou složku nebo soubor. Při importu se každý řádek kontroluje znovu: řádek, jehož složka nebo soubor, nebo kterýkoli soubor do něj spojený, leží mimo složku, kterou relace naskenovala, nebo z ní vede ven přes odkaz, selže s "Outside the folder this session scanned" a nic se nepřečte, nepřesune, nezkopíruje, nepropojí ani nesmaže. Stejně selže každý řádek, když jeho relace importu už neexistuje.
 - Cokoli, co by odstranilo nebo nahradilo soubory, se nejdřív zeptá.
 - Když stránku opustíš, rozpracované úpravy se uloží.
 

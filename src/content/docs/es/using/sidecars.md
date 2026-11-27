@@ -21,7 +21,7 @@ Junto con la estructura de carpetas, estos son los archivos que Audiobookshelf l
 
 Los otros cuatro tienen cada uno un interruptor en **Settings > Metadata > Files to Create**, todos activados por defecto. Solo se escriben cuando también está activado el disparador correspondiente: **Create on Book Add** (desactivado), **Create on Import** (activado, que cubre las descargas, Library Import y las descargas de Audible) y **Create on Refresh** (desactivado). **Overwrite Existing** está desactivado, así que un archivo que ya existe se queda. No se escribe nada hasta que existe la carpeta del libro.
 
-**Write to Directories**, en el diálogo de edición, también escribe los cuatro, para un libro o para una selección de series y autores. Consulta [Ajustes de metadatos](/es/settings/metadata/).
+El **Write to Directories** del diálogo de edición escribe los cuatro, y también el `.nfo` y `metadata.json` si los marcas, para un libro o una selección de series y autores. **Write All** marca todas las casillas, etiquetas y portada incrustada incluidas. La página de detalle de un libro también puede escribir un archivo suelto. Si un libro no tiene nada para un archivo (sin descripción, sin narrador, sin portada), ABM dice que no hay nada que escribir y sigue, en vez de mostrar un error. Consulta [Ajustes de metadatos](/es/settings/metadata/).
 
 ## La portada es especial
 

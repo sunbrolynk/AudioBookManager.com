@@ -21,7 +21,7 @@ Samen met de mapindeling zijn dit de bestanden waar Audiobookshelf de gegevens v
 
 De andere vier hebben elk een schakelaar onder **Settings > Metadata > Files to Create**, standaard allemaal aan. Ze worden alleen geschreven als de bijbehorende trigger ook aan staat: **Create on Book Add** (uit), **Create on Import** (aan, en dat geldt voor downloads, Library Import en Audible-downloads) en **Create on Refresh** (uit). **Overwrite Existing** staat uit, dus een bestand dat er al staat, blijft staan. Er wordt niks geschreven zolang de map van het boek nog niet bestaat.
 
-**Write to Directories** in het bewerkdialoogvenster schrijft de vier ook, voor één boek of een selectie series en auteurs. Zie [Metadata-instellingen](/nl/settings/metadata/).
+**Write to Directories** in het bewerkvenster schrijft de vier, en ook de `.nfo` en `metadata.json` als je die aanvinkt, voor één boek of een selectie series en auteurs. **Write All** vinkt alle vakjes aan, tags en ingesloten cover inbegrepen. De detailpagina van een boek kan ook één bestand tegelijk schrijven. Heeft een boek niets voor een bestand (geen beschrijving, geen verteller, geen cover), dan zegt ABM dat er niets te schrijven is en gaat verder, in plaats van een fout te tonen. Zie [Metadata-instellingen](/nl/settings/metadata/).
 
 ## De cover is een speciaal geval
 

@@ -21,7 +21,7 @@ Spolu s rozložením složek jsou to soubory, ze kterých Audiobookshelf čte po
 
 Zbylé čtyři mají každý svůj přepínač v **Settings > Metadata > Files to Create**, ve výchozím stavu všechny zapnuté. Zapíšou se jen tehdy, když je zapnutý i odpovídající spouštěč: **Create on Book Add** (vypnuto), **Create on Import** (zapnuto, pokrývá stahování, Library Import i stahování z Audible) a **Create on Refresh** (vypnuto). **Overwrite Existing** je vypnuté, takže soubor, který už tam je, zůstane. Dokud složka knihy neexistuje, nezapíše se nic.
 
-**Write to Directories** v dialogu úprav zapíše ty čtyři taky, pro jednu knihu nebo výběr sérií a autorů. Viz [Nastavení metadat](/cs/settings/metadata/).
+**Write to Directories** v dialogu úprav zapíše tyto čtyři a také `.nfo` a `metadata.json`, když je zaškrtneš, pro jednu knihu nebo výběr sérií a autorů. **Write All** zaškrtne všechna políčka, i tagy a vloženou obálku. Stránka s detailem knihy umí zapsat i jeden soubor po druhém. Když kniha nemá do souboru nic dát (žádný popis, žádný vypravěč, žádná obálka), ABM řekne, že není co zapsat, a jede dál místo zobrazení chyby. Viz [Nastavení metadat](/cs/settings/metadata/).
 
 ## Obálka je zvláštní
 
