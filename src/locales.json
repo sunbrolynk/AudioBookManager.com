@@ -14,7 +14,7 @@
   "en-ca": {
     "label": "English (Canada)",
     "lang": "en-CA",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 27
   },
   "en-au": {
