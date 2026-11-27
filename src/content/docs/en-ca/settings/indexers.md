@@ -40,6 +40,8 @@ These apply to every indexer, so follow each indexer's own rules.
 | Maximum Size | 0 (MB) | 0 is no limit |
 | RSS Sync Interval | 15 (minutes) | How often RSS is polled |
 
+An RSS sync stopped from [Tasks](/en-ca/system/tasks/) leaves the indexer it was reading to be read again on the next sync.
+
 The MAM list can also feed [Import Lists](/en-ca/settings/import-lists/).
 
 If you know Sonarr: it is the same split between RSS, automatic and interactive search per indexer. There is no separate "test all" for categories.

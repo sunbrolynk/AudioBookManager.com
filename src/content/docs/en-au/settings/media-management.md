@@ -54,6 +54,8 @@ An import never replaces a file that isn't the book's own. When something alread
 
 Before a Manual Import, the conflict check shows which names are already taken in the book's folder: the book's own files there are replaced, and anything else is skipped. A Manual Import where every file was refused or failed ends as failed and lists each file with its reason. Adding files to a book already in the library fails when none of them could be added, and the book is left as it was.
 
+A Manual Import stopped from [Tasks](/en-au/system/tasks/) brings no extra files along. Set to **Move Files**, it leaves a part-imported book's cover and other extra files in the source folder.
+
 Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for downloads. The Library Import default is only what the Add to Library dialog preselects.
 
 ## File Management
