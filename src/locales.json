@@ -44,7 +44,7 @@
   "it": {
     "label": "Italiano",
     "lang": "it",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 58
   },
   "pt-br": {
