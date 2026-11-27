@@ -21,7 +21,7 @@ Kansiorakenteen kanssa nämä ovat ne tiedostot, joista Audiobookshelf lukee kir
 
 Muilla neljällä on kullakin oma kytkimensä kohdassa **Settings > Metadata > Files to Create**, ja kaikki ovat oletuksena päällä. Ne kirjoitetaan vain, kun myös vastaava käynnistin on päällä: **Create on Book Add** (pois), **Create on Import** (päällä, kattaa lataukset, kirjaston tuonnin ja Audible-lataukset) ja **Create on Refresh** (pois). **Overwrite Existing** on pois päältä, joten jo olemassa oleva tiedosto pysyy. Mitään ei kirjoiteta ennen kuin kirjan kansio on olemassa.
 
-Muokkausikkunan **Write to Directories** kirjoittaa myös nämä neljä, yhdelle kirjalle tai sarja- ja tekijävalinnalle. Katso [Metatietoasetukset](/fi/settings/metadata/).
+Muokkausikkunan **Write to Directories** kirjoittaa nämä neljä sekä `.nfo`- ja `metadata.json`-tiedoston, kun rastitat ne, yhdelle kirjalle tai valitulle joukolle sarjoja ja kirjailijoita. **Write All** rastittaa kaikki ruudut, myös tagit ja upotetun kansikuvan. Kirjan tietosivulta voi kirjoittaa myös yhden tiedoston kerrallaan. Jos kirjalla ei ole tiedostoon mitään laitettavaa (ei kuvausta, ei lukijaa, ei kansikuvaa), ABM kertoo, ettei kirjoitettavaa ole, ja jatkaa virheen näyttämisen sijaan. Katso [Metatietoasetukset](/fi/settings/metadata/).
 
 ## Kansikuva on erikoistapaus
 

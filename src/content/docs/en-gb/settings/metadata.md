@@ -26,13 +26,16 @@ Under **Files to Create**, all on: **Cover image** (`cover.jpg`), **Book info** 
 
 ## Audio file tag writing
 
-Writes audio tags into the audio files themselves.
+Writes audio tags into the audio files themselves. Tag writing is on by default, so an import writes the tags unless you turn it off.
 
 | Setting | Default |
 |---|---|
-| Write Audio Tags | off |
+| Write Audio Tags | on |
 | Write Audio Tags on Import | on, once tag writing is on |
 | Write Audio Tags on Refresh | off |
+| Write Audio Tags to Hardlinked Files | off |
+
+**Write Audio Tags to Hardlinked Files** shows once tag writing is on and covers an audio file hardlinked to your download client. Off, ABM writes no tags or cover into those files and leaves them as they are. On, ABM gives each one its own copy before writing, so the book uses its full size on disk a second time. See [Sidecar files](/en-gb/using/sidecars/#hardlinks).
 
 Tag fields, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 
@@ -75,3 +78,4 @@ The Tasks page shows the job as **Local Storage Backup**. An ABM backup carries 
 - Tag writing changes the audio files. Audiobookshelf will see them as modified.
 - If metadata or a cover cannot be fetched during tag writing, the call returns warnings instead of failing.
 - When a cover could not be embedded because the connection refused it, the book page and the edit dialog show a warning instead of plain success.
+- The **Write Audio Tags** action follows the **Cover Art** tag field, and so do the tag writes ABM does on its own. In the Edit dialog and the series or author edit, the cover goes into the audio files only when **Embed cover** is ticked. **Write All** always embeds it, in the same pass as the tags, and a book with no cover gets the warning "No cover available to embed".

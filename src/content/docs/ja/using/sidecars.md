@@ -21,7 +21,7 @@ description: ABM が本の横に書き込む metadata.json、表紙、OPF、説�
 
 ほかの4つには、それぞれ **Settings > Metadata > Files to Create** にスイッチがあり、デフォルトではすべてオンです。書き込まれるのは、対応するきっかけもオンになっているときだけです：**Create on Book Add**（オフ）、**Create on Import**（オン。ダウンロード、Library Import、Audible のダウンロードが含まれます）、**Create on Refresh**（オフ）。**Overwrite Existing** はオフなので、すでにあるファイルはそのまま残ります。本のフォルダができるまでは何も書き込まれません。
 
-編集ダイアログの **Write to Directories** でも、1冊の本や、選んだシリーズや著者に対してこの4つを書き込めます。[メタデータの設定](/ja/settings/metadata/)を見てください。
+編集ダイアログの **Write to Directories** は、この4つに加えて、チェックを入れれば `.nfo` と `metadata.json` も、1冊の本や、選んだシリーズや著者に対して書き込みます。**Write All** はタグとカバーの埋め込みも含め、すべてのボックスにチェックを入れます。本の詳細ページからは、ファイルを1つずつ書き込むこともできます。本にファイルへ書く内容がない場合（説明、ナレーター、カバーがない場合）、ABM はエラーを出さずに、書き込むものがないことを伝えて先へ進みます。[メタデータの設定](/ja/settings/metadata/)を見てください。
 
 ## 表紙は特別
 

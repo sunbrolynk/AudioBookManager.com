@@ -60,17 +60,20 @@ Sidecar files and audio tags.
 | Create on Refresh | off | Create or update files when metadata is refreshed |
 | Overwrite Existing | off | Replace files already in the folder |
 
-Under **Files to Create**, all on by default: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). `metadata.json` and an `.nfo` are always written and have no setting. **Create on Refresh** and **Write Audio Tags on Refresh** show with **Show Advanced**.
+Under **Files to Create**, all on by default: **Cover image** (`cover.jpg`), **Book info** (an `.opf` named after the first audio file, compatible with Audiobookshelf), **Description** (`desc.txt`) and **Narrator** (`reader.txt`). `metadata.json` and an `.nfo` are always written and have no setting; they show on the page as always-written rows. **Create on Refresh** and **Write Audio Tags on Refresh** show with **Show Advanced**.
 
 ### Audio File Tag Writing
 
-Writes audio tags into the audio files themselves.
+Writes audio tags into the audio files themselves. Tag writing is on by default, so an import writes the tags unless you turn it off.
 
 | Setting | Default |
 |---|---|
-| Write Audio Tags | off |
+| Write Audio Tags | on |
 | Write Audio Tags on Import | on, once tag writing is on |
 | Write Audio Tags on Refresh | off |
+| Write Audio Tags to Hardlinked Files | off |
+
+**Write Audio Tags to Hardlinked Files** shows once tag writing is on and covers an audio file hardlinked to your download client. Off, ABM writes no tags or cover into those files and leaves them as they are. On, ABM gives each one its own copy before writing, so the book uses its full size on disk a second time. See [Sidecar files](/using/sidecars/#hardlinks).
 
 The **Tag Fields** show once **Write Audio Tags** is on, all on by default: Title, Artist (Author), Album Artist (Author), Album (Title/Series), Genre, Year, Comment (Description), Narrator (Composer) and Cover Art.
 
@@ -79,3 +82,4 @@ The **Tag Fields** show once **Write Audio Tags** is on, all on by default: Titl
 - Tag writing changes the audio files. Audiobookshelf will see them as modified.
 - If metadata or a cover cannot be fetched during tag writing, the call returns warnings instead of failing.
 - When a cover could not be embedded because the connection refused it, the book page and the edit dialog show a warning instead of plain success.
+- The **Write Audio Tags** action follows the **Cover Art** tag field, and so do the tag writes ABM does on its own. In the Edit dialog and the series or author edit, the cover goes into the audio files only when **Embed cover** is ticked. **Write All** always embeds it, in the same pass as the tags, and a book with no cover gets the warning "No cover available to embed".
