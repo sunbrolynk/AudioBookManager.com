@@ -80,7 +80,7 @@
   "zh-tw": {
     "label": "繁體中文（台灣）",
     "lang": "zh-TW",
-    "reviewed": false,
+    "reviewed": true,
     "issue": 64
   },
   "ko": {
