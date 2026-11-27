@@ -32,6 +32,8 @@ A sync leaves podcasts and episodes out and removes any an earlier sync stored. 
 
 A download needs an account that is active, doesn't need to sign in again and still lists the book. When more than one active account owns a book, one that Audible is throttling is passed over for one that isn't, unless you picked it. Otherwise the download is refused with "No active, signed-in Audible account currently lists this book". A book that already has a download queued or running isn't queued again, from any button or retry: the single download answers with the existing one, and a bulk request lists it as "Already queued". Every refusal from the Audible Library page (downloads, bulk add, add and download) shows the server's reason in an error toast, and adding a book with download unticked shows an "Added" toast.
 
+A bulk add stopped from [Tasks](/en-au/system/tasks/) keeps the books it already added but queues no downloads, not even for those.
+
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only, or build a custom filter (see [Custom filters](/en-au/using/library/#custom-filters)).
 
 ## Mirror Audible library to ABM

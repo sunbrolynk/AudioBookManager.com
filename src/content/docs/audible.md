@@ -36,6 +36,8 @@ ABM asks Audible for download licences one at a time per account, with a short p
 
 A bulk download or a retry treats an Audible title as already downloaded when its book in ABM has files.
 
+A bulk add stopped from [Tasks](/system/tasks/) keeps the books it already added but queues no downloads, not even for those.
+
 The **Audible Library** page lists everything synced. Filter it to All, Not in Library, Downloaded, Wanted or Downloadable Only, or build a custom filter (see [Custom filters](/using/library/#custom-filters)).
 
 ## Mirror Audible library to ABM

@@ -26,6 +26,7 @@ Il database è un file SQLite in `/config`, quindi non c'è nessun servizio data
        image: ghcr.io/sunbrolynk/audiobook-manager:latest
        container_name: audiobook-manager
        restart: unless-stopped
+       stop_grace_period: 35s
        ports:
          - "${PORT:-5173}:5173"
        environment:

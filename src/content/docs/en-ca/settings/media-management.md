@@ -54,6 +54,8 @@ An import never replaces a file that isn't the book's own. When something alread
 
 Before a Manual Import, the conflict check shows which names are already taken in the book's folder: the book's own files there are replaced, and anything else is skipped. A Manual Import where every file was refused or failed ends as failed and lists each file with its reason. Adding files to a book already in the library fails when none of them could be added, and the book is left as it was.
 
+A Manual Import stopped from [Tasks](/en-ca/system/tasks/) brings no extra files along. Set to **Move Files**, it leaves a part-imported book's cover and other extra files in the source folder.
+
 Hardlink is not the same as **Use Hardlinks instead of Copy**. That one is for downloads. The Library Import default is only what the Add to Library dialog preselects.
 
 ## File Management
@@ -115,7 +117,7 @@ Book Naming sets how I name files and folders, and it is saved with the page's o
 
 A format can't type any of `\ / : * ? " < > |` outside its tokens, because Windows and SMB shares refuse them in a file name. `{Book Title}: {part:00}` is one example. Saving such a format is refused with a message naming the format. Characters that come from a book's own metadata are handled by Replace Illegal Characters and Colon Replacement instead. The Standard Book format is checked even with Rename Books off, because Audible downloads and files whose own names would clash still take their names from it, so it can't be left empty.
 
-Library, Series and Authors also have an **Organize** action on the selected books, and so does a book's own page. It opens a preview of every change first, and nothing moves until you confirm it. Organize then moves and renames: it moves each book's folder to where the naming settings put it and renames its files. It runs as a task you can follow, cancel and, after a restart, resume where it stopped. Only one Organize runs at a time. There is no undo, so check the preview. Bulk rename stays on Library, Series and Authors as **Rename Files**.
+Library, Series and Authors also have an **Organize** action on the selected books, and so does a book's own page. It opens a preview of every change first, and nothing moves until you confirm it. Organize then moves and renames: it moves each book's folder to where the naming settings put it and renames its files. It runs as a task you can follow and stop from [Tasks](/en-ca/system/tasks/), and after a restart it resumes where it left off. A stopped Organize finishes the book it is on and leaves the books it had not reached as they were. Only one Organize runs at a time. There is no undo, so check the preview. Bulk rename stays on Library, Series and Authors as **Rename Files**.
 
 If an Organize is interrupted, the next run resumes where it stopped. A book the interrupted run had already moved or renamed on disk is found at its new location and its records are updated, so nothing is moved twice. The preview shows such a book as already moved or already renamed, and the result counts it as reconciled. A book is only reconciled when I can prove the folder is that book's: its files must match what I have recorded and no other book may claim the folder. Otherwise the book is skipped, with the reason. A book whose pending renames swap two files of the same size, or of an unrecorded size, is skipped too, because the files could not be told apart if a run stopped halfway. There is still no undo.
 
