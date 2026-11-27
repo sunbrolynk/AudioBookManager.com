@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.29.0",
+    "version": "0.31.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -570,7 +570,7 @@
           "Books"
         ],
         "summary": "Get Book Files",
-        "description": "Get all files for a specific book with audio metadata",
+        "description": "A book's tracked files with audio metadata, plus the names its OPF and NFO sidecars take.",
         "operationId": "get_book_files_api_books__book_id__files_get",
         "parameters": [
           {
@@ -589,9 +589,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Get Book Files Api Books  Book Id  Files Get"
+                  "$ref": "#/components/schemas/BookFilesResponse"
                 }
               }
             }
@@ -3627,7 +3625,7 @@
           "Library Import"
         ],
         "summary": "Rescan Session",
-        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left exactly as they are; the new rows are returned.",
+        "description": "Scan the session's folder again and add the folders it does not already account for;\nexisting rows and choices are kept, except a stored row's `format_copy` when a new row joins its copy set.",
         "operationId": "rescan_session_api_library_import_session__session_id__rescan_post",
         "parameters": [
           {
@@ -3680,9 +3678,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Rescan Session Api Library Import Session  Session Id  Rescan Post"
+                  "$ref": "#/components/schemas/RescanResponse"
                 }
               }
             }
@@ -3805,7 +3801,7 @@
           "Library Import"
         ],
         "summary": "Get Import Session",
-        "description": "Get an import session by ID",
+        "description": "Get an import session by ID, its format copies ranked by the quality profiles as they are now.",
         "operationId": "get_import_session_api_library_import_session__session_id__get",
         "parameters": [
           {
@@ -4099,6 +4095,112 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RemoveFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/dismiss-folders": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Dismiss Import Folders",
+        "description": "Take the session's rows named off the page, leaving their files where they are.",
+        "operationId": "dismiss_import_folders_api_library_import_session__session_id__dismiss_folders_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFoldersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DismissFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/format-copy": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Choose Format Copy",
+        "description": "Keep the copy at `path` in place of the one its quality profile ranks first.",
+        "operationId": "choose_format_copy_api_library_import_session__session_id__format_copy_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChooseFormatCopyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChooseFormatCopyResponse"
                 }
               }
             }
@@ -11426,51 +11528,6 @@
         }
       }
     },
-    "/api/metadata/books/{book_id}/create-cover": {
-      "post": {
-        "tags": [
-          "Metadata"
-        ],
-        "summary": "Create Cover File",
-        "description": "Save the book's cover as cover.jpg, downloaded from its URL or copied\nfrom the custom cover when one is set.",
-        "operationId": "create_cover_file_api_metadata_books__book_id__create_cover_post",
-        "parameters": [
-          {
-            "name": "book_id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "title": "Book Id"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful Response",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Create Cover File Api Metadata Books  Book Id  Create Cover Post"
-                }
-              }
-            }
-          },
-          "422": {
-            "description": "Validation Error",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/HTTPValidationError"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
     "/api/metadata/books/{book_id}/create-reader": {
       "post": {
         "tags": [
@@ -11561,6 +11618,51 @@
         }
       }
     },
+    "/api/metadata/books/{book_id}/create-cover": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Cover File",
+        "description": "Save the book's cover as cover.jpg, downloaded from its URL or copied\nfrom the custom cover when one is set.",
+        "operationId": "create_cover_file_api_metadata_books__book_id__create_cover_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Cover File Api Metadata Books  Book Id  Create Cover Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/metadata/books/{book_id}/create-opf": {
       "post": {
         "tags": [
@@ -11606,13 +11708,103 @@
         }
       }
     },
+    "/api/metadata/books/{book_id}/create-metadata-json": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Metadata Json File",
+        "description": "Create Audiobookshelf's metadata.json",
+        "operationId": "create_metadata_json_file_api_metadata_books__book_id__create_metadata_json_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Metadata Json File Api Metadata Books  Book Id  Create Metadata Json Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/metadata/books/{book_id}/create-nfo": {
+      "post": {
+        "tags": [
+          "Metadata"
+        ],
+        "summary": "Create Nfo File",
+        "description": "Create the .nfo metadata file",
+        "operationId": "create_nfo_file_api_metadata_books__book_id__create_nfo_post",
+        "parameters": [
+          {
+            "name": "book_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Book Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Create Nfo File Api Metadata Books  Book Id  Create Nfo Post"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/metadata/books/{book_id}/write-tags": {
       "post": {
         "tags": [
           "Metadata"
         ],
         "summary": "Write Audio Tags",
-        "description": "Write audio tags to audio files",
+        "description": "Write audio tags to audio files, embedding the cover in the same pass when `embed_cover` asks.",
         "operationId": "write_audio_tags_api_metadata_books__book_id__write_tags_post",
         "parameters": [
           {
@@ -11625,6 +11817,23 @@
             }
           }
         ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "anyOf": [
+                  {
+                    "$ref": "#/components/schemas/WriteTagsBody"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Body"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "Successful Response",
@@ -20373,6 +20582,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
+              "write_metadata_json": false,
+              "write_nfo": false,
               "write_tags": false,
               "embed_cover": false,
               "move_files": true
@@ -21181,6 +21392,184 @@
         ],
         "title": "BookCreate",
         "description": "Request model for creating a book"
+      },
+      "BookFileEntry": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "filename": {
+            "type": "string",
+            "title": "Filename"
+          },
+          "size": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Size"
+          },
+          "format": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Format"
+          },
+          "audio_codec": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Audio Codec"
+          },
+          "bitrate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bitrate"
+          },
+          "sample_rate": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sample Rate"
+          },
+          "channels": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Channels"
+          },
+          "duration": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Duration"
+          },
+          "language": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Language"
+          },
+          "import_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Import Date"
+          },
+          "first_seen_date": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "First Seen Date"
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "book_id",
+          "path",
+          "filename",
+          "size",
+          "format",
+          "audio_codec",
+          "bitrate",
+          "sample_rate",
+          "channels",
+          "duration",
+          "language",
+          "import_date",
+          "first_seen_date"
+        ],
+        "title": "BookFileEntry"
+      },
+      "BookFilesResponse": {
+        "properties": {
+          "book_id": {
+            "type": "integer",
+            "title": "Book Id"
+          },
+          "files": {
+            "items": {
+              "$ref": "#/components/schemas/BookFileEntry"
+            },
+            "type": "array",
+            "title": "Files"
+          },
+          "total": {
+            "type": "integer",
+            "title": "Total"
+          },
+          "sidecar_names": {
+            "$ref": "#/components/schemas/SidecarNames"
+          }
+        },
+        "type": "object",
+        "required": [
+          "book_id",
+          "files",
+          "total",
+          "sidecar_names"
+        ],
+        "title": "BookFilesResponse"
       },
       "BookIdsQuery": {
         "properties": {
@@ -23159,6 +23548,16 @@
             "title": "Write Opf",
             "default": false
           },
+          "write_metadata_json": {
+            "type": "boolean",
+            "title": "Write Metadata Json",
+            "default": false
+          },
+          "write_nfo": {
+            "type": "boolean",
+            "title": "Write Nfo",
+            "default": false
+          },
           "write_tags": {
             "type": "boolean",
             "title": "Write Tags",
@@ -23781,6 +24180,92 @@
         ],
         "title": "CalendarResponse"
       },
+      "CarriedMatch": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "best_match": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Best Match"
+          },
+          "libex_matches": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Libex Matches"
+          },
+          "selectedMatch": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selectedmatch"
+          },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
+          },
+          "match_confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Match Confidence"
+          },
+          "matched_runtime_length_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Runtime Length Min"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "CarriedMatch",
+        "description": "The match a newly kept copy took from another copy of its book, as its stored row now holds it."
+      },
       "CatalogAddOptions": {
         "properties": {
           "monitor": {
@@ -23846,6 +24331,59 @@
         "type": "object",
         "title": "CatalogRemoveRequest",
         "description": "Remove a catalog entry, optionally excluding it from being re-added."
+      },
+      "ChooseFormatCopyRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Path"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "title": "ChooseFormatCopyRequest"
+      },
+      "ChooseFormatCopyResponse": {
+        "properties": {
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "format_copies"
+        ],
+        "title": "ChooseFormatCopyResponse"
       },
       "ClientCreate": {
         "properties": {
@@ -26893,6 +27431,53 @@
         "type": "object",
         "title": "DiscoverSettingsUpdate"
       },
+      "DismissFoldersResponse": {
+        "properties": {
+          "dismissed_count": {
+            "type": "integer",
+            "title": "Dismissed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dismissed_count",
+          "format_copies",
+          "session_closed"
+        ],
+        "title": "DismissFoldersResponse"
+      },
       "DownloadHandlingSettings": {
         "properties": {
           "enable_completed_handling": {
@@ -28175,6 +28760,83 @@
           "needs_move"
         ],
         "title": "FolderPlanOut"
+      },
+      "FormatCopyRow": {
+        "properties": {
+          "group": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Group"
+          },
+          "format": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 1,
+            "title": "Format"
+          },
+          "outranked_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outranked By"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Rank",
+            "default": 0
+          },
+          "chosen": {
+            "type": "boolean",
+            "title": "Chosen",
+            "default": false
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "profile",
+                  "format_order",
+                  "profiles_unread",
+                  "tie",
+                  "chosen"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "group",
+          "format"
+        ],
+        "title": "FormatCopyRow",
+        "description": "A row's place among copies of one book in several formats. `rank` is\nits place in the set's order, 0 first; a hidden copy's `outranked_by`\nnames the one kept copy and `reason` says why it lost."
       },
       "FrontendErrorReport": {
         "properties": {
@@ -31284,7 +31946,7 @@
           "write_audio_tags": {
             "type": "boolean",
             "title": "Write Audio Tags",
-            "default": false
+            "default": true
           },
           "write_tags_on_import": {
             "type": "boolean",
@@ -31294,6 +31956,11 @@
           "write_tags_on_refresh": {
             "type": "boolean",
             "title": "Write Tags On Refresh",
+            "default": false
+          },
+          "write_tags_to_hardlinked_files": {
+            "type": "boolean",
+            "title": "Write Tags To Hardlinked Files",
             "default": false
           },
           "tag_title": {
@@ -33498,7 +34165,7 @@
           "path_mapping_suggestion"
         ],
         "title": "QueueItemResponse",
-        "description": "One queue row: an active client download, a client-history failure, a\npending grab or a delay-profile hold. Fields that do not apply to a\nrow's kind are null."
+        "description": "One queue row: an active client download, a job from the client's\nhistory (SABnzbd/NZBGet: finished, failed or post-processing), a pending\ngrab or a delay-profile hold. Fields that do not apply to a row's kind\nare null."
       },
       "QueuePollErrorResponse": {
         "properties": {
@@ -34265,13 +34932,46 @@
           "failed_count": {
             "type": "integer",
             "title": "Failed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
           }
         },
         "type": "object",
         "required": [
           "results",
           "removed_count",
-          "failed_count"
+          "failed_count",
+          "session_closed"
         ],
         "title": "RemoveFoldersResponse"
       },
@@ -34358,6 +35058,65 @@
         },
         "type": "object",
         "title": "RenameFileRequest"
+      },
+      "RescanResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "added": {
+            "type": "integer",
+            "title": "Added"
+          },
+          "left_out": {
+            "type": "integer",
+            "title": "Left Out"
+          },
+          "results": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CarriedMatch"
+            },
+            "type": "object",
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "session_id",
+          "added",
+          "left_out",
+          "results",
+          "format_copies"
+        ],
+        "title": "RescanResponse"
       },
       "RetryMatchRequest": {
         "properties": {
@@ -35202,6 +35961,16 @@
               }
             ]
           },
+          "format_copy": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormatCopyRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
           "status": {
             "type": "string",
             "title": "Status",
@@ -35694,6 +36463,8 @@
               "write_desc": false,
               "write_reader": false,
               "write_opf": false,
+              "write_metadata_json": false,
+              "write_nfo": false,
               "write_tags": false,
               "embed_cover": false,
               "move_files": true
@@ -36092,6 +36863,24 @@
         ],
         "title": "SetupStatusResponse",
         "description": "Whether this instance still needs its initial admin account created."
+      },
+      "SidecarNames": {
+        "properties": {
+          "opf": {
+            "type": "string",
+            "title": "Opf"
+          },
+          "nfo": {
+            "type": "string",
+            "title": "Nfo"
+          }
+        },
+        "type": "object",
+        "required": [
+          "opf",
+          "nfo"
+        ],
+        "title": "SidecarNames"
       },
       "SingleAddAndDownloadRequest": {
         "properties": {
@@ -36716,6 +37505,24 @@
           "message"
         ],
         "title": "WireGuardTestResult"
+      },
+      "WriteTagsBody": {
+        "properties": {
+          "embed_cover": {
+            "anyOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Embed Cover",
+            "description": "Embed the book's cover in the same pass; omitted, the tag_cover setting decides."
+          }
+        },
+        "type": "object",
+        "title": "WriteTagsBody"
       }
     },
     "securitySchemes": {
