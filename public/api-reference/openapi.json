@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.29.0",
+    "version": "0.30.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -3433,7 +3433,7 @@
           "Library Import"
         ],
         "summary": "Rescan Session",
-        "description": "Scan the session's own folder again and add the folders it holds that\nthe session does not already account for. Existing rows, and every choice\nmade on them, are left exactly as they are; the new rows are returned.",
+        "description": "Scan the session's folder again and add the folders it does not already account for;\nexisting rows and choices are kept, except a stored row's `format_copy` when a new row joins its copy set.",
         "operationId": "rescan_session_api_library_import_session__session_id__rescan_post",
         "parameters": [
           {
@@ -3486,9 +3486,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true,
-                  "title": "Response Rescan Session Api Library Import Session  Session Id  Rescan Post"
+                  "$ref": "#/components/schemas/RescanResponse"
                 }
               }
             }
@@ -3611,7 +3609,7 @@
           "Library Import"
         ],
         "summary": "Get Import Session",
-        "description": "Get an import session by ID",
+        "description": "Get an import session by ID, its format copies ranked by the quality profiles as they are now.",
         "operationId": "get_import_session_api_library_import_session__session_id__get",
         "parameters": [
           {
@@ -3905,6 +3903,112 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RemoveFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/dismiss-folders": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Dismiss Import Folders",
+        "description": "Take the session's rows named off the page, leaving their files where they are.",
+        "operationId": "dismiss_import_folders_api_library_import_session__session_id__dismiss_folders_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RemoveFoldersRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DismissFoldersResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/format-copy": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Choose Format Copy",
+        "description": "Keep the copy at `path` in place of the one its quality profile ranks first.",
+        "operationId": "choose_format_copy_api_library_import_session__session_id__format_copy_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChooseFormatCopyRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ChooseFormatCopyResponse"
                 }
               }
             }
@@ -13783,7 +13887,7 @@
           "Settings"
         ],
         "summary": "Delete Root Folder",
-        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete the folder's\ncontents, limited to the configured root path. Auto-tag rules scoped to\nthis root folder are removed with it, along with any rule left with no\nconditions, and `removed_auto_tag_rules` in the response lists them.",
+        "description": "Delete a root folder from ABM. ABM forgets every book recorded under the\nfolder, and the activity log keeps its entries. By default files on disk\nare not touched; set `delete_files=true` to also delete each of those\nbooks' files, as deleting the book would. The root folder itself, and\nanything in it outside every book's folder, is always left on disk.\n`files_failed` counts files that could not be deleted, and\n`failed_book_count` every book not fully removed. Auto-tag rules scoped\nto this root folder are removed with it, along with any rule left with\nno conditions, and `removed_auto_tag_rules` in the response lists them.",
         "operationId": "delete_root_folder_api_settings_root_folders__folder_id__delete",
         "parameters": [
           {
@@ -23432,6 +23536,92 @@
         ],
         "title": "CalendarResponse"
       },
+      "CarriedMatch": {
+        "properties": {
+          "status": {
+            "type": "string",
+            "title": "Status"
+          },
+          "best_match": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Best Match"
+          },
+          "libex_matches": {
+            "anyOf": [
+              {
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Libex Matches"
+          },
+          "selectedMatch": {
+            "anyOf": [
+              {
+                "additionalProperties": true,
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Selectedmatch"
+          },
+          "confirmedAsin": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Confirmedasin"
+          },
+          "match_confidence": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Match Confidence"
+          },
+          "matched_runtime_length_min": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matched Runtime Length Min"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "CarriedMatch",
+        "description": "The match a newly kept copy took from another copy of its book, as its stored row now holds it."
+      },
       "CatalogAddOptions": {
         "properties": {
           "monitor": {
@@ -23497,6 +23687,59 @@
         "type": "object",
         "title": "CatalogRemoveRequest",
         "description": "Remove a catalog entry, optionally excluding it from being re-added."
+      },
+      "ChooseFormatCopyRequest": {
+        "properties": {
+          "path": {
+            "type": "string",
+            "maxLength": 4096,
+            "minLength": 1,
+            "title": "Path"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "path"
+        ],
+        "title": "ChooseFormatCopyRequest"
+      },
+      "ChooseFormatCopyResponse": {
+        "properties": {
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "format_copies"
+        ],
+        "title": "ChooseFormatCopyResponse"
       },
       "ClientCreate": {
         "properties": {
@@ -26522,6 +26765,53 @@
         "type": "object",
         "title": "DiscoverSettingsUpdate"
       },
+      "DismissFoldersResponse": {
+        "properties": {
+          "dismissed_count": {
+            "type": "integer",
+            "title": "Dismissed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "dismissed_count",
+          "format_copies",
+          "session_closed"
+        ],
+        "title": "DismissFoldersResponse"
+      },
       "DownloadHandlingSettings": {
         "properties": {
           "enable_completed_handling": {
@@ -27804,6 +28094,83 @@
           "needs_move"
         ],
         "title": "FolderPlanOut"
+      },
+      "FormatCopyRow": {
+        "properties": {
+          "group": {
+            "type": "string",
+            "maxLength": 64,
+            "minLength": 1,
+            "title": "Group"
+          },
+          "format": {
+            "type": "string",
+            "maxLength": 20,
+            "minLength": 1,
+            "title": "Format"
+          },
+          "outranked_by": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 200
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Outranked By"
+          },
+          "rank": {
+            "type": "integer",
+            "minimum": 0.0,
+            "title": "Rank",
+            "default": 0
+          },
+          "chosen": {
+            "type": "boolean",
+            "title": "Chosen",
+            "default": false
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "profile",
+                  "format_order",
+                  "profiles_unread",
+                  "tie",
+                  "chosen"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "bytes": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Bytes"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "group",
+          "format"
+        ],
+        "title": "FormatCopyRow",
+        "description": "A row's place among copies of one book in several formats. `rank` is\nits place in the set's order, 0 first; a hidden copy's `outranked_by`\nnames the one kept copy and `reason` says why it lost."
       },
       "FrontendErrorReport": {
         "properties": {
@@ -33122,7 +33489,7 @@
           "path_mapping_suggestion"
         ],
         "title": "QueueItemResponse",
-        "description": "One queue row: an active client download, a client-history failure, a\npending grab or a delay-profile hold. Fields that do not apply to a\nrow's kind are null."
+        "description": "One queue row: an active client download, a job from the client's\nhistory (SABnzbd/NZBGet: finished, failed or post-processing), a pending\ngrab or a delay-profile hold. Fields that do not apply to a row's kind\nare null."
       },
       "QueuePollErrorResponse": {
         "properties": {
@@ -33889,13 +34256,46 @@
           "failed_count": {
             "type": "integer",
             "title": "Failed Count"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "session_closed": {
+            "type": "boolean",
+            "title": "Session Closed"
+          },
+          "matches": {
+            "anyOf": [
+              {
+                "additionalProperties": {
+                  "$ref": "#/components/schemas/CarriedMatch"
+                },
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Matches"
           }
         },
         "type": "object",
         "required": [
           "results",
           "removed_count",
-          "failed_count"
+          "failed_count",
+          "session_closed"
         ],
         "title": "RemoveFoldersResponse"
       },
@@ -33982,6 +34382,65 @@
         },
         "type": "object",
         "title": "RenameFileRequest"
+      },
+      "RescanResponse": {
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "title": "Success"
+          },
+          "session_id": {
+            "type": "string",
+            "title": "Session Id"
+          },
+          "added": {
+            "type": "integer",
+            "title": "Added"
+          },
+          "left_out": {
+            "type": "integer",
+            "title": "Left Out"
+          },
+          "results": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array",
+            "title": "Results"
+          },
+          "format_copies": {
+            "additionalProperties": {
+              "anyOf": [
+                {
+                  "$ref": "#/components/schemas/FormatCopyRow"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "object",
+            "title": "Format Copies"
+          },
+          "matches": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/CarriedMatch"
+            },
+            "type": "object",
+            "title": "Matches"
+          }
+        },
+        "type": "object",
+        "required": [
+          "success",
+          "session_id",
+          "added",
+          "left_out",
+          "results",
+          "format_copies"
+        ],
+        "title": "RescanResponse"
       },
       "RetryMatchRequest": {
         "properties": {
@@ -34760,6 +35219,16 @@
             "anyOf": [
               {
                 "$ref": "#/components/schemas/FolderMismatchRow"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "format_copy": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/FormatCopyRow"
               },
               {
                 "type": "null"

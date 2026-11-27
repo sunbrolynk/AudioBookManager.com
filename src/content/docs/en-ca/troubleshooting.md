@@ -85,7 +85,7 @@ See the `.abmstage` section above.
 
 ## Downloads finish but never import
 
-Add a remote path mapping, or make ABM and the client see the folder at the same path. An unreadable subfolder blocks the whole download until its permissions are fixed. See [Download Clients](/en-ca/settings/download-clients/).
+Add a remote path mapping, or make ABM and the client see the folder at the same path. An unreadable subfolder blocks the whole download until its permissions are fixed. ABM checks such a download again every cycle, so it imports once the path works. **Test** on a qBittorrent, Deluge, Transmission or rTorrent client can suggest the mapping it needs. A SABnzbd or NZBGet download that says other downloads share its folder needs the client set to save each download in its own job folder. A SABnzbd client that shows as unhealthy and refuses grabs is usually missing ABM's category; add it in SABnzbd under **Config > Categories**. See [Download Clients](/en-ca/settings/download-clients/).
 
 ## Docker cannot reach the metadata source or indexers
 
