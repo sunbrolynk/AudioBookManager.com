@@ -78,3 +78,4 @@ The Tasks page shows the job as **Local Storage Backup**. An ABM backup carries 
 - Tag writing changes the audio files. Audiobookshelf will see them as modified.
 - If metadata or a cover cannot be fetched during tag writing, the call returns warnings instead of failing.
 - When a cover could not be embedded because the connection refused it, the book page and the edit dialog show a warning instead of plain success.
+- Writing audio tags alone follows the **Cover Art** tag field for the cover. When the cover embed is chosen too, as **Write All** always does, the cover goes in during the tag write, and a book with no cover gets the warning "No cover available to embed".
