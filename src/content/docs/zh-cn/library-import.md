@@ -57,7 +57,7 @@ Library Import 页面上的 **Recent Import Sessions** 会显示每次扫描有�
 
 - 一本书被拆在好几个文件夹里时，可以把这些行合并。之后也能在文件夹详情里重新拆开。 合并后那一行的匹配只是建议：它计入 **Needs a look**，在你确认或另选之前保持未勾选。只有每个部分都有时长时，它的时长才是各部分之和；只有所有部分给出同一个 ASIN 时，它才保留 ASIN。合并只用于同一本书的各部分：同一本书的两种格式请保留为不同的行，因为合并会把两份时长加在一起。在你合并或拆分某行之后才完成的查询，也只是建议。
 - 行详情中的 **Confirm match** 会勾选 **Needs a look** 行，**Undo confirmation** 会连同勾选一起撤回。
-- 添加被阻止时，按钮上方会显示原因，比如“Select at least one folder”或“2 selected rows still need a decision”。两行指向同一个文件夹或文件时，添加也会被拒绝，什么都不会动。
+- 添加被阻止时，按钮上方会显示原因，比如“Select at least one folder”或“2 selected rows still need a decision”。两行指向同一个文件夹或文件时，添加也会被拒绝，什么都不会动。导入时每一行都会再检查一次：如果某一行的文件夹或文件，或者合并进来的任何文件，在这次会话扫描的文件夹之外，或者通过链接通向它外面，这一行就会以“Outside the folder this session scanned”失败，什么都不会读取、移动、复制、链接或删除。如果导入会话已经不存在，每一行都会这样失败。
 - 任何会删除或替换文件的操作都会先问你。
 - 离开页面时，未完成的修改会被保存。
 

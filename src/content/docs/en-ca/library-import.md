@@ -38,7 +38,7 @@ Any other match is still offered as a suggestion, but the row counts under **Nee
 
 A book in several loose files that share a folder with other books, such as an author folder or the folder you scanned, is one row holding every part. Files that differ by a book or volume number stay separate rows. Parts are grouped per format, so a whole-book file beside them is a row of its own, and a bitrate in a file name, such as `128kbps`, is not a part number.
 
-Two formats of one book, such as `Book.mp3` and `Book.m4b`, are separate rows, whether the files sit loose in the folder you scan or in a book folder of their own. Each row imports, removes and measures only its own file. A cover, cue or other non-audio file with the same name goes with the book's file when the book is there in one format, and stays where it is when it is there in two. This holds even when one copy is moved into the library and the other is cleared in the same import.
+Two formats of one book, such as `Book.mp3` and `Book.m4b`, are one row per format, whether the files sit loose in the folder you scan or in a book folder of their own. Each row imports, removes and measures only its own file. A cover, cue or other non-audio file with the same name goes with the book's file when the book is there in one format, and stays where it is when it is there in two. This holds even when one copy is moved into the library and the other is cleared in the same import. Usually only the copy the book's quality profile ranks highest is offered for import, as described under [Copies in several formats](#copies-in-several-formats).
 
 A tag written as `Title: Series, Book 2` is read as the title, the series and its position.
 
@@ -46,11 +46,42 @@ A series position written as a range, such as `1-3`, agrees with any position in
 
 A title, album, series, series part, artist, album artist, composer or narrator tag longer than 500 characters is ignored.
 
-**Recent Import Sessions** on the Library Import page shows each scan with how many rows are matched, counting books already in the library, and how many are pending, counting rows still waiting for you to pick a match.
+**Recent Import Sessions** on the Library Import page shows each scan with how many rows are matched, counting books already in the library, and how many are pending, counting rows still waiting for you to pick a match. Hidden copies are in neither count.
+
+## Copies in several formats
+
+When one folder holds the same book in several formats, with the same file names apart from the extension, the scan keeps one copy and puts the others under **Hidden**. The kept copy is the one the book's quality profile ranks highest. A book that isn't in your library yet uses the default quality profile. See [Profiles](/en-ca/settings/profiles/#quality-profiles) for how the ladder ranks formats. A format switched off in the profile, or one that isn't on the ladder, ranks below every format switched on. With no quality profile at all, or when ABM can't read your quality profiles, formats rank in this order: M4B, M4A, MP3, FLAC, OGG, Opus, AAC, WMA.
+
+When copies rank the same, one is still kept: the one with the higher bitrate, then the bigger one, then the one first in that order.
+
+The ranking follows the profile as it is now, so changing the profile before you import changes which copy is kept.
+
+Copies of one book can each match it. When a copy without a match of its own becomes the kept one, it takes the match of the best-ranked other copy that has one, so a matched copy is never hidden behind an unmatched one. This happens on a scan, on a profile change, when another copy is deleted or taken off the import, and on a rescan, including one that makes a copy already in the list the kept one. A copy that was deleted or taken off the import never gives its match, and a copy that is a library book's own folder keeps its own.
+
+A hidden copy is never added. Its row says why, such as "MP3 copy of a book also here as M4B; this book's quality profile ranks M4B higher." Other reasons read "with no quality profile set, ABM prefers M4B", "ABM couldn't read your quality profiles, so its built-in order prefers M4B", "both rank the same and the M4B was picked as the better file", or "you chose to import the M4B".
+
+Nothing is hidden, and every copy stays in the list, when:
+
+- two of the copies are in the same format
+- the copies' runtimes differ by more than three minutes or 2% of the longer one, whichever is more, since they may be different recordings
+
+### Picking a copy
+
+The folder details of a book kept in several formats have a **Formats** section listing each copy. **Import this one instead** on a hidden copy keeps that copy and hides the others behind it. When the copy you pick has no match of its own, it takes the match of the copy it replaced, so the match you were looking at stays with your pick. A copy that is a library book's own folder keeps its own. Your pick stays through a rescan, a change to the profile, and deleting another copy. Picking waits while a rescan or a delete runs.
+
+### Rescan, delete and finishing
+
+**Rescan** ranks a book's copies again when it finds a new one. A better format found on rescan hides the copy you already had, and the rescan's message says how many rows are now hidden.
+
+Deleting the copy that was kept brings back the next best one. It takes the match of another copy still in the import, as above, or gets its lookup when none of them has a match and it hasn't had one.
+
+When only hidden copies are left, All says so and offers a way to show them.
+
+After Add, a "Delete the other copies?" dialog lists the hidden copies of the books just added, with each file it would delete. **Delete files** deletes them once you type `delete`. **Keep files** takes them off the import and leaves the files where they are. A session with hidden copies still in it stays open, and it closes on its own once every row left in it is imported.
 
 ## Reading the list
 
-- The summary line shows how many folders were found and how many are ready. The header bar has **Sort** (Folder name, Status, Title, Author, Series, Files) and **Filter** (Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Needs a decision, Looking up, Deleted on add). Each filter shows its count, and the counts match the summary line. A match you have confirmed is called Ready. Sort and filter are remembered on this device. They are not kept in the page address, so a link with `?sort=` or `?filter=` in it doesn't carry them over.
+- The count bar above the list shows how many rows each status holds. Choosing a status there filters the list, the same as **Filter** in the header bar, and the two always show the same choice. All, Ready, Needs a look, Unmatched and In library are always there. The others show while they hold a row or are the chosen filter. The header bar has **Sort** (Folder name, Status, Title, Author, Series, Files) and **Filter** (All, Ready, Needs a look, No audio, Unmatched, In library, Lookup failed, Hidden, Needs a decision, Looking up, Deleted on add), and each filter shows its count. All leaves out hidden copies, and Hidden has its own count. A match you have confirmed is called Ready. Sort and filter are remembered on this device. They are not kept in the page address, so a link with `?sort=` or `?filter=` in it doesn't carry them over.
 - Each row shows the cover, title, author and series, and how sure the match is as a percentage, such as "95% match". Each row keeps every match its title, author and series searches find. The folder details have **Find a match** or **Change match** to search by hand. The search lists Libex's best matches for what you typed first, then the books its title, author and series searches find, each book once, 50 at a time. More load as you scroll, or with **Load more**, until there are no more.
 - When the files have no ASIN or runtime to confirm the edition, the folder details say so.
 - **Rescan** picks up folders added since the scan and keeps your choices.
@@ -64,12 +95,14 @@ A reader named in brackets in a folder or file name, such as `The Ashen Court (R
 
 ## Joining, splitting and adding
 
-- Join rows that are one book split across folders. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. Join is only for the parts of one book: leave two formats of one book as separate rows, since joining them adds both runtimes. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
+- Join rows that are one book split across folders. Join refuses a hidden copy ("Hidden copies can't be joined.") and a kept copy while other formats of it are still hidden, since those copies would be left behind. The joined row's match is only a suggestion: it counts under **Needs a look** and starts unticked until you confirm it or pick another. Its runtime is the parts' total only when every part has one, and it keeps an ASIN only when every part gives the same. Join is only for the parts of one book: leave two formats of one book as separate rows, since joining them adds both runtimes. Join and split wait while a rescan runs. A lookup that finishes after you join or split its row is only a suggestion too. Split them again from the folder details. A split asks first and says what happens: each file becomes a row of its own, whatever the folder matched to is discarded, and nothing on disk is touched.
 - On a phone, hold a row for about half a second to start joining. A "Hold to join" hint shows until you dismiss it or open a row. Tap the other rows to mark them. They take numbers in the order you tap them, and the first one marked is the one the rest join into. **Join rows** in the more actions sheet does the same without holding. Join needs at least two marked rows, and nothing on disk is touched.
 - On a phone, a folder's details have **Split into separate books** when the folder holds several files.
-- A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
-- Tick the folders you want, then choose what to do with them. The bar above the list has **Select All**, **Add to Library** and **Delete**, and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add.
-- Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted. Add is also refused, with nothing touched, when two rows claim the same folder or file. Each row's folder and files are checked again when it is imported. A row whose folder or files lead into a system folder, through a link for example, fails with that reason and nothing is taken from it. ABM also checks each destination root folder again, once per import, and refuses to place files in a root that is missing, can't be read, isn't answering, or leads into a system folder. A slow network share gets up to 2 minutes to answer. One row that can't be read fails on its own, and the rest of the import carries on.
+- A row's details offer **Confirm match** and **Delete**. A row with no audio only offers Delete. A hidden copy offers Delete and **Import this one instead**, as described under [Picking a copy](#picking-a-copy). A hidden copy can't be split, and neither can a kept copy while other formats of it are still hidden. Confirm match ticks a **Needs a look** row, and **Undo confirmation** takes back the tick along with it.
+- Tick the folders you want, then choose what to do with them. The bar above the list has **Select All**, **Add to Library** and **Delete**, and the phone has Add and Delete too. The scan ticks the folders it is sure about for Add. **Select All** never ticks a hidden copy, except under the Hidden filter, where it ticks every hidden copy so you can delete them together.
+- Add never imports a hidden copy, ticked or not. With only hidden copies ticked, Add is blocked with "Hidden copies are never added; delete them or untick them."
+- Add is blocked with a reason shown above the button, such as "Select at least one folder" or "2 selected rows still need a decision". Add can't start while folders are being deleted. Add is also refused, with nothing touched, when two rows claim the same folder or file. Each row's folder and files are checked again when it is imported. A row whose folder or files lead into a system folder, through a link for example, fails with that reason and nothing is taken from it. A row whose folder or file, or any file joined into it, sits outside the folder the session scanned or leads out of it through a link fails with "Outside the folder this session scanned" and nothing is read, moved, copied, linked or deleted. Every row fails the same way if its import session no longer exists. ABM also checks each destination root folder again, once per import, and refuses to place files in a root that is missing, can't be read, isn't answering, or leads into a system folder. A slow network share gets up to 2 minutes to answer. One row that can't be read fails on its own, and the rest of the import carries on.
+- Add is blocked when two ticked rows are matched to the same edition, and the reason names both: "A and B are matched to the same edition. Import one and delete or leave the other, or pick a different edition for one of them." One edition takes one folder.
 - Anything that would remove or replace files asks first. Choosing a delete decision names the files and says whether they go to the recycle bin or are deleted for good, and the decision is only set once you confirm. That is a sheet on a phone and a dialog on desktop.
 - A folder with **Include** turned off hides its decision, since nothing happens to it. On a phone, a folder that needs a decision opens with its question in view above the buttons.
 - On a phone, Add opens a sheet showing what will be imported and what will be removed, with Copy, Move or Hardlink. Hardlink is greyed out with its reason underneath when it can't be used.
@@ -99,7 +132,7 @@ A narrator, title or path cut off with an ellipsis opens in full when you tap or
 
 Delete works on any scanned folder, with audio or without. It only takes the folders you ticked yourself, on screen, in this visit. The ticks the scan made for Add never count for Delete, and after a reload you tick again.
 
-Delete asks first. The dialog lists the folders and how many audio files each holds, and you type `delete` to confirm. Files go to the recycle bin when it is on, and the task log lists each path removed (the first 50 per row, then a count). A folder that can't be deleted is reported on its own row with the reason, and the others in the same batch are still deleted.
+Delete asks first. The dialog lists what goes and says how many folders and how many files that is, since a row for a single file deletes that file and not its folder. You type `delete` to confirm, and the message afterwards counts folders and files the same way. Files go to the recycle bin when it is on, and the task log lists each path removed (the first 50 per row, then a count). A folder that can't be deleted is reported on its own row with the reason, and the others in the same batch are still deleted.
 
 Delete refuses:
 
@@ -108,7 +141,7 @@ Delete refuses:
 - a symlink
 - a folder or file that is, sits inside, or contains a library book's folder or one of its files
 
-It also refuses while any import is running, and an import can't start while folders are being deleted. A subfolder ABM can't read is never guessed at: the row fails, naming the folder, and nothing is removed. A row also fails if any of its files are still there afterwards. Deleting leaves every other book's folder alone. A row for a single file removes that file and the non-audio files that share its name exactly, so `Book.mp3` doesn't take `Book.part2.mp3` with it. When another format of the book shares its name, such as `Book.m4b`, the row removes only its own file. If any of those files belongs to a library book, nothing is removed.
+It also refuses while any import is running, and an import can't start while folders are being deleted. A subfolder ABM can't read is never guessed at: the row fails, naming the folder, and nothing is removed. A row also fails if any of its files are still there afterwards. Deleting leaves every other book's folder alone. A row for a single file removes that file and the non-audio files that share its name exactly, so `Book.mp3` doesn't take `Book.part2.mp3` with it. When another format of the book shares its name, such as `Book.m4b`, the row removes only its own file. If any of those files belongs to a library book, nothing is removed. Deleting the copy of a book that kept other formats hidden brings back the next best one, as described under [Copies in several formats](#copies-in-several-formats).
 
 A folder with no audio is deleted the same way as any other: tick it and choose Delete.
 
