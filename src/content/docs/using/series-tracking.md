@@ -9,7 +9,7 @@ A series in ABM is a catalog: every book Libex knows in it, with the ones you ow
 
 ## Monitor New Books
 
-Each series and author has a **Monitor New Books** choice, All or None. You set it in the [Add New](/using/add-new/) dialog when you add one, and again from the same dialog for one already in your library. It starts at All for a series and None for an author. When a refresh finds a book that was not in the catalog before, All adds it as wanted and None leaves it. The first time a catalog is built nothing counts as new. The choice is saved on the series or author, and refreshes apply it. The series and author pages don't show it.
+Each series and author has a **Monitor New Books** choice, All or None. You set it in the [Add New](/using/add-new/) dialog when you add one, and again from the same dialog for one already in your library. It starts at All for a series and None for an author. When a refresh finds a book that was not in the catalog before, All adds it as wanted and None leaves it. The first time a catalog is built nothing counts as new. The choice is saved on the series or author, and refreshes apply it. The series and author pages don't show it. The books it adds go to the series' root folder, else the author's, else the default root folder; see [Media Management](/settings/media-management/#where-new-books-go).
 
 ## Filling gaps
 

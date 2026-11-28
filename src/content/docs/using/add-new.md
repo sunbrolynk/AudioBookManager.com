@@ -20,7 +20,7 @@ The search has modes for Title, Author, Series, Books by author, Books in series
 | Missing Books (default) | Books you do not own |
 | None | The catalog only |
 
-You also pick the root folder, the quality profile, and whether books that appear later are added too (**Monitor New Books**). That is on by default for a series and off for an author. An author or series already in your library shows "In Library" with an **Add missing books** action.
+You also pick the root folder (not asked when you have only one), the quality profile, and whether books that appear later are added too (**Monitor New Books**). That is on by default for a series and off for an author. New books it finds go to the series' root folder, else the author's, else the default. See [Media Management](/settings/media-management/#where-new-books-go). An author or series already in your library shows "In Library" with an **Add missing books** action.
 
 The add runs as a background task with a progress toast. If the task cannot be queued, **Add missing books** fails with "Could not queue the task." instead of reporting that books are being added.
 

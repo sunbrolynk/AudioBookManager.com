@@ -3,7 +3,7 @@
   "info": {
     "title": "Audiobook Manager API",
     "description": "The API behind Audiobook Manager: manage your audiobook library, metadata, downloads and automation.",
-    "version": "0.30.0",
+    "version": "0.31.0",
     "x-logo": {
       "url": "/brand/banner-dark.svg",
       "altText": "AudioBook Manager"
@@ -426,7 +426,7 @@
           "Books"
         ],
         "summary": "Move Book",
-        "description": "Move a book's folder to a new location and repoint its file records.",
+        "description": "Move a book's folder to a new location and repoint its file records.\n`move_files` defaults to true; false only changes the book's recorded\npath: nothing on disk is touched and its file records follow the new path.",
         "operationId": "move_book_api_books__book_id__move_post",
         "parameters": [
           {
@@ -1594,6 +1594,103 @@
         }
       }
     },
+    "/api/authors/{author_id}/root-folder": {
+      "patch": {
+        "tags": [
+          "Authors"
+        ],
+        "summary": "Update Author Root Folder",
+        "description": "Set the root folder this author's new books are added to. No existing\nbook is moved.",
+        "operationId": "update_author_root_folder_api_authors__author_id__root_folder_patch",
+        "parameters": [
+          {
+            "name": "author_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Author Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AuthorRootFolderUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Update Author Root Folder Api Authors  Author Id  Root Folder Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/authors/bulk/root-folder": {
+      "post": {
+        "tags": [
+          "Authors"
+        ],
+        "summary": "Bulk Update Author Root Folder",
+        "description": "Set the root folder new books are added to for a set of authors.",
+        "operationId": "bulk_update_author_root_folder_api_authors_bulk_root_folder_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkAuthorRootFolderUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/authors/{author_id}/books": {
       "get": {
         "tags": [
@@ -2370,6 +2467,103 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/BulkSeriesProfileUpdate"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SuccessResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/series/{series_id}/root-folder": {
+      "patch": {
+        "tags": [
+          "Series"
+        ],
+        "summary": "Update Series Root Folder",
+        "description": "Set the root folder this series' new books are added to; null inherits\nthe author's. No existing book is moved.",
+        "operationId": "update_series_root_folder_api_series__series_id__root_folder_patch",
+        "parameters": [
+          {
+            "name": "series_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "title": "Series Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SeriesRootFolderUpdate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true,
+                  "title": "Response Update Series Root Folder Api Series  Series Id  Root Folder Patch"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/series/bulk/root-folder": {
+      "post": {
+        "tags": [
+          "Series"
+        ],
+        "summary": "Bulk Update Series Root Folder",
+        "description": "Set the root folder new books are added to for a set of series; null\nmakes each inherit its author's.",
+        "operationId": "bulk_update_series_root_folder_api_series_bulk_root_folder_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/BulkSeriesRootFolderUpdate"
               }
             }
           },
@@ -4054,7 +4248,7 @@
           "Library Import"
         ],
         "summary": "Confirm Library Import",
-        "description": "Confirm and import matched books into the library. Every file must come\nfrom the session's own scan and no file may be imported twice; anything\nelse is refused before a file is touched. Queues a background task; poll\n`/api/tasks/{task_id}` for status.",
+        "description": "Confirm and import matched books into the library. Every file must come\nfrom the session's own scan and no file may be imported twice; anything\nelse is refused before a file is touched. Queues a background task; poll\n`/api/tasks/{task_id}` for status. `destination` is the root the import\nfiles into, or null for an Automatic import with no import-wide root.",
         "operationId": "confirm_library_import_api_library_import_confirm_post",
         "requestBody": {
           "content": {
@@ -4170,6 +4364,59 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/RowExtrasResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/library-import/session/{session_id}/root-preview": {
+      "post": {
+        "tags": [
+          "Library Import"
+        ],
+        "summary": "Preview Roots",
+        "description": "The root each named row's new book files into, and whether it is\nadopted in place there: the root it already sits in, else the scanned\nroot for a session inside one, else the root its stored match's series\nor authors point at, else the placement default.",
+        "operationId": "preview_roots_api_library_import_session__session_id__root_preview_post",
+        "parameters": [
+          {
+            "name": "session_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Session Id"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RootPreviewRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RootPreviewResponse"
                 }
               }
             }
@@ -19921,6 +20168,17 @@
               }
             ],
             "title": "Preference Profile Name"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
           }
         },
         "type": "object",
@@ -20247,6 +20505,17 @@
               }
             ],
             "title": "Preference Profile Name"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
           }
         },
         "type": "object",
@@ -20257,6 +20526,20 @@
         ],
         "title": "AuthorResponse",
         "description": "Response model for an author"
+      },
+      "AuthorRootFolderUpdate": {
+        "properties": {
+          "root_folder_id": {
+            "type": "integer",
+            "title": "Root Folder Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "root_folder_id"
+        ],
+        "title": "AuthorRootFolderUpdate",
+        "description": "Set the root folder an author's new books are added to."
       },
       "AuthorSelection": {
         "properties": {
@@ -20302,7 +20585,8 @@
               "write_metadata_json": false,
               "write_nfo": false,
               "write_tags": false,
-              "embed_cover": false
+              "embed_cover": false,
+              "move_files": true
             }
           }
         },
@@ -21367,6 +21651,11 @@
               }
             ],
             "title": "New Path"
+          },
+          "move_files": {
+            "type": "boolean",
+            "title": "Move Files",
+            "default": true
           }
         },
         "type": "object",
@@ -22684,6 +22973,30 @@
         "title": "BulkAuthorProfileUpdate",
         "description": "Set or clear the quality-profile override for a non-empty set of\nauthors. A null `preference_profile_id` clears the override, falling back\nto the global default."
       },
+      "BulkAuthorRootFolderUpdate": {
+        "properties": {
+          "author_ids": {
+            "items": {
+              "type": "integer",
+              "exclusiveMinimum": 0.0
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Author Ids"
+          },
+          "root_folder_id": {
+            "type": "integer",
+            "title": "Root Folder Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "author_ids",
+          "root_folder_id"
+        ],
+        "title": "BulkAuthorRootFolderUpdate",
+        "description": "Set the root folder new books are added to for a non-empty set of authors."
+      },
       "BulkAutoTagChanges": {
         "properties": {
           "enabled": {
@@ -23265,6 +23578,11 @@
               }
             ],
             "title": "New Path"
+          },
+          "move_files": {
+            "type": "boolean",
+            "title": "Move Files",
+            "default": true
           }
         },
         "type": "object",
@@ -23542,6 +23860,37 @@
         ],
         "title": "BulkSeriesProfileUpdate",
         "description": "Set or clear the quality-profile override for a non-empty set of\nseries. A null `preference_profile_id` clears the override, falling back\nto the global default."
+      },
+      "BulkSeriesRootFolderUpdate": {
+        "properties": {
+          "series_ids": {
+            "items": {
+              "type": "integer",
+              "exclusiveMinimum": 0.0
+            },
+            "type": "array",
+            "minItems": 1,
+            "title": "Series Ids"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "series_ids",
+          "root_folder_id"
+        ],
+        "title": "BulkSeriesRootFolderUpdate",
+        "description": "Set the root folder new books are added to for a non-empty set of series;\nnull makes each inherit its author's."
       },
       "BulkStatusUpdate": {
         "properties": {
@@ -25023,6 +25372,17 @@
             ],
             "title": "Cover Preference"
           },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          },
           "confirmedAsin": {
             "anyOf": [
               {
@@ -25070,6 +25430,17 @@
             ],
             "title": "Import Mode"
           },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          },
           "session_id": {
             "type": "string",
             "maxLength": 2000,
@@ -25083,7 +25454,7 @@
           "session_id"
         ],
         "title": "ConfirmImportRequest",
-        "description": "The rows to import from one session, and how their files are placed.\nAn omitted `import_mode` uses the Media Management default."
+        "description": "The rows to import from one session, and how their files are placed.\nAn omitted `import_mode` uses the Media Management default. `root_folder_id`\noverrides the root for a session scanned outside every root; omitted, each\nnew book goes to its author's or series' root. A session scanned inside a\nroot always files there."
       },
       "ConversionDryRunRequest": {
         "properties": {
@@ -30555,6 +30926,11 @@
           "new_root": {
             "type": "string",
             "title": "New Root"
+          },
+          "move_files": {
+            "type": "boolean",
+            "title": "Move Files",
+            "default": true
           }
         },
         "type": "object",
@@ -30563,7 +30939,7 @@
           "new_root"
         ],
         "title": "LibraryMigrateRequest",
-        "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots."
+        "description": "Move a non-empty set of books into `new_root`. Each book's source is\nthe root folder it currently sits under, so one selection may span\nseveral roots. `move_files` defaults to true; false only rewrites each\nbook's recorded path, for files already moved by hand."
       },
       "LibraryScanRequest": {
         "properties": {
@@ -34984,6 +35360,66 @@
         "title": "RootFolderUpdate",
         "description": "Request model for renaming a root folder or making it the default"
       },
+      "RootPreviewRequest": {
+        "properties": {
+          "paths": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "maxItems": 20000,
+            "minItems": 1,
+            "title": "Paths"
+          }
+        },
+        "additionalProperties": false,
+        "type": "object",
+        "required": [
+          "paths"
+        ],
+        "title": "RootPreviewRequest",
+        "description": "The rows of one session to resolve a landing root for."
+      },
+      "RootPreviewResponse": {
+        "properties": {
+          "roots": {
+            "additionalProperties": {
+              "$ref": "#/components/schemas/RootPreviewRoot"
+            },
+            "type": "object",
+            "title": "Roots"
+          }
+        },
+        "type": "object",
+        "required": [
+          "roots"
+        ],
+        "title": "RootPreviewResponse"
+      },
+      "RootPreviewRoot": {
+        "properties": {
+          "id": {
+            "type": "integer",
+            "title": "Id"
+          },
+          "path": {
+            "type": "string",
+            "title": "Path"
+          },
+          "in_place": {
+            "type": "boolean",
+            "title": "In Place",
+            "description": "The book is adopted where it already sits in this root, so nothing is copied or moved."
+          }
+        },
+        "type": "object",
+        "required": [
+          "id",
+          "path",
+          "in_place"
+        ],
+        "title": "RootPreviewRoot"
+      },
       "Routing": {
         "properties": {
           "route_indexers": {
@@ -36030,7 +36466,8 @@
               "write_metadata_json": false,
               "write_nfo": false,
               "write_tags": false,
-              "embed_cover": false
+              "embed_cover": false,
+              "move_files": true
             }
           }
         },
@@ -36291,6 +36728,17 @@
           "complete_runtime": {
             "type": "integer",
             "title": "Complete Runtime"
+          },
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
           }
         },
         "type": "object",
@@ -36321,6 +36769,27 @@
         ],
         "title": "SeriesResponse",
         "description": "A series. Every field is always present; unset values are null."
+      },
+      "SeriesRootFolderUpdate": {
+        "properties": {
+          "root_folder_id": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Root Folder Id"
+          }
+        },
+        "type": "object",
+        "required": [
+          "root_folder_id"
+        ],
+        "title": "SeriesRootFolderUpdate",
+        "description": "Set the root folder a series' new books are added to; null inherits the author's."
       },
       "SeriesSelection": {
         "properties": {

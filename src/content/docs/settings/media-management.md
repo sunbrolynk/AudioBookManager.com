@@ -17,7 +17,23 @@ A root folder can be a link to your library somewhere else. Every disk scan chec
 
 During a library scan, a book refresh, a Library Import or a conversion restore, a root folder that is missing, can't be read or doesn't answer is treated as unavailable: ABM doesn't create it, change its books or mark them missing. A slow network share gets up to 2 minutes to wake for a scan, a refresh task or an import. Refreshing one book from its page, and a restore, wait 10 seconds, so try again once the share is awake. The reason is given with the root's path: it "does not exist", it "cannot be read" (usually folder permissions, such as the PUID and PGID a Docker container runs as), it "is not answering", or it leads into a system folder. A scan reports it as "Library root <reason>: <path>", and an import fails the books going into it with "Root folder <reason>: <path>".
 
-The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
+A book's root is worked out from where its folder is: ABM finds the root folder that contains the book's path (the most specific one wins). There is no root setting on a book, and changing a book's path changes its root with it. Completed downloads, Manual Import, Library Import and the Import Workbench each file a book into that book's own root. The Audible library mirror places each new book by its series' root folder, else its author's, else the default, as in [Where new books go](#where-new-books-go), and queues nothing while any root it would use is low on space.
+
+The default root folder is the fallback for new books that nothing more specific places. See [Where new books go](#where-new-books-go).
+
+### Where new books go
+
+A new book with no root folder picked for it goes to the first of these that applies. That covers a book added with **Automatic (author / series root)**, which is where the Add Book dialog starts, a book Monitor New Books finds for an author or series, and a book from an Automatic Library Import:
+
+1. the series' root folder, if the series has one;
+2. otherwise the author's root folder, if the author has one;
+3. otherwise the default root folder.
+
+An author gets a root when you add it. The Add New dialog asks, unless you have only one root folder, in which case the author takes that one. A series starts as **Inherit from author**, which means it has no root of its own, and you can pick one to override the author. Change either later in the [edit dialog](/using/library/#the-edit-dialog). That only decides where books added from now on go. It never moves a book you already have. An author with no root folder yet, such as one first added along with a book, takes the root folder that book lands in.
+
+Removing a root folder clears it from every author and series that used it, so they fall through to the next step.
+
+Manual Import checks free space on each book's own root folder. When a batch goes to more than one root, each root's share is checked against that root, and the message names the root that is short.
 
 ## Folders
 
@@ -33,7 +49,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/library-import/): copy, hardlink or move. Hardlink is grayed out until the default root has been checked and supports it. |
+| Library Import | Copy | The default for [Library Import](/library-import/): copy, hardlink or move. It only preselects the choice; the Add to Library dialog still grays Hardlink out when a root the import lands in can't use it. |
 | Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |

@@ -17,7 +17,7 @@ A root folder can be a link to your library somewhere else. Every disk scan chec
 
 During a library scan, a book refresh, a Library Import or a conversion restore, a root folder that is missing, can't be read or doesn't answer is treated as unavailable: ABM doesn't create it, change its books or mark them missing. A slow network share gets up to 2 minutes to wake for a scan, a refresh task or an import. Refreshing one book from its page, and a restore, wait 10 seconds, so try again once the share is awake. The reason is given with the root's path: it "does not exist", it "cannot be read" (usually folder permissions, such as the PUID and PGID a Docker container runs as), it "is not answering", or it leads into a system folder. A scan reports it as "Library root <reason>: <path>", and an import fails the books going into it with "Root folder <reason>: <path>".
 
-The default root folder is the one new books go to and the one that decides whether hardlink is offered for Library Import.
+A book's root is the root folder its folder sits in. The default root folder is the fallback for new books that nothing more specific places: a new book with no root picked for it goes to its series' root folder, else its author's, else the default.
 
 ## Folders
 
@@ -33,7 +33,7 @@ The default root folder is the one new books go to and the one that decides whet
 | Skip Free Space Check | off | For when ABM cannot detect free space on a root |
 | Minimum Free Space | 100 (MB) | An import that would leave less than this is refused |
 | Use Hardlinks instead of Copy | on | For completed downloads: hardlink instead of copy, so seeding does not double the space. Needs the same volume. |
-| Library Import | Copy | The default for [Library Import](/en-ca/library-import/): copy, hardlink or move. Hardlink is greyed out until the default root has been checked and supports it. |
+| Library Import | Copy | The default for [Library Import](/en-ca/library-import/): copy, hardlink or move. It only preselects the choice; the Add to Library dialog still greys Hardlink out when a root the import lands in can't use it. |
 | Import Extra Files | on | Whether non-audio files come along at all. Applies to Library Import, Manual Import and completed downloads |
 | Extra File Extensions (advanced) | empty | More file types to bring along, kept under their own names, for example `srt, lrc`. With or without the dot, separated by commas or spaces. Blocked types, such as executables and partial downloads, can't be saved. Disabled while **Import Extra Files** is off |
 | Preferred Cover (advanced) | Matched | Matched edition's cover, or the folder's best image, when both exist |
